@@ -1,0 +1,59 @@
+from: TrustZone.0329.md
+
+The ariticle
+    q: https://genode.org/documentation/articles/trustzone
+    q: Please summarize the following articles in short.
+    q: Please compare TrustZone and TPM in a table.
+    q: What is bootstrap code?
+    q: What are two lines in the section "Starting point" in the article?
+
+Basic Concepts
+    q: Is TrustZone a software or hardware?
+    q: Can TrustZone replace HSM?
+
+Normal World & Secure World
+    q: Can Normal world and Secure World run at the same time in ARM?
+    q: But can Normal world and Secure World run at the same time in multi processors of ARM?
+
+Boot
+    q: Does boot loader only run in secure world, not in normal world?
+    q: How to swtich secure world to normal world when booting?
+    q: What is ATF?
+
+Memory
+    q: How to define memory size of secure world?
+    q: Can memory size of secure world be changed?
+    q: What is MMU?
+    q: What is TLB?
+
+CPU
+    q: What is SMP?
+    q: What are difference between primary and seconday CPU cores?
+    q: Please summarize the two types of CPU cores as a table. 
+
+SM & SPM & SPD
+    q: What is Secure Monitor?
+    q: What is SMC?
+    q: Can secure world request a service in normal world via SMC?
+    q: What is SPM?
+    q: What is SPD?
+    q: Can SPD handle the request from the secure world?
+    q: What are relationships of SPD, SPM and SMC?
+    q: Why are SPD and SPM mutually exclusive?
+    q: Is SPD an optional component?
+    q: Can I use SPD instead of SM?
+
+Secure Partition
+    q: What is SP?
+    q: Can different SPs communicate together?
+    q: How to create a SP and when?
+    q: Can I create a SP in run-time?
+    q: What is TA?
+    q: How do TAs and SPs communicate each other?
+    q: Can a SP host many TAs?
+    q: Can a TA communicate different SP?
+    q: Is normal world a secure parition?
+    q: Is secure world a secure partition?
+
+Privilege Levels
+    q: What are EL0, EL1, EL2, S-EL0, S-EL1, S-EL2, S-EL3?

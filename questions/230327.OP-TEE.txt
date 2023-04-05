@@ -1,0 +1,68 @@
+from: OP-TEE.0327.md
+
+Basic Concepts
+    q: https://github.com/OP-TEE
+    q: What is OP-TEE?
+    q: What is thre prefix OP of OP-TEE?
+    q: Are there alternative technologies of OP-TEE?
+    q: Does OP-TEE a software or a hardware solution?
+    q: Is OP-TEE a firmware?
+    q: Does OP-TEE only exist in secure world?
+    q: Are there successfull cases of OP-TEE?
+    q: What are different between ARM OP-TEE and Intel SMM? Please also summarize in a table.
+
+Boot
+    q: Why does OP-TEE's reset function have two branches reset_primary and reset_secondary?
+
+Multi-Thread & Multi-Process
+    q: Can secure kernel and trusted applications in OP-TEE can be multi-thread?
+    q: What is secure context switching in TrustZone?
+    q: Does OP-TEE support multi-process?
+    q: Does OP-TEE support IPC?
+    q: Does OP-TEE OS exist in a single core or multiple cores at run-time?
+
+Memory
+    q: Does OP-TEE support shared memory?
+    q: Can secure world can access memory in normal world?
+    q: Can normal world access memory in secure world?
+    q: How does OP-TEE manage memory?
+    q: Are data in memory in secure world encrypted?
+    q: What is SMAF?
+    q: What is CMA?
+
+Network
+    q: Does OP-TEE support network communication in secure world?
+
+Signature
+    q: Is signature required when a normal world application request a service in secure world?
+    q: Does OP-TEE support to verify a signature of a TA in X.509 certificate?
+
+Development
+    q: Which languages do I use to develop apps in OP-TEE or to customize OP-TEE?
+    q: Can I use other langauges?
+    q: Does OP-TEE support ARMv7 and ARMv8?
+    q: Does OP-TEE have a shell?
+    q: Can I create a TA at run-time?
+    q: But what is TEECI_LoadSecureModule()
+    q: What are Static TA and Dynamic TA? Please also summarize them in a table.
+    q: Does TEE define Static TA and Dynamic TA?
+
+Qualcomm 
+    q: Does Qualcomm support OP-TEE?
+    q: Is QTEE open source?
+
+DRM
+    q: How do I implement DRM of content decryption with OP-TEE?
+    q: So the content is decrypted in TA in secure world. Right?
+    q: But does it slow down the playback speed because of switching between normal world and secure world?
+    q: Can I use multi cores to solve the problem? For example, one core decrypts content and another core play content at the same time.
+    q: Does OP-TEE support TUI?
+    q: Can I develop a TA with TUI to play video in OP-TEE?
+    q: How do I implement a DRM solution using ClearKey in OP-TEE?
+
+Secure Storage
+    q: Does OP-TEE support file system?
+    q: How does OP-TEE generate SSK from HUK in tee_fs_init_key_manager()?
+    q: In the function, can I read the content of the HUK?
+    q: How do I protect HUK from reading in OP-TEE?
+    q: Is SSK defined in GlobalPlatform?
