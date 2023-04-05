@@ -68,7 +68,7 @@ def get_files(dn):
 
 def handle_list(args, ctx):
     print('')
-    print('Question in the directory %s:' % ctx['questions'])
+    print('Question Sets in the directory "%s":' % ctx['questions'])
 
     bn_fn_ls = get_files( ctx['questions'])
 
