@@ -1,0 +1,8 @@
+__pycache__
+output-html-manual
+output-pdf-manual
+test
+*.sublime-project 
+*.sublime-workspace
+sftp-config.json
+.DS_Store
