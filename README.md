@@ -1,7 +1,7 @@
 # ChatGptAnswerPdf
 Support python applications that help you generate PDF files from Markdown files of ChatGPT.
 
-The project supports a set of python applications that help you transform Markdown files catched by the Chrome plugin [ChatGPT to Markdown](https://chatopenai.pro/chatgpt-to-markdown/) into PDF files filtered by your question set files in TXT project-specific format.
+The project supports the python applications chatpdf.py that help you transform Markdown files catched by the Chrome plugin [ChatGPT to Markdown](https://chatopenai.pro/chatgpt-to-markdown/) into PDF files filtered by your question set files in TXT the-project-specific format.
 
 # Usage
 
