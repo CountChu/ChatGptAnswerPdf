@@ -69,7 +69,7 @@ def parse_context(lines):
 # section_ls = [section]
 # section = {'title', 'question_ls'}
 # question_ls = [question]
-# question = {'q1', 'q2', 'a-prefix', 'from'}
+# question = {'q1', 'q2', 'q-prefix', 'a-prefix', 'from'}
 #    
 # q1 = https://en.wikipedia.org/wiki/Trusted_execution_environment
 # q2 = https://en.wikipedia.org/wiki/Trusted\_execution\_environment
@@ -88,6 +88,8 @@ def read_sections(lines):
 
         if line.startswith('q:'):
             s = 'q'
+        elif line.startswith('q-prefix:'):
+            s = 'q-prefix'
         elif line.startswith('a-prefix:'):
             s = 'a-prefix'
         elif line.startswith('from:'):
@@ -101,6 +103,12 @@ def read_sections(lines):
             q1 = line 
             q2 = line.replace('_', '\\_')
             question = {'q1': q1, 'q2': q2}
+            question_ls.append(question)
+
+        elif s == 'q-prefix':
+            _, line = line.split(':', 1)
+            line = line.strip()
+            question = {'q-prefix': line}
             question_ls.append(question)
 
         elif s == 'a-prefix':
@@ -136,7 +144,10 @@ def dump_sections(section_ls):
         print(section['title'])
 
         for question in section['question_ls']:
-            print('    q: %s' % question['q1'])
+            if 'q1' in question:
+                print('    q: %s' % question['q1'])
+            elif 'q-prefix' in question:
+                print('    q-prefix: %s' % question['q-prefix'])
 
             if 'a-prefix' in question:
                 print('    a-prefix: %s' % question['a-prefix'])
@@ -295,9 +306,15 @@ def find_answer(qa_ls, question):
 
     else:
         for qa in qa_ls:
-            if qa['q2'] == question['q2']:
-                answer = qa['a']
-                break
+            if 'q-prefix' in question:
+                if qa['q2'].startswith(question['q-prefix']):
+                    answer = qa['a']
+                    break
+
+            if 'q2' in question:
+                if qa['q2'] == question['q2']:
+                    answer = qa['a']
+                    break
 
         if answer == None:
             print('Error. The answer of the question is not found.')
@@ -320,9 +337,11 @@ def write_sections(section_ls, name, fn):
     for section in section_ls:
         #f.write('## %s\n' % section['title'])
         f.write('* %s\n' % section['title'])
+
         for question in section['question_ls']:
-            q1 = question['q1']
-            f.write('    * %s\n' % q1)
+            q = util.get_q(question)
+            f.write('    * %s\n' % q)
+
 
     f.write('\n')
     f.write('---\n')
@@ -333,11 +352,10 @@ def write_sections(section_ls, name, fn):
         f.write('## %s\n' % section['title'])
 
         for question in section['question_ls']:
-            q1 = question['q1']
-            q2 = question['q2']
+            q = util.get_q(question)
             a = question['a']
 
-            f.write('**Question:** %s\n' % q1)
+            f.write('**Question:** %s\n' % q)
             f.write('\n')
             f.write('**Answer:**\n')
             f.write('\n')
@@ -433,6 +451,14 @@ def main():
     #
 
     section_ls = read_sections(sections)
+
+    #
+    # Check section_ls
+    #
+
+    for section in section_ls:
+        for question in section['question_ls']:
+            assert not ('q1' in question and 'q-prefix' in question)
 
     #
     # Dump section_ls to check.

@@ -35,3 +35,13 @@ def collect_input_files(file, dn):
             bn_fn_ls.append((bn, fn))
 
     return bn_fn_ls
+
+def get_q(question):
+    if 'q1' in question:
+        q = question['q1']
+    elif 'q-prefix' in question:
+        q = question['q-prefix']
+    else:
+        assert False, question
+
+    return q

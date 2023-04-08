@@ -12,14 +12,15 @@ Basic Concepts
     q: What are different between ARM OP-TEE and Intel SMM? Please also summarize in a table.
 
 Boot
+    q: Does OP-TEE OS exist in a single core or multiple cores at run-time?
     q: Why does OP-TEE's reset function have two branches reset_primary and reset_secondary?
+    q: Why does OP-TEE initialize secondary cores when reset?
 
 Multi-Thread & Multi-Process
     q: Can secure kernel and trusted applications in OP-TEE can be multi-thread?
     q: What is secure context switching in TrustZone?
     q: Does OP-TEE support multi-process?
     q: Does OP-TEE support IPC?
-    q: Does OP-TEE OS exist in a single core or multiple cores at run-time?
 
 Memory
     q: Does OP-TEE support shared memory?
@@ -46,6 +47,8 @@ Development
     q: But what is TEECI_LoadSecureModule()
     q: What are Static TA and Dynamic TA? Please also summarize them in a table.
     q: Does TEE define Static TA and Dynamic TA?
+    q: How to recover a crashed static TA?
+    q: How to recover a crashed dynamic TA?
 
 Qualcomm 
     q: Does Qualcomm support OP-TEE?
@@ -66,3 +69,13 @@ Secure Storage
     q: In the function, can I read the content of the HUK?
     q: How do I protect HUK from reading in OP-TEE?
     q: Is SSK defined in GlobalPlatform?
+
+Recover OP-TEE
+    q: How to detect OP-TEE dead?
+    q: How to automatically recovery the crashed OP-TEE?
+    q: Can I develop a dual OP-TEE so that if one is crashed, run another.
+    q: How to detect if OP-TEE is tamperred at run-time?
+
+Attack
+    q: Whare are kinds of methods to attack OP-TEE?
+

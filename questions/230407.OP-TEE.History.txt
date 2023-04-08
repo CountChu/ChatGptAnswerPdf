@@ -1,0 +1,8 @@
+from: OP-TEE.History.0407.md
+
+History
+	q: Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone about TrustZone and Qualcomm about TEE. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail.
+	q: Please display above context in a table. X axis of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm. Y asis of the table are years.
+	q: When did Qualcomm release QTEE?
+	q: Please list history of Qualcomm TEE with years in detail.
+	q: Where do you find the year when Qualcomm introduced QTEE?

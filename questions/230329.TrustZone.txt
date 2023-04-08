@@ -9,7 +9,11 @@ The ariticle
 
 Basic Concepts
     q: Is TrustZone a software or hardware?
-    q: Can TrustZone replace HSM?
+
+TrustZone & HSM
+    q: What is difference between TrustZone and HSM? Please also summarize in a table.
+    q: What are relationships between TrustZone and HSM?
+    q: Can TrustZone totally replace HSM?    
 
 Normal World & Secure World
     q: Can Normal world and Secure World run at the same time in ARM?
@@ -29,7 +33,10 @@ Memory
 CPU
     q: What is SMP?
     q: What are difference between primary and seconday CPU cores?
-    q: Please summarize the two types of CPU cores as a table. 
+    q: Please summarize the two types of CPU cores as a table.
+    q: What are SCP and AP?
+    q: Do SCP and AP in ARM share memory?
+    q: What is differenct between Armv8-A and Armv8-M? Please summarize as a table.    
 
 SM & SPM & SPD
     q: What is Secure Monitor?
