@@ -2857,3 +2857,159 @@ What is difference between QSEE and QTEE?
 **ChatGPT:**
 
 QSEE (Qualcomm Secure Execution Environment) and QTEE (Qualcomm Trusted Execution Environment) are often used interchangeably, but they refer to the same thing. Both terms describe the secure environment within Qualcomm's Snapdragon processors that leverage ARM TrustZone technology. This environment provides a protected execution space for trusted applications and services, separate from the normal operating system (OS), ensuring the confidentiality and integrity of sensitive data and operations.
+
+* * *
+
+**You:**
+
+Can OP-TEE be ported in Qualcomm devices?
+
+* * *
+
+**ChatGPT:**
+
+Yes, OP-TEE can be ported to Qualcomm devices, though it may require some additional work to make it compatible with the specific hardware. Since Qualcomm has its own Trusted Execution Environment (TEE) called QSEE (Qualcomm Secure Execution Environment), you would need to replace or adapt it to work with OP-TEE.
+
+Porting OP-TEE to a Qualcomm device involves several steps:
+
+1.  Acquiring documentation and source code for the target device, including information on the processor, memory layout, peripherals, and TrustZone implementation.
+2.  Adapting the OP-TEE platform layer to support the specific hardware features of the target device, including modifications to the memory layout, interrupt handling, and device drivers.
+3.  Integrating OP-TEE with the bootloader and normal-world OS (e.g., Android), ensuring the correct configuration and loading of OP-TEE during the boot process.
+4.  Testing and debugging the OP-TEE implementation on the target device, ensuring the correct functioning of the secure world, normal world, and interactions between the two.
+
+Keep in mind that porting OP-TEE to a Qualcomm device may require deep technical expertise and familiarity with the target hardware, OP-TEE internals, and the TrustZone architecture. Additionally, access to detailed documentation, tools, and support from Qualcomm may be necessary for a successful port.
+
+* * *
+
+**You:**
+
+Who did port OP-TEE in Qualcomm devices successfully?
+
+* * *
+
+**ChatGPT:**
+
+There isn't a comprehensive list of all individuals or organizations that have successfully ported OP-TEE to Qualcomm devices. However, Linaro, a collaborative engineering organization that focuses on developing open-source software for ARM hardware, has worked on porting OP-TEE to a variety of platforms, including some Qualcomm devices.
+
+Linaro has contributed significantly to the development of OP-TEE, and they have expertise in porting OP-TEE to different hardware platforms. Some of their work involves using development boards, such as the DragonBoard 410c, which is based on the Qualcomm Snapdragon 410 chipset. Linaro has also provided some level of support for other Qualcomm platforms, though the availability of support and documentation may vary depending on the specific device.
+
+It is worth noting that individual developers and companies may also have ported OP-TEE to Qualcomm devices for their own projects, but such information may not be publicly available due to proprietary reasons or non-disclosure agreements.
+
+* * *
+
+**You:**
+
+The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html Virtualization OP-TEE have experimental virtualization support. This is when one OP-TEE instance can run TAs from multiple virtual machines. OP-TEE isolates all VM-related states, so one VM can’t affect another in any way. With virtualization support enabled, OP-TEE will rely on a hypervisor, because only the hypervisor knows which VM is calling OP-TEE. Also, naturally the hypervisor should inform OP-TEE about creation and destruction of VMs. Besides, in almost all cases, hypervisor enables two-stage MMU translation, so VMs does not see real physical address of memory, instead they work with intermediate physical addresses (IPAs). On other hand OP-TEE can’t translate IPA to PA, so this is a hypervisor’s responsibility to do this kind of translation. So, hypervisor should include a component that knows about OP-TEE protocol internals and can do this translation. We call this component “TEE mediator” and right now only XEN hypervisor have OP-TEE mediator. Configuration Virtualization support is enabled with CFG\_VIRTUALIZATION configuration option. When this option is enabled, OP-TEE will not work without compatible a hypervisor. This is because the hypervisor should send OPTEE\_SMC\_VM\_CREATED SMC with VM ID before any standard SMC can be received from client. CFG\_VIRT\_GUEST\_COUNT controls the maximum number of supported VMs. As OP-TEE have limited size of available memory, increasing this count will decrease amount of memory available to one VM. Because we want VMs to be independent, OP-TEE splits available memory in equal portions to every VM, so one VM can’t consume all memory and cause DoS to other VMs. Requirements for hypervisor As said earlier, hypervisor should be aware of OP-TEE and SMCs from virtual guests to OP-TEE. This is a list of things, that compatible hypervisor should perform: When new OP-TEE-capable VM is created, hypervisor should inform OP-TEE about it with SMC OPTEE\_SMC\_VM\_CREATED. a1 parameter should contain VM id. ID 0 is defined as HYP\_CLNT\_ID and is reserved for hypervisor itself. When OP-TEE-capable VM is being destroyed, hypervisor should stop all VCPUs (this will ensure that OP-TEE have no active threads for that VMs) and send SMC OPTEE\_SMC\_VM\_DESTROYED with the same parameters as for OPTEE\_SMC\_VM\_CREATED. Any SMC to OP-TEE should have VM ID in a7 parameter. This is either HYP\_CLNT\_ID if call originates from hypervisor or VM ID that was passed in OPTEE\_SMC\_VM\_CREATED call. Hypervisor should perform IPA<->PA address translation for all SMCs. This includes both arguments in a1-a6 registers and in in-memory command buffers. Hypervisor should pin memory pages that VM shares with OP-TEE. This means, that hypervisor should ensure that pinned page will reside at the original PA as long, as it is shared with OP-TEE. Also it should still belong to the VM that shared it. For example, the hypervisor should not swap out this page, transfer ownership to another VM, unmap it from VM address space and so on. Naturally, the hypervisor should correctly handle the OP-TEE protocol, so for any VM it should look like it is working with OP-TEE directly. Limitations Virtualization support is in experimental state and it have some limitations, user should be aware of. Platforms support Only Armv8 architecture is supported. There is no hard restriction, but currently Armv7-specific code (like MMU or thread manipulation) just know nothing about virtualization. Only one platform has been tested right now and that is QEMU-V8 (aka qemu that emulates Arm Versatile Express with Armv8 architecture). Support for Rcar Gen3 should be added soon. Static VMs guest count and memory allocation Currently, a user should configure maximum number of guests. OP-TEE will split memory into equal chunks, so every VM will have the same amount of memory. For example, if you have 6MB for your TAs, you can set CFG\_VIRT\_GUEST\_COUNT to 3 and every VM would be able to use 2MB maximum, even if there is no other VMs running. This is okay for embedded setups when you know exact number and roles of VMs, but can be inconvenient for server applications. Also, it is impossible to configure amount of memory available for a given VM. Every VM instance will have exactly the same amount of memory. Sharing hardware resources and PTAs Right now only HW that can be used by multiple VMs simultaneously is serial console, used for logging. Devices like HW crypto accelerators, secure storage devices (e.g. external flash storage, accessed directly from OP-TEE) and others are not supported right now. Drivers should be made virtualization-aware before they can be used with virtualization extensions. Every VM will have own PTA states, which is a good thing in most cases. But if one wants PTA to have some global state that is shared between VMs, he need to write PTA accordingly. No compatibility with “normal” mode OP-TEE built with CFG\_VIRTUALIZATION=y will not work without a hypervisor, because before executing any standard SMC, OPTEE\_SMC\_VM\_CREATED must be called. This can be inconvenient if one wants to switch between virtualized and non-virtualized environment frequently. On other hand, it is not a big deal in a production environment. Simple workaround can be made for this: if OP-TEE receives standard SMC prior to OPTEE\_SMC\_VM\_CREATED, it implicitly creates VM context and uses it for all subsequent calls. Implementation details OP-TEE as a whole can be split into two entities. Let us call them “nexus” and TEE. Nexus is a core part of OP-TEE that takes care of low level things: SMC handling, memory management, threads creation and so on. TEE is a part that does the actual job: handles requests, loads TAs, executes them, and so on. So, it is natural to have one nexus instance and multiple instances of TEE, one TEE instance per registered VM. This can be done either explicitly or implicitly. Explicit way is to move TEE state in some sort of structure and make all code to access fields of this structure. Something like struct task\_struct and current in linux kernel. Then it is easy to allocate such structure for every VM instance. But this approach basically requires to rewrite all OP-TEE code. Implicit way is to have banked memory sections for TEE/VM instances. So memory layout can look something like that: +-------------------------------------------------+ | Nexus: .nex\_bss, .nex\_data, ... | +-------------------------------------------------+ | TEE states | | | | VM1 TEE state | VM 2 TEE state | VM 3 TEE state | | .bss, .data | .bss, .data | .bss, .data, | +-------------------------------------------------+ This approach requires no changes in TEE code and requires some changes into nexus code. So, idea that Nexus state resides in separate sections (.nex\_data, .nex\_bss, .nex\_nozi, .nex\_heap and others) and is always mapped. TEE state resides in standard sections (like .data, .bss, .heap and so on). There is a separate set of this sections for every VM registered and Nexus maps them only when it receives call from corresponding VM. As Nexus and TEE have separate heaps, bget allocator was extended to work with multiple “contexts”. malloc(), free() with friends work with one context. nex\_malloc() (and other nex\_ functions) were added. They use different context, so now Nexus can use separate heap, which is always mapped into OP-TEE address space. When virtualization support is disabled, all those nex\_ functions are defined to point to standard malloc() counterparts. To change memory mappings in run-time, in MMU code we have added a new entity, named “partition”, which is defined by struct mmu\_partition. It holds information about all page-tables, so the whole MMU mapping can be switched by one write to TTBR register. There is the default partition, it holds MMU state when there is no VM context active, so no TEE state is mapped. When OP-TEE receives OPTEE\_SMC\_VM\_CREATED call, it copies default partition into new one and then maps sections with TEE data. This is done by prepare\_memory\_map() function in virtualization.c. When OP-TEE receives STD call it checks that the supplied VM ID is valid and then activates corresponding MMU partition, so TEE code can access its own data. This is basically how virtualization support is working.
+
+* * *
+
+**ChatGPT:**
+
+The following is a summary of OP-TEE's experimental virtualization support, as described in the article:
+
+*   One OP-TEE instance can run TAs from multiple virtual machines, isolating all VM-related states to prevent one VM from affecting another.
+*   OP-TEE relies on a hypervisor (e.g., Xen) to determine which VM is calling it, and the hypervisor must inform OP-TEE about the creation and destruction of VMs.
+*   OP-TEE cannot translate intermediate physical addresses (IPAs) to physical addresses (PAs), so the hypervisor is responsible for this translation.
+*   Virtualization support is enabled with the CFG\_VIRTUALIZATION configuration option, and the maximum number of supported VMs is controlled by CFG\_VIRT\_GUEST\_COUNT.
+*   Hypervisors must be aware of OP-TEE, handle SMCs from virtual guests, perform IPA<->PA address translation, and manage memory pages shared between VMs and OP-TEE.
+*   Limitations of the experimental virtualization support include platform support (only Armv8 is supported and tested on QEMU-V8), static VM guest count and memory allocation, sharing hardware resources and PTAs, compatibility with "normal" mode, and the experimental state of the technology.
+*   The implementation details of OP-TEE virtualization support involve splitting OP-TEE into "nexus" (core part) and TEE (handles requests and runs TAs). There is one nexus instance and multiple TEE instances, one for each registered VM. Banked memory sections are used for TEE/VM instances, and the nexus and TEE have separate heaps.
+
+This summary provides an overview of OP-TEE's experimental virtualization support, but it is essential to refer to the original documentation for a complete understanding of the technology, its requirements, and its limitations.
+
+* * *
+
+**You:**
+
+Does the hypervisor relied on OP-TEE run in normal world or secure world?
+
+* * *
+
+**ChatGPT:**
+
+The hypervisor that OP-TEE relies on runs in the normal world. It is responsible for managing multiple virtual machines and handling the communication between the normal world and OP-TEE in the secure world. The hypervisor must be aware of OP-TEE, handle SMCs from virtual guests, perform IPA <-> PA address translation, and manage memory pages shared between VMs and OP-TEE.
+
+* * *
+
+**You:**
+
+Does a TA run in a VM described in the article?
+
+* * *
+
+**ChatGPT:**
+
+No, a Trusted Application (TA) does not run inside a Virtual Machine (VM) as described in the article. Instead, the TA runs in the secure world within the OP-TEE environment. The hypervisor manages the VMs in the normal world and is responsible for handling the communication between the normal world and OP-TEE in the secure world. When OP-TEE has virtualization support enabled, it allows multiple VMs to utilize a single OP-TEE instance for running TAs while maintaining isolation between the VM-related states.
+
+* * *
+
+**You:**
+
+What is SPMC?
+
+* * *
+
+**ChatGPT:**
+
+The SPMC (Secure Partition Manager Core) is a component within ARM's virtualization architecture for ARMv8.4-A systems. The SPMC manages secure partitions (SPs), which are isolated execution environments that run within the secure world of a virtualized ARM system. Secure partitions are similar to Trusted Applications (TAs) in OP-TEE, as they provide a secure environment for running trusted code.
+
+The SPMC is responsible for:
+
+1.  Lifecycle management of secure partitions, including their creation, initialization, and termination.
+2.  Managing inter-partition communication and resource sharing between secure partitions.
+3.  Managing communication between the normal world (Non-secure world) and secure world, including handling requests and responses from the normal world.
+
+The SPMC ensures that secure partitions can execute in a safe and isolated environment, providing a higher level of security and separation for trusted applications in a virtualized ARM system.
+
+* * *
+
+**You:**
+
+Is SPMC of TrustZone?
+
+* * *
+
+**ChatGPT:**
+
+The SPMC (Secure Partition Manager Core) is not a component of TrustZone specifically. TrustZone is a hardware-based security feature implemented in ARM processors, which creates a secure world and a normal world to separate and protect sensitive data and code execution.
+
+SPMC, on the other hand, is a part of ARM's virtualization architecture for ARMv8.4-A systems, which is designed to manage secure partitions (SPs) within the secure world. While SPMC is not a direct component of TrustZone, it relies on the security features provided by TrustZone, as secure partitions execute within the secure world created by TrustZone.
+
+In summary, TrustZone provides the foundation for secure execution environments, while SPMC manages and orchestrates secure partitions within that environment in the context of virtualized ARM systems.
+
+* * *
+
+**You:**
+
+What is FF-A?
+
+* * *
+
+**ChatGPT:**
+
+FF-A, or Firmware Framework for Arm, is a specification that defines a standard interface for communication between various software components running on Arm-based systems. This interface enables secure and efficient communication between different execution environments, such as:
+
+*   Normal world operating systems (e.g., Linux, Android)
+*   Secure world trusted execution environments (e.g., OP-TEE, TrustZone)
+*   Hypervisors
+*   Secure partitions managed by a Secure Partition Manager (SPM)
+
+FF-A is designed to provide a common interface across different Arm platforms, making it easier for developers to create software that works consistently across various Arm-based devices. The FF-A specification includes a standardized set of Service Function Identifiers (SFIDs) for commonly used services, as well as a mechanism for vendor-specific extensions.
+
+In the context of virtualization and TEEs like OP-TEE, FF-A can be used to facilitate communication between normal world applications, the hypervisor, and secure partitions, improving security and simplifying software development.
+
+* * *
+
+**You:**
+
+Does TrustZone require hypervisor?
+
+* * *
+
+**ChatGPT:**
+
+No, TrustZone does not require a hypervisor. TrustZone is a hardware-based security technology implemented in Arm processors that provides a secure execution environment by creating two separate worlds: the Secure World and the Normal World. TrustZone itself is not dependent on a hypervisor.
+
+A hypervisor is a software layer that manages and coordinates multiple virtual machines (VMs) running on a single hardware platform. Hypervisors can be used in conjunction with TrustZone to provide additional isolation and management capabilities for virtualized systems.
+
+While TrustZone and hypervisors can work together, they serve different purposes and are not dependent on one another. TrustZone focuses on providing a secure environment for trusted applications, while hypervisors manage VMs and their resources.

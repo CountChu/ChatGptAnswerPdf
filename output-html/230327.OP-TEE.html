@@ -991,7 +991,7 @@ body .markdown-body {
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230327.OP-TEE</h1>
-<p>Created: 2023-04-05 20:10:51</p>
+<p>Created: 2023-04-08 23:23:26</p>
 <h1>Questions</h1>
 <ul>
 <li>Basic Concepts<ul>
@@ -1083,6 +1083,14 @@ body .markdown-body {
 </li>
 <li>Attack<ul>
 <li>Whare are kinds of methods to attack OP-TEE?</li>
+</ul>
+</li>
+<li>Virtualization<ul>
+<li>The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html</li>
+<li>Does the hypervisor relied on OP-TEE run in normal world or secure world?</li>
+<li>Does OP-TEE support VMs?</li>
+<li>Is the technology of OP-TEE supporting VMs mature?</li>
+<li>Does a TA run in a VM described in the article?</li>
 </ul>
 </li>
 </ul>
@@ -2053,6 +2061,40 @@ body .markdown-body {
 </li>
 </ol>
 <p>To mitigate these risks, it&rsquo;s essential to maintain a strong security posture, implement secure coding practices, and regularly update OP-TEE to the latest version. Additionally, employ hardware-based security features and perform regular security audits to identify potential vulnerabilities.</p>
+<hr />
+<h2>Virtualization</h2>
+<p><strong>Question:</strong> The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html</p>
+<p><strong>Answer:</strong></p>
+<p>The following is a summary of OP-TEE&rsquo;s experimental virtualization support, as described in the article:</p>
+<ul>
+<li>One OP-TEE instance can run TAs from multiple virtual machines, isolating all VM-related states to prevent one VM from affecting another.</li>
+<li>OP-TEE relies on a hypervisor (e.g., Xen) to determine which VM is calling it, and the hypervisor must inform OP-TEE about the creation and destruction of VMs.</li>
+<li>OP-TEE cannot translate intermediate physical addresses (IPAs) to physical addresses (PAs), so the hypervisor is responsible for this translation.</li>
+<li>Virtualization support is enabled with the CFG_VIRTUALIZATION configuration option, and the maximum number of supported VMs is controlled by CFG_VIRT_GUEST_COUNT.</li>
+<li>Hypervisors must be aware of OP-TEE, handle SMCs from virtual guests, perform IPA&lt;-&gt;PA address translation, and manage memory pages shared between VMs and OP-TEE.</li>
+<li>Limitations of the experimental virtualization support include platform support (only Armv8 is supported and tested on QEMU-V8), static VM guest count and memory allocation, sharing hardware resources and PTAs, compatibility with &ldquo;normal&rdquo; mode, and the experimental state of the technology.</li>
+<li>The implementation details of OP-TEE virtualization support involve splitting OP-TEE into &ldquo;nexus&rdquo; (core part) and TEE (handles requests and runs TAs). There is one nexus instance and multiple TEE instances, one for each registered VM. Banked memory sections are used for TEE/VM instances, and the nexus and TEE have separate heaps.</li>
+</ul>
+<p>This summary provides an overview of OP-TEE&rsquo;s experimental virtualization support, but it is essential to refer to the original documentation for a complete understanding of the technology, its requirements, and its limitations.</p>
+<hr />
+<p><strong>Question:</strong> Does the hypervisor relied on OP-TEE run in normal world or secure world?</p>
+<p><strong>Answer:</strong></p>
+<p>The hypervisor that OP-TEE relies on runs in the normal world. It is responsible for managing multiple virtual machines and handling the communication between the normal world and OP-TEE in the secure world. The hypervisor must be aware of OP-TEE, handle SMCs from virtual guests, perform IPA &lt;-&gt; PA address translation, and manage memory pages shared between VMs and OP-TEE.</p>
+<hr />
+<p><strong>Question:</strong> Does OP-TEE support VMs?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, OP-TEE supports working with virtual machines (VMs) in the sense that it can operate in a virtualized environment managed by a hypervisor. The hypervisor is responsible for managing VMs running in the normal world, while OP-TEE provides secure services in the secure world.</p>
+<p>In a virtualized environment, OP-TEE works in conjunction with a hypervisor, like Xen or KVM on ARM, to provide secure services to multiple VMs running on the same hardware platform. The hypervisor ensures the secure world&rsquo;s isolation from the normal world and enforces proper access control policies to prevent unauthorized access to sensitive resources.</p>
+<p>However, it is important to note that OP-TEE itself does not directly manage the VMs; it works with a hypervisor that is responsible for managing the VMs in the normal world.</p>
+<hr />
+<p><strong>Question:</strong> Is the technology of OP-TEE supporting VMs mature?</p>
+<p><strong>Answer:</strong></p>
+<p>The technology of OP-TEE supporting VMs is maturing but may not be considered fully mature yet. There have been significant efforts put into enabling OP-TEE to work with virtual machines and hypervisors. OP-TEE does provide support for virtualization, as described in its documentation, and some projects, such as XEN Project, have been working on integrating OP-TEE with their hypervisors.</p>
+<p>However, the maturity of this technology can vary depending on the specific use cases, hardware platforms, and hypervisors in question. It is advisable to assess the maturity of the technology on a case-by-case basis and consult with experts or the community to ensure that the chosen solution meets the required security and performance needs.</p>
+<hr />
+<p><strong>Question:</strong> Does a TA run in a VM described in the article?</p>
+<p><strong>Answer:</strong></p>
+<p>No, a Trusted Application (TA) does not run inside a Virtual Machine (VM) as described in the article. Instead, the TA runs in the secure world within the OP-TEE environment. The hypervisor manages the VMs in the normal world and is responsible for handling the communication between the normal world and OP-TEE in the secure world. When OP-TEE has virtualization support enabled, it allows multiple VMs to utilize a single OP-TEE instance for running TAs while maintaining isolation between the VM-related states.</p>
 <hr />
     </article>
   </body>

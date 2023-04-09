@@ -79,3 +79,9 @@ Recover OP-TEE
 Attack
     q: Whare are kinds of methods to attack OP-TEE?
 
+Virtualization
+    q-prefix: The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html
+    q: Does the hypervisor relied on OP-TEE run in normal world or secure world?
+    q: Does OP-TEE support VMs?
+    q: Is the technology of OP-TEE supporting VMs mature?
+    q: Does a TA run in a VM described in the article?

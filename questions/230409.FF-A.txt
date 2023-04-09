@@ -1,0 +1,41 @@
+from: FF-A.0409.md
+
+Ch 2 - Introduction
+	q-prefix: The below text are chapter 2 of "Arm Firmware Framework for Arm A-profile"
+	hide:
+
+Ch 3 - Software Architecture
+	q-prefix: The below text are chapter 3 of "Arm Firmware Framework for Arm A-profile"
+	hide:
+
+Ch 3.1 - Isolation boundaries
+	q-prefix: The below text are chapter 3.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+	hide:
+	
+Ch 3.2 - Partitions
+	q-prefix: The below text are chapter 3.2 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+	hide:
+	
+Ch 3.3 - Partition manager
+	q-prefix: The below text are chapter 3.3 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+	hide:
+
+	q: So SPM and Hypervisor are partition managers. Right?
+	q: What is VMSA?
+	q: Is VMSA a software or a hardware?
+	
+Ch 3.4 Example configurations
+	q-prefix: The below text are chapter 3.4 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+	hide:
+
+	q: Can SPM see SP0 and SP1? 
+	q: Can SP0 or SP1 see SPM?
+	q: Is TrustZone isolation boundary physical isolation or logical isolation?
+
+Ch 4.1 - SPM architecture
+	q-prefix: The below text are chapter 4.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+	hide:
+
+	q: What is SPMC in the document?
+	q: Is SPMC of TrustZone?
+

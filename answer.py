@@ -94,6 +94,8 @@ def read_sections(lines):
             s = 'a-prefix'
         elif line.startswith('from:'):
             s = 'from'
+        elif line.startswith('hide:'):
+            s = 'hide'
         else:
             s = 'title'
 
@@ -102,7 +104,7 @@ def read_sections(lines):
             line = line.strip()
             q1 = line 
             q2 = line.replace('_', '\\_')
-            question = {'q1': q1, 'q2': q2}
+            question = {'q1': q1, 'q2': q2, 'hide': False}
             question_ls.append(question)
 
         elif s == 'q-prefix':
@@ -120,6 +122,9 @@ def read_sections(lines):
             _, line = line.split(':', 1)
             line = line.strip()
             question['from'] = line
+
+        elif s == 'hide':
+            question['hide'] = True            
 
         elif s == 'title':
             if section != None:
@@ -318,8 +323,13 @@ def find_answer(qa_ls, question):
 
         if answer == None:
             print('Error. The answer of the question is not found.')
-            print('q1 = %s' % question['q1'])
-            print('q2 = %s' % question['q2'])
+            
+            if 'q1' in question:
+                print('q1 = %s' % question['q1'])
+                print('q2 = %s' % question['q2'])
+            elif 'q-prefix' in question:
+                print('q-prefix = %s' % question['q-prefix'])
+
             sys.exit(1)
 
     return answer
@@ -339,6 +349,9 @@ def write_sections(section_ls, name, fn):
         f.write('* %s\n' % section['title'])
 
         for question in section['question_ls']:
+            if question['hide']:
+                continue
+
             q = util.get_q(question)
             f.write('    * %s\n' % q)
 
@@ -352,6 +365,9 @@ def write_sections(section_ls, name, fn):
         f.write('## %s\n' % section['title'])
 
         for question in section['question_ls']:
+            if question['hide']:
+                continue
+            
             q = util.get_q(question)
             a = question['a']
 

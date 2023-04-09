@@ -30,7 +30,7 @@ Enforce to build the PDF files by a given question set file.
 % python chatpdf.py build -f 230328.TEE.txt
 ```
 
-# Directories
+# File Structure
 ```
 [ChatGptAnswerPdf]
     [chats]         ---- A directory that contains MD files 

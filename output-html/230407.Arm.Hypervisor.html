@@ -985,17 +985,18 @@ body .markdown-body {
   padding-left: 128px!important;
 }
     </style>
-    <title>230407.TrustZone.Hypervisor</title>    
+    <title>230407.Arm.Hypervisor</title>    
   </head>
   <body>
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
-        <h1>230407.TrustZone.Hypervisor</h1>
-<p>Created: 2023-04-08 18:15:23</p>
+        <h1>230407.Arm.Hypervisor</h1>
+<p>Created: 2023-04-09 11:25:16</p>
 <h1>Questions</h1>
 <ul>
 <li>TCB<ul>
 <li>What are components in TCB?</li>
+<li>What are components in ARM TCB?</li>
 </ul>
 </li>
 <li>Virtualization<ul>
@@ -1025,12 +1026,7 @@ body .markdown-body {
 <li>Please compare TrustZone and Hypervisor and also summarize in a table.</li>
 <li>Can hypervisor run in secure world?</li>
 <li>What is difference of runnin hypervisor in secure world and normal world. Please also summarize it in a table.</li>
-</ul>
-</li>
-<li>Hypervisor &amp; OP-TEE<ul>
-<li>https://optee.readthedocs.io/en/latest/architecture/virtualization.html</li>
-<li>Does OP-TEE support VMs?</li>
-<li>Is the technology of OP-TEE supporting VMs mature?</li>
+<li>Does TrustZone require hypervisor?</li>
 </ul>
 </li>
 </ul>
@@ -1079,6 +1075,40 @@ body .markdown-body {
 </li>
 </ol>
 <p>These components work together to ensure the security of a system and provide a trusted foundation for applications and services. Note that the components listed above are just examples, and the actual TCB components may differ based on the specific system and its security requirements.</p>
+<hr />
+<p><strong>Question:</strong> What are components in ARM TCB?</p>
+<p><strong>Answer:</strong></p>
+<p>The Trusted Computing Base (TCB) of an ARM system consists of the essential components responsible for maintaining security properties and enforcing security policies. In the context of ARM TrustZone and related technologies, the TCB can include the following components:</p>
+<ol>
+<li>
+<p>Secure Boot: This is the mechanism that ensures the integrity and authenticity of the boot process, making sure that only trusted software components are executed during the system startup.</p>
+</li>
+<li>
+<p>ARM TrustZone: A hardware-based security feature in ARM processors, which provides a secure execution environment (Secure World) and isolates it from the less secure environment (Normal World).</p>
+</li>
+<li>
+<p>Secure Monitor: This is the lowest-level software component running in the Secure World. It manages transitions between the Secure and Normal Worlds and provides an interface for Secure World services.</p>
+</li>
+<li>
+<p>Trusted Firmware-A (TF-A) or other trusted firmware: This firmware runs in the Secure World and provides various services, such as secure boot, power management, and platform-specific configurations.</p>
+</li>
+<li>
+<p>OP-TEE or other Trusted Execution Environment (TEE) implementations: TEEs, like OP-TEE, provide a secure environment for running trusted applications (TAs) within the Secure World, ensuring that sensitive code and data are protected from unauthorized access or tampering.</p>
+</li>
+<li>
+<p>Secure Partition Manager (SPM): This component manages Secure Partitions (SPs) within the TrustZone Secure World, including creating, configuring, and managing SPs, as well as inter-partition communication and resource management.</p>
+</li>
+<li>
+<p>Trusted Applications (TAs): These are secure software components that run within the Secure World and provide security-sensitive services or perform security-critical operations.</p>
+</li>
+<li>
+<p>Security-sensitive hardware components: These components, such as cryptographic accelerators, secure storage, and hardware random number generators, provide additional security features and services to the system.</p>
+</li>
+<li>
+<p>Secure peripherals: These are peripherals that can be accessed only from the Secure World, providing additional isolation and protection for sensitive data and operations.</p>
+</li>
+</ol>
+<p>Please note that the specific components in an ARM TCB may vary depending on the system&rsquo;s architecture, SoC, and security requirements. The list above provides a general overview of the typical components in an ARM TrustZone-based TCB.</p>
 <hr />
 <h2>Virtualization</h2>
 <p><strong>Question:</strong> What are types of virtualization techs?</p>
@@ -1352,23 +1382,11 @@ body .markdown-body {
 </tbody>
 </table>
 <hr />
-<h2>Hypervisor &amp; OP-TEE</h2>
-<p><strong>Question:</strong> https://optee.readthedocs.io/en/latest/architecture/virtualization.html</p>
+<p><strong>Question:</strong> Does TrustZone require hypervisor?</p>
 <p><strong>Answer:</strong></p>
-<p>The link you provided points to the official OP-TEE documentation on virtualization. According to the documentation, OP-TEE does support virtualization in the sense that it can work with virtualized environments managed by a hypervisor. The hypervisor is responsible for managing VMs running in the normal world, while OP-TEE provides secure services in the secure world.</p>
-<p>The documentation also mentions that OP-TEE has been tested with Xen on ARM, and there are ongoing efforts to test it with KVM on ARM. This indicates that OP-TEE can be used in conjunction with virtualization solutions like Xen and KVM to provide secure services to multiple VMs running on the same hardware platform.</p>
-<p>However, it is crucial to ensure that the hypervisor is correctly configured to maintain the secure world&rsquo;s isolation from the normal world and that proper access control policies are in place to prevent unauthorized access to sensitive resources.</p>
-<hr />
-<p><strong>Question:</strong> Does OP-TEE support VMs?</p>
-<p><strong>Answer:</strong></p>
-<p>Yes, OP-TEE supports working with virtual machines (VMs) in the sense that it can operate in a virtualized environment managed by a hypervisor. The hypervisor is responsible for managing VMs running in the normal world, while OP-TEE provides secure services in the secure world.</p>
-<p>In a virtualized environment, OP-TEE works in conjunction with a hypervisor, like Xen or KVM on ARM, to provide secure services to multiple VMs running on the same hardware platform. The hypervisor ensures the secure world&rsquo;s isolation from the normal world and enforces proper access control policies to prevent unauthorized access to sensitive resources.</p>
-<p>However, it is important to note that OP-TEE itself does not directly manage the VMs; it works with a hypervisor that is responsible for managing the VMs in the normal world.</p>
-<hr />
-<p><strong>Question:</strong> Is the technology of OP-TEE supporting VMs mature?</p>
-<p><strong>Answer:</strong></p>
-<p>The technology of OP-TEE supporting VMs is maturing but may not be considered fully mature yet. There have been significant efforts put into enabling OP-TEE to work with virtual machines and hypervisors. OP-TEE does provide support for virtualization, as described in its documentation, and some projects, such as XEN Project, have been working on integrating OP-TEE with their hypervisors.</p>
-<p>However, the maturity of this technology can vary depending on the specific use cases, hardware platforms, and hypervisors in question. It is advisable to assess the maturity of the technology on a case-by-case basis and consult with experts or the community to ensure that the chosen solution meets the required security and performance needs.</p>
+<p>No, TrustZone does not require a hypervisor. TrustZone is a hardware-based security technology implemented in Arm processors that provides a secure execution environment by creating two separate worlds: the Secure World and the Normal World. TrustZone itself is not dependent on a hypervisor.</p>
+<p>A hypervisor is a software layer that manages and coordinates multiple virtual machines (VMs) running on a single hardware platform. Hypervisors can be used in conjunction with TrustZone to provide additional isolation and management capabilities for virtualized systems.</p>
+<p>While TrustZone and hypervisors can work together, they serve different purposes and are not dependent on one another. TrustZone focuses on providing a secure environment for trusted applications, while hypervisors manage VMs and their resources.</p>
 <hr />
     </article>
   </body>
