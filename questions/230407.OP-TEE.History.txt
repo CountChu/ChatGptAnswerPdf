@@ -6,3 +6,13 @@ History
 	q: When did Qualcomm release QTEE?
 	q: Please list history of Qualcomm TEE with years in detail.
 	q: Where do you find the year when Qualcomm introduced QTEE?
+
+Qualcomm
+	q: What is relationship between QTEE and SPU?
+	d: 2023/4/10
+
+	q: When was source code of QTEE opened?
+	d: 2023/4/10
+
+	q: Does SPU rely on ARMv8?
+	d: 2023/4/10

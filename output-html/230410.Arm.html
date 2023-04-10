@@ -985,136 +985,67 @@ body .markdown-body {
   padding-left: 128px!important;
 }
     </style>
-    <title>230409.FF-A</title>    
+    <title>230410.Arm</title>    
   </head>
   <body>
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
-        <h1>230409.FF-A</h1>
-<p>Created: 2023-04-10 20:07:52</p>
+        <h1>230410.Arm</h1>
+<p>Created: 2023-04-10 20:08:57</p>
 <h1>Questions</h1>
 <ul>
-<li>Ch 2 - Introduction</li>
-<li>Ch 3 - Software Architecture</li>
-<li>Ch 3.1 - Isolation boundaries</li>
-<li>Ch 3.2 - Partitions</li>
-<li>Ch 3.3 - Partition manager<ul>
-<li>So SPM and Hypervisor are partition managers. Right?</li>
-<li>What is VMSA?</li>
-<li>Is VMSA a software or a hardware?</li>
-</ul>
-</li>
-<li>Ch 3.4 Example configurations<ul>
-<li>Can SPM see SP0 and SP1?</li>
-<li>Can SP0 or SP1 see SPM?</li>
-<li>Is TrustZone isolation boundary physical isolation or logical isolation?</li>
-</ul>
-</li>
-<li>Ch 4.1 - SPM architecture<ul>
-<li>What is SPMC in the document?</li>
-<li>Is SPMC of TrustZone?</li>
-</ul>
-</li>
-<li>FF-A, TF-A, and TrustZone<ul>
-<li>2023/4/10: What is TF-A?</li>
-<li>2023/4/10: Please draw the relationship among TrustZone, TF-A, and FF-A.</li>
-<li>2023/4/10: What is relationship between FF-A and TF-A?</li>
-<li>2023/4/10: Could I say that TF-A refers FF-A?</li>
+<li>Basic Concept<ul>
+<li>What are types of ARM CPU? Please also describe them in a table.</li>
+<li>What is &ldquo;Arm A-profile&rdquo;?</li>
+<li>Does &ldquo;Arm Firmware Framework for Arm A-profile&rdquo; document is only about Cortex-A?</li>
 </ul>
 </li>
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
-<h2>Ch 2 - Introduction</h2>
-<h2>Ch 3 - Software Architecture</h2>
-<h2>Ch 3.1 - Isolation boundaries</h2>
-<h2>Ch 3.2 - Partitions</h2>
-<h2>Ch 3.3 - Partition manager</h2>
-<p><strong>Question:</strong> So SPM and Hypervisor are partition managers. Right?</p>
+<h2>Basic Concept</h2>
+<p><strong>Question:</strong> What are types of ARM CPU? Please also describe them in a table.</p>
 <p><strong>Answer:</strong></p>
-<p>Yes, that&rsquo;s correct. In the context of the Arm Firmware Framework for Arm A-profile, the Secure Partition Manager (SPM) operates in the Secure world, while the Hypervisor operates in the Normal world. Both SPM and Hypervisor are partition managers responsible for creating and managing the physical isolation boundaries of partitions, assigning resources, and enabling inter-partition communication.</p>
+<p>ARM CPUs come in a variety of architectures and designs, each tailored to specific needs and applications. Some common types of ARM CPUs are Cortex-A, Cortex-R, and Cortex-M series. Here&rsquo;s a table describing these three series:</p>
+<table>
+<thead>
+<tr>
+<th>Series</th>
+<th>Target Applications</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cortex-A</td>
+<td>High-performance systems</td>
+<td>Designed for high-performance devices like smartphones, tablets, and other consumer electronics, as well as servers. These processors provide high performance and power efficiency, suitable for running complex operating systems like Linux, Android, and iOS. Typical examples include Cortex-A72, Cortex-A75, and Cortex-A76.</td>
+</tr>
+<tr>
+<td>Cortex-R</td>
+<td>Real-time systems</td>
+<td>Targeted towards real-time systems that require fast, deterministic response times like automotive electronics, industrial control systems, and medical devices. These processors prioritize reliability, fault tolerance, and real-time performance. Examples include Cortex-R4, Cortex-R5, and Cortex-R8.</td>
+</tr>
+<tr>
+<td>Cortex-M</td>
+<td>Low-power microcontrollers</td>
+<td>Optimized for low-power, cost-sensitive applications like IoT devices, wearables, and other embedded systems. These processors are designed to offer low-latency response times, energy efficiency, and ease of use. Examples include Cortex-M0, Cortex-M3, Cortex-M4, and Cortex-M7.</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that within each series, there are multiple specific processor models with different performance levels, features, and target applications. The examples provided above are not exhaustive.</p>
 <hr />
-<p><strong>Question:</strong> What is VMSA?</p>
+<p><strong>Question:</strong> What is &ldquo;Arm A-profile&rdquo;?</p>
 <p><strong>Answer:</strong></p>
-<p>VMSA, or Virtual Memory System Architecture, is a part of the Arm architecture that defines the memory management and address translation mechanisms. It is responsible for managing the address spaces and memory protection features in Arm systems. VMSA allows for the creation of separate virtual address spaces for each process, providing isolation between processes and the operating system. In the context of the Arm A-profile, the Hypervisor uses the virtualization extension in VMSA to create physical isolation boundaries between different partitions or virtual machines.</p>
+<p>&ldquo;Arm A-profile&rdquo; refers to a specific family of Arm processors that are designed for high-performance and power-efficient applications. These processors are part of the Cortex-A series, which is well-suited for devices such as smartphones, tablets, and other consumer electronics, as well as servers and networking equipment.</p>
+<p>A-profile processors are based on the Armv8-A architecture, which includes both 64-bit (AArch64) and 32-bit (AArch32) execution states. The Armv8-A architecture introduced several enhancements over the previous Armv7 architecture, such as improved performance, better energy efficiency, and increased security features.</p>
+<p>Cortex-A processors are used in various systems running complex operating systems like Linux, Android, and iOS. They offer advanced features such as out-of-order execution, superscalar pipelines, and support for virtualization and memory management.</p>
+<p>In summary, the term &ldquo;Arm A-profile&rdquo; refers to the Cortex-A series of Arm processors that are designed for high-performance and power-efficient applications in devices such as smartphones, tablets, and servers.</p>
 <hr />
-<p><strong>Question:</strong> Is VMSA a software or a hardware?</p>
+<p><strong>Question:</strong> Does &ldquo;Arm Firmware Framework for Arm A-profile&rdquo; document is only about Cortex-A?</p>
 <p><strong>Answer:</strong></p>
-<p>VMSA (Virtual Memory System Architecture) is not a specific piece of software or hardware, but rather a part of the Arm architecture specification that defines how memory management and address translation should be implemented in Arm-based systems. VMSA provides guidelines for designing hardware and software components that handle memory management, address translation, and access control, allowing for the creation of separate virtual address spaces and ensuring proper isolation between processes and the operating system.</p>
-<hr />
-<h2>Ch 3.4 Example configurations</h2>
-<p><strong>Question:</strong> Can SPM see SP0 and SP1?</p>
-<p><strong>Answer:</strong></p>
-<p>Yes, the Secure Partition Manager (SPM) can &ldquo;see&rdquo; and manage both SP0 and SP1. The SPM is responsible for creating and managing the physical isolation boundaries of Secure Partitions (SPs) like SP0 and SP1. It uses partition manifests to assign resources, initialize the partitions, and enable discovery of their services. Additionally, the SPM implements FF-A ABIs (Application Binary Interfaces) to enable inter-partition communication for access to partition services. So, while the SPM isolates SP0 and SP1 from each other, it still has visibility and control over both partitions.</p>
-<hr />
-<p><strong>Question:</strong> Can SP0 or SP1 see SPM?</p>
-<p><strong>Answer:</strong></p>
-<p>In the ARM Firmware Framework, SP0 and SP1 can communicate with the Secure Partition Manager (SPM) through well-defined interfaces, such as FF-A ABIs (Application Binary Interfaces). While the SPM is physically isolated from SP0 and SP1 in scenarios where they are physical partitions, they can still interact with the SPM using these interfaces for communication, service discovery, and memory management.</p>
-<p>However, it is important to note that SP0 and SP1 cannot access the internal workings or the memory of the SPM directly. They can only communicate with the SPM through the defined interfaces, ensuring that the isolation between them is maintained.</p>
-<hr />
-<p><strong>Question:</strong> Is TrustZone isolation boundary physical isolation or logical isolation?</p>
-<p><strong>Answer:</strong></p>
-<p>TrustZone isolation boundary is a form of physical isolation. TrustZone is a security extension in ARM architecture that separates the processor&rsquo;s resources, such as memory and peripherals, into two distinct security domains: the Secure world and the Non-secure world. By utilizing hardware-based isolation, TrustZone ensures that sensitive data and functions in the Secure world are protected from unauthorized access by software running in the Non-secure world.</p>
-<hr />
-<h2>Ch 4.1 - SPM architecture</h2>
-<p><strong>Question:</strong> What is SPMC in the document?</p>
-<p><strong>Answer:</strong></p>
-<p>In the document &ldquo;Arm Firmware Framework for Arm A-profile,&rdquo; the SPMC (Secure Partition Manager Core) is a component of the Secure Partition Manager (SPM) responsible for:</p>
-<ol>
-<li>Initializing and isolating Secure Partitions (SPs) at boot time.</li>
-<li>Ensuring inter-partition isolation during runtime.</li>
-<li>Managing inter-partition communication between Secure Endpoints (S-Endpoints) and Non-Secure Endpoints (NS-Endpoints).</li>
-</ol>
-<p>The SPMC can co-reside with the SPM Dispatcher (SPMD) in EL3 or reside in adjacent exception levels, such as S-EL1 or S-EL2. It is a part of the Trusted Computing Base and has access to the entire physical address space.</p>
-<hr />
-<p><strong>Question:</strong> Is SPMC of TrustZone?</p>
-<p><strong>Answer:</strong></p>
-<p>The SPMC (Secure Partition Manager Core) is part of the Arm Firmware Framework for Arm A-profile, which is built on top of the Arm TrustZone technology. TrustZone provides the underlying hardware support for isolation and security, while the SPMC is responsible for managing partitions and their communication within the Secure world enabled by TrustZone. So, while the SPMC is not TrustZone itself, it is a component that utilizes and operates within the TrustZone technology.</p>
-<hr />
-<h2>FF-A, TF-A, and TrustZone</h2>
-<p><strong>Question:</strong> 2023/4/10: What is TF-A?</p>
-<p><strong>Answer:</strong></p>
-<p>TF-A, or Trusted Firmware-A, is a reference implementation of secure world software for Arm A-profile processors. It provides a platform for implementing security features and building trusted execution environments in devices that use Armv8-A processors, such as smartphones, tablets, and other embedded systems.</p>
-<p>TF-A includes implementations of various Arm security technologies, such as Secure Boot, Secure Monitor (for switching between secure and non-secure worlds), and runtime services. The project is open-source, allowing developers to use and modify the code to develop secure firmware solutions that meet the requirements of their specific applications.</p>
-<hr />
-<p><strong>Question:</strong> 2023/4/10: Please draw the relationship among TrustZone, TF-A, and FF-A.</p>
-<p><strong>Answer:</strong></p>
-<p>TrustZone, TF-A, and FF-A are technologies and frameworks related to the security aspects of Arm-based systems. Here&rsquo;s a simple representation of their relationships:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">+-----------------+</span>
-<span class="o">|</span>   <span class="n">TrustZone</span>     <span class="o">|</span>
-<span class="o">|</span>  <span class="p">(</span><span class="n">Technology</span><span class="p">)</span>   <span class="o">|</span>
-<span class="o">|</span> <span class="o">+-------------+</span> <span class="o">|</span>
-<span class="o">|</span> <span class="o">|</span>    <span class="n">TF</span><span class="o">-</span><span class="n">A</span>     <span class="o">|</span> <span class="o">|</span>
-<span class="o">|</span> <span class="o">|</span> <span class="p">(</span><span class="n">Firmware</span><span class="p">)</span>  <span class="o">|</span> <span class="o">|</span>
-<span class="o">|</span> <span class="o">+-------------+</span> <span class="o">|</span>
-<span class="o">|</span> <span class="o">+-------------+</span> <span class="o">|</span>
-<span class="o">|</span> <span class="o">|</span>    <span class="n">FF</span><span class="o">-</span><span class="n">A</span>     <span class="o">|</span> <span class="o">|</span>
-<span class="o">|</span> <span class="o">|</span>  <span class="p">(</span><span class="n">Framework</span><span class="p">)</span><span class="o">|</span> <span class="o">|</span>
-<span class="o">|</span> <span class="o">+-------------+</span> <span class="o">|</span>
-<span class="o">+-----------------+</span>
-</code></pre></div>
-
-<ol>
-<li>
-<p>TrustZone is a hardware-based security technology built into Arm processors. It provides a secure execution environment by creating two separate worlds: a Secure World and a Non-secure World. TrustZone ensures that the Secure World&rsquo;s data and code are protected from unauthorized access.</p>
-</li>
-<li>
-<p>Trusted Firmware-A (TF-A) is an open-source reference implementation of secure world software for Arm A-profile processors. It leverages TrustZone technology and provides secure boot, runtime services, and a secure monitor for switching between the secure and non-secure worlds.</p>
-</li>
-<li>
-<p>Firmware Framework for Armv8-A (FF-A) is a software architecture specification that aims to standardize the way partitions, services, and communication are managed in Arm A-profile systems. It defines the interactions between the Secure Partition Manager (SPM), partitions, and the Non-secure world. FF-A can be used in conjunction with TrustZone and TF-A to build a complete secure software solution.</p>
-</li>
-</ol>
-<hr />
-<p><strong>Question:</strong> 2023/4/10: What is relationship between FF-A and TF-A?</p>
-<p><strong>Answer:</strong></p>
-<p>The relationship between FF-A (Firmware Framework for Armv8-A) and TF-A (Trusted Firmware-A) is that FF-A provides a standardized software architecture specification for managing partitions, services, and communication on Arm A-profile systems, while TF-A is an open-source reference implementation of secure world software that leverages TrustZone technology.</p>
-<p>TF-A can be used as a base for implementing the secure world software stack on Arm A-profile systems, and it can be extended or adapted to conform to the FF-A architecture. By aligning the TF-A implementation with the FF-A specification, developers can achieve a more modular, maintainable, and interoperable software stack that can better address the needs of secure systems.</p>
-<p>In summary, the relationship between FF-A and TF-A is complementary, with FF-A providing the architectural guidelines, and TF-A serving as a reference implementation that can be tailored to adhere to those guidelines.</p>
-<hr />
-<p><strong>Question:</strong> 2023/4/10: Could I say that TF-A refers FF-A?</p>
-<p><strong>Answer:</strong></p>
-<p>Yes, you can say that TF-A refers to FF-A, as TF-A can be extended or adapted to conform to the FF-A architecture. The FF-A provides the architectural guidelines for secure systems, while TF-A serves as a reference implementation that can be tailored to adhere to those guidelines. By aligning the TF-A implementation with the FF-A specification, developers can achieve a more modular, maintainable, and interoperable software stack for secure systems.</p>
+<p>The &ldquo;Arm Firmware Framework for Arm A-profile&rdquo; document primarily focuses on the Cortex-A series processors, as they are the high-performance processors designed for running complex operating systems and applications. However, the document also encompasses other Arm A-profile processors based on the Armv8-A architecture.</p>
+<p>While the document is primarily targeted at Cortex-A processors and their associated firmware, some concepts and features may be applicable to other Arm processor families as well, such as Cortex-R and Cortex-M. The Firmware Framework aims to provide a standardized software architecture for security, isolation, and communication between software components running on Arm A-profile processors.</p>
 <hr />
     </article>
   </body>

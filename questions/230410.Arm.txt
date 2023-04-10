@@ -1,0 +1,11 @@
+ from: Arm.0410.md
+
+ Basic Concept
+ 	q: What are types of ARM CPU? Please also describe them in a table.
+ 	
+ 	q-prefix: The below text comes from chapter 2 in "Arm Firmware Framework for Arm A-profile" document.
+ 	hide:
+
+ 	q: What is "Arm A-profile"?
+
+ 	q: Does "Arm Firmware Framework for Arm A-profile" document is only about Cortex-A?

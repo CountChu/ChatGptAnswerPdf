@@ -69,7 +69,7 @@ def parse_context(lines):
 # section_ls = [section]
 # section = {'title', 'question_ls'}
 # question_ls = [question]
-# question = {'q1', 'q2', 'q-prefix', 'a-prefix', 'from'}
+# question = {'q1', 'q2', 'q1-prefix', 'q2-prefix', a-prefix', 'from'}
 #    
 # q1 = https://en.wikipedia.org/wiki/Trusted_execution_environment
 # q2 = https://en.wikipedia.org/wiki/Trusted\_execution\_environment
@@ -96,6 +96,8 @@ def read_sections(lines):
             s = 'from'
         elif line.startswith('hide:'):
             s = 'hide'
+        elif line.startswith('d:'):
+            s = 'date'            
         else:
             s = 'title'
 
@@ -110,7 +112,9 @@ def read_sections(lines):
         elif s == 'q-prefix':
             _, line = line.split(':', 1)
             line = line.strip()
-            question = {'q-prefix': line}
+            q1_prefix = line
+            q2_prefix = line.replace('_', '\\_')
+            question = {'q1-prefix': q1_prefix, 'q2-prefix': q2_prefix, 'hide': False}
             question_ls.append(question)
 
         elif s == 'a-prefix':
@@ -124,7 +128,12 @@ def read_sections(lines):
             question['from'] = line
 
         elif s == 'hide':
-            question['hide'] = True            
+            question['hide'] = True      
+
+        elif s == 'date':
+            _, line = line.split(':', 1)
+            line = line.strip()
+            question['date'] = line
 
         elif s == 'title':
             if section != None:
@@ -151,8 +160,8 @@ def dump_sections(section_ls):
         for question in section['question_ls']:
             if 'q1' in question:
                 print('    q: %s' % question['q1'])
-            elif 'q-prefix' in question:
-                print('    q-prefix: %s' % question['q-prefix'])
+            elif 'q1-prefix' in question:
+                print('    q1-prefix: %s' % question['q1-prefix'])
 
             if 'a-prefix' in question:
                 print('    a-prefix: %s' % question['a-prefix'])
@@ -311,8 +320,8 @@ def find_answer(qa_ls, question):
 
     else:
         for qa in qa_ls:
-            if 'q-prefix' in question:
-                if qa['q2'].startswith(question['q-prefix']):
+            if 'q2-prefix' in question:
+                if qa['q2'].startswith(question['q2-prefix']):
                     answer = qa['a']
                     break
 
@@ -327,8 +336,8 @@ def find_answer(qa_ls, question):
             if 'q1' in question:
                 print('q1 = %s' % question['q1'])
                 print('q2 = %s' % question['q2'])
-            elif 'q-prefix' in question:
-                print('q-prefix = %s' % question['q-prefix'])
+            elif 'q1-prefix' in question:
+                print('q1-prefix = %s' % question['q1-prefix'])
 
             sys.exit(1)
 
@@ -474,7 +483,7 @@ def main():
 
     for section in section_ls:
         for question in section['question_ls']:
-            assert not ('q1' in question and 'q-prefix' in question)
+            assert not ('q1' in question and 'q1-prefix' in question)
 
     #
     # Dump section_ls to check.

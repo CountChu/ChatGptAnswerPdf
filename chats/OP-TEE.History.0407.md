@@ -205,3 +205,116 @@ Where do you find the year when Qualcomm introduced QTEE?
 I apologize for the confusion in my previous response. After re-evaluating the information available, it seems that I was unable to find a specific year when Qualcomm introduced QTEE. It appears that I made an error in my previous response.
 
 Qualcomm has been implementing Trusted Execution Environments (TEE) using ARM TrustZone technology in their Snapdragon SoCs for several years, but the exact year of introduction for QTEE is not readily available in public sources. Qualcomm's ongoing development of hardware-based security features includes the introduction of the Secure Processing Unit (SPU) in 2017.
+
+* * *
+
+**You:**
+
+Please list history of Linaro OP-TEE with years.
+
+* * *
+
+**ChatGPT:**
+
+Linaro is a collaborative engineering organization that maintains and develops the open-source OP-TEE (Open Portable Trusted Execution Environment) project. Here's a brief history of the Linaro OP-TEE project with relevant years:
+
+1.  2013: OP-TEE project initiation
+
+*   STMicroelectronics initiates the OP-TEE project, aiming to create an open-source TEE for ARM TrustZone-enabled platforms.
+
+2.  2014: Linaro Security Working Group involvement
+
+*   The Linaro Security Working Group begins working on the OP-TEE project, collaborating with STMicroelectronics and other stakeholders.
+
+3.  2015: Linaro takes over maintenance and development
+
+*   Linaro assumes responsibility for the maintenance and development of the OP-TEE project, providing regular releases, bug fixes, and ongoing support.
+
+Since 2015, Linaro has continued to actively maintain and develop the OP-TEE project, making it a valuable resource for implementing Trusted Execution Environments on ARM TrustZone-enabled platforms.
+
+* * *
+
+**You:**
+
+Please list history of Linaro OP-TEE with years after 2015.
+
+* * *
+
+**ChatGPT:**
+
+After Linaro took over the maintenance and development of OP-TEE in 2015, the project continued to evolve, with new features and improvements being added over time. Here are some of the notable developments in Linaro's OP-TEE since 2015:
+
+1.  2016: OP-TEE 2.0.0 release
+
+*   Linaro releases OP-TEE version 2.0.0, which includes several new features, improvements, and bug fixes.
+
+2.  2017: GlobalPlatform Compliance
+
+*   OP-TEE becomes GlobalPlatform compliant, meeting the organization's TEE specifications and providing compatibility with a wider range of devices and use cases.
+
+3.  2018: OP-TEE 3.0.0 release
+
+*   Linaro releases OP-TEE version 3.0.0, offering better performance, improved security, and bug fixes.
+
+4.  2019: OP-TEE 3.7.0 release
+
+*   Linaro releases OP-TEE version 3.7.0, further enhancing security, adding support for more platforms, and fixing various issues.
+
+5.  2020: OP-TEE 3.10.0 release
+
+*   Linaro releases OP-TEE version 3.10.0, continuing to improve security, performance, and stability while also adding support for additional platforms.
+
+Since the last knowledge update in September 2021, there have been several releases, with the latest one being OP-TEE 3.15.0. Please refer to the official OP-TEE GitHub repository ([https://github.com/OP-TEE/optee\_os/releases](https://github.com/OP-TEE/optee_os/releases)) for the most up-to-date information on release history and features.
+
+Throughout these years, Linaro has been actively maintaining and improving the OP-TEE project, ensuring that it remains a valuable resource for implementing Trusted Execution Environments on ARM TrustZone-enabled platforms.
+
+* * *
+
+**You:**
+
+Does SPU rely on ARMv8?
+
+* * *
+
+**ChatGPT:**
+
+Qualcomm's Secure Processing Unit (SPU) is a hardware component introduced in 2017 within their Snapdragon SoCs. While the SPU functions as a Trusted Execution Environment (TEE) and leverages ARM TrustZone technology, it is not specifically dependent on ARMv8 architecture.
+
+However, it is worth noting that many of Qualcomm's Snapdragon SoCs, including those that feature the SPU, do utilize the ARMv8 architecture. The ARMv8 architecture provides improved performance, energy efficiency, and security features, including support for TrustZone.
+
+In summary, while the SPU does not exclusively rely on ARMv8, it is often used in conjunction with ARMv8-based Snapdragon SoCs to provide hardware-based security features.
+
+* * *
+
+**You:**
+
+What is relationship between QTEE and SPU?
+
+* * *
+
+**ChatGPT:**
+
+The Qualcomm Trusted Execution Environment (QTEE) and the Secure Processing Unit (SPU) are both security solutions developed by Qualcomm for their Snapdragon SoCs (System on a Chip). Both QTEE and SPU leverage ARM TrustZone technology to create isolated secure environments within the processor, where sensitive data can be protected, and security-related tasks can be executed.
+
+The relationship between QTEE and SPU can be summarized as follows:
+
+1.  QTEE is an implementation of a Trusted Execution Environment within Qualcomm's Snapdragon SoCs. It provides a secure area within the processor to protect sensitive data and execute security-related tasks. QTEE relies on ARM TrustZone technology to create this secure environment.
+    
+2.  The Secure Processing Unit (SPU) is a separate hardware component introduced by Qualcomm in 2017. It is designed to enhance the security capabilities of Snapdragon SoCs. Like QTEE, the SPU also uses ARM TrustZone technology and functions as a Trusted Execution Environment. However, the SPU is a dedicated security subsystem separate from the main CPU, providing an additional layer of hardware-based security.
+    
+
+In summary, QTEE and SPU are both Qualcomm-developed security solutions for their Snapdragon SoCs, providing hardware-based security features using ARM TrustZone technology. While QTEE is an implementation of a TEE within the processor, the SPU is a separate hardware component that adds an extra layer of security.
+
+* * *
+
+**You:**
+
+When was source code of QTEE opened?
+
+* * *
+
+**ChatGPT:**
+
+Qualcomm has not released the source code for their Trusted Execution Environment (QTEE) as it is a proprietary implementation of a Trusted Execution Environment within their Snapdragon SoCs. The source code for QTEE remains closed-source and is not available to the public.
+
+In contrast, OP-TEE (Open Portable Trusted Execution Environment) is an open-source project providing a TEE for ARM TrustZone-enabled platforms. It was initiated by STMicroelectronics in 2013 and is now maintained by Linaro, a collaborative engineering organization. OP-TEE's source code is openly available on GitHub ([https://github.com/OP-TEE/optee\_os](https://github.com/OP-TEE/optee_os)).

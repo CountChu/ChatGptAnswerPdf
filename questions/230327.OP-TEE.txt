@@ -85,3 +85,16 @@ Virtualization
     q: Does OP-TEE support VMs?
     q: Is the technology of OP-TEE supporting VMs mature?
     q: Does a TA run in a VM described in the article?
+
+PKCS#11
+    q-prefix: The following text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
+    hide: 
+
+    q-prefix: The following continued text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
+    hide:
+
+    q: How does OP-TEE work with HUK?
+
+    q: What are common device that store HUK in ARM platform with OP-TEE?
+
+

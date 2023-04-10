@@ -991,7 +991,7 @@ body .markdown-body {
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230327.OP-TEE</h1>
-<p>Created: 2023-04-08 23:23:26</p>
+<p>Created: 2023-04-09 21:41:01</p>
 <h1>Questions</h1>
 <ul>
 <li>Basic Concepts<ul>
@@ -1091,6 +1091,11 @@ body .markdown-body {
 <li>Does OP-TEE support VMs?</li>
 <li>Is the technology of OP-TEE supporting VMs mature?</li>
 <li>Does a TA run in a VM described in the article?</li>
+</ul>
+</li>
+<li>PKCS#11<ul>
+<li>How does OP-TEE work with HUK?</li>
+<li>What are common device that store HUK in ARM platform with OP-TEE?</li>
 </ul>
 </li>
 </ul>
@@ -2095,6 +2100,50 @@ body .markdown-body {
 <p><strong>Question:</strong> Does a TA run in a VM described in the article?</p>
 <p><strong>Answer:</strong></p>
 <p>No, a Trusted Application (TA) does not run inside a Virtual Machine (VM) as described in the article. Instead, the TA runs in the secure world within the OP-TEE environment. The hypervisor manages the VMs in the normal world and is responsible for handling the communication between the normal world and OP-TEE in the secure world. When OP-TEE has virtualization support enabled, it allows multiple VMs to utilize a single OP-TEE instance for running TAs while maintaining isolation between the VM-related states.</p>
+<hr />
+<h2>PKCS#11</h2>
+<p><strong>Question:</strong> How does OP-TEE work with HUK?</p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE (Open Portable Trusted Execution Environment) is designed to provide a secure environment for the execution of trusted applications on a device. One of the critical components for providing security within OP-TEE is the use of a Hardware Unique Key (HUK).</p>
+<p>A Hardware Unique Key is a device-specific secret key that is usually derived from or securely stored in hardware. HUKs are essential for providing a secure root of trust, as they can be used to derive other cryptographic keys and establish secure communication channels between different components of a system.</p>
+<p>Here&rsquo;s how OP-TEE works with HUK:</p>
+<ol>
+<li>
+<p>In OP-TEE, the HUK is used to derive other keys for various purposes, such as secure storage or cryptographic operations. The derived keys are typically used in combination with other keys or cryptographic primitives to ensure the confidentiality, integrity, and authenticity of the data being processed.</p>
+</li>
+<li>
+<p>The function tee_otp_get_hw_unique_key(&hellip;) in core/include/kernel/tee_common_otp.h is responsible for retrieving the HUK from the hardware. In a real secure product, this function must be replaced with an implementation that retrieves the HUK from the device&rsquo;s hardware. This ensures that the HUK remains protected and cannot be accessed directly from software, even on the secure side.</p>
+</li>
+<li>
+<p>If the device does not have hardware support for a HUK, it is crucial to change the implementation of the tee_otp_get_hw_unique_key(&hellip;) function to use something other than zeroes. Storing a key in software is not a secure practice, especially for a key that serves as the root for all other keys. As such, it is not recommended, but it may be necessary if hardware support is lacking.</p>
+</li>
+<li>
+<p>Once the HUK is securely retrieved, it can be used by OP-TEE to derive other keys or perform cryptographic operations necessary for securing trusted applications and their data. The HUK helps establish a root of trust that can be extended to other parts of the system.</p>
+</li>
+</ol>
+<p>In summary, OP-TEE works with HUKs by leveraging them to derive other cryptographic keys and establish a root of trust for secure operations. The HUK is typically retrieved from the hardware using a secure function, and it is essential for providing a strong foundation for the security of the entire system.</p>
+<hr />
+<p><strong>Question:</strong> What are common device that store HUK in ARM platform with OP-TEE?</p>
+<p><strong>Answer:</strong></p>
+<p>Many devices in the ARM platform, especially those utilizing TrustZone technology, store Hardware Unique Keys (HUKs) for providing a secure root of trust. Some common devices that store HUKs and are compatible with OP-TEE include:</p>
+<ol>
+<li>
+<p>NXP i.MX family: Devices in the i.MX family, like i.MX6, i.MX7, and i.MX8, use ARM TrustZone and secure boot capabilities. They have integrated security features, such as cryptographic accelerators and secure storage, where the HUK can be stored.</p>
+</li>
+<li>
+<p>Xilinx Zynq UltraScale+ MPSoC: The Zynq UltraScale+ MPSoC has ARM Cortex-A53 and Cortex-R5 cores with TrustZone technology. It provides secure boot and supports storage of HUK in the on-chip eFUSE memory.</p>
+</li>
+<li>
+<p>STMicroelectronics STM32MP1: The STM32MP1 series, with its ARM Cortex-A7 and Cortex-M4 cores, supports OP-TEE and TrustZone. It provides secure storage for HUKs using its OTP (One-Time Programmable) memory or other secure storage mechanisms.</p>
+</li>
+<li>
+<p>HiSilicon HiKey and HiKey 960: These development boards, based on HiSilicon&rsquo;s Kirin SoCs, feature ARM Cortex-A cores with TrustZone technology. They can be used with OP-TEE and support secure storage for HUKs.</p>
+</li>
+<li>
+<p>Raspberry Pi 3 (unofficially): While not officially supported by OP-TEE, Raspberry Pi 3, featuring a Broadcom SoC with ARM Cortex-A53 cores, has been known to run OP-TEE. However, the secure storage of HUKs on Raspberry Pi 3 may not be as robust as in other devices designed with hardware security features in mind.</p>
+</li>
+</ol>
+<p>These are just a few examples of devices that store HUKs and can work with OP-TEE on the ARM platform. It&rsquo;s important to note that the secure storage and management of HUKs may vary depending on the specific device, its hardware features, and the implementation of OP-TEE. Always consult the device&rsquo;s documentation and follow the manufacturer&rsquo;s guidelines to ensure proper security measures are in place.</p>
 <hr />
     </article>
   </body>

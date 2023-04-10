@@ -81,13 +81,12 @@ def run_it(cmd):
     print(cmd)
 
     res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    print(res.stdout.decode())
     
     if res.returncode != 0:
         print('Error! ----------------')
         print(res.stderr.decode())
         sys.exit(1)
-
-    print(res.stdout.decode())
 
 def build_pdf(ctx, bn):
     name, _ = util.get_name(bn)

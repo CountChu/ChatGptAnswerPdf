@@ -39,3 +39,17 @@ Ch 4.1 - SPM architecture
 	q: What is SPMC in the document?
 	q: Is SPMC of TrustZone?
 
+FF-A, TF-A, and TrustZone
+	
+	q: What is TF-A?
+    d: 2023/4/10
+
+	q: Please draw the relationship among TrustZone, TF-A, and FF-A.
+    d: 2023/4/10
+
+	q: What is relationship between FF-A and TF-A?
+    d: 2023/4/10
+
+	q: Could I say that TF-A refers FF-A?
+    d: 2023/4/10
+	

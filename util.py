@@ -39,9 +39,12 @@ def collect_input_files(file, dn):
 def get_q(question):
     if 'q1' in question:
         q = question['q1']
-    elif 'q-prefix' in question:
-        q = question['q-prefix']
+    elif 'q1-prefix' in question:
+        q = question['q1-prefix']
     else:
         assert False, question
+
+    if 'date' in question:
+        q = '%s: %s' % (question['date'], q)
 
     return q

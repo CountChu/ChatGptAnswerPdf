@@ -991,7 +991,7 @@ body .markdown-body {
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230407.OP-TEE.History</h1>
-<p>Created: 2023-04-07 22:07:02</p>
+<p>Created: 2023-04-10 20:07:06</p>
 <h1>Questions</h1>
 <ul>
 <li>History<ul>
@@ -1000,6 +1000,12 @@ body .markdown-body {
 <li>When did Qualcomm release QTEE?</li>
 <li>Please list history of Qualcomm TEE with years in detail.</li>
 <li>Where do you find the year when Qualcomm introduced QTEE?</li>
+</ul>
+</li>
+<li>Qualcomm<ul>
+<li>2023/4/10: What is relationship between QTEE and SPU?</li>
+<li>2023/4/10: When was source code of QTEE opened?</li>
+<li>2023/4/10: Does SPU rely on ARMv8?</li>
 </ul>
 </li>
 </ul>
@@ -1151,6 +1157,32 @@ body .markdown-body {
 <p><strong>Answer:</strong></p>
 <p>I apologize for the confusion in my previous response. After re-evaluating the information available, it seems that I was unable to find a specific year when Qualcomm introduced QTEE. It appears that I made an error in my previous response.</p>
 <p>Qualcomm has been implementing Trusted Execution Environments (TEE) using ARM TrustZone technology in their Snapdragon SoCs for several years, but the exact year of introduction for QTEE is not readily available in public sources. Qualcomm&rsquo;s ongoing development of hardware-based security features includes the introduction of the Secure Processing Unit (SPU) in 2017.</p>
+<hr />
+<h2>Qualcomm</h2>
+<p><strong>Question:</strong> 2023/4/10: What is relationship between QTEE and SPU?</p>
+<p><strong>Answer:</strong></p>
+<p>The Qualcomm Trusted Execution Environment (QTEE) and the Secure Processing Unit (SPU) are both security solutions developed by Qualcomm for their Snapdragon SoCs (System on a Chip). Both QTEE and SPU leverage ARM TrustZone technology to create isolated secure environments within the processor, where sensitive data can be protected, and security-related tasks can be executed.</p>
+<p>The relationship between QTEE and SPU can be summarized as follows:</p>
+<ol>
+<li>
+<p>QTEE is an implementation of a Trusted Execution Environment within Qualcomm&rsquo;s Snapdragon SoCs. It provides a secure area within the processor to protect sensitive data and execute security-related tasks. QTEE relies on ARM TrustZone technology to create this secure environment.</p>
+</li>
+<li>
+<p>The Secure Processing Unit (SPU) is a separate hardware component introduced by Qualcomm in 2017. It is designed to enhance the security capabilities of Snapdragon SoCs. Like QTEE, the SPU also uses ARM TrustZone technology and functions as a Trusted Execution Environment. However, the SPU is a dedicated security subsystem separate from the main CPU, providing an additional layer of hardware-based security.</p>
+</li>
+</ol>
+<p>In summary, QTEE and SPU are both Qualcomm-developed security solutions for their Snapdragon SoCs, providing hardware-based security features using ARM TrustZone technology. While QTEE is an implementation of a TEE within the processor, the SPU is a separate hardware component that adds an extra layer of security.</p>
+<hr />
+<p><strong>Question:</strong> 2023/4/10: When was source code of QTEE opened?</p>
+<p><strong>Answer:</strong></p>
+<p>Qualcomm has not released the source code for their Trusted Execution Environment (QTEE) as it is a proprietary implementation of a Trusted Execution Environment within their Snapdragon SoCs. The source code for QTEE remains closed-source and is not available to the public.</p>
+<p>In contrast, OP-TEE (Open Portable Trusted Execution Environment) is an open-source project providing a TEE for ARM TrustZone-enabled platforms. It was initiated by STMicroelectronics in 2013 and is now maintained by Linaro, a collaborative engineering organization. OP-TEE&rsquo;s source code is openly available on GitHub (<a href="https://github.com/OP-TEE/optee_os">https://github.com/OP-TEE/optee_os</a>).</p>
+<hr />
+<p><strong>Question:</strong> 2023/4/10: Does SPU rely on ARMv8?</p>
+<p><strong>Answer:</strong></p>
+<p>Qualcomm&rsquo;s Secure Processing Unit (SPU) is a hardware component introduced in 2017 within their Snapdragon SoCs. While the SPU functions as a Trusted Execution Environment (TEE) and leverages ARM TrustZone technology, it is not specifically dependent on ARMv8 architecture.</p>
+<p>However, it is worth noting that many of Qualcomm&rsquo;s Snapdragon SoCs, including those that feature the SPU, do utilize the ARMv8 architecture. The ARMv8 architecture provides improved performance, energy efficiency, and security features, including support for TrustZone.</p>
+<p>In summary, while the SPU does not exclusively rely on ARMv8, it is often used in conjunction with ARMv8-based Snapdragon SoCs to provide hardware-based security features.</p>
 <hr />
     </article>
   </body>
