@@ -8,3 +8,27 @@ Basic Concept
     q: What is ClearKey?
     q: What is PlayReady?
     q: What is kind of DRM?
+
+    q: What is license key?
+    d: 2023/4/10
+
+    q: What if the license key is stolen?
+    d: 2023/4/10
+
+    q: What is content key?
+    d: 2023/4/10
+
+    q: What if the content key is stolen?
+    d: 2023/4/10
+
+    q: What is identification attacker?
+    d: 2023/4/10
+
+    q: What is exploitation attacker?
+    d: 2023/4/10
+
+    q: Please summarize both in a table.
+    d: 2023/4/10
+    
+    q: What is secure data path?
+    d: 2023/4/13

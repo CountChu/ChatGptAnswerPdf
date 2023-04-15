@@ -9,9 +9,14 @@ br = pdb.set_trace
 
 def build_args():
     desc = '''
-    Usage 1: python chatpdf.py list    
-    Usage 2: python chatpdf.py refresh
-    Usage 3: python chatpdf.py build -f 230328.TEE.txt
+    Usage 1: python chatpdf.py list  
+    Usage 2: python chatpdf.py list -q questions-230402   
+    Usage 3: python chatpdf.py update
+    Usage 4: python chatpdf.py update -q questions-230402 -c chats-manual
+    Usage 5: python chatpdf.py build
+    Usage 6: python chatpdf.py build -f 230328.TEE.txt
+    Usage 7: python chatpdf.py build -q questions-230402 -c chats-manual   
+    Usage 8: python chatpdf.py build -q questions-230402 -f 230327.OP-TEE.txt -c chats-manual   
 '''
     #
     # Build an ArgumentParser object to parse arguments.
@@ -27,11 +32,23 @@ def build_args():
 
     parser.add_argument(
             'command',
-            help='list, build, or refresh')    
+            help='list, build, or update')    
 
     #
     # Standard arguments.
     #
+
+    parser.add_argument(
+            '-c',
+            dest='chats',
+            default='chats',
+            help='E.g., "chats-manual"')      
+
+    parser.add_argument(
+            '-q',
+            dest='questions',
+            default='questions',
+            help='E.g., "questions-230402"')    
 
     parser.add_argument(
             '-f',
@@ -70,7 +87,7 @@ def handle_list(args, ctx):
     print('')
     print('Question Sets in the directory "%s":' % ctx['questions'])
 
-    bn_fn_ls = get_files( ctx['questions'])
+    bn_fn_ls = get_files(ctx['questions'])
 
     for bn, fn in bn_fn_ls:
         print('    %s' % bn)
@@ -109,22 +126,35 @@ def build_pdf(ctx, bn):
         run_it(cmd)  
 
 def handle_build(args, ctx):
-    fn = os.path.join(ctx['questions'], args.file)
 
-    if not os.path.exists(fn):
-        print('Error! The file does not exist.')
-        print(fn)
-        sys.exit(1)
+    bn_ls = []
 
-    build_pdf(ctx, args.file)  
+    if args.file != None:
+        bn_ls.append(args.file)
 
-def handle_refresh(args, ctx):
+    else:
+        bn_fn_ls = get_files(ctx['questions'])
+        for bn, _ in bn_fn_ls:
+            bn_ls.append(bn)
+
+    for bn in bn_ls:
+        fn = os.path.join(ctx['questions'], bn)
+
+        if not os.path.exists(fn):
+            print('Error! The file does not exist.')
+            print(fn)
+            sys.exit(1)
+
+        build_pdf(ctx, bn)  
+
+def handle_update(args, ctx):
+    print('Update output if question set files in the dir [%s] are updated.' % ctx['questions'])
     
     #
     # Get files in the questions directory.
     #
 
-    bn_fn_ls = get_files( ctx['questions'])
+    bn_fn_ls = get_files(ctx['questions'])
 
     #
     # Check for each files to see if it is necessary to build PDF.
@@ -161,8 +191,8 @@ def main():
     #
 
     ctx = {
-        'chats': 'chats',
-        'questions': 'questions',
+        'chats': args.chats,
+        'questions': args.questions,
         'out': 'output',
         'html': 'output-html',
         'pdf': 'output-pdf',
@@ -178,8 +208,8 @@ def main():
     elif args.command == 'build':
         handle_build(args, ctx)
 
-    elif args.command == 'refresh':
-        handle_refresh(args, ctx)
+    elif args.command == 'update':
+        handle_update(args, ctx)
 
     else:
         print('Error command! %s' % args.command)

@@ -991,7 +991,7 @@ body .markdown-body {
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230329.TrustZone</h1>
-<p>Created: 2023-04-10 19:57:37</p>
+<p>Created: 2023-04-15 11:17:19</p>
 <h1>Questions</h1>
 <ul>
 <li>The ariticle<ul>
@@ -1004,14 +1004,15 @@ body .markdown-body {
 </li>
 <li>Basic Concepts<ul>
 <li>Is TrustZone a software or hardware?</li>
-<li>2023/4/10: Which types of ARM CPU have TrustZone?</li>
-<li>2023/4/10: Does ARM Cortex-R series have TrustZone?</li>
 </ul>
 </li>
 <li>TrustZone &amp; HSM<ul>
 <li>What is difference between TrustZone and HSM? Please also summarize in a table.</li>
 <li>What are relationships between TrustZone and HSM?</li>
 <li>Can TrustZone totally replace HSM?</li>
+<li>Is HSM cost than TrustZone? (2023/4/11)</li>
+<li>Is HSM more performance than ARM TrustZone in crypto operations? (2023/4/11)</li>
+<li>What are security certifications of TrustZone? (2023/4/11)</li>
 </ul>
 </li>
 <li>Normal World &amp; Secure World<ul>
@@ -1023,9 +1024,9 @@ body .markdown-body {
 <li>Does boot loader only run in secure world, not in normal world?</li>
 <li>How to swtich secure world to normal world when booting?</li>
 <li>What is ATF?</li>
-<li>2023/4/10: What is FF-A?</li>
-<li>2023/4/10: Does TF-A rely on FF-A?</li>
-<li>2023/4/10: Does TF-A rely on TrustZone?</li>
+<li>What is FF-A? (2023/4/10)</li>
+<li>Does TF-A rely on FF-A? (2023/4/10)</li>
+<li>Does TF-A rely on TrustZone? (2023/4/10)</li>
 </ul>
 </li>
 <li>Memory<ul>
@@ -1073,10 +1074,11 @@ body .markdown-body {
 </li>
 <li>Privilege Levels<ul>
 <li>What are EL0, EL1, EL2, S-EL0, S-EL1, S-EL2, S-EL3?</li>
-<li>2023/4/10: What is exception level?</li>
-<li>2023/4/10: How does a software component know which EL it owns?</li>
-<li>2023/4/10: Can a software component change the EL?</li>
-<li>2023/4/10: Are ELs of TrustZone?</li>
+<li>What is exception level? (2023/4/10)</li>
+<li>How does a software component know which EL it owns? (2023/4/10)</li>
+<li>Can a software component change the EL? (2023/4/10)</li>
+<li>Are ELs of TrustZone? (2023/4/10)</li>
+<li>Are EL3 and S-EL3 same? (2023/4/13)</li>
 </ul>
 </li>
 </ul>
@@ -1085,7 +1087,7 @@ body .markdown-body {
 <h2>The ariticle</h2>
 <p><strong>Question:</strong> https://genode.org/documentation/articles/trustzone</p>
 <p><strong>Answer:</strong></p>
-<p>The link you&rsquo;ve shared (<a href="https://genode.org/documentation/articles/trustzone">https://genode.org/documentation/articles/trustzone</a>) directs to an article on Genode&rsquo;s website that discusses TrustZone technology. Genode is an open-source operating system framework focused on creating a secure and scalable environment for running multiple instances of software. TrustZone is a security technology developed by ARM, which is widely used in modern processors.</p>
+<p>The link you&rsquo;ve shared (https://genode.org/documentation/articles/trustzone) directs to an article on Genode&rsquo;s website that discusses TrustZone technology. Genode is an open-source operating system framework focused on creating a secure and scalable environment for running multiple instances of software. TrustZone is a security technology developed by ARM, which is widely used in modern processors.</p>
 <p>TrustZone technology aims to provide a secure execution environment for trusted applications, protecting them from potential security threats posed by untrusted applications. It achieves this by dividing the system into two distinct worlds: the &ldquo;Secure World&rdquo; and the &ldquo;Normal World.&rdquo; These two worlds run concurrently on the same hardware, but they are isolated from each other, ensuring that sensitive data and operations remain protected.</p>
 <p>The &ldquo;Secure World&rdquo; is designed to handle security-sensitive tasks, while the &ldquo;Normal World&rdquo; handles general-purpose tasks. To switch between the two worlds, ARM provides a secure monitor call (SMC) instruction that manages the transitions.</p>
 <p>Genode leverages TrustZone technology to enhance the security of its operating system framework. By using TrustZone, Genode can isolate critical parts of the system and applications from the rest of the system, reducing the risk of sensitive data leaks or unauthorized access.</p>
@@ -1193,48 +1195,26 @@ body .markdown-body {
 <p><strong>Answer:</strong></p>
 <p>TrustZone is a hardware-based security technology implemented in ARM processors. It provides a security extension that enables the creation of a secure environment alongside the normal environment, isolating the execution of sensitive code and data from potential threats in the normal environment. TrustZone itself is not a software; however, it requires software support to fully utilize its features, such as secure operating systems, trusted applications, and secure bootloaders.</p>
 <hr />
-<p><strong>Question:</strong> 2023/4/10: Which types of ARM CPU have TrustZone?</p>
-<p><strong>Answer:</strong></p>
-<p>TrustZone technology is available in various ARM CPU cores, particularly in the ARM Cortex-A and ARM Cortex-M series.</p>
-<ol>
-<li>
-<p>ARM Cortex-A series: TrustZone is supported in many Cortex-A cores, including Cortex-A5, Cortex-A7, Cortex-A8, Cortex-A9, Cortex-A12, Cortex-A15, Cortex-A17, Cortex-A32, Cortex-A35, Cortex-A53, Cortex-A55, Cortex-A57, Cortex-A72, Cortex-A73, Cortex-A75, Cortex-A76, and Cortex-A77.</p>
-</li>
-<li>
-<p>ARM Cortex-M series: The ARMv8-M architecture introduces TrustZone technology for Cortex-M processors. Examples of Cortex-M cores with TrustZone support include Cortex-M23 and Cortex-M33.</p>
-</li>
-</ol>
-<p>Keep in mind that ARM continues to develop new processor cores, and the list above might not be exhaustive. Always refer to the official ARM documentation for the most up-to-date information on specific cores and their features.</p>
-<hr />
-<p><strong>Question:</strong> 2023/4/10: Does ARM Cortex-R series have TrustZone?</p>
-<p><strong>Answer:</strong></p>
-<p>Yes, some ARM Cortex-R series processors also have TrustZone support. TrustZone for Cortex-R processors is designed for real-time systems that require high performance, safety, and security. One example of a Cortex-R processor with TrustZone support is the Cortex-R52.</p>
-<p>As with other series, it&rsquo;s essential to consult the official ARM documentation or the specific processor datasheet to verify TrustZone support for each Cortex-R processor.</p>
-<hr />
 <h2>TrustZone &amp; HSM</h2>
 <p><strong>Question:</strong> What is difference between TrustZone and HSM? Please also summarize in a table.</p>
 <p><strong>Answer:</strong></p>
 <p>TrustZone and HSM (Hardware Security Module) are both technologies that provide security features, but they are designed for different purposes and have distinct characteristics. Here is a comparison of the two:</p>
-<p>TrustZone:</p>
-<ul>
-<li>A security extension of ARM architecture.</li>
-<li>Creates two separate worlds: Secure and Normal worlds.</li>
-<li>Provides isolation and protection for sensitive operations and data.</li>
-<li>Can be implemented on a general-purpose CPU.</li>
-<li>Usually lower cost than HSM.</li>
-<li>Lower performance for cryptographic operations compared to HSM.</li>
-<li>Suitable for a wide range of applications, including mobile devices, IoT, and embedded systems.</li>
-</ul>
-<p>HSM:</p>
-<ul>
-<li>A dedicated hardware device for secure cryptographic operations and key management.</li>
-<li>Designed specifically for high-level security.</li>
-<li>Offers higher performance for cryptographic operations compared to TrustZone.</li>
-<li>Physically tamper-resistant.</li>
-<li>FIPS 140-2 and other security certifications.</li>
-<li>Higher cost than TrustZone.</li>
-<li>Suitable for high-security applications like banking, government, and critical infrastructure.</li>
-</ul>
+<p>TrustZone:
+- A security extension of ARM architecture.
+- Creates two separate worlds: Secure and Normal worlds.
+- Provides isolation and protection for sensitive operations and data.
+- Can be implemented on a general-purpose CPU.
+- Usually lower cost than HSM.
+- Lower performance for cryptographic operations compared to HSM.
+- Suitable for a wide range of applications, including mobile devices, IoT, and embedded systems.</p>
+<p>HSM:
+- A dedicated hardware device for secure cryptographic operations and key management.
+- Designed specifically for high-level security.
+- Offers higher performance for cryptographic operations compared to TrustZone.
+- Physically tamper-resistant.
+- FIPS 140-2 and other security certifications.
+- Higher cost than TrustZone.
+- Suitable for high-security applications like banking, government, and critical infrastructure.</p>
 <p>Here is a summary table:</p>
 <table>
 <thead>
@@ -1328,6 +1308,58 @@ body .markdown-body {
 </ol>
 <p>In summary, while TrustZone can provide a secure environment for sensitive applications, it cannot fully replace an HSM in terms of security, performance, and tamper-resistance. Both technologies have their use cases, and depending on the security requirements, one or both can be employed in a system.</p>
 <hr />
+<p><strong>Question:</strong> Is HSM cost than TrustZone? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>It&rsquo;s difficult to make a direct comparison between the cost of a hardware security module (HSM) and TrustZone, as they serve different purposes and have different implementations. Here are some points to consider:</p>
+<ol>
+<li>
+<p>HSM: A standalone, tamper-resistant hardware device that provides secure key storage, cryptographic processing, and other security functions. HSMs are typically used in high-security environments, like financial institutions, where the protection of sensitive information is crucial. They can be relatively expensive due to their robust security features and the fact that they are dedicated hardware devices.</p>
+</li>
+<li>
+<p>TrustZone: A hardware-based security feature in Arm processors that provides isolation between the Secure World and the Normal World. TrustZone is integrated into Arm processors, so the cost is essentially built into the processor itself. TrustZone may provide a lower level of security compared to an HSM, but it&rsquo;s generally more cost-effective since it&rsquo;s already a part of the processor.</p>
+</li>
+</ol>
+<p>In summary, HSMs tend to be more expensive than TrustZone because they are dedicated, standalone hardware devices with more robust security features. TrustZone, on the other hand, is a built-in security feature in Arm processors and is generally more cost-effective. However, the level of security provided by TrustZone may not be as high as that of an HSM. The choice between the two will depend on the specific security requirements and budget of a given project or organization.</p>
+<hr />
+<p><strong>Question:</strong> Is HSM more performance than ARM TrustZone in crypto operations? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>In general, hardware security modules (HSMs) are designed to be more performant in cryptographic operations compared to ARM TrustZone. This is due to several reasons:</p>
+<ol>
+<li>
+<p>Dedicated hardware: HSMs are standalone devices specifically designed for cryptographic operations, including secure key storage, encryption, decryption, and signing. They have dedicated cryptographic accelerators and coprocessors optimized for these tasks, leading to better performance.</p>
+</li>
+<li>
+<p>Reduced overhead: TrustZone, while providing a secure environment for cryptographic operations, still shares the same processor with the normal world. This sharing can lead to resource contention and increased overhead, potentially affecting performance.</p>
+</li>
+<li>
+<p>Tamper resistance: HSMs are designed with robust tamper resistance in mind, including active measures to prevent unauthorized access or tampering. TrustZone, while providing a level of isolation between the secure and normal worlds, may not offer the same level of physical tamper resistance.</p>
+</li>
+<li>
+<p>Scalability: HSMs can be used in a cluster or load-balanced configuration to handle large-scale cryptographic operations, providing better performance and throughput.</p>
+</li>
+</ol>
+<p>However, it&rsquo;s important to note that the specific performance difference between HSMs and TrustZone in cryptographic operations will depend on the implementation details, workload, and hardware configuration. For some use cases, TrustZone may provide sufficient performance, while in other scenarios, an HSM may be necessary to meet strict performance and security requirements.</p>
+<hr />
+<p><strong>Question:</strong> What are security certifications of TrustZone? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>ARM TrustZone technology provides a foundation for building secure systems, but the security certifications depend on the specific implementations and products built on top of it. Different implementations may undergo different security evaluation processes and achieve various certifications based on their design, features, and target markets.</p>
+<p>Some common security certifications that TrustZone-based products can achieve include:</p>
+<ol>
+<li>
+<p>Common Criteria (CC): TrustZone-based implementations can be certified under Common Criteria, an international standard (ISO/IEC 15408) for computer security certification. The level of assurance for a specific product is determined by its Evaluation Assurance Level (EAL), ranging from EAL1 (lowest) to EAL7 (highest).</p>
+</li>
+<li>
+<p>FIPS 140-2/140-3: TrustZone-based products can also be certified under the Federal Information Processing Standards (FIPS) 140-2 or 140-3, which are U.S. government security standards for cryptographic modules. These standards have various security levels, with Level 1 providing the lowest security and Level 4 providing the highest security.</p>
+</li>
+<li>
+<p>GlobalPlatform: Some TrustZone implementations, particularly those involving secure elements or Trusted Execution Environments (TEEs) such as OP-TEE, can be certified by GlobalPlatform. GlobalPlatform sets security requirements and evaluates products for secure elements, TEEs, and other secure components.</p>
+</li>
+<li>
+<p>Payment Card Industry (PCI): TrustZone-based implementations targeting payment systems may achieve PCI compliance, ensuring that the product meets the security standards for processing, storing, or transmitting credit card information.</p>
+</li>
+</ol>
+<p>Note that achieving these certifications depends on the specific product, its implementation, and the security features provided. It&rsquo;s essential to verify the certifications of a TrustZone-based product depending on the use case and the required security level.</p>
+<hr />
 <h2>Normal World &amp; Secure World</h2>
 <p><strong>Question:</strong> Can Normal world and Secure World run at the same time in ARM?</p>
 <p><strong>Answer:</strong></p>
@@ -1387,17 +1419,17 @@ body .markdown-body {
 </ol>
 <p>The ARM Trusted Firmware provides a foundation for developing secure software on ARM-based platforms and serves as a reference implementation for platform vendors and developers to build upon or customize for their specific needs.</p>
 <hr />
-<p><strong>Question:</strong> 2023/4/10: What is FF-A?</p>
+<p><strong>Question:</strong> What is FF-A? (2023/4/10)</p>
 <p><strong>Answer:</strong></p>
 <p>FF-A, or Firmware Framework for Armv8-A, is a specification that defines a standard interface for Armv8-A-based systems to support secure firmware components, such as Secure Partitions and Secure Partition Managers. This framework aims to promote interoperability between different firmware components from different vendors and provides a consistent method for handling security, communication, and resource management.</p>
 <p>FF-A enables the development of secure, modular firmware components that can be used across multiple platforms and SoCs, simplifying firmware development and reducing the need for custom solutions. It supports various use cases, including secure boot, trusted execution environments, and virtualization.</p>
 <hr />
-<p><strong>Question:</strong> 2023/4/10: Does TF-A rely on FF-A?</p>
+<p><strong>Question:</strong> Does TF-A rely on FF-A? (2023/4/10)</p>
 <p><strong>Answer:</strong></p>
 <p>Yes, Arm Trusted Firmware-A (TF-A) relies on and implements the Firmware Framework for Armv8-A (FF-A) specification. TF-A provides a reference implementation of secure world software for Armv8-A platforms, including support for Secure Partition Manager (SPM) and Secure Partitions (SPs) as defined by the FF-A specification.</p>
 <p>By relying on FF-A, TF-A ensures that it follows a standardized interface for secure firmware components, enabling compatibility and interoperability with various platforms and SoCs. This helps simplify firmware development and promote the use of secure, modular firmware components across different Armv8-A-based systems.</p>
 <hr />
-<p><strong>Question:</strong> 2023/4/10: Does TF-A rely on TrustZone?</p>
+<p><strong>Question:</strong> Does TF-A rely on TrustZone? (2023/4/10)</p>
 <p><strong>Answer:</strong></p>
 <p>Yes, Arm Trusted Firmware-A (TF-A) relies on and utilizes the TrustZone technology for providing a secure execution environment on Armv8-A platforms. TrustZone is a hardware-based security feature that creates a secure and isolated environment (Secure World) for running sensitive applications and handling secure data.</p>
 <p>TF-A is a reference implementation of secure world software that provides various security services, such as secure boot, runtime firmware services, and a Secure Partition Manager (SPM) for managing Secure Partitions (SPs). By leveraging TrustZone, TF-A ensures that these security services and sensitive applications are protected from the less secure, normal world applications and potential vulnerabilities.</p>
@@ -1521,10 +1553,12 @@ body .markdown-body {
 <p>SCP (System Control Processor) and AP (Application Processor) are two different types of processors often found in a system-on-chip (SoC) or embedded systems.</p>
 <ol>
 <li>
-<p>SCP (System Control Processor): The SCP is a low-power, dedicated processor responsible for managing system-level functions such as power management, thermal management, and other low-level tasks. The SCP typically runs a simple firmware, often referred to as the system control firmware (SCFW), which is in charge of controlling and monitoring various system components. The SCP usually runs at a lower frequency and consumes less power compared to the AP, as it is designed to handle background tasks and ensure efficient operation of the overall system.</p>
+<p>SCP (System Control Processor):
+The SCP is a low-power, dedicated processor responsible for managing system-level functions such as power management, thermal management, and other low-level tasks. The SCP typically runs a simple firmware, often referred to as the system control firmware (SCFW), which is in charge of controlling and monitoring various system components. The SCP usually runs at a lower frequency and consumes less power compared to the AP, as it is designed to handle background tasks and ensure efficient operation of the overall system.</p>
 </li>
 <li>
-<p>AP (Application Processor): The AP, on the other hand, is a more powerful processor responsible for running the operating system (OS) and executing user applications. In a typical SoC, the AP will consist of one or more CPU cores, often accompanied by GPU, memory controllers, and other peripherals required for running the OS and applications. The AP manages more complex and compute-intensive tasks, making it the primary processing unit in the system.</p>
+<p>AP (Application Processor):
+The AP, on the other hand, is a more powerful processor responsible for running the operating system (OS) and executing user applications. In a typical SoC, the AP will consist of one or more CPU cores, often accompanied by GPU, memory controllers, and other peripherals required for running the OS and applications. The AP manages more complex and compute-intensive tasks, making it the primary processing unit in the system.</p>
 </li>
 </ol>
 <p>In summary, the SCP is responsible for managing low-level system functions, while the AP is responsible for running the OS and executing user applications. Together, they enable efficient and seamless operation of the system.</p>
@@ -1789,7 +1823,7 @@ body .markdown-body {
 </ol>
 <p>In summary, the ARMv8-A architecture organizes the privilege levels (EL0, EL1, EL2, and EL3) and the Secure (S-EL0, S-EL1, S-EL2, and S-EL3) and Non-Secure states to create a robust and flexible environment for running a mix of secure and non-secure applications, operating systems, and hypervisors.</p>
 <hr />
-<p><strong>Question:</strong> 2023/4/10: What is exception level?</p>
+<p><strong>Question:</strong> What is exception level? (2023/4/10)</p>
 <p><strong>Answer:</strong></p>
 <p>Exception level (EL) is a concept in the ARM architecture that defines different privilege levels for executing software. The ARMv8-A architecture, for instance, supports four exception levels: EL0, EL1, EL2, and EL3. Each level has different access rights and capabilities, which provide a mechanism for isolating different types of software and ensuring that less privileged software cannot interfere with more privileged software.</p>
 <p>Here&rsquo;s a brief overview of the exception levels in ARMv8-A architecture:</p>
@@ -1809,25 +1843,35 @@ body .markdown-body {
 </ul>
 <p>These exception levels provide a structured way to separate software components based on their required privileges and ensure a secure execution environment.</p>
 <hr />
-<p><strong>Question:</strong> 2023/4/10: How does a software component know which EL it owns?</p>
+<p><strong>Question:</strong> How does a software component know which EL it owns? (2023/4/10)</p>
 <p><strong>Answer:</strong></p>
 <p>A software component does not inherently &ldquo;know&rdquo; its exception level (EL). However, when it is executed, it runs at the EL designated by the system configuration and the control registers set by more privileged software.</p>
 <p>Typically, software components are designed to operate at specific exception levels. The boot process and the system&rsquo;s firmware, which run at the highest privilege level (e.g., EL3 in ARMv8-A), are responsible for setting up the initial exception levels and transitioning to lower-privileged levels as needed. During this process, they load and configure less privileged software components (such as the hypervisor, operating system kernel, and user applications) to execute at the appropriate EL.</p>
 <p>At runtime, a software component can determine its current exception level by querying the CurrentEL register. This register contains a field that indicates the current exception level, allowing the software to determine its current privilege level and act accordingly.</p>
 <p>It&rsquo;s important to note that this query can only be performed if the software component is designed to check its own exception level, and it is assumed that the component has been correctly loaded and configured by the more privileged software in the system.</p>
 <hr />
-<p><strong>Question:</strong> 2023/4/10: Can a software component change the EL?</p>
+<p><strong>Question:</strong> Can a software component change the EL? (2023/4/10)</p>
 <p><strong>Answer:</strong></p>
 <p>A software component can&rsquo;t directly change its own exception level (EL), but it can initiate a process that results in a change of EL. This typically happens through a specific event or instruction that triggers a change in privilege level, such as an exception, interrupt, or a special instruction like the &ldquo;Secure Monitor Call&rdquo; (SMC) in ARM systems.</p>
 <p>For example, when an exception occurs, the processor switches to a higher EL to handle the exception. Once the exception has been dealt with, the software running at the higher EL can return to the previous, lower EL using the &ldquo;Exception Return&rdquo; (ERET) instruction in ARM systems or a similar mechanism in other architectures.</p>
 <p>In the ARM architecture, a lower EL software can also request services from a higher EL software (e.g., from the normal world to the secure world in TrustZone) using the SMC instruction. The SMC instruction causes a switch to a higher EL, where the requested service is provided, and then the control is returned back to the lower EL.</p>
 <p>Keep in mind that a software component can only initiate a change to a higher EL if it has been designed to do so and the system is configured to allow such transitions. The actual EL transition is managed by the hardware and the more privileged software components.</p>
 <hr />
-<p><strong>Question:</strong> 2023/4/10: Are ELs of TrustZone?</p>
+<p><strong>Question:</strong> Are ELs of TrustZone? (2023/4/10)</p>
 <p><strong>Answer:</strong></p>
 <p>Exception Levels (ELs) are a concept in the ARM architecture, not specific to TrustZone. However, TrustZone does make use of the ELs to separate and manage privileges between the secure and non-secure worlds.</p>
 <p>In ARMv8-A architecture, there are four ELs (EL0 to EL3). TrustZone operates on EL3 and S-EL1. EL3 is the Secure Monitor level, responsible for managing the transition between the secure and non-secure worlds. S-EL1 is used for secure operating systems or hypervisors.</p>
 <p>In summary, while ELs are part of the ARM architecture, TrustZone does make use of them to manage privileges and ensure security between the two worlds (secure and non-secure).</p>
+<hr />
+<p><strong>Question:</strong> Are EL3 and S-EL3 same? (2023/4/13)</p>
+<p><strong>Answer:</strong></p>
+<p>No, EL3 and S-EL3 are not the same. EL3 refers to the Exception Level 3, which is the highest privilege level in the ARMv8-A architecture. It is typically used by the Secure Monitor or firmware running in the Secure World.</p>
+<p>S-EL3, on the other hand, is an abbreviation for Secure Exception Level 3. It refers to EL3 when the processor is operating in the Secure World. The Secure World has its own set of Exception Levels (S-EL0, S-EL1, and S-EL3), which operate independently of the Non-secure World&rsquo;s Exception Levels (EL0, EL1, and EL2).</p>
+<p>While both EL3 and S-EL3 are related to the Secure World, the difference lies in their representation:</p>
+<ul>
+<li>EL3: Refers to Exception Level 3 in general, without explicitly specifying the security state.</li>
+<li>S-EL3: Explicitly refers to Exception Level 3 in the Secure World.</li>
+</ul>
 <hr />
     </article>
   </body>

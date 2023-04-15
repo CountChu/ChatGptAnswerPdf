@@ -991,7 +991,7 @@ body .markdown-body {
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230330.Questions</h1>
-<p>Created: 2023-04-05 17:17:04</p>
+<p>Created: 2023-04-15 11:17:22</p>
 <h1>Questions</h1>
 <ul>
 <li>Intel KGT &amp; Intel SGX<ul>
@@ -1011,7 +1011,7 @@ body .markdown-body {
 </ul>
 </li>
 <li>Development<ul>
-<li>Can CA and TA be implemented in other languages?</li>
+<li>Can CA and TA be implemented  in other languages?</li>
 <li>Which languages do I use to develop apps in OP-TEE or to customize OP-TEE?</li>
 <li>Can I use other langauges?</li>
 </ul>
@@ -1111,12 +1111,12 @@ body .markdown-body {
 <p>The specific method of authentication and the level of trust required between the CA and the TA depend on the use case, the TEE implementation, and the underlying hardware. To ensure the highest level of security, it is essential to choose appropriate authentication mechanisms and follow best practices in implementing them.</p>
 <hr />
 <h2>Development</h2>
-<p><strong>Question:</strong> Can CA and TA be implemented in other languages?</p>
+<p><strong>Question:</strong> Can CA and TA be implemented  in other languages?</p>
 <p><strong>Answer:</strong></p>
 <p>Yes, both the Client Application (CA) and the Trusted Application (TA) can be implemented in other programming languages, as long as the language supports interfacing with the required TEE APIs. Many TEE implementations provide APIs and language bindings for multiple programming languages.</p>
 <p>For instance, the GlobalPlatform TEE Client API (for the CA) is generally available as a C API, but you can create language bindings for other languages like Python, Java, or Rust. You might need to use the Foreign Function Interface (FFI) or a similar mechanism to interface with the C API from another language.</p>
 <p>As for the Trusted Application (TA), the choice of programming languages may be more limited, depending on the TEE implementation and the underlying hardware. Some TAs are typically written in C or C++ for performance and low-level access to hardware features, but there are implementations that support other languages like Rust.</p>
-<p>For example, the Rust programming language has gained traction in TEE development, as it provides strong safety guarantees and is suitable for systems programming. There are projects like Teaclave SGX SDK (<a href="https://github.com/apache/teaclave-sgx-sdk">https://github.com/apache/teaclave-sgx-sdk</a>) for Intel SGX and Rust OP-TEE TrustZone SDK (<a href="https://github.com/OP-TEE/optee-rust">https://github.com/OP-TEE/optee-rust</a>) for ARM TrustZone, which enable developers to write TAs in Rust.</p>
+<p>For example, the Rust programming language has gained traction in TEE development, as it provides strong safety guarantees and is suitable for systems programming. There are projects like Teaclave SGX SDK (https://github.com/apache/teaclave-sgx-sdk) for Intel SGX and Rust OP-TEE TrustZone SDK (https://github.com/OP-TEE/optee-rust) for ARM TrustZone, which enable developers to write TAs in Rust.</p>
 <p>In summary, while the choice of programming languages for CA and TA might be determined by the specific TEE implementation and hardware, it is possible to use languages other than C or C++ for both normal world and secure world applications.</p>
 <hr />
 <p><strong>Question:</strong> Which languages do I use to develop apps in OP-TEE or to customize OP-TEE?</p>
@@ -1150,7 +1150,7 @@ body .markdown-body {
 <p>C++: You may be able to use a subset of C++ to develop trusted applications, as long as you handle low-level details and ensure compatibility with the TEE environment. However, you would need to be cautious about using certain C++ features, such as exceptions and the standard library, which may not be supported or might introduce security risks.</p>
 </li>
 <li>
-<p>Rust: Rust is a systems programming language with strong safety guarantees, which could be suitable for developing trusted applications. There has been some work on using Rust for OP-TEE trusted applications, such as the <code>rust-optee-trustzone-sdk</code> project (<a href="https://github.com/apache/incubator-teaclave-trustzone-sdk">https://github.com/apache/incubator-teaclave-trustzone-sdk</a>). This project provides a Rust SDK for creating TAs and a set of bindings to the TEE Internal Core API.</p>
+<p>Rust: Rust is a systems programming language with strong safety guarantees, which could be suitable for developing trusted applications. There has been some work on using Rust for OP-TEE trusted applications, such as the <code>rust-optee-trustzone-sdk</code> project (https://github.com/apache/incubator-teaclave-trustzone-sdk). This project provides a Rust SDK for creating TAs and a set of bindings to the TEE Internal Core API.</p>
 </li>
 </ol>
 <p>Using other high-level languages like Python, Java, or JavaScript for trusted applications is generally not feasible due to their runtime environments, memory management, and performance characteristics, which may not be compatible with the constraints of the secure world.</p>

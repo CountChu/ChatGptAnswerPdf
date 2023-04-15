@@ -11,16 +11,63 @@ Basic Concepts
     q: Are there successfull cases of OP-TEE?
     q: What are different between ARM OP-TEE and Intel SMM? Please also summarize in a table.
 
+    q: What is Op-TEE Dispatcher?
+    d: 2023/4/13
+
 Boot
     q: Does OP-TEE OS exist in a single core or multiple cores at run-time?
     q: Why does OP-TEE's reset function have two branches reset_primary and reset_secondary?
     q: Why does OP-TEE initialize secondary cores when reset?
+
+    q: Can I reset OP-TEE at run-time?
+    d:2023/4/11
+
+    q: Where does OP-TEE initialize secondary cores?
+    d: 2023/4/11
+
+    q-prefix: Below code comes from part 1 of entry_a64.S of OP-TEE
+    d: 2023/4/11
+    hide:
+
+    q-prefix: Below code comes from part 2 of entry_a64.S of OP-TEE
+    d: 2023/4/11
+    hide:
+
+    q: Where to set up secondary cores in the given code?
+    d: 2023/4/11
+
+    q: Where to reset primary core in the given code?
+    d: 2023/4/11
+
+    q: When to enable secondary cores in OP-TEE?
+    d: 2023/4/11
+
+    q: Please list functions and macros in entry_a64.S that I give you before.
+    d: 2023/4/11
+
+    q: Please list functions called in entry_a64.S that I give you before.
+    d: 2023/4/11
+
+    q: What is psci?
+    d: 2023/4/11
+
+    q: Who to call vector_cpu_on_entry?
+    d: 2023/4/11
+
+    q: What does vector_cpu_on_entry do with respect to OP-TEE?
+    d: 2023/4/11
+
+    q: What are difference boot of OP-TEE between AArch64 and AArch32?
+    d: 2023/4/11
 
 Multi-Thread & Multi-Process
     q: Can secure kernel and trusted applications in OP-TEE can be multi-thread?
     q: What is secure context switching in TrustZone?
     q: Does OP-TEE support multi-process?
     q: Does OP-TEE support IPC?
+
+    q: Is a TA assigned to only one thread?
+    d: 2023/4/11
 
 Memory
     q: Does OP-TEE support shared memory?
@@ -29,6 +76,13 @@ Memory
     q: How does OP-TEE manage memory?
     q: Are data in memory in secure world encrypted?
     q: What is SMAF?
+
+    q: Is SMAF of OP-TEE?
+    d: 2023/4/11    
+
+    q: Who can allocate SMAF memory? TA or CA
+    d: 2023/4/13
+
     q: What is CMA?
 
 Network
@@ -41,14 +95,33 @@ Signature
 Development
     q: Which languages do I use to develop apps in OP-TEE or to customize OP-TEE?
     q: Can I use other langauges?
-    q: Does OP-TEE support ARMv7 and ARMv8?
     q: Does OP-TEE have a shell?
-    q: Can I create a TA at run-time?
-    q: But what is TEECI_LoadSecureModule()
+
+    q: What is about size of tee.bin?
+    d: 2023/4/12
+
+    q: What is libteec.so?
+    d: 2023/4/13
+
+    q: Does libteec.so run in EL0 or EL1?
+    d: 2023/4/13
+
+    q: Does optee.ko run in EL1?
+    d: 2023/4/13
+
+    q: What is TEE supplicant?
+    d: 2023/4/13
+
+Static TA and Dynamic TA    
     q: What are Static TA and Dynamic TA? Please also summarize them in a table.
     q: Does TEE define Static TA and Dynamic TA?
+    q: Can I create a TA at run-time?
+    q: But what is TEECI_LoadSecureModule()    
     q: How to recover a crashed static TA?
     q: How to recover a crashed dynamic TA?
+
+    q: Which privilege levels do static TA and dynamic TA run in?
+    d: 2023/4/11
 
 Qualcomm 
     q: Does Qualcomm support OP-TEE?
@@ -62,6 +135,33 @@ DRM
     q: Does OP-TEE support TUI?
     q: Can I develop a TA with TUI to play video in OP-TEE?
     q: How do I implement a DRM solution using ClearKey in OP-TEE?
+
+    q-prefix: Below text comes from "BKK16-201 - PlayReady OPTEE Integration with Secure Video Path"
+    d: 2023/4/10
+
+    q: What is secure data path?
+    d: 2023/4/10
+
+    q: So the video is played in secure world. Right?
+    d: 2023/4/10
+
+    q: How do we protect the video that displays in normal world?
+    d: 2023/4/10
+
+    q: What is "EME with OP-TEE on Hikey"?
+    d: 2023/4/10
+
+    q: What is AES OCDMI?
+    d: 2023/4/10
+
+    q: How is SMAF used in DRM?
+    d: 2023/4/11
+
+    q: What is OCDM?
+    d: 2023/4/10
+
+    q: What is Clear Key?
+    d: 2023/4/11
 
 Secure Storage
     q: Does OP-TEE support file system?
@@ -93,8 +193,14 @@ PKCS#11
     q-prefix: The following continued text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
     hide:
 
+    q: What is HUK?
+    d: 2023/4/13    
+
     q: How does OP-TEE work with HUK?
 
     q: What are common device that store HUK in ARM platform with OP-TEE?
+
+    q: So what is TSK?
+    d: 2023/4/13
 
 

@@ -36,3 +36,5 @@ Compare 2017 vTZ and 2019 TrustedVIM
 
 2020 Demystifying TEE Client API
 	q-prefix: Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE
+	d: 2023/4/8
+

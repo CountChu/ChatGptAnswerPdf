@@ -7,6 +7,12 @@ TCB
     q: What are components in ARM TCB?
     from: TrustZone.0329.md
 
+    q: What are Security Building Blocks?
+    d: 2023/4/12
+
+    q: What compare Security Building Block and TCB and also summarize them in a table.
+    d: 2023/4/12
+
 Virtualization
     q: What are types of virtualization techs?
 

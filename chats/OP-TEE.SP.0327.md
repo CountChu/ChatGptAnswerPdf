@@ -1,18 +1,18 @@
 **You:**
 
-https://github.com/OP-TEE/optee\_os/pull/3973
+https://github.com/OP-TEE/optee_os/pull/3973
 
 * * *
 
 **ChatGPT:**
 
-I am an AI language model and I cannot access external websites or browse the internet. However, I can try to help you with OP-TEE (Open Portable Trusted Execution Environment) or answer questions related to the optee\_os repository if you provide more information.
+I am an AI language model and I cannot access external websites or browse the internet. However, I can try to help you with OP-TEE (Open Portable Trusted Execution Environment) or answer questions related to the optee_os repository if you provide more information.
 
 * * *
 
 **You:**
 
-apalos commented on Jul 16, 2020 Secure variable storage for EFI variables is critical for enabling and protecting UEFI Secure Boot. Unfortunately due to the fact that SPD and SPM are mutually exclusive, we can't run StMM from EDK2 and OP-TEE. An advantage of doing so is that different firmware implementations can leverage EDK2's StandAloneMM and in cooperation with OP-TEE RPMB APIs can store UEFI variables in a secure storage. This makes the variable storage quite generic in any device with an RPMB partition. Using a well debugged application is preferable over rewriting the whole application as a TA. Another advantage is that this inherits the Fault Tolerant Writes (FTW) functionality built-in on StMM to protect variables against corruptions during writing. Considering the FFA changes of the future Arm architectures using an SP that includes everything seems like a better choice at the moment. The 'SPM emulation' currently added into OP-TEE only supports a single SP to be launched. This means that the StMM embedded application has the RPMB driver built in at the moment. In the future we can add code (evolving FFA) to launch multiple SPs. So the StMM variable handling can be decoupled from the RPMB driver, which will reside in a different SP. So let's add a user mode secure partition context and support loading "Standalone MM" of EDK2 into it. A separate syscall handling is added to serve as different kind of ABI and syscall IDs. The secure partition has a TA like interface towards normal world, but requests are routed into the StMM partition instead. CFG\_STMM\_PATH is assigned the path of BL32\_AP\_MM.fd, for instance: CFG\_STMM\_PATH=...Build/QemuVirtMmStandalone/DEBUG\_GCC5/FV/BL32\_AP\_MM.fd Since this is quite tricky to compile and test you can use this \[1\]. Just clone the repo and run ./build.sh. The script will pick up edk2, edk2-platforms, op-tee, atf and U-boot and compile all the necessary binaries for QEMU. A patch (awful hack) has been added to U-boot to allow RPMB emulation through it's supplicant, since QEMU RPMB emulation is not yet available. After compiling and launching QEMU the usual U-boot commands for EFI variable management will store the variables on an RPMB device. \[1\] https://git.linaro.org/people/ilias.apalodimas/efi\_optee\_variables.git/ Changes Since RFC: Addressed @jenswi-linaro comments Moved I/EMSG to DMSG Removed pointless register restoring Restoring x0-x7 in return\_helper() (needed for FFA) cherry picked FFA changes, so those are not included in the current patchset Using mobj\_inc\_map() to map memory instead of the custom function Added sp\_svc\_get\_mem\_attr() to get a page attributes properly (instead of assuming RWX we did in the RFC). Also added vm\_get\_attrs() helper function. Removed the weird masking flags used in sp\_svc\_set\_mem\_attr(). This was a result of using hardcoded (RWX flags for reading the current pages attributes) Moved comment to /\* .... \*/ format Used return\_helper() when appropriate, instead of manually defining the error flags Masked x3-x7, with 0xffffffff when used for FFA Changes since v1: renamed vm\_get\_attrs() -> vm\_get\_prot() and masked the output. This was also placed on a separate commit. Don't mask x3-x7 with 0xffffffff as it's not needed Initialized all stack variables removed stale thread\_\[g|s\]et\_cntkctl\_el1 functions Fixed a bug on unti16\_t shifting Added a shippable build target removed reduntant checks before reading/writing a file
+apalos commented on Jul 16, 2020 •  Secure variable storage for EFI variables is critical for enabling and protecting UEFI Secure Boot. Unfortunately due to the fact that SPD and SPM are mutually exclusive, we can't run StMM from EDK2 and OP-TEE. An advantage of doing so is that different firmware implementations can leverage EDK2's StandAloneMM and in cooperation with OP-TEE RPMB APIs can store UEFI variables in a secure storage. This makes the variable storage quite generic in any device with an RPMB partition.  Using a well debugged application is preferable over rewriting the whole application as a TA. Another advantage is that this inherits the Fault Tolerant Writes (FTW) functionality built-in on StMM to protect variables against corruptions during writing. Considering the FFA changes of the future Arm architectures using an SP that includes everything seems like a better choice at the moment. The 'SPM emulation' currently added into OP-TEE only supports a single SP to be launched. This means that the StMM embedded application has the RPMB driver built in at the moment. In the future we can add code (evolving FFA) to launch multiple SPs. So the StMM variable handling can be decoupled from the RPMB driver, which will reside in a different SP.  So let's add a user mode secure partition context and support loading "Standalone MM" of EDK2 into it. A separate syscall handling is added to serve as different kind of ABI and syscall IDs. The secure partition has a TA like interface towards normal world, but requests are routed into the StMM partition instead.  CFG_STMM_PATH is assigned the path of BL32_AP_MM.fd, for instance: CFG_STMM_PATH=...Build/QemuVirtMmStandalone/DEBUG_GCC5/FV/BL32_AP_MM.fd  Since this is quite tricky to compile and test you can use this [1]. Just clone the repo and run ./build.sh. The script will pick up edk2, edk2-platforms, op-tee, atf and U-boot and compile all the necessary binaries for QEMU. A patch (awful hack) has been added to U-boot to allow RPMB emulation through it's supplicant, since QEMU RPMB emulation is not yet available. After compiling and launching QEMU the usual U-boot commands for EFI variable management will store the variables on an RPMB device.  [1] https://git.linaro.org/people/ilias.apalodimas/efi_optee_variables.git/  Changes Since RFC:  Addressed @jenswi-linaro comments Moved I/EMSG to DMSG Removed pointless register restoring Restoring x0-x7 in return_helper() (needed for FFA) cherry picked FFA changes, so those are not included in the current patchset Using mobj_inc_map() to map memory instead of the custom function Added sp_svc_get_mem_attr() to get a page attributes properly (instead of assuming RWX we did in the RFC). Also added vm_get_attrs() helper function. Removed the weird masking flags used in sp_svc_set_mem_attr(). This was a result of using hardcoded (RWX flags for reading the current pages attributes) Moved comment to /* .... */ format Used return_helper() when appropriate, instead of manually defining the error flags Masked x3-x7, with 0xffffffff when used for FFA Changes since v1:  renamed vm_get_attrs() -> vm_get_prot() and masked the output. This was also placed on a separate commit. Don't mask x3-x7 with 0xffffffff as it's not needed Initialized all stack variables removed stale thread_[g|s]et_cntkctl_el1 functions Fixed a bug on unti16_t shifting Added a shippable build target removed reduntant checks before reading/writing a file
 
 * * *
 
@@ -22,12 +22,12 @@ This comment is discussing the implementation of secure variable storage for UEF
 
 The main points of the comment:
 
-1.  Secure variable storage for EFI variables is critical for enabling and protecting UEFI Secure Boot.
-2.  The implementation uses a Standalone MM of EDK2, which has several advantages, including reusing well-debugged applications, inheriting Fault Tolerant Writes (FTW) functionality, and being a better choice considering the FFA changes of the future Arm architectures.
-3.  A separate syscall handling is added to serve as a different kind of ABI and syscall IDs.
-4.  CFG\_STMM\_PATH is assigned the path of BL32\_AP\_MM.fd.
-5.  A repository is provided for testing, which contains necessary code to compile and test the implementation on QEMU.
-6.  A list of changes made since the previous version (RFC) and version 1 is provided.
+1. Secure variable storage for EFI variables is critical for enabling and protecting UEFI Secure Boot.
+2. The implementation uses a Standalone MM of EDK2, which has several advantages, including reusing well-debugged applications, inheriting Fault Tolerant Writes (FTW) functionality, and being a better choice considering the FFA changes of the future Arm architectures.
+3. A separate syscall handling is added to serve as a different kind of ABI and syscall IDs.
+4. CFG_STMM_PATH is assigned the path of BL32_AP_MM.fd.
+5. A repository is provided for testing, which contains necessary code to compile and test the implementation on QEMU.
+6. A list of changes made since the previous version (RFC) and version 1 is provided.
 
 Overall, the comment presents the implementation of secure variable storage for EFI variables and addresses previous comments and suggestions, providing a comprehensive overview of the changes made.
 
@@ -87,9 +87,9 @@ FFA stands for the Firmware Framework for Arm, which is a specification introduc
 
 FFA provides a standardized interface for communication and resource sharing among different components, such as:
 
-1.  The Normal World (NW) and the Secure World (SW)
-2.  Different Secure Partitions (SPs) within the Secure World
-3.  The Secure Partition Manager (SPM) and the Secure Payload Dispatcher (SPD)
+1. The Normal World (NW) and the Secure World (SW)
+2. Different Secure Partitions (SPs) within the Secure World
+3. The Secure Partition Manager (SPM) and the Secure Payload Dispatcher (SPD)
 
 By standardizing these interfaces, FFA aims to simplify the development of secure firmware solutions and promote interoperability between different firmware components, regardless of their source or implementation. The FFA specification has been increasingly adopted in the Arm ecosystem, with components like OP-TEE and EDK2 working to integrate support for FFA-based communication and management.
 
@@ -131,15 +131,15 @@ The introduction of Secure Partitions and the SPM represents an evolution in ARM
 
 **You:**
 
-What is BL32\_AP\_MM.fd?
+What is BL32_AP_MM.fd?
 
 * * *
 
 **ChatGPT:**
 
-BL32\_AP\_MM.fd is a firmware binary file related to the Standalone Memory Manager (StMM) in the EDK2 (UEFI Development Kit 2) ecosystem. It represents the compiled StMM binary that can be loaded and executed in a secure environment, such as OP-TEE or a Secure Partition.
+BL32_AP_MM.fd is a firmware binary file related to the Standalone Memory Manager (StMM) in the EDK2 (UEFI Development Kit 2) ecosystem. It represents the compiled StMM binary that can be loaded and executed in a secure environment, such as OP-TEE or a Secure Partition.
 
-In the context of the implementation described in the earlier comment, CFG\_STMM\_PATH is assigned the path of BL32\_AP\_MM.fd. This configuration allows the OP-TEE environment to load the StMM binary into a secure partition context and execute it.
+In the context of the implementation described in the earlier comment, CFG_STMM_PATH is assigned the path of BL32_AP_MM.fd. This configuration allows the OP-TEE environment to load the StMM binary into a secure partition context and execute it.
 
 The Standalone Memory Manager (StMM) provides a minimal execution environment for running security-sensitive applications independent of the traditional UEFI firmware. It offers memory management, security, and communication services to the applications running within it. In the case of secure variable storage, StMM is utilized in cooperation with OP-TEE RPMB APIs to store UEFI variables in secure storage, while leveraging its built-in fault-tolerant write functionality to protect variables against corruption during writing.
 
@@ -171,17 +171,17 @@ What are EL0, EL1, EL2, S-EL0, S-EL1, S-EL2, S-EL3?
 
 In ARM architecture, EL0, EL1, EL2, and EL3 are Exception Levels, which represent different privilege levels for software execution. These Exception Levels help in isolating different software components running on an ARM-based system and ensure that more privileged levels can control access and resources for less privileged levels. The Exception Levels are:
 
-1.  EL0: User/Application level - The least privileged level where user applications and most of the software components run.
-2.  EL1: Operating system (OS) kernel level - The privilege level at which operating system kernels, such as Linux or Android, execute.
-3.  EL2: Hypervisor level - The privilege level for virtualization and hypervisor software, enabling the management of multiple virtual machines or OS instances.
-4.  EL3: Secure monitor level - The most privileged level, responsible for the secure monitor firmware, such as ARM Trusted Firmware (ATF), managing system security and TrustZone technology.
+1. EL0: User/Application level - The least privileged level where user applications and most of the software components run.
+2. EL1: Operating system (OS) kernel level - The privilege level at which operating system kernels, such as Linux or Android, execute.
+3. EL2: Hypervisor level - The privilege level for virtualization and hypervisor software, enabling the management of multiple virtual machines or OS instances.
+4. EL3: Secure monitor level - The most privileged level, responsible for the secure monitor firmware, such as ARM Trusted Firmware (ATF), managing system security and TrustZone technology.
 
 ARM architecture also supports Secure World (SW) execution, which provides an isolated environment for running security-sensitive applications, separate from the Normal World (NW). The Secure World has its own set of Exception Levels, denoted as S-EL0, S-EL1, S-EL2, and S-EL3. These levels correspond to the same privilege hierarchy as the non-secure Exception Levels but are used exclusively within the Secure World.
 
-1.  S-EL0: Secure User/Application level - The least privileged level in the Secure World, where secure user applications execute.
-2.  S-EL1: Secure OS level - The privilege level at which a secure operating system or Trusted Execution Environment (TEE), such as OP-TEE, runs.
-3.  S-EL2: Secure Hypervisor level (available only in ARMv8.4-A and later) - The privilege level for secure virtualization, managing secure virtual machines or secure OS instances.
-4.  S-EL3: Secure monitor level - The most privileged level in the Secure World, responsible for secure monitor firmware, such as ARM Trusted Firmware (ATF), managing system security and TrustZone technology.
+1. S-EL0: Secure User/Application level - The least privileged level in the Secure World, where secure user applications execute.
+2. S-EL1: Secure OS level - The privilege level at which a secure operating system or Trusted Execution Environment (TEE), such as OP-TEE, runs.
+3. S-EL2: Secure Hypervisor level (available only in ARMv8.4-A and later) - The privilege level for secure virtualization, managing secure virtual machines or secure OS instances.
+4. S-EL3: Secure monitor level - The most privileged level in the Secure World, responsible for secure monitor firmware, such as ARM Trusted Firmware (ATF), managing system security and TrustZone technology.
 
 These different Exception Levels allow for fine-grained control over system resources, access permissions, and isolation, ensuring that sensitive operations and data remain protected in a multi-layered security model.
 
@@ -199,8 +199,11 @@ No, UEFI (Unified Extensible Firmware Interface) is not required in ARM-based sy
 
 ARM-based devices can use a variety of firmware and bootloader solutions depending on the specific hardware, use case, and manufacturer preferences. Some common alternatives to UEFI include:
 
-1.  U-Boot: A widely used open-source bootloader for embedded systems that supports ARM and many other architectures. It is often used in devices like single-board computers, routers, and other embedded systems.
-2.  Coreboot: An open-source firmware project focused on providing a minimal and fast boot experience. It is often used in devices like Chromebooks and can be configured to work on a variety of ARM platforms.
-3.  Barebox: Another open-source bootloader and firmware solution, primarily targeting embedded systems and designed for speed and simplicity.
+1. U-Boot: A widely used open-source bootloader for embedded systems that supports ARM and many other architectures. It is often used in devices like single-board computers, routers, and other embedded systems.
+2. Coreboot: An open-source firmware project focused on providing a minimal and fast boot experience. It is often used in devices like Chromebooks and can be configured to work on a variety of ARM platforms.
+3. Barebox: Another open-source bootloader and firmware solution, primarily targeting embedded systems and designed for speed and simplicity.
 
 In summary, UEFI is not required for ARM-based systems. While it is an option and can offer certain advantages, there are alternative firmware and bootloader solutions available that can be used depending on the specific requirements of the device or system.
+
+* * *
+

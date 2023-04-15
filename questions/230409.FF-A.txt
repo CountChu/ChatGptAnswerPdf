@@ -4,6 +4,12 @@ Ch 2 - Introduction
 	q-prefix: The below text are chapter 2 of "Arm Firmware Framework for Arm A-profile"
 	hide:
 
+	q: What is "Arm A-profile"?
+	d: 2023/4/11
+
+ 	q: Does "Arm Firmware Framework for Arm A-profile" document is only about Cortex-A?
+    d: 2023/4/11	
+
 Ch 3 - Software Architecture
 	q-prefix: The below text are chapter 3 of "Arm Firmware Framework for Arm A-profile"
 	hide:
@@ -52,4 +58,18 @@ FF-A, TF-A, and TrustZone
 
 	q: Could I say that TF-A refers FF-A?
     d: 2023/4/10
-	
+
+    q: When to enable secondary cores?
+    d: 2023/4/11
+
+    q: Is TF-A persistent in memory at run-time?
+    d: 2023/4/12
+
+    q: What is SMCCC?
+    d: 2023/4/13
+
+    q: What is SPL?
+    d: 2023/4/13
+
+    q: What is fip.bin?
+    d: 2023/4/13

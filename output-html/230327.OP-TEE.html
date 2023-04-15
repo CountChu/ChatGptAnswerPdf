@@ -991,7 +991,7 @@ body .markdown-body {
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230327.OP-TEE</h1>
-<p>Created: 2023-04-09 21:41:01</p>
+<p>Created: 2023-04-15 11:17:17</p>
 <h1>Questions</h1>
 <ul>
 <li>Basic Concepts<ul>
@@ -1004,12 +1004,26 @@ body .markdown-body {
 <li>Does OP-TEE only exist in secure world?</li>
 <li>Are there successfull cases of OP-TEE?</li>
 <li>What are different between ARM OP-TEE and Intel SMM? Please also summarize in a table.</li>
+<li>What is Op-TEE Dispatcher? (2023/4/13)</li>
 </ul>
 </li>
 <li>Boot<ul>
 <li>Does OP-TEE OS exist in a single core or multiple cores at run-time?</li>
 <li>Why does OP-TEE&rsquo;s reset function have two branches reset_primary and reset_secondary?</li>
 <li>Why does OP-TEE initialize secondary cores when reset?</li>
+<li>Can I reset OP-TEE at run-time? (2023/4/11)</li>
+<li>Where does OP-TEE initialize secondary cores? (2023/4/11)</li>
+<li>Below code comes from part 1 of entry_a64.S of OP-TEE (2023/4/11)</li>
+<li>Below code comes from part 2 of entry_a64.S of OP-TEE (2023/4/11)</li>
+<li>Where to set up secondary cores in the given code? (2023/4/11)</li>
+<li>Where to reset primary core in the given code? (2023/4/11)</li>
+<li>When to enable secondary cores in OP-TEE? (2023/4/11)</li>
+<li>Please list functions and macros in entry_a64.S that I give you before. (2023/4/11)</li>
+<li>Please list functions called in entry_a64.S that I give you before. (2023/4/11)</li>
+<li>What is psci? (2023/4/11)</li>
+<li>Who to call vector_cpu_on_entry? (2023/4/11)</li>
+<li>What does vector_cpu_on_entry do with respect to OP-TEE? (2023/4/11)</li>
+<li>What are difference boot of OP-TEE between AArch64 and AArch32? (2023/4/11)</li>
 </ul>
 </li>
 <li>Multi-Thread &amp; Multi-Process<ul>
@@ -1017,6 +1031,7 @@ body .markdown-body {
 <li>What is secure context switching in TrustZone?</li>
 <li>Does OP-TEE support multi-process?</li>
 <li>Does OP-TEE support IPC?</li>
+<li>Is a TA assigned to only one thread? (2023/4/11)</li>
 </ul>
 </li>
 <li>Memory<ul>
@@ -1026,6 +1041,8 @@ body .markdown-body {
 <li>How does OP-TEE manage memory?</li>
 <li>Are data in memory in secure world encrypted?</li>
 <li>What is SMAF?</li>
+<li>Is SMAF of OP-TEE? (2023/4/11)</li>
+<li>Who can allocate SMAF memory? TA or CA (2023/4/13)</li>
 <li>What is CMA?</li>
 </ul>
 </li>
@@ -1041,14 +1058,22 @@ body .markdown-body {
 <li>Development<ul>
 <li>Which languages do I use to develop apps in OP-TEE or to customize OP-TEE?</li>
 <li>Can I use other langauges?</li>
-<li>Does OP-TEE support ARMv7 and ARMv8?</li>
 <li>Does OP-TEE have a shell?</li>
-<li>Can I create a TA at run-time?</li>
-<li>But what is TEECI_LoadSecureModule()</li>
+<li>What is about size of tee.bin? (2023/4/12)</li>
+<li>What is libteec.so? (2023/4/13)</li>
+<li>Does libteec.so run in EL0 or EL1? (2023/4/13)</li>
+<li>Does optee.ko run in EL1? (2023/4/13)</li>
+<li>What is TEE supplicant? (2023/4/13)</li>
+</ul>
+</li>
+<li>Static TA and Dynamic TA<ul>
 <li>What are Static TA and Dynamic TA? Please also summarize them in a table.</li>
 <li>Does TEE define Static TA and Dynamic TA?</li>
+<li>Can I create a TA at run-time?</li>
+<li>But what is TEECI_LoadSecureModule()</li>
 <li>How to recover a crashed static TA?</li>
 <li>How to recover a crashed dynamic TA?</li>
+<li>Which privilege levels do static TA and dynamic TA run in? (2023/4/11)</li>
 </ul>
 </li>
 <li>Qualcomm<ul>
@@ -1064,6 +1089,15 @@ body .markdown-body {
 <li>Does OP-TEE support TUI?</li>
 <li>Can I develop a TA with TUI to play video in OP-TEE?</li>
 <li>How do I implement a DRM solution using ClearKey in OP-TEE?</li>
+<li>Below text comes from &ldquo;BKK16-201 - PlayReady OPTEE Integration with Secure Video Path&rdquo; (2023/4/10)</li>
+<li>What is secure data path? (2023/4/10)</li>
+<li>So the video is played in secure world. Right? (2023/4/10)</li>
+<li>How do we protect the video that displays in normal world? (2023/4/10)</li>
+<li>What is &ldquo;EME with OP-TEE on Hikey&rdquo;? (2023/4/10)</li>
+<li>What is AES OCDMI? (2023/4/10)</li>
+<li>How is SMAF used in DRM? (2023/4/11)</li>
+<li>What is OCDM? (2023/4/10)</li>
+<li>What is Clear Key? (2023/4/11)</li>
 </ul>
 </li>
 <li>Secure Storage<ul>
@@ -1094,8 +1128,12 @@ body .markdown-body {
 </ul>
 </li>
 <li>PKCS#11<ul>
+<li>The following text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html</li>
+<li>The following continued text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html</li>
+<li>What is HUK? (2023/4/13)</li>
 <li>How does OP-TEE work with HUK?</li>
 <li>What are common device that store HUK in ARM platform with OP-TEE?</li>
+<li>So what is TSK? (2023/4/13)</li>
 </ul>
 </li>
 </ul>
@@ -1104,7 +1142,7 @@ body .markdown-body {
 <h2>Basic Concepts</h2>
 <p><strong>Question:</strong> https://github.com/OP-TEE</p>
 <p><strong>Answer:</strong></p>
-<p>The link you provided, <a href="https://github.com/OP-TEE">https://github.com/OP-TEE</a>, is the official GitHub repository for the OP-TEE project. This repository contains the source code, documentation, and other resources related to OP-TEE, an open-source Trusted Execution Environment (TEE) based on the Arm TrustZone technology.</p>
+<p>The link you provided, https://github.com/OP-TEE, is the official GitHub repository for the OP-TEE project. This repository contains the source code, documentation, and other resources related to OP-TEE, an open-source Trusted Execution Environment (TEE) based on the Arm TrustZone technology.</p>
 <p>The repository is organized into several sub-projects, including:</p>
 <ol>
 <li>
@@ -1218,25 +1256,23 @@ body .markdown-body {
 <p><strong>Answer:</strong></p>
 <p>ARM OP-TEE and Intel SMM are different security technologies that provide secure and isolated execution environments for sensitive operations. Here&rsquo;s a comparison of the two:</p>
 <ol>
-<li>ARM OP-TEE:</li>
+<li>
+<p>ARM OP-TEE:
+- Primarily designed for ARM-based platforms using TrustZone technology.
+- Open-source implementation, maintained by Linaro.
+- Provides a secure kernel, trusted applications, and APIs for communication between the normal and secure worlds.
+- Focuses on creating a Trusted Execution Environment (TEE) for secure application execution.
+- Targets a variety of industries, including mobile devices, IoT, automotive systems, and more.</p>
+</li>
+<li>
+<p>Intel SMM (System Management Mode):
+- Designed for Intel x86 processors.
+- A proprietary implementation by Intel.
+- Provides a separate CPU mode (SMM) with its own address space and execution environment.
+- Focuses on handling low-level system management tasks, such as power management, hardware monitoring, and firmware updates.
+- Primarily used for system management tasks on PCs, servers, and other x86-based systems.</p>
+</li>
 </ol>
-<ul>
-<li>Primarily designed for ARM-based platforms using TrustZone technology.</li>
-<li>Open-source implementation, maintained by Linaro.</li>
-<li>Provides a secure kernel, trusted applications, and APIs for communication between the normal and secure worlds.</li>
-<li>Focuses on creating a Trusted Execution Environment (TEE) for secure application execution.</li>
-<li>Targets a variety of industries, including mobile devices, IoT, automotive systems, and more.</li>
-</ul>
-<ol start="2">
-<li>Intel SMM (System Management Mode):</li>
-</ol>
-<ul>
-<li>Designed for Intel x86 processors.</li>
-<li>A proprietary implementation by Intel.</li>
-<li>Provides a separate CPU mode (SMM) with its own address space and execution environment.</li>
-<li>Focuses on handling low-level system management tasks, such as power management, hardware monitoring, and firmware updates.</li>
-<li>Primarily used for system management tasks on PCs, servers, and other x86-based systems.</li>
-</ul>
 <p>Summary in a table:</p>
 <table>
 <thead>
@@ -1276,6 +1312,13 @@ body .markdown-body {
 </table>
 <p>Please note that while both technologies provide a secure and isolated execution environment, they serve different purposes and target different platforms. ARM OP-TEE is designed to enable secure applications on ARM-based devices, while Intel SMM is used for low-level system management tasks on Intel x86-based systems.</p>
 <hr />
+<p><strong>Question:</strong> What is Op-TEE Dispatcher? (2023/4/13)</p>
+<p><strong>Answer:</strong></p>
+<p>The OP-TEE dispatcher, sometimes referred to as the &ldquo;Secure Monitor Call (SMC) dispatcher&rdquo; or simply &ldquo;dispatcher,&rdquo; is a component within the OP-TEE Trusted Execution Environment that handles communication between the normal world (non-secure) and the secure world (OP-TEE environment).</p>
+<p>When a client application (CA) in the normal world wants to communicate with a trusted application (TA) in the secure world, it sends a request through the OP-TEE driver (opteed) in the form of an SMC call. The SMC call is then intercepted by the OP-TEE dispatcher, which is responsible for processing the call, routing it to the appropriate TA, and returning the results back to the caller.</p>
+<p>The dispatcher is responsible for managing the communication and ensuring the security and isolation of the TAs from the normal world, as well as handling secure world tasks such as opening and closing sessions, invoking commands, and managing shared memory.</p>
+<p>In summary, the OP-TEE dispatcher is a crucial component that bridges the gap between the normal world and the secure world, ensuring secure communication and execution of trusted applications within the OP-TEE environment.</p>
+<hr />
 <h2>Boot</h2>
 <p><strong>Question:</strong> Does OP-TEE OS exist in a single core or multiple cores at run-time?</p>
 <p><strong>Answer:</strong></p>
@@ -1300,6 +1343,235 @@ body .markdown-body {
 <p>OP-TEE initializes secondary cores during the reset process to properly configure and synchronize them with the primary core. This is important for maintaining a consistent and secure execution environment across all cores.</p>
 <p>When the system is reset, the primary core (core 0) is responsible for initializing the OP-TEE OS, including the secure world and shared resources. Once the primary core has completed the initialization process, it sends a signal to secondary cores to begin their own initialization process. Each secondary core then initializes its own secure world environment and sets up necessary data structures and configurations in alignment with the primary core.</p>
 <p>This process ensures that all cores have a consistent view of the secure world, enabling the execution of Trusted Applications (TAs) across multiple cores while maintaining security and isolation.</p>
+<hr />
+<p><strong>Question:</strong> Can I reset OP-TEE at run-time? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>There isn&rsquo;t a direct mechanism to reset only the OP-TEE (Trusted Execution Environment) at runtime without affecting the rest of the system. OP-TEE runs alongside the Normal World operating system, and both share the same hardware resources.</p>
+<p>Resetting the OP-TEE runtime would essentially require resetting the entire system, which would include the Normal World operating system (such as Linux). This is because OP-TEE interacts with the Normal World through shared memory and interrupt handling, and resetting OP-TEE without restarting the entire system may lead to undefined behavior or security vulnerabilities.</p>
+<p>If you need to reset the state of a Trusted Application running within OP-TEE, you can unload the TA and reload it, essentially resetting the TA&rsquo;s state. However, this approach only resets the specific TA and not the entire OP-TEE environment.</p>
+<hr />
+<p><strong>Question:</strong> Where does OP-TEE initialize secondary cores? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE initializes secondary cores during its boot process. The initialization happens in the <code>optee_os</code> codebase, which is the core component of OP-TEE. Specifically, the initialization can be found in the <code>core/arch/arm/kernel/</code> directory.</p>
+<p>For ARM platforms, the file <code>core/arch/arm/kernel/entry_a32.S</code> (for 32-bit systems) or <code>core/arch/arm/kernel/entry_a64.S</code> (for 64-bit systems) contains the assembly code responsible for the secondary core initialization.</p>
+<p>Secondary core initialization consists of the following steps:</p>
+<ol>
+<li>Setup the core&rsquo;s stack pointer.</li>
+<li>Enable the core&rsquo;s caches and MMU.</li>
+<li>Initialize the core&rsquo;s GIC (Generic Interrupt Controller) interface.</li>
+<li>Jump to the C function <code>__thread_std_smc_entry()</code> which handles the core&rsquo;s SMC (Secure Monitor Call) entry.</li>
+</ol>
+<p>The actual boot process of the secondary cores is platform-specific and depends on the hardware and the bootloader used. In general, when the primary core starts the OP-TEE, it initializes the secondary cores, and they are put into a waiting state until they receive a wake-up event. The primary core is responsible for configuring and releasing the secondary cores from their waiting state.</p>
+<hr />
+<p><strong>Question:</strong> Below code comes from part 1 of entry_a64.S of OP-TEE (2023/4/11)</p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> Below code comes from part 2 of entry_a64.S of OP-TEE (2023/4/11)</p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> Where to set up secondary cores in the given code? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>In the given code, the secondary cores setup is handled by the <code>cpu_on_handler</code> function. This function is responsible for preparing the secondary core when it is powered on. Here&rsquo;s an overview of the <code>cpu_on_handler</code> function:</p>
+<div class="codehilite"><pre><span></span><code><span class="nf">FUNC</span> <span class="no">cpu_on_handler</span> <span class="p">,</span> <span class="p">:</span>
+    <span class="nf">mov</span> <span class="no">x19</span><span class="p">,</span> <span class="no">x0</span>
+    <span class="nf">mov</span> <span class="no">x20</span><span class="p">,</span> <span class="no">x1</span>
+    <span class="nf">mov</span> <span class="no">x21</span><span class="p">,</span> <span class="no">x30</span>
+
+    <span class="nf">adr</span> <span class="no">x0</span><span class="p">,</span> <span class="no">reset_vect_table</span>
+    <span class="nf">msr</span> <span class="no">vbar_el1</span><span class="p">,</span> <span class="no">x0</span>
+    <span class="nf">isb</span>
+
+    <span class="nf">set_sctlr_el1</span>
+    <span class="nf">isb</span>
+
+    <span class="cm">/* Enable aborts now that we can receive exceptions */</span>
+    <span class="nf">msr</span> <span class="no">daifclr</span><span class="p">,</span> <span class="c1">#DAIFBIT_ABT</span>
+
+    <span class="nf">bl</span>  <span class="no">__get_core_pos</span>
+    <span class="nf">bl</span>  <span class="no">enable_mmu</span>
+
+    <span class="cm">/* Setup SP_EL0 and SP_EL1, SP will be set to SP_EL0 */</span>
+    <span class="nf">set_sp</span>
+
+<span class="c1">#ifdef CFG_MEMTAG</span>
+    <span class="nf">init_memtag_per_cpu</span>
+<span class="c1">#endif</span>
+<span class="c1">#ifdef CFG_CORE_PAUTH</span>
+    <span class="nf">init_pauth_per_cpu</span>
+<span class="c1">#endif</span>
+
+    <span class="nf">mov</span> <span class="no">x0</span><span class="p">,</span> <span class="no">x19</span>
+    <span class="nf">mov</span> <span class="no">x1</span><span class="p">,</span> <span class="no">x20</span>
+<span class="c1">#ifdef CFG_CORE_FFA</span>
+    <span class="nf">bl</span>  <span class="no">boot_cpu_on_handler</span>
+    <span class="nf">b</span>   <span class="no">thread_ffa_msg_wait</span>
+<span class="c1">#else</span>
+    <span class="nf">mov</span> <span class="no">x30</span><span class="p">,</span> <span class="no">x21</span>
+    <span class="nf">b</span>   <span class="no">boot_cpu_on_handler</span>
+<span class="c1">#endif</span>
+<span class="nf">END_FUNC</span> <span class="no">cpu_on_handler</span>
+</code></pre></div>
+
+<p>The <code>cpu_on_handler</code> function does the following:</p>
+<ol>
+<li>Sets up the exception vector table by loading the address of <code>reset_vect_table</code> into the <code>vbar_el1</code> register.</li>
+<li>Configures the System Control Register (<code>sctlr_el1</code>) and enables aborts to receive exceptions.</li>
+<li>Gets the core position and enables the MMU.</li>
+<li>Sets up the stack pointers for the current Exception Level (EL) by calling <code>set_sp</code>.</li>
+<li>Initializes per-core features like memory tagging and pointer authentication if they are enabled (CFG_MEMTAG, CFG_CORE_PAUTH).</li>
+<li>Calls the <code>boot_cpu_on_handler</code> function to complete the setup for the secondary core.</li>
+</ol>
+<p>After the setup is complete, the secondary core will either wait for a Fast Function call (in case of CFG_CORE_FFA) or continue with the execution of the <code>boot_cpu_on_handler</code> function.</p>
+<hr />
+<p><strong>Question:</strong> Where to reset primary core in the given code? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>In the given code, there&rsquo;s no specific mention of a function or a code block that explicitly resets the primary core. However, if you need to reset the primary core, you can create a custom function that will perform the necessary actions, such as disabling interrupts and performing a soft reset.</p>
+<p>You could create a function like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">reset_primary_core</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Disable interrupts</span>
+<span class="w">    </span><span class="n">local_irq_disable</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">local_fiq_disable</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Perform a soft reset</span>
+<span class="w">    </span><span class="kt">uintptr_t</span><span class="w"> </span><span class="n">reset_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace 0 with the address of the reset handler for your system</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">reset_handler</span><span class="p">)(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="n">reset_address</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">reset_handler</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>Keep in mind that the exact process for resetting the primary core depends on your system&rsquo;s architecture and hardware. The example above is just a basic idea of how you could approach resetting the primary core. You will need to consult your system&rsquo;s documentation and adapt the code accordingly.</p>
+<hr />
+<p><strong>Question:</strong> When to enable secondary cores in OP-TEE? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>In OP-TEE (Open Portable Trusted Execution Environment), secondary cores are typically enabled during the boot process, after the primary core has completed initialization tasks, including setting up secure memory, initializing OP-TEE, and launching the Rich Execution Environment (REE).</p>
+<p>To enable secondary cores in OP-TEE, follow these steps:</p>
+<ol>
+<li>
+<p>Primary core initialization: The primary core initializes OP-TEE and other necessary system components. It sets up the secure memory, initializes the OP-TEE OS, and starts the REE (e.g., Linux kernel).</p>
+</li>
+<li>
+<p>Secondary core synchronization: The primary core waits for secondary cores to reach a synchronization point, usually through a spin loop. Secondary cores wait for a signal from the primary core to continue the boot process.</p>
+</li>
+<li>
+<p>Signal secondary cores: Once the primary core finishes the initialization process, it signals the secondary cores to continue the boot process. This can be done by writing a value to a shared memory location or using hardware-specific mechanisms.</p>
+</li>
+<li>
+<p>Secondary core initialization: Secondary cores initialize their local data structures and set up their own exception handlers. They also initialize their stack pointers and register with the OP-TEE OS.</p>
+</li>
+<li>
+<p>Secondary cores enter OP-TEE: Secondary cores enter the OP-TEE OS and start executing secure tasks.</p>
+</li>
+</ol>
+<p>The exact implementation details of enabling secondary cores may vary depending on the platform, hardware, and OP-TEE version. The steps mentioned above provide a general guideline for the process. To understand the specifics for your platform, refer to the platform-specific documentation and code available in the OP-TEE source tree.</p>
+<hr />
+<p><strong>Question:</strong> Please list functions and macros in entry_a64.S that I give you before. (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>Based on the code you provided earlier, here is a list of functions and macros in entry_a64.S:</p>
+<p>Functions:
+1. _start
+2. relocate (if CFG_CORE_ASLR is defined)
+3. enable_mmu
+4. cpu_on_handler
+5. unhandled_cpu
+6. reset_vect_table</p>
+<p>Macros:
+1. check_vector_size
+2. BTI (if defined)</p>
+<p>If you have any questions or need further information about these functions or macros, please let me know!</p>
+<hr />
+<p><strong>Question:</strong> Please list functions called in entry_a64.S that I give you before. (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>Here is a list of functions called in the entry_a64.S code you provided earlier:</p>
+<ol>
+<li>boot_init_memtag (if CFG_MEMTAG is defined)</li>
+<li>get_aslr_seed (if CFG_CORE_ASLR is defined)</li>
+<li>core_init_mmu_map</li>
+<li>__get_core_pos</li>
+<li>enable_mmu</li>
+<li>console_init (if CFG_CORE_ASLR is defined)</li>
+<li>core_mmu_set_default_prtn_tbl (if CFG_NS_VIRTUALIZATION is defined)</li>
+<li>boot_init_primary_early</li>
+<li>init_memtag_per_cpu (if CFG_MEMTAG is defined)</li>
+<li>thread_get_core_local</li>
+<li>boot_init_primary_late</li>
+<li>init_pauth_per_cpu (if CFG_CORE_PAUTH is defined)</li>
+<li>plat_get_random_stack_canary (if _CFG_CORE_STACK_PROTECTOR is defined)</li>
+<li>dcache_cleaninv_range</li>
+<li>thread_clr_boot_thread (if CFG_NS_VIRTUALIZATION is not defined)</li>
+<li>thread_spmc_register_secondary_ep (if CFG_CORE_FFA is defined)</li>
+<li>thread_ffa_msg_wait (if CFG_CORE_FFA is defined)</li>
+<li>boot_cpu_on_handler (if CFG_CORE_FFA is not defined)</li>
+<li>panic_at_smc_return (if CFG_CORE_FFA is not defined)</li>
+</ol>
+<p>These are the functions called in the provided entry_a64.S file.</p>
+<hr />
+<p><strong>Question:</strong> What is psci? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>PSCI (Power State Coordination Interface) is a standardized interface for power management in ARM-based systems, specifically targeting multicore and multiprocessor SoCs (System on a Chip). The PSCI specification is developed and maintained by ARM and provides a common API for software running on ARM-based systems to control power states of CPUs and the system as a whole.</p>
+<p>PSCI enables software layers, such as operating systems and hypervisors, to manage the power state of individual CPU cores and clusters of cores, as well as to perform system-level power management tasks, such as system suspend and resume. The PSCI interface is typically implemented in firmware and is accessible to the software layers through a defined set of SMC (Secure Monitor Call) instructions.</p>
+<p>Some common PSCI functions include:</p>
+<ol>
+<li>CPU_ON: Used to power on a specific CPU core.</li>
+<li>CPU_OFF: Powers off the calling CPU core.</li>
+<li>CPU_SUSPEND: Suspends the calling CPU core.</li>
+<li>CPU_RESUME: Resumes a suspended CPU core.</li>
+<li>SYSTEM_SUSPEND: Suspends the entire system.</li>
+<li>SYSTEM_RESET: Performs a system reset.</li>
+<li>SYSTEM_OFF: Powers off the entire system.</li>
+</ol>
+<p>PSCI allows for better coordination of power management across different cores and system components, which is essential for efficient energy usage and optimized performance in modern ARM-based systems.</p>
+<hr />
+<p><strong>Question:</strong> Who to call vector_cpu_on_entry? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p><code>vector_cpu_on_entry</code> is a function that is typically called when a CPU core is powered on in the context of an ARM-based system using PSCI for power management. The function is usually defined in the low-level firmware, such as ARM Trusted Firmware (ATF) or U-Boot.</p>
+<p>To call <code>vector_cpu_on_entry</code>, you will need to use the PSCI interface. The <code>CPU_ON</code> PSCI function is used to power on a specific CPU core, and it&rsquo;s usually called by the operating system or another higher-level software component that manages power states of the CPU cores.</p>
+<p>Here&rsquo;s an example of how you might call the <code>CPU_ON</code> function using PSCI:</p>
+<ol>
+<li>Prepare the necessary arguments, such as the target CPU&rsquo;s MPIDR (Multiprocessor Affinity Register) and the entry point address of the <code>vector_cpu_on_entry</code> function.</li>
+<li>Issue an SMC (Secure Monitor Call) instruction with the appropriate PSCI function ID for <code>CPU_ON</code> and the prepared arguments.</li>
+</ol>
+<p>Please note that the actual implementation details will depend on your specific system configuration and the software components you are using. The operating system, hypervisor, or other system software components usually take care of calling the PSCI <code>CPU_ON</code> function and setting up the necessary entry points. As a developer, you typically don&rsquo;t need to call the <code>vector_cpu_on_entry</code> function directly.</p>
+<hr />
+<p><strong>Question:</strong> What does vector_cpu_on_entry do with respect to OP-TEE? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p><code>vector_cpu_on_entry</code> is not a specific function in OP-TEE. However, I believe you are referring to a generic concept of an entry point for secondary cores in a multi-core system.</p>
+<p>In OP-TEE, the entry point for secondary cores is defined in <code>core/arch/arm/kernel/entry_a64.S</code> (for ARMv8-A) or <code>core/arch/arm/kernel/entry_a32.S</code> (for ARMv7-A) depending on the architecture. The entry point function is named <code>__secondary_init</code> for both ARMv8-A and ARMv7-A architectures.</p>
+<p>When a secondary core is powered on in a multi-core system, the ATF (ARM Trusted Firmware) handles the process and sets up the appropriate entry points for both the non-secure world (e.g., the operating system) and the secure world (e.g., OP-TEE). The secondary core then starts executing the OP-TEE code at the <code>__secondary_init</code> entry point in the secure world.</p>
+<p>The <code>__secondary_init</code> function performs the following tasks:</p>
+<ol>
+<li>Initialize the secondary core&rsquo;s CPU registers.</li>
+<li>Set up the MMU and configure the memory map.</li>
+<li>Call <code>generic_entry_a64</code> (for ARMv8-A) or <code>generic_entry_a32</code> (for ARMv7-A) to perform generic initialization, such as setting up the stack, enabling interrupts, and initializing the core&rsquo;s private GIC (Generic Interrupt Controller) interface.</li>
+<li>Call <code>thread_init_per_cpu</code> to initialize the per-CPU data structures.</li>
+<li>Enter the main scheduler loop by calling <code>thread_std_smc_entry</code> (for ARMv8-A) or <code>thread_std_svc_entry</code> (for ARMv7-A).</li>
+</ol>
+<p>After these steps, the secondary core is ready to execute secure tasks in OP-TEE along with the primary core.</p>
+<hr />
+<p><strong>Question:</strong> What are difference boot of OP-TEE between AArch64 and AArch32? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE supports both AArch64 (ARMv8-A) and AArch32 (ARMv7-A) architectures. While the overall boot process is similar for both, there are some differences due to the architectural distinctions. Here are the main differences in the boot process of OP-TEE between AArch64 and AArch32:</p>
+<ol>
+<li>
+<p><strong>Entry point</strong>: The entry point for the primary core is different for AArch64 and AArch32. In AArch64, it&rsquo;s defined in <code>core/arch/arm/kernel/entry_a64.S</code>, while in AArch32, it&rsquo;s defined in <code>core/arch/arm/kernel/entry_a32.S</code>.</p>
+</li>
+<li>
+<p><strong>Register usage</strong>: AArch64 and AArch32 have different register usage conventions. AArch64 has 31 general-purpose registers (X0-X30), while AArch32 has 16 general-purpose registers (R0-R15). The register naming and usage in the assembly code for these architectures will differ.</p>
+</li>
+<li>
+<p><strong>MMU setup</strong>: AArch64 uses a different memory translation scheme compared to AArch32. Consequently, the MMU configuration code in <code>core/arch/arm/mm/core_mmu_lpae.c</code> (for AArch64) and <code>core/arch/arm/mm/core_mmu_v7.c</code> (for AArch32) differ in setting up the translation tables and configuring the memory attributes.</p>
+</li>
+<li>
+<p><strong>Exception levels</strong>: AArch64 introduces Exception Levels (EL0-EL3) that define different privilege levels for software execution. AArch32 uses the traditional ARM privilege levels (User, FIQ, IRQ, Supervisor, Abort, and Undefined) instead. The exception handling and context switching code will differ between the two architectures due to this distinction.</p>
+</li>
+<li>
+<p><strong>Interrupt handling</strong>: AArch64 uses the GICv3 interrupt controller, while AArch32 typically uses the GICv2 interrupt controller. The initialization and handling of interrupts will differ between the two architectures due to the differences in GIC versions.</p>
+</li>
+<li>
+<p><strong>Function calling convention</strong>: AArch64 and AArch32 have different function calling conventions. For example, AArch64 passes the first eight arguments in registers X0-X7, while AArch32 passes arguments using registers R0-R3 and the stack. The assembly code for function calls and stack frame setup will differ between the two architectures.</p>
+</li>
+</ol>
+<p>Despite these differences, the high-level boot process and functionality of OP-TEE remain consistent between AArch64 and AArch32. The architectural differences are primarily reflected in the low-level implementation details, such as register usage, memory management, and exception handling.</p>
 <hr />
 <h2>Multi-Thread &amp; Multi-Process</h2>
 <p><strong>Question:</strong> Can secure kernel and trusted applications in OP-TEE can be multi-thread?</p>
@@ -1346,6 +1618,12 @@ body .markdown-body {
 </li>
 </ol>
 <p>In both cases, OP-TEE manages the IPC to ensure isolation between different trusted applications and maintain the security of the secure environment. While the communication mechanisms may vary, OP-TEE provides the necessary APIs and infrastructure to support IPC between trusted applications and between normal world applications and trusted applications.</p>
+<hr />
+<p><strong>Question:</strong> Is a TA assigned to only one thread? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>In OP-TEE, a Trusted Application (TA) can be single or multi-threaded, depending on its design and implementation. However, OP-TEE employs a single-threaded model by default, which means that each TA instance is typically associated with one thread, and there is no concurrency within a single instance of the TA.</p>
+<p>If an application requires concurrent access to the TA, multiple instances of the TA can be created. Each instance runs in a separate thread, and the TA developer must take care of synchronization and shared resources within the TA code.</p>
+<p>In summary, a TA is not inherently limited to a single thread, but the default behavior in OP-TEE is to use one thread per TA instance. If the TA is designed to support multiple threads, it can be done, but the developer must handle synchronization and shared resources carefully.</p>
 <hr />
 <h2>Memory</h2>
 <p><strong>Question:</strong> Does OP-TEE support shared memory?</p>
@@ -1434,6 +1712,19 @@ body .markdown-body {
 </ol>
 <p>Overall, SMAF plays a critical role in maintaining the security and integrity of data within the OP-TEE environment. By providing secure memory allocation and management features, SMAF helps ensure that sensitive information remains protected from potential threats in the normal world and other trusted applications running in the secure world.</p>
 <hr />
+<p><strong>Question:</strong> Is SMAF of OP-TEE? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, SMAF is a part of the OP-TEE (Open Portable Trusted Execution Environment) framework. OP-TEE is an open-source implementation of the TEE (Trusted Execution Environment) for ARM processors, which provides a secure environment for running trusted applications.</p>
+<p>SMAF, or Secure Memory Allocator Framework, is a component within the OP-TEE framework that enables the secure allocation and management of memory for trusted applications. It helps protect sensitive data, such as encryption keys and decrypted content, from unauthorized access in the normal world or by untrusted applications.</p>
+<p>By integrating SMAF into OP-TEE, the framework can provide a higher level of security for applications, such as DRM systems, that require secure memory management for their sensitive data.</p>
+<hr />
+<p><strong>Question:</strong> Who can allocate SMAF memory? TA or CA (2023/4/13)</p>
+<p><strong>Answer:</strong></p>
+<p>In the context of OP-TEE (Open Portable Trusted Execution Environment), the SMAF (Secure Memory Allocation Framework) is used to allocate memory for TAs (Trusted Applications).</p>
+<p>Typically, the allocation of SMAF memory is managed by the OP-TEE OS (Trusted OS) and is not directly accessible by the CAs (Client Applications) running in the normal world. The reason for this is to maintain a strict separation between the secure and normal worlds, which is essential for the security and isolation of the trusted applications.</p>
+<p>When a CA wants to communicate with a TA, it does so using the OP-TEE client API, which allows the CA to send messages and data to the TA. The OP-TEE OS then handles the secure allocation of memory for the TA, ensuring that the sensitive data and code execution remain protected within the secure environment.</p>
+<p>In summary, the SMAF memory allocation is typically managed by the OP-TEE OS and is intended for use by TAs, while CAs interact with TAs through the OP-TEE client API.</p>
+<hr />
 <p><strong>Question:</strong> What is CMA?</p>
 <p><strong>Answer:</strong></p>
 <p>CMA stands for Contiguous Memory Allocator, a feature in the Linux kernel that helps to allocate large contiguous blocks of memory. In systems where memory fragmentation is an issue, CMA can be particularly useful for devices and drivers that require large contiguous memory regions for their operation, such as multimedia hardware or devices using Direct Memory Access (DMA).</p>
@@ -1476,7 +1767,7 @@ body .markdown-body {
 <ol>
 <li>Build the OP-TEE project with the <code>CFG_TA_ASN1_DER_FORMAT</code> configuration option enabled. This option tells OP-TEE to expect TAs to be signed with X.509 certificates instead of the default custom format.</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="nx">make</span> <span class="nx">CFG_TA_ASN1_DER_FORMAT</span><span class="p">=</span><span class="nx">y</span>
+<div class="codehilite"><pre><span></span><code>make CFG_TA_ASN1_DER_FORMAT=y
 </code></pre></div>
 
 <ol start="2">
@@ -1524,16 +1815,11 @@ body .markdown-body {
 <p>C++: You may be able to use a subset of C++ to develop trusted applications, as long as you handle low-level details and ensure compatibility with the TEE environment. However, you would need to be cautious about using certain C++ features, such as exceptions and the standard library, which may not be supported or might introduce security risks.</p>
 </li>
 <li>
-<p>Rust: Rust is a systems programming language with strong safety guarantees, which could be suitable for developing trusted applications. There has been some work on using Rust for OP-TEE trusted applications, such as the <code>rust-optee-trustzone-sdk</code> project (<a href="https://github.com/apache/incubator-teaclave-trustzone-sdk">https://github.com/apache/incubator-teaclave-trustzone-sdk</a>). This project provides a Rust SDK for creating TAs and a set of bindings to the TEE Internal Core API.</p>
+<p>Rust: Rust is a systems programming language with strong safety guarantees, which could be suitable for developing trusted applications. There has been some work on using Rust for OP-TEE trusted applications, such as the <code>rust-optee-trustzone-sdk</code> project (https://github.com/apache/incubator-teaclave-trustzone-sdk). This project provides a Rust SDK for creating TAs and a set of bindings to the TEE Internal Core API.</p>
 </li>
 </ol>
 <p>Using other high-level languages like Python, Java, or JavaScript for trusted applications is generally not feasible due to their runtime environments, memory management, and performance characteristics, which may not be compatible with the constraints of the secure world.</p>
 <p>In summary, while it is possible to use other languages for normal world applications and, to some extent, for trusted applications, the primary language for OP-TEE development remains C. When considering an alternative language, be sure to evaluate its compatibility with the TEE environment, the API, and the specific requirements of your application.</p>
-<hr />
-<p><strong>Question:</strong> Does OP-TEE support ARMv7 and ARMv8?</p>
-<p><strong>Answer:</strong></p>
-<p>Yes, OP-TEE supports both ARMv7 and ARMv8 architectures. OP-TEE is designed to work with Arm TrustZone technology, which is available on both ARMv7 and ARMv8-based processors. Arm TrustZone provides hardware-based isolation between the normal world and the secure world, allowing OP-TEE to implement a Trusted Execution Environment (TEE) that can run trusted applications securely.</p>
-<p>While ARMv7 and ARMv8 have some differences in terms of instruction sets and features, OP-TEE is compatible with both architectures and can be used to build secure systems on devices using either ARMv7 or ARMv8 processors.</p>
 <hr />
 <p><strong>Question:</strong> Does OP-TEE have a shell?</p>
 <p><strong>Answer:</strong></p>
@@ -1542,25 +1828,41 @@ body .markdown-body {
 <p>It is important to note that the S-Shell feature should be used carefully and only in controlled environments, as it could potentially expose sensitive information or allow unauthorized access to secure resources if misused.</p>
 <p>In summary, while OP-TEE does not have a traditional shell, it does provide an S-Shell feature for debugging purposes. This feature should be used with caution, as it can potentially expose sensitive information or allow unauthorized access to secure resources if not properly managed.</p>
 <hr />
-<p><strong>Question:</strong> Can I create a TA at run-time?</p>
+<p><strong>Question:</strong> What is about size of tee.bin? (2023/4/12)</p>
 <p><strong>Answer:</strong></p>
-<p>Creating a Trusted Application (TA) at runtime is not a typical use case for OP-TEE. TAs are usually developed, compiled, and signed offline before being deployed to the target device. In the normal process, TAs are loaded by the secure kernel (in the secure world) when requested by a client application (in the normal world).</p>
-<p>However, if you have a specific use case that requires creating a TA at runtime, you could theoretically implement a custom mechanism for loading and running code in the secure world dynamically. This would involve significant modifications to the OP-TEE framework and would need to be done with extreme caution to ensure security is maintained.</p>
-<p>Such a dynamic TA loading mechanism would likely require the following steps:</p>
+<p>The size of the <code>tee.bin</code> file, which is the OP-TEE OS binary, can vary depending on various factors such as the target platform, configuration options, and enabled features. It&rsquo;s difficult to give an exact size for a specific <code>tee.bin</code> file without knowing the specific build configuration.</p>
+<p>However, generally speaking, the size of the <code>tee.bin</code> file is relatively small, usually ranging from a few hundred kilobytes to a couple of megabytes. This small footprint is one of the reasons why OP-TEE is suitable for use in constrained environments, such as embedded systems and IoT devices.</p>
+<p>Keep in mind that the actual size of the <code>tee.bin</code> file in your specific case can be different depending on the factors mentioned earlier.</p>
+<hr />
+<p><strong>Question:</strong> What is libteec.so? (2023/4/13)</p>
+<p><strong>Answer:</strong></p>
+<p><code>libteec.so</code> is a shared library in the OP-TEE (Open Portable Trusted Execution Environment) system, which is part of the client-side implementation of the GlobalPlatform TEE Client API. This library allows client applications (CAs) in the normal world to communicate with trusted applications (TAs) running in the secure world, i.e., inside the TEE.</p>
+<p>The TEE Client API specifies a set of functions that client applications can use to open and close sessions with trusted applications, to send commands and data to the TAs, and to manage shared memory between the normal world and the secure world. <code>libteec.so</code> provides the implementation of these functions, handling the low-level communication with the OP-TEE OS, usually through a dedicated driver.</p>
+<p>In summary, <code>libteec.so</code> is a crucial component that enables applications running in the normal world to utilize the secure services provided by trusted applications within the OP-TEE environment.</p>
+<hr />
+<p><strong>Question:</strong> Does libteec.so run in EL0 or EL1? (2023/4/13)</p>
+<p><strong>Answer:</strong></p>
+<p><code>libteec.so</code> runs in EL0 (Exception Level 0) since it is a user-space library that is part of client applications (CAs) in the normal world. EL0 is the lowest privilege level and is where applications run on ARM-based systems.</p>
+<p>EL1 (Exception Level 1) is the level at which operating system kernel code runs, and it has a higher privilege level than EL0. The OP-TEE OS, which manages trusted applications (TAs) in the secure world, runs at a higher exception level (EL1 in AArch64 or S-EL1 in AArch32) to ensure isolation between the normal and secure worlds. However, <code>libteec.so</code> is not part of the OP-TEE OS; it is a user-space library for communicating with the TEE from the normal world.</p>
+<hr />
+<p><strong>Question:</strong> Does optee.ko run in EL1? (2023/4/13)</p>
+<p><strong>Answer:</strong></p>
+<p><code>optee.ko</code> is a Linux kernel module that runs in the normal world. Since it is part of the kernel, it runs at EL1 (Exception Level 1) on AArch64 systems. EL1 is the level at which operating system kernel code runs, and it has a higher privilege level than EL0, where user-space applications run.</p>
+<p>However, it is important to note that <code>optee.ko</code> runs in the normal world, not in the secure world. It serves as a driver to facilitate communication between client applications (CAs) in the normal world and the OP-TEE OS in the secure world. The actual OP-TEE OS runs at a higher exception level (EL1 in AArch64 or S-EL1 in AArch32) in the secure world to ensure isolation between the normal and secure worlds.</p>
+<hr />
+<p><strong>Question:</strong> What is TEE supplicant? (2023/4/13)</p>
+<p><strong>Answer:</strong></p>
+<p>The TEE (Trusted Execution Environment) supplicant is a user-space daemon in the normal world that works alongside the OP-TEE environment. It serves as an intermediary between the TEE OS and the normal world&rsquo;s user-space applications, facilitating communication and providing additional services for TEE operations.</p>
+<p>Some of the primary responsibilities of the TEE supplicant include:</p>
 <ol>
-<li>Develop and compile the TA code in a suitable format that can be loaded into the secure world at runtime.</li>
-<li>Transfer the compiled TA code to the target device securely.</li>
-<li>Modify the secure kernel to support loading and executing the TA code dynamically, including verifying its authenticity and integrity.</li>
-<li>Implement proper access control and isolation mechanisms to ensure the newly loaded TA does not compromise the security of the existing TAs and the secure world.</li>
+<li>Loading and managing shared libraries for Trusted Applications (TAs).</li>
+<li>Handling communication with storage services, such as file access and data persistence, for TAs.</li>
+<li>Assisting with inter-process communication (IPC) between client applications (CAs) and TAs.</li>
+<li>Managing cryptographic operations that require access to the normal world.</li>
 </ol>
-<p>It is crucial to emphasize that implementing a runtime TA creation mechanism is a complex and potentially risky endeavor, and it may introduce security vulnerabilities if not done correctly. You should carefully consider the security implications and whether the benefits of such a feature outweigh the risks before attempting to implement it.</p>
+<p>The TEE supplicant is an essential component of the OP-TEE ecosystem, working in tandem with the kernel-side driver (e.g., optee.ko) and user-space TEE client libraries (e.g., libteec.so) to enable a seamless, secure execution environment for sensitive applications.</p>
 <hr />
-<p><strong>Question:</strong> But what is TEECI_LoadSecureModule()</p>
-<p><strong>Answer:</strong></p>
-<p>My apologies for any confusion earlier. <code>TEECI_LoadSecureModule()</code> is not a part of the standard OP-TEE or GlobalPlatform TEE APIs. It seems to be a custom function name that might have been used in a specific implementation or context.</p>
-<p>It&rsquo;s important to reiterate that the standard OP-TEE and GlobalPlatform TEE APIs do not provide a built-in function for loading or creating Trusted Applications (TAs) at runtime. TAs are generally pre-built, signed, and deployed to the device as binaries. The secure kernel then loads the TA when requested by a client application.</p>
-<p>If you have encountered <code>TEECI_LoadSecureModule()</code> in some source code or documentation, it might be a custom function that has been implemented for a specific use case or project. To understand its purpose and how it works, you would need to refer to the documentation or source code of that particular implementation.</p>
-<hr />
+<h2>Static TA and Dynamic TA</h2>
 <p><strong>Question:</strong> What are Static TA and Dynamic TA? Please also summarize them in a table.</p>
 <p><strong>Answer:</strong></p>
 <p>Static TA (Trusted Application) and Dynamic TA are two types of Trusted Applications used within the OP-TEE framework. Here&rsquo;s a summary of their differences in a table:</p>
@@ -1619,6 +1921,25 @@ body .markdown-body {
 <p>The concepts of static and dynamic TAs are unique to the OP-TEE project and serve as a way to distinguish between different loading and linking mechanisms for trusted applications within the OP-TEE framework. Other TEE implementations might use different terminology or approaches to manage trusted applications.</p>
 <p>In summary, the terms &ldquo;Static TA&rdquo; and &ldquo;Dynamic TA&rdquo; are specific to OP-TEE and are not part of the GlobalPlatform TEE specifications.</p>
 <hr />
+<p><strong>Question:</strong> Can I create a TA at run-time?</p>
+<p><strong>Answer:</strong></p>
+<p>Creating a Trusted Application (TA) at runtime is not a typical use case for OP-TEE. TAs are usually developed, compiled, and signed offline before being deployed to the target device. In the normal process, TAs are loaded by the secure kernel (in the secure world) when requested by a client application (in the normal world).</p>
+<p>However, if you have a specific use case that requires creating a TA at runtime, you could theoretically implement a custom mechanism for loading and running code in the secure world dynamically. This would involve significant modifications to the OP-TEE framework and would need to be done with extreme caution to ensure security is maintained.</p>
+<p>Such a dynamic TA loading mechanism would likely require the following steps:</p>
+<ol>
+<li>Develop and compile the TA code in a suitable format that can be loaded into the secure world at runtime.</li>
+<li>Transfer the compiled TA code to the target device securely.</li>
+<li>Modify the secure kernel to support loading and executing the TA code dynamically, including verifying its authenticity and integrity.</li>
+<li>Implement proper access control and isolation mechanisms to ensure the newly loaded TA does not compromise the security of the existing TAs and the secure world.</li>
+</ol>
+<p>It is crucial to emphasize that implementing a runtime TA creation mechanism is a complex and potentially risky endeavor, and it may introduce security vulnerabilities if not done correctly. You should carefully consider the security implications and whether the benefits of such a feature outweigh the risks before attempting to implement it.</p>
+<hr />
+<p><strong>Question:</strong> But what is TEECI_LoadSecureModule()</p>
+<p><strong>Answer:</strong></p>
+<p>My apologies for any confusion earlier. <code>TEECI_LoadSecureModule()</code> is not a part of the standard OP-TEE or GlobalPlatform TEE APIs. It seems to be a custom function name that might have been used in a specific implementation or context.</p>
+<p>It&rsquo;s important to reiterate that the standard OP-TEE and GlobalPlatform TEE APIs do not provide a built-in function for loading or creating Trusted Applications (TAs) at runtime. TAs are generally pre-built, signed, and deployed to the device as binaries. The secure kernel then loads the TA when requested by a client application.</p>
+<p>If you have encountered <code>TEECI_LoadSecureModule()</code> in some source code or documentation, it might be a custom function that has been implemented for a specific use case or project. To understand its purpose and how it works, you would need to refer to the documentation or source code of that particular implementation.</p>
+<hr />
 <p><strong>Question:</strong> How to recover a crashed static TA?</p>
 <p><strong>Answer:</strong></p>
 <p>Recovering a crashed static TA in OP-TEE may not be a straightforward process, as static TAs are linked with the OP-TEE OS binary and run in the same context as the OS. However, you can try the following steps to recover from a crashed static TA:</p>
@@ -1671,6 +1992,13 @@ body .markdown-body {
 </li>
 </ol>
 <p>Please note that it&rsquo;s essential to design and implement the dynamic TA with robust error handling and recovery mechanisms to minimize the risk of crashes. Be sure to thoroughly test and validate the TA to ensure its stability and reliability.</p>
+<hr />
+<p><strong>Question:</strong> Which privilege levels do static TA and dynamic TA run in? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>In the context of ARM TrustZone and OP-TEE, there are two types of Trusted Applications (TAs): static and dynamic.</p>
+<p>Static TAs are part of the OP-TEE OS itself, meaning they are compiled and linked together with the OP-TEE OS, and run at the same privilege level as the OP-TEE OS, which is Secure EL1 (Secure Exception Level 1) in the ARMv8 architecture.</p>
+<p>Dynamic TAs, on the other hand, are standalone binaries that are loaded and executed by the OP-TEE OS on-demand. They run at a lower privilege level compared to the OP-TEE OS. In the ARMv8 architecture, dynamic TAs run at Secure EL0 (Secure Exception Level 0).</p>
+<p>By running dynamic TAs at a lower privilege level, the system can provide better isolation between the TAs themselves and the OP-TEE OS, thereby improving security.</p>
 <hr />
 <h2>Qualcomm</h2>
 <p><strong>Question:</strong> Does Qualcomm support OP-TEE?</p>
@@ -1855,6 +2183,86 @@ body .markdown-body {
 </ol>
 <p>Keep in mind that ClearKey is a basic key system primarily intended for testing and development purposes. In a production environment, you may want to use a more robust and secure DRM system, such as Widevine or PlayReady, depending on your requirements and platform support. Additionally, be aware that implementing a DRM solution in OP-TEE can be complex, and you&rsquo;ll need to consider the hardware and platform limitations, performance, and security requirements for your specific use case.</p>
 <hr />
+<p><strong>Question:</strong> Below text comes from &ldquo;BKK16-201 - PlayReady OPTEE Integration with Secure Video Path&rdquo; (2023/4/10)</p>
+<p><strong>Answer:</strong></p>
+<p>This text appears to be an excerpt from a presentation, &ldquo;BKK16-201 - PlayReady OPTEE Integration with Secure Video Path.&rdquo; The presenter is Zoltan Kuscsik, PhD, and the presentation took place on March 8, 2016, during the Linaro Connect BKK16 event. The presentation deals with the integration of key components such as the W3C EME Working Draft, Microsoft PlayReady DRM Porting Kit v3.0, OP-TEE OS, OpenCDM/OpenCDMI, and Chromium v45.</p>
+<p>The talk provides updates since SFO15, such as the progress on the proof of concept for Secure Data Path with OP-TEE/Playready on STM B2120, the integration of the Secure Memory Allocator Framework (SMAF), and the implementation of Playready TA with support for the Playready Interface For TEE (PRiTEE).</p>
+<p>Supported boards mentioned in the presentation include STM B2120 and 96boards - HiKey. The presentation also discusses various aspects related to EME, secure memory allocation, Playready integration, Open CDM, and the implementation overview for Chromium.</p>
+<p>There are several links provided at the end of the presentation for further information on Playready, OP-TEE, and Linaro OpenCDM.</p>
+<hr />
+<p><strong>Question:</strong> What is secure data path? (2023/4/10)</p>
+<p><strong>Answer:</strong></p>
+<p>A Secure Data Path (SDP) is a mechanism that ensures the confidentiality, integrity, and protection of sensitive data while it is being processed, transmitted, or stored. In the context of multimedia applications and Digital Rights Management (DRM) systems, a secure data path ensures that the content is protected from unauthorized access or tampering at all stages of its life cycle, from decoding to rendering on the display.</p>
+<p>The SDP is designed to prevent unauthorized access and data leaks by isolating the sensitive data and processing it within a secure environment, such as a Trusted Execution Environment (TEE) or hardware-protected memory regions. This isolation ensures that even if the rest of the system is compromised, the sensitive data remains protected.</p>
+<p>In the case of multimedia applications, the secure data path provides end-to-end protection for encrypted content. It ensures that decrypted data (e.g., video or audio frames) is not exposed to the untrusted parts of the system, such as the general-purpose operating system, applications, or untrusted hardware components. This protection is critical for DRM systems to prevent content piracy and maintain the trust of content providers.</p>
+<hr />
+<p><strong>Question:</strong> So the video is played in secure world. Right? (2023/4/10)</p>
+<p><strong>Answer:</strong></p>
+<p>Not exactly. The video is not played entirely within the secure world. Instead, the sensitive parts of the video processing, such as decryption and decoding, are performed within the secure world, using technologies like Trusted Execution Environment (TEE) or hardware-protected memory regions. Once the video data is processed securely, it is then passed to the normal world for rendering and display.</p>
+<p>The purpose of this approach is to protect sensitive data and operations from unauthorized access or tampering while minimizing the performance overhead of the secure world. By only processing the critical parts of the video pipeline securely, the system can maintain a balance between security and performance.</p>
+<hr />
+<p><strong>Question:</strong> How do we protect the video that displays in normal world? (2023/4/10)</p>
+<p><strong>Answer:</strong></p>
+<p>Protecting the video data when it is displayed in the normal world is a crucial aspect of maintaining the security of the content. Here are some techniques and technologies used to achieve this protection:</p>
+<ol>
+<li>
+<p>Secure Data Path (SDP): SDP is a technique that ensures the secure handling of sensitive data throughout the entire video pipeline. In SDP, the decrypted and decoded video data is transferred from the secure world to the normal world through a protected memory path. This prevents unauthorized access or tampering during the data transfer.</p>
+</li>
+<li>
+<p>Hardware-based content protection: Certain hardware components, such as display controllers and graphics processors, can offer built-in content protection features. These features ensure that the video data remains secure when it is passed to the display device.</p>
+</li>
+<li>
+<p>High-bandwidth Digital Content Protection (HDCP): HDCP is a widely used technology for protecting video content transmitted over digital interfaces like HDMI, DisplayPort, or DVI. HDCP encrypts the video data during transmission, preventing unauthorized access or copying.</p>
+</li>
+<li>
+<p>Output Protection Management (OPM): OPM is a system that enforces the use of HDCP or other content protection mechanisms when video data is transmitted from a source device to a display device. OPM ensures that the video data is protected throughout the entire transmission process.</p>
+</li>
+<li>
+<p>Frame buffer encryption: Some systems support the encryption of frame buffers, which store the video data before it is rendered on the display. This feature provides an additional layer of protection for the video data as it is stored in the memory.</p>
+</li>
+</ol>
+<p>By employing a combination of these techniques and technologies, the video data can be adequately protected even when it is displayed in the normal world.</p>
+<hr />
+<p><strong>Question:</strong> What is &ldquo;EME with OP-TEE on Hikey&rdquo;? (2023/4/10)</p>
+<p><strong>Answer:</strong></p>
+<p>&ldquo;EME with OP-TEE on Hikey&rdquo; refers to the implementation of the Encrypted Media Extensions (EME) using the OP-TEE (Open Portable Trusted Execution Environment) on the HiKey development board.</p>
+<p>EME is a W3C (World Wide Web Consortium) specification that provides a standard interface for content protection in web browsers. It allows web applications to communicate with Content Decryption Modules (CDMs) to enable the playback of encrypted multimedia content.</p>
+<p>OP-TEE is an open-source Trusted Execution Environment (TEE) that provides a secure environment for the execution of sensitive code and data protection. OP-TEE leverages ARM TrustZone technology to isolate the secure world from the normal world.</p>
+<p>HiKey is a development board built around a 64-bit ARM-based SoC (System on Chip) and is part of the 96Boards family of development platforms. It is widely used for prototyping and development purposes, including the implementation of secure solutions.</p>
+<p>In summary, &ldquo;EME with OP-TEE on Hikey&rdquo; refers to a solution that integrates EME and OP-TEE on the HiKey development board to provide secure playback of encrypted multimedia content within web applications. This implementation ensures the protection of sensitive data and operations related to content decryption and key management within the secure world of the TEE.</p>
+<hr />
+<p><strong>Question:</strong> What is AES OCDMI? (2023/4/10)</p>
+<p><strong>Answer:</strong></p>
+<p>AES OCDMI refers to an implementation of the Open Content Decryption Module Interface (OCDMI) that uses the Advanced Encryption Standard (AES) algorithm for content decryption.</p>
+<p>OCDMI is a part of the OpenCDM project, which aims to provide an open-source and modular Content Decryption Module (CDM) solution for various DRM systems. CDMs are used in conjunction with the Encrypted Media Extensions (EME) to enable the playback of encrypted multimedia content in web browsers.</p>
+<p>AES (Advanced Encryption Standard) is a widely used symmetric encryption algorithm that provides strong security for data encryption and decryption. In the context of AES OCDMI, the AES algorithm is used to decrypt the protected multimedia content within the secure environment provided by the OpenCDM framework.</p>
+<p>To sum up, AES OCDMI is an open-source solution for securely decrypting protected multimedia content using the AES encryption algorithm within the OpenCDM framework.</p>
+<hr />
+<p><strong>Question:</strong> How is SMAF used in DRM? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>The Secure Memory Allocator Framework (SMAF) is a framework that can be used in conjunction with Digital Rights Management (DRM) systems to provide an additional layer of security for handling sensitive data. In a DRM context, sensitive data can include encryption keys, decrypted content, or any other data that must be protected from unauthorized access.</p>
+<p>SMAF is designed to provide secure memory allocation and management in a system. It allocates memory from a secure memory pool that is reserved for trusted applications, such as DRM systems, and is inaccessible to the normal world or untrusted applications. This helps prevent unauthorized access, tampering, or copying of the sensitive data, ensuring that the content remains protected.</p>
+<p>In a typical DRM implementation using SMAF:</p>
+<ol>
+<li>A trusted application, such as a DRM module, requests secure memory allocation from the SMAF.</li>
+<li>The SMAF allocates memory from the secure memory pool and provides a handle or reference to the trusted application.</li>
+<li>The trusted application uses the allocated secure memory to store sensitive data, such as decryption keys or decrypted content.</li>
+<li>The sensitive data remains protected within the secure memory, preventing unauthorized access from the normal world or untrusted applications.</li>
+</ol>
+<p>By using SMAF, DRM systems can ensure that sensitive data is securely stored and managed, reducing the risk of unauthorized access, tampering, or copying of protected content.</p>
+<hr />
+<p><strong>Question:</strong> What is OCDM? (2023/4/10)</p>
+<p><strong>Answer:</strong></p>
+<p>OCDM stands for Open Content Decryption Module. It is an open-source implementation of a Content Decryption Module (CDM) designed to work with the Encrypted Media Extensions (EME) standard, which is part of the HTML5 specification. EME provides a framework for playing encrypted multimedia content in web browsers without the need for third-party plugins such as Adobe Flash or Microsoft Silverlight.</p>
+<p>The primary purpose of OCDM is to enable the decryption and playback of protected multimedia content in web browsers, while still maintaining the necessary security and Digital Rights Management (DRM) requirements set by content providers. OCDM aims to provide a standard, cross-platform interface for integrating various DRM systems into web browsers, making it easier for developers to create and deploy secure media solutions.</p>
+<p>OCDM is designed to work with various DRM systems and can be extended to support new DRM technologies as they emerge. This allows content providers to use a single, unified solution for delivering protected content to multiple platforms and devices, reducing the complexity of managing multiple DRM systems.</p>
+<hr />
+<p><strong>Question:</strong> What is Clear Key? (2023/4/11)</p>
+<p><strong>Answer:</strong></p>
+<p>Clear Key is a simple, non-proprietary DRM (Digital Rights Management) system defined by the W3C (World Wide Web Consortium) as part of the Encrypted Media Extensions (EME) specification. EME is a standard interface for using DRM within web browsers to protect copyrighted content during streaming.</p>
+<p>Clear Key is essentially a key management system that allows for the decryption of media content using clear-text (unencrypted) cryptographic keys. The primary purpose of Clear Key is to serve as a reference implementation for testing and development purposes. It is not meant to be a robust DRM solution for commercial use, as it lacks the sophisticated security features offered by other DRM systems, such as Google&rsquo;s Widevine or Microsoft&rsquo;s PlayReady.</p>
+<p>In summary, Clear Key is a simple and open DRM system used mainly for testing and development of EME-supported web browsers and applications.</p>
+<hr />
 <h2>Secure Storage</h2>
 <p><strong>Question:</strong> Does OP-TEE support file system?</p>
 <p><strong>Answer:</strong></p>
@@ -1971,7 +2379,10 @@ body .markdown-body {
 <p>Monitor normal world and secure world communication: Regularly check the communication between the normal world and the secure world. If the communication stalls or encounters unexpected errors, trigger a recovery action.</p>
 </li>
 <li>
-<p>Define recovery actions: Design recovery actions to take when a crash is detected. Possible actions include: a. Reset the device. b. Reset the secure world or restart OP-TEE without affecting the normal world. c. Switch to a failsafe mechanism or an alternative trusted execution environment.</p>
+<p>Define recovery actions: Design recovery actions to take when a crash is detected. Possible actions include:
+   a. Reset the device.
+   b. Reset the secure world or restart OP-TEE without affecting the normal world.
+   c. Switch to a failsafe mechanism or an alternative trusted execution environment.</p>
 </li>
 <li>
 <p>Test and validate: Thoroughly test and validate the automatic recovery mechanism to ensure it works as intended and does not introduce additional security risks or undesired side effects.</p>
@@ -2102,6 +2513,16 @@ body .markdown-body {
 <p>No, a Trusted Application (TA) does not run inside a Virtual Machine (VM) as described in the article. Instead, the TA runs in the secure world within the OP-TEE environment. The hypervisor manages the VMs in the normal world and is responsible for handling the communication between the normal world and OP-TEE in the secure world. When OP-TEE has virtualization support enabled, it allows multiple VMs to utilize a single OP-TEE instance for running TAs while maintaining isolation between the VM-related states.</p>
 <hr />
 <h2>PKCS#11</h2>
+<p><strong>Question:</strong> The following text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html</p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> The following continued text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html</p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> What is HUK? (2023/4/13)</p>
+<p><strong>Answer:</strong></p>
+<p>HUK stands for Hardware Unique Key. It is a unique, device-specific key that is generated and stored within a device&rsquo;s hardware during manufacturing. HUKs are used to provide a root of trust and ensure secure device identification and authentication. In the context of OP-TEE, the Hardware Unique Key can be used to derive other cryptographic keys to secure various aspects of the system, such as secure storage or secure communication.</p>
+<hr />
 <p><strong>Question:</strong> How does OP-TEE work with HUK?</p>
 <p><strong>Answer:</strong></p>
 <p>OP-TEE (Open Portable Trusted Execution Environment) is designed to provide a secure environment for the execution of trusted applications on a device. One of the critical components for providing security within OP-TEE is the use of a Hardware Unique Key (HUK).</p>
@@ -2144,6 +2565,10 @@ body .markdown-body {
 </li>
 </ol>
 <p>These are just a few examples of devices that store HUKs and can work with OP-TEE on the ARM platform. It&rsquo;s important to note that the secure storage and management of HUKs may vary depending on the specific device, its hardware features, and the implementation of OP-TEE. Always consult the device&rsquo;s documentation and follow the manufacturer&rsquo;s guidelines to ensure proper security measures are in place.</p>
+<hr />
+<p><strong>Question:</strong> So what is TSK? (2023/4/13)</p>
+<p><strong>Answer:</strong></p>
+<p>TSK stands for Trusted Storage Key. In the context of OP-TEE, it is a key used to encrypt and authenticate the data stored in the secure storage. The TSK is derived from the Hardware Unique Key (HUK) and other device-specific information, which ensures that the encrypted data can only be accessed and decrypted by the same device. This provides a secure way to store sensitive data, such as cryptographic keys or user credentials, on the device.</p>
 <hr />
     </article>
   </body>

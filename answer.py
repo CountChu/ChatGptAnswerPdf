@@ -53,17 +53,29 @@ def build_args():
 
 def parse_context(lines):
 
-    if not lines[0].startswith('from:'):
-        chat = None 
-        sections = lines 
+    chat = None 
+    date = None
 
-    else:
-        _, chat = lines[0].split(':', 1)
-        chat = chat.strip()
+    while True:
+        if lines[0].startswith('from:'):
+            _, chat = lines[0].split(':', 1)
+            chat = chat.strip() 
+            lines.pop(0)
 
-        sections = lines[1:]
+        elif lines[0].startswith('d:'):
+            _, date = lines[0].split(':', 1)
+            date = date.strip() 
+            lines.pop(0)            
 
-    return chat, sections
+        elif lines[0].strip() == '':
+            lines.pop(0)
+
+        else:
+            break 
+
+    sections = lines 
+
+    return chat, date, sections
 
 #
 # section_ls = [section]
@@ -75,7 +87,7 @@ def parse_context(lines):
 # q2 = https://en.wikipedia.org/wiki/Trusted\_execution\_environment
 #
 
-def read_sections(lines):
+def read_sections(lines, default_date):
     section_ls = []
 
     section = None
@@ -106,7 +118,11 @@ def read_sections(lines):
             line = line.strip()
             q1 = line 
             q2 = line.replace('_', '\\_')
+            
             question = {'q1': q1, 'q2': q2, 'hide': False}
+            if default_date != None:
+                question['date'] = default_date
+
             question_ls.append(question)
 
         elif s == 'q-prefix':
@@ -114,7 +130,11 @@ def read_sections(lines):
             line = line.strip()
             q1_prefix = line
             q2_prefix = line.replace('_', '\\_')
+
             question = {'q1-prefix': q1_prefix, 'q2-prefix': q2_prefix, 'hide': False}
+            if default_date != None:
+                question['date'] = default_date
+
             question_ls.append(question)
 
         elif s == 'a-prefix':
@@ -171,9 +191,13 @@ def dump_sections(section_ls):
 
         print('')
 
+#
+# q, q1, a, a1, q, q1, a, a1, q, q1, q, q1, a, a1, a, a1
+#
+
 def read_qa_ls(fn):
     f = open(fn, encoding='utf-8')
-    s = 'init'   # s: init, q, a
+    s = 'init'   # s: init, q, q1, a, a1
 
     q = []
     a = []
@@ -185,49 +209,81 @@ def read_qa_ls(fn):
             if line == '**You:**':
                 s = 'q'
             elif line == '**ChatGPT:**':
-                print('Error. s = %s', s)
+                print('1: Error! s = %s @ %s' % (s, fn))
                 sys.exit(1)
 
         elif s == 'q':
             if line == '**ChatGPT:**':
                 s = 'a'
             elif line == '**You:**':
-                print('Error. s = %s', s)
-                sys.exit(1)
+                s = 'q'
+            else:
+                s = 'q1'
+
+        elif s == 'q1':
+            if line == '**ChatGPT:**':
+                s = 'a'
+            elif line == '**You:**':
+                s = 'q'
+            else:
+                s = 'q1'
 
         elif s == 'a':
             if line == '**You:**':
                 s = 'q'
             elif line == '**ChatGPT:**':
-                print('Error. s = %s', s)
+                print('2: Error! s = %s @ %s' % (s, fn))
                 sys.exit(1)             
+            else: 
+                s = 'a1'
+
+        elif s == 'a1':
+            if line == '**You:**':
+                s = 'q'
+            elif line == '**ChatGPT:**':
+                s = 'a'         
+            else: 
+                s = 'a1'
 
         else:
-            print('Error. s = %s', s)
+            print('4: Error! s = %s @ %s' % (s, fn))
             sys.exit(1)
 
         #print('%10s | %s' % (s, line))  
 
-        if s == 'q':
+        if s == 'q1':
             if line == '* * *':
                 pass
             else:
                 q.append(line)
-        elif s == 'a':
+
+        elif s == 'a1':
             if line == '* * *':
-                qa_ls.append((q, a))
-                q = []
-                a = []
+                pass
             else:
                 a.append(line)
 
-    if len(q) != 0:
-        assert len(a) != 0 
-        qa_ls.append((q, a))
+        elif s == 'q':
+            if q != []:                
+                if a != []:
+                    qa_ls.append((q, a))
+                a = []
+                q = [] 
+
+        elif s == 'a':
+            a = []
+
+
+    if q != []:
+        if a != []:
+            qa_ls.append((q, a))
 
     return qa_ls
 
 def remove_empty_lines_from_head_and_tail(lines):    
+    if lines == []:
+        return
+
     while True:
         if lines[0].strip() == '':
             lines.pop(0)
@@ -266,29 +322,24 @@ def refine_md_1(lines):
     return new_lines
 
 def build_qa(q, a):
+    #print('q = %s' % q)
+    #print('a = %s' % a)
 
-    for i in range(len(q)):
-        if q[i] == '**You:**':
-            q[i] = ''
     remove_empty_lines_from_head_and_tail(q)
     assert len(q) == 1, q
-    q2 = q[0]
+    one_q = q[0]
 
-
-    for i in range(len(a)):
-        if a[i] == '**ChatGPT:**':
-            a[i] = ''
     remove_empty_lines_from_head_and_tail(a)
 
     a = refine_md_1(a)
 
-    qa = {'q2': q2, 'a': a}
+    qa = {'q': one_q, 'a': a}
     return qa
 
 #
 # Parse the chat file to build qa_ls
 # qa_ls = [qa]
-# qa = {'q2', 'a'}
+# qa = {'q', 'a'}
 #
 
 def parse_chat(fn):
@@ -301,7 +352,7 @@ def parse_chat(fn):
 
     return qa_ls
 
-def find_answer(qa_ls, question):
+def find_answer(qa_ls, question, chat):
 
     answer = None
 
@@ -313,6 +364,7 @@ def find_answer(qa_ls, question):
 
         if answer == None:
             print('Error. The answer of the question is not found.')
+            print('chat = %s' % chat)
             print('q1 = %s' % question['q1'])
             print('q2 = %s' % question['q2'])
             print('a-prefix: %s' % question['a-prefix'])
@@ -321,18 +373,29 @@ def find_answer(qa_ls, question):
     else:
         for qa in qa_ls:
             if 'q2-prefix' in question:
-                if qa['q2'].startswith(question['q2-prefix']):
+                if qa['q'].startswith(question['q2-prefix']):
                     answer = qa['a']
                     break
 
             if 'q2' in question:
-                if qa['q2'] == question['q2']:
+                if qa['q'] == question['q2']:
                     answer = qa['a']
                     break
 
+            if 'q2-prefix' in question:
+                if qa['q'].startswith(question['q1-prefix']):
+                    answer = qa['a']
+                    break
+
+            if 'q2' in question:
+                if qa['q'] == question['q1']:
+                    answer = qa['a']
+                    break                    
+
         if answer == None:
             print('Error. The answer of the question is not found.')
-            
+            print('chat = %s' % chat)
+
             if 'q1' in question:
                 print('q1 = %s' % question['q1'])
                 print('q2 = %s' % question['q2'])
@@ -358,8 +421,8 @@ def write_sections(section_ls, name, fn):
         f.write('* %s\n' % section['title'])
 
         for question in section['question_ls']:
-            if question['hide']:
-                continue
+            #if question['hide']:
+            #    continue
 
             q = util.get_q(question)
             f.write('    * %s\n' % q)
@@ -374,18 +437,24 @@ def write_sections(section_ls, name, fn):
         f.write('## %s\n' % section['title'])
 
         for question in section['question_ls']:
-            if question['hide']:
-                continue
             
             q = util.get_q(question)
             a = question['a']
 
             f.write('**Question:** %s\n' % q)
             f.write('\n')
-            f.write('**Answer:**\n')
-            f.write('\n')
-            for line in a:
-                f.write(line+'\n')
+
+
+            if question['hide']:
+                f.write('**Answer:** (Hide)\n')
+                f.write('\n')
+
+            else:
+                f.write('**Answer:**\n')
+                f.write('\n')
+                for line in a:
+                    f.write(line+'\n')
+
             f.write('\n')
             f.write('---\n')
             f.write('\n')
@@ -454,7 +523,7 @@ def main():
     # Parse lines.
     #
 
-    chat, sections = parse_context(lines)
+    chat, date, sections = parse_context(lines)
 
     #
     # Build default_qa_ls from the Markdown chat file.
@@ -475,7 +544,7 @@ def main():
     # Read sections
     #
 
-    section_ls = read_sections(sections)
+    section_ls = read_sections(sections, date)
 
     #
     # Check section_ls
@@ -524,10 +593,10 @@ def main():
             if 'from' in question:
                 fn = os.path.join(args.chats, question['from'])
                 qa_ls = fn_qa_ls_d[fn]
-                a = find_answer(qa_ls, question)
+                a = find_answer(qa_ls, question, question['from'])
             else:
                 assert default_qa_ls != None
-                a = find_answer(default_qa_ls, question)
+                a = find_answer(default_qa_ls, question, chat)
             
             question['a'] = a    
 

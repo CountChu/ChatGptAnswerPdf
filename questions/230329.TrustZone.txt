@@ -10,16 +10,20 @@ The ariticle
 Basic Concepts
     q: Is TrustZone a software or hardware?
 
-    q: Which types of ARM CPU have TrustZone?
-    d: 2023/4/10
-
-    q: Does ARM Cortex-R series have TrustZone?
-    d: 2023/4/10
-
 TrustZone & HSM
     q: What is difference between TrustZone and HSM? Please also summarize in a table.
     q: What are relationships between TrustZone and HSM?
     q: Can TrustZone totally replace HSM?    
+
+    q: Is HSM cost than TrustZone?
+    d: 2023/4/11
+
+    q: Is HSM more performance than ARM TrustZone in crypto operations?
+    d: 2023/4/11
+
+    q: What are security certifications of TrustZone?
+    d: 2023/4/11
+    
 
 Normal World & Secure World
     q: Can Normal world and Secure World run at the same time in ARM?
@@ -92,3 +96,6 @@ Privilege Levels
 
     q: Are ELs of TrustZone?
     d: 2023/4/10
+
+    q: Are EL3 and S-EL3 same?
+    d: 2023/4/13

@@ -991,12 +991,14 @@ body .markdown-body {
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230407.Arm.Hypervisor</h1>
-<p>Created: 2023-04-09 11:25:16</p>
+<p>Created: 2023-04-15 11:17:25</p>
 <h1>Questions</h1>
 <ul>
 <li>TCB<ul>
 <li>What are components in TCB?</li>
 <li>What are components in ARM TCB?</li>
+<li>What are Security Building Blocks? (2023/4/12)</li>
+<li>What compare Security Building Block and TCB and also summarize them in a table. (2023/4/12)</li>
 </ul>
 </li>
 <li>Virtualization<ul>
@@ -1038,40 +1040,32 @@ body .markdown-body {
 <p>The Trusted Computing Base (TCB) is the set of all hardware, firmware, and software components critical to the security of a system. These components are responsible for enforcing the security policy and maintaining the system&rsquo;s integrity, confidentiality, and availability. The exact components of a TCB may vary depending on the specific system architecture and implementation. However, some common components in a TCB include:</p>
 <ol>
 <li>
-<p>Hardware:</p>
-<ul>
-<li>Trusted Platform Module (TPM)</li>
-<li>Secure boot hardware support</li>
-<li>Hardware security features (e.g., ARM TrustZone, Intel SGX)</li>
-<li>Hardware-based encryption and key storage</li>
-</ul>
+<p>Hardware:
+   - Trusted Platform Module (TPM)
+   - Secure boot hardware support
+   - Hardware security features (e.g., ARM TrustZone, Intel SGX)
+   - Hardware-based encryption and key storage</p>
 </li>
 <li>
-<p>Firmware:</p>
-<ul>
-<li>Bootloader (e.g., UEFI Secure Boot, Coreboot)</li>
-<li>Trusted firmware (e.g., ARM Trusted Firmware)</li>
-<li>Hardware initialization code</li>
-<li>Firmware for security peripherals (e.g., TPM firmware)</li>
-</ul>
+<p>Firmware:
+   - Bootloader (e.g., UEFI Secure Boot, Coreboot)
+   - Trusted firmware (e.g., ARM Trusted Firmware)
+   - Hardware initialization code
+   - Firmware for security peripherals (e.g., TPM firmware)</p>
 </li>
 <li>
-<p>Operating System (OS) components:</p>
-<ul>
-<li>Security-focused kernel (e.g., seL4, Xen)</li>
-<li>OS security features and policies</li>
-<li>Hypervisor (in virtualized environments)</li>
-<li>Mandatory access control mechanisms (e.g., SELinux, AppArmor)</li>
-</ul>
+<p>Operating System (OS) components:
+   - Security-focused kernel (e.g., seL4, Xen)
+   - OS security features and policies
+   - Hypervisor (in virtualized environments)
+   - Mandatory access control mechanisms (e.g., SELinux, AppArmor)</p>
 </li>
 <li>
-<p>Security applications and services:</p>
-<ul>
-<li>Trusted execution environments (e.g., OP-TEE)</li>
-<li>Security-focused libraries and tools (e.g., OpenSSL, GnuPG)</li>
-<li>Cryptographic services</li>
-<li>Authentication and access control services</li>
-</ul>
+<p>Security applications and services:
+   - Trusted execution environments (e.g., OP-TEE)
+   - Security-focused libraries and tools (e.g., OpenSSL, GnuPG)
+   - Cryptographic services
+   - Authentication and access control services</p>
 </li>
 </ol>
 <p>These components work together to ensure the security of a system and provide a trusted foundation for applications and services. Note that the components listed above are just examples, and the actual TCB components may differ based on the specific system and its security requirements.</p>
@@ -1109,6 +1103,81 @@ body .markdown-body {
 </li>
 </ol>
 <p>Please note that the specific components in an ARM TCB may vary depending on the system&rsquo;s architecture, SoC, and security requirements. The list above provides a general overview of the typical components in an ARM TrustZone-based TCB.</p>
+<hr />
+<p><strong>Question:</strong> What are Security Building Blocks? (2023/4/12)</p>
+<p><strong>Answer:</strong></p>
+<p>Security Building Blocks refer to the fundamental components or technologies used to design and implement a secure system. These building blocks form the foundation for creating secure software, hardware, and network architectures. They are essential for safeguarding sensitive information and ensuring that systems are resistant to unauthorized access, manipulation, or other forms of attack. Some common security building blocks include:</p>
+<ol>
+<li>
+<p>Encryption: The process of encoding data to protect it from unauthorized access. Encryption algorithms and protocols, such as AES, RSA, or TLS, are widely used to secure data during transmission or storage.</p>
+</li>
+<li>
+<p>Authentication: The process of verifying the identity of a user, device, or system to ensure that only authorized entities can access the system or its resources. Common authentication methods include passwords, biometric data, or digital certificates.</p>
+</li>
+<li>
+<p>Authorization: The process of granting or denying access to specific resources or actions based on an authenticated entity&rsquo;s privileges. Role-based access control (RBAC) and attribute-based access control (ABAC) are examples of authorization models.</p>
+</li>
+<li>
+<p>Integrity: Ensuring that data and systems remain unaltered and free from tampering or corruption. Cryptographic hash functions, digital signatures, and checksums are examples of techniques used to maintain data integrity.</p>
+</li>
+<li>
+<p>Confidentiality: The protection of sensitive information from unauthorized disclosure. Encryption, access control, and secure storage solutions are used to maintain data confidentiality.</p>
+</li>
+<li>
+<p>Auditing and Logging: The process of recording system events, such as user actions or security incidents, to detect potential threats and ensure compliance with security policies or regulations.</p>
+</li>
+<li>
+<p>Secure Communication: Ensuring that data transmitted between systems or devices remains confidential, authentic, and unaltered. Secure communication protocols like TLS/SSL and VPNs are used to protect data during transmission.</p>
+</li>
+<li>
+<p>Secure Boot: The process of verifying the integrity of a system&rsquo;s firmware and software during startup, ensuring that only authorized code is executed.</p>
+</li>
+<li>
+<p>Hardware Security Modules (HSMs): Physical devices that provide secure storage and processing for cryptographic keys and other sensitive information.</p>
+</li>
+</ol>
+<p>These building blocks, when combined and implemented correctly, create a robust and secure foundation for any system, ensuring the protection of data and the prevention of unauthorized access or attacks.</p>
+<hr />
+<p><strong>Question:</strong> What compare Security Building Block and TCB and also summarize them in a table. (2023/4/12)</p>
+<p><strong>Answer:</strong></p>
+<p>Security Building Blocks and Trusted Computing Base (TCB) are two related concepts in the context of secure system design. Here is a comparison between the two:</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Security Building Blocks</th>
+<th>Trusted Computing Base (TCB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definition</td>
+<td>Fundamental components or technologies used to design and implement a secure system.</td>
+<td>The smallest set of software and hardware components that are critical to the security of a system.</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>To create secure software, hardware, and network architectures by providing a foundation for safeguarding sensitive information and ensuring system resistance to unauthorized access or manipulation.</td>
+<td>To ensure that the system operates securely and enforces security policies by isolating critical components from the rest of the system.</td>
+</tr>
+<tr>
+<td>Components/Elements</td>
+<td>Encryption, Authentication, Authorization, Integrity, Confidentiality, Auditing and Logging, Secure Communication, Secure Boot, and Hardware Security Modules (HSMs).</td>
+<td>TCB includes the operating system&rsquo;s kernel, security mechanisms, hardware components (e.g., CPU, memory), and other essential components that enforce security policies.</td>
+</tr>
+<tr>
+<td>Trust</td>
+<td>Security Building Blocks are used to create a trusted system by combining various security mechanisms and techniques.</td>
+<td>The TCB is the core of a trusted system, and it is assumed to be secure and trustworthy. Its correct implementation and operation are crucial to the overall security of the system.</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>Security Building Blocks cover a wide range of security aspects in a system, such as data protection, access control, and secure communication.</td>
+<td>TCB is a more focused concept, mainly concerned with the critical components that enforce security policies and protect the system&rsquo;s security properties.</td>
+</tr>
+</tbody>
+</table>
+<p>In summary, Security Building Blocks are the fundamental components and technologies used to create secure systems, while the Trusted Computing Base (TCB) represents the minimal set of critical components essential for ensuring the security of a system. Security Building Blocks can be seen as the elements that are combined to create a secure system, whereas the TCB is the core of the system, ensuring its overall security.</p>
 <hr />
 <h2>Virtualization</h2>
 <p><strong>Question:</strong> What are types of virtualization techs?</p>
@@ -1277,22 +1346,18 @@ body .markdown-body {
 <p><strong>Question:</strong> Please compare TrustZone and Hypervisor and also summarize in a table.</p>
 <p><strong>Answer:</strong></p>
 <p>TrustZone and hypervisors serve different purposes in providing security and isolation in computer systems, but they can also be complementary. Here&rsquo;s a comparison between the two:</p>
-<p>TrustZone:</p>
-<ol>
-<li>Purpose: Provides hardware-based security and isolation between the secure and non-secure worlds.</li>
-<li>Scope: Limited to ARM-based systems.</li>
-<li>Implementation: Built into the ARM processor, enabled by the SoC vendor.</li>
-<li>Isolation: Creates two separate execution environments (secure world and normal world).</li>
-<li>Use Cases: Secure boot, key storage, cryptographic operations, and DRM.</li>
-</ol>
-<p>Hypervisor:</p>
-<ol>
-<li>Purpose: Enables the virtualization of multiple operating systems or environments on a single physical host.</li>
-<li>Scope: Applicable to various processor architectures (x86, ARM, etc.).</li>
-<li>Implementation: Software-based, can be a Type-1 (bare-metal) or Type-2 (hosted) hypervisor.</li>
-<li>Isolation: Creates multiple virtual machines (VMs) or containers, each running a separate OS or application.</li>
-<li>Use Cases: Server consolidation, sandboxing, running multiple OSes on a single device, and cloud computing.</li>
-</ol>
+<p>TrustZone:
+1. Purpose: Provides hardware-based security and isolation between the secure and non-secure worlds.
+2. Scope: Limited to ARM-based systems.
+3. Implementation: Built into the ARM processor, enabled by the SoC vendor.
+4. Isolation: Creates two separate execution environments (secure world and normal world).
+5. Use Cases: Secure boot, key storage, cryptographic operations, and DRM.</p>
+<p>Hypervisor:
+1. Purpose: Enables the virtualization of multiple operating systems or environments on a single physical host.
+2. Scope: Applicable to various processor architectures (x86, ARM, etc.).
+3. Implementation: Software-based, can be a Type-1 (bare-metal) or Type-2 (hosted) hypervisor.
+4. Isolation: Creates multiple virtual machines (VMs) or containers, each running a separate OS or application.
+5. Use Cases: Server consolidation, sandboxing, running multiple OSes on a single device, and cloud computing.</p>
 <p>Summary in a table:</p>
 <table>
 <thead>

@@ -991,7 +991,7 @@ body .markdown-body {
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230406.Papers.OP-TEE</h1>
-<p>Created: 2023-04-08 18:18:32</p>
+<p>Created: 2023-04-15 11:17:24</p>
 <h1>Questions</h1>
 <ul>
 <li>2017 vTZ<ul>
@@ -1038,7 +1038,7 @@ body .markdown-body {
 </ul>
 </li>
 <li>2020 Demystifying TEE Client API<ul>
-<li>Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE</li>
+<li>Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE (2023/4/8)</li>
 </ul>
 </li>
 </ul>
@@ -1266,10 +1266,11 @@ body .markdown-body {
 <p>vTZ aims to virtualize TrustZone to provide each VM an isolated secure world. This approach requires an REE hypervisor but does not need to trust it, as the hardware-level isolation provided by TrustZone is leveraged to maintain separation between the virtual TEEs and the REE hypervisor. With vTZ, software in a VM can use the SMC instruction to switch between the REE and a virtual TEE, just as it does in a non-virtualized environment, preserving all the features of TrustZone after virtualization.</p>
 <hr />
 <h2>2020 Demystifying TEE Client API</h2>
-<p><strong>Question:</strong> Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE</p>
+<p><strong>Question:</strong> Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE (2023/4/8)</p>
 <p><strong>Answer:</strong></p>
 <p>Title: Demystifying ARM TrustZone TEE Client API using OP-TEE</p>
-<p>Abstract: With the increased use of mobile devices for various purposes, such as payment systems, the need for secure storage of critical data has become more important. Trusted Execution Environment (TEE) technology has emerged as a solution to provide a secure execution environment for sensitive data. ARM TrustZone technology, primarily used in mobile devices, divides a physical processor into the Normal World and Secure World, ensuring a safer execution environment. While various manufacturers have adopted TrustZone technology, existing commercial TEEs have limitations in conducting security research using TrustZone.</p>
+<p>Abstract:
+With the increased use of mobile devices for various purposes, such as payment systems, the need for secure storage of critical data has become more important. Trusted Execution Environment (TEE) technology has emerged as a solution to provide a secure execution environment for sensitive data. ARM TrustZone technology, primarily used in mobile devices, divides a physical processor into the Normal World and Secure World, ensuring a safer execution environment. While various manufacturers have adopted TrustZone technology, existing commercial TEEs have limitations in conducting security research using TrustZone.</p>
 <p>This paper introduces OP-TEE, an open-source project for implementing ARM TrustZone technology, and the TEE Client API that enables communication with Trusted Applications within the TrustZone Secure World. To demystify the TEE Client API, the authors also implemented a simple trusted application for communication between the Normal World and Secure World in the OP-TEE OS using the QEMU emulator. This research aims to make the TEE Client API more accessible and easier to understand for researchers and developers working with ARM TrustZone technology.</p>
 <hr />
     </article>

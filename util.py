@@ -45,6 +45,7 @@ def get_q(question):
         assert False, question
 
     if 'date' in question:
-        q = '%s: %s' % (question['date'], q)
+        date = question['date']
+        q = '%s (%s)' % (q, date)
 
     return q
