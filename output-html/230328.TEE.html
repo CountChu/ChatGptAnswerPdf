@@ -991,50 +991,50 @@ body .markdown-body {
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230328.TEE</h1>
-<p>Created: 2023-04-15 11:17:18</p>
+<p>Created: 2023-04-16 18:39:57</p>
 <h1>Questions</h1>
 <ul>
 <li>Basic Concepts<ul>
-<li>https://en.wikipedia.org/wiki/Trusted_execution_environment</li>
-<li>Please summarize Intel SGX and ARM TrustZone in tables.</li>
-<li>What are different between ARM SMC and Intel SMI? Please also summarize in a table.</li>
-<li>Please describe TEE in Intel.</li>
-<li>What are APIs of TEE? Please classify them.</li>
-<li>Can I add a myself TEE API?</li>
-<li>Is TEE a software?</li>
-<li>Does GlobalPlatform contains Chinese Cryptographic Standard?</li>
-<li>How do I check the TEE OS is secure. Are there any secure certificates of TEE OS? (2023/4/14)</li>
-<li>Does OP-TEE mach the certificates? (2023/4/14)</li>
+<li>https://en.wikipedia.org/wiki/Trusted_execution_environment (2023-03-29)</li>
+<li>Please summarize Intel SGX and ARM TrustZone in tables. (2023-03-29)</li>
+<li>What are different between ARM SMC and Intel SMI? Please also summarize in a table. (2023-03-29)</li>
+<li>Please describe TEE in Intel. (2023-03-29)</li>
+<li>What are APIs of TEE? Please classify them. (2023-03-29)</li>
+<li>Can I add a myself TEE API? (2023-03-29)</li>
+<li>Is TEE a software? (2023-04-01)</li>
+<li>Does GlobalPlatform contains Chinese Cryptographic Standard? (2023-04-01)</li>
+<li>How do I check the TEE OS is secure. Are there any secure certificates of TEE OS? (2023-04-14)</li>
+<li>Does OP-TEE mach the certificates? (2023-04-14)</li>
 </ul>
 </li>
 <li>CA &amp; TA<ul>
-<li>How does an  application in normal world request a service with shared memory of a trusted application in a secure world? Please describe the process with APIs.</li>
-<li>Which functions are used by TA (trusted application) in the above process?</li>
-<li>Could you please draw a sequence diagram of TEEC_InitializeContext, TEEC_OpenSession, TEEC_RegisterSharedMemory, TEEC_InvokeCommand, TEEC_ReleaseSharedMemory, TEEC_CloseSession, TEEC_FinalizeContext, TA_CreateEntryPoint, TA_DestroyEntryPoint, TA_OpenSessionEntryPoint, TA_CloseSessionEntryPoint, TA_InvokeCommandEntryPoint</li>
-<li>Is the above sequence described in GlobalPlatform?</li>
-<li>Which document describe it?</li>
-<li>Please give me two sample codes of the above sequence. One is for CA and another is for TA.</li>
-<li>Please write sample code of TA again. The code should be complete.</li>
-<li>Can CA and TA be implemented  in other languages?</li>
-<li>How does TA authenticate request from CA?</li>
-<li>What are kinds of TA?</li>
+<li>How does an  application in normal world request a service with shared memory of a trusted application in a secure world? Please describe the process with APIs. (2023-03-29)</li>
+<li>Which functions are used by TA (trusted application) in the above process? (2023-03-29)</li>
+<li>Could you please draw a sequence diagram of TEEC_InitializeContext, TEEC_OpenSession, TEEC_RegisterSharedMemory, TEEC_InvokeCommand, TEEC_ReleaseSharedMemory, TEEC_CloseSession, TEEC_FinalizeContext, TA_CreateEntryPoint, TA_DestroyEntryPoint, TA_OpenSessionEntryPoint, TA_CloseSessionEntryPoint, TA_InvokeCommandEntryPoint (2023-03-29)</li>
+<li>Is the above sequence described in GlobalPlatform? (2023-03-29)</li>
+<li>Which document describe it? (2023-03-29)</li>
+<li>Please give me two sample codes of the above sequence. One is for CA and another is for TA. (2023-03-29)</li>
+<li>Please write sample code of TA again. The code should be complete. (2023-03-29)</li>
+<li>Can CA and TA be implemented  in other languages? (2023-03-31)</li>
+<li>How does TA authenticate request from CA? (2023-03-31)</li>
+<li>What are kinds of TA? (2023-04-01)</li>
 </ul>
 </li>
 <li>TEE Identification<ul>
-<li>What is TEE identification? (2023/4/10)</li>
-<li>Is TEE identification obversable? (2023/4/10)</li>
-<li>Can I use DID as TEE identification? (2023/4/10)</li>
+<li>What is TEE identification? (2023-04-10)</li>
+<li>Is TEE identification obversable? (2023-04-10)</li>
+<li>Can I use DID as TEE identification? (2023-04-10)</li>
 </ul>
 </li>
 <li>Revocation of TA<ul>
-<li>What is revocation for Trusted Application? (2023/4/10)</li>
+<li>What is revocation for Trusted Application? (2023-04-10)</li>
 </ul>
 </li>
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
 <h2>Basic Concepts</h2>
-<p><strong>Question:</strong> https://en.wikipedia.org/wiki/Trusted_execution_environment</p>
+<p><strong>Question:</strong> https://en.wikipedia.org/wiki/Trusted_execution_environment (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>A Trusted Execution Environment (TEE) is a secure area within the main processor of a device that ensures the confidentiality and integrity of code and data loaded within it. TEEs are designed to provide a higher level of security compared to traditional software execution environments by protecting sensitive information and functionality from external software attacks, hardware attacks, and physical tampering.</p>
 <p>The main concept behind a TEE is to provide an isolated environment for executing security-sensitive tasks that cannot be accessed by other processes running on the same device. This isolation is achieved using hardware and software mechanisms that create a secure boundary around the TEE.</p>
@@ -1048,7 +1048,7 @@ body .markdown-body {
 <p>TEEs have various applications, such as secure boot, digital rights management (DRM), and mobile payments. Some examples of TEE implementations include ARM TrustZone, Intel Software Guard Extensions (SGX), and AMD Secure Encrypted Virtualization (SEV).</p>
 <p>It is important to note that while TEEs offer a higher level of security, they are not immune to attacks. Researchers have discovered vulnerabilities in various TEE implementations, emphasizing the need for ongoing research and development to enhance the security of these environments.</p>
 <hr />
-<p><strong>Question:</strong> Please summarize Intel SGX and ARM TrustZone in tables.</p>
+<p><strong>Question:</strong> Please summarize Intel SGX and ARM TrustZone in tables. (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>Here&rsquo;s a summary of Intel SGX and ARM TrustZone in table format:</p>
 <table>
@@ -1109,7 +1109,7 @@ body .markdown-body {
 </table>
 <p>Both Intel SGX and ARM TrustZone are hardware-based security features designed to provide isolated execution environments for trusted code and data. They offer different mechanisms for isolation (enclaves vs. two worlds) and have unique implementations in their respective processor architectures (x86-based for SGX and ARM-based for TrustZone). While these technologies enhance the security of sensitive operations, they are not immune to various attacks, and ongoing research and development is required to improve their security.</p>
 <hr />
-<p><strong>Question:</strong> What are different between ARM SMC and Intel SMI? Please also summarize in a table.</p>
+<p><strong>Question:</strong> What are different between ARM SMC and Intel SMI? Please also summarize in a table. (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>ARM SMC (Secure Monitor Call) and Intel SMI (System Management Interrupt) are both mechanisms used in their respective processor architectures for managing secure or privileged operations. Here&rsquo;s a summary of their differences in table format:</p>
 <table>
@@ -1165,7 +1165,7 @@ body .markdown-body {
 </table>
 <p>ARM SMC is an instruction used in ARM-based processors to switch between the secure and non-secure worlds of ARM TrustZone, enabling the processor to execute secure operations. In contrast, Intel SMI is an interrupt mechanism used in x86-based processors to manage system-level functions, such as power management and hardware configuration, in the System Management Mode (SMM). While both mechanisms operate at the highest privilege levels of their respective architectures, they serve different purposes and are invoked under different circumstances.</p>
 <hr />
-<p><strong>Question:</strong> Please describe TEE in Intel.</p>
+<p><strong>Question:</strong> Please describe TEE in Intel. (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>In Intel processors, the primary Trusted Execution Environment (TEE) technology is Intel Software Guard Extensions (SGX). Intel SGX provides a hardware-based TEE to securely execute sensitive code and protect data within isolated regions, known as enclaves.</p>
 <p>Here&rsquo;s an overview of Intel SGX:</p>
@@ -1188,7 +1188,7 @@ body .markdown-body {
 </ol>
 <p>Intel SGX is a powerful TEE solution that provides an additional layer of security for sensitive code and data execution. However, it is important to note that Intel SGX is not immune to attacks, and researchers have discovered vulnerabilities in the technology, emphasizing the need for ongoing research and development to enhance its security.</p>
 <hr />
-<p><strong>Question:</strong> What are APIs of TEE? Please classify them.</p>
+<p><strong>Question:</strong> What are APIs of TEE? Please classify them. (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>Trusted Execution Environment (TEE) APIs are interfaces that enable developers to create applications that leverage the features of a TEE. They allow developers to interact with the secure environment and manage its resources, such as enclaves, secure storage, and cryptographic operations.</p>
 <p>These APIs can be classified into several categories:</p>
@@ -1227,7 +1227,7 @@ body .markdown-body {
 <p>Examples of TEE API implementations include the GlobalPlatform TEE APIs, which provide a standardized set of APIs for TEEs, and platform-specific APIs like Intel SGX SDK for Intel Software Guard Extensions and ARM TrustZone APIs for ARM TrustZone-based TEEs.</p>
 <p>It is important to note that the specific APIs available and their implementation may vary depending on the TEE technology used. However, the general categories mentioned above should apply to most TEE implementations.</p>
 <hr />
-<p><strong>Question:</strong> Can I add a myself TEE API?</p>
+<p><strong>Question:</strong> Can I add a myself TEE API? (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>Adding your own TEE API is possible but depends on the specific TEE implementation you are working with and the level of access and customization it allows. Some TEEs offer more flexibility for developers to extend and create their own APIs, while others may have more restrictive environments.</p>
 <p>Here are a few steps to consider when adding your own TEE API:</p>
@@ -1254,7 +1254,7 @@ body .markdown-body {
 <p>Keep in mind that adding your own TEE API may introduce security risks if not done properly. It is crucial to ensure that your implementation adheres to security best practices and does not compromise the integrity and confidentiality of the TEE.</p>
 <p>Before attempting to add your own TEE API, it is recommended to explore existing APIs and functionality provided by the TEE platform, as they are designed to address common use cases and have undergone extensive testing and validation.</p>
 <hr />
-<p><strong>Question:</strong> Is TEE a software?</p>
+<p><strong>Question:</strong> Is TEE a software? (2023-04-01)</p>
 <p><strong>Answer:</strong></p>
 <p>A Trusted Execution Environment (TEE) is not just a software; it is a combination of hardware, software, and firmware components that work together to provide a secure and isolated environment for executing sensitive operations. The TEE aims to protect sensitive data and code from unauthorized access, tampering, or leakage, even if the main operating system is compromised.</p>
 <p>The main components of a TEE include:</p>
@@ -1271,7 +1271,7 @@ body .markdown-body {
 </ol>
 <p>In summary, a TEE is a combination of hardware, software, and firmware components designed to provide a secure environment for executing sensitive operations. It is not merely a software solution but an integrated system that leverages various layers of the computing stack to ensure security and isolation.</p>
 <hr />
-<p><strong>Question:</strong> Does GlobalPlatform contains Chinese Cryptographic Standard?</p>
+<p><strong>Question:</strong> Does GlobalPlatform contains Chinese Cryptographic Standard? (2023-04-01)</p>
 <p><strong>Answer:</strong></p>
 <p>GlobalPlatform does not specifically include Chinese Cryptographic Standards as part of its core specifications. GlobalPlatform provides a standardized framework for implementing secure elements, TEEs (Trusted Execution Environments), and SE (Secure Element) management. It focuses on defining the APIs, protocols, and security requirements for these environments, but it does not mandate specific cryptographic algorithms.</p>
 <p>However, GlobalPlatform&rsquo;s specifications are designed to be flexible and extensible, allowing individual TEE or secure element implementations to support various cryptographic algorithms, including Chinese Cryptographic Standards, as required by the specific use case or market requirements.</p>
@@ -1283,7 +1283,7 @@ body .markdown-body {
 </ol>
 <p>These algorithms can be integrated into the TEE or secure element implementation, either as built-in functions or through third-party cryptographic libraries. As long as the implementation adheres to GlobalPlatform&rsquo;s specifications regarding the APIs, protocols, and security requirements, it can support a wide range of cryptographic algorithms, including Chinese Cryptographic Standards.</p>
 <hr />
-<p><strong>Question:</strong> How do I check the TEE OS is secure. Are there any secure certificates of TEE OS? (2023/4/14)</p>
+<p><strong>Question:</strong> How do I check the TEE OS is secure. Are there any secure certificates of TEE OS? (2023-04-14)</p>
 <p><strong>Answer:</strong></p>
 <p>To ensure that a TEE OS (Trusted Execution Environment Operating System) is secure, you can look for several indicators, including compliance with industry standards, certifications, and independent security evaluations. While there isn&rsquo;t a single &ldquo;secure certificate&rdquo; for TEE OSes, there are certifications and evaluation processes that can help you assess the security of a particular TEE OS.</p>
 <ol>
@@ -1305,7 +1305,7 @@ body .markdown-body {
 </ol>
 <p>In summary, there isn&rsquo;t a single &ldquo;secure certificate&rdquo; for TEE OSes, but a combination of certifications, industry standard compliance, independent security evaluations, and the vendor&rsquo;s reputation can provide a good indication of the security of a particular TEE OS.</p>
 <hr />
-<p><strong>Question:</strong> Does OP-TEE mach the certificates? (2023/4/14)</p>
+<p><strong>Question:</strong> Does OP-TEE mach the certificates? (2023-04-14)</p>
 <p><strong>Answer:</strong></p>
 <p>OP-TEE (Open Portable Trusted Execution Environment) is an open-source TEE project that provides a TEE OS and related components, with a focus on portability and compliance with GlobalPlatform specifications. While OP-TEE aims to follow industry standards and best practices, it is essential to differentiate between the OP-TEE project and commercial products based on OP-TEE.</p>
 <p>As an open-source project, OP-TEE itself does not directly hold certifications like Common Criteria or FIPS 140-2/140-3. However, OP-TEE-based solutions developed by vendors or integrated into commercial products may undergo such certifications or evaluations.</p>
@@ -1324,7 +1324,7 @@ body .markdown-body {
 <p>It is essential to recognize that the certifications belong to the specific commercial products based on OP-TEE and not to the OP-TEE project itself. When evaluating the security of an OP-TEE-based solution, consider the certifications and evaluations obtained by the specific product or vendor, as well as their overall reputation and track record in the industry.</p>
 <hr />
 <h2>CA &amp; TA</h2>
-<p><strong>Question:</strong> How does an  application in normal world request a service with shared memory of a trusted application in a secure world? Please describe the process with APIs.</p>
+<p><strong>Question:</strong> How does an  application in normal world request a service with shared memory of a trusted application in a secure world? Please describe the process with APIs. (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>In a Trusted Execution Environment (TEE), a normal world application can request a service from a trusted application in the secure world using shared memory for data exchange. The process involves allocating a memory buffer that can be accessed by both the normal world and the secure world, allowing for efficient and secure communication between the two. Here&rsquo;s an outline of the process using the GlobalPlatform TEE APIs as an example:</p>
 <ol>
@@ -1364,7 +1364,7 @@ body .markdown-body {
 </ol>
 <p>Please note that the specific APIs and mechanisms for requesting a service using shared memory in the secure world may vary depending on the TEE implementation being used. The example provided above is based on the GlobalPlatform TEE APIs, which are widely used in the industry for TEE development. Other TEE implementations, such as Intel SGX or ARM TrustZone, may have different APIs and mechanisms for managing shared memory communication between the normal world and the secure world.</p>
 <hr />
-<p><strong>Question:</strong> Which functions are used by TA (trusted application) in the above process?</p>
+<p><strong>Question:</strong> Which functions are used by TA (trusted application) in the above process? (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>In the process described above, the Trusted Application (TA) in the secure world is responsible for handling requests from the normal world application and performing the requested operations. To do this, the TA needs to implement certain functions to interact with the TEE and the normal world application. The specific functions depend on the TEE implementation being used. Here, we&rsquo;ll use the GlobalPlatform TEE Internal APIs as an example:</p>
 <ol>
@@ -1386,7 +1386,7 @@ body .markdown-body {
 </ol>
 <p>The specific functions and APIs used by a Trusted Application (TA) may vary depending on the TEE implementation being used. The example provided above is based on the GlobalPlatform TEE Internal APIs, which are widely used in the industry for developing TAs in a TEE. Other TEE implementations, such as Intel SGX or ARM TrustZone, may have different functions and APIs for implementing TAs in the secure world.</p>
 <hr />
-<p><strong>Question:</strong> Could you please draw a sequence diagram of TEEC_InitializeContext, TEEC_OpenSession, TEEC_RegisterSharedMemory, TEEC_InvokeCommand, TEEC_ReleaseSharedMemory, TEEC_CloseSession, TEEC_FinalizeContext, TA_CreateEntryPoint, TA_DestroyEntryPoint, TA_OpenSessionEntryPoint, TA_CloseSessionEntryPoint, TA_InvokeCommandEntryPoint</p>
+<p><strong>Question:</strong> Could you please draw a sequence diagram of TEEC_InitializeContext, TEEC_OpenSession, TEEC_RegisterSharedMemory, TEEC_InvokeCommand, TEEC_ReleaseSharedMemory, TEEC_CloseSession, TEEC_FinalizeContext, TA_CreateEntryPoint, TA_DestroyEntryPoint, TA_OpenSessionEntryPoint, TA_CloseSessionEntryPoint, TA_InvokeCommandEntryPoint (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>As a text-based AI language model, I cannot directly draw diagrams. However, I can describe the sequence of events and interactions between the normal world application and the trusted application in the secure world using the APIs mentioned in your question. You can use this description to create your own sequence diagram.</p>
 <ol>
@@ -1430,13 +1430,13 @@ body .markdown-body {
 </ol>
 <p>You can use this sequence of events to create a diagram illustrating the interactions between the normal world application, the TEE system, and the trusted application in the secure world using the specified APIs.</p>
 <hr />
-<p><strong>Question:</strong> Is the above sequence described in GlobalPlatform?</p>
+<p><strong>Question:</strong> Is the above sequence described in GlobalPlatform? (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>Yes, the sequence of events and interactions between the normal world application and the trusted application in the secure world, as described in the previous response, is based on the GlobalPlatform TEE specifications. GlobalPlatform provides a set of standard APIs, including the TEE Client API (used by the normal world application) and the TEE Internal API (used by the trusted application), to facilitate secure communication and service invocation in a Trusted Execution Environment (TEE).</p>
 <p>The GlobalPlatform TEE specifications can be found on the GlobalPlatform website, which provides detailed documentation on the APIs and their usage: https://www.globalplatform.org/specs-library/?search=tee</p>
 <p>It&rsquo;s important to note that the specific APIs and mechanisms for requesting a service using shared memory in the secure world may vary depending on the TEE implementation being used. The example provided in the previous response is based on the GlobalPlatform TEE APIs, which are widely used in the industry for TEE development. Other TEE implementations, such as Intel SGX or ARM TrustZone, may have different APIs and mechanisms for managing shared memory communication between the normal world and the secure world.</p>
 <hr />
-<p><strong>Question:</strong> Which document describe it?</p>
+<p><strong>Question:</strong> Which document describe it? (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>The sequence described in the previous responses is based on the GlobalPlatform TEE specifications, which are divided into two main documents:</p>
 <ol>
@@ -1449,7 +1449,7 @@ body .markdown-body {
 <p>https://globalplatform.org/specs-library/tee-internal-core-api-specification/</p>
 <p>Both documents provide detailed information on the APIs and their usage, including the sequence of interactions between the normal world application and the trusted application in the secure world. By studying these documents, you can gain a deep understanding of the TEE development process based on the GlobalPlatform specifications.</p>
 <hr />
-<p><strong>Question:</strong> Please give me two sample codes of the above sequence. One is for CA and another is for TA.</p>
+<p><strong>Question:</strong> Please give me two sample codes of the above sequence. One is for CA and another is for TA. (2023-03-29)</p>
 <p><strong>Answer:</strong></p>
 <p>Here are two sample codes for the normal world application (Client Application, CA) and the secure world application (Trusted Application, TA) based on the GlobalPlatform TEE APIs:</p>
 <p>Client Application (CA) - Normal World:</p>
@@ -1543,7 +1543,7 @@ body .markdown-body {
 
 <span class="o">---</span><span class="w"></span>
 
-<span class="o">**</span><span class="nl">Question</span><span class="p">:</span><span class="o">**</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">TA</span><span class="w"> </span><span class="n">again</span><span class="p">.</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">complete</span><span class="p">.</span><span class="w"></span>
+<span class="o">**</span><span class="nl">Question</span><span class="p">:</span><span class="o">**</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">TA</span><span class="w"> </span><span class="n">again</span><span class="p">.</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">complete</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="mi">2023</span><span class="mo">-03</span><span class="mi">-29</span><span class="p">)</span><span class="w"></span>
 
 <span class="o">**</span><span class="nl">Answer</span><span class="p">:</span><span class="o">**</span><span class="w"></span>
 
@@ -1603,7 +1603,7 @@ body .markdown-body {
 
 <p>This sample Trusted Application code defines the required entry points for creating, destroying, opening, and closing a session. The <code>TA_InvokeCommandEntryPoint</code> function implements a simple command that reads an integer from the input buffer, multiplies it by 2, and writes the result back to the output buffer.</p>
 <hr />
-<p><strong>Question:</strong> Can CA and TA be implemented  in other languages?</p>
+<p><strong>Question:</strong> Can CA and TA be implemented  in other languages? (2023-03-31)</p>
 <p><strong>Answer:</strong></p>
 <p>Yes, both the Client Application (CA) and the Trusted Application (TA) can be implemented in other programming languages, as long as the language supports interfacing with the required TEE APIs. Many TEE implementations provide APIs and language bindings for multiple programming languages.</p>
 <p>For instance, the GlobalPlatform TEE Client API (for the CA) is generally available as a C API, but you can create language bindings for other languages like Python, Java, or Rust. You might need to use the Foreign Function Interface (FFI) or a similar mechanism to interface with the C API from another language.</p>
@@ -1611,7 +1611,7 @@ body .markdown-body {
 <p>For example, the Rust programming language has gained traction in TEE development, as it provides strong safety guarantees and is suitable for systems programming. There are projects like Teaclave SGX SDK (https://github.com/apache/teaclave-sgx-sdk) for Intel SGX and Rust OP-TEE TrustZone SDK (https://github.com/OP-TEE/optee-rust) for ARM TrustZone, which enable developers to write TAs in Rust.</p>
 <p>In summary, while the choice of programming languages for CA and TA might be determined by the specific TEE implementation and hardware, it is possible to use languages other than C or C++ for both normal world and secure world applications.</p>
 <hr />
-<p><strong>Question:</strong> How does TA authenticate request from CA?</p>
+<p><strong>Question:</strong> How does TA authenticate request from CA? (2023-03-31)</p>
 <p><strong>Answer:</strong></p>
 <p>Trusted Applications (TAs) can authenticate requests from Client Applications (CAs) using a variety of mechanisms. One common approach is to establish a secure session between the CA and the TA, which can involve authentication, key exchange, and secure communication. This ensures that only authorized CAs can access the services provided by the TA.</p>
 <p>Here are some methods that can be used to authenticate requests from a CA to a TA:</p>
@@ -1631,7 +1631,7 @@ body .markdown-body {
 </ol>
 <p>The specific method of authentication and the level of trust required between the CA and the TA depend on the use case, the TEE implementation, and the underlying hardware. To ensure the highest level of security, it is essential to choose appropriate authentication mechanisms and follow best practices in implementing them.</p>
 <hr />
-<p><strong>Question:</strong> What are kinds of TA?</p>
+<p><strong>Question:</strong> What are kinds of TA? (2023-04-01)</p>
 <p><strong>Answer:</strong></p>
 <p>Trusted Applications (TAs) can be broadly classified into two main categories based on their purpose and level of trust:</p>
 <ol>
@@ -1654,7 +1654,7 @@ body .markdown-body {
 <p>In summary, TAs can be classified based on their purpose, complexity, level of trust, and development model. The specific types of TAs supported by a TEE may vary depending on the TEE implementation, the underlying hardware, and the security requirements of the device.</p>
 <hr />
 <h2>TEE Identification</h2>
-<p><strong>Question:</strong> What is TEE identification? (2023/4/10)</p>
+<p><strong>Question:</strong> What is TEE identification? (2023-04-10)</p>
 <p><strong>Answer:</strong></p>
 <p>TEE identification refers to the process of uniquely identifying a Trusted Execution Environment (TEE) within a device or across multiple devices. This identification can be used for various purposes, such as attestation, secure communication, and device management. TEE identification typically involves the use of a unique identifier or a set of identifiers that can be securely associated with a specific TEE instance.</p>
 <p>Some common methods for TEE identification are:</p>
@@ -1674,14 +1674,14 @@ body .markdown-body {
 </ol>
 <p>TEE identification plays a crucial role in ensuring the security and trustworthiness of the TEE and the applications running within it. It enables secure communication between the TEE and other components, remote attestation of the TEE, and secure management of devices and services that rely on the TEE.</p>
 <hr />
-<p><strong>Question:</strong> Is TEE identification obversable? (2023/4/10)</p>
+<p><strong>Question:</strong> Is TEE identification obversable? (2023-04-10)</p>
 <p><strong>Answer:</strong></p>
 <p>TEE identification is typically not directly observable by normal applications running in the non-secure world (also called the Rich Execution Environment, or REE). The main purpose of a TEE is to provide a secure and isolated environment for sensitive operations, which includes protecting the TEE&rsquo;s identification information from unauthorized access.</p>
 <p>However, some TEE implementations may provide APIs or services that allow authorized applications in the normal world to interact with the TEE and obtain some identification-related information, such as public keys or certificates, for specific purposes like establishing a secure communication channel or performing remote attestation. Access to this information is usually tightly controlled and limited to authorized applications that meet specific security requirements.</p>
 <p>For example, in Intel SGX, an application in the normal world can request a remote attestation report, which includes a public key called the Attestation Identity Key (AIK) that can be used to identify the SGX enclave. The remote attestation process involves communication with Intel&rsquo;s Attestation Service, which verifies the enclave&rsquo;s authenticity and provides a signed attestation report.</p>
 <p>In summary, while TEE identification information is not directly observable by normal applications, authorized applications may be able to access certain identification-related information through specific APIs or services provided by the TEE, under controlled conditions and for specific purposes.</p>
 <hr />
-<p><strong>Question:</strong> Can I use DID as TEE identification? (2023/4/10)</p>
+<p><strong>Question:</strong> Can I use DID as TEE identification? (2023-04-10)</p>
 <p><strong>Answer:</strong></p>
 <p>Decentralized Identifiers (DIDs) can potentially be used as a TEE identification mechanism, although this would require integrating the DID concept into the TEE framework. DIDs are a new type of identifier designed for decentralized identity management systems, which allow entities to create, manage, and control their own identifiers without relying on centralized authorities.</p>
 <p>To use DIDs as TEE identification, you would need to consider the following steps:</p>
@@ -1705,7 +1705,7 @@ body .markdown-body {
 <p>Using DIDs for TEE identification is an innovative idea that could potentially enhance the security, privacy, and interoperability of TEE-based systems. However, it is important to note that integrating DIDs into the TEE framework would require significant development effort, as well as coordination with existing TEE implementations and standards. Moreover, it would be necessary to carefully evaluate the security implications and trade-offs of using DIDs in this context.</p>
 <hr />
 <h2>Revocation of TA</h2>
-<p><strong>Question:</strong> What is revocation for Trusted Application? (2023/4/10)</p>
+<p><strong>Question:</strong> What is revocation for Trusted Application? (2023-04-10)</p>
 <p><strong>Answer:</strong></p>
 <p>Revocation for Trusted Applications (TAs) refers to the process of invalidating, removing, or disabling a TA from a Trusted Execution Environment (TEE). The revocation process may be necessary under various circumstances, such as when a TA has been compromised, contains vulnerabilities, or is no longer needed.</p>
 <p>Revocation can help maintain the security and integrity of the TEE by ensuring that only trusted and up-to-date TAs are allowed to execute within the secure environment. The specific process for revoking a TA depends on the TEE implementation and the device management policies.</p>

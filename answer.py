@@ -81,7 +81,7 @@ def parse_context(lines):
 # section_ls = [section]
 # section = {'title', 'question_ls'}
 # question_ls = [question]
-# question = {'q1', 'q2', 'q1-prefix', 'q2-prefix', a-prefix', 'from'}
+# question = {'q1', 'q2', 'q1-prefix', 'q2-prefix', a-prefix', 'from', 'hide', 'date'}
 #    
 # q1 = https://en.wikipedia.org/wiki/Trusted_execution_environment
 # q2 = https://en.wikipedia.org/wiki/Trusted\_execution\_environment
@@ -326,6 +326,16 @@ def build_qa(q, a):
     #print('a = %s' % a)
 
     remove_empty_lines_from_head_and_tail(q)
+
+    create_time = None 
+    while True:
+        if q[0].startswith('create_time:'):
+            _, create_time = q[0].split(':', 1)
+            create_time = create_time.strip()
+            q.pop(0)
+        else:
+            break
+
     assert len(q) == 1, q
     one_q = q[0]
 
@@ -333,13 +343,13 @@ def build_qa(q, a):
 
     a = refine_md_1(a)
 
-    qa = {'q': one_q, 'a': a}
+    qa = {'q': one_q, 'create_time': create_time, 'a': a}
     return qa
 
 #
 # Parse the chat file to build qa_ls
 # qa_ls = [qa]
-# qa = {'q', 'a'}
+# qa = {'q', 'create_time', 'a'}
 #
 
 def parse_chat(fn):
@@ -352,17 +362,17 @@ def parse_chat(fn):
 
     return qa_ls
 
-def find_answer(qa_ls, question, chat):
+def find_qa(qa_ls, question, chat):
 
-    answer = None
+    out = None
 
     if 'a-prefix' in question:
         for qa in qa_ls:
             if qa['a'][0].startswith(question['a-prefix']):
-                answer = qa['a'] 
-                return answer
+                out = qa
+                return out
 
-        if answer == None:
+        if out == None:
             print('Error. The answer of the question is not found.')
             print('chat = %s' % chat)
             print('q1 = %s' % question['q1'])
@@ -374,25 +384,25 @@ def find_answer(qa_ls, question, chat):
         for qa in qa_ls:
             if 'q2-prefix' in question:
                 if qa['q'].startswith(question['q2-prefix']):
-                    answer = qa['a']
+                    out = qa
                     break
 
             if 'q2' in question:
                 if qa['q'] == question['q2']:
-                    answer = qa['a']
+                    out = qa
                     break
 
             if 'q2-prefix' in question:
                 if qa['q'].startswith(question['q1-prefix']):
-                    answer = qa['a']
+                    out = qa
                     break
 
             if 'q2' in question:
                 if qa['q'] == question['q1']:
-                    answer = qa['a']
+                    out = qa
                     break                    
 
-        if answer == None:
+        if out == None:
             print('Error. The answer of the question is not found.')
             print('chat = %s' % chat)
 
@@ -404,7 +414,7 @@ def find_answer(qa_ls, question, chat):
 
             sys.exit(1)
 
-    return answer
+    return out
 
 def write_sections(section_ls, name, fn):
     f = open(fn, 'w')
@@ -593,12 +603,15 @@ def main():
             if 'from' in question:
                 fn = os.path.join(args.chats, question['from'])
                 qa_ls = fn_qa_ls_d[fn]
-                a = find_answer(qa_ls, question, question['from'])
+                qa = find_qa(qa_ls, question, question['from'])
             else:
                 assert default_qa_ls != None
-                a = find_answer(default_qa_ls, question, chat)
+                qa = find_qa(default_qa_ls, question, chat)
             
-            question['a'] = a    
+            question['a'] = qa['a']
+            if qa['create_time'] != None:
+                question['date'] = qa['create_time'][:10]
+                question['time'] = qa['create_time'][11:]
 
     #
     # Write new_chat_ls

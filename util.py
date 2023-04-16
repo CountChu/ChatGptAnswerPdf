@@ -1,5 +1,6 @@
 import os
 import sys
+import datetime
 
 def get_name(fn):
     name = os.path.basename(fn)
@@ -49,3 +50,9 @@ def get_q(question):
         q = '%s (%s)' % (q, date)
 
     return q
+
+def get_date_time(ts):
+    date = datetime.datetime.fromtimestamp(ts)
+    dt_str = date.strftime("%Y-%m-%d %H:%M:%S")
+    return dt_str
+

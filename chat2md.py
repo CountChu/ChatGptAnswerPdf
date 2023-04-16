@@ -2,6 +2,7 @@ import argparse
 import sys
 import os
 import json
+import util
 import pdb
 
 br = pdb.set_trace
@@ -70,8 +71,9 @@ def handle_chat(output, chat):
 
         if role == 'user':
             f.write('**You:**\n\n')
-            #assert s == 'init' or s =='assistant', s
-            #s = 'user'
+
+            create_time = util.get_date_time(message['create_time'])
+            f.write('create_time: %s\n' % create_time)
 
         elif role == 'assistant':
             if 'finish_details' in metadata:

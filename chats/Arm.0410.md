@@ -1,5 +1,6 @@
 **You:**
 
+create_time: 2023-04-10 09:07:10
 What are types of ARM CPU? Please also describe them in a table.
 
 * * *
@@ -43,6 +44,7 @@ Please note that within each series, there are multiple specific processor model
 
 **You:**
 
+create_time: 2023-04-10 09:10:15
 Does the FF-A document is only about Cortex-A?
 
 * * *
@@ -57,6 +59,7 @@ The program provides access to various ARM IP products, including Cortex-A, Cort
 
 **You:**
 
+create_time: 2023-04-10 09:12:41
 https://developer.arm.com/documentation/den0077/latest/
 
 * * *
@@ -73,6 +76,7 @@ The SCMI specification is not limited to Cortex-A processors. It can be used wit
 
 **You:**
 
+create_time: 2023-04-10 09:15:07
 The below text comes from chapter 2 in "Arm Firmware Framework for Arm A-profile" document.  Chapter 2 Introduction The Armv8.4 architecture introduces the Virtualization extension in the Secure state. The Arm® SMMU v3.2 architecture [1] adds support for stage 2 translations for Secure streams to complement the Secure EL2 translation regime in an Armv8.4 PE. These architectural features enable isolation of mutually mistrusting software components in the Secure state from each other. Isolation is a mechanism for implementing the principle of least privilege: A software component must be able to access only regions in the physical address space and system resources for example, interrupts in the GIC that are necessary for its correct operation. Virtualization in the Secure state enables application of this principle in the following ways: 1. Firmware in EL3 can be isolated from software in S-EL1 for example, a Trusted OS. 2. Firmware components in EL3 can be isolated from each other by migrating vendor-specific components to a sandbox in S-EL1 or S-EL0. 3. Normal world software can be isolated from software in S-EL1 to mitigate against privilege escalation attacks. This specification describes a software architecture that achieves the following goals. 1. Uses the Virtualization extension to isolate software images provided by an ecosystem of vendors from each other. 2. Describes interfaces that standardize communication between the various software images. This includes communication between images in the Secure world and Normal world. 3. Generalizes interaction between a software image and privileged firmware in the Secure state. This software architecture is the Firmware Framework1 for Arm® A-profile processors. The term Framework and abbreviation FF-A are used interchangeably with Firmware Framework in this specification.  This Framework also goes beyond the preceding goals to ensure that the guidance can be used, 1. In the absence of the Virtualization extension in the Secure state. This provides a migration path for existing Secure world software images to a system that implements the Virtualization extension in the Secure state. 2. Between VMs managed by a Hypervisor in the Normal world. The Virtualization extension in the Secure state mirrors its counterpart in the Non-secure state (see also [2]). Therefore, a Hypervisor could use the Firmware Framework to enable communication and manage isolation between VMs it manages. More rationale about the introduction of the Virtualization extension in Secure state and goals of the Firmware Framework is provided in the white-paper titled Isolation using virtualization in the Secure world [3].
 
 * * *
@@ -95,6 +99,7 @@ The FF-A helps to create a more secure environment by isolating software compone
 
 **You:**
 
+create_time: 2023-04-10 09:16:03
 The below text comes from chapter 2 in "Arm Firmware Framework for Arm A-profile" document.  Chapter 2 Introduction The Armv8.4 architecture introduces the Virtualization extension in the Secure state. The Arm® SMMU v3.2 architecture [1] adds support for stage 2 translations for Secure streams to complement the Secure EL2 translation regime in an Armv8.4 PE. These architectural features enable isolation of mutually mistrusting software components in the Secure state from each other. Isolation is a mechanism for implementing the principle of least privilege: A software component must be able to access only regions in the physical address space and system resources for example, interrupts in the GIC that are necessary for its correct operation. Virtualization in the Secure state enables application of this principle in the following ways: 1. Firmware in EL3 can be isolated from software in S-EL1 for example, a Trusted OS. 2. Firmware components in EL3 can be isolated from each other by migrating vendor-specific components to a sandbox in S-EL1 or S-EL0. 3. Normal world software can be isolated from software in S-EL1 to mitigate against privilege escalation attacks. This specification describes a software architecture that achieves the following goals. 1. Uses the Virtualization extension to isolate software images provided by an ecosystem of vendors from each other. 2. Describes interfaces that standardize communication between the various software images. This includes communication between images in the Secure world and Normal world. 3. Generalizes interaction between a software image and privileged firmware in the Secure state. This software architecture is the Firmware Framework1 for Arm® A-profile processors. The term Framework and abbreviation FF-A are used interchangeably with Firmware Framework in this specification.  This Framework also goes beyond the preceding goals to ensure that the guidance can be used, 1. In the absence of the Virtualization extension in the Secure state. This provides a migration path for existing Secure world software images to a system that implements the Virtualization extension in the Secure state. 2. Between VMs managed by a Hypervisor in the Normal world. The Virtualization extension in the Secure state mirrors its counterpart in the Non-secure state (see also [2]). Therefore, a Hypervisor could use the Firmware Framework to enable communication and manage isolation between VMs it manages. More rationale about the introduction of the Virtualization extension in Secure state and goals of the Firmware Framework is provided in the white-paper titled Isolation using virtualization in the Secure world [3].
 
 * * *
@@ -146,6 +151,7 @@ Overall, the document outlines the requirements and standards that Arm-based dev
 
 **You:**
 
+create_time: 2023-04-10 09:18:03
 What is "Arm A-profile"?
 
 * * *
@@ -164,6 +170,7 @@ In summary, the term "Arm A-profile" refers to the Cortex-A series of Arm proces
 
 **You:**
 
+create_time: 2023-04-10 09:19:54
 Does "Arm Firmware Framework for Arm A-profile" document is only about Cortex-A?
 
 * * *
@@ -178,6 +185,7 @@ While the document is primarily targeted at Cortex-A processors and their associ
 
 **You:**
 
+create_time: 2023-04-11 23:15:51
 What are types of ARM CPU? Please also describe them in a table with 32 bits and 64 bits.
 
 * * *
@@ -200,6 +208,7 @@ Please note that within each series, there are multiple specific processor model
 
 **You:**
 
+create_time: 2023-04-11 23:18:47
 Does Armv8-A has 32 bits?
 
 * * *
@@ -214,6 +223,7 @@ In AArch32 state, Armv8-A processors support the ARM and Thumb instruction sets,
 
 **You:**
 
+create_time: 2023-04-11 23:19:39
 Does Armv7-A has 64 bits?
 
 * * *
@@ -228,6 +238,7 @@ Armv8-A is the successor to Armv7-A and introduced the 64-bit execution state (A
 
 **You:**
 
+create_time: 2023-04-12 16:48:01
 Can I get Armv8-A with only 32-bit for cost down?
 
 * * *
@@ -244,6 +255,7 @@ Cortex-M series processors, in particular, are widely used in microcontroller an
 
 **You:**
 
+create_time: 2023-04-13 08:48:37
 How do I specify the execution states (64-bit, 32-bit) of Armv8-A?
 
 * * *
@@ -268,6 +280,7 @@ In summary, the execution state of an Armv8-A processor is determined by its cur
 
 **You:**
 
+create_time: 2023-04-13 08:50:27
 How do I specify AArch32 and AArch64 of Armv8-A?
 
 * * *
@@ -296,6 +309,7 @@ Please note that these configurations are usually done by the system firmware or
 
 **You:**
 
+create_time: 2023-04-13 09:13:25
 Below ariticle "In aarch32 state, what is the mechanism to switch to aarch64 in software?" come from https://community.arm.com/support-forums/f/architectures-and-processors-forum/6706/in-aarch32-state-what-is-the-mechanism-to-switch-to-aarch64-in-software  In aarch32 state, what is the mechanism to switch to aarch64 in software? cray Offline cray over 7 years ago Dear sirs,  I'm reading arm v8a specification. I found that when arm is in aarch32 state, only a few exceptions can switch to aarch64 depending on the configuration in the registers. the exceptions are as follows.  abort, physical async abort, physical FIQ and physical IRQ  while other exceptions are still processed in aarch32 state.  My questions are as follows.  Q1: Is my understanding correct?  Q2: If Q1 is yes, why these exceptions can be processed and others can not such as underfined instruction, svc, hvc?  Q3: What is the usage case for switch between aarch32 and aarch64?  In addition, exception return from higher exception level after reset can switch to aarch32, right?  cray  All Replies Answers Oldest Newest Martin Weidmann Offline Martin Weidmann over 7 years ago I found that when arm is in aarch32 state, only a few exceptions can switch to aarch64 depending on the configuration in the registers.  That isn't strictly correct.  Any exception could potentially cause a change of Execution state.  There are various reasons you might want to switch between the states.  A good example is a 64-bit OS, hosting a mix of 32-bit and 64-bit apps.  If you are currently running one of the 32-bit apps and you take an exception (e.g. IRQ, SVC from a system call, abort from a page fault,....) you enter the 64-bit OS.  So a AArch32 --> AArch64 transition.  When the OS performs an exception return back into the app, that's an AArch64-->AArch32 transition.  Up0Down cray Offline cray over 7 years ago in reply to Martin Weidmann Hi Martin,  Thanks for your answer.  you said Any exception could potentially cause a change of Execution state. But I read all the exception processing pseudocode in aarch32. the variable route_to_aarch64 only exists in a few exceptions such as abort. look at the following pseudocode.  if route_to_aarch64 then  AArch64.Abort(ZeroExtend(vaddress), fault);  Only the abort, physical async abort, physical FIQ and physical IRQ exceptions have this pseudocode. How do you explain this condition? Thanks.  cray  Up0Down Martin Weidmann Offline Martin Weidmann over 7 years ago in reply to cray I should have been a little more precise.  Any exception type in AArch32 state could potentially lead to Execution state changing to AArch64.  No exception taken while in AArch64 will result in Execution state changing to AArch32.  For exceptions returns the reverse is true.  An exception return in AArch64 might cause execution state to change to AArch32.  No exception return in AArch32 can lead to Execution state changing to AArch64(\*).  For both exceptions and exception returns, a change of Execution state can only occur if there is also a change in EL.  That is an exception from EL0 to EL1 could lead to a change in Execution state.  But an exception from EL1 to EL1 could not.  Let's take one example of an exception not on your list.  The pseudo code for the A32/T32 for SVC says:  if ConditionPassed() then   EncodingSpecificOperations();   AArch32.CallSupervisor(imm32<15:0>); Following the chain down:  AArch32.CallSupervisor(bits(16) immediate)    ...   if AArch32.GeneralExceptionsToAArch64() then     AArch64.CallSupervisor(immediate);   else     AArch32.TakeSVCException(immediate); So based on on the return value of GeneralExceptionsToAArch64(), either the AArch32 or AArch64 pseudo code gets called.  Looking at GeneralExceptionsToAArch64():  boolean AArch32.GeneralExceptionsToAArch64()   return ((PSTATE.EL == EL0 && !ELUsingAArch32(EL1)) ||           (HaveEL(EL2) && !IsSecure() && !ELUsingAArch32(EL2) && HCR_EL2.TGE == '1')); So the conditions for SVC are:  * Taking SVC from EL0 to EL1, where EL1 is using AArch64 (defined by either SCR_EL3.RW or HCR_EL2.RW depending on Security state)  * Taking SVC from NS.EL0/NS.EL1 when EL2 is using AArch64 (defined by SCR_EL3.RW) and HCR_EL2.TGE==1  (\*) Well, maybe indirectly.  The exception return might trigger an exception, and the exception might cause a switch to AArch64.  But it is the exception, not the exception return, which is actually causing the Execution state change.  Up0Down Michael Williams Offline Michael Williams over 7 years ago in reply to cray To further expand on Martin's response, for the synchronous exceptions this "interworking" layer exists before the pseudocode function for taking the exception (TakeXXXException). So functions like AArch32.Abort and AArch32.CallSupervisor as in Martin's examples. For the asynchronous exceptions there is a layer of implied pseudocode that is not in the manual. This for instance includes the checks whether the asynchronous exception is masked. However, since this layer of code does not appear in the manual, the route_to_aarch64 is included in the TakeXXXException() function. So it is there for the asynchronous exceptions, but not the synchronous ones.  Up0Down cray Offline cray over 7 years ago in reply to Michael Williams Dear Martin and Michael,  Thanks very much for your response. This question troubled me for a long time. The architecture manual is so long that I have not read all of it.  I should dig into it to find more information. Now I'm very happy to get the right answer.  cray  Up0Down
 
 * * *
@@ -320,6 +334,7 @@ The exact mechanism for switching between AArch32 and AArch64 execution states d
 
 **You:**
 
+create_time: 2023-04-13 09:17:43
 How do I specify only AArch32 of Armv8-A at run-time?
 
 * * *
@@ -342,6 +357,7 @@ By following these steps, you ensure that your ARMv8-A system operates in AArch3
 
 **You:**
 
+create_time: 2023-04-13 09:34:54
 Is uboot 32-bit or 64-bit?
 
 * * *

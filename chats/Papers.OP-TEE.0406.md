@@ -1,5 +1,6 @@
 **You:**
 
+create_time: 2023-04-06 11:33:08
 Paper: vTZ: Virtualizing ARM TrustZone  Abstract ARM TrustZone, a security extension that provides a secure world, a trusted execution environment (TEE), to run security-sensitive code, has been widely adopted in mobile platforms. With the increasing momentum of ARM64 being adopted in server markets like cloud, it is likely to see TrustZone being adopted as a key pillar for cloud security. Unfortunately, TrustZone is not designed to be virtualizable as there is only one TEE provided by the hardware, which prevents it from being securely shared by multiple virtual machines (VMs). This paper conducts a study on variable approaches to virtualizing TrustZone in virtualized environments and then presents vTZ, a solution that securely provides each guest VM with a virtualized guest TEE using existing hardware. vTZ leverages the idea of separating functionality from protection by maintaining a secure co-running VM to serve as a guest TEE, while using the hardware TrustZone to enforce strong isolation among guest TEEs and the untrusted hypervisor. Specifically, vTZ uses a tiny monitor running within the physical TrustZone that securely interposes and virtualizes memory mapping and world switching. vTZ further leverages a few pieces of protected, self-contained code running in a Constrained Isolated Execution Environment (CIEE) to provide secure virtualization and isolation among multiple guest TEEs. We have implemented vTZ on Xen 4.8 on both ARMv7 and ARMv8 development boards. Evaluation using two common TEE-kernels (secure kernel running in TEE) such as seL4 1 and OP-TEE shows that vTZ provides strong security with small performance overhead.
 
 * * *
@@ -18,6 +19,7 @@ The authors implemented vTZ on Xen 4.8 on both ARMv7 and ARMv8 development board
 
 **You:**
 
+create_time: 2023-04-06 11:34:22
 Paper: Cloud & Edge Trusted Virtualized Infrastructure Manager (VIM) - Security and Trust in OpenStack  Abstract The Fifth Generation (5G) mobile networks promise faster connectivity and futuristic applications and services. In order to meet the high expectations, 5G joins forces with virtualization technologies like Network Functions Virtualization (NFV) and adopts cloud-native solutions. At the same time, it relies on shifting the computation to the network edge for offloading computing power, local caching, minimized latency and flexibility in the deployment. However, new opportunities unlock new security challenges. Man-in-the-middle, denial-ofservice attacks and tampering are now becoming easier because of the scattered devices and their varying locations. Meanwhile, the dynamic nature of the cloud raises the need for on-time threats prevention. In this work, we propose a way to answer the new challenges by bringing trust into the virtualized edge infrastructure. We present our contributions to the development of security services for platform authentication and integrity, hosted inside a trusted execution environment (TEE). We also evaluate the performance overhead of our work and suggest future improvements. Index Terms—security, virtualization, cloud, edge computing, Trusted Execution Environment, TEE, OP-TEE, ARM Trust- Zone, VIM, Virtual Infrastructure Manager, OpenStack
 
 * * *
@@ -36,6 +38,7 @@ The authors evaluate the performance overhead of their solution and suggest pote
 
 **You:**
 
+create_time: 2023-04-06 11:35:08
 What is difference between two papers? Please also summarize it in a table.
 
 * * *
@@ -60,6 +63,7 @@ The first paper presents vTZ, a solution for virtualizing ARM TrustZone, while t
 
 **You:**
 
+create_time: 2023-04-06 11:36:46
 What is same between two papers?
 
 * * *
@@ -80,6 +84,7 @@ In summary, both papers share a common goal of enhancing security and use Truste
 
 **You:**
 
+create_time: 2023-04-06 11:39:41
 What is difference of virtualization tech between two papers?
 
 * * *
@@ -98,6 +103,7 @@ In summary, the first paper targets virtualizing ARM TrustZone to enable secure 
 
 **You:**
 
+create_time: 2023-04-06 16:33:51
 Title: Enabling Rack-scale Confidential Computing using Heterogeneous Trusted Execution Environment  Abstract With its huge real-world demands, large-scale confidential computing still cannot be supported by today’s Trusted Execution Environment (TEE), due to the lack of scalable and effective protection of high-throughput accelerators like GPUs, FPGAs, and TPUs etc. Although attempts have been made recently to extend the CPU-like enclave to GPUs, these solutions require change to the CPU or GPU chips, may introduce new security risks due to the side-channel leaks in CPU-GPU communication and are still under the resource constraint of today’s CPU TEE. To address these problems, we present the first Heterogeneous TEE design that can truly support large-scale compute or data intensive (CDI) computing, without any chip-level change. Our approach, called HETEE, is a device for centralized management of all computing units (e.g., GPUs and other accelerators) of a server rack. It is uniquely designed to work with today’s data centres and clouds, leveraging modern resource pooling technologies to dynamically compartmentalize computing tasks, and enforce strong isolation and reduce TCB through hardware support. More specifically, HETEE utilizes the PCIe ExpressFabric to allocate its accelerators to the server node on the same rack for a non-sensitive CDI task, and move them back into a secure enclave in response to the demand for confidential computing. Our design runs a thin TCB stack for security management on a security controller (SC), while leaving a large set of software (e.g., AI runtime, GPU driver, etc.) to the integrated microservers that operate enclaves. An enclaves is physically isolated from others through hardware and verified by the SC at its inception. Its microserver and computing units are restored to a secure state upon termination. We implemented HETEE on a real hardware system, and evaluated it with popular neural network inference and training tasks. Our evaluations show that HETEE can easily support the CDI tasks on the real-world scale and incurred a maximal throughput overhead of 2.17% for inference and 0.95% for training on ResNet152.
 
 * * *
@@ -118,6 +124,7 @@ The authors implemented HETEE on a real hardware system and evaluated its perfor
 
 **You:**
 
+create_time: 2023-04-06 16:55:44
 Title: SoK: Understanding the Prevailing Security Vulnerabilities in TrustZone-assisted TEE Systems  Abstract Abstract—Hundreds of millions of mobile devices worldwide rely on Trusted Execution Environments (TEEs) built with Arm TrustZone for the protection of security-critical applications (e.g., DRM) and operating system (OS) components (e.g., Android keystore). TEEs are often assumed to be highly secure; however, over the past years, TEEs have been successfully attacked multiple times, with highly damaging impact across various platforms. Unfortunately, these attacks have been possible by the presence of security flaws in TEE systems. In this paper, we aim to understand which types of vulnerabilities and limitations affect existing TrustZone-assisted TEE systems, what are the main challenges to build them correctly, and what contributions can be borrowed from the research community to overcome them. To this end, we present a security analysis of popular TrustZone-assisted TEE systems (targeting Cortex-A processors) developed by Qualcomm, Trustonic, Huawei, Nvidia, and Linaro. By studying publicly documented exploits and vulnerabilities as well as by reverse engineering the TEE firmware, we identified several critical vulnerabilities across existing systems which makes it legitimate to raise reasonable concerns about the security of commercial TEE implementations. Index Terms—TEE, TrustZone, Security Vulnerabilities, Arm
 
 * * *
@@ -136,6 +143,7 @@ This paper provides valuable insights into the types of vulnerabilities that aff
 
 **You:**
 
+create_time: 2023-04-06 17:27:00
 Title: RusTEE: Developing Memory-Safe ARMTrustZone Applications  Abstract In the past decade, Trusted Execution Environment (TEE) provided by ARM TrustZone is becoming one of the primary techniques for enhancing the security of mobile devices. The isolation enforced by TrustZone can protect the trusted applications running in the TEE against malicious software in the untrusted rich execution environment (REE). However, TrustZone cannot completely prevent vulnerabilities in trusted applications residing in the TEE, which can then be used to attack other trusted applications or even the trusted OS. Previously, a number of memory corruption vulnerabilities have been reported on different TAs, which are written in memory-unsafe languages like C. Recently, various memory-safe programming languages have emerged to mitigate the prevalent memory corruption bugs. In this paper, we propose RusTEE, a trusted application mechanism that leverages Rust, a newly emerged memory-safe language, to enhance the security of TAs. Though the high-level idea is quite straight-forwarding, we resolve several challenges on adopting Rust in mobile TEEs. Specifically, since Rust currently does not support any TrustZone-assisted TEE systems, we extend the existing Rust compiler for providing such support. Also, we apply comprehensive security mechanisms to resolve two security issues of trusted applications, namely, securely invoking high-privileged system services and securely communicating with untrusted REE. We implement a prototype of RusTEE as the trusted applications’ SDK, which supports both emulator and real hardware devices. The experiment shows that RusTEE can compile applications with close-to-C performance on the evaluated platforms.
 
 * * *
@@ -158,6 +166,7 @@ Experimental results show that RusTEE can compile applications with close-to-C p
 
 **You:**
 
+create_time: 2023-04-06 20:36:41
 Paper: Bao: A Lightweight Static Partitioning Hypervisor for Modern Multi-Core Embedded Systems  Abstract Given the increasingly complex and mixed-criticality nature of modern embedded systems, virtualization emerges as a natural solution to achieve strong spatial and temporal isolation. Widely used hypervisors such as KVM and Xen were not designed having embedded constraints and requirements in mind. The static partitioning architecture pioneered by Jailhouse seems to address embedded concerns. However, Jailhouse still depends on Linux to boot and manage its VMs. In this paper, we present the Bao hypervisor, a minimal, standalone and clean-slate implementation of the static partitioning architecture for Armv8 and RISC-V platforms. Preliminary results regarding size, boot, performance, and interrupt latency, show this approach incurs only minimal virtualization overhead. Bao will soon be publicly available, in hopes of engaging both industry and academia on improving Bao’s safety, security, and real-time guarantees.
 
 * * *
@@ -180,6 +189,7 @@ The authors plan to make Bao publicly available, aiming to engage both industry 
 
 **You:**
 
+create_time: 2023-04-06 20:39:52
 Paper: Research on ARM TrustZone  ARM TrustZone [1] is a hardware-based security feature that can provide software with a high-privilege and isolated execution environment. Such isolation is ensured by hardware, which is usually considered as more trustworthy than software. Thus the execution environment is also known as trusted execution environment (TEE). TrustZone technology was proposed in 2002, but did not get widely used until 2009, when Apple released iPhone 5s. In iPhone 5s, Apple leveraged TrustZone to protect its Touch ID, which ensures that even if the iOS is fully compromised, the user's fingerprint data can still be safe. In 2017, Google made TEE a mandatory requirement on any Android devices with a fingerprint scanner. Nowadays, almost all mobile phones and tablets have TEE deployed. Meanwhile, ARM integrates TrustZone in ARM64 and ARMv8-M to support a broader range of platforms including servers and IoT devices.
 
 * * *
@@ -198,6 +208,7 @@ The paper provides valuable insights into the ARM TrustZone technology, discussi
 
 **You:**
 
+create_time: 2023-04-06 20:41:13
 Paper: TEEv: Virtualizing Trusted Execution Environmentson Mobile Platforms  Abstract Trusted Execution Environments (TEE) are widely deployed, especially on smartphones. A recent trend in TEE development is the transition from vendor-controlled, single-purpose TEEs to open TEEs that host Trusted Applications (TAs) from multiple sources with independent tasks. This transition is expected to create a TA ecosystem needed for providing stronger and customized security to apps and OS running in the Rich Execution Environment (REE). However, the transition also poses two security challenges: enlarged attack surface resulted from the increased complexity of TAs and TEEs; the lack of trust (or isolation) among TAs and the TEE. In this paper, we first present a comprehensive analysis on the recent CVEs related to TEE and the need of multiple TEE scheme. We then propose TEEv, a TEE virtualization architecture that supports multiple isolated, restricted TEE instances (i.e., vTEEs) running concurrently. Relying on a tiny hypervisor (we call it TEE-visor), TEEv allows TEE instances from different vendors to run in isolation on the same smartphone and to host their own TAs. Therefore, a compromised vTEE cannot affect its peers or REE; TAs no longer have to run in untrusted/unsuitable TEEs. We have implemented TEEv on a development board and a real smartphone, which runs multiple commercial TEE instances Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. VEE ’19, April 14, 2019, Providence, RI, USA © 2019 Copyright held by the owner/author(s). Publication rights licensed to ACM. ACM ISBN 978-1-4503-6020-3/19/04. . . $15.00 https://doi.org/10.1145/3313808.3313810 from different vendors with very small porting effort. Our evaluation results show that TEEv can isolate vTEEs and defend all known attacks on TEE with only mild performance overhead.
 
 * * *
@@ -216,6 +227,7 @@ The paper presents an implementation of TEEv on a development board and a real s
 
 **You:**
 
+create_time: 2023-04-06 20:50:39
 The below context are of the section "Other Platforms: IoT, Drone, Cloud" of the paper "Research on ARM TrustZone"   Besides mobile phones, there are many new types of smart devices, such as smart home assistants, wall-mounted cameras, wearable devices, etc. These devices usually have plenty of sensors, notably cameras and microphones, which collect security sensitive information that should be protected. Ditio [17] tries to improve the security of IoT devices by recording sensor activity logs with TrustZone and virtualization support. All the access to registers of sensors can be recorded without modification to the REE OS, which will generate a complete log of sensor activities, which will be later be inspected by an auditor and checked for compliance with a given policy. Ditio also provides a tool to ease the process of log analyzing. PROTC [18] leverages TrustZone on the Drone platform to protect the peripherals. It deploys a monitor in the secure world to enforce secure access control policy for some peripherals of the drone to ensure that only authorized applications can access certain peripherals. ARM servers are getting popular in cloud computing, which also support virtualization. Currently TrustZone can only provide one secure world, which means that multiple VMs on one server have to share the only secure world. vTZ [19] tries to solve this problem by virtualizing TrustZone to offer each VM an isolated secure world. With vTZ, software in a VM can use SMC instruction to switch between REE and a virtual TEE, just as it does in a non-virtualized environment, and all the features of TrustZone are reserved after virtualization. The implementation requires an REE hypervisor but does not need to trust it.
 
 * * *
@@ -234,6 +246,7 @@ In the "Other Platforms: IoT, Drone, Cloud" section of the paper "Research on AR
 
 **You:**
 
+create_time: 2023-04-06 20:52:19
 In the context, Why does the implementation not need to trust REE hypervisor?
 
 * * *
@@ -250,6 +263,7 @@ In other words, the security of the virtual TEEs does not rely on the trustworth
 
 **You:**
 
+create_time: 2023-04-06 21:04:12
 How does the hardware-level isolation provided by ARM TrustZone protect the virtual TEEs from attackes in the REE hypervisor?
 
 * * *
@@ -276,6 +290,7 @@ By maintaining the hardware-level isolation, even in a virtualized environment, 
 
 **You:**
 
+create_time: 2023-04-06 21:06:03
 But vTZ actually run in normal world. How does the hardware-level isolation provided by ARM TrustZone protect the virtual TEEs from attackes in the REE hypervisor?
 
 * * *
@@ -300,6 +315,7 @@ While vTZ does run in the normal world, it relies on the hardware-level isolatio
 
 **You:**
 
+create_time: 2023-04-06 21:15:11
 The below context comes from "Other Platforms: IoT, Drone, Cloud" of the paper "Research on ARM TrustZone"  Besides mobile phones, there are many new types of smart devices, such as smart home assistants, wall-mounted cameras, wearable devices, etc. These devices usually have plenty of sensors, notably cameras and microphones, which collect security sensitive information that should be protected. Ditio [17] tries to improve the security of IoT devices by recording sensor activity logs with TrustZone and virtualization support. All the access to registers of sensors can be recorded without modification to the REE OS, which will generate a complete log of sensor activities, which will be later be inspected by an auditor and checked for compliance with a given policy. Ditio also provides a tool to ease the process of log analyzing. PROTC [18] leverages TrustZone on the Drone platform to protect the peripherals. It deploys a monitor in the secure world to enforce secure access control policy for some peripherals of the drone to ensure that only authorized applications can access certain peripherals. ARM servers are getting popular in cloud computing, which also support virtualization. Currently TrustZone can only provide one secure world, which means that multiple VMs on one server have to share the only secure world. vTZ [19] tries to solve this problem by virtualizing TrustZone to offer each VM an isolated secure world. With vTZ, software in a VM can use SMC instruction to switch between REE and a virtual TEE, just as it does in a non-virtualized environment, and all the features of TrustZone are reserved after virtualization. The implementation requires an REE hypervisor but does not need to trust it.
 
 * * *
@@ -320,6 +336,7 @@ These examples showcase the versatility of TrustZone technology and its potentia
 
 **You:**
 
+create_time: 2023-04-06 21:17:59
 In the context, vTZ run in normal world. Why does not vTZ run in normal world need to trust REE hypervisor?
 
 * * *
@@ -336,6 +353,7 @@ As a result, even though vTZ operates in the normal world and interacts with the
 
 **You:**
 
+create_time: 2023-04-06 21:54:33
 Please compare TEEv and vTZ and also summarize them in a table.
 
 * * *
@@ -360,6 +378,7 @@ vTZ aims to virtualize TrustZone to provide each VM an isolated secure world. Th
 
 **You:**
 
+create_time: 2023-04-06 22:26:53
 What is static partitioning?
 
 * * *
@@ -376,6 +395,7 @@ In the context of hypervisors, static partitioning refers to creating fixed, iso
 
 **You:**
 
+create_time: 2023-04-07 08:09:54
 What does the paper "Bao: A Lightweight Static Partitioning Hypervisor for Modern Multi-Core Embedded Systems" talk about? Virtualization, TEE or TrustZone?
 
 * * *
@@ -390,6 +410,7 @@ While the paper does not directly discuss Trusted Execution Environments (TEEs) 
 
 **You:**
 
+create_time: 2023-04-07 08:18:48
 Is OP-TEE required in TrustedVIM described in the page "Cloud & Edge Trusted Virtualized Infrastructure Manager (VIM) - Security and Trust in OpenStac"
 
 * * *
@@ -404,6 +425,7 @@ OP-TEE is an open-source implementation of TEE based on ARM TrustZone technology
 
 **You:**
 
+create_time: 2023-04-07 09:02:04
 Is Bao a hypervisor?
 
 * * *
@@ -416,6 +438,7 @@ Yes, Bao is a hypervisor. Specifically, it is a lightweight static partitioning 
 
 **You:**
 
+create_time: 2023-04-07 09:04:01
 Please compare hypervisor and virtualization and also summarize them in a table.
 
 * * *
@@ -438,6 +461,7 @@ In summary, a hypervisor is a software layer or firmware that enables and manage
 
 **You:**
 
+create_time: 2023-04-07 09:05:45
 Is TrustZone a hypervisor or virtualization?
 
 * * *
@@ -454,6 +478,7 @@ In summary, TrustZone is a security feature designed to provide hardware-level i
 
 **You:**
 
+create_time: 2023-04-07 09:06:27
 Is OP-TEE a hypervisor or virtualization?
 
 * * *
@@ -470,6 +495,7 @@ In summary, OP-TEE is a TEE solution that works with TrustZone to provide a secu
 
 **You:**
 
+create_time: 2023-04-07 09:07:58
 Does virtualization depend on hypervisor?
 
 * * *
@@ -490,6 +516,7 @@ In both cases, the hypervisor is the key component that enables virtualization, 
 
 **You:**
 
+create_time: 2023-04-07 13:56:22
 Does VM require hypervisor?
 
 * * *
@@ -504,6 +531,7 @@ There are alternative virtualization technologies, such as containerization (e.g
 
 **You:**
 
+create_time: 2023-04-07 13:59:11
 What are types of virtualization techs?
 
 * * *
@@ -530,6 +558,7 @@ These are just a few examples of virtualization technologies, and many more spec
 
 **You:**
 
+create_time: 2023-04-07 14:04:05
 Is hypvervisor a virtual machine manager?
 
 * * *
@@ -544,6 +573,7 @@ Hypervisors are responsible for abstracting the physical hardware resources and 
 
 **You:**
 
+create_time: 2023-04-07 14:05:26
 Are there alnatives of hypervisor?
 
 * * *
@@ -566,6 +596,7 @@ These alternatives each have their own advantages and trade-offs, and their suit
 
 **You:**
 
+create_time: 2023-04-07 14:07:57
 Can a VM contain VMs?
 
 * * *
@@ -586,6 +617,7 @@ However, nested virtualization can also introduce additional overhead and comple
 
 **You:**
 
+create_time: 2023-04-08 11:30:38
 Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE  Abstract payment systems have been stored in mobile devices. To protect important data, TEE technology has emerged, a trusty and safe execution environment. In particular, ARM TrustZone technology, which is mainly used in mobile, divides one physical processor into Normal World and Secure World to provide a safer execution environment. Recently, various manufacturers have started using TrustZone technology. but existing commercial TEEs have limitations in conducting security research using TrustZone. Therefore, this paper introduces OP-TEE which is an open source project for implementing ARM TrustZone technology and TEE Client API that communicates with Trusted Application of TrustZone Secure World. To demystify TEE Client API, we also implemented a simple trusted application for communication between Normal World and Secure World in OP-TEE OS using QEMU emulator.
 
 * * *
@@ -603,6 +635,7 @@ This paper introduces OP-TEE, an open-source project for implementing ARM TrustZ
 
 **You:**
 
+create_time: 2023-04-12 10:36:02
 What are Security Building Blocks?
 
 * * *
@@ -635,6 +668,7 @@ These building blocks, when combined and implemented correctly, create a robust 
 
 **You:**
 
+create_time: 2023-04-12 10:37:57
 What compare Security Building Block and TCB and also summarize them in a table.
 
 * * *

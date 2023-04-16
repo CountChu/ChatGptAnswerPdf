@@ -1,5 +1,6 @@
 **You:**
 
+create_time: 2023-03-28 09:12:34
 What is OP-TEE?
 
 * * *
@@ -21,6 +22,7 @@ OP-TEE is widely used in industries like mobile devices, IoT, automotive, and mo
 
 **You:**
 
+create_time: 2023-03-28 09:13:22
 What is thre prefix OP of OP-TEE?
 
 * * *
@@ -33,6 +35,7 @@ The prefix "OP" in OP-TEE stands for "Open Portable." It signifies that the proj
 
 **You:**
 
+create_time: 2023-03-28 09:13:41
 Are there alternative technologies of OP-TEE?
 
 * * *
@@ -57,6 +60,7 @@ These technologies may have different implementations, features, and target appl
 
 **You:**
 
+create_time: 2023-03-28 09:14:42
 Does OP-TEE a software or a hardware solution?
 
 * * *
@@ -73,6 +77,7 @@ In summary, OP-TEE is a software solution that takes advantage of hardware-based
 
 **You:**
 
+create_time: 2023-03-28 09:15:15
 Is OP-TEE a firmware?
 
 * * *
@@ -89,6 +94,7 @@ OP-TEE is often integrated into the boot process of a device, alongside other fi
 
 **You:**
 
+create_time: 2023-03-28 09:15:52
 Are there successfull cases of OP-TEE?
 
 * * *
@@ -113,6 +119,7 @@ While specific implementations may vary, these examples demonstrate the versatil
 
 **You:**
 
+create_time: 2023-03-28 09:16:49
 What are different between ARM OP-TEE and Intel SMM? Please also summarize in a table.
 
 * * *
@@ -151,6 +158,7 @@ Please note that while both technologies provide a secure and isolated execution
 
 **You:**
 
+create_time: 2023-03-28 09:17:54
 What is RPMB?
 
 * * *
@@ -175,6 +183,7 @@ RPMB is commonly used in devices like smartphones, tablets, and other embedded s
 
 **You:**
 
+create_time: 2023-03-28 09:18:44
 What is HS in OP-TEE?
 
 * * *
@@ -191,6 +200,7 @@ In summary, "HS" in OP-TEE refers to the Hardware Secure world, an isolated envi
 
 **You:**
 
+create_time: 2023-03-28 09:19:24
 What is KEK in OP-TEE?
 
 * * *
@@ -207,6 +217,7 @@ To summarize, a KEK in OP-TEE is a cryptographic key used to protect other sensi
 
 **You:**
 
+create_time: 2023-03-28 13:45:38
 Does OP-TEE support multi-thread?
 
 * * *
@@ -225,6 +236,7 @@ In summary, while OP-TEE's secure environment is primarily single-threaded, it s
 
 **You:**
 
+create_time: 2023-03-28 13:51:48
 What is secure context switching in TrustZone?
 
 * * *
@@ -249,6 +261,7 @@ In summary, secure context switching in TrustZone is the process of managing and
 
 **You:**
 
+create_time: 2023-03-28 13:53:51
 Does OP-TEE support multi-process?
 
 * * *
@@ -267,6 +280,7 @@ In summary, OP-TEE supports multi-process execution in the form of multiple trus
 
 **You:**
 
+create_time: 2023-03-28 13:56:02
 Can secure kernel and trusted applications in OP-TEE can be multi-thread?
 
 * * *
@@ -285,6 +299,7 @@ In summary, the secure kernel and trusted applications in OP-TEE are primarily s
 
 **You:**
 
+create_time: 2023-03-28 13:57:13
 Does OP-TEE support IPC?
 
 * * *
@@ -303,6 +318,7 @@ In both cases, OP-TEE manages the IPC to ensure isolation between different trus
 
 **You:**
 
+create_time: 2023-03-28 13:59:38
 Does OP-TEE support shared memory?
 
 * * *
@@ -323,6 +339,7 @@ In summary, OP-TEE supports shared memory for exchanging data between normal wor
 
 **You:**
 
+create_time: 2023-03-28 14:03:25
 Please summarize multi-process, IPC, and shared memory of OP-TEE.
 
 * * *
@@ -343,6 +360,7 @@ In summary, OP-TEE provides multi-process support for concurrent execution of mu
 
 **You:**
 
+create_time: 2023-03-28 14:06:02
 Can secure world can access memory in normal world?
 
 * * *
@@ -367,6 +385,7 @@ While the secure world in OP-TEE can access normal world memory, it should be do
 
 **You:**
 
+create_time: 2023-03-28 14:07:17
 Can normal world access memory in secure world?
 
 * * *
@@ -385,6 +404,7 @@ In summary, the normal world cannot directly access memory in the secure world, 
 
 **You:**
 
+create_time: 2023-03-28 14:08:09
 Does OP-TEE support network communication in secure world?
 
 * * *
@@ -409,6 +429,7 @@ In summary, OP-TEE does not support direct network communication within the secu
 
 **You:**
 
+create_time: 2023-03-28 15:19:43
 https://github.com/OP-TEE
 
 * * *
@@ -433,6 +454,7 @@ The GitHub repository is an excellent starting point for developers interested i
 
 **You:**
 
+create_time: 2023-03-29 16:19:58
 How does OP-TEE manage memory?
 
 * * *
@@ -459,6 +481,7 @@ In summary, OP-TEE manages memory within the secure world to ensure isolation, s
 
 **You:**
 
+create_time: 2023-03-29 16:27:42
 Are data in memory in secure world encrypted?
 
 * * *
@@ -475,6 +498,7 @@ In summary, data in the secure world memory is not encrypted by default in OP-TE
 
 **You:**
 
+create_time: 2023-03-29 16:32:11
 How does a normal world application request a service in secure world?
 
 * * *
@@ -503,6 +527,7 @@ By following these steps, a normal world application can request a service from 
 
 **You:**
 
+create_time: 2023-03-29 16:35:13
 Could you please draw a sequence diagram?
 
 * * *
@@ -528,6 +553,7 @@ You can use these steps to create a sequence diagram using any diagramming tool 
 
 **You:**
 
+create_time: 2023-03-29 16:40:29
 Thank you for your response. You are smart.
 
 * * *
@@ -541,6 +567,7 @@ Thank you for your kind words! I'm here to help and provide you with any informa
 
 **You:**
 
+create_time: 2023-03-29 16:44:12
 Is signature required when a normal world application request a service in secure world?
 
 * * *
@@ -559,6 +586,7 @@ In summary, a signature is not strictly required when a normal world application
 
 **You:**
 
+create_time: 2023-03-29 17:01:11
 How does an  application in normal world request a service with shared memory of a trusted application in a secure world? Please describe the process in OP-TEE with API and functions.
 
 * * *
@@ -591,6 +619,7 @@ By following these steps, a normal world application can request a service from 
 
 **You:**
 
+create_time: 2023-03-29 17:04:08
 Which functions are used by TA (trusted application) in the above process?
 
 * * *
@@ -623,6 +652,7 @@ By using these functions, the Trusted Application can interact with the normal w
 
 **You:**
 
+create_time: 2023-03-29 17:06:22
 Are above functions defined in TEE standard?
 
 * * *
@@ -648,6 +678,7 @@ These documents provide detailed information on the functions, their parameters,
 
 **You:**
 
+create_time: 2023-03-30 14:54:54
 Does OP-TEE only exist in secure world?
 
 * * *
@@ -674,6 +705,7 @@ In summary, OP-TEE does not only exist in the secure world. It consists of compo
 
 **You:**
 
+create_time: 2023-03-31 09:40:06
 Which languages do I use to develop apps in OP-TEE or to customize OP-TEE?
 
 * * *
@@ -694,6 +726,7 @@ To summarize, you primarily use the C programming language to develop trusted ap
 
 **You:**
 
+create_time: 2023-03-31 09:40:54
 Can I use other langauges?
 
 * * *
@@ -724,6 +757,7 @@ In summary, while it is possible to use other languages for normal world applica
 
 **You:**
 
+create_time: 2023-03-31 14:05:29
 我想做1個小時的投影片，主題是OP-TEE能在車載系統做出什麼樣的應用。此投影片的內容，還包含OP-TEE的簡介、OP-TEE和TrustZone、TEE的關係、可以包含之前我們交談的內容。因為我們有3個人共同製作投影片，請將投影片分成至少三大部份，以利分工。
 
 * * *
@@ -769,6 +803,7 @@ In summary, while it is possible to use other languages for normal world applica
 
 **You:**
 
+create_time: 2023-03-31 14:06:51
 請用英文描述。
 
 * * *
@@ -814,6 +849,7 @@ You can assign tasks based on this outline, with each person responsible for one
 
 **You:**
 
+create_time: 2023-03-31 14:08:13
 Please give me a title of the slide.
 
 * * *
@@ -828,6 +864,7 @@ A suitable title for your presentation could be:
 
 **You:**
 
+create_time: 2023-04-01 10:50:35
 Does OP-TEE support ARMv7 and ARMv8?
 
 * * *
@@ -842,6 +879,7 @@ While ARMv7 and ARMv8 have some differences in terms of instruction sets and fea
 
 **You:**
 
+create_time: 2023-04-01 19:29:29
 Does OP-TEE have a shell?
 
 * * *
@@ -860,6 +898,7 @@ In summary, while OP-TEE does not have a traditional shell, it does provide an S
 
 **You:**
 
+create_time: 2023-04-01 19:30:46
 Does OP-TEE support file system?
 
 * * *
@@ -878,6 +917,7 @@ In summary, OP-TEE does not have a traditional file system, but it does provide 
 
 **You:**
 
+create_time: 2023-04-01 21:16:20
 Can I create a TA at run-time?
 
 * * *
@@ -901,6 +941,7 @@ It is crucial to emphasize that implementing a runtime TA creation mechanism is 
 
 **You:**
 
+create_time: 2023-04-01 21:22:08
 Which API do I use to create TA at run-time?
 
 * * *
@@ -922,6 +963,7 @@ It is important to emphasize that implementing a runtime TA creation mechanism i
 
 **You:**
 
+create_time: 2023-04-01 21:23:20
 But what is TEECI_LoadSecureModule()
 
 * * *
@@ -938,6 +980,7 @@ If you have encountered `TEECI_LoadSecureModule()` in some source code or docume
 
 **You:**
 
+create_time: 2023-04-01 23:18:17
 What are Static TA and Dynamic TA?
 
 * * *
@@ -974,6 +1017,7 @@ In general, dynamic TAs are the more common and recommended approach for most us
 
 **You:**
 
+create_time: 2023-04-01 23:19:30
 Please summarize them in a table.
 
 * * *
@@ -997,6 +1041,7 @@ Please note that dynamic TAs are more common and recommended for most use cases 
 
 **You:**
 
+create_time: 2023-04-01 23:20:54
 Does TEE define Static TA and Dynamic TA?
 
 * * *
@@ -1013,6 +1058,7 @@ In summary, the terms "Static TA" and "Dynamic TA" are specific to OP-TEE and ar
 
 **You:**
 
+create_time: 2023-04-01 23:36:50
 Why does OP-TEE's reset function have two branches reset_primary and reset_secondary?
 
 * * *
@@ -1033,6 +1079,7 @@ In summary, OP-TEE's reset function has two branches, `reset_primary` and `reset
 
 **You:**
 
+create_time: 2023-04-01 23:39:07
 What are difference between primary and seconday CPU cores?
 
 * * *
@@ -1057,6 +1104,7 @@ In summary, the primary and secondary CPU cores have different roles during the 
 
 **You:**
 
+create_time: 2023-04-01 23:57:57
 Does OP-TEE support to verify a signature of a TA in X.509 certificate?
 
 * * *
@@ -1086,6 +1134,7 @@ Please note that you'll need to modify your build process and potentially some O
 
 **You:**
 
+create_time: 2023-04-02 08:09:57
 How does OP-TEE generate SSK from HUK?
 
 * * *
@@ -1108,6 +1157,7 @@ In summary, OP-TEE generates the Secure Storage Key (SSK) from the Hardware Uniq
 
 **You:**
 
+create_time: 2023-04-02 08:10:54
 How does OP-TEE generate SSK from HUK in tee_fs_init_key_manager()?
 
 * * *
@@ -1156,6 +1206,7 @@ In summary, the `tee_fs_init_key_manager()` function in OP-TEE generates the SSK
 
 **You:**
 
+create_time: 2023-04-02 08:12:59
 In the function, can I read the content of the HUK?
 
 * * *
@@ -1172,6 +1223,7 @@ Keep in mind that exposing the HUK can lead to potential security vulnerabilitie
 
 **You:**
 
+create_time: 2023-04-02 08:18:54
 How do I protect HUK from reading in OP-TEE?
 
 * * *
@@ -1198,6 +1250,7 @@ By following these best practices, you can help protect the HUK from unauthorize
 
 **You:**
 
+create_time: 2023-04-02 08:20:41
 Is SSK defined in GlobalPlatform?
 
 * * *
@@ -1214,6 +1267,7 @@ The GlobalPlatform TEE specifications provide guidance on general security requi
 
 **You:**
 
+create_time: 2023-04-02 14:33:21
 How do I implement DRM with OP-TEE?
 
 * * *
@@ -1242,6 +1296,7 @@ By following these steps, you can implement a DRM solution that leverages the se
 
 **You:**
 
+create_time: 2023-04-02 14:35:03
 How do I implement DRM of content decryption with OP-TEE?
 
 * * *
@@ -1315,6 +1370,7 @@ By following these steps, you can implement DRM content decryption with OP-TEE, 
 
 **You:**
 
+create_time: 2023-04-02 14:39:13
 So the content is decrypted in TA in secure world. Right?
 
 * * *
@@ -1327,6 +1383,7 @@ Yes, that's correct. In the described DRM implementation, the content is decrypt
 
 **You:**
 
+create_time: 2023-04-02 14:41:46
 But does it slow down the playback speed because of switching between normal world and secure world?
 
 * * *
@@ -1349,6 +1406,7 @@ By carefully designing and optimizing your implementation, you can ensure that t
 
 **You:**
 
+create_time: 2023-04-02 14:44:37
 Can I use multi cores to solve the problem? For example, one core decrypts content and another core play content at the same time.
 
 * * *
@@ -1371,6 +1429,7 @@ By using multi-core processing, you can offload the decryption process to a sepa
 
 **You:**
 
+create_time: 2023-04-02 15:49:34
 Does OP-TEE support TUI?
 
 * * *
@@ -1397,6 +1456,7 @@ Please note that the specifics of implementing a TUI may vary depending on the h
 
 **You:**
 
+create_time: 2023-04-02 15:51:29
 Can I develop a TA with TUI to play video in OP-TEE?
 
 * * *
@@ -1423,6 +1483,7 @@ If you have a specific use case that mandates secure video playback within the T
 
 **You:**
 
+create_time: 2023-04-02 16:09:24
 What is ClearKey in OP-TEE?
 
 * * *
@@ -1449,6 +1510,7 @@ Keep in mind that ClearKey is a basic key system primarily intended for testing 
 
 **You:**
 
+create_time: 2023-04-02 16:10:36
 How do I implement a DRM solution using ClearKey in OP-TEE?
 
 * * *
@@ -1473,6 +1535,7 @@ Keep in mind that ClearKey is a basic key system primarily intended for testing 
 
 **You:**
 
+create_time: 2023-04-02 17:33:24
 What is SMAF?
 
 * * *
@@ -1497,6 +1560,7 @@ Overall, SMAF plays a critical role in maintaining the security and integrity of
 
 **You:**
 
+create_time: 2023-04-02 17:45:39
 What is CMA?
 
 * * *
@@ -1515,6 +1579,7 @@ It is important to note that CMA should be used with caution, as reserving a lar
 
 **You:**
 
+create_time: 2023-04-02 20:26:41
 Does Qualcomm support OP-TEE?
 
 * * *
@@ -1531,6 +1596,7 @@ While Qualcomm officially supports QTEE on their platforms, it is possible that 
 
 **You:**
 
+create_time: 2023-04-02 20:28:06
 Is QTEE open source?
 
 * * *
@@ -1547,6 +1613,7 @@ This is in contrast to OP-TEE, which is an open-source TEE solution maintained b
 
 **You:**
 
+create_time: 2023-04-02 20:31:14
 What are Static TA and Dynamic TA? Please also summarize them in a table.
 
 * * *
@@ -1573,6 +1640,7 @@ Dynamic TAs, on the other hand, are loaded at runtime as separate binaries. They
 
 **You:**
 
+create_time: 2023-04-02 20:47:43
 我想做1個小時的投影片，主題是OP-TEE用在車載系統上，請你用以下條件產生投影片的英文大綱 - 聽眾是車載系統研發人員，對於TEE很熟。 - 採用Qualcomm的ARM。OS是Android。 - 對於OP-TEE的講解要夠深入。從之前我們的交談中，發掘一些夠水準的主題。 - 外部廠商提供CA和TA，但外部廠商無法針對給定的晶件提供OP-TEE。 - 如何確保OP-TEE是安全的？Fuzz Testing? - OP-TEE是用C開發的，會有memory management的問題。 - 將OP-TEE放在Boot Loader裡，如何重新Sign Boot Loader。 - ARM TrustZone能取代HSM嗎？ARM有硬件層級的安全存儲嗎？ - 如何在OP-TEE環境下開發Secure Storage？ - 如何在OP-TEE環境下開發DRM？
 
 * * *
@@ -1631,6 +1699,7 @@ This outline should provide a comprehensive overview of OP-TEE and its applicati
 
 **You:**
 
+create_time: 2023-04-02 20:51:49
 因為我對車載系統不熟，所以請將車載系統從剛才列的大綱移除掉。
 
 * * *
@@ -1689,6 +1758,7 @@ I've removed the specific references to automotive systems from the outline. The
 
 **You:**
 
+create_time: 2023-04-02 20:59:44
 我想做1個小時的投影片，主題是OP-TEE，請你用以下條件產生每一頁的投影片的英文大綱 - 聽眾是車載系統研發人員，對於TEE很熟，未來會將OP-TEE用在車載系統，但大綱請不要包含車載系統。 - 車載系統採用Qualcomm的ARM。OS是Android。 - 聽眾不甚熟悉OP-TEE，所以OP-TEE的講解要夠深入。可以從之前我們的交談中，發掘一些夠水準的內容。 - 外部廠商提供CA和TA，但外部廠商無法針對給定的晶片提供OP-TEE。 - 所以我們要從基於OP-TEE開源，依晶片客製化OP-TEE。客製化過程中，會遇到那些問題？若晶片供應商也有和OP-TEE類似的TEE OS，但不見得是開源，該怎麼辦？ - 如何確保OP-TEE是安全的？Fuzz Testing? - 我們自己客製化OP-TEE，有什麼好處？ - OP-TEE是用C開發的，會有memory management的問題。 - 將OP-TEE放在Boot Loader裡，如何重新Sign Boot Loader。 - ARM TrustZone能取代HSM嗎？ARM有硬件層級的安全存儲嗎？ - 如何在OP-TEE環境下開發Secure Storage？ - 如何在OP-TEE環境下開發DRM？
 
 * * *
@@ -1752,6 +1822,7 @@ This outline provides a comprehensive overview of OP-TEE and its applications in
 
 **You:**
 
+create_time: 2023-04-02 21:01:27
 How many pages in the outline?
 
 * * *
@@ -1764,6 +1835,7 @@ The outline provided consists of 12 sections, each corresponding to a single sli
 
 **You:**
 
+create_time: 2023-04-02 21:03:00
 我們有3個人共同製作投影片。我是主要製作人和主講者，其他兩人SX和YP可以幫我製作投影片。該如何分工？
 
 * * *
@@ -1791,6 +1863,7 @@ The outline provided consists of 12 sections, each corresponding to a single sli
 
 **You:**
 
+create_time: 2023-04-02 21:04:57
 我想負責6頁左右，該如何分工呢？
 
 * * *
@@ -1818,6 +1891,7 @@ The outline provided consists of 12 sections, each corresponding to a single sli
 
 **You:**
 
+create_time: 2023-04-02 21:06:55
 可否將這12個段落歸納為3個更大的段落，以利3人分工？
 
 * * *
@@ -1852,6 +1926,7 @@ The outline provided consists of 12 sections, each corresponding to a single sli
 
 **You:**
 
+create_time: 2023-04-02 21:08:11
 可否將這12個段落歸納為3個更大的段落，以利3人分工？請用英文
 
 * * *
@@ -1886,6 +1961,7 @@ This division groups related topics together, allowing each person to focus on a
 
 **You:**
 
+create_time: 2023-04-02 21:13:45
 Please expand each sections.
 
 * * *
@@ -1947,6 +2023,7 @@ Each section now contains more detailed subtopics for a comprehensive presentati
 
 **You:**
 
+create_time: 2023-04-02 21:40:02
 我想做1個小時的英文投影片，主題是OP-TEE， - 聽眾是車載系統研發人員，對於TEE很熟，未來會將OP-TEE用在車載系統，但大綱請不要提車載系統，標題也不要提車載系統。 - 車載系統採用Qualcomm的ARM。OS是Android。 - 聽眾不甚熟悉OP-TEE，所以OP-TEE的講解要夠深入。可以從之前我前面的問題當中，發掘一些夠水準的內容。 - 外部廠商能提供通用的CA和TA，但若外部廠商無法針對給定的晶片提供OP-TEE，該如何是好？ - 我們要有基於OP-TEE開源，依不同晶片客製化OP-TEE的能力嗎？客製化過程中，會遇到那些問題？若晶片供應商也有和OP-TEE類似的TEE OS，但不見得是開源，該怎麼辦？Qualcomm不提供OP-TEE，此問題如何解決？ - OP-TEE對於ARMv7和ARMv8，有何不同之處？ - 比較Static TA和Dynamic TA。 - OP-TEE的TA和Thread的關係為何？ - 如何確保OP-TEE是安全的？Fuzz Testing? - 我們自己客製化OP-TEE，有什麼好處？為何要用OP-TEE？(因為它是開源的)。 - OP-TEE是用C開發的，會有memory management的問題。 - 將OP-TEE放在Boot Loader裡，如何重新Sign Boot Loader。 - ARM TrustZone能取代HSM嗎？ARM有硬件層級的安全存儲嗎？ - 如何在OP-TEE環境下開發Secure Storage？要提tee_fs_init_key_manager()的code。 - 如何在OP-TEE環境下開發DRM？尤其是ChinaDRM。 - 要有CA和TA之間交互的範例程式。 - 要有 OP-TEE reset function的code。
 
 * * *
@@ -2009,6 +2086,7 @@ This outline covers the topics you mentioned, providing a comprehensive presenta
 
 **You:**
 
+create_time: 2023-04-02 21:41:34
 Please expand the 14 sections more.
 
 * * *
@@ -2096,6 +2174,7 @@ This expanded outline provides a more comprehensive coverage of the topics, offe
 
 **You:**
 
+create_time: 2023-04-02 21:44:47
 可否將這14個段落歸納為3個更大的段落，以利3人分工？我是主要製作人和主講者，其他兩人SX和YP可以幫我製作投影片。請用英文
 
 * * *
@@ -2135,6 +2214,7 @@ This division of work allows you to focus on the introduction and real-world app
 
 **You:**
 
+create_time: 2023-04-02 21:48:14
 可否將這14個段落，不用按照段落的順序，要按照相關的主題，歸納為3個更大的段落，以利3人分工？我是主要製作人和主講者，其他兩人SX和YP可以幫我製作投影片。請用英文
 
 * * *
@@ -2174,6 +2254,7 @@ This division of work allows you to focus on the introduction, fundamentals, and
 
 **You:**
 
+create_time: 2023-04-02 21:51:52
 Please expand the 14 sections more.
 
 * * *
@@ -2252,6 +2333,7 @@ Here are the 14 sections expanded further:
 
 **You:**
 
+create_time: 2023-04-02 21:54:04
 可否將這14個段落，不用按照段落的順序，要按照相關的主題，歸納為3個更大的段落，以利3人分工？我是主要製作人和主講者，其他兩人SX和YP可以幫我製作投影片。每個段落再擴展一些內容。請用英文
 
 * * *
@@ -2286,6 +2368,7 @@ Here are the 14 sections grouped into 3 larger sections, with each section expan
 
 **You:**
 
+create_time: 2023-04-03 09:20:47
 Does OP-TEE exist in a single core or multiple cores at run-time?
 
 * * *
@@ -2298,6 +2381,7 @@ OP-TEE can run on both single-core and multi-core systems. The OP-TEE OS itself 
 
 **You:**
 
+create_time: 2023-04-03 09:21:28
 Does OP-TEE OS exist in a single core or multiple cores at run-time?
 
 * * *
@@ -2310,6 +2394,7 @@ At runtime, the OP-TEE OS exists in a single core. It is designed to run on one 
 
 **You:**
 
+create_time: 2023-04-04 09:29:29
 Why does OP-TEE initialize secondary cores when reset?
 
 * * *
@@ -2326,6 +2411,7 @@ This process ensures that all cores have a consistent view of the secure world, 
 
 **You:**
 
+create_time: 2023-04-04 09:37:08
 How to detect OP-TEE dead?
 
 * * *
@@ -2350,6 +2436,7 @@ In case OP-TEE is determined to be non-responsive or dead, a proper recovery or 
 
 **You:**
 
+create_time: 2023-04-04 09:38:35
 How to recovery the dead OP-TEE?
 
 * * *
@@ -2376,6 +2463,7 @@ Keep in mind that the specific recovery steps will depend on your device, its ha
 
 **You:**
 
+create_time: 2023-04-04 09:39:46
 How to automatically recovery the crashed OP-TEE?
 
 * * *
@@ -2403,6 +2491,7 @@ Please note that the specific implementation of an automatic recovery mechanism 
 
 **You:**
 
+create_time: 2023-04-04 09:42:36
 Can I develop a dual OP-TEE so that if one is crashed, run another.
 
 * * *
@@ -2427,6 +2516,7 @@ Please note that implementing a dual OP-TEE setup can be complex and may introdu
 
 **You:**
 
+create_time: 2023-04-04 10:08:00
 How to recover a crashed static TA?
 
 * * *
@@ -2453,6 +2543,7 @@ Please note that the recovery process for a crashed static TA is not ideal, as i
 
 **You:**
 
+create_time: 2023-04-04 10:10:21
 How to recover a crashed dynamic TA?
 
 * * *
@@ -2481,6 +2572,7 @@ Please note that it's essential to design and implement the dynamic TA with robu
 
 **You:**
 
+create_time: 2023-04-04 10:23:04
 Hot to detect if OP-TEE is tamperred at run-time?
 
 * * *
@@ -2509,6 +2601,7 @@ Keep in mind that no single technique can provide complete protection against ta
 
 **You:**
 
+create_time: 2023-04-04 10:24:18
 How to detect if OP-TEE is tamperred at run-time?
 
 * * *
@@ -2537,6 +2630,7 @@ Keep in mind that no single technique can provide complete protection against ta
 
 **You:**
 
+create_time: 2023-04-04 14:49:53
 Whare are kinds of methods to attack OP-TEE?
 
 * * *
@@ -2569,6 +2663,7 @@ To mitigate these risks, it's essential to maintain a strong security posture, i
 
 **You:**
 
+create_time: 2023-04-06 10:40:54
 Does OP-TEE support two VMs?
 
 * * *
@@ -2587,6 +2682,7 @@ It's important to note that the hypervisor should be configured properly to ensu
 
 **You:**
 
+create_time: 2023-04-06 10:51:06
 https://optee.readthedocs.io/en/latest/architecture/virtualization.html
 
 * * *
@@ -2603,6 +2699,7 @@ However, it is crucial to ensure that the hypervisor is correctly configured to 
 
 **You:**
 
+create_time: 2023-04-06 10:54:00
 Does OP-TEE support VMs?
 
 * * *
@@ -2619,6 +2716,7 @@ However, it is important to note that OP-TEE itself does not directly manage the
 
 **You:**
 
+create_time: 2023-04-06 10:54:52
 Can hypervisor run in secure world?
 
 * * *
@@ -2635,6 +2733,7 @@ It's worth mentioning that having a hypervisor in the secure world adds complexi
 
 **You:**
 
+create_time: 2023-04-06 10:57:09
 What are pros and cons of runnin hypervisor in secure world and normal world. Please also summarize them in a table.
 
 * * *
@@ -2682,6 +2781,7 @@ Cons:
 
 **You:**
 
+create_time: 2023-04-06 10:59:52
 What are pros and cons of runnin hypervisor in secure world and normal world.
 
 * * *
@@ -2718,6 +2818,7 @@ Cons:
 
 **You:**
 
+create_time: 2023-04-06 11:01:32
 Please summarize above hypervisor description in a table.
 
 * * *
@@ -2740,6 +2841,7 @@ Please summarize above hypervisor description in a table.
 
 **You:**
 
+create_time: 2023-04-06 11:03:47
 What is difference of runnin hypervisor in secure world and normal world. Please also summarize it in a table.
 
 * * *
@@ -2759,6 +2861,7 @@ What is difference of runnin hypervisor in secure world and normal world. Please
 
 **You:**
 
+create_time: 2023-04-06 11:05:47
 Is the technology of OP-TEE supporting VMs mature?
 
 * * *
@@ -2773,6 +2876,7 @@ However, the maturity of this technology can vary depending on the specific use 
 
 **You:**
 
+create_time: 2023-04-06 16:07:09
 What is hypervisor?
 
 * * *
@@ -2793,6 +2897,7 @@ Hypervisors enable efficient use of computing resources, making it possible to r
 
 **You:**
 
+create_time: 2023-04-07 16:55:39
 Please list history with years of TEE, TrustZone, and OP-TEE.
 
 * * *
@@ -2820,6 +2925,7 @@ These timelines offer an overview of the development of TEE, TrustZone, and OP-T
 
 **You:**
 
+create_time: 2023-04-07 16:58:47
 Please also contain the iPhone about TrustZone.
 
 * * *
@@ -2849,6 +2955,7 @@ These timelines offer an overview of the development of TEE, TrustZone, and OP-T
 
 **You:**
 
+create_time: 2023-04-07 17:00:38
 Please also contain qualcomm about TrustZone.
 
 * * *
@@ -2879,6 +2986,7 @@ These timelines offer an overview of the development of TEE, TrustZone, and OP-T
 
 **You:**
 
+create_time: 2023-04-07 17:03:32
 When did Qualcomm release QTEE?
 
 * * *
@@ -2891,6 +2999,7 @@ Qualcomm has been using TrustZone technology in their Snapdragon processors for 
 
 **You:**
 
+create_time: 2023-04-07 17:06:30
 What is difference between QSEE and QTEE?
 
 * * *
@@ -2903,6 +3012,7 @@ QSEE (Qualcomm Secure Execution Environment) and QTEE (Qualcomm Trusted Executio
 
 **You:**
 
+create_time: 2023-04-08 11:00:43
 Can OP-TEE be ported in Qualcomm devices?
 
 * * *
@@ -2924,6 +3034,7 @@ Keep in mind that porting OP-TEE to a Qualcomm device may require deep technical
 
 **You:**
 
+create_time: 2023-04-08 11:02:02
 Who did port OP-TEE in Qualcomm devices successfully?
 
 * * *
@@ -2940,6 +3051,7 @@ It is worth noting that individual developers and companies may also have ported
 
 **You:**
 
+create_time: 2023-04-08 23:11:54
 The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html  Virtualization OP-TEE have experimental virtualization support. This is when one OP-TEE instance can run TAs from multiple virtual machines. OP-TEE isolates all VM-related states, so one VM can’t affect another in any way.  With virtualization support enabled, OP-TEE will rely on a hypervisor, because only the hypervisor knows which VM is calling OP-TEE. Also, naturally the hypervisor should inform OP-TEE about creation and destruction of VMs. Besides, in almost all cases, hypervisor enables two-stage MMU translation, so VMs does not see real physical address of memory, instead they work with intermediate physical addresses (IPAs). On other hand OP-TEE can’t translate IPA to PA, so this is a hypervisor’s responsibility to do this kind of translation. So, hypervisor should include a component that knows about OP-TEE protocol internals and can do this translation. We call this component “TEE mediator” and right now only XEN hypervisor have OP-TEE mediator.  Configuration Virtualization support is enabled with CFG_VIRTUALIZATION configuration option. When this option is enabled, OP-TEE will not work without compatible a hypervisor. This is because the hypervisor should send OPTEE_SMC_VM_CREATED SMC with VM ID before any standard SMC can be received from client.  CFG_VIRT_GUEST_COUNT controls the maximum number of supported VMs. As OP-TEE have limited size of available memory, increasing this count will decrease amount of memory available to one VM. Because we want VMs to be independent, OP-TEE splits available memory in equal portions to every VM, so one VM can’t consume all memory and cause DoS to other VMs.  Requirements for hypervisor As said earlier, hypervisor should be aware of OP-TEE and SMCs from virtual guests to OP-TEE. This is a list of things, that compatible hypervisor should perform:  When new OP-TEE-capable VM is created, hypervisor should inform OP-TEE about it with SMC OPTEE_SMC_VM_CREATED. a1 parameter should contain VM id. ID 0 is defined as HYP_CLNT_ID and is reserved for hypervisor itself.  When OP-TEE-capable VM is being destroyed, hypervisor should stop all VCPUs (this will ensure that OP-TEE have no active threads for that VMs) and send SMC OPTEE_SMC_VM_DESTROYED with the same parameters as for OPTEE_SMC_VM_CREATED.  Any SMC to OP-TEE should have VM ID in a7 parameter. This is either HYP_CLNT_ID if call originates from hypervisor or VM ID that was passed in OPTEE_SMC_VM_CREATED call.  Hypervisor should perform IPA<->PA address translation for all SMCs. This includes both arguments in a1-a6 registers and in in-memory command buffers.  Hypervisor should pin memory pages that VM shares with OP-TEE. This means, that hypervisor should ensure that pinned page will reside at the original PA as long, as it is shared with OP-TEE. Also it should still belong to the VM that shared it. For example, the hypervisor should not swap out this page, transfer ownership to another VM, unmap it from VM address space and so on.  Naturally, the hypervisor should correctly handle the OP-TEE protocol, so for any VM it should look like it is working with OP-TEE directly.  Limitations Virtualization support is in experimental state and it have some limitations, user should be aware of.  Platforms support Only Armv8 architecture is supported. There is no hard restriction, but currently Armv7-specific code (like MMU or thread manipulation) just know nothing about virtualization. Only one platform has been tested right now and that is QEMU-V8 (aka qemu that emulates Arm Versatile Express with Armv8 architecture). Support for Rcar Gen3 should be added soon.  Static VMs guest count and memory allocation Currently, a user should configure maximum number of guests. OP-TEE will split memory into equal chunks, so every VM will have the same amount of memory. For example, if you have 6MB for your TAs, you can set CFG_VIRT_GUEST_COUNT to 3 and every VM would be able to use 2MB maximum, even if there is no other VMs running. This is okay for embedded setups when you know exact number and roles of VMs, but can be inconvenient for server applications. Also, it is impossible to configure amount of memory available for a given VM. Every VM instance will have exactly the same amount of memory.  Sharing hardware resources and PTAs Right now only HW that can be used by multiple VMs simultaneously is serial console, used for logging. Devices like HW crypto accelerators, secure storage devices (e.g. external flash storage, accessed directly from OP-TEE) and others are not supported right now. Drivers should be made virtualization-aware before they can be used with virtualization extensions.  Every VM will have own PTA states, which is a good thing in most cases. But if one wants PTA to have some global state that is shared between VMs, he need to write PTA accordingly.  No compatibility with “normal” mode OP-TEE built with CFG_VIRTUALIZATION=y will not work without a hypervisor, because before executing any standard SMC, OPTEE_SMC_VM_CREATED must be called. This can be inconvenient if one wants to switch between virtualized and non-virtualized environment frequently. On other hand, it is not a big deal in a production environment. Simple workaround can be made for this: if OP-TEE receives standard SMC prior to OPTEE_SMC_VM_CREATED, it implicitly creates VM context and uses it for all subsequent calls.  Implementation details OP-TEE as a whole can be split into two entities. Let us call them “nexus” and TEE. Nexus is a core part of OP-TEE that takes care of low level things: SMC handling, memory management, threads creation and so on. TEE is a part that does the actual job: handles requests, loads TAs, executes them, and so on. So, it is natural to have one nexus instance and multiple instances of TEE, one TEE instance per registered VM. This can be done either explicitly or implicitly.  Explicit way is to move TEE state in some sort of structure and make all code to access fields of this structure. Something like struct task_struct and current in linux kernel. Then it is easy to allocate such structure for every VM instance. But this approach basically requires to rewrite all OP-TEE code.  Implicit way is to have banked memory sections for TEE/VM instances. So memory layout can look something like that:  +-------------------------------------------------+ |           Nexus: .nex_bss, .nex_data, ...       | +-------------------------------------------------+ |                   TEE states                    | |                                                 | | VM1 TEE state | VM 2 TEE state | VM 3 TEE state | | .bss, .data   | .bss, .data    | .bss, .data,   | +-------------------------------------------------+ This approach requires no changes in TEE code and requires some changes into nexus code. So, idea that Nexus state resides in separate sections (.nex_data, .nex_bss, .nex_nozi, .nex_heap and others) and is always mapped.  TEE state resides in standard sections (like .data, .bss, .heap and so on). There is a separate set of this sections for every VM registered and Nexus maps them only when it receives call from corresponding VM.  As Nexus and TEE have separate heaps, bget allocator was extended to work with multiple “contexts”. malloc(), free() with friends work with one context. nex_malloc() (and other nex_ functions) were added. They use different context, so now Nexus can use separate heap, which is always mapped into OP-TEE address space. When virtualization support is disabled, all those nex_ functions are defined to point to standard malloc() counterparts.  To change memory mappings in run-time, in MMU code we have added a new entity, named “partition”, which is defined by struct mmu_partition. It holds information about all page-tables, so the whole MMU mapping can be switched by one write to TTBR register.  There is the default partition, it holds MMU state when there is no VM context active, so no TEE state is mapped. When OP-TEE receives OPTEE_SMC_VM_CREATED call, it copies default partition into new one and then maps sections with TEE data. This is done by prepare_memory_map() function in virtualization.c.  When OP-TEE receives STD call it checks that the supplied VM ID is valid and then activates corresponding MMU partition, so TEE code can access its own data. This is basically how virtualization support is working.
 
 * * *
@@ -2962,6 +3074,7 @@ This summary provides an overview of OP-TEE's experimental virtualization suppor
 
 **You:**
 
+create_time: 2023-04-08 23:15:10
 Does the hypervisor relied on OP-TEE run in normal world or secure world?
 
 * * *
@@ -2974,6 +3087,7 @@ The hypervisor that OP-TEE relies on runs in the normal world. It is responsible
 
 **You:**
 
+create_time: 2023-04-08 23:19:15
 Does a TA run in a VM described in the article?
 
 * * *
@@ -2986,6 +3100,7 @@ No, a Trusted Application (TA) does not run inside a Virtual Machine (VM) as des
 
 **You:**
 
+create_time: 2023-04-08 23:25:46
 What is SPMC?
 
 * * *
@@ -3006,6 +3121,7 @@ The SPMC ensures that secure partitions can execute in a safe and isolated envir
 
 **You:**
 
+create_time: 2023-04-08 23:27:19
 Is SPMC of TrustZone?
 
 * * *
@@ -3022,6 +3138,7 @@ In summary, TrustZone provides the foundation for secure execution environments,
 
 **You:**
 
+create_time: 2023-04-08 23:47:01
 What is FF-A?
 
 * * *
@@ -3043,6 +3160,7 @@ In the context of virtualization and TEEs like OP-TEE, FF-A can be used to facil
 
 **You:**
 
+create_time: 2023-04-09 10:32:11
 Does TrustZone require hypervisor?
 
 * * *
@@ -3059,6 +3177,7 @@ While TrustZone and hypervisors can work together, they serve different purposes
 
 **You:**
 
+create_time: 2023-04-09 20:37:16
 https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
 
 * * *
@@ -3089,6 +3208,7 @@ By following these guidelines, developers can port OP-TEE to a new platform, all
 
 **You:**
 
+create_time: 2023-04-09 20:40:48
 The following text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html  Porting guidelines This document serves a dual purpose:  Serve as a base for getting OP-TEE up and running on a new device with initial xtest validation passing. This is the first part of this document (section 2).  Highlight the missing pieces if you intend to make a real secure product, that is what the second part of this document is about.  We are trying our best to implement full end to end security in OP-TEE in a generic way, but due to the nature of devices being different, NDA etc, it is not always possible for us to do so and in those cases, we most often try to write a generic API, but we will just stub the code. This porting guideline highlights the missing pieces that must be addressed in a real secure consumer device. Hopefully we will sooner or later get access to devices where we at least can make reference implementations publicly available to everyone for the missing pieces we are talking about here.  Add a new platform The first thing you need to do after you have decided to port OP-TEE to another device is to add a new platform device. That can either be adding a new platform variant (PLATFORM_FLAVOR) if it is a device from a family already supported, or it can be a brand new platform family (PLATFORM). Typically this initial setup involve configuring UART, memory addresses etc. For simplicity let us call our fictive platform for “gendev” just so we have something to refer to when writing examples further down.  core/arch/arm In core/arch/arm you will find all the currently supported devices. That is where you are supposed to add a new platform or modify an existing one. Typically you will find this set of files in a specific platform folder:  $ ls conf.mk  main.c  platform_config.h  sub.mk So for the gendev platform it means that the files should be placed in this folder:  core/arch/arm/plat-gendev conf.mk  This is the device specific makefile where you define configurations unique to your platform. This mainly comprises two things: - OP-TEE configuration variables (CFG_), which may be assigned values in two ways. CFG_FOO ?= bar should be used to provide a default value that may be modified at compile time. On the other hand, variables that must be set to some value and cannot be modified should be set by: $(call force,CFG_FOO,bar). - Compiler flags for the TEE core, the user mode libraries and the Trusted Applications, which may be added to macros used by the build system. Please see Platform-specific configuration and flags in the build system documentation.  It is recommended to use a existing platform configuration file as a starting point. For instance, core/arch/arm/plat-hikey/conf.mk.  The platform conf.mk file should at least define the default platform flavor for the platform, the core configurations (architecture and number of cores), the main configuration directives (generic boot, arm trusted firmware support, generic time source, console driver, etc…) and some platform default configuration settings.  PLATFORM_FLAVOR ?= hikey  include core/arch/arm/cpu/cortex-armv8-0.mk  $(call force,CFG_TEE_CORE_NB_CORE,8) $(call force,CFG_GENERIC_BOOT,y) $(call force,CFG_PL011,y) $(call force,CFG_PM_STUBS,y) $(call force,CFG_SECURE_TIME_SOURCE_CNTPCT,y) $(call force,CFG_WITH_ARM_TRUSTED_FW,y) $(call force,CFG_WITH_LPAE,y)  ta-targets = ta_arm32 ta-targets += ta_arm64  CFG_NUM_THREADS ?= 8 CFG_CRYPTO_WITH_CE ?= y CFG_WITH_STACK_CANARIES ?= y CFG_CONSOLE_UART ?= 3 CFG_DRAM_SIZE_GB ?= 2 main.c  This platform specific file will contain power management handlers and code related to the UART. We will talk more about the information related to the handlers further down in this document. For our gendev device it could look like this (here we are excluding the necessary license header to save some space):  #include <console.h> #include <drivers/serial8250_uart.h> #include <kernel/generic_boot.h> #include <kernel/panic.h> #include <kernel/pm_stubs.h> #include <mm/core_mmu.h> #include <platform_config.h> #include <stdint.h> #include <tee/entry_fast.h> #include <tee/entry_std.h>  static void main_fiq(void) {     panic(); }  static const struct thread_handlers handlers = {     .std_smc = tee_entry_std,     .fast_smc = tee_entry_fast,     .nintr = main_fiq,     .cpu_on = cpu_on_handler,     .cpu_off = pm_do_nothing,     .cpu_suspend = pm_do_nothing,     .cpu_resume = pm_do_nothing,     .system_off = pm_do_nothing,     .system_reset = pm_do_nothing, };  const struct thread_handlers *generic_boot_get_handlers(void) {     return &handlers; }  /*  * Register the physical memory area for peripherals etc. Here we are  * registering the UART console.  */ register_phys_mem(MEM_AREA_IO_NSEC, CONSOLE_UART_BASE, SERIAL8250_UART_REG_SIZE);  static struct serial8250_uart_data console_data;  void console_init(void) {     serial8250_uart_init(&console_data, CONSOLE_UART_BASE,                          CONSOLE_UART_CLK_IN_HZ, CONSOLE_BAUDRATE);     register_serial_console(&console_data.chip); } platform_config.h  This is a mandatory header file for every platform, since there are several files relaying upon the existence of this particular file. This file is where you will find the major differences between different platforms, since this is where you do the memory configuration, define base addresses etc. we are going to list a few here, but it probably makes more sense to have a look at the already existing platform_config.h files for the other platforms. Our fictive gendev could look like this:  #ifndef PLATFORM_CONFIG_H #define PLATFORM_CONFIG_H  /* Make stacks aligned to data cache line length */ #define STACK_ALIGNMENT             64  /* 8250 UART */ #define CONSOLE_UART_BASE   0xcafebabe /* UART0 */ #define CONSOLE_BAUDRATE    115200 #define CONSOLE_UART_CLK_IN_HZ      19200000  /* Optional: when used with CFG_WITH_PAGER, defines the device SRAM */ #define TZSRAM_BASE         0x3F000000 #define TZSRAM_SIZE         (200 * 1024)  /* Mandatory main secure RAM usually DDR */ #define TZDRAM_BASE         0x60000000 #define TZDRAM_SIZE         (32 * 1024 * 1024)  /* Mandatory TEE RAM location and core load address */ #define TEE_RAM_START               TZDRAM_BASE #define TEE_RAM_PH_SIZE             TEE_RAM_VA_SIZE #define TEE_RAM_VA_SIZE             (4 * 1024 * 1024) #define TEE_LOAD_ADDR               (TZDRAM_BASE + 0x20000)  /* Mandatory TA RAM (external less secure RAM) */ #define TA_RAM_START                (TZDRAM_BASE + TEE_RAM_VA_SIZE) #define TA_RAM_SIZE         (TZDRAM_SIZE - TEE_RAM_VA_SIZE)  /* Mandatory: for static SHM, need a hardcoded physical address */ #define TEE_SHMEM_START             0x08000000 #define TEE_SHMEM_SIZE              (4 * 1024 * 1024)  #endif /* PLATFORM_CONFIG_H */ This is minimal amount of information in the platform_config.h file. I.e, the memory layout for on-chip and external RAM. Note that parts of the DDR typically will need to be shared with normal world, so there is need for some kind of memory firewall for this (more about that further down). As you can see we have also added the UART configuration here, i.e., the DEVICE0_xyz part.
 
 * * *
@@ -3111,6 +3231,7 @@ Keep in mind that this is only a part of the porting process; there are other as
 
 **You:**
 
+create_time: 2023-04-09 20:42:24
 The following continued text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html  Official board support in OP-TEE? We do encourage everyone to submit their board support to the OP-TEE project itself, so it becomes part of the official releases and will be maintained by the OP-TEE community itself. If you intend to do so, then there are a few more things that you are supposed to do.  Update platforms supported  There is a section at the Platforms supported page that lists all devices officially supported in OP-TEE, that is where you also shall list your device. It should contain the name of the platform, then composite PLATFORM flag and whether the device is publicly available or not. If there is a product page on the internet for the device, please also create a link when writing the device name.  Update .shippable.yml  Since we are using Shippable to test pull requests etc, we would like that you also add your device to the .shippable.yml file, so that it will at least be built when someone is doing a pull request. Add a line at the end of file:  - _make PLATFORM=<platform-name>_ Maintainer  If you are submitting the board support upstream we are going to ask you to become the maintainer for the device you have added. This means that you should also update the MAINTAINERS.md file accordingly. By being a maintainer for a device you are responsible to keep it up to date and you will be asked every quarter as part of the OP-TEE release schedule to test your device running the latest OP-TEE software.  Update build.git and manifest.git  This isn’t strictly necessary, but we are trying to create and maintain OP-TEE developer builds that should make it easy to setup, build and deploy OP-TEE on various devices. We encourage all maintainers to do the same for the boards they are in charge of. Therefore please consider creating a new manifest (and a new *.mk in build) for the device you have added to OP-TEE.  Hardware Unique Key Most devices have some kind of Hardware Unique Key (HUK) that is mainly used to derive other keys. The HUK could for example be used when deriving keys used in secure storage etc. The important thing with the HUK is that it needs to be well protected and in the best case the HUK should never ever be readable directly from software, not even from the secure side. There are different solutions to this, crypto accelerator might have support for it or, it could involve another secure co-processor.  In OP-TEE the HUK is just stubbed and you will see that in the function called tee_otp_get_hw_unique_key(...) in core/include/kernel/tee_common_otp.h. In a real secure product you must replace this with something else. If your device lacks the hardware support for a HUK, then you must at least change this to something else than just zeroes. But, remember it is not good secure practice to store a key in software, especially not the key that is the root for everything else, so this is not something we recommend that you should do.  Secure Clock The Time API in GlobalPlatform Internal Core API specification defines three sources of time; system time, TA persistent time and REE time. The REE time is by nature considered as an unsecure source of time, but the other two should in a fully trustable hardware make use of trustable source of time, i.e., a secure clock. Note that from GlobalPlatform point of view it is not required to make use of a secure clock, i.e., it is OK to use time from REE, but the level of trust should be reflected by the gpd.tee.systemTime.protectionLevel property and the gpd.tee.TAPersistentTime.protectionLevel property (100=REE controlled clock, 1000=TEE controlled clock). So the functions that one needs to pay attention to are tee_time_get_sys_time(...) and tee_time_get_ta_time(...). If your hardware has a secure clock, then you probably want to change the implementation there to instead use the secure clock (and then you would also need to update the property accordingly, i.e., tee_time_get_sys_time_protection_level() and the variable ta_time_prot_lvl in tee_svc.c).  Root and Chain of Trust To be able to assure that your devices are running the (untampered) binaries you intended to run you will need to establish some kind of trust anchor on the devices.  The most common way of doing that is to put the root public key in some read only memory on the device. Quite often SoC’s/OEM’s stores public key(s) directly or the hash(es) of the public key(s) in OTP. When the boot ROM (which indeed needs to be ROM) is about to load the first stage bootloader it typically reads the public key from the software binary itself, hash the key and compare it to the key in OTP. If they are matching, then the boot ROM can be sure that the first stage bootloader was indeed signed with the corresponding private key.  In OP-TEE you will not find any code at all related to this and this is a good example when it is hard for us to do this in a generic way since device manufacturers all tend to do this in their own unique way and they are not very keen on sharing their low level boot details and security implementation with the rest of the world. This is especially true on ARMv7-A. For ARMv8-A it looks bit better, since Arm in Trusted Firmware A have implemented and defined how a abstract the chain of trust (see auth-framework.rst). We have successfully verified OP-TEE by using the authentication framework from Trusted Firmware A (see Secure boot for the details).  Hardware Crypto IP By default OP-TEE uses a software crypto library (currently mbed TLS and LibTomCrypt) and you have the ability to enable Crypto Extensions that were introduced with ARMv8-A (if the device is capable of that). Some of the devices we have in our hands do have hardware crypto IP’s, but due to NDA’s etc it has not been possible to enable it. If you have a device capable of doing crypto operations on a dedicated crypto block and you prefer to use that in favor for the software implementation, then you will need to implement relevant functions defined in core/include/crypto/crypto.h, the Crypto API, and write the low level driver that communicates with the device. Our Cryptographic implementation page describes in detail how the Crypto API is integrated. Since the communication with crypto blocks tends to be quite different depending on what kind of crypto IP you have, we have not written how that should be done. It might be that we do that in the future when get hold of a device where we can use the crypto block.  Random Number Generator By default OP-TEE is configured with a software PRNG. The entropy is added to software PRNG at various places, but unfortunately it is still quite easy to predict the data added as entropy. As a consequence, unless the RNG is based on hardware the generated random will be quite weak.  If your platform has a hardware entropy source, you should set CFG_WITH_SOFTWARE_PRNG to n, and provide an implementation for hw_get_random_bytes(), which returns multiple bytes of entropy.  When CFG_WITH_SOFTWARE_PRNG=n, the platform can enable a PTA service for normal world to retrieve good quality random bytes. See configuration switches CFG_HWRNG_PTA and CFG_HWRNG_QUALITY, from 0 to 1024.  When CFG_WITH_SOFTWARE_PRNG=n, the random number generator is made available to OP-TEE drivers and frameworks, including Trusted Applications (thoguh GP TEE Internal Core API) and normal world (when CFG_HWRNG_PTA=y).  Power Management / PSCI In the Add a new platform section where we talked about the file main.c, we added a couple of handlers related to power management, we are talking about the following lines:  .cpu_on = cpu_on_handler, .cpu_off = pm_do_nothing, .cpu_suspend = pm_do_nothing, .cpu_resume = pm_do_nothing, .system_off = pm_do_nothing, .system_reset = pm_do_nothing, The only function that actually does something there is the cpu_on function, the rest of them are stubbed. The main reason for that is because we think that how to suspend and resume is a device dependent thing. The code in OP-TEE is prepared so that callbacks etc from Trusted Firmware A will be routed to OP-TEE, but since the function(s) are just stubbed we will not do anything and just return. In a real production device, you would probably want to save and restore CPU states, secure hardware IPs’ registers and TZASC and other memory firewall related setting when these callbacks are being called.  Memory firewalls / TZASC Arm have defined a system IP / SoC peripheral called TrustZone Address Space Controller (TZASC, see TZC-380 and TZC-400). TZASC can be used to configure DDR memory into separate regions in the physcial address space, where each region can have an individual security level setting. After enabling TZASC, it will perform security checks on transactions to memory or peripherals. It is not always the case that TZASC is on a device, in some cases the SoC has developed something equivalent. In OP-TEE this is very well reflected, i.e., different platforms have different ways of protecting their memory. On ARMv8-A platforms we are in most of the cases using Trusted Firmware A as the boot firmware and there the secure bootloader is the one that configures secure vs non-secure memory using TZASC (see plat_arm_security_setup in TF-A). The takeaway here is that you must make sure that you have configured whatever memory firewall your device has such that it has a secure and a non-secure memory area.  Trusted Application private/public keypair By default all Trusted Applications (TA’s) are signed with the pre-generated 2048-bit RSA development key (private key). This key is located in the keys folder (in the root of optee_os.git) and is named default_ta.pem. This key must be replaced with your own key and you should never ever check-in this private key in the source code tree when in use in a real product. The recommended way to store private keys is to use some kind of HSM (Hardware Security Module), but an alternative would be temporary put the private key on a computer considered as secure when you are about to sign TA’s intended to be used in real products. Typically it is only a few number of people having access to this type of key in company. The key handling in OP-TEE is currently a bit limited since we only support a single key which is used for all TA’s. We have plans on extending this to make it a bit more flexible. Exactly when that will happen has not been decided yet.  Platform ports OP-TEE is a reference implementation for developers and device manufacturers. This also implies that there are certain configurations and settings that cannot be done in OP-TEE reference code. In short, there are cases when the default configuration hasn’t enabled all necessary security features for the end product. There are a couple of reasons for that.  Chipmakers and Semiconductors might only share specifications telling how to securely configure their devices with partners who have signed an NDA with them.  In some cases a setting might be perfectly fine when OP-TEE is used in one particular environment, but the same setting might be insecure in another environment.  Because of this we always urge companies and device manufacturers making the end product to follow the security guidelines from the chipmaker they are basing their products on. Refer also to Platform documentation
 
 * * *
@@ -3141,6 +3262,7 @@ By carefully considering and implementing these aspects, you can ensure a secure
 
 **You:**
 
+create_time: 2023-04-09 20:44:13
 How does OP-TEE work with HUK?
 
 * * *
@@ -3167,6 +3289,7 @@ In summary, OP-TEE works with HUKs by leveraging them to derive other cryptograp
 
 **You:**
 
+create_time: 2023-04-09 21:07:28
 What are common device that store HUK in ARM platform with OP-TEE?
 
 * * *
@@ -3191,6 +3314,7 @@ These are just a few examples of devices that store HUKs and can work with OP-TE
 
 **You:**
 
+create_time: 2023-04-10 22:31:30
 Below text comes from "BKK16-201 - PlayReady OPTEE Integration with Secure Video Path"  Presented by Date Event BKK16-201 - PlayReady OPTEE Integration with Secure Video Path Zoltan Kuscsik, PhD BKK16-201 March 8, 2016 Linaro Connect BKK16 Overview The solution presented here integrates the following key components: ● W3C EME Working Draft ● Microsoft® PlayReady® DRM Porting Kit v3.0 ● OP-TEE OS ● OpenCDM/OpenCDMI ● Chromium v45 Updates since SFO15 ● Secure Data Path with OP TEE/Playready proof of concept on STM B2120 in progress. ● Secure Memory Allocator Framework (SMAF) integration - work in progress. ● EME with OP TEE on Hikey. We got Wayland/Chromium finally working! ● Moving to 4.5 Kernel and OP TEE master. ● AES OCDMI publicly available. ● Complete Playready TA implementation. We now support the Playready Interface For TEE (PRiTEE). Supported boards STM B2120 96boards - HiKey Encrypted Media Extensions - Buffer decrypt Browser CDM New session request Load TA / Init Session Send License Request Update License Key Update available keys Allocate and Secure buffer using SMAF Secure Buffer Decrypt Decrypt Buffer Encrypted Buf PlayReadyTA EME SW stack - what can be open? Chromium Android Framework OCDM Widevine DRM HAL PPAPI CDM PlayReady CDMI SMAF OPTEE Kernel Driver Linux Kernel ClearKey CDMI Closed Source Open Source Playready TA SMAF TA HDCP TA Policy Manager (?) ClearKey TA TEE OP TEE OS Secure Memory Allocation Framework - CMA Allocator Secure Memory Allocation Framework Secure Data Path Playready integration PlayReady has a CDMi interface as part of the PlayReady’ s DRM Licensed product. This CDMi component provided is very close to the one that is required by the open source OpenCDMi project. The Linaro secure media solution is an end-to-end DRM solution with a PlayReady license server. The client receives PlayReady encrypted content and communicates with a PlayReady server to request and receive a license and keys required to decrypt the content. The licence request is generated by PlayReady encapsulated by the CDMi, passed up to the to HTML5 application which initiates the the licence acquisition from the Playready license servers. Open CDM Browser OCDM CDMI Service cdmi.h Interface for various key. mock.drm ClearKey/OpenSSL CDM PlayReady CDMI RPC ClearKey OP TEE The OpenCDM uses the platform’s native RPC system to separate the CDM from the browser. The project has two main components: 1) A browser specific CDM integration layer and the communication interfaces for the CDM. 2) A CDMi service implementation. Implementation overview Chromium External Clear Key Linaro Clear Key CDM with SSL Linaro Clear Key CDM with OPTEE Linaro CDM with TEE Linaro CDM with software Playready Linaro CDM with HW Playready PPAPI CDM Yes Yes Yes Yes Yes Yes OpenCDM No Yes Yes Yes Yes Yes OP TEE and TrustZone® No No Yes Yes No Yes PlayReady, other DRM support No No No Yes Yes Yes Compatibility ARMv7, ARMv8, x86 ARMv7, ARMv8, x86 ARMv7, ARMv8 ARMv7, ARMv8 ARMv7, ARMV8 ARMv7, ARMV8 HiKey Yes Yes Yes Yes Yes Yes (in development) Dragonboard Yes Yes No No Yes No OpenSSL ClearKey CDM ● Works both on X86 and ARM Linux. ● Allows the testing and exercising the Open CDM implementation: https://github.com/linaro-home/open-content-decryption-module-cdmi ● Upstreamed to OpenCDM project OP TEE ClearKey CDMI ● Needs OPTEE enabled HW with Chromium running ● ClearKey AES128 decryption in OP TEE: https://github.com/kuscsik/optee-clearkey-cdmi ● Works with upstream OCDM Links ● Playready: https://msdn.microsoft.com/enus/ library/windows/apps/mt429380.aspx ● OP TEE https://github.com/OP-TEE/optee_os ● Linaro OpenCDM https://github.com/kuscsik/linaro-cdmi
 
 * * *
@@ -3209,6 +3333,7 @@ There are several links provided at the end of the presentation for further info
 
 **You:**
 
+create_time: 2023-04-10 22:33:18
 What is secure data path?
 
 * * *
@@ -3225,6 +3350,7 @@ In the case of multimedia applications, the secure data path provides end-to-end
 
 **You:**
 
+create_time: 2023-04-10 22:35:17
 So the video is played in secure world. Right?
 
 * * *
@@ -3239,6 +3365,7 @@ The purpose of this approach is to protect sensitive data and operations from un
 
 **You:**
 
+create_time: 2023-04-10 22:37:29
 How do we protect the video that displays in normal world?
 
 * * *
@@ -3263,6 +3390,7 @@ By employing a combination of these techniques and technologies, the video data 
 
 **You:**
 
+create_time: 2023-04-10 22:41:44
 What is "EME with OP-TEE on Hikey"?
 
 * * *
@@ -3283,6 +3411,7 @@ In summary, "EME with OP-TEE on Hikey" refers to a solution that integrates EME 
 
 **You:**
 
+create_time: 2023-04-10 22:43:42
 What is AES OCDMI?
 
 * * *
@@ -3301,6 +3430,7 @@ To sum up, AES OCDMI is an open-source solution for securely decrypting protecte
 
 **You:**
 
+create_time: 2023-04-10 22:50:05
 What is SMAF?
 
 * * *
@@ -3317,6 +3447,7 @@ In the context of secure media playback, SMAF helps manage the allocation and pr
 
 **You:**
 
+create_time: 2023-04-10 23:01:05
 What is OCDM?
 
 * * *
@@ -3333,6 +3464,7 @@ OCDM is designed to work with various DRM systems and can be extended to support
 
 **You:**
 
+create_time: 2023-04-10 23:06:06
 What is HDCP?
 
 * * *
@@ -3349,6 +3481,7 @@ This system helps to prevent unauthorized devices, such as unauthorized recordin
 
 **You:**
 
+create_time: 2023-04-11 08:58:56
 How is SMAF used in DRM?
 
 * * *
@@ -3372,6 +3505,7 @@ By using SMAF, DRM systems can ensure that sensitive data is securely stored and
 
 **You:**
 
+create_time: 2023-04-11 08:59:57
 Is SMAF of OP-TEE?
 
 * * *
@@ -3388,6 +3522,7 @@ By integrating SMAF into OP-TEE, the framework can provide a higher level of sec
 
 **You:**
 
+create_time: 2023-04-11 10:00:50
 What is Clear Key?
 
 * * *
@@ -3404,6 +3539,7 @@ In summary, Clear Key is a simple and open DRM system used mainly for testing an
 
 **You:**
 
+create_time: 2023-04-11 18:46:50
 Which privilege levels do static TA and dynamic TA run in?
 
 * * *
@@ -3422,6 +3558,7 @@ By running dynamic TAs at a lower privilege level, the system can provide better
 
 **You:**
 
+create_time: 2023-04-11 18:49:47
 Is a TA assigned to only one thread?
 
 * * *
@@ -3438,6 +3575,7 @@ In summary, a TA is not inherently limited to a single thread, but the default b
 
 **You:**
 
+create_time: 2023-04-11 21:07:40
 Can I reset OP-TEE at run-time?
 
 * * *
@@ -3454,6 +3592,7 @@ If you need to reset the state of a Trusted Application running within OP-TEE, y
 
 **You:**
 
+create_time: 2023-04-11 21:19:13
 Where does OP-TEE initialize secondary cores?
 
 * * *
@@ -3477,6 +3616,7 @@ The actual boot process of the secondary cores is platform-specific and depends 
 
 **You:**
 
+create_time: 2023-04-11 21:23:08
 Below code comes from part 1 of entry_a64.S of OP-TEE  /* SPDX-License-Identifier: BSD-2-Clause */ /*  * Copyright (c) 2015-2022, Linaro Limited  * Copyright (c) 2021-2023, Arm Limited  */  #include <platform_config.h>  #include <arm64_macros.S> #include <arm.h> #include <asm.S> #include <generated/asm-defines.h> #include <keep.h> #include <kernel/thread_private.h> #include <sm/optee_smc.h> #include <sm/teesmc_opteed.h> #include <sm/teesmc_opteed_macros.h>  	/* 	 * Setup SP_EL0 and SPEL1, SP will be set to SP_EL0. 	 * SP_EL0 is assigned: 	 *   stack_tmp + (cpu_id + 1) * stack_tmp_stride - STACK_TMP_GUARD 	 * SP_EL1 is assigned thread_core_local[cpu_id] 	 */ 	.macro set_sp 		bl	__get_core_pos 		cmp	x0, #CFG_TEE_CORE_NB_CORE 		/* Unsupported CPU, park it before it breaks something */ 		bge	unhandled_cpu 		add	x0, x0, #1 		adr_l	x1, stack_tmp_stride 		ldr	w1, [x1] 		mul	x1, x0, x1  		/* x0 = stack_tmp - STACK_TMP_GUARD */ 		adr_l	x2, stack_tmp_rel 		ldr	w0, [x2] 		add	x0, x0, x2  		msr	spsel, #0 		add	sp, x1, x0 		bl	thread_get_core_local 		msr	spsel, #1 		mov	sp, x0 		msr	spsel, #0 	.endm  	.macro read_feat_mte reg 		mrs	\reg, id_aa64pfr1_el1 		ubfx	\reg, \reg, #ID_AA64PFR1_EL1_MTE_SHIFT, #4 	.endm  	.macro set_sctlr_el1 		mrs	x0, sctlr_el1 		orr	x0, x0, #SCTLR_I 		orr	x0, x0, #SCTLR_SA 		orr	x0, x0, #SCTLR_SPAN #if defined(CFG_CORE_RWDATA_NOEXEC) 		orr	x0, x0, #SCTLR_WXN #endif #if defined(CFG_SCTLR_ALIGNMENT_CHECK) 		orr	x0, x0, #SCTLR_A #else 		bic	x0, x0, #SCTLR_A #endif #ifdef CFG_MEMTAG 		read_feat_mte x1 		cmp	w1, #1 		b.ls	111f 		orr	x0, x0, #(SCTLR_ATA | SCTLR_ATA0) 		bic	x0, x0, #SCTLR_TCF_MASK 		bic	x0, x0, #SCTLR_TCF0_MASK 111: #endif #if defined(CFG_TA_PAUTH) && defined(CFG_TA_BTI) 		orr	x0, x0, #SCTLR_BT0 #endif #if defined(CFG_CORE_PAUTH) && defined(CFG_CORE_BTI) 		orr	x0, x0, #SCTLR_BT1 #endif 		msr	sctlr_el1, x0 	.endm  	.macro init_memtag_per_cpu 		read_feat_mte x0 		cmp	w0, #1 		b.ls	11f  #ifdef CFG_TEE_CORE_DEBUG 		/* 		 * This together with GCR_EL1.RRND = 0 will make the tags 		 * acquired with the irg instruction deterministic. 		 */ 		mov_imm	x0, 0xcafe00 		msr	rgsr_el1, x0 		/* Avoid tag = 0x0 and 0xf */ 		mov	x0, #0 #else 		/* 		 * Still avoid tag = 0x0 and 0xf as we use that tag for 		 * everything which isn't explicitly tagged. Setting 		 * GCR_EL1.RRND = 1 to allow an implementation specific 		 * method of generating the tags. 		 */ 		mov	x0, #GCR_EL1_RRND #endif 		orr	x0, x0, #1 		orr	x0, x0, #(1 << 15) 		msr	gcr_el1, x0  		/* 		 * Enable the tag checks on the current CPU. 		 * 		 * Depends on boot_init_memtag() having cleared tags for 		 * TEE core memory. Well, not really, addresses with the 		 * tag value 0b0000 will use unchecked access due to 		 * TCR_TCMA0. 		 */ 		mrs	x0, tcr_el1 		orr	x0, x0, #TCR_TBI0 		orr	x0, x0, #TCR_TCMA0 		msr	tcr_el1, x0  		mrs	x0, sctlr_el1 		orr	x0, x0, #SCTLR_TCF_SYNC 		orr	x0, x0, #SCTLR_TCF0_SYNC 		msr	sctlr_el1, x0  		isb 11: 	.endm  	.macro init_pauth_per_cpu 		msr	spsel, #1 		ldp	x0, x1, [sp, #THREAD_CORE_LOCAL_KEYS] 		msr	spsel, #0 		write_apiakeyhi x0 		write_apiakeylo x1 		mrs	x0, sctlr_el1 		orr	x0, x0, #SCTLR_ENIA 		msr	sctlr_el1, x0 		isb 	.endm  FUNC _start , : 	/* 	 * If CFG_CORE_FFA is enabled, then x0 if non-NULL holds the TOS FW 	 * config [1] address, else x0 if non-NULL holds the pagable part 	 * address. 	 * 	 * [1] A TF-A concept: TOS_FW_CONFIG - Trusted OS Firmware 	 * configuration file. Used by Trusted OS (BL32), that is, OP-TEE 	 * here. 	 */ 	mov	x19, x0 #if defined(CFG_DT_ADDR) 	ldr     x20, =CFG_DT_ADDR #else 	mov	x20, x2		/* Save DT address */ #endif  	adr	x0, reset_vect_table 	msr	vbar_el1, x0 	isb  	set_sctlr_el1 	isb  #ifdef CFG_WITH_PAGER 	/* 	 * Move init code into correct location and move hashes to a 	 * temporary safe location until the heap is initialized. 	 * 	 * The binary is built as: 	 * [Pager code, rodata and data] : In correct location 	 * [Init code and rodata] : Should be copied to __init_start 	 * [struct boot_embdata + data] : Should be saved before 	 * initializing pager, first uint32_t tells the length of the data 	 */ 	adr	x0, __init_start	/* dst */ 	adr	x1, __data_end		/* src */ 	adr	x2, __init_end 	sub	x2, x2, x0		/* init len */ 	ldr	w4, [x1, x2]		/* length of hashes etc */ 	add	x2, x2, x4		/* length of init and hashes etc */ 	/* Copy backwards (as memmove) in case we're overlapping */ 	add	x0, x0, x2		/* __init_start + len */ 	add	x1, x1, x2		/* __data_end + len */ 	adr	x3, cached_mem_end 	str	x0, [x3] 	adr	x2, __init_start copy_init: 	ldp	x3, x4, [x1, #-16]! 	stp	x3, x4, [x0, #-16]! 	cmp	x0, x2 	b.gt	copy_init #else 	/* 	 * The binary is built as: 	 * [Core, rodata and data] : In correct location 	 * [struct boot_embdata + data] : Should be moved to __end, first 	 * uint32_t tells the length of the struct + data 	 */ 	adr_l	x0, __end		/* dst */ 	adr_l	x1, __data_end		/* src */ 	ldr	w2, [x1]		/* struct boot_embdata::total_len */ 	/* Copy backwards (as memmove) in case we're overlapping */ 	add	x0, x0, x2 	add	x1, x1, x2 	adr	x3, cached_mem_end 	str	x0, [x3] 	adr_l	x2, __end  copy_init: 	ldp	x3, x4, [x1, #-16]! 	stp	x3, x4, [x0, #-16]! 	cmp	x0, x2 	b.gt	copy_init #endif  	/* 	 * Clear .bss, this code obviously depends on the linker keeping 	 * start/end of .bss at least 8 byte aligned. 	 */ 	adr_l	x0, __bss_start 	adr_l	x1, __bss_end clear_bss: 	str	xzr, [x0], #8 	cmp	x0, x1 	b.lt	clear_bss  #ifdef CFG_NS_VIRTUALIZATION 	/* 	 * Clear .nex_bss, this code obviously depends on the linker keeping 	 * start/end of .bss at least 8 byte aligned. 	 */ 	adr	x0, __nex_bss_start 	adr	x1, __nex_bss_end clear_nex_bss: 	str	xzr, [x0], #8 	cmp	x0, x1 	b.lt	clear_nex_bss #endif  	/* Setup SP_EL0 and SP_EL1, SP will be set to SP_EL0 */ 	set_sp  	bl	thread_init_thread_core_local  	/* Enable aborts now that we can receive exceptions */ 	msr	daifclr, #DAIFBIT_ABT  	/* 	 * Invalidate dcache for all memory used during initialization to 	 * avoid nasty surprices when the cache is turned on. We must not 	 * invalidate memory not used by OP-TEE since we may invalidate 	 * entries used by for instance ARM Trusted Firmware. 	 */ 	adr_l	x0, __text_start 	ldr	x1, cached_mem_end 	sub	x1, x1, x0 	bl	dcache_cleaninv_range  	/* Enable Console */ 	bl	console_init
 
 * * *
@@ -3504,6 +3644,7 @@ Once the assembly code has completed these initializations, the execution is tra
 
 **You:**
 
+create_time: 2023-04-11 21:24:20
 Below code comes from part 2 of entry_a64.S of OP-TEE      #ifdef CFG_MEMTAG 	/* 	 * If FEAT_MTE2 is available, initializes the memtag callbacks. 	 * Tags for OP-TEE core memory are then cleared to make it safe to 	 * enable MEMTAG below. 	 */ 	bl	boot_init_memtag #endif  #ifdef CFG_CORE_ASLR 	mov	x0, x20 	bl	get_aslr_seed #else 	mov	x0, #0 #endif  	adr	x1, boot_mmu_config 	bl	core_init_mmu_map  #ifdef CFG_CORE_ASLR 	/* 	 * Process relocation information again updating for the new 	 * offset. We're doing this now before MMU is enabled as some of 	 * the memory will become write protected. 	 */ 	ldr	x0, boot_mmu_config + CORE_MMU_CONFIG_LOAD_OFFSET 	/* 	 * Update cached_mem_end address with load offset since it was 	 * calculated before relocation. 	 */ 	adr	x5, cached_mem_end 	ldr	x6, [x5] 	add	x6, x6, x0 	str	x6, [x5] 	bl	relocate #endif  	bl	__get_core_pos 	bl	enable_mmu #ifdef CFG_CORE_ASLR 	/* 	 * Reinitialize console, since register_serial_console() has 	 * previously registered a PA and with ASLR the VA is different 	 * from the PA. 	 */ 	bl	console_init #endif  #ifdef CFG_NS_VIRTUALIZATION 	/* 	 * Initialize partition tables for each partition to 	 * default_partition which has been relocated now to a different VA 	 */ 	bl	core_mmu_set_default_prtn_tbl #endif  #ifdef CFG_CORE_SEL1_SPMC 	mov	x0, xzr		/* pager not used */ #else 	mov	x0, x19		/* pagable part address */ #endif 	mov	x1, #-1 	bl	boot_init_primary_early  #ifdef CFG_MEMTAG 	init_memtag_per_cpu #endif  #ifndef CFG_NS_VIRTUALIZATION 	mov	x21, sp 	adr_l	x0, threads 	ldr	x0, [x0, #THREAD_CTX_STACK_VA_END] 	mov	sp, x0 	bl	thread_get_core_local 	mov	x22, x0 	str	wzr, [x22, #THREAD_CORE_LOCAL_FLAGS] #endif 	mov	x0, x20		/* DT address also known as HW_CONFIG */ #ifdef CFG_CORE_SEL1_SPMC 	mov	x1, x19		/* TOS_FW_CONFIG DT address */ #else 	mov	x1, xzr		/* unused */ #endif 	bl	boot_init_primary_late #ifdef CFG_CORE_PAUTH 	init_pauth_per_cpu #endif  #ifndef CFG_NS_VIRTUALIZATION 	mov	x0, #THREAD_CLF_TMP 	str     w0, [x22, #THREAD_CORE_LOCAL_FLAGS] 	mov	sp, x21 #endif  #ifdef _CFG_CORE_STACK_PROTECTOR 	/* Update stack canary value */ 	bl	plat_get_random_stack_canary 	adr_l	x5, __stack_chk_guard 	str	x0, [x5] #endif  	/* 	 * In case we've touched memory that secondary CPUs will use before 	 * they have turned on their D-cache, clean and invalidate the 	 * D-cache before exiting to normal world. 	 */ 	adr_l	x0, __text_start 	ldr	x1, cached_mem_end 	sub	x1, x1, x0 	bl	dcache_cleaninv_range   	/* 	 * Clear current thread id now to allow the thread to be reused on 	 * next entry. Matches the thread_init_boot_thread in 	 * boot.c. 	 */ #ifndef CFG_NS_VIRTUALIZATION 	bl 	thread_clr_boot_thread #endif  #ifdef CFG_CORE_FFA 	adr	x0, cpu_on_handler 	/* 	 * Compensate for the load offset since cpu_on_handler() is 	 * called with MMU off. 	 */ 	ldr	x1, boot_mmu_config + CORE_MMU_CONFIG_LOAD_OFFSET 	sub	x0, x0, x1 	bl	thread_spmc_register_secondary_ep 	b	thread_ffa_msg_wait #else 	/* 	 * Pass the vector address returned from main_init 	 * Compensate for the load offset since cpu_on_handler() is 	 * called with MMU off. 	 */ 	ldr	x0, boot_mmu_config + CORE_MMU_CONFIG_LOAD_OFFSET 	adr	x1, thread_vector_table 	sub	x1, x1, x0 	mov	x0, #TEESMC_OPTEED_RETURN_ENTRY_DONE 	smc	#0 	/* SMC should not return */ 	panic_at_smc_return #endif END_FUNC _start DECLARE_KEEP_INIT _start  	.section .identity_map.data 	.balign	8 LOCAL_DATA cached_mem_end , : 	.skip	8 END_DATA cached_mem_end  #ifdef CFG_CORE_ASLR LOCAL_FUNC relocate , : 	/* x0 holds load offset */ #ifdef CFG_WITH_PAGER 	adr_l	x6, __init_end #else 	adr_l	x6, __end #endif 	ldp	w2, w3, [x6, #BOOT_EMBDATA_RELOC_OFFSET]  	mov_imm	x1, TEE_RAM_START 	add	x2, x2, x6	/* start of relocations */ 	add	x3, x3, x2	/* end of relocations */  	/* 	 * Relocations are not formatted as Rela64, instead they are in a 	 * compressed format created by get_reloc_bin() in 	 * scripts/gen_tee_bin.py 	 * 	 * All the R_AARCH64_RELATIVE relocations are translated into a 	 * list list of 32-bit offsets from TEE_RAM_START. At each address 	 * a 64-bit value pointed out which increased with the load offset. 	 */  #ifdef CFG_WITH_PAGER 	/* 	 * With pager enabled we can only relocate the pager and init 	 * parts, the rest has to be done when a page is populated. 	 */ 	sub	x6, x6, x1 #endif  	b	2f 	/* Loop over the relocation addresses and process all entries */ 1:	ldr	w4, [x2], #4 #ifdef CFG_WITH_PAGER 	/* Skip too large addresses */ 	cmp	x4, x6 	b.ge	2f #endif 	add	x4, x4, x1 	ldr	x5, [x4] 	add	x5, x5, x0 	str	x5, [x4]  2:	cmp	x2, x3 	b.ne	1b  	ret END_FUNC relocate #endif  /*  * void enable_mmu(unsigned long core_pos);  *  * This function depends on being mapped with in the identity map where  * physical address and virtual address is the same. After MMU has been  * enabled the instruction pointer will be updated to execute as the new  * offset instead. Stack pointers and the return address are updated.  */ LOCAL_FUNC enable_mmu , : , .identity_map 	adr	x1, boot_mmu_config 	load_xregs x1, 0, 2, 6 	/* 	 * x0 = core_pos 	 * x2 = tcr_el1 	 * x3 = mair_el1 	 * x4 = ttbr0_el1_base 	 * x5 = ttbr0_core_offset 	 * x6 = load_offset 	 */ 	msr	tcr_el1, x2 	msr	mair_el1, x3  	/* 	 * ttbr0_el1 = ttbr0_el1_base + ttbr0_core_offset * core_pos 	 */ 	madd	x1, x5, x0, x4 	msr	ttbr0_el1, x1 	msr	ttbr1_el1, xzr 	isb  	/* Invalidate TLB */ 	tlbi	vmalle1  	/* 	 * Make sure translation table writes have drained into memory and 	 * the TLB invalidation is complete. 	 */ 	dsb	sy 	isb  	/* Enable the MMU */ 	mrs	x1, sctlr_el1 	orr	x1, x1, #SCTLR_M 	msr	sctlr_el1, x1 	isb  	/* Update vbar */ 	mrs	x1, vbar_el1 	add	x1, x1, x6 	msr	vbar_el1, x1 	isb  	/* Invalidate instruction cache and branch predictor */ 	ic	iallu 	isb  	/* Enable I and D cache */ 	mrs	x1, sctlr_el1 	orr	x1, x1, #SCTLR_I 	orr	x1, x1, #SCTLR_C 	msr	sctlr_el1, x1 	isb  	/* Adjust stack pointers and return address */ 	msr	spsel, #1 	add	sp, sp, x6 	msr	spsel, #0 	add	sp, sp, x6 	add	x30, x30, x6  	ret END_FUNC enable_mmu  	.section .identity_map.data 	.balign	8 DATA boot_mmu_config , : /* struct core_mmu_config */ 	.skip	CORE_MMU_CONFIG_SIZE END_DATA boot_mmu_config  FUNC cpu_on_handler , : 	mov	x19, x0 	mov	x20, x1 	mov	x21, x30  	adr	x0, reset_vect_table 	msr	vbar_el1, x0 	isb  	set_sctlr_el1 	isb  	/* Enable aborts now that we can receive exceptions */ 	msr	daifclr, #DAIFBIT_ABT  	bl	__get_core_pos 	bl	enable_mmu  	/* Setup SP_EL0 and SP_EL1, SP will be set to SP_EL0 */ 	set_sp  #ifdef CFG_MEMTAG 	init_memtag_per_cpu #endif #ifdef CFG_CORE_PAUTH 	init_pauth_per_cpu #endif  	mov	x0, x19 	mov	x1, x20 #ifdef CFG_CORE_FFA 	bl	boot_cpu_on_handler 	b	thread_ffa_msg_wait #else 	mov	x30, x21 	b	boot_cpu_on_handler #endif END_FUNC cpu_on_handler DECLARE_KEEP_PAGER cpu_on_handler  LOCAL_FUNC unhandled_cpu , : 	wfi 	b	unhandled_cpu END_FUNC unhandled_cpu  LOCAL_DATA stack_tmp_rel , : 	.word	stack_tmp - stack_tmp_rel - STACK_TMP_GUARD END_DATA stack_tmp_rel  	/* 	 * This macro verifies that the a given vector doesn't exceed the 	 * architectural limit of 32 instructions. This is meant to be placed 	 * immedately after the last instruction in the vector. It takes the 	 * vector entry as the parameter 	 */ 	.macro check_vector_size since 	  .if (. - \since) > (32 * 4) 	    .error "Vector exceeds 32 instructions" 	  .endif 	.endm  	.section .identity_map, "ax", %progbits 	.align	11 LOCAL_FUNC reset_vect_table , :, .identity_map, , nobti 	/* ----------------------------------------------------- 	 * Current EL with SP0 : 0x0 - 0x180 	 * ----------------------------------------------------- 	 */ SynchronousExceptionSP0: 	b	SynchronousExceptionSP0 	check_vector_size SynchronousExceptionSP0  	.align	7 IrqSP0: 	b	IrqSP0 	check_vector_size IrqSP0  	.align	7 FiqSP0: 	b	FiqSP0 	check_vector_size FiqSP0  	.align	7 SErrorSP0: 	b	SErrorSP0 	check_vector_size SErrorSP0  	/* ----------------------------------------------------- 	 * Current EL with SPx: 0x200 - 0x380 	 * ----------------------------------------------------- 	 */ 	.align	7 SynchronousExceptionSPx: 	b	SynchronousExceptionSPx 	check_vector_size SynchronousExceptionSPx  	.align	7 IrqSPx: 	b	IrqSPx 	check_vector_size IrqSPx  	.align	7 FiqSPx: 	b	FiqSPx 	check_vector_size FiqSPx  	.align	7 SErrorSPx: 	b	SErrorSPx 	check_vector_size SErrorSPx  	/* ----------------------------------------------------- 	 * Lower EL using AArch64 : 0x400 - 0x580 	 * ----------------------------------------------------- 	 */ 	.align	7 SynchronousExceptionA64: 	b	SynchronousExceptionA64 	check_vector_size SynchronousExceptionA64  	.align	7 IrqA64: 	b	IrqA64 	check_vector_size IrqA64  	.align	7 FiqA64: 	b	FiqA64 	check_vector_size FiqA64  	.align	7 SErrorA64: 	b   	SErrorA64 	check_vector_size SErrorA64  	/* ----------------------------------------------------- 	 * Lower EL using AArch32 : 0x0 - 0x180 	 * ----------------------------------------------------- 	 */ 	.align	7 SynchronousExceptionA32: 	b	SynchronousExceptionA32 	check_vector_size SynchronousExceptionA32  	.align	7 IrqA32: 	b	IrqA32 	check_vector_size IrqA32  	.align	7 FiqA32: 	b	FiqA32 	check_vector_size FiqA32  	.align	7 SErrorA32: 	b	SErrorA32 	check_vector_size SErrorA32  END_FUNC reset_vect_table  BTI(emit_aarch64_feature_1_and     GNU_PROPERTY_AARCH64_FEATURE_1_BTI)
 
 * * *
@@ -3530,6 +3671,7 @@ The code also contains various assembly macros and functions for handling differ
 
 **You:**
 
+create_time: 2023-04-11 21:25:40
 Where to set up secondary cores in the given code?
 
 * * *
@@ -3594,6 +3736,7 @@ After the setup is complete, the secondary core will either wait for a Fast Func
 
 **You:**
 
+create_time: 2023-04-11 21:48:18
 Where to reset primary core in the given code?
 
 * * *
@@ -3624,6 +3767,7 @@ Keep in mind that the exact process for resetting the primary core depends on yo
 
 **You:**
 
+create_time: 2023-04-11 21:51:56
 What is the set_sp macro?
 
 * * *
@@ -3666,6 +3810,7 @@ Keep in mind that this is just a simple example of what `set_sp` macro might loo
 
 **You:**
 
+create_time: 2023-04-11 21:58:58
 When to enable secondary cores in OP-TEE?
 
 * * *
@@ -3692,6 +3837,7 @@ The exact implementation details of enabling secondary cores may vary depending 
 
 **You:**
 
+create_time: 2023-04-11 22:08:13
 Please list functions and macros in entry_a64.S
 
 * * *
@@ -3729,6 +3875,7 @@ Please note that the actual functions and macros in your specific version of the
 
 **You:**
 
+create_time: 2023-04-11 22:10:05
 Please list functions and macros in entry_a64.S that I sent you before.
 
 * * *
@@ -3741,6 +3888,7 @@ My apologies for the confusion earlier, as I am an AI language model, I am unabl
 
 **You:**
 
+create_time: 2023-04-11 22:11:01
 Please list functions and macros in entry_a64.S that I give you before.
 
 * * *
@@ -3767,6 +3915,7 @@ If you have any questions or need further information about these functions or m
 
 **You:**
 
+create_time: 2023-04-11 22:18:59
 Please list functions called in entry_a64.S that I give you before.
 
 * * *
@@ -3801,6 +3950,7 @@ These are the functions called in the provided entry_a64.S file.
 
 **You:**
 
+create_time: 2023-04-11 22:37:57
 What is psci?
 
 * * *
@@ -3827,6 +3977,7 @@ PSCI allows for better coordination of power management across different cores a
 
 **You:**
 
+create_time: 2023-04-11 22:40:44
 Who to call vector_cpu_on_entry?
 
 * * *
@@ -3848,6 +3999,7 @@ Please note that the actual implementation details will depend on your specific 
 
 **You:**
 
+create_time: 2023-04-11 22:42:00
 Who to call vector_cpu_on_entry with OP-TEE?
 
 * * *
@@ -3870,6 +4022,7 @@ When the secondary core is powered on, the ATF will handle the rest, setting up 
 
 **You:**
 
+create_time: 2023-04-11 22:46:26
 What does vector_cpu_on_entry do with respect to OP-TEE?
 
 * * *
@@ -3896,6 +4049,7 @@ After these steps, the secondary core is ready to execute secure tasks in OP-TEE
 
 **You:**
 
+create_time: 2023-04-11 23:10:22
 What are difference boot of OP-TEE between AArch64 and AArch32?
 
 * * *
@@ -3922,6 +4076,7 @@ Despite these differences, the high-level boot process and functionality of OP-T
 
 **You:**
 
+create_time: 2023-04-12 14:46:58
 What is size of tee.bin?
 
 * * *
@@ -3950,6 +4105,7 @@ Again, replace `path/to/your/tee.bin` with the actual path to the binary file. T
 
 **You:**
 
+create_time: 2023-04-12 14:47:39
 What is about size of tee.bin?
 
 * * *
@@ -3966,6 +4122,7 @@ Keep in mind that the actual size of the `tee.bin` file in your specific case ca
 
 **You:**
 
+create_time: 2023-04-12 15:37:52
 Is SMAF of OP-TEE?
 
 * * *
@@ -3982,6 +4139,7 @@ While OP-TEE itself doesn't include a specific component called SMAF, it does pr
 
 **You:**
 
+create_time: 2023-04-12 15:39:15
 How is SMAF used in DRM?
 
 * * *
@@ -4006,6 +4164,7 @@ By using SMAF in a DRM system, content providers can enhance the security of the
 
 **You:**
 
+create_time: 2023-04-12 15:41:27
 What is Clear Key?
 
 * * *
@@ -4024,6 +4183,7 @@ It is important to note that Clear Key is not suitable for commercial use or pro
 
 **You:**
 
+create_time: 2023-04-13 17:07:20
 Who can allocate SMAF memory? TA or CA
 
 * * *
@@ -4042,6 +4202,7 @@ In summary, the SMAF memory allocation is typically managed by the OP-TEE OS and
 
 **You:**
 
+create_time: 2023-04-13 17:58:42
 What is opteed?
 
 * * *
@@ -4058,6 +4219,7 @@ It is important to note that `opteed` is not a standalone daemon process but rat
 
 **You:**
 
+create_time: 2023-04-13 18:01:42
 What is Op-TEE Dispatcher?
 
 * * *
@@ -4076,6 +4238,7 @@ In summary, the OP-TEE dispatcher is a crucial component that bridges the gap be
 
 **You:**
 
+create_time: 2023-04-13 21:54:11
 What is libteec.so?
 
 * * *
@@ -4092,6 +4255,7 @@ In summary, `libteec.so` is a crucial component that enables applications runnin
 
 **You:**
 
+create_time: 2023-04-13 21:55:54
 Does libteec.so run in EL0 or EL1?
 
 * * *
@@ -4106,6 +4270,7 @@ EL1 (Exception Level 1) is the level at which operating system kernel code runs,
 
 **You:**
 
+create_time: 2023-04-13 21:56:55
 Does optee.ko run in EL1?
 
 * * *
@@ -4120,6 +4285,7 @@ However, it is important to note that `optee.ko` runs in the normal world, not i
 
 **You:**
 
+create_time: 2023-04-13 21:58:39
 What is TEE supplicant?
 
 * * *
@@ -4141,12 +4307,14 @@ The TEE supplicant is an essential component of the OP-TEE ecosystem, working in
 
 **You:**
 
+create_time: 2023-04-13 23:03:11
 What is TSK?
 
 * * *
 
 **You:**
 
+create_time: 2023-04-13 23:03:29
 What is HUK?
 
 * * *
@@ -4159,6 +4327,7 @@ HUK stands for Hardware Unique Key. It is a unique, device-specific key that is 
 
 **You:**
 
+create_time: 2023-04-13 23:04:24
 So what is TSK?
 
 * * *
