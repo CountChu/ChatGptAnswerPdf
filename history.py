@@ -55,14 +55,18 @@ def transform_to_question(qa, title):
     question['date'] = qa['create_time'][:10]
     question['time'] = qa['create_time'][11:]
     question['qs'] = None 
-    question['title'] = title 
+    question['title'] = None 
     question['a'] = qa['a']
 
     return question
 
 def get_title(question):
-     title = '%s @ %s' % (question['title'], question['from'])
-     return title
+    if question['title'] == None:
+        title = '%s' % (question['from'])
+    else:
+        title = '%s @ %s' % (question['title'], question['from'])
+    
+    return title
 
 def build_sections_by_title(question_ls):
     sorted_title_ls = [] 
