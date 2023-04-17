@@ -63,31 +63,11 @@ def build_args():
 
     return args  
 
-def get_files(dn):
-    if not os.path.exists(dn):
-        print('Error! The directory does not exist.')
-        print(dn)
-        sys.exit(1)
-
-    bn_ls = []
-    for bn in os.listdir(dn):
-        bn_ls.append(bn)
-
-    bn_ls.sort()
-
-    bn_fn_ls = []
-    for bn in bn_ls:
-        fn = os.path.join(dn, bn)
-        bn_fn_ls.append((bn, fn))
-
-    return bn_fn_ls
-
-
 def handle_list(args, ctx):
     print('')
     print('Question Sets in the directory "%s":' % ctx['questions'])
 
-    bn_fn_ls = get_files(ctx['questions'])
+    bn_fn_ls = util.get_files(ctx['questions'])
 
     for bn, fn in bn_fn_ls:
         print('    %s' % bn)
@@ -114,12 +94,12 @@ def build_pdf(ctx, bn):
     cmd = cmd % (ctx['questions'], bn, ctx['chats'], ctx['out'])
     cmd_ls.append(cmd)
 
-    cmd = 'python tohtml.py -f "%s.md" -i output -o output-html -s'
-    cmd = cmd % (name)
+    cmd = 'python tohtml.py -f "%s.md" -i %s -o %s -s'    
+    cmd = cmd % (name, ctx['out'], ctx['html'])
     cmd_ls.append(cmd)
 
-    cmd = 'python topdf.py -f "%s.html" -i output-html -o output-pdf -s'
-    cmd = cmd % (name)
+    cmd = 'python topdf.py -f "%s.html" -i %s -o %s -s'
+    cmd = cmd % (name, ctx['html'], ctx['pdf'])
     cmd_ls.append(cmd)
 
     for cmd in cmd_ls:
@@ -133,7 +113,7 @@ def handle_build(args, ctx):
         bn_ls.append(args.file)
 
     else:
-        bn_fn_ls = get_files(ctx['questions'])
+        bn_fn_ls = util.get_files(ctx['questions'])
         for bn, _ in bn_fn_ls:
             bn_ls.append(bn)
 
@@ -154,7 +134,7 @@ def handle_update(args, ctx):
     # Get files in the questions directory.
     #
 
-    bn_fn_ls = get_files(ctx['questions'])
+    bn_fn_ls = util.get_files(ctx['questions'])
 
     #
     # Check for each files to see if it is necessary to build PDF.
@@ -193,9 +173,9 @@ def main():
     ctx = {
         'chats': args.chats,
         'questions': args.questions,
-        'out': 'output',
-        'html': 'output-html',
-        'pdf': 'output-pdf',
+        'out': 'out-ans',
+        'html': 'out-ans-html',
+        'pdf': 'out-ans-pdf',
     }
 
     #

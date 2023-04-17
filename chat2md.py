@@ -48,7 +48,7 @@ def handle_chat(output, chat):
 
     fn = os.path.join(output, "%s.md" % title)
     print('Write %s' % fn)
-    f = open(fn, 'w')
+    f = open(fn, 'w', encoding='utf-8')
 
     #s = 'init'
 
@@ -146,7 +146,7 @@ def main():
         print(fn)
         sys.exit(1)    
 
-    f = open(fn)
+    f = open(fn, encoding='utf-8')
     content = f.read()
     f.close()
 

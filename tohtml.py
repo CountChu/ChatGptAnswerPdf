@@ -10,8 +10,8 @@ br = pdb.set_trace
 
 def build_args():
     desc = '''
-    Usage 1: python tohtml.py -i output -o output-html
-    Usage 2: python tohtml.py -f 230328.TEE.md -i output -o output-html
+    Usage 1: python tohtml.py -i out-ans -o out-ans-html
+    Usage 2: python tohtml.py -f 230328.TEE.md -i out-ans -o out-ans-html
 
 '''
     #
@@ -26,13 +26,13 @@ def build_args():
             '-i',
             dest='input',
             required=True,
-            help='The input directory that contains Markdown files. E.g., "output"')    
+            help='The input directory that contains Markdown files. E.g., "out-ans"')    
 
     parser.add_argument(
             '-o',
             dest='output',
             required=True,            
-            help='The output directory where the generated HTML files. E.g., "output-html"')    
+            help='The output directory where the generated HTML files. E.g., "out-ans-html"')    
 
     parser.add_argument(
             '-f',
@@ -56,7 +56,7 @@ def build_args():
 def markdown_to_html(fn_md, name, extensions, css, fn_html): 
     print('Generating: %s' % (fn_html))
 
-    f = open(fn_md)
+    f = open(fn_md, encoding='utf-8')
     md = f.read()
     f.close()
 
@@ -84,7 +84,7 @@ def markdown_to_html(fn_md, name, extensions, css, fn_html):
 
     #html = html % (css, name, md_html)
 
-    f = open(fn_html, 'w')
+    f = open(fn_html, 'w', encoding='utf-8')
     f.write(html)
     f.close()
 

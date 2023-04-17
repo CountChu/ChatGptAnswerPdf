@@ -10,8 +10,8 @@ br = pdb.set_trace
 
 def build_args():
     desc = '''
-    Usage 1: python topdf.py -i output-html -o output-pdf
-    Usage 2: python topdf.py -f 230328.TEE.html -i output-html -o output-pdf    
+    Usage 1: python topdf.py -i out-ans-html -o out-ans-pdf
+    Usage 2: python topdf.py -f 230328.TEE.html -i out-ans-html -o out-ans-pdf    
 '''
     #
     # Build an ArgumentParser object to parse arguments.
