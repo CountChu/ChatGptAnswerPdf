@@ -56,15 +56,21 @@ Convert conversations.json into Markdown files. The download-230414 directory is
 python chat2md.py -i download-230417 -o chats
 ```
 
-Generate answers that come from your all question set files answered by chat files in Markdown files for each date.
+Generate questions that come from your all question set files answered by chat files for each date.
 ```
 python history.py -q questions -c chats -o out-hist-qst
 ```
 
-Generate answers of all chat files in Markdown files for each date.
+Generate questions that come from your all question set files answered by chat files and solo chats for each date.
+```
+python history.py -q questions -c chats -o out-hist-mgt --merge
+```
+
+Generate chats from all chat files for each date.
 ```
 python history.py -c chats -o out-hist-cht
 ```
+
 
 # File Structure
 ```

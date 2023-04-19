@@ -11,7 +11,8 @@ br = pdb.set_trace
 def build_args():
     desc = '''
     Usage 1: python history.py -q questions -c chats -o out-qst
-    Usage 2: python history.py -c chats -o out-cht
+    Usage 2: python history.py -q questions -c chats -o out-qst --merge    
+    Usage 3: python history.py -c chats -o out-cht
 '''
 
     #
