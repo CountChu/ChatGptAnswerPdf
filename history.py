@@ -11,7 +11,7 @@ br = pdb.set_trace
 def build_args():
     desc = '''
     Usage 1: python history.py -q questions -c chats -o out-qst
-    Usage 2: python history.py -c chats -o out-cht    
+    Usage 2: python history.py -c chats -o out-cht
 '''
 
     #
@@ -25,18 +25,18 @@ def build_args():
     parser.add_argument(
             '-q',
             dest='questions',
-            help='A directory that contains question set files. E.g., "questions"')    
+            help='A directory that contains question set files. E.g., "questions"')
 
     parser.add_argument(
             '-c',
             dest='chats',
-            help='A directory that contains original MD files from ChatGPT. E.g., "chats"')     
+            help='A directory that contains original MD files from ChatGPT. E.g., "chats"')
 
     parser.add_argument(
             '-o',
             dest='output',
             required=True,
-            help='A directory that contains answers in MD files by date. E.g., "output-hist"') 
+            help='A directory that contains answers in MD files by date. E.g., "output-hist"')
 
     #
     # Check arguments and return.
@@ -44,18 +44,19 @@ def build_args():
 
     args = parser.parse_args()
 
-    return args  
+    return args
 
 def transform_to_question(qa, title):
-    question = {}    
+    question = {}
     question['q1'] = qa['q']
     question['q2'] = qa['q']
-    question['from'] = title 
-    question['hide'] = False 
+    question['is_short'] = qa['is_short']
+    question['from'] = title
+    question['hide'] = False
     question['date'] = qa['create_time'][:10]
     question['time'] = qa['create_time'][11:]
-    question['qs'] = None 
-    question['title'] = None 
+    question['qs'] = None
+    question['title'] = None
     question['a'] = qa['a']
 
     return question
@@ -65,11 +66,11 @@ def get_title(question):
         title = '%s' % (question['from'])
     else:
         title = '%s @ %s' % (question['title'], question['from'])
-    
+
     return title
 
 def build_sections_by_title(question_ls):
-    sorted_title_ls = [] 
+    sorted_title_ls = []
     for question in question_ls:
         title = get_title(question)
         if title not in sorted_title_ls:
@@ -79,7 +80,7 @@ def build_sections_by_title(question_ls):
     for question in question_ls:
         title = get_title(question)
         if title not in title_question_ls_d:
-            title_question_ls_d[title] = [] 
+            title_question_ls_d[title] = []
 
         title_question_ls_d[title].append(question)
 
@@ -93,14 +94,13 @@ def build_sections_by_title(question_ls):
 
     return section_ls
 
-
 def main():
 
     #
     # Read arguments.
     #
 
-    args = build_args()    
+    args = build_args()
 
     #
     # If use -q, check if the questions directory exists.
@@ -110,7 +110,7 @@ def main():
         if not os.path.exists(args.questions):
             print('Error! The directory does not exist.')
             print(args.questions)
-            sys.exit(1)       
+            sys.exit(1)
 
     #
     # Check if the chats directory exists.
@@ -119,7 +119,7 @@ def main():
     if not os.path.exists(args.chats):
         print('Error! The directory does not exist.')
         print(args.chats)
-        sys.exit(1)    
+        sys.exit(1)
 
     #
     # Check if the output directory exists.
@@ -177,7 +177,7 @@ def main():
         fn_qa_ls_d = {}
         for question in question_ls:
             fn = os.path.join(args.chats, question['from'])
-            
+
             if not os.path.exists(fn):
                 print('Error! The file does not exist.')
                 print(fn)
@@ -223,7 +223,7 @@ def main():
 
     #
     # Build history
-    #    
+    #
 
     for date in sorted(date_question_ls_d.keys()):
         print(date)
