@@ -35,23 +35,33 @@ build:
 
 chat2md:
 	rm -rf chats
-	python chat2md.py -i download-230417 -o chats
+	python chat2md.py -i download-230419 -o chats
 
 hist-qst:
 	python history.py -q questions -c chats -o out-hist-qst
 	python tohtml.py -i out-hist-qst -o out-hist-qst-html
-	python topdf.py -i out-hist-qst-html -o out-hist-qst-pdf
+	#python topdf.py -i out-hist-qst-html -o out-hist-qst-pdf
 
 hist-cht:
 	python history.py -c chats -o out-hist-cht
 	python tohtml.py -i out-hist-cht -o out-hist-cht-html
-	python topdf.py -i out-hist-cht-html -o out-hist-cht-pdf
+	#python topdf.py -i out-hist-cht-html -o out-hist-cht-pdf
+
+hist-all:
+	python history.py -q questions -c chats -o out-hist-mgr --merge
+	python tohtml.py -i out-hist-mgr -o out-hist-mgr-html
+	#python topdf.py -i out-hist-mgr-html -o out-hist-mgr-pdf
 
 clean:
 	rm -rf out-ans 
 	rm -rf out-ans-html 
 	rm -rf out-ans-pdf 
-
+	rm -rf out-hist-cht 
+	rm -rf out-hist-cht-html 
+	rm -rf out-hist-cht-pdf 
+	rm -rf out-hist-qst 
+	rm -rf out-hist-qst-html 
+	rm -rf out-hist-qst-pdf 
 
 
 

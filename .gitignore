@@ -9,4 +9,7 @@ sftp-config.json
 README.html
 chats-all
 download-*
-
+out-hist-mgr-pdf
+out-hist-qst-pdf
+out-ans-pdf
+questions-all

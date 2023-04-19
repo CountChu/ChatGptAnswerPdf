@@ -1,0 +1,144 @@
+from: SGX.0418.md
+
+Documents
+    q-prefix: Sealing and Attestation in Intel
+    hide:
+
+    q-prefix: What is relationship between secure enclave and secure memory?
+    hide: 
+
+    q-prefix: Intel SGX Product Brief
+    hide:
+
+Papers of Innovative Technology for CPU Based Attestation and Sealing
+    q-prefix: Abstract and INTRODUCTION of the Paper: Innovative Technology for CPU Based Attestation and Sealing
+    hide: 
+    from: Papers.SGX.0419.md
+
+    The chapter "2 MEASUREMENT" of the Paper.
+    hide: 
+    from: Papers.SGX.0419.md
+
+    The chapter "3 ATTESTATION " of the Paper.
+    hide: 
+    from: Papers.SGX.0419.md
+
+    The chapter "4 SEALING" of the Paper.
+    hide: 
+    from: Papers.SGX.0419.md
+
+    The chapters "5 RELATED WORK", "6 CONCLUSIONS", "7 ACKNOWLEDGMENTS" of the Paper
+    hide: 
+    from: Papers.SGX.0419.md
+
+    The chapter "8 REFERENCES" of the Paper
+    hide: 
+    from: Papers.SGX.0419.md
+
+Attestation
+    q: What is attestation?
+    q: Is secure boot of an attestation?
+    q: Which type of attestation is secure boot?
+    q: What are types of attestation?
+    q: Are remote or local attestations hardware or software?
+    q: Please build a cross table. The x axis is hardwared-based and software-based, The y axis is Remote and Local. Please contain Intel SGX, TPM, TLS, SSH, digital signatures, secure boot
+
+MRENCLAVE
+    q: What is MRENCLAVE?
+    from: Papers.SGX.0419.md
+
+    q: Who generates MRENCLAVE?
+    from: Papers.SGX.0419.md
+
+    q: Who creates an enclave?
+    from: Papers.SGX.0419.md
+
+    q: So an untrusted software can also create an enclave. Right?
+    from: Papers.SGX.0419.md
+
+    q: I have enclave A and enclave B. How does enclave A know the enclave B before A wants to get MRENCLAVE value of B?
+    from: Papers.SGX.0419.md
+
+EGETKEY
+    q: What is enclave software?
+    q: Is the EGETKEY instruction only called by enclave software?
+    q: Can I get hardware-protected key by calling EGETKEY instruction in enclave software?
+    q: So after I get the hardware-protected key, I can print it. Is it safe?
+
+MRSIGNER
+    q: What does MRSIGNER contain? Please list them?
+    from: Papers.SGX.0419.md
+
+    q: What is enclave identity?
+    q: How to generate MRSIGNER?
+    q: Is MRSIGNER only one?
+    q: Where to save the private key generated in the process of generating MRSIGNER?
+
+    q: Who can write MRENCLAVE and MRSIGNER?
+    from: Papers.SGX.0419.md
+
+    q: Only hardware can write the both registers. Right?
+    from: Papers.SGX.0419.md
+
+Sealing Identity
+
+    q: What is Sealing Identity?
+    from: Papers.SGX.0419.md
+
+    q: Is "Sealing Identity" a MRSIGNER?
+    from: Papers.SGX.0419.md
+
+    q: Coud I say that SIGSTRUCT is Sealing Identity?
+    from: Papers.SGX.0419.md
+
+    q: What is the value of Sealing Identity in the paper?
+    from: Papers.SGX.0419.md
+
+    q: What is the value of Sealing Identity in the policy "Sealing to the Enclave Identity" in the paper?
+    from: Papers.SGX.0419.md
+
+Sealing Authority
+
+    q: What is Sealing Authority?
+    from: Papers.SGX.0419.md
+
+    q: Is Sealing Authority a software or a hardware?
+    from: Papers.SGX.0419.md
+
+    q: Is Sealing Authority a enclave builder?  
+    from: Papers.SGX.0419.md
+
+    q: What is difference between Sealing Identity and Identity of the Sealing Authority?
+    from: Papers.SGX.0419.md
+
+SIGSTRUCT 
+
+    q: Who does prepare SIGSTRUCT?
+    from: Papers.SGX.0419.md
+
+    q: What does SIGSTRUCT contain? please list them.
+    from: Papers.SGX.0419.md
+
+Attestation Assertion
+    q: Who produces attestation assertion?
+    from: Papers.SGX.0419.md
+
+Attestation Key
+    q: What is attestation key?
+    q: Is there only one attestation key in a device?
+    q: Where is attestation key sotred in Intel SGX arch?
+
+EREPORT
+    q: What does REPORT contain? Please list them?
+    from: Papers.SGX.0419.md   
+
+EPID:
+    q: What is EPID?
+    q: How does EPID work?
+    q: Which problems does EPID solve?
+    q: How do I make sure that the EPID issuer doesn't retain private keys?
+    q: How does EPID revoke a compromised device?
+    q: How to get the EPID of the compromised device?
+    q: But if the compromised device reports a fake EPID, what should I do?
+
+

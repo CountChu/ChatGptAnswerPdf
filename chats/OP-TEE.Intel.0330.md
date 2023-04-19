@@ -1,5 +1,6 @@
 **You:**
 
+guid: 5d919030-f224-4107-8031-6d4d03980622
 create_time: 2023-03-30 21:35:04
 https://www.intel.com/content/www/us/en/developer/topic-technology/open/op-tee/overview.html
 
@@ -21,8 +22,68 @@ Overall, Open-TEE is a useful tool for developers who need to build secure and t
 
 **You:**
 
+guid: badc52f8-af4c-4b0d-884f-da8aa64f50da
 create_time: 2023-03-30 21:38:56
-Skip To Main Content Intel logo - Return to the home page PRODUCTS SUPPORT SOLUTIONS DEVELOPERS PARTNERS Sign In USA (ENGLISH) Search < Search Intel.com Developers Topics & Technologies Open Ecosystem Projects OP-TEE* for Intel® Architecture OP-TEE* for Intel® Architecture Overview	Solution: Two-Virtual Machines (VM) Overview This open source trusted execution environment implementation is originally based on Arm TrustZone* and maintained by Linaro*.  OP-TEE* for Intel® Architecture is the hardware virtualization-based OP-TEE solution for x86 systems from Intel. It has a fully compatible design and maximum reuse of OP-TEE. It's a full environment including an operating system, services, and APIs that consist of the following:  Operating system and kernel that: Supports virtual address space isolation and privilege isolation Works in event-driven model by request from the Rich Execution Environment (REE) Drivers for a Linux* kernel Libraries for client and trusted applications Hypervisor that uses Intel® Kernel Guard Technology (Intel® KGT), which Intel open sourced in 2015. Intel KGT Solution: Two-Virtual Machines (VM)  Original equipment manufacturers (OEM) can develop their own rich operating system client applications and corresponding OP-TEE for Intel Architecture applications and services with the following setup:   One VM runs the OP-TEE operating system and trusted applications. The other VM runs a rich operating system. Trusted applications are isolated with Intel® Virtualization Technology (Intel® VT) for IA-32, Intel® 64 and Intel® Architecture (Intel® VT-x). An x86 OP-TEE driver and virtual machine monitor (VMM) from Intel. A hypervisor (like Intel KGT) creates the two VMs for the rich and OP-TEE operating systems.        Report an Issue  Contact Us            a comparison of a rich execution environment to an op tee execution environment structures Figure 1. Stack of OP-TEE for Intel architecture  open at intel logo Explore the world of Intel’s open platform projects, contributions, community initiatives, and more at open.intel.com.    Company Overview Contact Intel Newsroom Investors Careers Corporate Responsibility Diversity & Inclusion Public Policy © Intel Corporation Terms of Use *Trademarks Cookies Privacy Supply Chain Transparency Site Map  Recycling Intel technologies may require enabled hardware, software or service activation. // No product or component can be absolutely secure. // Your costs and results may vary. // Performance varies by use, configuration and other factors. // See our complete legal Notices and Disclaimers. // Intel is committed to respecting human rights and avoiding complicity in human rights abuses. See Intel’s Global Human Rights Principles. Intel’s products and software are intended only to be used in applications that do not cause or contribute to a violation of an internationally recognized human right.  Intel Footer Logo
+Skip To Main Content
+Intel logo - Return to the home page
+PRODUCTS
+SUPPORT
+SOLUTIONS
+DEVELOPERS
+PARTNERS
+Sign In USA (ENGLISH)
+Search
+<
+Search Intel.com
+Developers
+Topics & Technologies
+Open Ecosystem
+Projects
+OP-TEE* for Intel® Architecture
+OP-TEE* for Intel® Architecture
+Overview	Solution: Two-Virtual Machines (VM)
+Overview
+This open source trusted execution environment implementation is originally based on Arm TrustZone* and maintained by Linaro*.
+
+OP-TEE* for Intel® Architecture is the hardware virtualization-based OP-TEE solution for x86 systems from Intel. It has a fully compatible design and maximum reuse of OP-TEE. It's a full environment including an operating system, services, and APIs that consist of the following:
+
+Operating system and kernel that:
+Supports virtual address space isolation and privilege isolation
+Works in event-driven model by request from the Rich Execution Environment (REE)
+Drivers for a Linux* kernel
+Libraries for client and trusted applications
+Hypervisor that uses Intel® Kernel Guard Technology (Intel® KGT), which Intel open sourced in 2015.
+Intel KGT
+Solution: Two-Virtual Machines (VM)
+
+Original equipment manufacturers (OEM) can develop their own rich operating system client applications and corresponding OP-TEE for Intel Architecture applications and services with the following setup:
+ 
+One VM runs the OP-TEE operating system and trusted applications. The other VM runs a rich operating system.
+Trusted applications are isolated with Intel® Virtualization Technology (Intel® VT) for IA-32, Intel® 64 and Intel® Architecture (Intel® VT-x).
+An x86 OP-TEE driver and virtual machine monitor (VMM) from Intel.
+A hypervisor (like Intel KGT) creates the two VMs for the rich and OP-TEE operating systems.
+ 
+
+  
+
+Report an Issue
+
+Contact Us
+
+        
+
+a comparison of a rich execution environment to an op tee execution environment structures
+Figure 1. Stack of OP-TEE for Intel architecture
+
+open at intel logo
+Explore the world of Intel’s open platform projects, contributions, community initiatives, and more at open.intel.com.
+ 
+
+Company Overview Contact Intel Newsroom Investors Careers Corporate Responsibility Diversity & Inclusion Public Policy
+© Intel Corporation Terms of Use *Trademarks Cookies Privacy Supply Chain Transparency Site Map  Recycling
+Intel technologies may require enabled hardware, software or service activation. // No product or component can be absolutely secure. // Your costs and results may vary. // Performance varies by use, configuration and other factors. // See our complete legal Notices and Disclaimers. // Intel is committed to respecting human rights and avoiding complicity in human rights abuses. See Intel’s Global Human Rights Principles. Intel’s products and software are intended only to be used in applications that do not cause or contribute to a violation of an internationally recognized human right.
+
+Intel Footer Logo
 
 * * *
 
@@ -34,8 +95,40 @@ This is the same content that I provided a response to in my previous message. I
 
 **You:**
 
+guid: 1201c934-cd2a-48b9-a960-4bcf283a67b5
 create_time: 2023-03-30 21:39:13
-Overview This open source trusted execution environment implementation is originally based on Arm TrustZone* and maintained by Linaro*.  OP-TEE* for Intel® Architecture is the hardware virtualization-based OP-TEE solution for x86 systems from Intel. It has a fully compatible design and maximum reuse of OP-TEE. It's a full environment including an operating system, services, and APIs that consist of the following:  Operating system and kernel that: Supports virtual address space isolation and privilege isolation Works in event-driven model by request from the Rich Execution Environment (REE) Drivers for a Linux* kernel Libraries for client and trusted applications Hypervisor that uses Intel® Kernel Guard Technology (Intel® KGT), which Intel open sourced in 2015. Intel KGT Solution: Two-Virtual Machines (VM)  Original equipment manufacturers (OEM) can develop their own rich operating system client applications and corresponding OP-TEE for Intel Architecture applications and services with the following setup:   One VM runs the OP-TEE operating system and trusted applications. The other VM runs a rich operating system. Trusted applications are isolated with Intel® Virtualization Technology (Intel® VT) for IA-32, Intel® 64 and Intel® Architecture (Intel® VT-x). An x86 OP-TEE driver and virtual machine monitor (VMM) from Intel. A hypervisor (like Intel KGT) creates the two VMs for the rich and OP-TEE operating systems.        Report an Issue  Contact Us            a comparison of a rich execution environment to an op tee execution environment structures Figure 1. Stack of OP-TEE for Intel architecture
+Overview
+This open source trusted execution environment implementation is originally based on Arm TrustZone* and maintained by Linaro*.
+
+OP-TEE* for Intel® Architecture is the hardware virtualization-based OP-TEE solution for x86 systems from Intel. It has a fully compatible design and maximum reuse of OP-TEE. It's a full environment including an operating system, services, and APIs that consist of the following:
+
+Operating system and kernel that:
+Supports virtual address space isolation and privilege isolation
+Works in event-driven model by request from the Rich Execution Environment (REE)
+Drivers for a Linux* kernel
+Libraries for client and trusted applications
+Hypervisor that uses Intel® Kernel Guard Technology (Intel® KGT), which Intel open sourced in 2015.
+Intel KGT
+Solution: Two-Virtual Machines (VM)
+
+Original equipment manufacturers (OEM) can develop their own rich operating system client applications and corresponding OP-TEE for Intel Architecture applications and services with the following setup:
+ 
+One VM runs the OP-TEE operating system and trusted applications. The other VM runs a rich operating system.
+Trusted applications are isolated with Intel® Virtualization Technology (Intel® VT) for IA-32, Intel® 64 and Intel® Architecture (Intel® VT-x).
+An x86 OP-TEE driver and virtual machine monitor (VMM) from Intel.
+A hypervisor (like Intel KGT) creates the two VMs for the rich and OP-TEE operating systems.
+ 
+
+  
+
+Report an Issue
+
+Contact Us
+
+        
+
+a comparison of a rich execution environment to an op tee execution environment structures
+Figure 1. Stack of OP-TEE for Intel architecture
 
 * * *
 
@@ -53,6 +146,7 @@ Overall, OP-TEE for Intel Architecture provides a secure and isolated environmen
 
 **You:**
 
+guid: 9e2b03ef-b921-49ff-96d7-af3495d25506
 create_time: 2023-03-30 21:39:48
 What is Intel KGT?
 
@@ -72,6 +166,7 @@ Overall, Intel KGT is a useful tool for developers who need to build secure and 
 
 **You:**
 
+guid: 6c98355b-2334-4cdd-8932-c85a2253abd0
 create_time: 2023-03-30 21:41:03
 What are difference and same between Intel KGT and Intel SGX? Please summarize them in a table?
 
@@ -100,6 +195,7 @@ While Intel KGT and Intel SGX both provide hardware-assisted security features, 
 
 **You:**
 
+guid: 889f1c77-5810-416a-aaa0-6e692343b416
 create_time: 2023-03-30 21:41:59
 Is Intel KGT compatible to TEE?
 
@@ -117,6 +213,7 @@ Overall, Intel KGT is a useful tool for developers who need to build secure and 
 
 **You:**
 
+guid: 84544645-f7e3-4da4-8080-914dedb98c2f
 create_time: 2023-03-30 21:42:39
 Intel KGT and Intel SGX. Which one is better?
 
@@ -136,6 +233,7 @@ Ultimately, the choice between Intel KGT and Intel SGX depends on the specific u
 
 **You:**
 
+guid: ecf04027-0ada-4cbc-af39-2023e98387f6
 create_time: 2023-03-30 21:43:53
 Be data in memory enclaves must encrypted in Intel SGX?
 
@@ -155,6 +253,7 @@ Overall, encryption is a critical component of SGX's security features and is es
 
 **You:**
 
+guid: 6cd27228-0243-4ce3-a2e4-a72a2e2726e1
 create_time: 2023-03-30 21:46:15
 How do I attack Intel SGX?
 
@@ -178,6 +277,7 @@ It is worth noting that Intel is continually improving SGX and addressing potent
 
 **You:**
 
+guid: 479bbf91-2df3-4ea9-bc4a-20a46738bc35
 create_time: 2023-03-30 21:47:37
 How are data encrypted in memory enclave in Intel SGX?
 
@@ -199,6 +299,7 @@ Overall, the combination of hardware and software encryption mechanisms, along w
 
 **You:**
 
+guid: cff156db-5cf2-419b-ac29-46e12cd587fd
 create_time: 2023-03-30 21:49:30
 What are isolation methods of Intel KGT and Intel SGX?
 
@@ -218,6 +319,7 @@ Overall, both Intel KGT and Intel SGX provide effective isolation mechanisms, bu
 
 **You:**
 
+guid: b4ec709d-3b77-4588-9db8-4c4fbc594628
 create_time: 2023-03-30 21:50:32
 Can Intel KGT host Intel SGX?
 
@@ -235,6 +337,7 @@ However, it is worth noting that hosting SGX within a VM can impact its performa
 
 **You:**
 
+guid: 495255af-5a0c-44fa-b67e-184d276e9f32
 create_time: 2023-03-30 21:50:57
 Can Intel SGX host Intel KGT?
 
@@ -254,6 +357,7 @@ Overall, SGX and KGT serve different purposes and are used in different contexts
 
 **You:**
 
+guid: 86ef6a02-2d82-433a-a6b8-907cbd5478eb
 create_time: 2023-03-30 21:52:31
 Which isolation method is better?
 
@@ -273,6 +377,7 @@ Overall, the choice between KGT and SGX depends on the specific use case and the
 
 **You:**
 
+guid: 2375bf3b-3b8f-47bd-8cdc-7f6d889cf927
 create_time: 2023-03-31 09:06:40
 Which isolation method is safe?
 

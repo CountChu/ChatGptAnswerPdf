@@ -1,0 +1,1421 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    @font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    word-wrap: break-word;
+}
+
+.markdown-body .octicon-link:before {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: '\f05c';
+  vertical-align: middle;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+    </style>
+    <title>2023-04-01</title>    
+  </head>
+  <body>
+    <article class="markdown-body">
+        <!-- Markdown-generated HTML content here -->
+        <h1>2023-04-01</h1>
+<p>Created: 2023-04-19 22:35:20</p>
+<h1>Questions</h1>
+<ul>
+<li>OP-TEE @ OP-TEE.0327.md<ul>
+<li><code>[10:50]</code> Does OP-TEE support ARMv7 and ARMv8?</li>
+</ul>
+</li>
+<li>Boot @ TrustZone.0329.md<ul>
+<li><code>[15:46]</code> What is ATF?</li>
+</ul>
+</li>
+<li>Basic Concepts @ TEE.0328.md<ul>
+<li><code>[15:48]</code> Is TEE a software?</li>
+<li><code>[23:45]</code> Does GlobalPlatform contains Chinese Cryptographic Standard?</li>
+</ul>
+</li>
+<li>Development @ OP-TEE.0327.md<ul>
+<li><code>[19:29]</code> Does OP-TEE have a shell?</li>
+</ul>
+</li>
+<li>Secure Storage @ OP-TEE.0327.md<ul>
+<li><code>[19:30]</code> Does OP-TEE support file system?</li>
+</ul>
+</li>
+<li>Static TA and Dynamic TA @ OP-TEE.0327.md<ul>
+<li><code>[21:16]</code> Can I create a TA at run-time?</li>
+<li><code>[21:23]</code> But what is TEECI_LoadSecureModule()</li>
+<li><code>[23:20]</code> Does TEE define Static TA and Dynamic TA?</li>
+</ul>
+</li>
+<li>Memory @ TrustZone.0329.md<ul>
+<li><code>[21:58]</code> What is MMU?</li>
+<li><code>[22:01]</code> What is TLB?</li>
+</ul>
+</li>
+<li>CA &amp; TA @ TEE.0328.md<ul>
+<li><code>[23:16]</code> What are kinds of TA?</li>
+</ul>
+</li>
+<li>CPU @ TrustZone.0329.md<ul>
+<li><code>[23:31]</code> What is SMP?</li>
+<li><code>[23:41]</code> What are difference between primary and seconday CPU cores?</li>
+<li><code>[23:42]</code> Please summarize the two types of CPU cores as a table.</li>
+</ul>
+</li>
+<li>Boot @ OP-TEE.0327.md<ul>
+<li><code>[23:36]</code> Why does OP-TEE&rsquo;s reset function have two branches reset_primary and reset_secondary?</li>
+</ul>
+</li>
+<li>Signature @ OP-TEE.0327.md<ul>
+<li><code>[23:57]</code> Does OP-TEE support to verify a signature of a TA in X.509 certificate?</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1>Chats</h1>
+<ul>
+<li>OP-TEE.0327.md<ul>
+<li><code>[21:22]</code> Which API do I use to create TA at run-time?</li>
+<li><code>[23:18]</code> What are Static TA and Dynamic TA?</li>
+<li><code>[23:19]</code> Please summarize them in a table.</li>
+<li><code>[23:39]</code> What are difference between primary and seconday CPU cores?</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1>Q &amp; A</h1>
+<h2>OP-TEE @ OP-TEE.0327.md</h2>
+<p><strong>Question:</strong> <code>[10:50]</code> Does OP-TEE support ARMv7 and ARMv8?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, OP-TEE supports both ARMv7 and ARMv8 architectures. OP-TEE is designed to work with Arm TrustZone technology, which is available on both ARMv7 and ARMv8-based processors. Arm TrustZone provides hardware-based isolation between the normal world and the secure world, allowing OP-TEE to implement a Trusted Execution Environment (TEE) that can run trusted applications securely.</p>
+<p>While ARMv7 and ARMv8 have some differences in terms of instruction sets and features, OP-TEE is compatible with both architectures and can be used to build secure systems on devices using either ARMv7 or ARMv8 processors.</p>
+<hr />
+<h2>Boot @ TrustZone.0329.md</h2>
+<p><strong>Question:</strong> <code>[15:46]</code> What is ATF?</p>
+<p><strong>Answer:</strong></p>
+<p>ATF stands for ARM Trusted Firmware, which is an open-source project that provides a reference implementation of secure software for ARMv8-A-based platforms. The ARM Trusted Firmware provides a set of software components that are required to implement security features on ARMv8-A processors, such as those that support ARM TrustZone technology.</p>
+<p>The main components of ARM Trusted Firmware include:</p>
+<ol>
+<li>
+<p>BL1 (Boot Loader 1): The initial boot loader responsible for setting up a secure execution environment and loading the next stage of the boot process, usually BL2 or BL31.</p>
+</li>
+<li>
+<p>BL2 (Boot Loader 2): Responsible for loading and authenticating the remaining firmware images, such as BL31, BL32, and BL33. It typically performs additional platform-specific initialization and sets up memory partitioning.</p>
+</li>
+<li>
+<p>BL31 (EL3 Runtime Software): The runtime firmware that runs at Exception Level 3 (EL3) and provides services for managing the system power state, system resets, and the handling of SMC (Secure Monitor Call) between the secure and non-secure worlds.</p>
+</li>
+<li>
+<p>BL32 (Secure-EL1 Payload): Optional firmware that provides services to the secure world, such as a Secure Partition Manager (SPM) or a Trusted Execution Environment (TEE) like OP-TEE.</p>
+</li>
+<li>
+<p>BL33 (Non-secure world bootloader): The bootloader for the non-secure world, typically a bootloader like U-Boot or an operating system like Linux.</p>
+</li>
+</ol>
+<p>The ARM Trusted Firmware provides a foundation for developing secure software on ARM-based platforms and serves as a reference implementation for platform vendors and developers to build upon or customize for their specific needs.</p>
+<hr />
+<h2>Basic Concepts @ TEE.0328.md</h2>
+<p><strong>Question:</strong> <code>[15:48]</code> Is TEE a software?</p>
+<p><strong>Answer:</strong></p>
+<p>A Trusted Execution Environment (TEE) is not just a software; it is a combination of hardware, software, and firmware components that work together to provide a secure and isolated environment for executing sensitive operations. The TEE aims to protect sensitive data and code from unauthorized access, tampering, or leakage, even if the main operating system is compromised.</p>
+<p>The main components of a TEE include:</p>
+<ol>
+<li>
+<p><strong>Hardware</strong>: The hardware provides the necessary features to create an isolated environment that is separate from the main processor or the &ldquo;Normal World.&rdquo; This can include dedicated CPU modes, memory protection mechanisms, and secure storage. Examples of hardware-based TEE implementations are ARM TrustZone and Intel Software Guard Extensions (SGX).</p>
+</li>
+<li>
+<p><strong>Software</strong>: The TEE software includes a secure operating system (often called a &ldquo;Trusted OS&rdquo; or &ldquo;Secure OS&rdquo;) and a set of APIs that enable developers to create and interact with Trusted Applications (TAs). The software may also include additional security components, such as secure boot, cryptographic libraries, and attestation mechanisms. Examples of TEE software include OP-TEE for ARM TrustZone and Intel SGX SDK.</p>
+</li>
+<li>
+<p><strong>Firmware</strong>: Firmware components can also play a role in the TEE by providing low-level support for the hardware and software components. Firmware can be involved in the secure boot process, managing the lifecycle of the TEE, or providing cryptographic services.</p>
+</li>
+</ol>
+<p>In summary, a TEE is a combination of hardware, software, and firmware components designed to provide a secure environment for executing sensitive operations. It is not merely a software solution but an integrated system that leverages various layers of the computing stack to ensure security and isolation.</p>
+<hr />
+<p><strong>Question:</strong> <code>[23:45]</code> Does GlobalPlatform contains Chinese Cryptographic Standard?</p>
+<p><strong>Answer:</strong></p>
+<p>GlobalPlatform does not specifically include Chinese Cryptographic Standards as part of its core specifications. GlobalPlatform provides a standardized framework for implementing secure elements, TEEs (Trusted Execution Environments), and SE (Secure Element) management. It focuses on defining the APIs, protocols, and security requirements for these environments, but it does not mandate specific cryptographic algorithms.</p>
+<p>However, GlobalPlatform&rsquo;s specifications are designed to be flexible and extensible, allowing individual TEE or secure element implementations to support various cryptographic algorithms, including Chinese Cryptographic Standards, as required by the specific use case or market requirements.</p>
+<p>For example, a TEE implementation targeting the Chinese market may choose to integrate Chinese Cryptographic Standards such as:</p>
+<ol>
+<li>SM2: An elliptic curve cryptography (ECC) standard for digital signatures, key exchange, and public key encryption.</li>
+<li>SM3: A cryptographic hash function with a 256-bit digest.</li>
+<li>SM4: A symmetric encryption algorithm with a 128-bit block size and a 128-bit key size.</li>
+</ol>
+<p>These algorithms can be integrated into the TEE or secure element implementation, either as built-in functions or through third-party cryptographic libraries. As long as the implementation adheres to GlobalPlatform&rsquo;s specifications regarding the APIs, protocols, and security requirements, it can support a wide range of cryptographic algorithms, including Chinese Cryptographic Standards.</p>
+<hr />
+<h2>Development @ OP-TEE.0327.md</h2>
+<p><strong>Question:</strong> <code>[19:29]</code> Does OP-TEE have a shell?</p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE does not have a traditional shell like those found in Unix-like operating systems. However, OP-TEE provides a feature called the &ldquo;Secure Shell&rdquo; (S-Shell), which allows developers and users to interact with the secure world using a command-line interface. The S-Shell is primarily used for debugging purposes and is not intended for production use.</p>
+<p>The S-Shell can be accessed using a UART (Universal Asynchronous Receiver/Transmitter) connection to the device running OP-TEE. This connection allows you to view log messages, interact with the secure world, and execute basic commands to manage trusted applications, memory, and other secure resources.</p>
+<p>It is important to note that the S-Shell feature should be used carefully and only in controlled environments, as it could potentially expose sensitive information or allow unauthorized access to secure resources if misused.</p>
+<p>In summary, while OP-TEE does not have a traditional shell, it does provide an S-Shell feature for debugging purposes. This feature should be used with caution, as it can potentially expose sensitive information or allow unauthorized access to secure resources if not properly managed.</p>
+<hr />
+<h2>Secure Storage @ OP-TEE.0327.md</h2>
+<p><strong>Question:</strong> <code>[19:30]</code> Does OP-TEE support file system?</p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE itself does not provide a full-fledged file system like those found in traditional operating systems. However, it does offer secure storage functionality that allows trusted applications to store and manage persistent data securely. The secure storage feature in OP-TEE is designed to protect sensitive data from unauthorized access and tampering.</p>
+<p>The secure storage is implemented using a key-value store model, where each object (file) is associated with a unique identifier. Trusted applications can use the TEE Internal Core API to read, write, and delete objects in the secure storage. This API provides functions like <code>TEE_CreatePersistentObject</code>, <code>TEE_OpenPersistentObject</code>, <code>TEE_ReadObjectData</code>, <code>TEE_WriteObjectData</code>, and <code>TEE_CloseAndDeletePersistentObject</code>.</p>
+<p>Under the hood, the secure storage in OP-TEE uses encryption and authentication techniques to protect the stored data. The actual storage is typically located in the normal world file system, but the data is encrypted and protected in such a way that it can only be accessed and manipulated by the intended trusted applications in the secure world.</p>
+<p>In summary, OP-TEE does not have a traditional file system, but it does provide secure storage functionality for trusted applications to store and manage sensitive data securely.</p>
+<hr />
+<h2>Static TA and Dynamic TA @ OP-TEE.0327.md</h2>
+<p><strong>Question:</strong> <code>[21:16]</code> Can I create a TA at run-time?</p>
+<p><strong>Answer:</strong></p>
+<p>Creating a Trusted Application (TA) at runtime is not a typical use case for OP-TEE. TAs are usually developed, compiled, and signed offline before being deployed to the target device. In the normal process, TAs are loaded by the secure kernel (in the secure world) when requested by a client application (in the normal world).</p>
+<p>However, if you have a specific use case that requires creating a TA at runtime, you could theoretically implement a custom mechanism for loading and running code in the secure world dynamically. This would involve significant modifications to the OP-TEE framework and would need to be done with extreme caution to ensure security is maintained.</p>
+<p>Such a dynamic TA loading mechanism would likely require the following steps:</p>
+<ol>
+<li>Develop and compile the TA code in a suitable format that can be loaded into the secure world at runtime.</li>
+<li>Transfer the compiled TA code to the target device securely.</li>
+<li>Modify the secure kernel to support loading and executing the TA code dynamically, including verifying its authenticity and integrity.</li>
+<li>Implement proper access control and isolation mechanisms to ensure the newly loaded TA does not compromise the security of the existing TAs and the secure world.</li>
+</ol>
+<p>It is crucial to emphasize that implementing a runtime TA creation mechanism is a complex and potentially risky endeavor, and it may introduce security vulnerabilities if not done correctly. You should carefully consider the security implications and whether the benefits of such a feature outweigh the risks before attempting to implement it.</p>
+<hr />
+<p><strong>Question:</strong> <code>[21:23]</code> But what is TEECI_LoadSecureModule()</p>
+<p><strong>Answer:</strong></p>
+<p>My apologies for any confusion earlier. <code>TEECI_LoadSecureModule()</code> is not a part of the standard OP-TEE or GlobalPlatform TEE APIs. It seems to be a custom function name that might have been used in a specific implementation or context.</p>
+<p>It&rsquo;s important to reiterate that the standard OP-TEE and GlobalPlatform TEE APIs do not provide a built-in function for loading or creating Trusted Applications (TAs) at runtime. TAs are generally pre-built, signed, and deployed to the device as binaries. The secure kernel then loads the TA when requested by a client application.</p>
+<p>If you have encountered <code>TEECI_LoadSecureModule()</code> in some source code or documentation, it might be a custom function that has been implemented for a specific use case or project. To understand its purpose and how it works, you would need to refer to the documentation or source code of that particular implementation.</p>
+<hr />
+<p><strong>Question:</strong> <code>[23:20]</code> Does TEE define Static TA and Dynamic TA?</p>
+<p><strong>Answer:</strong></p>
+<p>The terms &ldquo;Static TA&rdquo; and &ldquo;Dynamic TA&rdquo; are specific to the OP-TEE implementation and are not part of the GlobalPlatform TEE (Trusted Execution Environment) specifications. The GlobalPlatform TEE specifications define the APIs and security requirements for trusted applications, but they do not dictate how TAs should be loaded, stored, or managed within a TEE implementation.</p>
+<p>The concepts of static and dynamic TAs are unique to the OP-TEE project and serve as a way to distinguish between different loading and linking mechanisms for trusted applications within the OP-TEE framework. Other TEE implementations might use different terminology or approaches to manage trusted applications.</p>
+<p>In summary, the terms &ldquo;Static TA&rdquo; and &ldquo;Dynamic TA&rdquo; are specific to OP-TEE and are not part of the GlobalPlatform TEE specifications.</p>
+<hr />
+<h2>Memory @ TrustZone.0329.md</h2>
+<p><strong>Question:</strong> <code>[21:58]</code> What is MMU?</p>
+<p><strong>Answer:</strong></p>
+<p>MMU stands for Memory Management Unit. It is a hardware component found in many computer systems, including those based on the ARM architecture. The primary function of the MMU is to manage the system&rsquo;s memory by translating virtual memory addresses to physical memory addresses, enabling memory protection, and controlling access permissions for different regions of memory.</p>
+<p>Key functions of an MMU include:</p>
+<ol>
+<li>
+<p>Virtual-to-physical address translation: MMUs use a system of page tables to translate virtual memory addresses, used by software, to physical memory addresses, which correspond to the actual location of data in the memory hardware. This allows software to access memory in a uniform and consistent manner, even when the actual memory layout is fragmented or changes dynamically.</p>
+</li>
+<li>
+<p>Memory protection: MMUs enable separation and isolation of different memory regions based on the access permissions set for each region. This helps prevent unauthorized access to memory and protects the system from bugs, crashes, or security vulnerabilities that could result from unintended memory access.</p>
+</li>
+<li>
+<p>Caching and cache management: MMUs often work closely with the CPU&rsquo;s cache to ensure efficient and consistent access to memory. By managing cache attributes and maintaining a consistent view of memory, MMUs help improve overall system performance.</p>
+</li>
+<li>
+<p>Supporting virtual memory: MMUs play a crucial role in implementing virtual memory, which allows multiple applications and processes to run simultaneously while maintaining the illusion that each has access to a large, contiguous block of memory. Virtual memory allows the system to use disk space as an extension of RAM, effectively increasing the available memory and enabling better multitasking and memory management.</p>
+</li>
+</ol>
+<p>Overall, the MMU is an essential component in modern computer systems that helps manage memory efficiently, enhances system performance, and provides a foundation for implementing advanced memory-related features such as virtual memory and memory protection.</p>
+<hr />
+<p><strong>Question:</strong> <code>[22:01]</code> What is TLB?</p>
+<p><strong>Answer:</strong></p>
+<p>TLB stands for Translation Lookaside Buffer. It is a specialized cache used by a computer&rsquo;s memory management unit (MMU) to speed up the translation of virtual memory addresses to physical memory addresses. The TLB stores a small number of recently-used virtual-to-physical address mappings, allowing the MMU to quickly look up the physical address for a given virtual address without having to consult the full page table stored in main memory.</p>
+<p>Since accessing the main memory is generally slower than accessing the cache, the TLB helps improve the overall performance of the system. When the MMU receives a virtual address to translate, it first checks the TLB to see if the required mapping is already present. If the mapping is found in the TLB (a TLB hit), the MMU can quickly obtain the corresponding physical address. If the mapping is not in the TLB (a TLB miss), the MMU must access the page table in main memory, which takes more time.</p>
+<p>To maintain the efficiency of the TLB, the system uses various algorithms to decide which mappings should be stored in the TLB and which ones should be evicted when the TLB becomes full. These algorithms aim to optimize the TLB hit rate by keeping the most frequently or recently used mappings in the buffer.</p>
+<p>In summary, the TLB is a critical hardware component that works with the MMU to accelerate virtual-to-physical address translation, thus improving overall system performance and reducing memory access latency.</p>
+<hr />
+<h2>CA &amp; TA @ TEE.0328.md</h2>
+<p><strong>Question:</strong> <code>[23:16]</code> What are kinds of TA?</p>
+<p><strong>Answer:</strong></p>
+<p>Trusted Applications (TAs) can be broadly classified into two main categories based on their purpose and level of trust:</p>
+<ol>
+<li>
+<p><strong>Rich Trusted Applications (RTAs)</strong>: Rich Trusted Applications are TAs that provide more complex services and often interact with external components, such as peripherals, network services, or other TAs. RTAs are typically used for high-level security services like data encryption, digital rights management (DRM), secure payment processing, or secure authentication. These applications might run in a more feature-rich environment with support for a wider range of APIs, libraries, and services. RTAs generally have higher privileges and access to more resources than LTAs.</p>
+</li>
+<li>
+<p><strong>Lightweight Trusted Applications (LTAs)</strong>: Lightweight Trusted Applications are smaller, more focused TAs that provide specific security services. These applications usually have limited functionality and are designed for low-latency, low-power, or resource-constrained environments. LTAs typically have a smaller Trusted Computing Base (TCB), which reduces the attack surface and increases the security of the TA. Examples of LTAs include secure key storage, cryptographic operations, and basic device attestation.</p>
+</li>
+</ol>
+<p>Additionally, TAs can be classified based on their development model and level of trust:</p>
+<ol>
+<li>
+<p><strong>Vendor Trusted Applications</strong>: These are TAs developed by the TEE vendor or the device manufacturer. They are often pre-installed on the device and have the highest level of trust. Vendor TAs are typically responsible for managing the TEE, providing basic security services, or implementing device-specific features.</p>
+</li>
+<li>
+<p><strong>Third-Party Trusted Applications</strong>: These are TAs developed by third-party developers, such as independent software vendors (ISVs) or enterprise developers. Third-party TAs usually provide additional security services or features that are not covered by the vendor TAs. The trust level of third-party TAs depends on the authentication and attestation mechanisms used by the TEE and the device.</p>
+</li>
+</ol>
+<p>In summary, TAs can be classified based on their purpose, complexity, level of trust, and development model. The specific types of TAs supported by a TEE may vary depending on the TEE implementation, the underlying hardware, and the security requirements of the device.</p>
+<hr />
+<h2>CPU @ TrustZone.0329.md</h2>
+<p><strong>Question:</strong> <code>[23:31]</code> What is SMP?</p>
+<p><strong>Answer:</strong></p>
+<p>SMP stands for Symmetric Multiprocessing. It is an architecture used in multi-core and multi-processor computer systems where two or more identical processors or processor cores are connected to a single shared memory and are controlled by a single operating system. In an SMP system, each processor or core can execute different tasks independently, but they share the same memory resources and I/O devices.</p>
+<p>SMP allows for more efficient processing and better utilization of system resources, as multiple processors or cores can work simultaneously on different tasks, improving overall system performance. This architecture also provides better fault tolerance and load balancing, as tasks can be distributed among the available processors, reducing the workload on any single processor and minimizing the impact of a processor failure on the overall system.</p>
+<p>In an SMP system, the operating system and applications must be designed to take advantage of multiple processors, using techniques such as multithreading and parallelism to distribute tasks among the available processors. Modern operating systems, such as Linux, Windows, and macOS, are capable of managing SMP systems and can automatically distribute workloads across multiple processors or cores.</p>
+<hr />
+<p><strong>Question:</strong> <code>[23:41]</code> What are difference between primary and seconday CPU cores?</p>
+<p><strong>Answer:</strong></p>
+<p>In the context of multi-core or multi-processor systems, primary and secondary CPU cores generally refer to the roles these cores play in the system, with the primary core being responsible for the initialization process and secondary cores assisting in processing tasks once the system is up and running.</p>
+<p>Here are the main differences between primary and secondary CPU cores:</p>
+<ol>
+<li>
+<p>Initialization and Boot-up: The primary CPU core (sometimes called the boot core or master core) is responsible for initializing the system during boot-up. It executes the initial instructions, loads the firmware or BIOS, and configures the hardware components. Once the system is initialized, the primary core starts the operating system and enables other secondary cores.</p>
+</li>
+<li>
+<p>Secondary Core Activation: Secondary cores (also called slave cores or worker cores) are enabled by the primary core after the system initialization process is complete. They start to execute tasks assigned by the primary core or the operating system.</p>
+</li>
+<li>
+<p>Task Management: The primary core typically manages tasks and distributes them among secondary cores. However, modern operating systems can manage tasks independently and distribute them across all available cores (including the primary core) for efficient processing.</p>
+</li>
+<li>
+<p>Power Management: In some systems, the primary core may have more advanced power management capabilities compared to secondary cores, enabling it to control the power states of secondary cores, such as turning them off during periods of low workload to save power.</p>
+</li>
+</ol>
+<p>It is essential to note that these differences apply primarily to systems where a distinction is made between primary and secondary cores. In modern symmetric multiprocessing (SMP) systems, all cores are often treated as equals once the system is up and running, and the operating system manages tasks and power states across all cores without any significant difference in their roles.</p>
+<hr />
+<p><strong>Question:</strong> <code>[23:42]</code> Please summarize the two types of CPU cores as a table.</p>
+<p><strong>Answer:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Primary Core (Boot/Master Core)</th>
+<th>Secondary Core (Slave/Worker Core)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initialization</td>
+<td>Responsible for system initialization during boot-up</td>
+<td>Activated by the primary core after system initialization</td>
+</tr>
+<tr>
+<td>Task Management</td>
+<td>Manages and distributes tasks among secondary cores</td>
+<td>Executes tasks assigned by the primary core or OS</td>
+</tr>
+<tr>
+<td>Power Management</td>
+<td>May have advanced power management capabilities</td>
+<td>Power states controlled by the primary core or OS</td>
+</tr>
+<tr>
+<td>Core Activation</td>
+<td>Always active during boot-up and system operation</td>
+<td>Activated and deactivated as needed for workload demands</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that in modern symmetric multiprocessing (SMP) systems, these distinctions become less relevant, as all cores are treated as equals once the system is up and running, and the operating system manages tasks and power states across all cores without any significant difference in their roles.</p>
+<hr />
+<h2>Boot @ OP-TEE.0327.md</h2>
+<p><strong>Question:</strong> <code>[23:36]</code> Why does OP-TEE&rsquo;s reset function have two branches reset_primary and reset_secondary?</p>
+<p><strong>Answer:</strong></p>
+<p>In OP-TEE, the reset function has two branches, <code>reset_primary</code> and <code>reset_secondary</code>, to handle the initialization process for multi-core systems. These branches are responsible for initializing the primary and secondary CPU cores, respectively, within the OP-TEE secure world.</p>
+<ol>
+<li>
+<p><code>reset_primary</code>: This branch handles the initialization of the primary CPU core (core 0). The primary core is responsible for setting up the secure environment, initializing the secure kernel, and starting the other secondary cores. The primary core performs tasks such as configuring the MMU (Memory Management Unit), initializing the secure memory, setting up the interrupt controller, and more. Once the primary core has completed its initialization tasks, it starts executing the secure kernel.</p>
+</li>
+<li>
+<p><code>reset_secondary</code>: This branch handles the initialization of secondary CPU cores (core 1, core 2, etc.). The secondary cores also need to set up their own environment, such as configuring their local MMU and enabling their local interrupts, before they can start executing the secure kernel. The primary core signals the secondary cores to begin their initialization process after it has completed its own initialization.</p>
+</li>
+</ol>
+<p>The distinction between <code>reset_primary</code> and <code>reset_secondary</code> branches ensures that the primary core properly initializes the secure environment before the secondary cores start executing the secure kernel. This separation helps maintain a correct and secure boot process in multi-core systems, where multiple CPU cores need to work together within the secure world.</p>
+<p>In summary, OP-TEE&rsquo;s reset function has two branches, <code>reset_primary</code> and <code>reset_secondary</code>, to handle the initialization process for multi-core systems, ensuring that the primary core sets up the secure environment correctly before the secondary cores start executing the secure kernel.</p>
+<hr />
+<h2>Signature @ OP-TEE.0327.md</h2>
+<p><strong>Question:</strong> <code>[23:57]</code> Does OP-TEE support to verify a signature of a TA in X.509 certificate?</p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE supports verifying the signature of a Trusted Application (TA) using X.509 certificates. This verification process is essential to ensure the authenticity and integrity of the TA before loading it into the secure world.</p>
+<p>By default, OP-TEE uses a custom file format for TA binaries, which includes a signature generated with a private key. The signature is verified using the corresponding public key during the TA loading process. This public key is typically embedded into the OP-TEE core during the build process.</p>
+<p>If you want to use X.509 certificates for verifying TA signatures, you can follow these steps:</p>
+<ol>
+<li>Build the OP-TEE project with the <code>CFG_TA_ASN1_DER_FORMAT</code> configuration option enabled. This option tells OP-TEE to expect TAs to be signed with X.509 certificates instead of the default custom format.</li>
+</ol>
+<div class="codehilite"><pre><span></span><code>make CFG_TA_ASN1_DER_FORMAT=y
+</code></pre></div>
+
+<ol start="2">
+<li>
+<p>Sign your TA using an X.509 certificate. You can use tools like OpenSSL to create a certificate and sign the TA binary.</p>
+</li>
+<li>
+<p>Embed the root certificate (or a certificate chain) used to sign the TA into the OP-TEE core during the build process. This certificate is used to verify the TA signature at runtime.</p>
+</li>
+<li>
+<p>When loading a TA, OP-TEE will use the embedded certificate(s) to verify the TA&rsquo;s signature in the X.509 certificate format.</p>
+</li>
+</ol>
+<p>Please note that you&rsquo;ll need to modify your build process and potentially some OP-TEE components to support this feature. Make sure to consult the OP-TEE documentation and source code for more information on how to enable and use X.509 certificates for TA signature verification.</p>
+<hr />
+<h2>OP-TEE.0327.md</h2>
+<p><strong>Question:</strong> <code>[21:22]</code> Which API do I use to create TA at run-time?</p>
+<p><strong>Answer:</strong></p>
+<p>As mentioned in the previous response, creating a Trusted Application (TA) at runtime is not a typical use case for OP-TEE, and there is no built-in API provided for this purpose. TAs are usually pre-built, signed, and deployed to the device before being loaded by the secure kernel upon request from a client application.</p>
+<p>Implementing a custom mechanism for creating TAs at runtime would involve significant modifications to the OP-TEE framework, and there is no API designed specifically for this task.</p>
+<p>However, if you still want to explore the possibility of creating a TA at runtime, you would need to:</p>
+<ol>
+<li>Develop your own custom mechanism for dynamically compiling and signing TAs at runtime.</li>
+<li>Extend the existing OP-TEE framework to support loading and executing the dynamically created TA code in the secure world. This would likely involve modifications to the secure kernel and its interaction with the normal world components.</li>
+</ol>
+<p>It is important to emphasize that implementing a runtime TA creation mechanism is a complex and potentially risky endeavor, which may introduce security vulnerabilities if not done correctly. Be sure to carefully consider the security implications and whether the benefits of such a feature outweigh the risks before attempting to implement it.</p>
+<hr />
+<p><strong>Question:</strong> <code>[23:18]</code> What are Static TA and Dynamic TA?</p>
+<p><strong>Answer:</strong></p>
+<p>In OP-TEE, Trusted Applications (TAs) can be categorized as either static TAs or dynamic TAs based on how they are loaded and linked within the secure world.</p>
+<ol>
+<li>Static TAs:
+Static TAs are directly linked to the OP-TEE core (secure kernel) during the build process. These TAs are embedded in the OP-TEE binary and become a part of the secure kernel. As a result, they are loaded into memory when the secure kernel starts, and they remain resident in memory throughout the lifetime of the secure kernel.</li>
+</ol>
+<p>Advantages of static TAs:
+- Faster loading time, as they are already in memory.
+- No need for separate signing and verification, as they are part of the secure kernel binary, which is already signed and verified during the boot process.</p>
+<p>Disadvantages of static TAs:
+- Limited flexibility, as adding or updating a static TA requires rebuilding the OP-TEE core binary and potentially updating the boot process.
+- May consume more memory, as all static TAs are loaded at once and remain resident in memory.</p>
+<ol start="2">
+<li>Dynamic TAs:
+Dynamic TAs are standalone binaries that are loaded by the secure kernel at runtime when requested by a client application. These TAs are not linked to the OP-TEE core and are stored separately on the device. They are only loaded into memory when needed and can be unloaded when not in use.</li>
+</ol>
+<p>Advantages of dynamic TAs:
+- Greater flexibility, as TAs can be added, removed, or updated without modifying the OP-TEE core binary.
+- Potentially better memory usage, as TAs are loaded on-demand and can be unloaded when not in use.</p>
+<p>Disadvantages of dynamic TAs:
+- Slower loading time, as the TA binary needs to be loaded from storage and verified before execution.
+- Requires separate signing and verification for each TA to ensure its authenticity and integrity.</p>
+<p>In general, dynamic TAs are the more common and recommended approach for most use cases, as they provide greater flexibility and better memory management. However, static TAs can be useful in certain situations where the advantages they provide, such as faster loading time, are critical.</p>
+<hr />
+<p><strong>Question:</strong> <code>[23:19]</code> Please summarize them in a table.</p>
+<p><strong>Answer:</strong></p>
+<p>Here&rsquo;s a summary of static and dynamic Trusted Applications (TAs) in OP-TEE in a tabular format:</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Static TA</th>
+<th>Dynamic TA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Loading</td>
+<td>Directly linked to OP-TEE core during build process</td>
+<td>Loaded at runtime when requested by client</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>Embedded in the OP-TEE binary</td>
+<td>Standalone binaries stored separately on the device</td>
+</tr>
+<tr>
+<td>Memory Usage</td>
+<td>Loaded at startup and remain resident in memory</td>
+<td>Loaded on-demand and can be unloaded when not in use</td>
+</tr>
+<tr>
+<td>Flexibility</td>
+<td>Limited, requires OP-TEE core rebuild</td>
+<td>High, TAs can be added/updated without core rebuild</td>
+</tr>
+<tr>
+<td>Loading Time</td>
+<td>Faster, already in memory</td>
+<td>Slower, TA binary loaded and verified before execution</td>
+</tr>
+<tr>
+<td>Signing</td>
+<td>Part of the signed OP-TEE core binary</td>
+<td>Each TA is separately signed and verified</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that dynamic TAs are more common and recommended for most use cases due to their flexibility and better memory management, while static TAs might be helpful in certain situations where faster loading times are critical.</p>
+<hr />
+<p><strong>Question:</strong> <code>[23:39]</code> What are difference between primary and seconday CPU cores?</p>
+<p><strong>Answer:</strong></p>
+<p>The terms &ldquo;primary&rdquo; and &ldquo;secondary&rdquo; CPU cores refer to the roles and responsibilities assigned to different cores during the initialization and boot process in a multi-core system. The primary core (core 0) is responsible for executing the initial boot code and setting up the system environment, while secondary cores (core 1, core 2, etc.) wait for instructions from the primary core before starting their execution.</p>
+<p>The main differences between primary and secondary CPU cores are:</p>
+<ol>
+<li>
+<p>Boot process: The primary core is the first core to start executing the boot code, including initializing the hardware components and setting up the system environment. The secondary cores remain inactive during this initial phase, waiting for a signal from the primary core to begin their execution.</p>
+</li>
+<li>
+<p>Initialization responsibilities: The primary core is responsible for initializing the system&rsquo;s hardware components, such as memory controllers, clocks, and peripherals. This core also sets up the operating system and starts the scheduler. The secondary cores, on the other hand, only need to initialize their local environment, such as configuring their local MMU and enabling their local interrupts.</p>
+</li>
+<li>
+<p>Execution start: Once the primary core has completed its initialization tasks and started the operating system, it signals the secondary cores to begin their execution. The secondary cores then proceed to execute their assigned tasks or applications.</p>
+</li>
+<li>
+<p>Task management: In most systems, the primary core is responsible for managing tasks and processes across all the cores. However, once the system is up and running, the distinction between primary and secondary cores becomes less relevant, as all cores work together to execute tasks and applications.</p>
+</li>
+</ol>
+<p>In summary, the primary and secondary CPU cores have different roles during the initialization and boot process in a multi-core system. The primary core is responsible for executing the initial boot code and setting up the system environment, while secondary cores wait for instructions from the primary core before starting their execution. After the system has booted, the distinction between primary and secondary cores becomes less significant, as all cores collaborate to execute tasks and applications.</p>
+<hr />
+    </article>
+  </body>
+</html>

@@ -1,7 +1,40 @@
 **You:**
 
+guid: 70155183-fdbd-457f-8cbf-eab2ae77f8dd
 create_time: 2023-04-06 11:33:08
-Paper: vTZ: Virtualizing ARM TrustZone  Abstract ARM TrustZone, a security extension that provides a secure world, a trusted execution environment (TEE), to run security-sensitive code, has been widely adopted in mobile platforms. With the increasing momentum of ARM64 being adopted in server markets like cloud, it is likely to see TrustZone being adopted as a key pillar for cloud security. Unfortunately, TrustZone is not designed to be virtualizable as there is only one TEE provided by the hardware, which prevents it from being securely shared by multiple virtual machines (VMs). This paper conducts a study on variable approaches to virtualizing TrustZone in virtualized environments and then presents vTZ, a solution that securely provides each guest VM with a virtualized guest TEE using existing hardware. vTZ leverages the idea of separating functionality from protection by maintaining a secure co-running VM to serve as a guest TEE, while using the hardware TrustZone to enforce strong isolation among guest TEEs and the untrusted hypervisor. Specifically, vTZ uses a tiny monitor running within the physical TrustZone that securely interposes and virtualizes memory mapping and world switching. vTZ further leverages a few pieces of protected, self-contained code running in a Constrained Isolated Execution Environment (CIEE) to provide secure virtualization and isolation among multiple guest TEEs. We have implemented vTZ on Xen 4.8 on both ARMv7 and ARMv8 development boards. Evaluation using two common TEE-kernels (secure kernel running in TEE) such as seL4 1 and OP-TEE shows that vTZ provides strong security with small performance overhead.
+Paper: vTZ: Virtualizing ARM TrustZone
+
+Abstract
+ARM TrustZone, a security extension that provides a secure
+world, a trusted execution environment (TEE), to
+run security-sensitive code, has been widely adopted in
+mobile platforms. With the increasing momentum of
+ARM64 being adopted in server markets like cloud, it
+is likely to see TrustZone being adopted as a key pillar
+for cloud security. Unfortunately, TrustZone is not
+designed to be virtualizable as there is only one TEE
+provided by the hardware, which prevents it from being
+securely shared by multiple virtual machines (VMs).
+This paper conducts a study on variable approaches to
+virtualizing TrustZone in virtualized environments and
+then presents vTZ, a solution that securely provides each
+guest VM with a virtualized guest TEE using existing
+hardware. vTZ leverages the idea of separating functionality
+from protection by maintaining a secure co-running
+VM to serve as a guest TEE, while using the hardware
+TrustZone to enforce strong isolation among guest TEEs
+and the untrusted hypervisor. Specifically, vTZ uses a
+tiny monitor running within the physical TrustZone that
+securely interposes and virtualizes memory mapping and
+world switching. vTZ further leverages a few pieces of
+protected, self-contained code running in a Constrained
+Isolated Execution Environment (CIEE) to provide secure
+virtualization and isolation among multiple guest
+TEEs. We have implemented vTZ on Xen 4.8 on both
+ARMv7 and ARMv8 development boards. Evaluation
+using two common TEE-kernels (secure kernel running
+in TEE) such as seL4 1 and OP-TEE shows that vTZ provides
+strong security with small performance overhead.
 
 * * *
 
@@ -19,8 +52,33 @@ The authors implemented vTZ on Xen 4.8 on both ARMv7 and ARMv8 development board
 
 **You:**
 
+guid: 373bcafe-ee9b-432b-a483-707b3c0a9d9e
 create_time: 2023-04-06 11:34:22
-Paper: Cloud & Edge Trusted Virtualized Infrastructure Manager (VIM) - Security and Trust in OpenStack  Abstract The Fifth Generation (5G) mobile networks promise faster connectivity and futuristic applications and services. In order to meet the high expectations, 5G joins forces with virtualization technologies like Network Functions Virtualization (NFV) and adopts cloud-native solutions. At the same time, it relies on shifting the computation to the network edge for offloading computing power, local caching, minimized latency and flexibility in the deployment. However, new opportunities unlock new security challenges. Man-in-the-middle, denial-ofservice attacks and tampering are now becoming easier because of the scattered devices and their varying locations. Meanwhile, the dynamic nature of the cloud raises the need for on-time threats prevention. In this work, we propose a way to answer the new challenges by bringing trust into the virtualized edge infrastructure. We present our contributions to the development of security services for platform authentication and integrity, hosted inside a trusted execution environment (TEE). We also evaluate the performance overhead of our work and suggest future improvements. Index Terms—security, virtualization, cloud, edge computing, Trusted Execution Environment, TEE, OP-TEE, ARM Trust- Zone, VIM, Virtual Infrastructure Manager, OpenStack
+Paper: Cloud & Edge Trusted Virtualized Infrastructure Manager (VIM) - Security and Trust in OpenStack
+
+Abstract
+The Fifth Generation (5G) mobile networks promise
+faster connectivity and futuristic applications and services. In
+order to meet the high expectations, 5G joins forces with
+virtualization technologies like Network Functions Virtualization
+(NFV) and adopts cloud-native solutions. At the same time,
+it relies on shifting the computation to the network edge for
+offloading computing power, local caching, minimized latency
+and flexibility in the deployment. However, new opportunities
+unlock new security challenges. Man-in-the-middle, denial-ofservice
+attacks and tampering are now becoming easier because
+of the scattered devices and their varying locations. Meanwhile,
+the dynamic nature of the cloud raises the need for on-time
+threats prevention.
+In this work, we propose a way to answer the new challenges
+by bringing trust into the virtualized edge infrastructure. We
+present our contributions to the development of security services
+for platform authentication and integrity, hosted inside a trusted
+execution environment (TEE). We also evaluate the performance
+overhead of our work and suggest future improvements.
+Index Terms—security, virtualization, cloud, edge computing,
+Trusted Execution Environment, TEE, OP-TEE, ARM Trust-
+Zone, VIM, Virtual Infrastructure Manager, OpenStack
 
 * * *
 
@@ -38,6 +96,7 @@ The authors evaluate the performance overhead of their solution and suggest pote
 
 **You:**
 
+guid: 97d3d347-d998-48a0-9754-2686240f10ef
 create_time: 2023-04-06 11:35:08
 What is difference between two papers? Please also summarize it in a table.
 
@@ -63,6 +122,7 @@ The first paper presents vTZ, a solution for virtualizing ARM TrustZone, while t
 
 **You:**
 
+guid: e8d6d606-72d8-4a6c-87a8-3a4c68f63c40
 create_time: 2023-04-06 11:36:46
 What is same between two papers?
 
@@ -84,6 +144,7 @@ In summary, both papers share a common goal of enhancing security and use Truste
 
 **You:**
 
+guid: a77da7cc-8d55-4e24-a4b8-c2bb4a407ddd
 create_time: 2023-04-06 11:39:41
 What is difference of virtualization tech between two papers?
 
@@ -103,8 +164,47 @@ In summary, the first paper targets virtualizing ARM TrustZone to enable secure 
 
 **You:**
 
+guid: e9362caa-f06e-4f20-9152-61b0fe6ec93d
 create_time: 2023-04-06 16:33:51
-Title: Enabling Rack-scale Confidential Computing using Heterogeneous Trusted Execution Environment  Abstract With its huge real-world demands, large-scale confidential computing still cannot be supported by today’s Trusted Execution Environment (TEE), due to the lack of scalable and effective protection of high-throughput accelerators like GPUs, FPGAs, and TPUs etc. Although attempts have been made recently to extend the CPU-like enclave to GPUs, these solutions require change to the CPU or GPU chips, may introduce new security risks due to the side-channel leaks in CPU-GPU communication and are still under the resource constraint of today’s CPU TEE. To address these problems, we present the first Heterogeneous TEE design that can truly support large-scale compute or data intensive (CDI) computing, without any chip-level change. Our approach, called HETEE, is a device for centralized management of all computing units (e.g., GPUs and other accelerators) of a server rack. It is uniquely designed to work with today’s data centres and clouds, leveraging modern resource pooling technologies to dynamically compartmentalize computing tasks, and enforce strong isolation and reduce TCB through hardware support. More specifically, HETEE utilizes the PCIe ExpressFabric to allocate its accelerators to the server node on the same rack for a non-sensitive CDI task, and move them back into a secure enclave in response to the demand for confidential computing. Our design runs a thin TCB stack for security management on a security controller (SC), while leaving a large set of software (e.g., AI runtime, GPU driver, etc.) to the integrated microservers that operate enclaves. An enclaves is physically isolated from others through hardware and verified by the SC at its inception. Its microserver and computing units are restored to a secure state upon termination. We implemented HETEE on a real hardware system, and evaluated it with popular neural network inference and training tasks. Our evaluations show that HETEE can easily support the CDI tasks on the real-world scale and incurred a maximal throughput overhead of 2.17% for inference and 0.95% for training on ResNet152.
+Title: Enabling Rack-scale Confidential Computing using Heterogeneous Trusted Execution Environment
+
+Abstract
+With its huge real-world demands, large-scale confidential
+computing still cannot be supported by today’s Trusted
+Execution Environment (TEE), due to the lack of scalable and
+effective protection of high-throughput accelerators like GPUs,
+FPGAs, and TPUs etc. Although attempts have been made
+recently to extend the CPU-like enclave to GPUs, these solutions
+require change to the CPU or GPU chips, may introduce
+new security risks due to the side-channel leaks in CPU-GPU
+communication and are still under the resource constraint of
+today’s CPU TEE.
+To address these problems, we present the first Heterogeneous
+TEE design that can truly support large-scale compute or data
+intensive (CDI) computing, without any chip-level change. Our
+approach, called HETEE, is a device for centralized management
+of all computing units (e.g., GPUs and other accelerators) of a
+server rack. It is uniquely designed to work with today’s data centres
+and clouds, leveraging modern resource pooling technologies
+to dynamically compartmentalize computing tasks, and enforce
+strong isolation and reduce TCB through hardware support.
+More specifically, HETEE utilizes the PCIe ExpressFabric to
+allocate its accelerators to the server node on the same rack
+for a non-sensitive CDI task, and move them back into a secure
+enclave in response to the demand for confidential computing.
+Our design runs a thin TCB stack for security management on a
+security controller (SC), while leaving a large set of software (e.g.,
+AI runtime, GPU driver, etc.) to the integrated microservers that
+operate enclaves. An enclaves is physically isolated from others
+through hardware and verified by the SC at its inception. Its
+microserver and computing units are restored to a secure state
+upon termination.
+We implemented HETEE on a real hardware system, and
+evaluated it with popular neural network inference and training
+tasks. Our evaluations show that HETEE can easily support
+the CDI tasks on the real-world scale and incurred a maximal
+throughput overhead of 2.17% for inference and 0.95% for
+training on ResNet152.
 
 * * *
 
@@ -124,8 +224,33 @@ The authors implemented HETEE on a real hardware system and evaluated its perfor
 
 **You:**
 
+guid: 20c04ead-a856-413d-ac03-0fe0f4426435
 create_time: 2023-04-06 16:55:44
-Title: SoK: Understanding the Prevailing Security Vulnerabilities in TrustZone-assisted TEE Systems  Abstract Abstract—Hundreds of millions of mobile devices worldwide rely on Trusted Execution Environments (TEEs) built with Arm TrustZone for the protection of security-critical applications (e.g., DRM) and operating system (OS) components (e.g., Android keystore). TEEs are often assumed to be highly secure; however, over the past years, TEEs have been successfully attacked multiple times, with highly damaging impact across various platforms. Unfortunately, these attacks have been possible by the presence of security flaws in TEE systems. In this paper, we aim to understand which types of vulnerabilities and limitations affect existing TrustZone-assisted TEE systems, what are the main challenges to build them correctly, and what contributions can be borrowed from the research community to overcome them. To this end, we present a security analysis of popular TrustZone-assisted TEE systems (targeting Cortex-A processors) developed by Qualcomm, Trustonic, Huawei, Nvidia, and Linaro. By studying publicly documented exploits and vulnerabilities as well as by reverse engineering the TEE firmware, we identified several critical vulnerabilities across existing systems which makes it legitimate to raise reasonable concerns about the security of commercial TEE implementations. Index Terms—TEE, TrustZone, Security Vulnerabilities, Arm
+Title: SoK: Understanding the Prevailing Security Vulnerabilities in TrustZone-assisted TEE Systems
+
+Abstract
+Abstract—Hundreds of millions of mobile devices worldwide
+rely on Trusted Execution Environments (TEEs) built with Arm
+TrustZone for the protection of security-critical applications (e.g.,
+DRM) and operating system (OS) components (e.g., Android
+keystore). TEEs are often assumed to be highly secure; however,
+over the past years, TEEs have been successfully attacked
+multiple times, with highly damaging impact across various
+platforms. Unfortunately, these attacks have been possible by
+the presence of security flaws in TEE systems. In this paper, we
+aim to understand which types of vulnerabilities and limitations
+affect existing TrustZone-assisted TEE systems, what are the
+main challenges to build them correctly, and what contributions
+can be borrowed from the research community to overcome
+them. To this end, we present a security analysis of popular
+TrustZone-assisted TEE systems (targeting Cortex-A processors)
+developed by Qualcomm, Trustonic, Huawei, Nvidia, and Linaro.
+By studying publicly documented exploits and vulnerabilities as
+well as by reverse engineering the TEE firmware, we identified
+several critical vulnerabilities across existing systems which
+makes it legitimate to raise reasonable concerns about the security
+of commercial TEE implementations.
+Index Terms—TEE, TrustZone, Security Vulnerabilities, Arm
 
 * * *
 
@@ -143,8 +268,38 @@ This paper provides valuable insights into the types of vulnerabilities that aff
 
 **You:**
 
+guid: 19cd4b52-b9e9-4b21-a897-ffac240bbd91
 create_time: 2023-04-06 17:27:00
-Title: RusTEE: Developing Memory-Safe ARMTrustZone Applications  Abstract In the past decade, Trusted Execution Environment (TEE) provided by ARM TrustZone is becoming one of the primary techniques for enhancing the security of mobile devices. The isolation enforced by TrustZone can protect the trusted applications running in the TEE against malicious software in the untrusted rich execution environment (REE). However, TrustZone cannot completely prevent vulnerabilities in trusted applications residing in the TEE, which can then be used to attack other trusted applications or even the trusted OS. Previously, a number of memory corruption vulnerabilities have been reported on different TAs, which are written in memory-unsafe languages like C. Recently, various memory-safe programming languages have emerged to mitigate the prevalent memory corruption bugs. In this paper, we propose RusTEE, a trusted application mechanism that leverages Rust, a newly emerged memory-safe language, to enhance the security of TAs. Though the high-level idea is quite straight-forwarding, we resolve several challenges on adopting Rust in mobile TEEs. Specifically, since Rust currently does not support any TrustZone-assisted TEE systems, we extend the existing Rust compiler for providing such support. Also, we apply comprehensive security mechanisms to resolve two security issues of trusted applications, namely, securely invoking high-privileged system services and securely communicating with untrusted REE. We implement a prototype of RusTEE as the trusted applications’ SDK, which supports both emulator and real hardware devices. The experiment shows that RusTEE can compile applications with close-to-C performance on the evaluated platforms.
+Title: RusTEE: Developing Memory-Safe ARMTrustZone Applications
+
+Abstract
+In the past decade, Trusted Execution Environment (TEE) provided
+by ARM TrustZone is becoming one of the primary techniques for
+enhancing the security of mobile devices. The isolation enforced
+by TrustZone can protect the trusted applications running in the
+TEE against malicious software in the untrusted rich execution environment
+(REE). However, TrustZone cannot completely prevent
+vulnerabilities in trusted applications residing in the TEE, which
+can then be used to attack other trusted applications or even the
+trusted OS. Previously, a number of memory corruption vulnerabilities
+have been reported on different TAs, which are written in
+memory-unsafe languages like C.
+Recently, various memory-safe programming languages have
+emerged to mitigate the prevalent memory corruption bugs. In
+this paper, we propose RusTEE, a trusted application mechanism
+that leverages Rust, a newly emerged memory-safe language, to
+enhance the security of TAs. Though the high-level idea is quite
+straight-forwarding, we resolve several challenges on adopting
+Rust in mobile TEEs. Specifically, since Rust currently does not
+support any TrustZone-assisted TEE systems, we extend the existing
+Rust compiler for providing such support. Also, we apply
+comprehensive security mechanisms to resolve two security issues
+of trusted applications, namely, securely invoking high-privileged
+system services and securely communicating with untrusted REE.
+We implement a prototype of RusTEE as the trusted applications’
+SDK, which supports both emulator and real hardware devices.
+The experiment shows that RusTEE can compile applications with
+close-to-C performance on the evaluated platforms.
 
 * * *
 
@@ -166,8 +321,21 @@ Experimental results show that RusTEE can compile applications with close-to-C p
 
 **You:**
 
+guid: cb7a3c3a-3c73-4e4f-930e-d74c39b86fed
 create_time: 2023-04-06 20:36:41
-Paper: Bao: A Lightweight Static Partitioning Hypervisor for Modern Multi-Core Embedded Systems  Abstract Given the increasingly complex and mixed-criticality nature of modern embedded systems, virtualization emerges as a natural solution to achieve strong spatial and temporal isolation. Widely used hypervisors such as KVM and Xen were not designed having embedded constraints and requirements in mind. The static partitioning architecture pioneered by Jailhouse seems to address embedded concerns. However, Jailhouse still depends on Linux to boot and manage its VMs. In this paper, we present the Bao hypervisor, a minimal, standalone and clean-slate implementation of the static partitioning architecture for Armv8 and RISC-V platforms. Preliminary results regarding size, boot, performance, and interrupt latency, show this approach incurs only minimal virtualization overhead. Bao will soon be publicly available, in hopes of engaging both industry and academia on improving Bao’s safety, security, and real-time guarantees.
+Paper: Bao: A Lightweight Static Partitioning Hypervisor for Modern Multi-Core Embedded Systems
+
+Abstract
+Given the increasingly complex and mixed-criticality nature of modern embedded systems, virtualization
+emerges as a natural solution to achieve strong spatial and temporal isolation. Widely used
+hypervisors such as KVM and Xen were not designed having embedded constraints and requirements
+in mind. The static partitioning architecture pioneered by Jailhouse seems to address embedded
+concerns. However, Jailhouse still depends on Linux to boot and manage its VMs. In this paper,
+we present the Bao hypervisor, a minimal, standalone and clean-slate implementation of the static
+partitioning architecture for Armv8 and RISC-V platforms. Preliminary results regarding size, boot,
+performance, and interrupt latency, show this approach incurs only minimal virtualization overhead.
+Bao will soon be publicly available, in hopes of engaging both industry and academia on improving
+Bao’s safety, security, and real-time guarantees.
 
 * * *
 
@@ -189,8 +357,19 @@ The authors plan to make Bao publicly available, aiming to engage both industry 
 
 **You:**
 
+guid: d1e33bab-60dc-400b-a939-f020d58dd2dd
 create_time: 2023-04-06 20:39:52
-Paper: Research on ARM TrustZone  ARM TrustZone [1] is a hardware-based security feature that can provide software with a high-privilege and isolated execution environment. Such isolation is ensured by hardware, which is usually considered as more trustworthy than software. Thus the execution environment is also known as trusted execution environment (TEE). TrustZone technology was proposed in 2002, but did not get widely used until 2009, when Apple released iPhone 5s. In iPhone 5s, Apple leveraged TrustZone to protect its Touch ID, which ensures that even if the iOS is fully compromised, the user's fingerprint data can still be safe. In 2017, Google made TEE a mandatory requirement on any Android devices with a fingerprint scanner. Nowadays, almost all mobile phones and tablets have TEE deployed. Meanwhile, ARM integrates TrustZone in ARM64 and ARMv8-M to support a broader range of platforms including servers and IoT devices.
+Paper: Research on ARM TrustZone
+
+ARM TrustZone [1] is a hardware-based security feature that can provide software with a high-privilege and
+isolated execution environment. Such isolation is ensured by hardware, which is usually considered as more
+trustworthy than software. Thus the execution environment is also known as trusted execution environment
+(TEE). TrustZone technology was proposed in 2002, but did not get widely used until 2009, when Apple
+released iPhone 5s. In iPhone 5s, Apple leveraged TrustZone to protect its Touch ID, which ensures that
+even if the iOS is fully compromised, the user's fingerprint data can still be safe. In 2017, Google made TEE
+a mandatory requirement on any Android devices with a fingerprint scanner. Nowadays, almost all mobile
+phones and tablets have TEE deployed. Meanwhile, ARM integrates TrustZone in ARM64 and ARMv8-M
+to support a broader range of platforms including servers and IoT devices.
 
 * * *
 
@@ -208,8 +387,51 @@ The paper provides valuable insights into the ARM TrustZone technology, discussi
 
 **You:**
 
+guid: 83bb8339-1896-4fb6-8fd9-542067e91191
 create_time: 2023-04-06 20:41:13
-Paper: TEEv: Virtualizing Trusted Execution Environmentson Mobile Platforms  Abstract Trusted Execution Environments (TEE) are widely deployed, especially on smartphones. A recent trend in TEE development is the transition from vendor-controlled, single-purpose TEEs to open TEEs that host Trusted Applications (TAs) from multiple sources with independent tasks. This transition is expected to create a TA ecosystem needed for providing stronger and customized security to apps and OS running in the Rich Execution Environment (REE). However, the transition also poses two security challenges: enlarged attack surface resulted from the increased complexity of TAs and TEEs; the lack of trust (or isolation) among TAs and the TEE. In this paper, we first present a comprehensive analysis on the recent CVEs related to TEE and the need of multiple TEE scheme. We then propose TEEv, a TEE virtualization architecture that supports multiple isolated, restricted TEE instances (i.e., vTEEs) running concurrently. Relying on a tiny hypervisor (we call it TEE-visor), TEEv allows TEE instances from different vendors to run in isolation on the same smartphone and to host their own TAs. Therefore, a compromised vTEE cannot affect its peers or REE; TAs no longer have to run in untrusted/unsuitable TEEs. We have implemented TEEv on a development board and a real smartphone, which runs multiple commercial TEE instances Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. VEE ’19, April 14, 2019, Providence, RI, USA © 2019 Copyright held by the owner/author(s). Publication rights licensed to ACM. ACM ISBN 978-1-4503-6020-3/19/04. . . $15.00 https://doi.org/10.1145/3313808.3313810 from different vendors with very small porting effort. Our evaluation results show that TEEv can isolate vTEEs and defend all known attacks on TEE with only mild performance overhead.
+Paper: TEEv: Virtualizing Trusted Execution Environmentson Mobile Platforms
+
+Abstract
+Trusted Execution Environments (TEE) are widely deployed,
+especially on smartphones. A recent trend in TEE development
+is the transition from vendor-controlled, single-purpose
+TEEs to open TEEs that host Trusted Applications (TAs) from
+multiple sources with independent tasks. This transition is
+expected to create a TA ecosystem needed for providing
+stronger and customized security to apps and OS running in
+the Rich Execution Environment (REE). However, the transition
+also poses two security challenges: enlarged attack
+surface resulted from the increased complexity of TAs and
+TEEs; the lack of trust (or isolation) among TAs and the TEE.
+In this paper, we first present a comprehensive analysis
+on the recent CVEs related to TEE and the need of multiple
+TEE scheme. We then propose TEEv, a TEE virtualization
+architecture that supports multiple isolated, restricted TEE
+instances (i.e., vTEEs) running concurrently. Relying on a
+tiny hypervisor (we call it TEE-visor), TEEv allows TEE
+instances from different vendors to run in isolation on the
+same smartphone and to host their own TAs. Therefore,
+a compromised vTEE cannot affect its peers or REE; TAs
+no longer have to run in untrusted/unsuitable TEEs. We
+have implemented TEEv on a development board and a real
+smartphone, which runs multiple commercial TEE instances
+Permission to make digital or hard copies of all or part of this work for
+personal or classroom use is granted without fee provided that copies
+are not made or distributed for profit or commercial advantage and that
+copies bear this notice and the full citation on the first page. Copyrights
+for components of this work owned by others than the author(s) must
+be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific
+permission and/or a fee. Request permissions from permissions@acm.org.
+VEE ’19, April 14, 2019, Providence, RI, USA
+© 2019 Copyright held by the owner/author(s). Publication rights licensed
+to ACM.
+ACM ISBN 978-1-4503-6020-3/19/04. . . $15.00
+https://doi.org/10.1145/3313808.3313810
+from different vendors with very small porting effort. Our
+evaluation results show that TEEv can isolate vTEEs and
+defend all known attacks on TEE with only mild performance
+overhead.
 
 * * *
 
@@ -227,8 +449,52 @@ The paper presents an implementation of TEEv on a development board and a real s
 
 **You:**
 
+guid: 61957df5-c082-4564-b23f-3ec04053cdca
 create_time: 2023-04-06 20:50:39
-The below context are of the section "Other Platforms: IoT, Drone, Cloud" of the paper "Research on ARM TrustZone"   Besides mobile phones, there are many new types of smart devices, such as smart home assistants, wall-mounted cameras, wearable devices, etc. These devices usually have plenty of sensors, notably cameras and microphones, which collect security sensitive information that should be protected. Ditio [17] tries to improve the security of IoT devices by recording sensor activity logs with TrustZone and virtualization support. All the access to registers of sensors can be recorded without modification to the REE OS, which will generate a complete log of sensor activities, which will be later be inspected by an auditor and checked for compliance with a given policy. Ditio also provides a tool to ease the process of log analyzing. PROTC [18] leverages TrustZone on the Drone platform to protect the peripherals. It deploys a monitor in the secure world to enforce secure access control policy for some peripherals of the drone to ensure that only authorized applications can access certain peripherals. ARM servers are getting popular in cloud computing, which also support virtualization. Currently TrustZone can only provide one secure world, which means that multiple VMs on one server have to share the only secure world. vTZ [19] tries to solve this problem by virtualizing TrustZone to offer each VM an isolated secure world. With vTZ, software in a VM can use SMC instruction to switch between REE and a virtual TEE, just as it does in a non-virtualized environment, and all the features of TrustZone are reserved after virtualization. The implementation requires an REE hypervisor but does not need to trust it.
+The below context are of the section "Other Platforms: IoT, Drone, Cloud" of the paper "Research on ARM TrustZone" 
+
+Besides mobile phones, there are many
+new types of smart devices, such as smart
+home assistants, wall-mounted cameras,
+wearable devices, etc. These devices usually
+have plenty of sensors, notably cameras
+and microphones, which collect security
+sensitive information that should be
+protected.
+Ditio [17] tries to improve the security of
+IoT devices by recording sensor activity logs
+with TrustZone and virtualization support.
+All the access to registers of sensors can
+be recorded without modification to the
+REE OS, which will generate a complete
+log of sensor activities, which will be later
+be inspected by an auditor and checked for
+compliance with a given policy. Ditio also
+provides a tool to ease the process of log
+analyzing.
+PROTC [18] leverages TrustZone on the
+Drone platform to protect the peripherals.
+It deploys a monitor in the secure world
+to enforce secure access control policy for
+some peripherals of the drone to ensure
+that only authorized applications can access
+certain peripherals.
+ARM servers are getting popular in
+cloud computing, which also support
+virtualization. Currently TrustZone can
+only provide one secure world, which
+means that multiple VMs on one server
+have to share the only secure world.
+vTZ [19] tries to solve this problem by
+virtualizing TrustZone to offer each VM an
+isolated secure world. With vTZ, software
+in a VM can use SMC instruction to switch
+between REE and a virtual TEE, just as it
+does in a non-virtualized environment, and
+all the features of TrustZone are reserved
+after virtualization. The implementation
+requires an REE hypervisor but does not
+need to trust it.
 
 * * *
 
@@ -246,6 +512,7 @@ In the "Other Platforms: IoT, Drone, Cloud" section of the paper "Research on AR
 
 **You:**
 
+guid: 6b31a550-2a63-47ea-a821-0d710cdca543
 create_time: 2023-04-06 20:52:19
 In the context, Why does the implementation not need to trust REE hypervisor?
 
@@ -263,6 +530,7 @@ In other words, the security of the virtual TEEs does not rely on the trustworth
 
 **You:**
 
+guid: 294622a7-2541-4e39-a986-13deaed774d0
 create_time: 2023-04-06 21:04:12
 How does the hardware-level isolation provided by ARM TrustZone protect the virtual TEEs from attackes in the REE hypervisor?
 
@@ -290,6 +558,7 @@ By maintaining the hardware-level isolation, even in a virtualized environment, 
 
 **You:**
 
+guid: 980f2fde-4064-4436-989e-ffb6b033ed07
 create_time: 2023-04-06 21:06:03
 But vTZ actually run in normal world. How does the hardware-level isolation provided by ARM TrustZone protect the virtual TEEs from attackes in the REE hypervisor?
 
@@ -315,8 +584,52 @@ While vTZ does run in the normal world, it relies on the hardware-level isolatio
 
 **You:**
 
+guid: 668f7620-5290-41c2-ba4d-6380d81de161
 create_time: 2023-04-06 21:15:11
-The below context comes from "Other Platforms: IoT, Drone, Cloud" of the paper "Research on ARM TrustZone"  Besides mobile phones, there are many new types of smart devices, such as smart home assistants, wall-mounted cameras, wearable devices, etc. These devices usually have plenty of sensors, notably cameras and microphones, which collect security sensitive information that should be protected. Ditio [17] tries to improve the security of IoT devices by recording sensor activity logs with TrustZone and virtualization support. All the access to registers of sensors can be recorded without modification to the REE OS, which will generate a complete log of sensor activities, which will be later be inspected by an auditor and checked for compliance with a given policy. Ditio also provides a tool to ease the process of log analyzing. PROTC [18] leverages TrustZone on the Drone platform to protect the peripherals. It deploys a monitor in the secure world to enforce secure access control policy for some peripherals of the drone to ensure that only authorized applications can access certain peripherals. ARM servers are getting popular in cloud computing, which also support virtualization. Currently TrustZone can only provide one secure world, which means that multiple VMs on one server have to share the only secure world. vTZ [19] tries to solve this problem by virtualizing TrustZone to offer each VM an isolated secure world. With vTZ, software in a VM can use SMC instruction to switch between REE and a virtual TEE, just as it does in a non-virtualized environment, and all the features of TrustZone are reserved after virtualization. The implementation requires an REE hypervisor but does not need to trust it.
+The below context comes from "Other Platforms: IoT, Drone, Cloud" of the paper "Research on ARM TrustZone"
+
+Besides mobile phones, there are many
+new types of smart devices, such as smart
+home assistants, wall-mounted cameras,
+wearable devices, etc. These devices usually
+have plenty of sensors, notably cameras
+and microphones, which collect security
+sensitive information that should be
+protected.
+Ditio [17] tries to improve the security of
+IoT devices by recording sensor activity logs
+with TrustZone and virtualization support.
+All the access to registers of sensors can
+be recorded without modification to the
+REE OS, which will generate a complete
+log of sensor activities, which will be later
+be inspected by an auditor and checked for
+compliance with a given policy. Ditio also
+provides a tool to ease the process of log
+analyzing.
+PROTC [18] leverages TrustZone on the
+Drone platform to protect the peripherals.
+It deploys a monitor in the secure world
+to enforce secure access control policy for
+some peripherals of the drone to ensure
+that only authorized applications can access
+certain peripherals.
+ARM servers are getting popular in
+cloud computing, which also support
+virtualization. Currently TrustZone can
+only provide one secure world, which
+means that multiple VMs on one server
+have to share the only secure world.
+vTZ [19] tries to solve this problem by
+virtualizing TrustZone to offer each VM an
+isolated secure world. With vTZ, software
+in a VM can use SMC instruction to switch
+between REE and a virtual TEE, just as it
+does in a non-virtualized environment, and
+all the features of TrustZone are reserved
+after virtualization. The implementation
+requires an REE hypervisor but does not
+need to trust it.
 
 * * *
 
@@ -336,6 +649,7 @@ These examples showcase the versatility of TrustZone technology and its potentia
 
 **You:**
 
+guid: 4152d793-fb0e-422e-9e5d-f70a6152001e
 create_time: 2023-04-06 21:17:59
 In the context, vTZ run in normal world. Why does not vTZ run in normal world need to trust REE hypervisor?
 
@@ -353,6 +667,7 @@ As a result, even though vTZ operates in the normal world and interacts with the
 
 **You:**
 
+guid: 24b929e3-5096-40a8-9b25-e17bf059c91b
 create_time: 2023-04-06 21:54:33
 Please compare TEEv and vTZ and also summarize them in a table.
 
@@ -378,6 +693,7 @@ vTZ aims to virtualize TrustZone to provide each VM an isolated secure world. Th
 
 **You:**
 
+guid: 1c656a96-8737-487f-9079-95a45fb09671
 create_time: 2023-04-06 22:26:53
 What is static partitioning?
 
@@ -395,6 +711,7 @@ In the context of hypervisors, static partitioning refers to creating fixed, iso
 
 **You:**
 
+guid: 612a40b0-0101-40f0-8e88-7ec31e286634
 create_time: 2023-04-07 08:09:54
 What does the paper "Bao: A Lightweight Static Partitioning Hypervisor for Modern Multi-Core Embedded Systems" talk about? Virtualization, TEE or TrustZone?
 
@@ -410,6 +727,7 @@ While the paper does not directly discuss Trusted Execution Environments (TEEs) 
 
 **You:**
 
+guid: cdbcb0f1-194a-42ef-8096-4c65bb78f6e1
 create_time: 2023-04-07 08:18:48
 Is OP-TEE required in TrustedVIM described in the page "Cloud & Edge Trusted Virtualized Infrastructure Manager (VIM) - Security and Trust in OpenStac"
 
@@ -425,6 +743,7 @@ OP-TEE is an open-source implementation of TEE based on ARM TrustZone technology
 
 **You:**
 
+guid: b04f6f11-bee7-4687-8396-d1cbf3edd247
 create_time: 2023-04-07 09:02:04
 Is Bao a hypervisor?
 
@@ -438,6 +757,7 @@ Yes, Bao is a hypervisor. Specifically, it is a lightweight static partitioning 
 
 **You:**
 
+guid: 6809ac70-4d57-4a08-b932-0d91a9b8e83a
 create_time: 2023-04-07 09:04:01
 Please compare hypervisor and virtualization and also summarize them in a table.
 
@@ -461,6 +781,7 @@ In summary, a hypervisor is a software layer or firmware that enables and manage
 
 **You:**
 
+guid: d07df078-30bd-469b-be99-d7c407dfc802
 create_time: 2023-04-07 09:05:45
 Is TrustZone a hypervisor or virtualization?
 
@@ -478,6 +799,7 @@ In summary, TrustZone is a security feature designed to provide hardware-level i
 
 **You:**
 
+guid: ae25edb7-38fc-4521-b849-7cfb7d14832e
 create_time: 2023-04-07 09:06:27
 Is OP-TEE a hypervisor or virtualization?
 
@@ -495,6 +817,7 @@ In summary, OP-TEE is a TEE solution that works with TrustZone to provide a secu
 
 **You:**
 
+guid: 09ad2365-9173-4c8e-a418-74eb762c0517
 create_time: 2023-04-07 09:07:58
 Does virtualization depend on hypervisor?
 
@@ -516,6 +839,7 @@ In both cases, the hypervisor is the key component that enables virtualization, 
 
 **You:**
 
+guid: 3c4bb3ae-edf0-4440-8596-f9c056257987
 create_time: 2023-04-07 13:56:22
 Does VM require hypervisor?
 
@@ -531,6 +855,7 @@ There are alternative virtualization technologies, such as containerization (e.g
 
 **You:**
 
+guid: f0e6d0db-2417-4d7d-865a-89c55df7a1a7
 create_time: 2023-04-07 13:59:11
 What are types of virtualization techs?
 
@@ -558,6 +883,7 @@ These are just a few examples of virtualization technologies, and many more spec
 
 **You:**
 
+guid: 2490f415-63c5-4b3d-b137-778f350cc53e
 create_time: 2023-04-07 14:04:05
 Is hypvervisor a virtual machine manager?
 
@@ -573,6 +899,7 @@ Hypervisors are responsible for abstracting the physical hardware resources and 
 
 **You:**
 
+guid: d4a155f0-1c89-40c6-9d4b-a50b2d8c145f
 create_time: 2023-04-07 14:05:26
 Are there alnatives of hypervisor?
 
@@ -596,6 +923,7 @@ These alternatives each have their own advantages and trade-offs, and their suit
 
 **You:**
 
+guid: db97089a-e601-4a08-aa54-121d537f750f
 create_time: 2023-04-07 14:07:57
 Can a VM contain VMs?
 
@@ -617,8 +945,25 @@ However, nested virtualization can also introduce additional overhead and comple
 
 **You:**
 
+guid: e8649c97-dc3d-4a77-850b-2ff1b56892d9
 create_time: 2023-04-08 11:30:38
-Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE  Abstract payment systems have been stored in mobile devices. To protect important data, TEE technology has emerged, a trusty and safe execution environment. In particular, ARM TrustZone technology, which is mainly used in mobile, divides one physical processor into Normal World and Secure World to provide a safer execution environment. Recently, various manufacturers have started using TrustZone technology. but existing commercial TEEs have limitations in conducting security research using TrustZone. Therefore, this paper introduces OP-TEE which is an open source project for implementing ARM TrustZone technology and TEE Client API that communicates with Trusted Application of TrustZone Secure World. To demystify TEE Client API, we also implemented a simple trusted application for communication between Normal World and Secure World in OP-TEE OS using QEMU emulator.
+Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE
+
+Abstract
+payment systems have been stored in mobile devices. To protect
+important data, TEE technology has emerged, a trusty and safe
+execution environment. In particular, ARM TrustZone technology,
+which is mainly used in mobile, divides one physical processor
+into Normal World and Secure World to provide a safer execution
+environment. Recently, various manufacturers have started using
+TrustZone technology. but existing commercial TEEs have limitations
+in conducting security research using TrustZone. Therefore,
+this paper introduces OP-TEE which is an open source project for
+implementing ARM TrustZone technology and TEE Client API
+that communicates with Trusted Application of TrustZone Secure
+World. To demystify TEE Client API, we also implemented a simple
+trusted application for communication between Normal
+World and Secure World in OP-TEE OS using QEMU emulator.
 
 * * *
 
@@ -635,6 +980,7 @@ This paper introduces OP-TEE, an open-source project for implementing ARM TrustZ
 
 **You:**
 
+guid: 91da1ca1-78e0-4fa7-a751-0b0e8450d50b
 create_time: 2023-04-12 10:36:02
 What are Security Building Blocks?
 
@@ -668,6 +1014,7 @@ These building blocks, when combined and implemented correctly, create a robust 
 
 **You:**
 
+guid: e0ab6279-6aea-4ea1-8fa8-4a3dd784118d
 create_time: 2023-04-12 10:37:57
 What compare Security Building Block and TCB and also summarize them in a table.
 
@@ -686,6 +1033,406 @@ Security Building Blocks and Trusted Computing Base (TCB) are two related concep
 | Scope                | Security Building Blocks cover a wide range of security aspects in a system, such as data protection, access control, and secure communication. | TCB is a more focused concept, mainly concerned with the critical components that enforce security policies and protect the system's security properties. |
 
 In summary, Security Building Blocks are the fundamental components and technologies used to create secure systems, while the Trusted Computing Base (TCB) represents the minimal set of critical components essential for ensuring the security of a system. Security Building Blocks can be seen as the elements that are combined to create a secure system, whereas the TCB is the core of the system, ensuring its overall security.
+
+* * *
+
+**You:**
+
+guid: 02f24b1f-adf4-402f-938f-92ab624de88b
+create_time: 2023-04-17 22:34:41
+Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone
+
+Abstract—WebAssembly (Wasm) is a novel low-level bytecodeformat that swiftly gained popularity for its efficiency, versatilityand security, with near-native performance. Besides, trustedexecution environments (TEEs) shield critical software assetsagainst compromised infrastructures. However, TEEs do notguarantee the code to be trustworthy or that it was not tamperedwith. Instead, one relies on remote attestation to assess thecode before execution. This paper describes WATZ, which is (i)an efficient and secure runtime for trusted execution of Wasmcode for Arm’s TrustZone TEE, and (ii) a lightweight remoteattestation system optimised for Wasm applications running inTrustZone, as it lacks built-in mechanisms for attestation. Theremote attestation protocol is formally verified using a state-of-the-art analyser and model checker. Our extensive evaluation ofArm-based hardware uses synthetic and real-world benchmarks,illustrating typical tasks IoT devices achieve. WATZ’s executionspeed is on par with Wasm runtimes in the normal world andreaches roughly half the speed of native execution, which iscompensated by the additional security guarantees and the inter-operability offered by Wasm. WATZ is open-source and availableon GitHub along with instructions to reproduce our experiments.
+
+I. INTRODUCTION
+Security is critical when designing and deploying distributed
+applications for mutually distrusting stakeholders, e.g., hosting
+companies. The problem grows in complexity in heterogeneous
+systems, when one considers decentralised operations of
+IoT, edge and cloud devices, all at risk of being compromised.
+Trusted execution environments (TEEs), e.g., Intel SGX [1]
+and Arm TrustZone [2], offer hardware support for securely
+executing applications in shielded environments. While TEEs
+are promoted by the commercial offerings of major cloud
+providers, they do not guarantee that the code itself is trustworthy
+and has not been tampered with. Remote attestation [3]–[7]
+is typically used to assess the code before its execution. However,
+while this key security feature is provided by some TEEs
+(e.g., Intel SGX [8]), Arm TrustZone lacks built-in support
+for remote attestation. Given the swift growth of popularity of
+Arm-based architectures in the IoT edge computing [9] and
+its recent adoption in the general computer market [10], this
+is concerning. In addition, recent attacks have shown how to
+compromise IoT devices via malicious firmware updates [11]
+or software flaws [12], typically beyond the threat model
+of TrustZone. Nonetheless, the inability of manufacturers to
+verify the authenticity of their software upon execution makes
+these platforms inadequate for handling sensitive tasks and
+data, in particular when dealing with recent scenarios such as
+trustworthy machine learning systems at the edge [13].
+WebAssembly (Wasm) [14] is a new bytecode standard for
+running applications at near-native speed. It enables developers
+to build their software components with the productivity
+benefits of modern programming languages while supporting
+legacy code, since modern compilers support Wasm [15].
+TrustZone is a constrained environment that runs small executables
+using a specialised API. Wasm fits well in this model,
+thanks to its small runtime overhead, portability, supporting
+non-standard system interfaces, and fast as the bytecode can
+be compiled just-in-time and ahead-of-time.
+Embedding Wasm in TrustZone can be helpful in many use
+cases. The smartphone industry could rely on Wasm as an
+interoperable bytecode to execute secure applications inside
+TrustZone, as exclusively reserved for the manufacturer’s
+needs or for strategic partners [16]. Automotive applications
+could rely on IoT devices to run machine learning algorithms
+inside enclaves, ensuring the validity of the results via attestation
+and using Wasm to leverage legacy machine learning
+frameworks. We demonstrate the latter in §VI-F.
+We present WATZ, an efficient and secure runtime for
+trusted execution of Wasm code inside TrustZone, adding support
+for remote attestation. We leverage the sandbox isolation
+of Wasm to mitigate, and possibly prevent, vertical privilege
+escalations and lateral attacks. We combine TrustZone with
+Wasm bytecode to issue trustworthy evidence, attesting the
+genuineness of running software. In §IV, we adapted and fully
+implemented the remote attestation protocol from SGX [17],
+using a public-key infrastructure. As such, we facilitate the
+deployment of fully decentralised applications spanning various
+devices at the core or the edge of the network. WATZ
+extends OP-TEE [18], a popular open-source trusted OS, and
+we validated our prototype with Arm hardware.
+The main research questions that WATZ intends to answer,
+and the main contributions of this work are the following.
+RQ1: Are there system challenges when embedding Wasm
+into Arm TrustZone?
+TrustZone requires using a trusted operating system, which
+declares a non-standardised API to interact with system resources.
+This, coupled with the constrained nature of TEEs
+(e.g., no system call, limited memory), increases the complexity
+of hosting general-purpose applications compiled in Wasm.
+We show (§III) that WATZ is the first system to run Wasm applications
+in TrustZone, while leveraging the WASI standard, a
+POSIX-like layer for Wasm, to interact with the TEE facilities.
+As such, hosted applications seamlessly communicate with TrustZone, while abstracting from that trusted environment’s
+specific API. This software encapsulation strategy for Trust-
+Zone enhances the state of the art: each software deployed
+in the trusted world is fully isolated and cannot interfere with
+others, similarly to SGX enclaves, thanks to the robust sandbox
+provided by Wasm. Our WATZ prototype supports a subset of
+WASI API to run general-purpose software and to evaluate a
+database engine (SQLite [19]), as well as a machine learning
+library (Genann [20]). We plan to widen the WASI support
+for additional system calls, e.g., file system and networking.
+RQ2: How can relying parties trust the remote execution
+of Wasm applications?
+Given the lack of built-in remote attestation in TrustZone,
+we propose a protocol (§IV) to attest Wasm code embedded
+in our trusted environment. Hence, we ensure executed Wasm
+binaries are trustworthy, similarly to Intel SGX. We identify
+the hardware requirements of IoT devices to provide attestable
+guarantees (e.g., root of trust, secure boot), showing how to
+be combined with the trusted environment to verify Wasm binaries.
+We contribute an extension of the WASI specifications,
+called WASI-RA, to enable the hosted Wasm applications to
+attest against trusted parties and communicate shared secrets
+and confidential data, based on Intel SGX’s remote attestation
+protocol. Finally, we demonstrate that WATZ is an end-toend
+solution that leverages the fingerprint (i.e., a hash of the
+bytecode) of isolated Wasm applications, hardware elements
+and the attestation mechanism to induce trust into IoT devices.
+RQ3: How does the performance of Wasm applications
+compare when hosted in the trusted environment?
+We extensively evaluate WATZ (§VI) against micro- and
+macro-benchmarks, together with SQLite and Genann. Performance
+is on par with Wasm applications executed outside
+of the TEE, and up to 2.12  compared to native execution,
+deemed negligible compared to the benefits WATZ offers. We
+contribute and describe an extension of the trusted kernel (OPTEE)
+to execute ahead-of-time compiled Wasm applications to
+achieve these performance results. Besides, we perform a security
+analysis of WATZ (§VII), as well as formal verification
+of the remote attestation protocol.
+Roadmap. The remainder of the paper is organised as follows.
+We first present background information and related
+work in §II. §III introduces the overall design and architecture
+of our WATZ runtime. The remote attestation mechanism of
+WATZ is described in §IV. We elaborate on some implementation
+details in §V and present our extensive evaluation of
+WATZ in §VI. We analyse the security of our approach in
+§VII, before concluding in §VIII.
+
+* * *
+
+**ChatGPT:**
+
+The paper "WATZ: A Trusted WebAssembly Runtime Environment with Remote Attestation for TrustZone" presents WATZ, a runtime environment designed for the efficient and secure execution of WebAssembly (Wasm) code within Arm's TrustZone trusted execution environment (TEE). The runtime also incorporates a lightweight remote attestation system tailored to Wasm applications running in TrustZone, as TrustZone lacks built-in mechanisms for attestation.
+
+The primary research questions that WATZ aims to address include:
+1. System challenges in embedding Wasm into Arm TrustZone.
+2. The trustworthiness of remote execution of Wasm applications.
+3. Performance comparison of Wasm applications when hosted in the trusted environment.
+
+WATZ extends OP-TEE, a popular open-source trusted OS, and the prototype is validated with Arm hardware. The system successfully hosts Wasm applications in TrustZone, leveraging the WASI standard, a POSIX-like layer for Wasm, to interact with the TEE facilities. The paper also proposes a remote attestation protocol to attest Wasm code embedded in the trusted environment, ensuring that executed Wasm binaries are trustworthy, similarly to Intel SGX.
+
+In terms of performance, WATZ is on par with Wasm applications executed outside of the TEE, and up to 2.12 times slower compared to native execution. This difference is considered negligible given the security benefits provided by WATZ.
+
+* * *
+
+**You:**
+
+guid: e66db351-9460-4ffa-9f9d-fa9331e8f281
+create_time: 2023-04-17 22:38:45
+What is perormance of WATZ?
+
+* * *
+
+**ChatGPT:**
+
+The performance of WATZ, a Trusted WebAssembly Runtime Environment for TrustZone, is quite promising. According to the paper, the performance of WATZ is on par with WebAssembly (Wasm) applications executed outside of the trusted execution environment (TEE). The runtime has a performance overhead of up to 2.12 times compared to native execution.
+
+Despite the performance overhead, the difference is considered negligible when compared to the security benefits provided by WATZ. The system allows for the efficient and secure execution of Wasm code within Arm's TrustZone TEE and adds support for remote attestation, enhancing the security and trustworthiness of Wasm applications.
+
+* * *
+
+**You:**
+
+guid: 7c3e8d0e-ece6-4247-b88b-64dadfe81a4b
+create_time: 2023-04-17 22:40:34
+What is the benefit of using WASM in TEE?
+
+* * *
+
+**ChatGPT:**
+
+Using WebAssembly (WASM) in a Trusted Execution Environment (TEE) provides several benefits, making it a valuable choice for enhancing security and interoperability in various applications:
+
+1. Portability: WASM is platform-agnostic, allowing developers to write code once and run it on various platforms, including TEEs. This increases the reusability and flexibility of applications running in TEEs.
+
+2. Isolation and security: WASM provides a sandboxed execution environment, which ensures that applications are isolated from each other and from the host system. This isolation helps mitigate potential security risks, such as privilege escalation or lateral attacks.
+
+3. Interoperability: WASM allows developers to build software components using modern programming languages and leverage existing code, making it easier to deploy applications in TEEs without the need to rewrite or recompile them.
+
+4. Efficiency: WASM is designed for near-native performance, which means that applications running within TEEs can benefit from the efficiency and speed of WASM execution, even in resource-constrained environments like IoT devices.
+
+5. Support for non-standard system interfaces: WASM can interact with non-standard system interfaces, making it suitable for TEEs that might have unique APIs or restrictions.
+
+Overall, integrating WASM in TEEs allows for enhanced security, performance, and interoperability in various use cases, including smartphones, automotive applications, IoT devices, and edge computing.
+
+* * *
+
+**You:**
+
+guid: 8452ac86-2b62-417c-b5c7-4b0abebf245e
+create_time: 2023-04-17 22:42:56
+Is WATZ a TA?
+
+* * *
+
+**ChatGPT:**
+
+No, WATZ is not a Trusted Application (TA). WATZ, or WebAssembly TrustZone, is a trusted runtime environment for executing WebAssembly (WASM) code inside Arm's TrustZone TEE (Trusted Execution Environment). It also includes a lightweight remote attestation system optimized for WASM applications running in TrustZone, as TrustZone itself lacks built-in mechanisms for attestation.
+
+WATZ is designed to provide a secure and efficient way to run WASM applications inside the TrustZone TEE while offering remote attestation capabilities. It is not a specific Trusted Application, but rather an environment in which multiple WASM-based TAs can be executed securely.
+
+* * *
+
+**You:**
+
+guid: 06eac35c-7569-4b11-99bb-56487727018d
+create_time: 2023-04-17 22:44:11
+Is WATZ extended from OP-TEE?
+
+* * *
+
+**ChatGPT:**
+
+Yes, WATZ is extended from OP-TEE. OP-TEE (Open Portable Trusted Execution Environment) is a popular open-source trusted operating system for Arm TrustZone. WATZ extends OP-TEE by adding support for running WebAssembly (WASM) code inside Arm's TrustZone TEE and providing a lightweight remote attestation system optimized for WASM applications running in TrustZone. This extension allows WATZ to offer a secure and efficient runtime environment for WASM applications within the TrustZone TEE.
+
+* * *
+
+**You:**
+
+guid: 38d5038f-358c-4933-ab97-ad90dbbf353c
+create_time: 2023-04-17 22:55:09
+What is Remote Attestation?
+
+* * *
+
+**ChatGPT:**
+
+Remote attestation is a security mechanism used to verify the authenticity and integrity of software running on a remote device, typically within a trusted execution environment (TEE) or a secure enclave, like Intel SGX or Arm TrustZone. It helps establish trust between a remote device and a verifying party by providing evidence that the software running on the remote device is genuine, unaltered, and operating in a secure environment.
+
+In a remote attestation process, the remote device generates a cryptographic signature or proof, which includes information about the software's state and the secure environment. This proof is then sent to the verifying party, who can validate the signature using a public key or a pre-shared key. If the signature is valid and the software's state meets the expected criteria, the verifying party can trust the remote device and its software.
+
+Remote attestation is particularly useful in scenarios where devices are deployed in untrusted or potentially compromised environments, such as IoT devices or cloud servers. It enables the establishment of trust between distributed devices and helps ensure the confidentiality and integrity of sensitive data and processes.
+
+* * *
+
+**You:**
+
+guid: 966c8ffd-cf3b-41a8-8385-65e071524294
+create_time: 2023-04-17 22:59:39
+So the software is provided by the remote device and the party verify the signature of the software before run it. Right?
+
+* * *
+
+**ChatGPT:**
+
+Yes, that's correct. In remote attestation, the software running on the remote device generates a cryptographic signature or proof, which includes information about the software's state and the secure environment. This proof is then sent to the verifying party.
+
+The verifying party checks the signature using a public key or a pre-shared key, and if the signature is valid and the software's state meets the expected criteria, the verifying party can trust that the software running on the remote device is genuine and unaltered.
+
+In other words, remote attestation allows the verifying party to confirm the authenticity and integrity of the software running on the remote device before deciding to trust it and establish secure communication or share sensitive data.
+
+* * *
+
+**You:**
+
+guid: 8876eecf-8746-47e0-b0d4-e1454038492f
+create_time: 2023-04-17 23:01:30
+Is remote attestation only used  to verify software?
+
+* * *
+
+**ChatGPT:**
+
+Remote attestation is primarily used to verify the authenticity and integrity of software running in a secure environment, such as a trusted execution environment (TEE) or secure enclave. However, remote attestation can also be extended to cover aspects of the underlying hardware or firmware.
+
+In some cases, remote attestation can be used to verify the configuration and state of the hardware or firmware to ensure it meets specific security requirements or complies with certain policies. For example, it can be used to verify that secure boot has been enabled, or that a specific hardware component is genuine and not tampered with.
+
+So, while remote attestation is primarily focused on software, it can also be applied to hardware and firmware components in certain scenarios to provide a higher level of assurance about the security and trustworthiness of the entire system.
+
+* * *
+
+**You:**
+
+guid: e4d5addc-3dd3-41c4-bc42-683d9fc04821
+create_time: 2023-04-17 23:03:43
+How does a remote device declare that secure boot is enabled?
+
+* * *
+
+**ChatGPT:**
+
+A remote device can declare that secure boot is enabled by providing evidence in the form of a signed measurement or attestation report. This process involves the following steps:
+
+1. Secure boot process: When the device boots up, the secure boot mechanism ensures that each component in the boot chain (bootloader, firmware, and operating system) is verified using digital signatures before being executed. This process creates a series of measurements (hashes) of the loaded components.
+
+2. Platform Configuration Registers (PCRs): The measurements obtained during the secure boot process are stored in the device's Trusted Platform Module (TPM) or another secure element, in special registers called Platform Configuration Registers (PCRs).
+
+3. Attestation request: A remote party (verifier) can request an attestation report from the device to verify that secure boot is enabled. The device generates a report that includes the PCR values, a nonce provided by the verifier, and other relevant information about the device's state.
+
+4. Signing the report: The device signs the attestation report using a private key that corresponds to a public key known to the verifier. This key can be an endorsement key, an attestation identity key, or another key tied to the device's secure element.
+
+5. Verifying the report: The remote party receives the signed report and verifies the signature using the corresponding public key. If the signature is valid, the remote party can examine the PCR values and other information in the report to determine if secure boot is enabled and if the device's configuration meets the required security policies.
+
+This process allows the remote party to verify that secure boot is enabled on the device and that the device's boot chain components are genuine and have not been tampered with.
+
+* * *
+
+**You:**
+
+guid: d3879543-4b59-4a1e-bfe5-08a484dd5086
+create_time: 2023-04-17 23:07:23
+But how does the party(verifier) determine if the report is fake if the device is breached?
+
+* * *
+
+**ChatGPT:**
+
+The remote attestation process relies on the hardware-backed security provided by secure elements like TPM (Trusted Platform Module) or TEE (Trusted Execution Environment) to ensure the integrity and authenticity of the attestation report. However, if the device is breached and the attacker can compromise these secure elements, the remote attestation process could potentially be fooled. 
+
+To minimize the risk of accepting fake reports, the verifier should follow these best practices:
+
+1. Verify the root of trust: Ensure that the device's secure element (e.g., TPM or TEE) has a legitimate and trusted root of trust, such as a hardware-based root of trust or a known and trusted manufacturer's certificate.
+
+2. Use a strong attestation protocol: Employ a secure and well-established attestation protocol, which has been formally verified and widely reviewed by the security community.
+
+3. Verify the attestation report's signature: Ensure that the report is signed with a valid and trusted key tied to the device's secure element. The verifier must have access to the corresponding public key and validate the signature.
+
+4. Check the nonce: The verifier should provide a unique nonce (number used once) during the attestation request, which the device must include in the attestation report. This ensures that the report is fresh and generated for the specific request, mitigating replay attacks.
+
+5. Evaluate the report's content: The verifier should carefully analyze the attestation report's contents, including PCR values and other device state information, to ensure that it meets the required security policies and that the device's configuration is as expected.
+
+It is important to note that no security measure is foolproof, and sophisticated attackers might still find ways to breach a system. However, following best practices and employing a defense-in-depth approach can significantly increase the difficulty for an attacker to compromise the remote attestation process.
+
+* * *
+
+**You:**
+
+guid: f36bc02f-d1af-499a-932e-3de9e250566d
+create_time: 2023-04-17 23:11:05
+How does the party(verifier) verify the root of trust of the device?
+
+* * *
+
+**ChatGPT:**
+
+To verify the root of trust (RoT) of a device, the verifier (the party receiving the attestation report) must follow these steps:
+
+1. Obtain the device's attestation report: The attestation report, generated by the device's secure element (e.g., TPM or TEE), includes information about the device's hardware, firmware, and software configuration, as well as a digital signature created using the device's private attestation key.
+
+2. Verify the attestation key: The device's attestation key must be tied to a trusted certificate issued by the device manufacturer or another trusted authority. The verifier should validate the attestation key's certificate chain up to a trusted root certificate that is pre-installed or obtained from a trusted source. This process ensures the attestation key is genuine and belongs to a legitimate device.
+
+3. Verify the attestation report's signature: The verifier must use the device's public attestation key (corresponding to the private attestation key used to sign the report) to verify the digital signature on the attestation report. If the signature is valid, it means the report was generated by the device with the genuine attestation key.
+
+4. Check the nonce: To ensure the freshness of the attestation report and prevent replay attacks, the verifier should provide a unique nonce (number used once) during the attestation request. This nonce must be included in the attestation report, and the verifier should confirm its presence and correctness.
+
+5. Examine the report's content: The verifier should carefully analyze the attestation report's contents to ensure that the device's hardware, firmware, and software configuration meet the required security policies. This includes checking measurements of the secure boot process, firmware versions, and other relevant security properties.
+
+By following these steps, the verifier can establish trust in the device's root of trust, making it difficult for an attacker to generate a fake attestation report. However, it is essential to maintain up-to-date trust anchors (e.g., root certificates) and follow best practices to ensure the security of the remote attestation process.
+
+* * *
+
+**You:**
+
+guid: e123ce85-0bdf-4ece-87c2-cb33860cc4b0
+create_time: 2023-04-17 23:13:24
+Can remote attestation help the party know if the remote device is breached?
+
+* * *
+
+**ChatGPT:**
+
+Remote attestation can help the party (verifier) determine if the remote device might be breached, but it does not provide a 100% guarantee. Remote attestation provides information about the device's hardware, firmware, and software configuration, as well as measurements of the boot process and the integrity of the executed code.
+
+If the device is compromised, there is a chance that the integrity measurements included in the attestation report will not match the expected values. The verifier can then detect the discrepancy and decide not to trust the device. However, if the breach is sophisticated enough and can tamper with the attestation process itself, it might be challenging to detect the breach using remote attestation alone.
+
+To further enhance the security of remote attestation and reduce the chances of not detecting a breach, it is essential to follow best practices:
+
+1. Use hardware-based roots of trust (e.g., TPM or TEE) to increase the difficulty for attackers to tamper with the attestation process.
+2. Keep trust anchors (e.g., root certificates) up-to-date and manage them securely.
+3. Regularly update the device's firmware, software, and security configurations to minimize vulnerabilities.
+4. Use secure communication channels to transmit attestation reports and other sensitive information.
+5. Combine remote attestation with other security mechanisms (e.g., intrusion detection systems, secure logging, and monitoring) to increase the chances of detecting breaches.
+
+By employing a comprehensive security approach and using remote attestation as one of the security mechanisms, the verifier can have a higher level of confidence in detecting if a remote device is breached. However, it is essential to remember that no security measure can provide absolute certainty.
+
+* * *
+
+**You:**
+
+guid: fafc81d7-e12e-4fe3-829a-d4aeaefee67b
+create_time: 2023-04-17 23:19:57
+Can TEE guarantee the code?
+
+* * *
+
+**ChatGPT:**
+
+A Trusted Execution Environment (TEE) can provide a high level of assurance regarding the integrity and confidentiality of the code executed within it, but it cannot provide an absolute guarantee. A TEE isolates sensitive code and data from the rest of the system, protecting them from unauthorized access or tampering by malicious software or external attackers.
+
+TEEs, such as ARM TrustZone or Intel SGX, leverage hardware-based security features to create a secure enclave where sensitive operations can be performed. These enclaves provide a range of security properties, including:
+
+1. Code isolation: The code running in the TEE is isolated from the rest of the system, ensuring that other applications or the OS cannot access or modify it.
+2. Data protection: Data stored or processed within the TEE is encrypted and protected from unauthorized access or tampering.
+3. Secure boot: TEEs often support secure boot, which ensures that the code loaded into the TEE has not been tampered with and comes from a trusted source.
+4. Remote attestation: TEEs can provide remote attestation capabilities, allowing a remote party to verify the integrity and authenticity of the code running in the TEE.
+
+Despite these security properties, TEEs are not infallible, and vulnerabilities have been discovered in the past. For example, side-channel attacks have been demonstrated against Intel SGX, potentially allowing an attacker to extract sensitive information from the enclave.
+
+While TEEs can provide a high level of assurance for the code they execute, it is essential to remember that no security measure can offer absolute certainty. Regularly updating the software, firmware, and security configurations of the TEE, as well as employing a comprehensive security approach that includes other security mechanisms, can help reduce the risk of compromise.
 
 * * *
 

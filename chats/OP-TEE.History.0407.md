@@ -1,5 +1,6 @@
 **You:**
 
+guid: 85c5cd0a-4d15-4677-8225-a70ab98b1366
 create_time: 2023-04-07 21:14:42
 Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone and Qualcomm about TustZone.
 
@@ -38,6 +39,7 @@ In conclusion, TrustZone technology has been adopted by major companies like App
 
 **You:**
 
+guid: 7354d6fe-80f4-492a-b561-9b2b4a7e48e4
 create_time: 2023-04-07 21:16:48
 Please display them in a table. Columns of the table are TEE, TrustZone, OP-TEE, iPhone and Qualcomm.
 
@@ -54,6 +56,7 @@ Please display them in a table. Columns of the table are TEE, TrustZone, OP-TEE,
 
 **You:**
 
+guid: 68e5df2a-1ba0-415b-bfcf-ababbcbbdf67
 create_time: 2023-04-07 21:21:33
 Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone and Qualcomm about TustZone. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail.
 
@@ -96,6 +99,7 @@ In conclusion, ARM's TrustZone technology has been an essential component of ARM
 
 **You:**
 
+guid: 80fd2884-2a27-41d0-bf6f-56e3ecd67920
 create_time: 2023-04-07 21:23:31
 Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone about TrustZone and Qualcomm about TEE. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail.
 
@@ -138,6 +142,7 @@ In conclusion, ARM's TrustZone technology has been an essential component of ARM
 
 **You:**
 
+guid: c0780766-9a32-47cd-b64d-370937dcdc5f
 create_time: 2023-04-07 21:25:19
 Please display above context in a table. Columns of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm.
 
@@ -156,6 +161,7 @@ Please display above context in a table. Columns of the table are TEE, ARM Trust
 
 **You:**
 
+guid: a7fa5011-8523-4704-9844-d188822517ee
 create_time: 2023-04-07 21:26:54
 Please display above context in a table. X axis of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm.  Y asis of the table are years.
 
@@ -180,6 +186,7 @@ This table shows the years in which key milestones related to TEE, ARM TrustZone
 
 **You:**
 
+guid: bb1496c8-d8dd-4de6-b66d-fdfe39c08f7c
 create_time: 2023-04-07 21:30:02
 When did Qualcomm release QTEE?
 
@@ -193,6 +200,7 @@ Qualcomm introduced the Qualcomm Trusted Execution Environment (QTEE) in 2011. Q
 
 **You:**
 
+guid: ff2e35b4-b278-446e-8a54-0de3117b3e2b
 create_time: 2023-04-07 21:36:12
 Please list history of Qualcomm TEE with years in detail.
 
@@ -214,6 +222,7 @@ These milestones showcase Qualcomm's ongoing efforts to improve the security fea
 
 **You:**
 
+guid: 8fe69162-36f2-49e8-995a-ca3937d55704
 create_time: 2023-04-07 21:40:10
 Where do you find the year when Qualcomm introduced QTEE?
 
@@ -229,6 +238,7 @@ Qualcomm has been implementing Trusted Execution Environments (TEE) using ARM Tr
 
 **You:**
 
+guid: 94044aee-5417-43da-8c93-3896f72a0d30
 create_time: 2023-04-08 11:42:39
 Please list history of Linaro OP-TEE with years.
 
@@ -253,6 +263,7 @@ Since 2015, Linaro has continued to actively maintain and develop the OP-TEE pro
 
 **You:**
 
+guid: 2d2e2a91-b69b-4c3b-ae67-bec24dd76c19
 create_time: 2023-04-08 11:43:23
 Please list history of Linaro OP-TEE with years after 2015.
 
@@ -283,6 +294,7 @@ Throughout the years, Linaro has provided regular updates to the OP-TEE project,
 
 **You:**
 
+guid: d8abfc49-11eb-4dad-93d8-bf22af1d8431
 create_time: 2023-04-08 11:45:26
 Please list history of Qualcomm QTEE with years after 2017.
 
@@ -300,6 +312,7 @@ Nonetheless, Qualcomm's ongoing commitment to security can be observed through r
 
 **You:**
 
+guid: 4635dab9-0b06-4884-9318-cbb12eaa76ef
 create_time: 2023-04-10 10:33:50
 What is relationship between QTEE and SPU?
 
@@ -319,6 +332,7 @@ In summary, both QTEE and SPU are security features implemented in Qualcomm's Sn
 
 **You:**
 
+guid: d4060a2b-1e5a-4b05-93a0-ac9ab2e1019c
 create_time: 2023-04-10 10:36:54
 When was source code of QTEE opened?
 
@@ -334,6 +348,7 @@ Please note that this information may be outdated or incomplete, as I do not hav
 
 **You:**
 
+guid: f37d5630-43f0-4bab-a5de-d7592dc57be1
 create_time: 2023-04-10 10:59:21
 Please list history of Linaro OP-TEE with years after 2015.
 
@@ -366,6 +381,7 @@ Throughout these years, Linaro has been actively maintaining and improving the O
 
 **You:**
 
+guid: 721ae541-1604-47c3-9e3c-116dc27965ff
 create_time: 2023-04-10 11:03:14
 Does SPU rely on ARMv8?
 
@@ -383,6 +399,7 @@ In summary, while the SPU does not exclusively rely on ARMv8, it is often used i
 
 **You:**
 
+guid: 7847ac90-8acc-44d1-8fe9-8bc2093e06d5
 create_time: 2023-04-10 20:03:56
 What is relationship between QTEE and SPU?
 
@@ -404,6 +421,7 @@ In summary, QTEE and SPU are both Qualcomm-developed security solutions for thei
 
 **You:**
 
+guid: fd7a143c-364d-4693-acd0-27db48f0edf7
 create_time: 2023-04-10 20:05:33
 When was source code of QTEE opened?
 
@@ -419,6 +437,7 @@ In contrast, OP-TEE (Open Portable Trusted Execution Environment) is an open-sou
 
 **You:**
 
+guid: 7e516987-cfef-4524-a2e1-0dedd879e551
 create_time: 2023-04-13 21:37:50
 What is SPU?
 
@@ -434,6 +453,7 @@ The SPU is a separate subsystem within the Snapdragon SoCs, distinct from the ma
 
 **You:**
 
+guid: bbeddcb9-1c76-4f54-b151-0ac9f15d346f
 create_time: 2023-04-13 21:40:32
 Does SPU have secret keys?
 

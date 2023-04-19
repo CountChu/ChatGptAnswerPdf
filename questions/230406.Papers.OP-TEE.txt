@@ -38,3 +38,22 @@ Compare 2017 vTZ and 2019 TrustedVIM
 	q-prefix: Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE
 	d: 2023/4/8
 
+2022 WATZ
+	q-prefix: Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone
+	q: What is the benefit of using WASM in TEE?
+	q: Is WATZ extended from OP-TEE?
+	q: What is Remote Attestation?
+	q: So the software is provided by the remote device and the party verify the signature of the software before run it. Right?
+	q: Is remote attestation only used  to verify software? 
+	q: How does a remote device declare that secure boot is enabled?
+	q: But how does the party(verifier) determine if the report is fake if the device is breached?
+	q: How does the party(verifier) verify the root of trust of the device?
+	q: Can remote attestation help the party know if the remote device is breached?
+	q: Can TEE guarantee the code?
+
+
+
+
+
+
+

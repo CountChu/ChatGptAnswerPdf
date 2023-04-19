@@ -1,5 +1,6 @@
 **You:**
 
+guid: e4be3388-6f7b-4154-92bc-cbe6fbdc0967
 create_time: 2023-04-02 14:25:58
 What is DRM?
 
@@ -17,6 +18,7 @@ While DRM is intended to combat piracy and protect creators' rights, it has also
 
 **You:**
 
+guid: 64a9a896-85e7-44b3-987e-9c50d850b1a0
 create_time: 2023-04-02 14:26:34
 How does DRM protect digital contents?
 
@@ -46,6 +48,7 @@ These methods work together to ensure that only authorized users can access and 
 
 **You:**
 
+guid: bea6dd77-67f6-441a-9508-314cacfd0d5f
 create_time: 2023-04-02 14:28:27
 Please describe more detail about encryption method.
 
@@ -69,6 +72,7 @@ It's important to note that while encryption is a powerful tool for protecting d
 
 **You:**
 
+guid: 5c0afab4-f755-4c58-87fd-9abef938ffa7
 create_time: 2023-04-02 14:31:08
 Please explain Time Limitations used by DRM.
 
@@ -92,6 +96,7 @@ Time limitations used by DRM systems ensure that access to digital content is gr
 
 **You:**
 
+guid: bd4fd6b9-57e5-4cb5-bee5-74cc3919c0a8
 create_time: 2023-04-02 16:12:02
 What is ClearKey?
 
@@ -111,6 +116,7 @@ While ClearKey provides a basic level of protection, its simplicity and the use 
 
 **You:**
 
+guid: 8067e6d9-890d-4b58-8419-5f62e3437091
 create_time: 2023-04-02 16:56:35
 What is PlayReady?
 
@@ -140,6 +146,7 @@ PlayReady is widely used by content providers, streaming platforms, and device m
 
 **You:**
 
+guid: 867da60a-f0f4-4fca-a077-ed82b9bfbc30
 create_time: 2023-04-02 17:00:05
 What is kind of DRM?
 
@@ -167,6 +174,7 @@ These DRM systems protect digital content by implementing various access control
 
 **You:**
 
+guid: ebe4aa8b-8e73-4f77-ac83-3f0f2e66cd0f
 create_time: 2023-04-02 19:43:40
 What is difference between SL2000 and SL3000 in PlayReady? Please also summarize in a table.
 
@@ -204,6 +212,7 @@ The choice between SL2000 and SL3000 depends on the content provider's requireme
 
 **You:**
 
+guid: 4ab40787-5ad9-4a61-b9ca-b61e0642fbec
 create_time: 2023-04-02 19:58:51
 What are hardware components in SL3000?
 
@@ -227,6 +236,7 @@ These hardware components work together to provide a higher level of content pro
 
 **You:**
 
+guid: fd51f67d-781a-465c-a8b7-31eda94a1a55
 create_time: 2023-04-10 21:08:45
 What is license key?
 
@@ -246,6 +256,7 @@ It's important to note that the term "license key" can also refer to a code used
 
 **You:**
 
+guid: f99a4061-b99e-4839-a49a-fb9418eb0c33
 create_time: 2023-04-10 21:10:26
 What if the license key is stolen?
 
@@ -273,6 +284,7 @@ While these security measures can reduce the risk of license key theft, no syste
 
 **You:**
 
+guid: fcb1e9be-8db9-462f-a7d8-089ba5fbd6ad
 create_time: 2023-04-10 21:11:59
 What is content key?
 
@@ -294,6 +306,7 @@ In summary, a content key is a critical component of DRM systems, as it enables 
 
 **You:**
 
+guid: 40434145-9710-4297-b935-8228b81c11fa
 create_time: 2023-04-10 21:13:47
 What if the content key is stolen?
 
@@ -321,6 +334,7 @@ While these security measures can reduce the risk of content key theft, no syste
 
 **You:**
 
+guid: f0b89603-c635-4040-999f-c160594c1538
 create_time: 2023-04-10 21:18:27
 What is TEE identification?
 
@@ -346,6 +360,7 @@ TEE identification plays a crucial role in secure communication and information 
 
 **You:**
 
+guid: fe40903f-412a-4d84-b3f9-f5399bfce2c4
 create_time: 2023-04-10 21:35:00
 What is identification attacker?
 
@@ -375,6 +390,7 @@ To defend against identification attacks, organizations and individuals should e
 
 **You:**
 
+guid: 213347b4-bae4-4f65-a20a-c64c84a16d9e
 create_time: 2023-04-10 21:36:51
 What is exploitation attacker?
 
@@ -402,6 +418,7 @@ To defend against exploitation attackers, organizations and individuals should a
 
 **You:**
 
+guid: 0d28d150-3bd4-4b40-9c9c-8bcab585f580
 create_time: 2023-04-10 21:38:09
 Please summarize both in a table.
 
@@ -423,6 +440,7 @@ This table provides a high-level overview of the differences between identificat
 
 **You:**
 
+guid: 344431d3-438b-40d0-965e-3ed6c0478b35
 create_time: 2023-04-13 17:15:37
 What is secure data path?
 

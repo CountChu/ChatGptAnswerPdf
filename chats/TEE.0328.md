@@ -1,5 +1,6 @@
 **You:**
 
+guid: 447f5fc1-1cbc-4dd5-9e55-e2b18a64eaee
 create_time: 2023-03-29 10:04:13
 https://en.wikipedia.org/wiki/Trusted_execution_environment
 
@@ -26,6 +27,7 @@ It is important to note that while TEEs offer a higher level of security, they a
 
 **You:**
 
+guid: 2e3f09a8-7785-49cd-a7f1-17a8294b259f
 create_time: 2023-03-29 13:55:37
 Please summarize Intel SGX and ARM TrustZone in tables.
 
@@ -81,6 +83,7 @@ Both Intel SGX and ARM TrustZone are hardware-based security features designed t
 
 **You:**
 
+guid: 9f4005f9-2fa1-43bb-9dde-2b9f2f2a4ca9
 create_time: 2023-03-29 13:58:08
 What are different between ARM SMC and Intel SMI? Please also summarize in a table.
 
@@ -107,6 +110,7 @@ ARM SMC is an instruction used in ARM-based processors to switch between the sec
 
 **You:**
 
+guid: 9d90d8a2-7f61-4e28-8213-bc15526df86c
 create_time: 2023-03-29 13:59:10
 Please describe TEE in Intel.
 
@@ -134,6 +138,7 @@ Intel SGX is a powerful TEE solution that provides an additional layer of securi
 
 **You:**
 
+guid: 2f31c4af-5f6e-4534-b143-d30ae77d927d
 create_time: 2023-03-29 14:00:38
 What are APIs of TEE? Please classify them.
 
@@ -178,6 +183,7 @@ It is important to note that the specific APIs available and their implementatio
 
 **You:**
 
+guid: 3788f757-7af7-41f9-a4e0-0135ec9c8fb3
 create_time: 2023-03-29 14:02:11
 Can I add a myself TEE API?
 
@@ -209,6 +215,7 @@ Before attempting to add your own TEE API, it is recommended to explore existing
 
 **You:**
 
+guid: d0c5d0a8-76f5-45e9-a7bb-000b291364d8
 create_time: 2023-03-29 16:47:32
 How does a normal world application request a service in secure world?
 
@@ -236,6 +243,7 @@ It is important to note that the specific mechanisms and steps for requesting a 
 
 **You:**
 
+guid: 52f35438-f861-4852-af97-2625cff40b0e
 create_time: 2023-03-29 16:49:36
 How does a normal world application request a service with shared memory in secure world? Please describe the process and give APIs of TEE.
 
@@ -267,6 +275,7 @@ It is important to note that the specific mechanisms, APIs, and steps for reques
 
 **You:**
 
+guid: 2d07ce51-77b4-4783-ae96-5acc8ec3f684
 create_time: 2023-03-29 16:51:50
 How does a normal world application request a service with shared memory in secure world? Please describe the process and give APIs of both worlds.
 
@@ -300,6 +309,7 @@ It's essential to note that the specific mechanisms, APIs, and steps for request
 
 **You:**
 
+guid: 5db98647-3ddc-438d-ba95-fc4517181b4b
 create_time: 2023-03-29 16:56:26
 How does an  application in normal world request a service with shared memory of a trusted application in a secure world? Please describe the process with APIs.
 
@@ -337,6 +347,7 @@ Please note that the specific APIs and mechanisms for requesting a service using
 
 **You:**
 
+guid: 09b7a638-ca2d-4841-b873-d737df3ed8df
 create_time: 2023-03-29 17:10:29
 Which functions are used by TA (trusted application) in the above process?
 
@@ -362,6 +373,7 @@ The specific functions and APIs used by a Trusted Application (TA) may vary depe
 
 **You:**
 
+guid: 4dea39eb-7792-44ee-9258-2d2f7ba9b7d6
 create_time: 2023-03-29 17:12:26
 Could you please draw a sequence diagram for my above two questions?
 
@@ -397,6 +409,7 @@ You can use this sequence of events to create a diagram illustrating the interac
 
 **You:**
 
+guid: 73b63df8-ad8f-44ad-bfaf-128f174e4008
 create_time: 2023-03-29 17:16:27
 Could you please draw a sequence diagram of TEEC_InitializeContext, TEEC_OpenSession, TEEC_RegisterSharedMemory, TEEC_InvokeCommand, TEEC_ReleaseSharedMemory, TEEC_CloseSession, TEEC_FinalizeContext, TA_CreateEntryPoint, TA_DestroyEntryPoint, TA_OpenSessionEntryPoint, TA_CloseSessionEntryPoint, TA_InvokeCommandEntryPoint
 
@@ -440,6 +453,7 @@ You can use this sequence of events to create a diagram illustrating the interac
 
 **You:**
 
+guid: 516c60bb-2f0e-4d14-baec-477fe4302d78
 create_time: 2023-03-29 17:25:40
 Is the above sequence described in GlobalPlatform?
 
@@ -457,6 +471,7 @@ It's important to note that the specific APIs and mechanisms for requesting a se
 
 **You:**
 
+guid: 83e394e9-6fc5-4812-8003-6fc6534e034a
 create_time: 2023-03-29 17:27:33
 Which document describe it?
 
@@ -480,6 +495,7 @@ Both documents provide detailed information on the APIs and their usage, includi
 
 **You:**
 
+guid: 2f99d5b1-d7cd-43e7-9176-7a3004394965
 create_time: 2023-03-29 17:36:37
 Please give me two sample codes of the above sequence. One is for CA and another is for TA.
 
@@ -586,6 +602,7 @@ void TA_CloseSessionEntryPoint(void *sessionContext
 
 **You:**
 
+guid: e3c2f908-4a98-46d2-a8ef-9785d3a6041d
 create_time: 2023-03-29 17:40:28
 Please write sample code of TA again. The code should be complete.
 
@@ -653,6 +670,7 @@ This sample Trusted Application code defines the required entry points for creat
 
 **You:**
 
+guid: 33da4c1b-c911-47dd-b070-62756518ddb2
 create_time: 2023-03-31 08:36:14
 Can CA and TA be implemented  in other languages?
 
@@ -674,6 +692,7 @@ In summary, while the choice of programming languages for CA and TA might be det
 
 **You:**
 
+guid: 770c3b8e-57a1-444b-893a-fd4194da1d7b
 create_time: 2023-03-31 08:46:11
 How does TA authenticate request from CA?
 
@@ -699,6 +718,7 @@ The specific method of authentication and the level of trust required between th
 
 **You:**
 
+guid: 760b3c13-02c3-4f15-ae99-bf5f7c76fe23
 create_time: 2023-04-01 15:48:45
 Is TEE a software?
 
@@ -722,6 +742,7 @@ In summary, a TEE is a combination of hardware, software, and firmware component
 
 **You:**
 
+guid: 67c25a87-7b54-4c33-a746-fae43cf63f27
 create_time: 2023-04-01 23:16:20
 What are kinds of TA?
 
@@ -747,6 +768,7 @@ In summary, TAs can be classified based on their purpose, complexity, level of t
 
 **You:**
 
+guid: 6fa3a412-28c0-44e4-ad38-abda0330758a
 create_time: 2023-04-01 23:45:35
 Does GlobalPlatform contains Chinese Cryptographic Standard?
 
@@ -770,6 +792,7 @@ These algorithms can be integrated into the TEE or secure element implementation
 
 **You:**
 
+guid: b40aa80f-2ec4-4684-b695-2570ef04f7b1
 create_time: 2023-04-10 21:20:10
 What is TEE identification?
 
@@ -795,6 +818,7 @@ TEE identification plays a crucial role in ensuring the security and trustworthi
 
 **You:**
 
+guid: 97a5d512-9deb-4f9d-ac01-98c1e97402dd
 create_time: 2023-04-10 21:22:48
 Is TEE identification obversable?
 
@@ -814,6 +838,7 @@ In summary, while TEE identification information is not directly observable by n
 
 **You:**
 
+guid: 90563912-1dcd-4adf-8ffd-48779a6a82dd
 create_time: 2023-04-10 21:26:05
 Can I use DID as TEE identification?
 
@@ -841,6 +866,7 @@ Using DIDs for TEE identification is an innovative idea that could potentially e
 
 **You:**
 
+guid: 560e7a6f-2e84-4b7b-93d8-e2e068470160
 create_time: 2023-04-10 22:07:10
 What is revocation for Trusted Application?
 
@@ -872,6 +898,7 @@ It is important to note that the specific revocation process and mechanisms will
 
 **You:**
 
+guid: 5ce03464-b72a-4bdb-9e3a-72b0edc28066
 create_time: 2023-04-14 09:47:03
 How do I check the TEE OS is secure. Are there any secure certificates of TEE OS?
 
@@ -897,6 +924,7 @@ In summary, there isn't a single "secure certificate" for TEE OSes, but a combin
 
 **You:**
 
+guid: fc250d24-86a4-4e6c-a6ca-a5f24d3a8cdd
 create_time: 2023-04-14 09:54:42
 Does OP-TEE mach the certificates?
 

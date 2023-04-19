@@ -1,7 +1,41 @@
 **You:**
 
+guid: a07fd3c1-b77d-4a14-b12a-dfb53fc0ac7f
 create_time: 2023-04-09 09:00:05
-The below text are chapter 2 of "Arm Firmware Framework for Arm A-profile"  Chapter 2 Introduction The Armv8.4 architecture introduces the Virtualization extension in the Secure state. The Arm® SMMU v3.2 architecture [1] adds support for stage 2 translations for Secure streams to complement the Secure EL2 translation regime in an Armv8.4 PE. These architectural features enable isolation of mutually mistrusting software components in the Secure state from each other. Isolation is a mechanism for implementing the principle of least privilege: A software component must be able to access only regions in the physical address space and system resources for example, interrupts in the GIC that are necessary for its correct operation. Virtualization in the Secure state enables application of this principle in the following ways: 1. Firmware in EL3 can be isolated from software in S-EL1 for example, a Trusted OS. 2. Firmware components in EL3 can be isolated from each other by migrating vendor-specific components to a sandbox in S-EL1 or S-EL0. 3. Normal world software can be isolated from software in S-EL1 to mitigate against privilege escalation attacks. This specification describes a software architecture that achieves the following goals. 1. Uses the Virtualization extension to isolate software images provided by an ecosystem of vendors from each other. 2. Describes interfaces that standardize communication between the various software images. This includes communication between images in the Secure world and Normal world. 3. Generalizes interaction between a software image and privileged firmware in the Secure state. This software architecture is the Firmware Framework1 for Arm® A-profile processors. The term Framework and abbreviation FF-A are used interchangeably with Firmware Framework in this specification.  This Framework also goes beyond the preceding goals to ensure that the guidance can be used, 1. In the absence of the Virtualization extension in the Secure state. This provides a migration path for existing Secure world software images to a system that implements the Virtualization extension in the Secure state. 2. Between VMs managed by a Hypervisor in the Normal world. The Virtualization extension in the Secure state mirrors its counterpart in the Non-secure state (see also [2]). Therefore, a Hypervisor could use the Firmware Framework to enable communication and manage isolation between VMs it manages. More rationale about the introduction of the Virtualization extension in Secure state and goals of the Firmware Framework is provided in the white-paper titled Isolation using virtualization in the Secure world [3].
+The below text are chapter 2 of "Arm Firmware Framework for Arm A-profile"
+
+Chapter 2
+Introduction
+The Armv8.4 architecture introduces the Virtualization extension in the Secure state. The Arm® SMMU
+v3.2 architecture [1] adds support for stage 2 translations for Secure streams to complement the Secure EL2
+translation regime in an Armv8.4 PE. These architectural features enable isolation of mutually mistrusting software
+components in the Secure state from each other. Isolation is a mechanism for implementing the principle of least
+privilege:
+A software component must be able to access only regions in the physical address space and system resources for
+example, interrupts in the GIC that are necessary for its correct operation.
+Virtualization in the Secure state enables application of this principle in the following ways:
+1. Firmware in EL3 can be isolated from software in S-EL1 for example, a Trusted OS.
+2. Firmware components in EL3 can be isolated from each other by migrating vendor-specific components to a
+sandbox in S-EL1 or S-EL0.
+3. Normal world software can be isolated from software in S-EL1 to mitigate against privilege escalation
+attacks.
+This specification describes a software architecture that achieves the following goals.
+1. Uses the Virtualization extension to isolate software images provided by an ecosystem of vendors from each
+other.
+2. Describes interfaces that standardize communication between the various software images. This includes
+communication between images in the Secure world and Normal world.
+3. Generalizes interaction between a software image and privileged firmware in the Secure state.
+This software architecture is the Firmware Framework1 for Arm® A-profile processors. The term Framework and
+abbreviation FF-A are used interchangeably with Firmware Framework in this specification.
+
+This Framework also goes beyond the preceding goals to ensure that the guidance can be used,
+1. In the absence of the Virtualization extension in the Secure state. This provides a migration path for existing
+Secure world software images to a system that implements the Virtualization extension in the Secure state.
+2. Between VMs managed by a Hypervisor in the Normal world. The Virtualization extension in the Secure
+state mirrors its counterpart in the Non-secure state (see also [2]). Therefore, a Hypervisor could use the
+Firmware Framework to enable communication and manage isolation between VMs it manages.
+More rationale about the introduction of the Virtualization extension in Secure state and goals of the Firmware
+Framework is provided in the white-paper titled Isolation using virtualization in the Secure world [3].
 
 * * *
 
@@ -25,8 +59,17 @@ More information about the introduction of the Virtualization extension in the S
 
 **You:**
 
+guid: e8057cf6-0026-4367-ae66-9ad9d973fac3
 create_time: 2023-04-09 09:09:55
-The below text are chapter 3 of "Arm Firmware Framework for Arm A-profile"  The Firmware Framework is made up of the following building blocks as illustrated in Figure 3.1. 1. Isolation boundaries. 2. Partition interfaces. 3. Partitions. 4. Partition manifest. 5. Partition manager. The following sub-sections describe these building blocks in more detail.
+The below text are chapter 3 of "Arm Firmware Framework for Arm A-profile"
+
+The Firmware Framework is made up of the following building blocks as illustrated in Figure 3.1.
+1. Isolation boundaries.
+2. Partition interfaces.
+3. Partitions.
+4. Partition manifest.
+5. Partition manager.
+The following sub-sections describe these building blocks in more detail.
 
 * * *
 
@@ -58,8 +101,45 @@ The following sub-sections provide more details about these building blocks:
 
 **You:**
 
+guid: 66447c2a-fb9d-4969-aa96-ec5f20e5f649
 create_time: 2023-04-09 09:17:13
-The below text are chapter 3.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it.  3.1 Isolation boundaries The Framework defines two types of isolation boundaries. 1. A Logical isolation boundary that can be used to, 1. Isolate one software module e.g. a library or a device driver from another within a software image in an exception level through an IMPLEMENTATION DEFINED mechanism. One or more services implemented inside a module are accessed through a IMPLEMENTATION DEFINED application programming interface (API). 2. Isolate one software image from another by, 1. Deploying them in separate exception levels. 2. Deploying them in the same exception level. The images are temporally isolated from each other on a given PE. One or more services implemented inside a software image are accessed through an application binary interface (ABI). 2. A Physical isolation boundary that can be used to spatially isolate the physical address space of one software image from another through the following mechanisms. 1. The Arm® TrustZone Security extension. It is used to protect the Secure physical address space ranges assigned to software images in the Secure state from software images in the Non-secure state. 2. Virtual memory-based memory protection provided by the Arm A-profile VMSA. It is used to protect the physical address space ranges assigned to a software image from other software images in the same security state. The Framework assumes that a physically isolated software image is logically isolated as well. For example, • A Guest OS running inside a VM is both physically and logically isolated from a Guest OS in another VM. • A Hypervisor running in EL2 is both physically and logically isolated from all VMs it manages. • Firmware in EL3 is physically and logically isolated from any software image in the Normal world. The Framework does not assume that a logically isolated software image is physically isolated as well. For example, a Trusted OS in S-EL1 is logically but not physically isolated from firmware in EL3 when any of the following scenarios apply. 1. S-EL2 is not present i.e. ID_AA64PFR0_EL1.SEL2=0. 2. S-EL2 is not enabled on the system by setting SCR_EL3.EEL2=1. 3. S-EL2 is present and enabled but Stage 2 address translation in the Secure EL1&0 translation regime is disabled i.e. HCR_EL2.VM=0. The two images are not physically isolated since software in S-EL1 can access the physical address space of software in EL3. The Framework defines ABIs that enable communication between software images across an exception level boundary. The images are logically isolated and could be physically isolated as well.
+The below text are chapter 3.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+
+3.1 Isolation boundaries
+The Framework defines two types of isolation boundaries.
+1. A Logical isolation boundary that can be used to,
+1. Isolate one software module e.g. a library or a device driver from another within a software image in an
+exception level through an IMPLEMENTATION DEFINED mechanism. One or more services implemented
+inside a module are accessed through a IMPLEMENTATION DEFINED application programming interface
+(API).
+2. Isolate one software image from another by,
+1. Deploying them in separate exception levels.
+2. Deploying them in the same exception level. The images are temporally isolated from each other on
+a given PE.
+One or more services implemented inside a software image are accessed through an application binary
+interface (ABI).
+2. A Physical isolation boundary that can be used to spatially isolate the physical address space of one software
+image from another through the following mechanisms.
+1. The Arm® TrustZone Security extension. It is used to protect the Secure physical address space ranges
+assigned to software images in the Secure state from software images in the Non-secure state.
+2. Virtual memory-based memory protection provided by the Arm A-profile VMSA. It is used to protect the
+physical address space ranges assigned to a software image from other software images in the same
+security state.
+The Framework assumes that a physically isolated software image is logically isolated as well. For example,
+• A Guest OS running inside a VM is both physically and logically isolated from a Guest OS in another VM.
+• A Hypervisor running in EL2 is both physically and logically isolated from all VMs it manages.
+• Firmware in EL3 is physically and logically isolated from any software image in the Normal world.
+The Framework does not assume that a logically isolated software image is physically isolated as well. For
+example, a Trusted OS in S-EL1 is logically but not physically isolated from firmware in EL3 when any of the
+following scenarios apply.
+1. S-EL2 is not present i.e. ID_AA64PFR0_EL1.SEL2=0.
+2. S-EL2 is not enabled on the system by setting SCR_EL3.EEL2=1.
+3. S-EL2 is present and enabled but Stage 2 address translation in the Secure EL1&0 translation regime is
+disabled i.e. HCR_EL2.VM=0.
+The two images are not physically isolated since software in S-EL1 can access the physical address space of
+software in EL3.
+The Framework defines ABIs that enable communication between software images across an exception level
+boundary. The images are logically isolated and could be physically isolated as well.
 
 * * *
 
@@ -79,8 +159,35 @@ The Framework assumes that a physically isolated software image is also logicall
 
 **You:**
 
+guid: 396991d4-0720-43bf-9abc-074f047d32ed
 create_time: 2023-04-09 09:21:49
-The below text are chapter 3.2 of "Arm Firmware Framework for Arm A-profile". Please summarize it.  3.2 Partitions A partition is defined as a software module or image that implements one or more services within an isolation boundary such that a service is accessible across the boundary only via well defined interfaces. If the partition is a software image, then the well defined interface is an FF-A ABI. If the partition is a software module, the well defined interface is an IMPLEMENTATION DEFINED API. The Framework defines ABIs that partitions can invoke at their exception level boundaries for the following purposes. 1. Discover the presence of a partition, its properties and services it implements. 2. Synchronous and asynchronous message passing between partitions. 3. Memory management between partitions. A partition that is logically isolated but not physically isolated is called a logical partition. A partition that is both physically and logically isolated is called a physical partition. The term partition is used when it is not required to distinguish between a logical and physical partition. The term endpoint is used interchangeably with the term partition. 1. A VM (when the virtualization extension is enabled) or the OS kernel (when the virtualization extension is disabled or unavailable) is a physical or logical endpoint that runs in EL1 in the Non-secure security state. These endpoints are called NS-Endpoints in scenarios where it is not necessary to distinguish between them. 2. A partition in the Secure security state is called a Secure Partition (SP) and could be, 1. A logical partition that runs in EL3, S-EL2 or S-EL1. 2. A physical partition that runs in S-EL1 or S-EL0. SPs are called S-Endpoints in scenarios where it is not necessary to distinguish between them on the basis of the exception level they run in. A partition manifest describes the physical address space ranges and system resources a partition needs, identity of partition services to enable their discovery and other attributes of the partition that govern its run-time behavior (also see Chapter 5 Setup).
+The below text are chapter 3.2 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+
+3.2 Partitions
+A partition is defined as a software module or image that implements one or more services within an isolation
+boundary such that a service is accessible across the boundary only via well defined interfaces. If the partition is
+a software image, then the well defined interface is an FF-A ABI. If the partition is a software module, the well
+defined interface is an IMPLEMENTATION DEFINED API.
+The Framework defines ABIs that partitions can invoke at their exception level boundaries for the following
+purposes.
+1. Discover the presence of a partition, its properties and services it implements.
+2. Synchronous and asynchronous message passing between partitions.
+3. Memory management between partitions.
+A partition that is logically isolated but not physically isolated is called a logical partition. A partition that is both
+physically and logically isolated is called a physical partition. The term partition is used when it is not required
+to distinguish between a logical and physical partition. The term endpoint is used interchangeably with the term
+partition.
+1. A VM (when the virtualization extension is enabled) or the OS kernel (when the virtualization extension is
+disabled or unavailable) is a physical or logical endpoint that runs in EL1 in the Non-secure security state.
+These endpoints are called NS-Endpoints in scenarios where it is not necessary to distinguish between them.
+2. A partition in the Secure security state is called a Secure Partition (SP) and could be,
+1. A logical partition that runs in EL3, S-EL2 or S-EL1.
+2. A physical partition that runs in S-EL1 or S-EL0.
+SPs are called S-Endpoints in scenarios where it is not necessary to distinguish between them on the basis of
+the exception level they run in.
+A partition manifest describes the physical address space ranges and system resources a partition needs, identity of
+partition services to enable their discovery and other attributes of the partition that govern its run-time behavior
+(also see Chapter 5 Setup).
 
 * * *
 
@@ -103,8 +210,43 @@ A partition manifest describes the required physical address space ranges, syste
 
 **You:**
 
+guid: 14e1ad56-771f-49ce-b876-f9398a249e1d
 create_time: 2023-04-09 09:45:58
-The below text are chapter 3.3 of "Arm Firmware Framework for Arm A-profile". Please summarize it.  3.3 Partition manager A partition manager is responsible for creating and managing the physical isolation boundary of a partition. It uses a partition manifest to assign physical address space ranges and system resources to a partition, initialize it as per the specified attributes and enable discovery of its services. The partition manager also implements FF-A ABIs to enable inter-partition communication for access to partition services. 1. In the Secure world, this component is called the Secure Partition Manager (SPM). 2. In the Normal world it is a Hypervisor1 (if the virtualization extension is enabled). A partition manager is physically isolated from physical partitions and logically isolated from logical partitions it manages. All partitions managed by a partition manager reside at the same or a numerically lower exception level than the partition manager. The term partition manager is used in the rest of this specification to collectively refer to the SPM and Hypervisor in scenarios where they have the same responsibilities, and it is not necessary to distinguish between them. The Hypervisor uses the virtualization extension in the Arm A-profile VMSA to create physical isolation boundaries as follows. • The EL1&0 stage 2 translation regime, when EL2 is enabled in a PE in the Non-secure state, is used to restrict visibility of the Non-secure physical address space from a VM to only those regions that have been assigned to the VM. See 4.1 SPM architecture for a description of how the SPM creates and manages isolation boundaries for SPs. See 4.2 DMA isolation for a description of how a partition manager creates and manages isolation boundaries for DMA capable devices. The following trust boundaries are defined by the Firmware Framework vis-a-vis the partition managers and partitions. • The SPM is a part of the TCB for a system resource or physical address space range assigned to the Secure state. • Both the Hypervisor and SPM are a part of the TCB for a system resource or physical address space range assigned to the Non-secure state. • A VM trusts the Hypervisor to protect its resources from other VMs by creating and maintaining the correct physical isolation boundaries in the Non-secure physical address space. • Every endpoint trusts the SPM to protect its resources from other endpoints by creating and maintaining the correct physical isolation boundaries in both the Secure and Non-secure physical address spaces. • An SP does not trust the state of any Non-secure resource it has access to. Therefore, it does not trust the Hypervisor or a NS-Endpoint that could also access the same resource. The term FF-A component is used to collectively refer to partitions and partition managers.
+The below text are chapter 3.3 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+
+3.3 Partition manager
+A partition manager is responsible for creating and managing the physical isolation boundary of a partition. It
+uses a partition manifest to assign physical address space ranges and system resources to a partition, initialize it as
+per the specified attributes and enable discovery of its services. The partition manager also implements FF-A ABIs
+to enable inter-partition communication for access to partition services.
+1. In the Secure world, this component is called the Secure Partition Manager (SPM).
+2. In the Normal world it is a Hypervisor1 (if the virtualization extension is enabled).
+A partition manager is physically isolated from physical partitions and logically isolated from logical partitions it
+manages. All partitions managed by a partition manager reside at the same or a numerically lower exception level
+than the partition manager.
+The term partition manager is used in the rest of this specification to collectively refer to the SPM and Hypervisor
+in scenarios where they have the same responsibilities, and it is not necessary to distinguish between them.
+The Hypervisor uses the virtualization extension in the Arm A-profile VMSA to create physical isolation boundaries
+as follows.
+• The EL1&0 stage 2 translation regime, when EL2 is enabled in a PE in the Non-secure state, is used to
+restrict visibility of the Non-secure physical address space from a VM to only those regions that have been
+assigned to the VM.
+See 4.1 SPM architecture for a description of how the SPM creates and manages isolation boundaries for SPs.
+See 4.2 DMA isolation for a description of how a partition manager creates and manages isolation boundaries for
+DMA capable devices.
+The following trust boundaries are defined by the Firmware Framework vis-a-vis the partition managers and
+partitions.
+• The SPM is a part of the TCB for a system resource or physical address space range assigned to the Secure
+state.
+• Both the Hypervisor and SPM are a part of the TCB for a system resource or physical address space range
+assigned to the Non-secure state.
+• A VM trusts the Hypervisor to protect its resources from other VMs by creating and maintaining the correct
+physical isolation boundaries in the Non-secure physical address space.
+• Every endpoint trusts the SPM to protect its resources from other endpoints by creating and maintaining the
+correct physical isolation boundaries in both the Secure and Non-secure physical address spaces.
+• An SP does not trust the state of any Non-secure resource it has access to. Therefore, it does not trust the
+Hypervisor or a NS-Endpoint that could also access the same resource.
+The term FF-A component is used to collectively refer to partitions and partition managers.
 
 * * *
 
@@ -122,8 +264,58 @@ The Hypervisor uses the virtualization extension in the Arm A-profile VMSA to cr
 
 **You:**
 
+guid: 5285adc0-735f-40cd-af47-313fb3c6c6f8
 create_time: 2023-04-09 09:52:45
-The below text are chapter 3.4 of "Arm Firmware Framework for Arm A-profile". Please summarize it.  3.4 Example configurations The Non-secure and Secure security states in the Arm A-profile architecture typically adopt a client-server model where a partition in the Non-secure state is a client of services implemented by a partition in the Secure state. Partitions within a security state could adopt the client-server model as well. Furthermore, a partition can be both a consumer of another partition’s services and provider of its own services. The FF-A software architecture generalizes the programming model to access a partition’s services within and between the Non-secure and Secure security states. Some example deployment scenarios of the FF-A software architecture on various configurations of an Arm A-profile system are listed in the following sub-sections.  3.4.1 FF-A deployment without S-EL2 Figure 3.2: Example FF-A deployment without S-EL2 In Figure 3.2, the virtualization extension is enabled in the Non-secure state. It is either unavailable or disabled in the Secure state. Both VM0 and VM1 implement an FF-A driver in EL1 to access services in S-Endpoints. They could use the same driver to access each other’s services as well. The Hypervisor facilitates access to services in S-Endpoints from VM0 and VM1 by implementing an FF-A driver in EL2. It could use the same driver to enable them to access each other’s services. The following software images are deployed in the Secure world. 1. A firmware image in EL3. It implements the SPM. 2. A firmware image in S-EL1 (SP1). 3. A Trusted OS image in S-EL1 (SP0). SP0 and SP1 are temporally isolated logical partitions and could access each other’s services via the SPM. The SPM is logically isolated from SP0 and SP1.  3.4.2 FF-A deployment with S-EL2 Figure 3.3: Example FF-A deployment with S-EL2 In Figure 3.3, the virtualization extension is enabled in both security states. The Normal world software stack in unchanged from Figure 3.2. The following software images are deployed in the Secure world. 1. A firmware image in EL3. 2. An SPM image in S-EL2. 3. A firmware image in S-EL1 (SP1). 4. A Trusted OS image in S-EL1 (SP0). SP0 and SP1 are physical partitions and could access each other’s services via the SPM. The SPM is physically isolated from SP0 and SP1.  3.4.3 FF-A deployment with S-EL2 and Armv8.1-VHE Figure 3.4: Example FF-A deployment with S-EL2 and Armv8.1-VHE In Figure 3.4, the virtualization extension is enabled in both security states. Additionally, Armv8.1 VHE is enabled in the Secure world to manage S-EL0 SPs. The Normal world software stack in unchanged from Figure 3.2. The following software images are deployed in the Secure world. 1. A firmware image in EL3. 2. An SPM image in S-EL2. 3. A firmware image in S-EL0 (SP1). 4. A firmware image in S-EL0 (SP0). SP0 and SP1 are physical partitions that could access each other’s services. The SPM is physically isolated from SP0 and SP1.
+The below text are chapter 3.4 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+
+3.4 Example configurations
+The Non-secure and Secure security states in the Arm A-profile architecture typically adopt a client-server model
+where a partition in the Non-secure state is a client of services implemented by a partition in the Secure state.
+Partitions within a security state could adopt the client-server model as well. Furthermore, a partition can be both a
+consumer of another partition’s services and provider of its own services.
+The FF-A software architecture generalizes the programming model to access a partition’s services within and
+between the Non-secure and Secure security states.
+Some example deployment scenarios of the FF-A software architecture on various configurations of an Arm
+A-profile system are listed in the following sub-sections.
+
+3.4.1 FF-A deployment without S-EL2
+Figure 3.2: Example FF-A deployment without S-EL2
+In Figure 3.2, the virtualization extension is enabled in the Non-secure state. It is either unavailable or disabled in
+the Secure state.
+Both VM0 and VM1 implement an FF-A driver in EL1 to access services in S-Endpoints. They could use the
+same driver to access each other’s services as well.
+The Hypervisor facilitates access to services in S-Endpoints from VM0 and VM1 by implementing an FF-A driver
+in EL2. It could use the same driver to enable them to access each other’s services.
+The following software images are deployed in the Secure world.
+1. A firmware image in EL3. It implements the SPM.
+2. A firmware image in S-EL1 (SP1).
+3. A Trusted OS image in S-EL1 (SP0).
+SP0 and SP1 are temporally isolated logical partitions and could access each other’s services via the SPM. The
+SPM is logically isolated from SP0 and SP1.
+
+3.4.2 FF-A deployment with S-EL2
+Figure 3.3: Example FF-A deployment with S-EL2
+In Figure 3.3, the virtualization extension is enabled in both security states. The Normal world software stack in
+unchanged from Figure 3.2.
+The following software images are deployed in the Secure world.
+1. A firmware image in EL3.
+2. An SPM image in S-EL2.
+3. A firmware image in S-EL1 (SP1).
+4. A Trusted OS image in S-EL1 (SP0).
+SP0 and SP1 are physical partitions and could access each other’s services via the SPM. The SPM is physically
+isolated from SP0 and SP1.
+
+3.4.3 FF-A deployment with S-EL2 and Armv8.1-VHE
+Figure 3.4: Example FF-A deployment with S-EL2 and Armv8.1-VHE
+In Figure 3.4, the virtualization extension is enabled in both security states. Additionally, Armv8.1 VHE is enabled
+in the Secure world to manage S-EL0 SPs. The Normal world software stack in unchanged from Figure 3.2.
+The following software images are deployed in the Secure world.
+1. A firmware image in EL3.
+2. An SPM image in S-EL2.
+3. A firmware image in S-EL0 (SP1).
+4. A firmware image in S-EL0 (SP0).
+SP0 and SP1 are physical partitions that could access each other’s services. The SPM is physically isolated from
+SP0 and SP1.
 
 * * *
 
@@ -146,6 +338,7 @@ In this scenario, the virtualization extension is enabled in both security state
 
 **You:**
 
+guid: 3004dd87-99a8-4f25-829b-9bf0306b8a03
 create_time: 2023-04-09 10:05:06
 In ARM partition manager, Whan A is isolated from B. Could I say that B is also isolated from A?
 
@@ -159,6 +352,7 @@ Yes, in the ARM partition manager, when partition A is isolated from partition B
 
 **You:**
 
+guid: 374a3df4-72fe-4ff0-9b49-d93209da9e75
 create_time: 2023-04-09 10:05:24
 Are you sure?
 
@@ -172,6 +366,7 @@ Yes, I am sure. In the ARM Firmware Framework, isolation boundaries are designed
 
 **You:**
 
+guid: 2941b456-0b26-4c2c-be6f-ee24ae0221d3
 create_time: 2023-04-09 10:14:50
 Can SPM see SP0 and SP1?
 
@@ -185,6 +380,7 @@ Yes, the Secure Partition Manager (SPM) can "see" and manage both SP0 and SP1. T
 
 **You:**
 
+guid: 1905a65b-7ca2-4c77-8851-40909e93cd6d
 create_time: 2023-04-09 10:15:25
 Can SP0 or SP1 see SPM?
 
@@ -200,6 +396,7 @@ However, it is important to note that SP0 and SP1 cannot access the internal wor
 
 **You:**
 
+guid: b1b8b28b-296f-46e8-9791-698d2296ed71
 create_time: 2023-04-09 10:17:20
 Is TrustZone isolation boundary physical isolation or logical isolation?
 
@@ -213,8 +410,113 @@ TrustZone isolation boundary is a form of physical isolation. TrustZone is a sec
 
 **You:**
 
+guid: 61f4927d-6d12-4a3e-8afe-b3e833cd4172
 create_time: 2023-04-09 10:26:47
-The below text are chapter 4.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it.  4.1 SPM architecture The responsibilities of the SPM are split between two components: the SPM Dispatcher (SPMD) and SPM Core (SPMC). Both components have access to the entire physical address space and are a part of the Trusted computing base. The term SPM is used when it is not necessary to distinguish between these two components. The responsibilities of these components are listed below. 1. The SPMD resides in EL3 and runs in either the AArch64 or AArch32 execution state. It is responsible for: • SPM Core initialization at boot time. • Forwarding FF-A calls from Normal world to the SPM Core. • Forwarding FF-A calls from the SPM Core to the Normal world. 2. The SPMC either co-resides with the SPMD in EL3 or in an adjacent exception level i.e. S-EL1 or S-EL2. It is responsible for: • SP initialization and isolation at boot time. • Inter-partition isolation at run-time. • Inter-partition communication at run-time between: – S-Endpoints. – S-Endpoints and NS-Endpoints. Table 4.1 lists the SPMC and SPMD configurations supported by the Framework vis-a-vis the exception levels they can reside in and the execution states they can run in.  Table 4.1: Valid SPM configurations in AArch64 and AArch32 Execution state SPM config number SPMD EL and Execution state SPMC EL and Execution state Name of configuration 1. EL3 (Aarch64) EL3 (AArch64) EL3 SPMC 2. EL3 (AArch32) EL3 (AArch32) EL3 SPMC 3. EL3 (AArch64) S-EL1 (AArch64) S-EL1 SPMC 4. EL3 (AArch64) S-EL1 (AArch32) S-EL1 SPMC 5. EL3 (AArch64) S-EL2 (AArch64) S-EL2 SPMC In SPM configurations where the SPMD and SPMC reside in adjacent exception levels, • They implement and report a mutually compatible version of the Firmware Framework. See 13.2.3 SPM usage for details. • The mechanism used by the SPMD to initialize the SPMC is IMPLEMENTATION DEFINED. The guidance provided in Chapter 5 Setup could be used by the implementation. • They use the ABIs defined in this specification for communication. A description of each SPM configuration is provided in the following sections. • 4.1.1 Secure EL2 SPM core component. • 4.1.3 EL3 SPM core component. • 4.1.2 S-EL1 SPM core component. The SPM configurations without S-EL2 are used in the following scenarios. • Reduce the size of the TCB by migrating EL3 & S-EL1 firmware components, that should not be a part of the TCB, to one or more physically isolated S-EL0 SPs. • Make the TCB implementation more robust by migrating its components from EL3 & S-EL1 to one or more physically isolated S-EL0 SPs. • Adopt the generalized programming model specified by the Framework to ease the migration of the Secure world software stack to an Arm A-profile system with S-EL2 enabled. • Adopt the generalized programming model specified by the Framework for accessing services in S-Endpoints from NS-Endpoints irrespective of whether S-EL2 is used in the Secure world.  4.1.1 Secure EL2 SPM core component Figure 4.1: Example S-EL2 SPM Core and SP configuration The S-EL2 SPMC is fundamental to enforcing the principle of least privilege in the Secure state on Armv8.4 or later systems as described in Chapter 2 Introduction. It supports one or more of the following SP configurations. 1. The SPMC uses Armv8.1 VHE to manage one or more physical SPs that run in S-EL0. Each SP runs in either the AArch32 or AArch64 execution state. The physical address space assigned to an SP is isolated from other FF-A components through the single stage of address translation implemented by the Secure EL2&0 translation regime. 2. The SPMC manages one or more physical SPs that run in S-EL1. Each SP runs in either the AArch32 or AArch64 execution state. The physical address space assigned to an SP is isolated from other FF-A components by the Secure EL1&0 stage 2 translation regime, when EL2 is enabled. An example of these configurations is illustrated in Figure 4.1.  4.1.2 S-EL1 SPM core component Figure 4.2: Example S-EL1 SPM Core and SP configuration A S-EL1 SPMC runs in either the AArch64 or AArch32 execution state. It supports one or more of the following SP configurations. 1. The SPMC manages one or more physical SPs that run in S-EL0. Each SP runs in either the AArch32 or AArch64 (only if S-EL1 SPMC runs in AArch64 too) execution state. The physical address space assigned to an SP is isolated from other FF-A components through the single stage of address translation implemented by the Secure EL1&0 translation regime in either execution state. 2. The SPMC manages a single SP that also runs in S-EL1. The SPMC and SP are packaged in the same software image and logically isolated from each other. In this configuration: • The interface between the SPMC and the SP component is IMPLEMENTATION DEFINED for example, a set of C programming language APIs. • Any FF-A calls targeted to the SP from the Normal world must be received by the SPMC and forwarded to the SP component through the IMPLEMENTATION DEFINED interface. • The SPMC and SP are initialized through an IMPLEMENTATION DEFINED mechanism. See Chapter 5 Setup for more information. Figure 4.2 illustrates a combination of these configurations.  4.1.3 EL3 SPM core component The EL3 SPMC co-exists with the SPMD in either the AArch64 or AArch32 execution state. It supports one of the following mutually exclusive SP configurations. Figure 4.3: Example EL3 SPM Core and S-EL0 SP configuration 1. One or more physical SPs that run in S-EL0. Each SP runs in either the AArch32 or AArch64 (only if EL3 SPMC runs in AArch64 too) execution state. The physical address space assigned to an SP is isolated from other FF-A components through the single stage of address translation implemented by the Secure EL1&0 translation regime. This configuration is illustrated in Figure 4.3.  Chapter 4. Concepts 4.1. SPM architecture Figure 4.4: Example EL3 SPM Core and S-EL1 SP configuration 2. The SPMC and SPMD co-exist in EL3 in the AArch64 execution state. One or more logical SPs reside in S-EL1. Each SP runs in either the AArch32 or AArch64 execution state. The SPs are temporally isolated from each other by the SPMC. This configuration is illustrated in Figure 4.4.
+The below text are chapter 4.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+
+4.1 SPM architecture
+The responsibilities of the SPM are split between two components: the SPM Dispatcher (SPMD) and SPM
+Core (SPMC). Both components have access to the entire physical address space and are a part of the Trusted
+computing base. The term SPM is used when it is not necessary to distinguish between these two components.
+The responsibilities of these components are listed below.
+1. The SPMD resides in EL3 and runs in either the AArch64 or AArch32 execution state. It is responsible for:
+• SPM Core initialization at boot time.
+• Forwarding FF-A calls from Normal world to the SPM Core.
+• Forwarding FF-A calls from the SPM Core to the Normal world.
+2. The SPMC either co-resides with the SPMD in EL3 or in an adjacent exception level i.e. S-EL1 or S-EL2. It
+is responsible for:
+• SP initialization and isolation at boot time.
+• Inter-partition isolation at run-time.
+• Inter-partition communication at run-time between:
+– S-Endpoints.
+– S-Endpoints and NS-Endpoints.
+Table 4.1 lists the SPMC and SPMD configurations supported by the Framework vis-a-vis the exception levels
+they can reside in and the execution states they can run in.
+
+Table 4.1: Valid SPM configurations in AArch64 and AArch32 Execution state
+SPM
+config
+number SPMD EL and Execution state SPMC EL and Execution state Name of configuration
+1.
+EL3 (Aarch64) EL3 (AArch64) EL3 SPMC
+2.
+EL3 (AArch32) EL3 (AArch32) EL3 SPMC
+3.
+EL3 (AArch64) S-EL1 (AArch64) S-EL1 SPMC
+4.
+EL3 (AArch64) S-EL1 (AArch32) S-EL1 SPMC
+5.
+EL3 (AArch64) S-EL2 (AArch64) S-EL2 SPMC
+In SPM configurations where the SPMD and SPMC reside in adjacent exception levels,
+• They implement and report a mutually compatible version of the Firmware Framework. See 13.2.3 SPM
+usage for details.
+• The mechanism used by the SPMD to initialize the SPMC is IMPLEMENTATION DEFINED. The guidance
+provided in Chapter 5 Setup could be used by the implementation.
+• They use the ABIs defined in this specification for communication.
+A description of each SPM configuration is provided in the following sections.
+• 4.1.1 Secure EL2 SPM core component.
+• 4.1.3 EL3 SPM core component.
+• 4.1.2 S-EL1 SPM core component.
+The SPM configurations without S-EL2 are used in the following scenarios.
+• Reduce the size of the TCB by migrating EL3 & S-EL1 firmware components, that should not be a part of
+the TCB, to one or more physically isolated S-EL0 SPs.
+• Make the TCB implementation more robust by migrating its components from EL3 & S-EL1 to one or more
+physically isolated S-EL0 SPs.
+• Adopt the generalized programming model specified by the Framework to ease the migration of the Secure
+world software stack to an Arm A-profile system with S-EL2 enabled.
+• Adopt the generalized programming model specified by the Framework for accessing services in S-Endpoints
+from NS-Endpoints irrespective of whether S-EL2 is used in the Secure world.
+
+4.1.1 Secure EL2 SPM core component
+Figure 4.1: Example S-EL2 SPM Core and SP configuration
+The S-EL2 SPMC is fundamental to enforcing the principle of least privilege in the Secure state on Armv8.4 or
+later systems as described in Chapter 2 Introduction. It supports one or more of the following SP configurations.
+1. The SPMC uses Armv8.1 VHE to manage one or more physical SPs that run in S-EL0. Each SP runs in either
+the AArch32 or AArch64 execution state.
+The physical address space assigned to an SP is isolated from other FF-A components through the single
+stage of address translation implemented by the Secure EL2&0 translation regime.
+2. The SPMC manages one or more physical SPs that run in S-EL1. Each SP runs in either the AArch32 or
+AArch64 execution state.
+The physical address space assigned to an SP is isolated from other FF-A components by the Secure EL1&0
+stage 2 translation regime, when EL2 is enabled.
+An example of these configurations is illustrated in Figure 4.1.
+
+4.1.2 S-EL1 SPM core component
+Figure 4.2: Example S-EL1 SPM Core and SP configuration
+A S-EL1 SPMC runs in either the AArch64 or AArch32 execution state. It supports one or more of the following
+SP configurations.
+1. The SPMC manages one or more physical SPs that run in S-EL0. Each SP runs in either the AArch32 or
+AArch64 (only if S-EL1 SPMC runs in AArch64 too) execution state.
+The physical address space assigned to an SP is isolated from other FF-A components through the single
+stage of address translation implemented by the Secure EL1&0 translation regime in either execution state.
+2. The SPMC manages a single SP that also runs in S-EL1. The SPMC and SP are packaged in the same
+software image and logically isolated from each other.
+In this configuration:
+• The interface between the SPMC and the SP component is IMPLEMENTATION DEFINED for example, a
+set of C programming language APIs.
+• Any FF-A calls targeted to the SP from the Normal world must be received by the SPMC and forwarded
+to the SP component through the IMPLEMENTATION DEFINED interface.
+• The SPMC and SP are initialized through an IMPLEMENTATION DEFINED mechanism. See Chapter 5
+Setup for more information.
+Figure 4.2 illustrates a combination of these configurations.
+
+4.1.3 EL3 SPM core component
+The EL3 SPMC co-exists with the SPMD in either the AArch64 or AArch32 execution state. It supports one of the
+following mutually exclusive SP configurations.
+Figure 4.3: Example EL3 SPM Core and S-EL0 SP configuration
+1. One or more physical SPs that run in S-EL0. Each SP runs in either the AArch32 or AArch64 (only if EL3
+SPMC runs in AArch64 too) execution state.
+The physical address space assigned to an SP is isolated from other FF-A components through the single
+stage of address translation implemented by the Secure EL1&0 translation regime.
+This configuration is illustrated in Figure 4.3.
+
+Chapter 4. Concepts
+4.1. SPM architecture
+Figure 4.4: Example EL3 SPM Core and S-EL1 SP configuration
+2. The SPMC and SPMD co-exist in EL3 in the AArch64 execution state. One or more logical SPs reside in
+S-EL1. Each SP runs in either the AArch32 or AArch64 execution state. The SPs are temporally isolated
+from each other by the SPMC.
+This configuration is illustrated in Figure 4.4.
 
 * * *
 
@@ -232,6 +534,7 @@ These configurations are essential for enforcing the principle of least privileg
 
 **You:**
 
+guid: b8dddaf2-85f2-4323-b918-1ae45f5ccc71
 create_time: 2023-04-09 10:46:09
 What is SPMC?
 
@@ -245,6 +548,7 @@ SPMC stands for Secure Partition Manager Core. It is one of the two main compone
 
 **You:**
 
+guid: fee8edc8-5c12-4448-bd1a-f853127c409b
 create_time: 2023-04-09 10:48:12
 What is SPMC in the document?
 
@@ -264,6 +568,7 @@ The SPMC can co-reside with the SPM Dispatcher (SPMD) in EL3 or reside in adjace
 
 **You:**
 
+guid: 8f5f0cea-c641-4f04-8904-95b27df220a9
 create_time: 2023-04-09 10:48:51
 Is SPMC of TrustZone?
 
@@ -277,6 +582,7 @@ The SPMC (Secure Partition Manager Core) is part of the Arm Firmware Framework f
 
 **You:**
 
+guid: 9bb1037f-07fc-4a7e-8810-d68917d2eceb
 create_time: 2023-04-09 11:15:19
 So SPM and Hypervisor are partition managers. Right?
 
@@ -290,6 +596,7 @@ Yes, that's correct. In the context of the Arm Firmware Framework for Arm A-prof
 
 **You:**
 
+guid: 8c542df5-5e78-4915-9b57-c5a2b87f90b0
 create_time: 2023-04-09 11:15:49
 What is VMSA?
 
@@ -303,6 +610,7 @@ VMSA, or Virtual Memory System Architecture, is a part of the Arm architecture t
 
 **You:**
 
+guid: 27c8e184-bb11-4048-8876-c615a3d92f3d
 create_time: 2023-04-09 11:16:34
 Is VMSA a software or a hardware?
 
@@ -316,6 +624,7 @@ VMSA (Virtual Memory System Architecture) is not a specific piece of software or
 
 **You:**
 
+guid: f7feb0c7-acb1-46a3-9b3f-6da6fd24e5bd
 create_time: 2023-04-10 15:28:25
 What is TF-A?
 
@@ -331,6 +640,7 @@ TF-A includes implementations of various Arm security technologies, such as Secu
 
 **You:**
 
+guid: de92243e-8219-49a4-a7fd-9f77f10e1e16
 create_time: 2023-04-10 15:29:40
 Please draw the relationship among TrustZone, TF-A, and FF-A.
 
@@ -365,6 +675,7 @@ TrustZone, TF-A, and FF-A are technologies and frameworks related to the securit
 
 **You:**
 
+guid: b1395511-ff9a-4f86-892e-1b0fd3ace9ba
 create_time: 2023-04-10 15:31:06
 Does TF-A rely on FF-A?
 
@@ -384,6 +695,7 @@ While they can be used independently, using them together can enhance the overal
 
 **You:**
 
+guid: 5481d2ca-e44e-4288-8662-d1c01f9032b7
 create_time: 2023-04-10 15:36:08
 What is relationship between FF-A and TF-A?
 
@@ -401,6 +713,7 @@ In summary, the relationship between FF-A and TF-A is complementary, with FF-A p
 
 **You:**
 
+guid: 170d7fc1-d9b1-4beb-977d-7228c2f56ca6
 create_time: 2023-04-10 15:37:44
 Could I say that TF-A refers FF-A?
 
@@ -414,6 +727,7 @@ Yes, you can say that TF-A refers to FF-A, as TF-A can be extended or adapted to
 
 **You:**
 
+guid: 5ecb722d-b2e5-4b59-85ff-3617fd8deb7e
 create_time: 2023-04-10 15:38:21
 Could I say that FF-A refers TF-A?
 
@@ -429,6 +743,7 @@ TF-A (Trusted Firmware-A), on the other hand, is a reference implementation of s
 
 **You:**
 
+guid: e76be321-b66a-4064-8482-0141f80602e7
 create_time: 2023-04-11 21:55:45
 Where to enable primary cores?
 
@@ -436,6 +751,7 @@ Where to enable primary cores?
 
 **You:**
 
+guid: 9f203008-f91d-4e68-bed2-a3467af4d203
 create_time: 2023-04-11 21:56:43
 When to enable secondary cores?
 
@@ -461,6 +777,7 @@ It is important to note that the specific process for enabling secondary cores d
 
 **You:**
 
+guid: aa7a2e9a-cda2-4a3d-9b9a-12d74accbb8c
 create_time: 2023-04-11 22:58:05
 Does TF-A support Arm32 or Arm64?
 
@@ -474,6 +791,7 @@ Trusted Firmware-A (TF-A) supports both Arm32 (AArch32) and Arm64 (AArch64) arch
 
 **You:**
 
+guid: d6a51331-0f44-4748-9a19-f12c7efdfa36
 create_time: 2023-04-11 22:59:42
 Which types of ARM cores is supported by TF-A?
 
@@ -487,6 +805,7 @@ Trusted Firmware-A (TF-A) supports Armv8-A and Armv7-A processors. The Armv8-A a
 
 **You:**
 
+guid: c6d55ec1-2815-475b-9030-639b11a8e49a
 create_time: 2023-04-11 23:01:38
 Does Armv7-A has 64 bits?
 
@@ -500,6 +819,7 @@ No, Armv7-A architecture does not have 64 bits. Armv7-A is a 32-bit (AArch32) ex
 
 **You:**
 
+guid: 46602456-fad1-41da-8841-762a504a99b5
 create_time: 2023-04-11 23:05:06
 Must AArch64 have TF-A?
 
@@ -513,6 +833,7 @@ No, AArch64 does not require TF-A (Arm Trusted Firmware-A). TF-A is an open-sour
 
 **You:**
 
+guid: 76c0c824-b66d-47ca-933c-4565f38349bb
 create_time: 2023-04-11 23:13:36
 Does Armv8-A has 32 bits?
 
@@ -526,6 +847,7 @@ Yes, Armv8-A architecture supports both 64-bit (AArch64) and 32-bit (AArch32) ex
 
 **You:**
 
+guid: 6584cdcc-10ab-4935-8f40-82bc77234f20
 create_time: 2023-04-11 23:23:10
 What is "Arm A-profile"?
 
@@ -539,6 +861,7 @@ The Arm A-profile is a family of Arm CPU architectures that are designed for hig
 
 **You:**
 
+guid: 5ed99a67-4377-4fac-8de2-75e46d856fde
 create_time: 2023-04-11 23:24:45
 Does "Arm Firmware Framework for Arm A-profile" document is only about Cortex-A?
 
@@ -552,6 +875,7 @@ The "Arm Firmware Framework for Arm A-profile" document is focused on the Arm A-
 
 **You:**
 
+guid: a205c5ea-4fc1-490a-8fee-61144f47f64c
 create_time: 2023-04-12 10:59:40
 Is TF-A persistent in memory at run-time?
 
@@ -565,6 +889,7 @@ Yes, the Trusted Firmware-A (TF-A) is typically persistent in memory at run-time
 
 **You:**
 
+guid: d3f4382d-61e8-4e57-b1e1-06ec6c3fc3fd
 create_time: 2023-04-13 21:09:22
 What is SMCCC?
 
@@ -578,6 +903,7 @@ The SMCCC (Secure Monitor Call Calling Convention) is a standardized calling con
 
 **You:**
 
+guid: b3794479-6a52-495d-bd1e-79ecf05bdf9b
 create_time: 2023-04-13 22:45:40
 What is SPL?
 
@@ -591,6 +917,7 @@ SPL (Secondary Program Loader) is a term used in the context of embedded systems
 
 **You:**
 
+guid: 0fad0384-cffa-4842-846d-5ad9cfb2ba06
 create_time: 2023-04-13 22:56:16
 What is fip.bin?
 
@@ -614,6 +941,7 @@ The `fip.bin` file is created using the `fiptool` utility provided by Arm Truste
 
 **You:**
 
+guid: 3715aa34-ea11-4b60-9fca-34ed3c872809
 create_time: 2023-04-13 23:02:45
 What is TSK?
 

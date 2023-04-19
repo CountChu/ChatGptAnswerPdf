@@ -1,5 +1,6 @@
 **You:**
 
+guid: 091e030f-49fe-4fc5-8d46-859f58e18d61
 create_time: 2023-03-27 09:18:47
 https://github.com/OP-TEE/optee_os/pull/3973
 
@@ -13,8 +14,74 @@ I am an AI language model and I cannot access external websites or browse the in
 
 **You:**
 
+guid: 5e901a5f-1f23-407a-85a6-3d9ebe1c67c9
 create_time: 2023-03-27 09:19:07
-apalos commented on Jul 16, 2020 •  Secure variable storage for EFI variables is critical for enabling and protecting UEFI Secure Boot. Unfortunately due to the fact that SPD and SPM are mutually exclusive, we can't run StMM from EDK2 and OP-TEE. An advantage of doing so is that different firmware implementations can leverage EDK2's StandAloneMM and in cooperation with OP-TEE RPMB APIs can store UEFI variables in a secure storage. This makes the variable storage quite generic in any device with an RPMB partition.  Using a well debugged application is preferable over rewriting the whole application as a TA. Another advantage is that this inherits the Fault Tolerant Writes (FTW) functionality built-in on StMM to protect variables against corruptions during writing. Considering the FFA changes of the future Arm architectures using an SP that includes everything seems like a better choice at the moment. The 'SPM emulation' currently added into OP-TEE only supports a single SP to be launched. This means that the StMM embedded application has the RPMB driver built in at the moment. In the future we can add code (evolving FFA) to launch multiple SPs. So the StMM variable handling can be decoupled from the RPMB driver, which will reside in a different SP.  So let's add a user mode secure partition context and support loading "Standalone MM" of EDK2 into it. A separate syscall handling is added to serve as different kind of ABI and syscall IDs. The secure partition has a TA like interface towards normal world, but requests are routed into the StMM partition instead.  CFG_STMM_PATH is assigned the path of BL32_AP_MM.fd, for instance: CFG_STMM_PATH=...Build/QemuVirtMmStandalone/DEBUG_GCC5/FV/BL32_AP_MM.fd  Since this is quite tricky to compile and test you can use this [1]. Just clone the repo and run ./build.sh. The script will pick up edk2, edk2-platforms, op-tee, atf and U-boot and compile all the necessary binaries for QEMU. A patch (awful hack) has been added to U-boot to allow RPMB emulation through it's supplicant, since QEMU RPMB emulation is not yet available. After compiling and launching QEMU the usual U-boot commands for EFI variable management will store the variables on an RPMB device.  [1] https://git.linaro.org/people/ilias.apalodimas/efi_optee_variables.git/  Changes Since RFC:  Addressed @jenswi-linaro comments Moved I/EMSG to DMSG Removed pointless register restoring Restoring x0-x7 in return_helper() (needed for FFA) cherry picked FFA changes, so those are not included in the current patchset Using mobj_inc_map() to map memory instead of the custom function Added sp_svc_get_mem_attr() to get a page attributes properly (instead of assuming RWX we did in the RFC). Also added vm_get_attrs() helper function. Removed the weird masking flags used in sp_svc_set_mem_attr(). This was a result of using hardcoded (RWX flags for reading the current pages attributes) Moved comment to /* .... */ format Used return_helper() when appropriate, instead of manually defining the error flags Masked x3-x7, with 0xffffffff when used for FFA Changes since v1:  renamed vm_get_attrs() -> vm_get_prot() and masked the output. This was also placed on a separate commit. Don't mask x3-x7 with 0xffffffff as it's not needed Initialized all stack variables removed stale thread_[g|s]et_cntkctl_el1 functions Fixed a bug on unti16_t shifting Added a shippable build target removed reduntant checks before reading/writing a file
+apalos commented on Jul 16, 2020 • 
+Secure variable storage for EFI variables is critical for enabling and
+protecting UEFI Secure Boot. Unfortunately due to the fact that SPD and
+SPM are mutually exclusive, we can't run StMM from EDK2 and OP-TEE.
+An advantage of doing so is that different firmware implementations
+can leverage EDK2's StandAloneMM and in cooperation with OP-TEE RPMB
+APIs can store UEFI variables in a secure storage.
+This makes the variable storage quite generic in any device with an RPMB
+partition.
+
+Using a well debugged application is preferable over rewriting the whole
+application as a TA. Another advantage is that this inherits the Fault
+Tolerant Writes (FTW) functionality built-in on StMM to protect
+variables against corruptions during writing. Considering the FFA
+changes of the future Arm architectures using an SP that includes
+everything seems like a better choice at the moment.
+The 'SPM emulation' currently added into OP-TEE only supports
+a single SP to be launched. This means that the StMM embedded
+application has the RPMB driver built in at the moment. In the future we
+can add code (evolving FFA) to launch multiple SPs. So the StMM variable
+handling can be decoupled from the RPMB driver, which will reside in a
+different SP.
+
+So let's add a user mode secure partition context and support loading
+"Standalone MM" of EDK2 into it. A separate syscall handling is added to
+serve as different kind of ABI and syscall IDs. The secure partition has
+a TA like interface towards normal world, but requests are routed into
+the StMM partition instead.
+
+CFG_STMM_PATH is assigned the path of BL32_AP_MM.fd, for instance:
+CFG_STMM_PATH=...Build/QemuVirtMmStandalone/DEBUG_GCC5/FV/BL32_AP_MM.fd
+
+Since this is quite tricky to compile and test you can use this [1].
+Just clone the repo and run ./build.sh. The script will pick up edk2,
+edk2-platforms, op-tee, atf and U-boot and compile all the necessary
+binaries for QEMU. A patch (awful hack) has been added to U-boot to
+allow RPMB emulation through it's supplicant, since QEMU RPMB emulation
+is not yet available.
+After compiling and launching QEMU the usual U-boot commands for EFI
+variable management will store the variables on an RPMB device.
+
+[1] https://git.linaro.org/people/ilias.apalodimas/efi_optee_variables.git/
+
+Changes Since RFC:
+
+Addressed @jenswi-linaro comments
+Moved I/EMSG to DMSG
+Removed pointless register restoring
+Restoring x0-x7 in return_helper() (needed for FFA)
+cherry picked FFA changes, so those are not included in the current patchset
+Using mobj_inc_map() to map memory instead of the custom function
+Added sp_svc_get_mem_attr() to get a page attributes properly (instead of assuming RWX we did in the RFC).
+Also added vm_get_attrs() helper function.
+Removed the weird masking flags used in sp_svc_set_mem_attr(). This was a result of using hardcoded (RWX flags for reading the current pages attributes)
+Moved comment to /* .... */ format
+Used return_helper() when appropriate, instead of manually defining the error flags
+Masked x3-x7, with 0xffffffff when used for FFA
+Changes since v1:
+
+renamed vm_get_attrs() -> vm_get_prot() and masked the output. This was also placed on a separate commit.
+Don't mask x3-x7 with 0xffffffff as it's not needed
+Initialized all stack variables
+removed stale thread_[g|s]et_cntkctl_el1 functions
+Fixed a bug on unti16_t shifting
+Added a shippable build target
+removed reduntant checks before reading/writing a file
 
 * * *
 
@@ -37,6 +104,7 @@ Overall, the comment presents the implementation of secure variable storage for 
 
 **You:**
 
+guid: 264c06a5-368a-4485-9532-db5a5979c7ae
 create_time: 2023-03-27 09:20:05
 What is SPD?
 
@@ -50,6 +118,7 @@ SPD stands for Secure Payload Dispatcher. It is a component in the ARM Trusted F
 
 **You:**
 
+guid: 2746f13d-818e-4fed-b8c9-af08fdcd0cf1
 create_time: 2023-03-27 09:20:28
 What is SPM?
 
@@ -65,6 +134,7 @@ The introduction of SPM is part of the ongoing evolution of ARM's security archi
 
 **You:**
 
+guid: f1465a0c-82e8-48f6-856f-ae27d8bc6448
 create_time: 2023-03-27 09:21:02
 What is StMM?
 
@@ -82,6 +152,7 @@ In the context of OP-TEE and secure variable storage, StMM can be used in cooper
 
 **You:**
 
+guid: f3865386-4c29-48f6-8e32-d4d199241d9c
 create_time: 2023-03-27 09:22:22
 What is FFA?
 
@@ -103,6 +174,7 @@ By standardizing these interfaces, FFA aims to simplify the development of secur
 
 **You:**
 
+guid: 69fe2528-844f-4800-b41b-c7ecab8d4979
 create_time: 2023-03-27 09:38:58
 Why are SPD and SPM mutually exclusive?
 
@@ -122,6 +194,7 @@ In summary, SPD and SPM are mutually exclusive because they represent different 
 
 **You:**
 
+guid: 19d5d869-ee55-446f-9bed-a0241749e7a6
 create_time: 2023-03-27 09:46:02
 What is SP?
 
@@ -139,6 +212,7 @@ The introduction of Secure Partitions and the SPM represents an evolution in ARM
 
 **You:**
 
+guid: 6cb49c98-2fb3-4829-afed-ad655d6ef4cf
 create_time: 2023-03-27 09:47:31
 What is BL32_AP_MM.fd?
 
@@ -156,6 +230,7 @@ The Standalone Memory Manager (StMM) provides a minimal execution environment fo
 
 **You:**
 
+guid: a4edb751-bc32-49e2-bebb-1b14b49ea736
 create_time: 2023-03-27 10:13:34
 Does OP-TEE require UEFI?
 
@@ -173,6 +248,7 @@ In some cases, OP-TEE and UEFI might be used together to provide a more comprehe
 
 **You:**
 
+guid: 84886266-cbe7-420f-8cae-4f217eff7fad
 create_time: 2023-03-27 17:43:04
 What are EL0, EL1, EL2, S-EL0, S-EL1, S-EL2, S-EL3?
 
@@ -200,6 +276,7 @@ These different Exception Levels allow for fine-grained control over system reso
 
 **You:**
 
+guid: 5947a38b-c95e-43d9-8c10-dafe0d4e4f23
 create_time: 2023-03-27 17:47:11
 Is UEFI required in ARM?
 

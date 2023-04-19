@@ -991,46 +991,46 @@ body .markdown-body {
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230413.EME</h1>
-<p>Created: 2023-04-17 14:24:25</p>
+<p>Created: 2023-04-19 22:35:03</p>
 <h1>Questions</h1>
 <ul>
 <li>Abstract &amp; Status of This Document<ul>
-<li>The below text is &ldquo;Abstract&rdquo; and &ldquo;Status of This Document&rdquo; chapters of https://www.w3.org/TR/encrypted-media (2023-04-13)</li>
+<li>The below text is &ldquo;Abstract&rdquo; and &ldquo;Status of This Document&rdquo; chapters of https://www.w3.org/TR/encrypted-media <code>(2023/4/13)</code></li>
 </ul>
 </li>
 <li>1 - Introduction<ul>
-<li>The below text is &ldquo;1. Introduction&rdquo; chapter of https://www.w3.org/TR/encrypted-media (2023-04-13)</li>
-<li>What is CDN? (2023-04-13)</li>
-<li>What is Media Stack? (2023-04-13)</li>
-<li>What is MediaKeySession? (2023-04-13)</li>
-<li>Which components does MediaKeySession contain? (2023-04-13)</li>
-<li>Does Media Stack contain many MediaKeySession? (2023-04-13)</li>
-<li>Where do frames exist in Encrypted Media Extensions? (2023-04-13)</li>
+<li>The below text is &ldquo;1. Introduction&rdquo; chapter of https://www.w3.org/TR/encrypted-media <code>(2023/4/13)</code></li>
+<li>What is CDN? <code>(2023/4/13)</code></li>
+<li>What is Media Stack? <code>(2023/4/13)</code></li>
+<li>What is MediaKeySession? <code>(2023/4/13)</code></li>
+<li>Which components does MediaKeySession contain? <code>(2023/4/13)</code></li>
+<li>Does Media Stack contain many MediaKeySession? <code>(2023/4/13)</code></li>
+<li>Where do frames exist in Encrypted Media Extensions? <code>(2023/4/13)</code></li>
 </ul>
 </li>
 <li>2 - Definitions<ul>
-<li>The below text is &ldquo;2. Definitions&rdquo; chapter of https://www.w3.org/TR/encrypted-media (2023-04-13)</li>
-<li>The below text is the second part of &ldquo;2. Definitions&rdquo; chapter of https://www.w3.org/TR/encrypted-media (2023-04-13)</li>
+<li>The below text is &ldquo;2. Definitions&rdquo; chapter of https://www.w3.org/TR/encrypted-media <code>(2023/4/13)</code></li>
+<li>The below text is the second part of &ldquo;2. Definitions&rdquo; chapter of https://www.w3.org/TR/encrypted-media <code>(2023/4/13)</code></li>
 </ul>
 </li>
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
 <h2>Abstract &amp; Status of This Document</h2>
-<p><strong>Question:</strong> The below text is &ldquo;Abstract&rdquo; and &ldquo;Status of This Document&rdquo; chapters of https://www.w3.org/TR/encrypted-media (2023-04-13)</p>
+<p><strong>Question:</strong> The below text is &ldquo;Abstract&rdquo; and &ldquo;Status of This Document&rdquo; chapters of https://www.w3.org/TR/encrypted-media <code>(2023/4/13)</code></p>
 <p><strong>Answer:</strong> (Hide)</p>
 <hr />
 <h2>1 - Introduction</h2>
-<p><strong>Question:</strong> The below text is &ldquo;1. Introduction&rdquo; chapter of https://www.w3.org/TR/encrypted-media (2023-04-13)</p>
+<p><strong>Question:</strong> The below text is &ldquo;1. Introduction&rdquo; chapter of https://www.w3.org/TR/encrypted-media <code>(2023/4/13)</code></p>
 <p><strong>Answer:</strong> (Hide)</p>
 <hr />
-<p><strong>Question:</strong> What is CDN? (2023-04-13)</p>
+<p><strong>Question:</strong> What is CDN? <code>(2023/4/13)</code></p>
 <p><strong>Answer:</strong></p>
 <p>A Content Delivery Network (CDN) is a system of distributed servers that deliver web content, such as images, videos, stylesheets, and scripts, to users based on their geographical location. The primary goal of a CDN is to improve the performance and availability of web content by reducing the latency experienced by users when they access resources on the internet.</p>
 <p>When a user requests a resource, the CDN directs the request to the nearest server (also known as an edge server) in its network, minimizing the distance the data needs to travel and thus reducing latency. CDNs are commonly used by websites with a global audience to ensure faster loading times and a better user experience.</p>
 <p>In addition to reducing latency, CDNs can also improve reliability and security by distributing the load across multiple servers and providing protection against DDoS attacks and other web threats.</p>
 <hr />
-<p><strong>Question:</strong> What is Media Stack? (2023-04-13)</p>
+<p><strong>Question:</strong> What is Media Stack? <code>(2023/4/13)</code></p>
 <p><strong>Answer:</strong></p>
 <p>A Media Stack refers to the collection of software components, protocols, and technologies used to process, transmit, and display multimedia content, such as audio and video, on various devices. The media stack is responsible for handling tasks such as encoding, decoding, streaming, buffering, and rendering media content in a way that ensures a smooth and seamless user experience.</p>
 <p>A typical media stack consists of several layers, including:</p>
@@ -1053,7 +1053,7 @@ body .markdown-body {
 </ol>
 <p>These layers work together to provide a seamless media playback experience for users, regardless of the device or network conditions. The media stack must be optimized for performance, scalability, and compatibility to handle various media formats, codecs, and streaming protocols.</p>
 <hr />
-<p><strong>Question:</strong> What is MediaKeySession? (2023-04-13)</p>
+<p><strong>Question:</strong> What is MediaKeySession? <code>(2023/4/13)</code></p>
 <p><strong>Answer:</strong></p>
 <p><code>MediaKeySession</code> is an interface in the Encrypted Media Extensions (EME) API, which is a part of the HTML5 standard. The EME API enables web applications to play encrypted media content by providing a means for key exchange and license management between the web application, the Content Decryption Module (CDM), and a license server.</p>
 <p>A <code>MediaKeySession</code> object represents a single session between the web application and the CDM. Each session is associated with a unique set of keys or licenses needed to decrypt the protected media content. The <code>MediaKeySession</code> interface provides methods for generating and exchanging messages between the web application and the CDM, allowing the CDM to request and receive decryption keys from a license server.</p>
@@ -1068,7 +1068,7 @@ body .markdown-body {
 </ol>
 <p>Once the <code>MediaKeySession</code> has been updated with the appropriate decryption keys or licenses, the media content can be decrypted by the CDM and played back by the <code>HTMLMediaElement</code>. The <code>MediaKeySession</code> also provides methods for managing key expiration and handling session close events.</p>
 <hr />
-<p><strong>Question:</strong> Which components does MediaKeySession contain? (2023-04-13)</p>
+<p><strong>Question:</strong> Which components does MediaKeySession contain? <code>(2023/4/13)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The <code>MediaKeySession</code> interface in the Encrypted Media Extensions (EME) API does not &ldquo;contain&rdquo; components in a hierarchical sense, but it does provide several properties and methods that allow web applications to interact with Content Decryption Modules (CDMs) for handling encrypted media content. Here are the key properties and methods associated with <code>MediaKeySession</code>:</p>
 <ol>
@@ -1092,14 +1092,14 @@ body .markdown-body {
 </ol>
 <p>These properties, methods, and event handlers work together to enable web applications to manage encrypted media sessions, request licenses, update keys, and handle related events.</p>
 <hr />
-<p><strong>Question:</strong> Does Media Stack contain many MediaKeySession? (2023-04-13)</p>
+<p><strong>Question:</strong> Does Media Stack contain many MediaKeySession? <code>(2023/4/13)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The term &ldquo;Media Stack&rdquo; refers to the collection of components, technologies, and interfaces that are involved in media processing and playback in a web browser. This includes components like media codecs, streaming protocols, and APIs like HTMLMediaElement, Media Source Extensions (MSE), and Encrypted Media Extensions (EME).</p>
 <p>In the context of EME and encrypted media playback, a Media Stack may interact with multiple MediaKeySessions. Each MediaKeySession represents a unique session for managing encrypted media keys, licenses, and associated events.</p>
 <p>During the playback of encrypted media, an application can create and manage multiple MediaKeySessions for different purposes, such as handling different pieces of content, managing multiple keys or licenses, or dealing with different encryption schemes. So, in this sense, the Media Stack can indeed work with multiple MediaKeySessions.</p>
 <p>However, it is essential to understand that the Media Stack does not &ldquo;contain&rdquo; MediaKeySessions in a hierarchical sense, but rather interacts with them as part of the overall media processing and playback workflow.</p>
 <hr />
-<p><strong>Question:</strong> Where do frames exist in Encrypted Media Extensions? (2023-04-13)</p>
+<p><strong>Question:</strong> Where do frames exist in Encrypted Media Extensions? <code>(2023/4/13)</code></p>
 <p><strong>Answer:</strong></p>
 <p>In the context of Encrypted Media Extensions (EME), frames refer to the individual video or audio samples that are part of the media stream. EME does not directly handle frames but focuses on the encryption and decryption aspect of media content.</p>
 <p>Frames exist within the encrypted media container, such as MPEG-DASH or HLS. These media containers have segments, which contain encrypted frames. The media container&rsquo;s role is to package the video and audio frames along with the necessary metadata required for playback, including encryption-related information like initialization data.</p>
@@ -1107,10 +1107,10 @@ body .markdown-body {
 <p>In summary, frames exist within the encrypted media container, and EME manages the process of decryption but does not directly handle the frames themselves. The media player, together with EME and the underlying Content Decryption Module (CDM), work cohesively to handle, decrypt, and render the frames for playback.</p>
 <hr />
 <h2>2 - Definitions</h2>
-<p><strong>Question:</strong> The below text is &ldquo;2. Definitions&rdquo; chapter of https://www.w3.org/TR/encrypted-media (2023-04-13)</p>
+<p><strong>Question:</strong> The below text is &ldquo;2. Definitions&rdquo; chapter of https://www.w3.org/TR/encrypted-media <code>(2023/4/13)</code></p>
 <p><strong>Answer:</strong> (Hide)</p>
 <hr />
-<p><strong>Question:</strong> The below text is the second part of &ldquo;2. Definitions&rdquo; chapter of https://www.w3.org/TR/encrypted-media (2023-04-13)</p>
+<p><strong>Question:</strong> The below text is the second part of &ldquo;2. Definitions&rdquo; chapter of https://www.w3.org/TR/encrypted-media <code>(2023/4/13)</code></p>
 <p><strong>Answer:</strong> (Hide)</p>
 <hr />
     </article>
