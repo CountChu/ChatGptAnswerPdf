@@ -1,6 +1,9 @@
 import os
 import sys
 import datetime
+import pdb
+
+br = pdb.set_trace
 
 def get_name(fn):
     name = os.path.basename(fn)
@@ -45,13 +48,17 @@ def get_q(question, dis_date, dis_time):
     else:
         assert False, question
 
+    s1 = ''
+    if question['is_short']:
+        q = '%s ... ...' % q
+
     if 'date' in question:
         if dis_date and dis_time:
-            q = '%s (%s %s)' % (q, question['date'], question['time'][:5])
+            q = '%s%s `(%s %s)`' % (q, s1, question['date'], question['time'][:5])
         elif dis_date and not dis_time:
-            q = '%s (%s)' % (q, question['date'])
+            q = '%s%s `(%s)`' % (q, s1, question['date'])
         elif not dis_date and dis_time:
-            q = '[%s] %s' % (question['time'][:5], q)
+            q = '`[%s]` %s%s' % (question['time'][:5], q, s1)
 
     return q
 
@@ -222,13 +229,14 @@ def read_sections(lines, qs, default_chat, default_date):
         section_ls.append(section)
 
     #
-    # Remember title in each question.
+    # Remember title in each question and set is_short
     #    
 
     for section in section_ls:
         for question in section['question_ls']:
             question['title'] = section['title']
-    
+            question['is_short'] = False
+
     return section_ls
 
 def check_sections(section_ls):
@@ -263,7 +271,7 @@ def dump_sections(section_ls):
 #
 
 def read_qa_ls(fn):
-    f = open(fn, encoding='utf-8')
+    f = open(fn, encoding='utf-8', errors='ignore')
     s = 'init'   # s: init, q, q1, a, a1
 
     q = []
@@ -403,14 +411,15 @@ def build_qa(q, a):
         else:
             break
 
-    assert len(q) == 1, q
+    assert len(q) >= 1, q
     one_q = q[0]
 
-    remove_empty_lines_from_head_and_tail(a)
+    is_short = len(q) > 1
 
+    remove_empty_lines_from_head_and_tail(a)
     a = refine_md_1(a)
 
-    qa = {'q': one_q, 'create_time': create_time, 'a': a}
+    qa = {'q': one_q, 'is_short': is_short, 'create_time': create_time, 'a': a}
     return qa
 
 #
