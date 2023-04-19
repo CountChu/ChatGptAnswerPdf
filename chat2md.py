@@ -43,7 +43,7 @@ def build_args():
 
 def handle_chat(output, chat): 
     title = chat['title']
-    #if title != 'TEE.0328':
+    #if title != 'TEE-PP.0414':
     #    return
 
     fn = os.path.join(output, "%s.md" % title)
@@ -91,16 +91,15 @@ def handle_chat(output, chat):
         parts = content['parts']
 
         for part in parts:
-            #if part == 'Please expand the 14 sections more.':
-            #    br()
+            #if role == 'user':
+            #    line = part.replace('\n', ' ')
+            #    line = line.strip()
+            #    #print(line)
+            #    f.write(line)
+            #else:
+            #    f.write(part)
 
-            if role == 'user':
-                line = part.replace('\n', ' ')
-                line = line.strip()
-                #print(line)
-                f.write(line)
-            else:
-                f.write(part)
+            f.write(part.strip())
 
         f.write('\n\n')
         f.write('* * *\n\n')
