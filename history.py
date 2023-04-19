@@ -209,7 +209,8 @@ def main():
         for bn, fn in bn_fn_ls:
             qa_ls = util.parse_chat(fn)
             for qa in qa_ls:
-                title, _ = util.get_name(bn)
+                #title, _ = util.get_name(bn)
+                title = bn
                 question = transform_to_question(qa, title)
                 question_ls.append(question)
 
