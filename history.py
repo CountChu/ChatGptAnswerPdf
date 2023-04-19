@@ -53,8 +53,8 @@ def transform_to_question(qa, title):
     question['is_short'] = qa['is_short']
     question['from'] = title
     question['hide'] = False
-    question['date'] = qa['create_time'][:10]
-    question['time'] = qa['create_time'][11:]
+    question['q_date'] = qa['create_time'][:10]
+    question['q_time'] = qa['create_time'][11:]
     question['qs'] = None
     question['title'] = None
     question['a'] = qa['a']
@@ -151,7 +151,11 @@ def main():
             chat, date, sections = util.parse_context(lines)
 
             #
-            # Read sections
+            # Read sections to build section_ls.
+            #       section_ls = [section]
+            #       section = {'title', 'question_ls'}
+            #       question_ls = [question]
+            #       question = {'q1', ...'date', ...}
             #
 
             section_ls = util.read_sections(sections, bn, chat, date)
@@ -215,7 +219,7 @@ def main():
 
     date_question_ls_d = {}
     for question in question_ls:
-        date = question['date']
+        date = question['q_date']
         if date not in date_question_ls_d:
             date_question_ls_d[date] = [] 
 
@@ -233,11 +237,11 @@ def main():
         #
 
         question_ls = date_question_ls_d[date]
-        question_ls = sorted(question_ls, key=lambda x: x['time'])
+        question_ls = sorted(question_ls, key=lambda x: x['q_time'])
 
         section_ls = build_sections_by_title(question_ls)
         fn_history = os.path.join(args.output, '%s.md' % date)
-        util.write_sections(section_ls, fn_history, dis_date=False, dis_time=True)
+        util.write_sections(section_ls, fn_history, dis_date = False, dis_q_date=False, dis_q_time=True)
 
 if __name__ == '__main__':
     main()

@@ -40,7 +40,7 @@ def collect_input_files(file, dn):
 
     return bn_fn_ls
 
-def get_q(question, dis_date, dis_time):
+def get_q(question, dis_date, dis_q_date, dis_q_time):
     if 'q1' in question:
         q = question['q1']
     elif 'q1-prefix' in question:
@@ -48,17 +48,20 @@ def get_q(question, dis_date, dis_time):
     else:
         assert False, question
 
-    s1 = ''
     if question['is_short']:
         q = '%s ... ...' % q
 
-    if 'date' in question:
-        if dis_date and dis_time:
-            q = '%s%s `(%s %s)`' % (q, s1, question['date'], question['time'][:5])
-        elif dis_date and not dis_time:
-            q = '%s%s `(%s)`' % (q, s1, question['date'])
-        elif not dis_date and dis_time:
-            q = '`[%s]` %s%s' % (question['time'][:5], q, s1)
+    if dis_q_date and dis_q_time:
+        q = '%s `(%s %s)`' % (q, question['q_date'], question['q_time'][:5])
+    elif dis_q_date and not dis_q_time:
+        q = '%s `(%s)`' % (q, question['q_date'])
+    elif not dis_q_date and dis_q_time:
+        #if 'q_time' not in question:
+        #    br()
+        q = '`[%s]` %s' % (question['q_time'][:5], q)
+    elif dis_date:
+        if 'date' in question:
+            q = '%s `(%s)`' % (q, question['date'])
 
     return q
 
@@ -128,7 +131,10 @@ def parse_context(lines):
 # section_ls = [section]
 # section = {'title', 'question_ls'}
 # question_ls = [question]
-# question = {'q1', 'q2', 'q1-prefix', 'q2-prefix', a-prefix', 'from', 'hide', 'date', 'qs', 'title'}
+# question = {
+#       'q1', 'q2', 'q1-prefix', 'q2-prefix', 'a-prefix', 
+#       'from', 'hide', 'date', 'qs', 'title',
+#       'q_date', 'q_time'}
 #   qs: question set
 #    
 
@@ -499,10 +505,28 @@ def find_answer(chats, fn_qa_ls_d, question):
     
     question['a'] = qa['a']
     if qa['create_time'] != None:
-        question['date'] = qa['create_time'][:10]
-        question['time'] = qa['create_time'][11:]
+        question['q_date'] = qa['create_time'][:10]
+        question['q_time'] = qa['create_time'][11:]
 
-def write_sections(section_ls, fn, dis_date, dis_time):
+def write_sections(section_ls, fn, dis_date, dis_q_date, dis_q_time):
+
+    #
+    # Check options.
+    #
+
+    if dis_date == True and dis_q_date == True:
+        print('Error.')
+        sys.exit(1)
+
+    if dis_date == True and dis_q_time == True:
+        print('Error.')
+        sys.exit(1)
+
+    #
+    # Create a file to write.
+    #
+
+
     name, _ = get_name(fn)
 
     f = open(fn, 'w', encoding='utf-8')
@@ -522,7 +546,7 @@ def write_sections(section_ls, fn, dis_date, dis_time):
             #if question['hide']:
             #    continue
 
-            q = get_q(question, dis_date, dis_time)
+            q = get_q(question, dis_date, dis_q_date, dis_q_time)
             f.write('    * %s\n' % q)
 
 
@@ -536,7 +560,7 @@ def write_sections(section_ls, fn, dis_date, dis_time):
 
         for question in section['question_ls']:
             
-            q = get_q(question, dis_date, dis_time)
+            q = get_q(question, dis_date, dis_q_date, dis_q_time)
             a = question['a']
 
             f.write('**Question:** %s\n' % q)
