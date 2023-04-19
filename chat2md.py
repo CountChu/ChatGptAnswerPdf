@@ -73,6 +73,7 @@ def handle_chat(output, chat):
             f.write('**You:**\n\n')
 
             create_time = util.get_date_time(message['create_time'])
+            f.write('guid: %s\n' % guid)
             f.write('create_time: %s\n' % create_time)
 
         elif role == 'assistant':

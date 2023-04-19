@@ -162,7 +162,7 @@ def main():
     #
 
     print('Write: %s' % fn_answer)
-    util.write_sections(section_ls, fn_answer, dis_date=True, dis_q_date=False, dis_q_time=False)
+    util.write_sections(section_ls, [], fn_answer, dis_date=True, dis_q_date=True, dis_q_time=False)
 
 if __name__ == '__main__':
     main()

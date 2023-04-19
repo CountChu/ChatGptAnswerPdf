@@ -51,16 +51,21 @@ def get_q(question, dis_date, dis_q_date, dis_q_time):
     if question['is_short']:
         q = '%s ... ...' % q
 
-    if dis_q_date and dis_q_time:
-        q = '%s `(%s %s)`' % (q, question['q_date'], question['q_time'][:5])
-    elif dis_q_date and not dis_q_time:
-        q = '%s `(%s)`' % (q, question['q_date'])
-    elif not dis_q_date and dis_q_time:
-        #if 'q_time' not in question:
-        #    br()
-        q = '`[%s]` %s' % (question['q_time'][:5], q)
-    elif dis_date:
-        if 'date' in question:
+    display_q = False 
+    if dis_date:
+        if 'date' not in question:
+            display_q = True 
+    else:
+        display_q = True 
+
+    if display_q:
+        if dis_q_date and dis_q_time:
+            q = '%s `(%s %s)`' % (q, question['q_date'], question['q_time'][:5])
+        elif dis_q_date and not dis_q_time:
+            q = '%s `(%s)`' % (q, question['q_date'])
+        elif not dis_q_date and dis_q_time:
+            q = '`[%s]` %s' % (question['q_time'][:5], q)
+    else:
             q = '%s `(%s)`' % (q, question['date'])
 
     return q
@@ -408,14 +413,23 @@ def build_qa(q, a):
 
     remove_empty_lines_from_head_and_tail(q)
 
+    guid = None
     create_time = None 
     while True:
-        if q[0].startswith('create_time:'):
+        if q[0].startswith('guid:'):
+            _, guid = q[0].split(':', 1)
+            guid = guid.strip()
+            q.pop(0)
+
+        elif q[0].startswith('create_time:'):
             _, create_time = q[0].split(':', 1)
             create_time = create_time.strip()
             q.pop(0)
+        
         else:
             break
+
+    assert guid != None
 
     assert len(q) >= 1, q
     one_q = q[0]
@@ -425,13 +439,13 @@ def build_qa(q, a):
     remove_empty_lines_from_head_and_tail(a)
     a = refine_md_1(a)
 
-    qa = {'q': one_q, 'is_short': is_short, 'create_time': create_time, 'a': a}
+    qa = {'guid': guid, 'q': one_q, 'is_short': is_short, 'create_time': create_time, 'a': a}
     return qa
 
 #
 # Parse the chat file to build qa_ls
 # qa_ls = [qa]
-# qa = {'q', 'create_time', 'a'}
+# qa = {'q', 'guid', 'create_time', 'a'}
 #
 
 def parse_chat(fn):
@@ -502,21 +516,20 @@ def find_answer(chats, fn_qa_ls_d, question):
     fn = os.path.join(chats, question['from'])
     qa_ls = fn_qa_ls_d[fn]
     qa = find_qa(qa_ls, question, question['from'])
-    
+
+    question['guid'] = qa['guid']    
     question['a'] = qa['a']
+
+
     if qa['create_time'] != None:
         question['q_date'] = qa['create_time'][:10]
         question['q_time'] = qa['create_time'][11:]
 
-def write_sections(section_ls, fn, dis_date, dis_q_date, dis_q_time):
+def write_sections(q_section_ls, c_section_ls, fn, dis_date, dis_q_date, dis_q_time):
 
     #
     # Check options.
     #
-
-    if dis_date == True and dis_q_date == True:
-        print('Error.')
-        sys.exit(1)
 
     if dis_date == True and dis_q_time == True:
         print('Error.')
@@ -537,49 +550,53 @@ def write_sections(section_ls, fn, dis_date, dis_q_date, dis_q_time):
     now_str = now.strftime('%Y-%m-%d %H:%M:%S')
     f.write('Created: %s\n' % (now_str))
 
-    f.write('# Questions\n')
-    for section in section_ls:
-        #f.write('## %s\n' % section['title'])
-        f.write('* %s\n' % section['title'])
+    for title, section_ls in zip(['Questions', 'Chats'], [q_section_ls, c_section_ls]):
+        
+        if len(section_ls) >= 1:
+            f.write('# %s\n' % title)
 
-        for question in section['question_ls']:
-            #if question['hide']:
-            #    continue
+        for section in section_ls:
+            f.write('* %s\n' % section['title'])
 
-            q = get_q(question, dis_date, dis_q_date, dis_q_time)
-            f.write('    * %s\n' % q)
+            for question in section['question_ls']:
+                #if question['hide']:
+                #    continue
 
+                q = get_q(question, dis_date, dis_q_date, dis_q_time)
+                f.write('    * %s\n' % q)
 
-    f.write('\n')
-    f.write('---\n')
-    f.write('\n')
-
-    f.write('# Q & A\n')
-    for section in section_ls:
-        f.write('## %s\n' % section['title'])
-
-        for question in section['question_ls']:
-            
-            q = get_q(question, dis_date, dis_q_date, dis_q_time)
-            a = question['a']
-
-            f.write('**Question:** %s\n' % q)
-            f.write('\n')
-
-
-            if question['hide']:
-                f.write('**Answer:** (Hide)\n')
-                f.write('\n')
-
-            else:
-                f.write('**Answer:**\n')
-                f.write('\n')
-                for line in a:
-                    f.write(line+'\n')
-
+        if len(section_ls) >= 1:
             f.write('\n')
             f.write('---\n')
             f.write('\n')
+
+    f.write('# Q & A\n')
+    for section_ls in [q_section_ls, c_section_ls]:
+        for section in section_ls:
+            f.write('## %s\n' % section['title'])
+
+            for question in section['question_ls']:
+                
+                q = get_q(question, dis_date, dis_q_date, dis_q_time)
+                a = question['a']
+
+                f.write('**Question:** %s\n' % q)
+                f.write('\n')
+
+
+                if question['hide']:
+                    f.write('**Answer:** (Hide)\n')
+                    f.write('\n')
+
+                else:
+                    f.write('**Answer:**\n')
+                    f.write('\n')
+                    for line in a:
+                        f.write(line+'\n')
+
+                f.write('\n')
+                f.write('---\n')
+                f.write('\n')
 
     f.close()
 

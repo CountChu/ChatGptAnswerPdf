@@ -38,6 +38,12 @@ def build_args():
             required=True,
             help='A directory that contains answers in MD files by date. E.g., "output-hist"')
 
+    parser.add_argument(
+            '--merge',
+            dest='merge',
+            action='store_true',
+            help='Enable to merge questions and chats')
+
     #
     # Check arguments and return.
     #
@@ -45,6 +51,70 @@ def build_args():
     args = parser.parse_args()
 
     return args
+
+def get_questions(questions_dn, chats_dn):
+
+    #
+    # Get all question set files to build question_ls
+    #
+
+    question_ls = []
+    bn_fn_ls = util.get_files(questions_dn)
+    for bn, fn in bn_fn_ls:
+        print(fn)
+
+        lines = util.read_lines(fn)
+        chat, date, sections = util.parse_context(lines)
+
+        #
+        # Read sections to build section_ls.
+        #       section_ls = [section]
+        #       section = {'title', 'question_ls'}
+        #       question_ls = [question]
+        #       question = {'q1', ...'date', ...}
+        #
+
+        section_ls = util.read_sections(sections, bn, chat, date)
+
+        #
+        # Check section_ls
+        #
+
+        util.check_sections(section_ls)
+
+        #
+        # Build question_ls
+        #
+
+        for section in section_ls:
+            question_ls += section['question_ls']
+
+    #
+    # Build fn_qa_ls_d
+    # fn_qa_ls_d[fn] = qa_ls
+    #
+
+    fn_qa_ls_d = {}
+    for question in question_ls:
+        fn = os.path.join(chats_dn, question['from'])
+
+        if not os.path.exists(fn):
+            print('Error! The file does not exist.')
+            print(fn)
+            sys.exit(1)
+
+        if fn not in fn_qa_ls_d:
+            qa_ls = util.parse_chat(fn)
+            fn_qa_ls_d[fn] = qa_ls
+
+    #
+    # Find aswer for each question in question_ls
+    #
+
+    for question in question_ls:
+        util.find_answer(chats_dn, fn_qa_ls_d, question)
+
+    return question_ls
 
 def transform_to_question(qa, title):
     question = {}
@@ -58,8 +128,67 @@ def transform_to_question(qa, title):
     question['qs'] = None
     question['title'] = None
     question['a'] = qa['a']
+    question['guid'] = qa['guid']
 
     return question
+
+def build_chats(chats_dn):
+
+    #
+    # For each chat file, get qa_ls and transform it into questions
+    #
+
+    out = []
+    bn_fn_ls = util.get_files(chats_dn)
+    for bn, fn in bn_fn_ls:
+        qa_ls = util.parse_chat(fn)
+        for qa in qa_ls:
+            #title, _ = util.get_name(bn)
+            title = bn
+            question = transform_to_question(qa, title)
+            out.append(question)
+
+    return out
+
+def get_solo_chats(question_ls, chats_dn):
+    print('Number of questions  : %d' % len(question_ls))
+
+    out = []
+
+    dup_count = 0
+    guid_set = set()                     # The guid may be duplicated.
+    for question in question_ls:
+        guid = question['guid']
+        if guid in guid_set:
+            print('Duplicated question: %s' % question['q1'])
+            dup_count += 1
+
+        guid_set.add(guid)
+    print('Number of duplicated : %d' % dup_count)
+
+    chat_ls = build_chats(chats_dn)
+    print('Number of chats      : %d' % len(chat_ls))
+
+    for chat in chat_ls:
+        if chat['guid'] not in guid_set:
+            out.append(chat)
+
+    print('Number of solo chats : %d' % len(out))
+
+    assert len(question_ls) - dup_count + len(out) == len(chat_ls)
+
+    return out 
+
+def build_group_by_date(question_ls):
+    out = {}
+    for question in question_ls:
+        date = question['q_date']
+        if date not in out:
+            out[date] = [] 
+
+        out[date].append(question)
+
+    return out
 
 def get_title(question):
     if question['title'] == None:
@@ -92,6 +221,11 @@ def build_sections_by_title(question_ls):
     for section in section_ls:
         question_ls = section
 
+    return section_ls
+
+def get_section_ls_order_by_time(question_ls):
+    question_ls = sorted(question_ls, key=lambda x: x['q_time'])
+    section_ls = build_sections_by_title(question_ls)    
     return section_ls
 
 def main():
@@ -133,116 +267,59 @@ def main():
         os.mkdir(args.output)
 
     #
-    # If use -q
+    # If use -q, build question_ls from questions with answers from chats.
     #
 
+    question_ls = []
+    chat_ls = []
+
     if args.questions:
+        question_ls = get_questions(args.questions, args.chats)
 
-        #
-        # Get all question set files to build question_ls
-        #
+        if args.merge:
+            chat_ls = get_solo_chats(question_ls, args.chats)
 
-        question_ls = []
-        bn_fn_ls = util.get_files(args.questions)
-        for bn, fn in bn_fn_ls:
-            print(fn)
-
-            lines = util.read_lines(fn)
-            chat, date, sections = util.parse_context(lines)
-
-            #
-            # Read sections to build section_ls.
-            #       section_ls = [section]
-            #       section = {'title', 'question_ls'}
-            #       question_ls = [question]
-            #       question = {'q1', ...'date', ...}
-            #
-
-            section_ls = util.read_sections(sections, bn, chat, date)
-
-            #
-            # Check section_ls
-            #
-
-            util.check_sections(section_ls)
-
-            #
-            # Build question_ls
-            #
-
-            for section in section_ls:
-                question_ls += section['question_ls']
-
-        #
-        # Build fn_qa_ls_d
-        # fn_qa_ls_d[fn] = qa_ls
-        #
-
-        fn_qa_ls_d = {}
-        for question in question_ls:
-            fn = os.path.join(args.chats, question['from'])
-
-            if not os.path.exists(fn):
-                print('Error! The file does not exist.')
-                print(fn)
-                sys.exit(1)
-
-            if fn not in fn_qa_ls_d:
-                qa_ls = util.parse_chat(fn)
-                fn_qa_ls_d[fn] = qa_ls
-
-        #
-        # Find aswer for each question in question_ls
-        #
-
-        for question in question_ls:
-            util.find_answer(args.chats, fn_qa_ls_d, question)
+    #
+    # Else, build question_ls form chats.
+    #
 
     else:
-
-        #
-        # For each chat file, get qa_ls and transform it into questions
-        #
-
-        question_ls = []
-        bn_fn_ls = util.get_files(args.chats)
-        for bn, fn in bn_fn_ls:
-            qa_ls = util.parse_chat(fn)
-            for qa in qa_ls:
-                #title, _ = util.get_name(bn)
-                title = bn
-                question = transform_to_question(qa, title)
-                question_ls.append(question)
+        chat_ls = build_chats(args.chats)
 
     #
     # Build date_question_ls_d[date] = question_ls
+    # build date_chat_ls_d[date] = chat_ls
     #
 
-    date_question_ls_d = {}
-    for question in question_ls:
-        date = question['q_date']
-        if date not in date_question_ls_d:
-            date_question_ls_d[date] = [] 
+    date_question_ls_d = build_group_by_date(question_ls)
+    date_chat_ls_d = build_group_by_date(chat_ls)
 
-        date_question_ls_d[date].append(question)
+    #
+    # Build date_set.
+    # 
+
+    date_ls = list(date_question_ls_d.keys()) + list(date_chat_ls_d.keys())
+    date_set = set(date_ls)
 
     #
     # Build history
     #
 
-    for date in sorted(date_question_ls_d.keys()):
+    for date in sorted(date_set):
         print(date)
 
-        #
-        # Get question_ls by date and sort it by time.
-        #
+        q_section_ls = []
+        if date in date_question_ls_d:
+            q_section_ls = get_section_ls_order_by_time(date_question_ls_d[date])
 
-        question_ls = date_question_ls_d[date]
-        question_ls = sorted(question_ls, key=lambda x: x['q_time'])
+        c_section_ls = []
+        if date in date_chat_ls_d:
+            c_section_ls = get_section_ls_order_by_time(date_chat_ls_d[date])
 
-        section_ls = build_sections_by_title(question_ls)
+
         fn_history = os.path.join(args.output, '%s.md' % date)
-        util.write_sections(section_ls, fn_history, dis_date = False, dis_q_date=False, dis_q_time=True)
+
+        util.write_sections(q_section_ls, c_section_ls, fn_history, dis_date = False, dis_q_date=False, dis_q_time=True)
 
 if __name__ == '__main__':
     main()
