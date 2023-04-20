@@ -3,7 +3,8 @@ import sys
 import os
 import re
 import datetime
-import util
+import my_pkg.util as util
+import my_pkg.qs as qs
 
 import pdb
 br = pdb.set_trace
@@ -107,20 +108,20 @@ def main():
     # Parse lines.
     #
 
-    chat, date, sections = util.parse_context(lines)
+    chat, date, sections = qs.parse_context(lines)
 
     #
     # Read sections
     #
 
-    qs = os.path.basename(args.questions)
-    section_ls = util.read_sections(sections, qs, chat, date)
+    qs_name = os.path.basename(args.questions)
+    section_ls = qs.read_sections(sections, qs_name, chat, date)
 
     #
     # Check section_ls
     #
 
-    util.check_sections(section_ls)
+    qs.check_sections(section_ls)
 
     #
     # Dump section_ls to check.

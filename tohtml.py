@@ -3,7 +3,7 @@ import sys
 import os
 import markdown
 
-import util
+import my_pkg.util as util
 
 import pdb
 br = pdb.set_trace

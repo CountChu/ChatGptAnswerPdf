@@ -3,7 +3,8 @@ import sys
 import os
 import re
 import datetime
-import util
+import my_pkg.util as util
+import my_pkg.qs as qs
 
 import pdb
 br = pdb.set_trace
@@ -65,23 +66,23 @@ def get_questions(questions_dn, chats_dn):
         print(fn)
 
         lines = util.read_lines(fn)
-        chat, date, sections = util.parse_context(lines)
+        chat, date, sections = qs.parse_context(lines)
 
         #
         # Read sections to build section_ls.
         #       section_ls = [section]
-        #       section = {'title', 'question_ls'}
+        #       section = {'sec_title', 'question_ls'}
         #       question_ls = [question]
         #       question = {'q1', ...'date', ...}
         #
 
-        section_ls = util.read_sections(sections, bn, chat, date)
+        section_ls = qs.read_sections(sections, bn, chat, date)
 
         #
         # Check section_ls
         #
 
-        util.check_sections(section_ls)
+        qs.check_sections(section_ls)
 
         #
         # Build question_ls
@@ -118,16 +119,14 @@ def get_questions(questions_dn, chats_dn):
     return question_ls
 
 def transform_to_question(qa, title):
-    question = {}
+    question = qs.build_question(None)
     question['q1'] = qa['q']
     question['q2'] = qa['q']
     question['is_short'] = qa['is_short']
     question['from'] = title
-    question['hide'] = False
     question['q_date'] = qa['create_time'][:10]
     question['q_time'] = qa['create_time'][11:]
-    question['qs'] = None
-    question['title'] = None
+    question['sec_title'] = None
     question['a'] = qa['a']
     question['guid'] = qa['guid']
 
@@ -192,10 +191,10 @@ def build_group_by_date(question_ls):
     return out
 
 def get_title(question):
-    if question['title'] == None:
+    if question['sec_title'] == None:
         title = '%s' % (question['from'])
     else:
-        title = '%s @ %s' % (question['title'], question['from'])
+        title = '%s @ %s' % (question['sec_title'], question['from'])
 
     return title
 
@@ -216,7 +215,7 @@ def build_sections_by_title(question_ls):
 
     section_ls = []
     for title in sorted_title_ls:
-        section = {'title': title, 'question_ls': title_question_ls_d[title]}
+        section = {'sec_title': title, 'question_ls': title_question_ls_d[title]}
         section_ls.append(section)
 
     for section in section_ls:

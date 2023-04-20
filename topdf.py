@@ -3,7 +3,7 @@ import sys
 import os
 import pdfkit
 
-import util
+import my_pkg.util as util
 
 import pdb
 br = pdb.set_trace
