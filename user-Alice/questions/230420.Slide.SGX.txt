@@ -1,0 +1,26 @@
+from: Slides.SGX.0420.md
+
+Slideshow - Intro to Intel SGX
+    q-prefix: Below slideshow is "Intro to Intel SGX"
+    hide:
+
+My Questions
+    q: Why is Intel SGX not suited for password managers?
+    q: What does "size of TCB" mean?
+    q: What is "accountable decryption"?
+    q: What is endorsement key?
+
+Privacy CA
+    q: What is "Privacy CA"?
+    q: How does the Solution 1 "Privacy CA for provisioning ak" work? Please list the steps.
+
+Launch Enclave    
+    q: What is "Launch Enclave"?
+    q: Is Launch Enclave a software?
+    q: Does  Launch Enclave  run in OS?
+    
+    q: Does the binary of Launch Enclave exits in BIOS or ME?
+    title: Does the binary of Launch Enclave reside in BIOS or ME?
+
+    q: Is Launch Enclave provided by another vendor (No Intel)?
+

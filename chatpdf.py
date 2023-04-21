@@ -88,18 +88,22 @@ def run_it(cmd):
 def build_pdf(ctx, bn):
     name, _ = util.get_name(bn)
 
+    answer_fn = os.path.join(ctx['home'], 'answer.py')
+    tohtml_fn = os.path.join(ctx['home'], 'tohtml.py')
+    topdf_fn = os.path.join(ctx['home'], 'topdf.py')
+
     cmd_ls = []
 
-    cmd = 'python answer.py -q "%s/%s" -c "%s" -a "%s" -s'
-    cmd = cmd % (ctx['questions'], bn, ctx['chats'], ctx['out'])
+    cmd = 'python %s -q "%s/%s" -c "%s" -a "%s" -s'
+    cmd = cmd % (answer_fn, ctx['questions'], bn, ctx['chats'], ctx['out'])
     cmd_ls.append(cmd)
 
-    cmd = 'python tohtml.py -f "%s.md" -i %s -o %s -s'    
-    cmd = cmd % (name, ctx['out'], ctx['html'])
+    cmd = 'python %s -f "%s.md" -i %s -o %s -s'    
+    cmd = cmd % (tohtml_fn, name, ctx['out'], ctx['html'])
     cmd_ls.append(cmd)
 
-    cmd = 'python topdf.py -f "%s.html" -i %s -o %s -s'
-    cmd = cmd % (name, ctx['html'], ctx['pdf'])
+    cmd = 'python %s -f "%s.html" -i %s -o %s -s'
+    cmd = cmd % (topdf_fn, name, ctx['html'], ctx['pdf'])
     cmd_ls.append(cmd)
 
     for cmd in cmd_ls:
@@ -161,6 +165,12 @@ def handle_update(args, ctx):
 def main():
 
     #
+    # Read home of the app.
+    #
+
+    home = os.path.dirname(sys.argv[0])
+
+    #
     # Read arguments.
     #
 
@@ -171,6 +181,7 @@ def main():
     #
 
     ctx = {
+        'home': home,
         'chats': args.chats,
         'questions': args.questions,
         'out': 'out-ans',

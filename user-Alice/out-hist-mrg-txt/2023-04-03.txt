@@ -1,0 +1,12 @@
+2023-04-03
+
+Questions
+
+Boot @ OP-TEE.0327.md
+[09:21] Does OP-TEE OS exist in a single core or multiple cores at run-time?
+
+Chats
+
+OP-TEE.0327.md
+[09:20] Does OP-TEE exist in a single core or multiple cores at run-time?
+

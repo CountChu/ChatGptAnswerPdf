@@ -1,0 +1,898 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github.css" type="text/css">
+    <title>230329.TrustZone</title>    
+  </head>
+  <body>
+    <article class="markdown-body">
+        <!-- Markdown-generated HTML content here -->
+        <h1>230329.TrustZone</h1>
+<p>Created: 2023-04-22 01:02:34</p>
+<h1>Questions</h1>
+<ul>
+<li>The ariticle<ul>
+<li>https://genode.org/documentation/articles/trustzone <code>(2023-03-28)</code></li>
+<li>Please summarize the following articles in short. <code>(2023-03-28)</code></li>
+<li>Please compare TrustZone and TPM in a table. <code>(2023-03-28)</code></li>
+<li>What is bootstrap code? <code>(2023-03-28)</code></li>
+<li>What are two lines in the section &ldquo;Starting point&rdquo; in the article? <code>(2023-03-28)</code></li>
+</ul>
+</li>
+<li>Basic Concepts<ul>
+<li>Is TrustZone a software or hardware? <code>(2023-03-31)</code></li>
+</ul>
+</li>
+<li>TrustZone &amp; HSM<ul>
+<li>What is difference between TrustZone and HSM? Please also summarize in a table. <code>(2023-04-04)</code></li>
+<li>What are relationships between TrustZone and HSM? <code>(2023-04-04)</code></li>
+<li>Can TrustZone totally replace HSM? <code>(2023-04-04)</code></li>
+<li>Is HSM cost than TrustZone? <code>(2023/4/11)</code></li>
+<li>Is HSM more performance than ARM TrustZone in crypto operations? <code>(2023/4/11)</code></li>
+<li>What are security certifications of TrustZone? <code>(2023/4/11)</code></li>
+</ul>
+</li>
+<li>Normal World &amp; Secure World<ul>
+<li>Can Normal world and Secure World run at the same time in ARM? <code>(2023-03-29)</code></li>
+<li>But can Normal world and Secure World run at the same time in multi processors of ARM? <code>(2023-03-29)</code></li>
+</ul>
+</li>
+<li>Boot<ul>
+<li>Does boot loader only run in secure world, not in normal world? <code>(2023-03-30)</code></li>
+<li>How to swtich secure world to normal world when booting? <code>(2023-03-30)</code></li>
+<li>What is ATF? <code>(2023-04-01)</code></li>
+<li>What is FF-A? <code>(2023/4/10)</code></li>
+<li>Does TF-A rely on FF-A? <code>(2023/4/10)</code></li>
+<li>Does TF-A rely on TrustZone? <code>(2023/4/10)</code></li>
+</ul>
+</li>
+<li>Memory<ul>
+<li>How to define memory size of secure world? <code>(2023-03-29)</code></li>
+<li>Can memory size of secure world be changed? <code>(2023-03-29)</code></li>
+<li>What is MMU? <code>(2023-04-01)</code></li>
+<li>What is TLB? <code>(2023-04-01)</code></li>
+</ul>
+</li>
+<li>CPU<ul>
+<li>What is SMP? <code>(2023-04-01)</code></li>
+<li>What are difference between primary and seconday CPU cores? <code>(2023-04-01)</code></li>
+<li>Please summarize the two types of CPU cores as a table. <code>(2023-04-01)</code></li>
+<li>What are SCP and AP? <code>(2023-04-04)</code></li>
+<li>Do SCP and AP in ARM share memory? <code>(2023-04-04)</code></li>
+<li>What is differenct between Armv8-A and Armv8-M? Please summarize as a table. <code>(2023-04-04)</code></li>
+</ul>
+</li>
+<li>SM &amp; SPM &amp; SPD<ul>
+<li>What is Secure Monitor? <code>(2023-03-30)</code></li>
+<li>What is SMC? <code>(2023-03-29)</code></li>
+<li>Can secure world request a service in normal world via SMC? <code>(2023-03-29)</code></li>
+<li>What is SPM? <code>(2023-03-29)</code></li>
+<li>What is SPD? <code>(2023-03-29)</code></li>
+<li>Can SPD handle the request from the secure world? <code>(2023-03-29)</code></li>
+<li>What are relationships of SPD, SPM and SMC? <code>(2023-03-30)</code></li>
+<li>Why are SPD and SPM mutually exclusive? <code>(2023-03-29)</code></li>
+<li>Is SPD an optional component? <code>(2023-03-30)</code></li>
+<li>Can I use SPD instead of SM? <code>(2023-03-30)</code></li>
+<li>Does TrustZone require SPM? <code>(2023-04-09)</code></li>
+</ul>
+</li>
+<li>Secure Partition<ul>
+<li>What is SP? <code>(2023-03-29)</code></li>
+<li>Can different SPs communicate together? <code>(2023-03-29)</code></li>
+<li>How to create a SP and when? <code>(2023-03-29)</code></li>
+<li>Can I create a SP in run-time? <code>(2023-03-29)</code></li>
+<li>What is TA? <code>(2023-03-29)</code></li>
+<li>How do TAs and SPs communicate each other? <code>(2023-03-29)</code></li>
+<li>Can a SP host many TAs? <code>(2023-03-29)</code></li>
+<li>Can a TA communicate different SP? <code>(2023-03-29)</code></li>
+<li>Is normal world a secure parition? <code>(2023-03-30)</code></li>
+<li>Is secure world a secure partition? <code>(2023-03-30)</code></li>
+</ul>
+</li>
+<li>Privilege Levels<ul>
+<li>What are EL0, EL1, EL2, S-EL0, S-EL1, S-EL2, S-EL3? <code>(2023-03-29)</code></li>
+<li>What is exception level? <code>(2023/4/10)</code></li>
+<li>How does a software component know which EL it owns? <code>(2023/4/10)</code></li>
+<li>Can a software component change the EL? <code>(2023/4/10)</code></li>
+<li>Are ELs of TrustZone? <code>(2023/4/10)</code></li>
+<li>Are EL3 and S-EL3 same? <code>(2023/4/13)</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1>Q &amp; A</h1>
+<h2>The ariticle</h2>
+<p><strong>Question:</strong> https://genode.org/documentation/articles/trustzone <code>(2023-03-28)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The link you&rsquo;ve shared (https://genode.org/documentation/articles/trustzone) directs to an article on Genode&rsquo;s website that discusses TrustZone technology. Genode is an open-source operating system framework focused on creating a secure and scalable environment for running multiple instances of software. TrustZone is a security technology developed by ARM, which is widely used in modern processors.</p>
+<p>TrustZone technology aims to provide a secure execution environment for trusted applications, protecting them from potential security threats posed by untrusted applications. It achieves this by dividing the system into two distinct worlds: the &ldquo;Secure World&rdquo; and the &ldquo;Normal World.&rdquo; These two worlds run concurrently on the same hardware, but they are isolated from each other, ensuring that sensitive data and operations remain protected.</p>
+<p>The &ldquo;Secure World&rdquo; is designed to handle security-sensitive tasks, while the &ldquo;Normal World&rdquo; handles general-purpose tasks. To switch between the two worlds, ARM provides a secure monitor call (SMC) instruction that manages the transitions.</p>
+<p>Genode leverages TrustZone technology to enhance the security of its operating system framework. By using TrustZone, Genode can isolate critical parts of the system and applications from the rest of the system, reducing the risk of sensitive data leaks or unauthorized access.</p>
+<p>If you have any specific questions about TrustZone or Genode, feel free to ask, and I&rsquo;ll do my best to help.</p>
+<hr />
+<p><strong>Question:</strong> Please summarize the following articles in short. <code>(2023-03-28)</code></p>
+<p><strong>Answer:</strong></p>
+<p>It appears you forgot to provide the articles that you&rsquo;d like me to summarize. Please provide the links or titles of the articles, and I&rsquo;ll be happy to provide summaries for you.</p>
+<hr />
+<p><strong>Question:</strong> Please compare TrustZone and TPM in a table. <code>(2023-03-28)</code></p>
+<p><strong>Answer:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>TrustZone</th>
+<th>TPM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Hardware-based security solution</td>
+<td>Hardware-based security solution</td>
+</tr>
+<tr>
+<td>Security functions</td>
+<td>Freely programmable</td>
+<td>Fixed-function</td>
+</tr>
+<tr>
+<td>Execution environment</td>
+<td>Secure world on ARM-based SoC</td>
+<td>Standalone chip</td>
+</tr>
+<tr>
+<td>Isolation</td>
+<td>Two worlds: Secure and Non-secure</td>
+<td>Separate from CPU</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Varies, from simple libraries to full OS</td>
+<td>Limited, designed for specific functions</td>
+</tr>
+<tr>
+<td>Interaction with peripherals</td>
+<td>NS bit determines peripheral access control</td>
+<td>Communicates via standard bus protocols</td>
+</tr>
+<tr>
+<td>Cryptographic capabilities</td>
+<td>Software implemented, based on user needs</td>
+<td>Built-in cryptographic functions</td>
+</tr>
+<tr>
+<td>Secure storage</td>
+<td>Depends on SoC implementation</td>
+<td>Built-in non-volatile storage</td>
+</tr>
+<tr>
+<td>Secure boot</td>
+<td>SoC-dependent, can be implemented</td>
+<td>Provides support for secure boot process</td>
+</tr>
+<tr>
+<td>Virtualization support</td>
+<td>Limited, not designed for virtualization</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>Flexibility</td>
+<td>More versatile, programmable functions</td>
+<td>Less versatile, fixed-function</td>
+</tr>
+<tr>
+<td>Performance impact</td>
+<td>Depends on implementation complexity</td>
+<td>Minimal, as it operates independently</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that this comparison is a high-level overview of TrustZone and TPM. The specific features and capabilities may vary depending on the implementation and the SoC used for TrustZone or the TPM version and vendor.</p>
+<hr />
+<p><strong>Question:</strong> What is bootstrap code? <code>(2023-03-28)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Bootstrap code, also known as boot code, bootloader, or bootstrapping, is a small program responsible for initializing a computer&rsquo;s hardware components and loading the operating system (OS) into memory. When a computer is powered on or restarted, the bootstrap code is the first code to execute, typically stored in a fixed location, such as a Read-Only Memory (ROM) chip, or firmware like Basic Input/Output System (BIOS) or Unified Extensible Firmware Interface (UEFI).</p>
+<p>The primary function of the bootstrap code is to perform hardware checks, initialize essential hardware components (like CPU, memory, and peripherals), and locate the operating system&rsquo;s kernel. Once the kernel is found, the bootstrap code loads it into memory and transfers control to the kernel, enabling the OS to start and manage system resources.</p>
+<p>In summary, bootstrap code is responsible for the initial steps in the boot process, laying the groundwork for the operating system to take over and provide a functional environment for the user.</p>
+<hr />
+<p><strong>Question:</strong> What are two lines in the section &ldquo;Starting point&rdquo; in the article? <code>(2023-03-28)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the context of the &ldquo;Starting point&rdquo; section of the article, two lines refer to two distinct approaches to exploring TrustZone technology:</p>
+<ol>
+<li>
+<p>Line 1: Utilize TrustZone as a virtualization solution, exploring its potential to host multiple virtual machines or support multiple operating systems in the secure and non-secure worlds. This line of experimentation seeks to understand TrustZone&rsquo;s capabilities as a virtualization mechanism.</p>
+</li>
+<li>
+<p>Line 2: Use TrustZone as an alternative to Trusted Platform Modules (TPM), focusing on its ability to implement security functions and protect sensitive information within the secure world. This line of experimentation aims to investigate the versatility and programmability of TrustZone as a security mechanism compared to fixed-function TPMs.</p>
+</li>
+</ol>
+<hr />
+<h2>Basic Concepts</h2>
+<p><strong>Question:</strong> Is TrustZone a software or hardware? <code>(2023-03-31)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone is a hardware-based security technology implemented in ARM processors. It provides a security extension that enables the creation of a secure environment alongside the normal environment, isolating the execution of sensitive code and data from potential threats in the normal environment. TrustZone itself is not a software; however, it requires software support to fully utilize its features, such as secure operating systems, trusted applications, and secure bootloaders.</p>
+<hr />
+<h2>TrustZone &amp; HSM</h2>
+<p><strong>Question:</strong> What is difference between TrustZone and HSM? Please also summarize in a table. <code>(2023-04-04)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone and HSM (Hardware Security Module) are both technologies that provide security features, but they are designed for different purposes and have distinct characteristics. Here is a comparison of the two:</p>
+<p>TrustZone:
+- A security extension of ARM architecture.
+- Creates two separate worlds: Secure and Normal worlds.
+- Provides isolation and protection for sensitive operations and data.
+- Can be implemented on a general-purpose CPU.
+- Usually lower cost than HSM.
+- Lower performance for cryptographic operations compared to HSM.
+- Suitable for a wide range of applications, including mobile devices, IoT, and embedded systems.</p>
+<p>HSM:
+- A dedicated hardware device for secure cryptographic operations and key management.
+- Designed specifically for high-level security.
+- Offers higher performance for cryptographic operations compared to TrustZone.
+- Physically tamper-resistant.
+- FIPS 140-2 and other security certifications.
+- Higher cost than TrustZone.
+- Suitable for high-security applications like banking, government, and critical infrastructure.</p>
+<p>Here is a summary table:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>TrustZone</th>
+<th>HSM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>ARM architecture extension</td>
+<td>Dedicated hardware device</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Isolation and protection</td>
+<td>Cryptographic operations &amp; key management</td>
+</tr>
+<tr>
+<td>Implementation</td>
+<td>General-purpose CPU</td>
+<td>Specialized hardware</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Lower for crypto operations</td>
+<td>Higher for crypto operations</td>
+</tr>
+<tr>
+<td>Tamper-resistance</td>
+<td>Limited</td>
+<td>High (physically tamper-resistant)</td>
+</tr>
+<tr>
+<td>Security certifications</td>
+<td>Varies</td>
+<td>FIPS 140-2 and others</td>
+</tr>
+<tr>
+<td>Use cases</td>
+<td>Mobile, IoT, embedded systems</td>
+<td>Banking, government, critical infrastructure</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that the comparison above is a generalization, and specific implementations of TrustZone and HSMs may have different features and performance characteristics.</p>
+<hr />
+<p><strong>Question:</strong> What are relationships between TrustZone and HSM? <code>(2023-04-04)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone and HSM (Hardware Security Module) can be used together or independently to provide security features in a system. They are not mutually exclusive and can complement each other in various ways. Here are some relationships between TrustZone and HSM:</p>
+<ol>
+<li>
+<p>Complementary Technologies: TrustZone can be used to create a secure environment for running sensitive software, while HSM can be used for secure cryptographic operations and key management. Both technologies can work together in a system to provide a higher level of security.</p>
+</li>
+<li>
+<p>TrustZone as a lightweight alternative: In some cases, TrustZone can be used as a lightweight alternative to HSM for less critical applications or where the cost and complexity of HSM are not justifiable. TrustZone provides a good balance between security and cost in such cases.</p>
+</li>
+<li>
+<p>HSM inside TrustZone: HSM can be used within the secure world of TrustZone to provide high-performance cryptographic operations and secure key storage. In this setup, TrustZone isolates the HSM and its operations from the normal world, while HSM performs its dedicated security functions.</p>
+</li>
+<li>
+<p>Communication: TrustZone and HSM can be used together to establish secure communication channels between different components of a system. TrustZone can ensure the confidentiality and integrity of the data exchanged between the secure and normal worlds, while HSM can be used for cryptographic operations like encryption, decryption, and digital signatures.</p>
+</li>
+</ol>
+<p>In summary, TrustZone and HSM can be seen as complementary technologies that can work together to provide a comprehensive security solution. TrustZone provides isolation and protection for sensitive operations and data, while HSM delivers high-performance cryptographic operations and secure key management. Depending on the application and security requirements, they can be used together or independently.</p>
+<hr />
+<p><strong>Question:</strong> Can TrustZone totally replace HSM? <code>(2023-04-04)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone cannot entirely replace an HSM because they serve different purposes and have different strengths and limitations. While TrustZone can provide a secure execution environment for sensitive applications, it does not offer the same level of security, performance, and tamper-resistance as a dedicated HSM.</p>
+<p>Here are some reasons why TrustZone cannot fully replace an HSM:</p>
+<ol>
+<li>
+<p>Hardware-level Security: HSMs are designed with specialized hardware to provide a high level of tamper-resistance, secure key storage, and cryptographic performance. TrustZone, on the other hand, relies on the processor&rsquo;s hardware features and provides software-based isolation. It is not designed to offer the same level of hardware-level security as an HSM.</p>
+</li>
+<li>
+<p>Cryptographic Performance: HSMs are optimized for cryptographic operations and can provide better performance for encryption, decryption, and other cryptographic functions compared to TrustZone, which relies on the processor&rsquo;s general-purpose hardware.</p>
+</li>
+<li>
+<p>Secure Key Storage: HSMs are designed to store cryptographic keys securely and protect them from unauthorized access, even in the presence of physical attacks. TrustZone can provide some level of secure key storage, but it may not be as robust as the key storage in an HSM.</p>
+</li>
+<li>
+<p>Certification: HSMs often come with certifications, such as FIPS 140-2 or Common Criteria, that guarantee a certain level of security and assurance. TrustZone, being a part of a general-purpose processor, may not have the same certifications, making it less suitable for highly regulated industries or applications with strict security requirements.</p>
+</li>
+</ol>
+<p>In summary, while TrustZone can provide a secure environment for sensitive applications, it cannot fully replace an HSM in terms of security, performance, and tamper-resistance. Both technologies have their use cases, and depending on the security requirements, one or both can be employed in a system.</p>
+<hr />
+<p><strong>Question:</strong> Is HSM cost than TrustZone? <code>(2023/4/11)</code></p>
+<p><strong>Answer:</strong></p>
+<p>It&rsquo;s difficult to make a direct comparison between the cost of a hardware security module (HSM) and TrustZone, as they serve different purposes and have different implementations. Here are some points to consider:</p>
+<ol>
+<li>
+<p>HSM: A standalone, tamper-resistant hardware device that provides secure key storage, cryptographic processing, and other security functions. HSMs are typically used in high-security environments, like financial institutions, where the protection of sensitive information is crucial. They can be relatively expensive due to their robust security features and the fact that they are dedicated hardware devices.</p>
+</li>
+<li>
+<p>TrustZone: A hardware-based security feature in Arm processors that provides isolation between the Secure World and the Normal World. TrustZone is integrated into Arm processors, so the cost is essentially built into the processor itself. TrustZone may provide a lower level of security compared to an HSM, but it&rsquo;s generally more cost-effective since it&rsquo;s already a part of the processor.</p>
+</li>
+</ol>
+<p>In summary, HSMs tend to be more expensive than TrustZone because they are dedicated, standalone hardware devices with more robust security features. TrustZone, on the other hand, is a built-in security feature in Arm processors and is generally more cost-effective. However, the level of security provided by TrustZone may not be as high as that of an HSM. The choice between the two will depend on the specific security requirements and budget of a given project or organization.</p>
+<hr />
+<p><strong>Question:</strong> Is HSM more performance than ARM TrustZone in crypto operations? <code>(2023/4/11)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In general, hardware security modules (HSMs) are designed to be more performant in cryptographic operations compared to ARM TrustZone. This is due to several reasons:</p>
+<ol>
+<li>
+<p>Dedicated hardware: HSMs are standalone devices specifically designed for cryptographic operations, including secure key storage, encryption, decryption, and signing. They have dedicated cryptographic accelerators and coprocessors optimized for these tasks, leading to better performance.</p>
+</li>
+<li>
+<p>Reduced overhead: TrustZone, while providing a secure environment for cryptographic operations, still shares the same processor with the normal world. This sharing can lead to resource contention and increased overhead, potentially affecting performance.</p>
+</li>
+<li>
+<p>Tamper resistance: HSMs are designed with robust tamper resistance in mind, including active measures to prevent unauthorized access or tampering. TrustZone, while providing a level of isolation between the secure and normal worlds, may not offer the same level of physical tamper resistance.</p>
+</li>
+<li>
+<p>Scalability: HSMs can be used in a cluster or load-balanced configuration to handle large-scale cryptographic operations, providing better performance and throughput.</p>
+</li>
+</ol>
+<p>However, it&rsquo;s important to note that the specific performance difference between HSMs and TrustZone in cryptographic operations will depend on the implementation details, workload, and hardware configuration. For some use cases, TrustZone may provide sufficient performance, while in other scenarios, an HSM may be necessary to meet strict performance and security requirements.</p>
+<hr />
+<p><strong>Question:</strong> What are security certifications of TrustZone? <code>(2023/4/11)</code></p>
+<p><strong>Answer:</strong></p>
+<p>ARM TrustZone technology provides a foundation for building secure systems, but the security certifications depend on the specific implementations and products built on top of it. Different implementations may undergo different security evaluation processes and achieve various certifications based on their design, features, and target markets.</p>
+<p>Some common security certifications that TrustZone-based products can achieve include:</p>
+<ol>
+<li>
+<p>Common Criteria (CC): TrustZone-based implementations can be certified under Common Criteria, an international standard (ISO/IEC 15408) for computer security certification. The level of assurance for a specific product is determined by its Evaluation Assurance Level (EAL), ranging from EAL1 (lowest) to EAL7 (highest).</p>
+</li>
+<li>
+<p>FIPS 140-2/140-3: TrustZone-based products can also be certified under the Federal Information Processing Standards (FIPS) 140-2 or 140-3, which are U.S. government security standards for cryptographic modules. These standards have various security levels, with Level 1 providing the lowest security and Level 4 providing the highest security.</p>
+</li>
+<li>
+<p>GlobalPlatform: Some TrustZone implementations, particularly those involving secure elements or Trusted Execution Environments (TEEs) such as OP-TEE, can be certified by GlobalPlatform. GlobalPlatform sets security requirements and evaluates products for secure elements, TEEs, and other secure components.</p>
+</li>
+<li>
+<p>Payment Card Industry (PCI): TrustZone-based implementations targeting payment systems may achieve PCI compliance, ensuring that the product meets the security standards for processing, storing, or transmitting credit card information.</p>
+</li>
+</ol>
+<p>Note that achieving these certifications depends on the specific product, its implementation, and the security features provided. It&rsquo;s essential to verify the certifications of a TrustZone-based product depending on the use case and the required security level.</p>
+<hr />
+<h2>Normal World &amp; Secure World</h2>
+<p><strong>Question:</strong> Can Normal world and Secure World run at the same time in ARM? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In ARM TrustZone, the Normal world and Secure world cannot run concurrently. The processor can only execute code in either the Normal world or the Secure world at any given time. The two worlds are isolated from each other, and the processor switches between them based on events such as interrupts or requests for secure services. TrustZone uses a secure monitor mode to facilitate the transition between the two worlds, ensuring that the secure and non-secure states remain separate and protected.</p>
+<hr />
+<p><strong>Question:</strong> But can Normal world and Secure World run at the same time in multi processors of ARM? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, in a multi-processor ARM system, it is possible for the Normal world and Secure world to run concurrently on separate cores. Each core in the system can be executing in either the Normal world or the Secure world independently. This allows for parallel processing of tasks in both worlds. However, it is important to note that the isolation between the two worlds is still maintained, and each core must follow the same TrustZone mechanisms to transition between the worlds when required.</p>
+<hr />
+<h2>Boot</h2>
+<p><strong>Question:</strong> Does boot loader only run in secure world, not in normal world? <code>(2023-03-30)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Bootloaders can run in both the Secure World and the Normal World, depending on the specific use case and platform. In a secure boot process, the initial bootloader stages run in the Secure World to ensure the integrity and authenticity of the system&rsquo;s firmware and subsequent software components.</p>
+<p>Once the initial validation is complete, the bootloader may hand over control to the Normal World, allowing the operating system and applications to boot up and run.</p>
+<p>However, in some cases, a bootloader may run entirely in the Normal World if the platform doesn&rsquo;t require secure boot or if the secure boot process is handled differently. Ultimately, whether the bootloader runs in the Secure World or the Normal World depends on the specific hardware, firmware, and security requirements of the system.</p>
+<hr />
+<p><strong>Question:</strong> How to swtich secure world to normal world when booting? <code>(2023-03-30)</code></p>
+<p><strong>Answer:</strong></p>
+<p>When booting a system with TrustZone technology, the processor starts in the Secure World by default. To switch from the Secure World to the Normal World during the boot process, you can follow these general steps:</p>
+<ol>
+<li>
+<p><strong>Initialize the Secure World</strong>: In the Secure World, the secure bootloader initializes the necessary hardware components, sets up the secure environment, and configures the memory and peripherals access permissions.</p>
+</li>
+<li>
+<p><strong>Validate and load the Normal World software</strong>: The secure bootloader validates the Normal World software, such as the operating system or bootloader, using cryptographic techniques like digital signatures. Once validation is successful, it loads the software into the memory designated for the Normal World.</p>
+</li>
+<li>
+<p><strong>Configure the processor</strong>: Before switching to the Normal World, the secure bootloader sets up the processor&rsquo;s state, registers, and exception levels. It also configures the system registers, such as the Secure Configuration Register (SCR) and the Monitor Vector Base Address Register (MVBAR), to define the behavior of the system when switching between the Secure World and the Normal World.</p>
+</li>
+<li>
+<p><strong>Switch to the Normal World</strong>: The secure bootloader performs a Secure Monitor Call (SMC) or an Exception Return (ERET) to switch the processor from the Secure World to the Normal World. This transition is facilitated by the Secure Monitor, which is responsible for handling the state switch between the two worlds.</p>
+</li>
+</ol>
+<p>After these steps, the processor enters the Normal World, and the Normal World software, such as the operating system or bootloader, starts executing.</p>
+<p>Please note that these steps are a general outline and may vary depending on the specific platform, hardware, and firmware implementations.</p>
+<hr />
+<p><strong>Question:</strong> What is ATF? <code>(2023-04-01)</code></p>
+<p><strong>Answer:</strong></p>
+<p>ATF stands for ARM Trusted Firmware, which is an open-source project that provides a reference implementation of secure software for ARMv8-A-based platforms. The ARM Trusted Firmware provides a set of software components that are required to implement security features on ARMv8-A processors, such as those that support ARM TrustZone technology.</p>
+<p>The main components of ARM Trusted Firmware include:</p>
+<ol>
+<li>
+<p>BL1 (Boot Loader 1): The initial boot loader responsible for setting up a secure execution environment and loading the next stage of the boot process, usually BL2 or BL31.</p>
+</li>
+<li>
+<p>BL2 (Boot Loader 2): Responsible for loading and authenticating the remaining firmware images, such as BL31, BL32, and BL33. It typically performs additional platform-specific initialization and sets up memory partitioning.</p>
+</li>
+<li>
+<p>BL31 (EL3 Runtime Software): The runtime firmware that runs at Exception Level 3 (EL3) and provides services for managing the system power state, system resets, and the handling of SMC (Secure Monitor Call) between the secure and non-secure worlds.</p>
+</li>
+<li>
+<p>BL32 (Secure-EL1 Payload): Optional firmware that provides services to the secure world, such as a Secure Partition Manager (SPM) or a Trusted Execution Environment (TEE) like OP-TEE.</p>
+</li>
+<li>
+<p>BL33 (Non-secure world bootloader): The bootloader for the non-secure world, typically a bootloader like U-Boot or an operating system like Linux.</p>
+</li>
+</ol>
+<p>The ARM Trusted Firmware provides a foundation for developing secure software on ARM-based platforms and serves as a reference implementation for platform vendors and developers to build upon or customize for their specific needs.</p>
+<hr />
+<p><strong>Question:</strong> What is FF-A? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>FF-A, or Firmware Framework for Armv8-A, is a specification that defines a standard interface for Armv8-A-based systems to support secure firmware components, such as Secure Partitions and Secure Partition Managers. This framework aims to promote interoperability between different firmware components from different vendors and provides a consistent method for handling security, communication, and resource management.</p>
+<p>FF-A enables the development of secure, modular firmware components that can be used across multiple platforms and SoCs, simplifying firmware development and reducing the need for custom solutions. It supports various use cases, including secure boot, trusted execution environments, and virtualization.</p>
+<hr />
+<p><strong>Question:</strong> Does TF-A rely on FF-A? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, Arm Trusted Firmware-A (TF-A) relies on and implements the Firmware Framework for Armv8-A (FF-A) specification. TF-A provides a reference implementation of secure world software for Armv8-A platforms, including support for Secure Partition Manager (SPM) and Secure Partitions (SPs) as defined by the FF-A specification.</p>
+<p>By relying on FF-A, TF-A ensures that it follows a standardized interface for secure firmware components, enabling compatibility and interoperability with various platforms and SoCs. This helps simplify firmware development and promote the use of secure, modular firmware components across different Armv8-A-based systems.</p>
+<hr />
+<p><strong>Question:</strong> Does TF-A rely on TrustZone? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, Arm Trusted Firmware-A (TF-A) relies on and utilizes the TrustZone technology for providing a secure execution environment on Armv8-A platforms. TrustZone is a hardware-based security feature that creates a secure and isolated environment (Secure World) for running sensitive applications and handling secure data.</p>
+<p>TF-A is a reference implementation of secure world software that provides various security services, such as secure boot, runtime firmware services, and a Secure Partition Manager (SPM) for managing Secure Partitions (SPs). By leveraging TrustZone, TF-A ensures that these security services and sensitive applications are protected from the less secure, normal world applications and potential vulnerabilities.</p>
+<hr />
+<h2>Memory</h2>
+<p><strong>Question:</strong> How to define memory size of secure world? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Defining the memory size for the secure world in an ARM TrustZone-enabled system is highly dependent on the specific System-on-Chip (SoC) being used. Each SoC has different characteristics and mechanisms for allocating and partitioning memory resources between the secure and non-secure worlds.</p>
+<p>Typically, the memory size for the secure world is defined during the system&rsquo;s initialization or configuration phase. The process involves configuring TrustZone-specific hardware components such as TrustZone Protection Controller (TZPC) and TrustZone Address Space Controller (TZASC) to set access permissions and memory partitions.</p>
+<p>To define the memory size of the secure world, follow these general steps:</p>
+<ol>
+<li>
+<p>Determine the available memory resources: Consult your SoC&rsquo;s technical reference manual or datasheet to identify the available memory resources and their respective addresses.</p>
+</li>
+<li>
+<p>Configure TZPC and TZASC: Based on the desired memory size for the secure world, configure the TZPC and TZASC registers to partition the memory accordingly. This may involve setting up specific regions and access permissions for secure and non-secure worlds. Some SoCs might provide alternative or additional mechanisms for memory partitioning.</p>
+</li>
+<li>
+<p>Verify and update your secure world software: Ensure your secure world software is aware of the allocated memory size and adapts its memory management accordingly.</p>
+</li>
+</ol>
+<p>Please note that these steps are generalized, and you should refer to the documentation of your specific SoC for exact procedures and register configurations.</p>
+<hr />
+<p><strong>Question:</strong> Can memory size of secure world be changed? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In most ARM TrustZone-enabled systems, the memory size of the secure world is typically defined during the system&rsquo;s initialization or configuration phase. However, whether the memory size of the secure world can be changed at runtime depends on the specific System-on-Chip (SoC) being used and its support for dynamic memory partitioning.</p>
+<p>Some SoCs may allow for dynamic reconfiguration of TrustZone components like the TrustZone Protection Controller (TZPC) and TrustZone Address Space Controller (TZASC) during runtime, enabling changes to memory partitioning between the secure and non-secure worlds. In such cases, the secure world software would also need to support and be aware of such changes to adapt its memory management accordingly.</p>
+<p>To determine if your specific SoC supports changing the memory size of the secure world at runtime, consult the technical reference manual or datasheet provided by the manufacturer. It&rsquo;s important to consider the potential security implications and any restrictions when dynamically changing memory partitioning, as it could introduce new attack surfaces or vulnerabilities.</p>
+<hr />
+<p><strong>Question:</strong> What is MMU? <code>(2023-04-01)</code></p>
+<p><strong>Answer:</strong></p>
+<p>MMU stands for Memory Management Unit. It is a hardware component found in many computer systems, including those based on the ARM architecture. The primary function of the MMU is to manage the system&rsquo;s memory by translating virtual memory addresses to physical memory addresses, enabling memory protection, and controlling access permissions for different regions of memory.</p>
+<p>Key functions of an MMU include:</p>
+<ol>
+<li>
+<p>Virtual-to-physical address translation: MMUs use a system of page tables to translate virtual memory addresses, used by software, to physical memory addresses, which correspond to the actual location of data in the memory hardware. This allows software to access memory in a uniform and consistent manner, even when the actual memory layout is fragmented or changes dynamically.</p>
+</li>
+<li>
+<p>Memory protection: MMUs enable separation and isolation of different memory regions based on the access permissions set for each region. This helps prevent unauthorized access to memory and protects the system from bugs, crashes, or security vulnerabilities that could result from unintended memory access.</p>
+</li>
+<li>
+<p>Caching and cache management: MMUs often work closely with the CPU&rsquo;s cache to ensure efficient and consistent access to memory. By managing cache attributes and maintaining a consistent view of memory, MMUs help improve overall system performance.</p>
+</li>
+<li>
+<p>Supporting virtual memory: MMUs play a crucial role in implementing virtual memory, which allows multiple applications and processes to run simultaneously while maintaining the illusion that each has access to a large, contiguous block of memory. Virtual memory allows the system to use disk space as an extension of RAM, effectively increasing the available memory and enabling better multitasking and memory management.</p>
+</li>
+</ol>
+<p>Overall, the MMU is an essential component in modern computer systems that helps manage memory efficiently, enhances system performance, and provides a foundation for implementing advanced memory-related features such as virtual memory and memory protection.</p>
+<hr />
+<p><strong>Question:</strong> What is TLB? <code>(2023-04-01)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TLB stands for Translation Lookaside Buffer. It is a specialized cache used by a computer&rsquo;s memory management unit (MMU) to speed up the translation of virtual memory addresses to physical memory addresses. The TLB stores a small number of recently-used virtual-to-physical address mappings, allowing the MMU to quickly look up the physical address for a given virtual address without having to consult the full page table stored in main memory.</p>
+<p>Since accessing the main memory is generally slower than accessing the cache, the TLB helps improve the overall performance of the system. When the MMU receives a virtual address to translate, it first checks the TLB to see if the required mapping is already present. If the mapping is found in the TLB (a TLB hit), the MMU can quickly obtain the corresponding physical address. If the mapping is not in the TLB (a TLB miss), the MMU must access the page table in main memory, which takes more time.</p>
+<p>To maintain the efficiency of the TLB, the system uses various algorithms to decide which mappings should be stored in the TLB and which ones should be evicted when the TLB becomes full. These algorithms aim to optimize the TLB hit rate by keeping the most frequently or recently used mappings in the buffer.</p>
+<p>In summary, the TLB is a critical hardware component that works with the MMU to accelerate virtual-to-physical address translation, thus improving overall system performance and reducing memory access latency.</p>
+<hr />
+<h2>CPU</h2>
+<p><strong>Question:</strong> What is SMP? <code>(2023-04-01)</code></p>
+<p><strong>Answer:</strong></p>
+<p>SMP stands for Symmetric Multiprocessing. It is an architecture used in multi-core and multi-processor computer systems where two or more identical processors or processor cores are connected to a single shared memory and are controlled by a single operating system. In an SMP system, each processor or core can execute different tasks independently, but they share the same memory resources and I/O devices.</p>
+<p>SMP allows for more efficient processing and better utilization of system resources, as multiple processors or cores can work simultaneously on different tasks, improving overall system performance. This architecture also provides better fault tolerance and load balancing, as tasks can be distributed among the available processors, reducing the workload on any single processor and minimizing the impact of a processor failure on the overall system.</p>
+<p>In an SMP system, the operating system and applications must be designed to take advantage of multiple processors, using techniques such as multithreading and parallelism to distribute tasks among the available processors. Modern operating systems, such as Linux, Windows, and macOS, are capable of managing SMP systems and can automatically distribute workloads across multiple processors or cores.</p>
+<hr />
+<p><strong>Question:</strong> What are difference between primary and seconday CPU cores? <code>(2023-04-01)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the context of multi-core or multi-processor systems, primary and secondary CPU cores generally refer to the roles these cores play in the system, with the primary core being responsible for the initialization process and secondary cores assisting in processing tasks once the system is up and running.</p>
+<p>Here are the main differences between primary and secondary CPU cores:</p>
+<ol>
+<li>
+<p>Initialization and Boot-up: The primary CPU core (sometimes called the boot core or master core) is responsible for initializing the system during boot-up. It executes the initial instructions, loads the firmware or BIOS, and configures the hardware components. Once the system is initialized, the primary core starts the operating system and enables other secondary cores.</p>
+</li>
+<li>
+<p>Secondary Core Activation: Secondary cores (also called slave cores or worker cores) are enabled by the primary core after the system initialization process is complete. They start to execute tasks assigned by the primary core or the operating system.</p>
+</li>
+<li>
+<p>Task Management: The primary core typically manages tasks and distributes them among secondary cores. However, modern operating systems can manage tasks independently and distribute them across all available cores (including the primary core) for efficient processing.</p>
+</li>
+<li>
+<p>Power Management: In some systems, the primary core may have more advanced power management capabilities compared to secondary cores, enabling it to control the power states of secondary cores, such as turning them off during periods of low workload to save power.</p>
+</li>
+</ol>
+<p>It is essential to note that these differences apply primarily to systems where a distinction is made between primary and secondary cores. In modern symmetric multiprocessing (SMP) systems, all cores are often treated as equals once the system is up and running, and the operating system manages tasks and power states across all cores without any significant difference in their roles.</p>
+<hr />
+<p><strong>Question:</strong> Please summarize the two types of CPU cores as a table. <code>(2023-04-01)</code></p>
+<p><strong>Answer:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Primary Core (Boot/Master Core)</th>
+<th>Secondary Core (Slave/Worker Core)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initialization</td>
+<td>Responsible for system initialization during boot-up</td>
+<td>Activated by the primary core after system initialization</td>
+</tr>
+<tr>
+<td>Task Management</td>
+<td>Manages and distributes tasks among secondary cores</td>
+<td>Executes tasks assigned by the primary core or OS</td>
+</tr>
+<tr>
+<td>Power Management</td>
+<td>May have advanced power management capabilities</td>
+<td>Power states controlled by the primary core or OS</td>
+</tr>
+<tr>
+<td>Core Activation</td>
+<td>Always active during boot-up and system operation</td>
+<td>Activated and deactivated as needed for workload demands</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that in modern symmetric multiprocessing (SMP) systems, these distinctions become less relevant, as all cores are treated as equals once the system is up and running, and the operating system manages tasks and power states across all cores without any significant difference in their roles.</p>
+<hr />
+<p><strong>Question:</strong> What are SCP and AP? <code>(2023-04-04)</code></p>
+<p><strong>Answer:</strong></p>
+<p>SCP (System Control Processor) and AP (Application Processor) are two different types of processors often found in a system-on-chip (SoC) or embedded systems.</p>
+<ol>
+<li>
+<p>SCP (System Control Processor):
+The SCP is a low-power, dedicated processor responsible for managing system-level functions such as power management, thermal management, and other low-level tasks. The SCP typically runs a simple firmware, often referred to as the system control firmware (SCFW), which is in charge of controlling and monitoring various system components. The SCP usually runs at a lower frequency and consumes less power compared to the AP, as it is designed to handle background tasks and ensure efficient operation of the overall system.</p>
+</li>
+<li>
+<p>AP (Application Processor):
+The AP, on the other hand, is a more powerful processor responsible for running the operating system (OS) and executing user applications. In a typical SoC, the AP will consist of one or more CPU cores, often accompanied by GPU, memory controllers, and other peripherals required for running the OS and applications. The AP manages more complex and compute-intensive tasks, making it the primary processing unit in the system.</p>
+</li>
+</ol>
+<p>In summary, the SCP is responsible for managing low-level system functions, while the AP is responsible for running the OS and executing user applications. Together, they enable efficient and seamless operation of the system.</p>
+<hr />
+<p><strong>Question:</strong> Do SCP and AP in ARM share memory? <code>(2023-04-04)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In an ARM-based system-on-chip (SoC), the System Control Processor (SCP) and Application Processor (AP) may share memory, depending on the specific SoC design and implementation. Shared memory is often used as a means of communication and data exchange between the two processors.</p>
+<p>In many cases, the SCP and AP will have access to a region of shared memory, typically implemented as SRAM, DRAM, or on-chip memory. This shared memory space allows the SCP and AP to exchange information, synchronize operations, or pass messages between them. The shared memory region can be protected by appropriate access control mechanisms, such as TrustZone or memory protection units (MPUs), to prevent unauthorized access or data corruption.</p>
+<p>However, it is essential to note that the exact memory architecture and sharing mechanism depend on the specific SoC design and implementation. In some cases, the SCP and AP may have separate memory spaces, with communication occurring through dedicated hardware channels or interfaces.</p>
+<p>In summary, SCP and AP in ARM-based SoCs can share memory depending on the specific design and implementation, enabling efficient communication and data exchange between the two processors.</p>
+<hr />
+<p><strong>Question:</strong> What is differenct between Armv8-A and Armv8-M? Please summarize as a table. <code>(2023-04-04)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Here is a summary of the differences between Armv8-A and Armv8-M in a table format:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Armv8-A</th>
+<th>Armv8-M</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target Applications</td>
+<td>High-performance systems (smartphones, tablets, servers, networking equipment)</td>
+<td>Low-power, resource-constrained embedded systems (microcontrollers, IoT devices, wearables)</td>
+</tr>
+<tr>
+<td>Instruction Set</td>
+<td>AArch64 (64-bit) and AArch32 (32-bit)</td>
+<td>AArch32 (32-bit)</td>
+</tr>
+<tr>
+<td>TrustZone Support</td>
+<td>Yes, for secure environment in complex systems</td>
+<td>Yes, adapted for microcontrollers</td>
+</tr>
+<tr>
+<td>Memory Management</td>
+<td>Memory Management Unit (MMU) with virtual memory support</td>
+<td>Memory Protection Unit (MPU) without virtual memory support</td>
+</tr>
+<tr>
+<td>Exception Levels and Privilege Modes</td>
+<td>Multiple levels (EL0-EL3) and privilege modes</td>
+<td>Simpler model with fewer privilege modes</td>
+</tr>
+</tbody>
+</table>
+<p>Armv8-A is designed for high-performance systems and supports both 32-bit and 64-bit instruction sets, while Armv8-M is targeted at low-power microcontrollers and supports only the 32-bit instruction set. The memory management, TrustZone implementation, and exception handling mechanisms are also tailored to the specific needs of their target applications.</p>
+<hr />
+<h2>SM &amp; SPM &amp; SPD</h2>
+<p><strong>Question:</strong> What is Secure Monitor? <code>(2023-03-30)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The Secure Monitor is a critical component of the ARM TrustZone security technology that acts as an intermediary between the Secure and Non-Secure worlds. It operates at the highest privilege level (S-EL3) within the Secure world, ensuring the integrity and confidentiality of the Secure environment.</p>
+<p>The primary responsibilities of the Secure Monitor include:</p>
+<ol>
+<li>
+<p>Handling transitions between Secure and Non-Secure states: When a Secure Monitor Call (SMC) instruction is executed by the Non-Secure world, the processor switches to the Secure state, and the Secure Monitor takes control to process the request. It can either perform the requested operation or forward the request to other components, such as the Secure Partition Manager (SPM) or a specific Secure Partition (SP).</p>
+</li>
+<li>
+<p>Managing resources and access control: The Secure Monitor oversees access to secure system resources, such as memory regions, peripherals, and cryptographic keys, ensuring that only authorized Secure software components can access them.</p>
+</li>
+<li>
+<p>Enforcing the security policy: The Secure Monitor is responsible for implementing and enforcing the overall security policy for the system. This includes defining the security boundaries between the Secure and Non-Secure worlds, as well as ensuring that the Secure world remains protected from potential attacks originating from the Non-Secure world.</p>
+</li>
+</ol>
+<p>In essence, the Secure Monitor is a vital component of ARM TrustZone that provides a trusted execution environment for security-sensitive applications and data, while also managing the transitions and interactions between the Secure and Non-Secure worlds.</p>
+<hr />
+<p><strong>Question:</strong> What is SMC? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>SMC stands for Secure Monitor Call, which is an ARM instruction used in TrustZone-enabled systems. The SMC instruction is used to transfer control between the non-secure (Normal) world and the secure world. When the non-secure world needs to access a secure resource or service, it uses the SMC instruction to trigger a switch to the secure world. The secure world then handles the request, performs the necessary operations, and returns control back to the non-secure world using the ERET (Exception Return) instruction.</p>
+<p>The SMC instruction ensures that transitions between the two worlds are securely managed and controlled, allowing the secure world to maintain its isolation and integrity. Secure Monitor Calls are essential for implementing security services and trusted applications that require isolation from the non-secure world while still providing a controlled interface for communication between the two worlds.</p>
+<hr />
+<p><strong>Question:</strong> Can secure world request a service in normal world via SMC? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the secure world can request a service in the normal world via SMC. Although it&rsquo;s more common for the normal world to request services from the secure world, the secure world may still need to access certain resources or services in the normal world. In such cases, the secure world can use SMC to make a request to the normal world.</p>
+<p>However, it&rsquo;s important to note that the secure world should carefully manage any interactions with the normal world to avoid compromising its own security. When the secure world needs to access services or resources in the normal world, it should do so with the understanding that the normal world is potentially untrusted and might attempt to exploit any vulnerabilities in the communication process. Therefore, the implementation of such communication should be done cautiously, with a focus on maintaining the isolation and integrity of the secure world.</p>
+<hr />
+<p><strong>Question:</strong> What is SPM? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>SPM stands for Secure Partition Manager. In the context of ARM TrustZone or systems with secure partitions, the SPM is a component responsible for managing and orchestrating the execution of Secure Partitions (SPs). The SPM&rsquo;s role includes controlling access to resources, managing communication between SPs, ensuring the isolation of different secure partitions, and enforcing security policies.</p>
+<p>In a nutshell, the Secure Partition Manager provides a framework for the secure world to manage the lifecycle and interactions of multiple secure partitions, ensuring that the security and isolation properties of each partition are maintained.</p>
+<hr />
+<p><strong>Question:</strong> What is SPD? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the context of ARM TrustZone, SPD (Secure Payload Dispatcher) is a component responsible for managing and dispatching Secure Partition (SP) requests. An SPD serves as an intermediary layer between the normal world and secure world, allowing for the secure processing of service requests from the normal world.</p>
+<p>When a normal world application requires services provided by the secure world, it issues a request via SMC (Secure Monitor Call). The SPD receives this request, identifies the appropriate secure partition to handle the request, and dispatches the service execution to the corresponding partition. After the secure partition has processed the request, the SPD returns the result to the normal world.</p>
+<p>By using an SPD, the secure world can maintain better isolation and security, as the SPD ensures that the normal world does not have direct access to secure partitions or their resources.</p>
+<hr />
+<p><strong>Question:</strong> Can SPD handle the request from the secure world? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the Secure Payload Dispatcher (SPD) can handle requests from both the normal world and the secure world. Although it is more common for the normal world to make service requests to the secure world, there might be cases where the secure world needs to access resources or services available in the normal world.</p>
+<p>In such scenarios, the SPD plays a similar role in managing and dispatching these requests. It serves as an intermediary between the two worlds, ensuring that the communication is secure and that the appropriate services are invoked to handle the requests. This way, the secure world can access resources in the normal world without compromising its security and isolation.</p>
+<hr />
+<p><strong>Question:</strong> What are relationships of SPD, SPM and SMC? <code>(2023-03-30)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The Secure Partition Manager (SPM), Secure Partition Dispatcher (SPD), and Secure Monitor Call (SMC) are related concepts in the context of ARM TrustZone technology, which provides a secure and isolated environment for sensitive applications and data. Here&rsquo;s a brief explanation of each concept and their relationships:</p>
+<ol>
+<li>
+<p>Secure Monitor Call (SMC): SMC is a special instruction used to switch between the Secure and Non-Secure states in ARM TrustZone. When SMC is executed, the processor transitions to the Secure state, and the Secure Monitor (typically running at S-EL3) is responsible for handling the call. The Secure Monitor can then perform the requested operation or forward the request to a more specific component, such as the SPM or an SPD.</p>
+</li>
+<li>
+<p>Secure Partition Manager (SPM): The SPM is responsible for managing Secure Partitions (SPs), which are isolated execution environments that host Trusted Applications (TAs) or other secure services. The SPM handles tasks such as creating, initializing, and terminating SPs, as well as managing access to secure resources. When the Non-Secure world needs to access a service provided by an SP, it can use the SMC instruction to request the SPM&rsquo;s assistance.</p>
+</li>
+<li>
+<p>Secure Partition Dispatcher (SPD): The SPD is an optional component that facilitates communication between the Non-Secure world and the Secure world, particularly when using an SMC. The SPD can handle requests from the Non-Secure world, forward them to the appropriate SP, and return the results to the Non-Secure caller. In some implementations, the SPM and SPD can be combined into a single component.</p>
+</li>
+</ol>
+<p>In summary, SMC is an instruction used to transition between Secure and Non-Secure states, while the SPM and SPD are components that manage Secure Partitions and facilitate communication between the two worlds. When an SMC is issued, the request is</p>
+<hr />
+<p><strong>Question:</strong> Why are SPD and SPM mutually exclusive? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The Secure Partition Manager (SPM) and the Secure Partition Dispatcher (SPD) are two different approaches to managing secure partitions in the ARMv8.4-A architecture, and they are mutually exclusive because they serve different purposes and are intended for different use cases.</p>
+<ol>
+<li>
+<p>Secure Partition Manager (SPM): SPM is designed for the ARMv8.4-A architecture and is responsible for managing Secure Partitions (SPs). SPs are isolated execution environments running inside the secure world, which can host multiple security services or Trusted Applications (TAs). The SPM is responsible for creating, initializing, scheduling, and managing communication between SPs. It enables fine-grained partitioning of resources and services within the secure world.</p>
+</li>
+<li>
+<p>Secure Partition Dispatcher (SPD): SPD is a part of ARM Trusted Firmware (ATF) and is used to manage secure services in ARMv8-A architecture. SPD provides an interface between the Normal World (NW) and the Secure World (SW). It is responsible for dispatching secure service requests from the NW to the appropriate secure execution environment, such as an SP or a TA, and returning the results back to the NW.</p>
+</li>
+</ol>
+<p>The reason they are mutually exclusive is that they cater to different architectural versions and use cases. SPM is designed specifically for ARMv8.4-A and provides advanced features for managing SPs, while SPD is used in ARMv8-A to manage secure services.</p>
+<p>Using both SPM and SPD simultaneously would lead to conflicts in terms of resource allocation, scheduling, and communication between the secure world and the normal world. To avoid confusion and ensure proper secure partition management, either SPM or SPD is used, depending on the target ARM architecture and the specific use case.</p>
+<hr />
+<p><strong>Question:</strong> Is SPD an optional component? <code>(2023-03-30)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the Secure Partition Dispatcher (SPD) is an optional component within the ARM TrustZone security architecture. The SPD is responsible for managing and scheduling the execution of Secure Partitions (SPs) in the Secure world. It is a more advanced way of handling Secure services compared to the traditional monolithic Secure Monitor, which directly handles Secure world requests.</p>
+<p>Using SPD allows for a more modular and flexible approach to implementing Secure services. However, if your use case does not require the functionality provided by Secure Partitions, you can choose not to include the SPD in your system. In that case, you will rely on the Secure Monitor to handle Secure world requests directly or use a different mechanism for managing Secure services.</p>
+<p>Ultimately, the choice of whether to include an SPD in your system depends on your specific security requirements and the desired level of flexibility and modularity in your Secure software stack.</p>
+<hr />
+<p><strong>Question:</strong> Can I use SPD instead of SM? <code>(2023-03-30)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, you can use the Secure Partition Dispatcher (SPD) instead of the traditional Secure Monitor (SM) in your ARM TrustZone-enabled system. The SPD provides a more flexible and modular approach to managing Secure services by handling and scheduling the execution of Secure Partitions (SPs) in the Secure world.</p>
+<p>When using the SPD, the responsibility for managing Secure services is shifted from the monolithic Secure Monitor to the individual Secure Partitions, which are isolated from each other and can be developed and updated independently.</p>
+<p>However, keep in mind that this decision depends on your specific security requirements and the desired level of flexibility and modularity in your Secure software stack. If you choose to use the SPD, it will replace the SM as the primary mechanism for managing Secure services in your system.</p>
+<hr />
+<p><strong>Question:</strong> Does TrustZone require SPM? <code>(2023-04-09)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone itself does not inherently require a Secure Partition Manager (SPM). TrustZone is a hardware-based security feature in ARM processors that provides a secure execution environment (Secure World) and isolates it from the less secure environment (Normal World).</p>
+<p>However, when using ARMv8.4-A architecture or later, which introduces the concept of Secure Partitions (SPs) to improve isolation and modularity of the Secure World components, an SPM becomes an important part of the system. The SPM is responsible for managing the lifecycle of Secure Partitions and handling inter-partition communication and resource management.</p>
+<p>So, while TrustZone doesn&rsquo;t require an SPM in its basic form, utilizing SPM can enhance the security and modularity of the system when working with Secure Partitions in newer ARM architectures.</p>
+<hr />
+<h2>Secure Partition</h2>
+<p><strong>Question:</strong> What is SP? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>SP stands for Secure Partition, which is a software component or execution environment running within the secure world of ARM TrustZone. Secure Partitions are designed to provide isolation and protection for sensitive code and data, such as cryptographic operations, key management, or secure storage. The secure world hosts these SPs, which can communicate with the normal world through a well-defined interface, typically via SMC (Secure Monitor Call) instructions.</p>
+<p>SPs help to ensure that critical operations and information remain protected from potentially malicious or insecure code running in the normal world. By isolating these components, TrustZone enhances the overall security of a system.</p>
+<hr />
+<p><strong>Question:</strong> Can different SPs communicate together? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, different Secure Partitions (SPs) can communicate with each other within the secure world. However, this communication should be carefully designed and managed to maintain the isolation and security properties of each SP. Typically, an intermediary component like a secure partition manager or the secure monitor itself is responsible for facilitating communication between different SPs, ensuring that information sharing adheres to the security policies and requirements of each partition.</p>
+<p>To enable secure communication between different SPs, developers should implement well-defined interfaces and access control policies to prevent unauthorized access or information leaks between partitions, maintaining the overall security goals of the system.</p>
+<hr />
+<p><strong>Question:</strong> How to create a SP and when? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Creating a Secure Partition (SP) typically involves a few steps and is usually done during the system initialization or when a secure application needs to be launched. Here are the steps to create an SP:</p>
+<ol>
+<li>
+<p>Design: Begin by identifying the secure functionality or application you want to isolate in a separate SP. Determine the security requirements, resource access, and communication interfaces needed for the secure partition.</p>
+</li>
+<li>
+<p>Implementation: Implement the secure functionality or application, adhering to the security requirements and following best practices for secure programming. This may involve writing code and creating any necessary data structures, as well as implementing communication interfaces to interact with other SPs or the normal world.</p>
+</li>
+<li>
+<p>Configuration: Configure the system to support the SP. This might involve configuring memory regions, peripherals, and access controls to meet the security requirements of the SP. This is typically done in the system&rsquo;s bootloader, firmware, or Secure Partition Manager (SPM), depending on the platform.</p>
+</li>
+<li>
+<p>Initialization: Load and initialize the SP during system startup or when required. This process includes loading the secure partition&rsquo;s code and data into the protected memory regions and initializing the partition&rsquo;s state. The SPM or another trusted component may handle this initialization process.</p>
+</li>
+<li>
+<p>Execution: Once initialized, the SP can be executed, providing its secure functionality to other components or applications in the system. The SPM or a trusted scheduler will manage the execution of the SP, ensuring proper isolation and adherence to security policies.</p>
+</li>
+</ol>
+<p>Creating an SP depends on the specific platform or system you are working with, as well as the requirements of your secure application. Ensure that you consult the relevant documentation and guidelines for your platform to create and manage secure partitions effectively.</p>
+<hr />
+<p><strong>Question:</strong> Can I create a SP in run-time? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Creating a Secure Partition (SP) during runtime is generally not recommended, as it could introduce security risks and may not be supported by some platforms. Secure Partitions are typically initialized during system startup or secure application launch to ensure proper isolation and security.</p>
+<p>However, if your platform supports creating an SP during runtime and you have a valid use case, it might be possible. You would need to ensure that you take the necessary precautions to maintain the security of the system and the SPs, including:</p>
+<ol>
+<li>Ensuring proper isolation between the newly created SP and the rest of the system, including other SPs.</li>
+<li>Configuring memory regions, peripherals, and access controls correctly.</li>
+<li>Verifying the integrity and authenticity of the code and data being loaded into the new SP.</li>
+</ol>
+<p>Keep in mind that creating an SP during runtime may be more complex and error-prone than creating one during system startup or secure application launch. You should carefully consider the security implications and consult your platform&rsquo;s documentation to determine if this approach is supported and appropriate for your use case.</p>
+<hr />
+<p><strong>Question:</strong> What is TA? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TA stands for Trusted Application. In the context of ARM TrustZone or Trusted Execution Environments (TEEs), a Trusted Application is a secure piece of software running in the secure world. These applications are designed to handle sensitive data or perform security-critical operations, isolated from the normal world or non-secure applications.</p>
+<p>Trusted Applications typically run on top of a TEE Operating System (TEE OS), which provides services like secure storage, cryptographic operations, and secure communication with the normal world. The TEE OS is responsible for managing and isolating multiple Trusted Applications, ensuring that they don&rsquo;t interfere with each other or leak sensitive data. Examples of TEE OSs include OP-TEE and Trustonic Kinibi.</p>
+<p>Trusted Applications are usually loaded and instantiated by the TEE OS based on requests from the normal world or other secure world components. They can be used to perform a wide range of tasks, such as digital rights management, secure payment processing, biometric authentication, and more.</p>
+<hr />
+<p><strong>Question:</strong> How do TAs and SPs communicate each other? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TAs (Trusted Applications) and SPs (Secure Partitions) can communicate with each other using Inter-Partition Communication (IPC) mechanisms, which are platform-specific and depend on the underlying TEE (Trusted Execution Environment) OS or ARMv8.4-A architecture implementation.</p>
+<p>When TAs and SPs need to communicate, they typically follow these steps:</p>
+<ol>
+<li>
+<p>Establish a communication channel: Both TAs and SPs should have a well-defined communication interface, such as shared memory or message passing. The implementation details depend on the TEE OS for TAs and the platform&rsquo;s support for SPs.</p>
+</li>
+<li>
+<p>Secure the communication channel: To ensure the confidentiality and integrity of data exchanged between TAs and SPs, use cryptographic techniques, such as encryption and authentication.</p>
+</li>
+<li>
+<p>Exchange messages: TAs and SPs can exchange messages through the established communication channel. These messages may include requests for services, data to be processed, or responses.</p>
+</li>
+<li>
+<p>Synchronize communication: Depending on the IPC mechanism used, it may be necessary to implement synchronization primitives, such as semaphores or mutexes, to coordinate communication between TAs and SPs.</p>
+</li>
+<li>
+<p>Handle errors and exceptions: Implement error handling and exception mechanisms to manage communication failures, timeouts, or other unexpected events.</p>
+</li>
+</ol>
+<p>It is essential to note that the communication between TAs and SPs requires careful implementation to ensure security and prevent potential attacks. Therefore, following best practices and guidelines for secure IPC is critical when developing communication between TAs and SPs.</p>
+<hr />
+<p><strong>Question:</strong> Can a SP host many TAs? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A Secure Partition (SP) can host multiple Trusted Applications (TAs) in a single isolated execution environment within the secure world. The Secure Partition Manager (SPM) is responsible for managing and scheduling these TAs. Each TA can provide a specific security service, and they can all run within the same SP. By hosting multiple TAs within an SP, you can share resources among TAs, such as memory or peripherals, which can improve overall efficiency and reduce the overhead of managing individual TAs in separate SPs.</p>
+<hr />
+<p><strong>Question:</strong> Can a TA communicate different SP? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A Trusted Application (TA) can communicate with different Secure Partitions (SPs) through a secure communication channel, which is typically established by the Secure Partition Manager (SPM) or another trusted component in the secure world. The communication between TAs and different SPs is usually facilitated by a well-defined interface using messages or function calls. This allows TAs to request services or share data with other SPs in a controlled and secure manner, without directly accessing each other&rsquo;s memory or resources. However, it is important to note that the level of isolation between TAs and SPs may vary depending on the specific implementation and platform.</p>
+<hr />
+<p><strong>Question:</strong> Is normal world a secure parition? <code>(2023-03-30)</code></p>
+<p><strong>Answer:</strong></p>
+<p>No, the Normal World is not a Secure Partition. The Normal World and Secure World are separate execution environments in ARM TrustZone-enabled systems. The Secure World is designed for running security-sensitive code and handling sensitive data, whereas the Normal World is intended for running general-purpose applications and operating systems.</p>
+<p>Secure Partitions (SPs) are isolated execution environments within the Secure World. These partitions allow the development and management of security services and Trusted Applications (TAs) independently from each other. They provide additional separation and isolation for sensitive code and data within the Secure World.</p>
+<p>In contrast, the Normal World does not provide the same level of protection and isolation as the Secure World and its Secure Partitions, making it unsuitable for hosting security-critical components.</p>
+<hr />
+<p><strong>Question:</strong> Is secure world a secure partition? <code>(2023-03-30)</code></p>
+<p><strong>Answer:</strong></p>
+<p>No, the Secure World is not a Secure Partition, but it contains Secure Partitions. The Secure World is a separate, protected execution environment enabled by ARM TrustZone technology, designed for running security-sensitive code and handling sensitive data.</p>
+<p>Secure Partitions (SPs) are isolated execution environments within the Secure World. They provide additional separation and isolation for sensitive code and data, allowing the development and management of security services and Trusted Applications (TAs) independently from each other.</p>
+<p>So, while the Secure World provides a protected environment, Secure Partitions offer even more granular isolation within the Secure World itself.</p>
+<hr />
+<h2>Privilege Levels</h2>
+<p><strong>Question:</strong> What are EL0, EL1, EL2, S-EL0, S-EL1, S-EL2, S-EL3? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the ARMv8-A architecture, the privilege levels (EL) define different modes of operation for the processor, with each level having different access rights and capabilities. There are four Exception Levels (EL0, EL1, EL2, and EL3), and each level can operate in both Secure and Non-Secure states. Here&rsquo;s a brief explanation of each:</p>
+<ol>
+<li>
+<p>EL0: This is the least privileged level, where user-space applications run. It has limited access to system resources and cannot execute privileged instructions.</p>
+</li>
+<li>
+<p>EL1: This level is where the operating system kernel runs. It has more privileges than EL0, enabling it to manage system resources, configure the hardware, and isolate user-space applications from each other.</p>
+</li>
+<li>
+<p>EL2: This level is intended for hypervisors, which manage multiple virtual machines or operating systems. It provides the necessary isolation and control to manage virtualization.</p>
+</li>
+<li>
+<p>EL3: This is the most privileged level, typically used for low-level firmware, such as a bootloader or a Trusted Execution Environment (TEE). It is responsible for setting up the system and ensuring a secure boot process.</p>
+</li>
+</ol>
+<p>The &ldquo;S-&rdquo; prefix indicates that the exception level is operating in the Secure state, which is part of ARM&rsquo;s TrustZone technology. TrustZone creates a separate, isolated environment for secure applications and data, ensuring that sensitive information remains protected from potential attacks or unauthorized access:</p>
+<ol>
+<li>S-EL0: Secure User mode, where secure user-space applications run.</li>
+<li>S-EL1: Secure Kernel mode, where the secure operating system kernel runs.</li>
+<li>S-EL2: Secure Hypervisor mode, where a secure hypervisor can manage secure virtual machines.</li>
+<li>S-EL3: Secure Monitor mode, where low-level firmware like a secure bootloader or a TEE operates.</li>
+</ol>
+<p>In summary, the ARMv8-A architecture organizes the privilege levels (EL0, EL1, EL2, and EL3) and the Secure (S-EL0, S-EL1, S-EL2, and S-EL3) and Non-Secure states to create a robust and flexible environment for running a mix of secure and non-secure applications, operating systems, and hypervisors.</p>
+<hr />
+<p><strong>Question:</strong> What is exception level? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Exception level (EL) is a concept in the ARM architecture that defines different privilege levels for executing software. The ARMv8-A architecture, for instance, supports four exception levels: EL0, EL1, EL2, and EL3. Each level has different access rights and capabilities, which provide a mechanism for isolating different types of software and ensuring that less privileged software cannot interfere with more privileged software.</p>
+<p>Here&rsquo;s a brief overview of the exception levels in ARMv8-A architecture:</p>
+<ul>
+<li>
+<p>EL0: This is the least privileged level and is used for running user applications. Software at this level has limited access to system resources and cannot directly access privileged hardware operations.</p>
+</li>
+<li>
+<p>EL1: This level is used for running operating system kernels and is more privileged than EL0. Software at this level can access system resources and control hardware operations but is still restricted from certain sensitive operations.</p>
+</li>
+<li>
+<p>EL2: This level is used for running hypervisors, which manage and control virtual machines. Software at this level has more privileged access to hardware resources and can control the operation of multiple EL1 instances (virtual machines).</p>
+</li>
+<li>
+<p>EL3: This is the most privileged level and is typically used for secure monitor or firmware code, which manages the TrustZone security features. Software at this level has full control over the hardware resources and can enforce secure access policies across the entire system.</p>
+</li>
+</ul>
+<p>These exception levels provide a structured way to separate software components based on their required privileges and ensure a secure execution environment.</p>
+<hr />
+<p><strong>Question:</strong> How does a software component know which EL it owns? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A software component does not inherently &ldquo;know&rdquo; its exception level (EL). However, when it is executed, it runs at the EL designated by the system configuration and the control registers set by more privileged software.</p>
+<p>Typically, software components are designed to operate at specific exception levels. The boot process and the system&rsquo;s firmware, which run at the highest privilege level (e.g., EL3 in ARMv8-A), are responsible for setting up the initial exception levels and transitioning to lower-privileged levels as needed. During this process, they load and configure less privileged software components (such as the hypervisor, operating system kernel, and user applications) to execute at the appropriate EL.</p>
+<p>At runtime, a software component can determine its current exception level by querying the CurrentEL register. This register contains a field that indicates the current exception level, allowing the software to determine its current privilege level and act accordingly.</p>
+<p>It&rsquo;s important to note that this query can only be performed if the software component is designed to check its own exception level, and it is assumed that the component has been correctly loaded and configured by the more privileged software in the system.</p>
+<hr />
+<p><strong>Question:</strong> Can a software component change the EL? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A software component can&rsquo;t directly change its own exception level (EL), but it can initiate a process that results in a change of EL. This typically happens through a specific event or instruction that triggers a change in privilege level, such as an exception, interrupt, or a special instruction like the &ldquo;Secure Monitor Call&rdquo; (SMC) in ARM systems.</p>
+<p>For example, when an exception occurs, the processor switches to a higher EL to handle the exception. Once the exception has been dealt with, the software running at the higher EL can return to the previous, lower EL using the &ldquo;Exception Return&rdquo; (ERET) instruction in ARM systems or a similar mechanism in other architectures.</p>
+<p>In the ARM architecture, a lower EL software can also request services from a higher EL software (e.g., from the normal world to the secure world in TrustZone) using the SMC instruction. The SMC instruction causes a switch to a higher EL, where the requested service is provided, and then the control is returned back to the lower EL.</p>
+<p>Keep in mind that a software component can only initiate a change to a higher EL if it has been designed to do so and the system is configured to allow such transitions. The actual EL transition is managed by the hardware and the more privileged software components.</p>
+<hr />
+<p><strong>Question:</strong> Are ELs of TrustZone? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Exception Levels (ELs) are a concept in the ARM architecture, not specific to TrustZone. However, TrustZone does make use of the ELs to separate and manage privileges between the secure and non-secure worlds.</p>
+<p>In ARMv8-A architecture, there are four ELs (EL0 to EL3). TrustZone operates on EL3 and S-EL1. EL3 is the Secure Monitor level, responsible for managing the transition between the secure and non-secure worlds. S-EL1 is used for secure operating systems or hypervisors.</p>
+<p>In summary, while ELs are part of the ARM architecture, TrustZone does make use of them to manage privileges and ensure security between the two worlds (secure and non-secure).</p>
+<hr />
+<p><strong>Question:</strong> Are EL3 and S-EL3 same? <code>(2023/4/13)</code></p>
+<p><strong>Answer:</strong></p>
+<p>No, EL3 and S-EL3 are not the same. EL3 refers to the Exception Level 3, which is the highest privilege level in the ARMv8-A architecture. It is typically used by the Secure Monitor or firmware running in the Secure World.</p>
+<p>S-EL3, on the other hand, is an abbreviation for Secure Exception Level 3. It refers to EL3 when the processor is operating in the Secure World. The Secure World has its own set of Exception Levels (S-EL0, S-EL1, and S-EL3), which operate independently of the Non-secure World&rsquo;s Exception Levels (EL0, EL1, and EL2).</p>
+<p>While both EL3 and S-EL3 are related to the Secure World, the difference lies in their representation:</p>
+<ul>
+<li>EL3: Refers to Exception Level 3 in general, without explicitly specifying the security state.</li>
+<li>S-EL3: Explicitly refers to Exception Level 3 in the Secure World.</li>
+</ul>
+<hr />
+    </article>
+  </body>
+</html>

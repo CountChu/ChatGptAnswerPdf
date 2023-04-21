@@ -1,0 +1,51 @@
+2023-04-01
+
+Questions
+
+OP-TEE @ OP-TEE.0327.md
+[10:50] Does OP-TEE support ARMv7 and ARMv8?
+
+Boot @ TrustZone.0329.md
+[15:46] What is ATF?
+
+Basic Concepts @ TEE.0328.md
+[15:48] Is TEE a software?
+[23:45] Does GlobalPlatform contains Chinese Cryptographic Standard?
+
+Development @ OP-TEE.0327.md
+[19:29] Does OP-TEE have a shell?
+
+Secure Storage @ OP-TEE.0327.md
+[19:30] Does OP-TEE support file system?
+
+Static TA and Dynamic TA @ OP-TEE.0327.md
+[21:16] Can I create a TA at run-time?
+[21:23] But what is TEECI_LoadSecureModule()
+[23:20] Does TEE define Static TA and Dynamic TA?
+
+Memory @ TrustZone.0329.md
+[21:58] What is MMU?
+[22:01] What is TLB?
+
+CA & TA @ TEE.0328.md
+[23:16] What are kinds of TA?
+
+CPU @ TrustZone.0329.md
+[23:31] What is SMP?
+[23:41] What are difference between primary and seconday CPU cores?
+[23:42] Please summarize the two types of CPU cores as a table.
+
+Boot @ OP-TEE.0327.md
+[23:36] Why does OP-TEE's reset function have two branches reset_primary and reset_secondary?
+
+Signature @ OP-TEE.0327.md
+[23:57] Does OP-TEE support to verify a signature of a TA in X.509 certificate?
+
+Chats
+
+OP-TEE.0327.md
+[21:22] Which API do I use to create TA at run-time?
+[23:18] What are Static TA and Dynamic TA?
+[23:19] Please summarize them in a table.
+[23:39] What are difference between primary and seconday CPU cores?
+

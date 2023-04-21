@@ -1,15 +1,8 @@
 __pycache__
-output-html-manual
-output-pdf-manual
 test
 *.sublime-project 
 *.sublime-workspace
 sftp-config.json
 .DS_Store
 README.html
-chats-all
-download-*
-out-hist-mgr-pdf
-out-hist-qst-pdf
-out-ans-pdf
-questions-all
+user-Count

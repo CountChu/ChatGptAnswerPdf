@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github.css" type="text/css">
+    <title>230328.TEE</title>    
+  </head>
+  <body>
+    <article class="markdown-body">
+        <!-- Markdown-generated HTML content here -->
+        <h1>230328.TEE</h1>
+<p>Created: 2023-04-22 01:02:33</p>
+<h1>Questions</h1>
+<ul>
+<li>Basic Concepts<ul>
+<li>https://en.wikipedia.org/wiki/Trusted_execution_environment <code>(2023-03-29)</code></li>
+<li>Please summarize Intel SGX and ARM TrustZone in tables. <code>(2023-03-29)</code></li>
+<li>What are different between ARM SMC and Intel SMI? Please also summarize in a table. <code>(2023-03-29)</code></li>
+<li>Please describe TEE in Intel. <code>(2023-03-29)</code></li>
+<li>What are APIs of TEE? Please classify them. <code>(2023-03-29)</code></li>
+<li>Can I add a myself TEE API? <code>(2023-03-29)</code></li>
+<li>Is TEE a software? <code>(2023-04-01)</code></li>
+<li>Does GlobalPlatform contains Chinese Cryptographic Standard? <code>(2023-04-01)</code></li>
+<li>How do I check the TEE OS is secure. Are there any secure certificates of TEE OS? <code>(2023/4/14)</code></li>
+<li>Does OP-TEE mach the certificates? <code>(2023/4/14)</code></li>
+</ul>
+</li>
+<li>CA &amp; TA<ul>
+<li>How does an  application in normal world request a service with shared memory of a trusted application in a secure world? Please describe the process with APIs. <code>(2023-03-29)</code></li>
+<li>Which functions are used by TA (trusted application) in the above process? <code>(2023-03-29)</code></li>
+<li>Could you please draw a sequence diagram of TEEC_InitializeContext, TEEC_OpenSession, TEEC_RegisterSharedMemory, TEEC_InvokeCommand, TEEC_ReleaseSharedMemory, TEEC_CloseSession, TEEC_FinalizeContext, TA_CreateEntryPoint, TA_DestroyEntryPoint, TA_OpenSessionEntryPoint, TA_CloseSessionEntryPoint, TA_InvokeCommandEntryPoint <code>(2023-03-29)</code></li>
+<li>Is the above sequence described in GlobalPlatform? <code>(2023-03-29)</code></li>
+<li>Which document describe it? <code>(2023-03-29)</code></li>
+<li>Please give me two sample codes of the above sequence. One is for CA and another is for TA. <code>(2023-03-29)</code></li>
+<li>Please write sample code of TA again. The code should be complete. <code>(2023-03-29)</code></li>
+<li>Can CA and TA be implemented  in other languages? <code>(2023-03-31)</code></li>
+<li>How does TA authenticate request from CA? <code>(2023-03-31)</code></li>
+<li>What are kinds of TA? <code>(2023-04-01)</code></li>
+</ul>
+</li>
+<li>TEE Identification<ul>
+<li>What is TEE identification? <code>(2023/4/10)</code></li>
+<li>Is TEE identification obversable? <code>(2023/4/10)</code></li>
+<li>Can I use DID as TEE identification? <code>(2023/4/10)</code></li>
+</ul>
+</li>
+<li>Revocation of TA<ul>
+<li>What is revocation for Trusted Application? <code>(2023/4/10)</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1>Q &amp; A</h1>
+<h2>Basic Concepts</h2>
+<p><strong>Question:</strong> https://en.wikipedia.org/wiki/Trusted_execution_environment <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A Trusted Execution Environment (TEE) is a secure area within the main processor of a device that ensures the confidentiality and integrity of code and data loaded within it. TEEs are designed to provide a higher level of security compared to traditional software execution environments by protecting sensitive information and functionality from external software attacks, hardware attacks, and physical tampering.</p>
+<p>The main concept behind a TEE is to provide an isolated environment for executing security-sensitive tasks that cannot be accessed by other processes running on the same device. This isolation is achieved using hardware and software mechanisms that create a secure boundary around the TEE.</p>
+<p>Some of the key features of TEEs include:</p>
+<ol>
+<li>Isolation: TEEs provide a separate execution environment that isolates sensitive operations from the rest of the system.</li>
+<li>Secure storage: TEEs provide a secure storage area for sensitive data, keys, and credentials that can only be accessed by the trusted applications running within the TEE.</li>
+<li>Integrity: TEEs ensure the integrity of the code and data being executed by verifying the digital signatures of the applications before they are allowed to run within the TEE.</li>
+<li>Confidentiality: TEEs protect the confidentiality of the data being processed within the environment by encrypting it.</li>
+</ol>
+<p>TEEs have various applications, such as secure boot, digital rights management (DRM), and mobile payments. Some examples of TEE implementations include ARM TrustZone, Intel Software Guard Extensions (SGX), and AMD Secure Encrypted Virtualization (SEV).</p>
+<p>It is important to note that while TEEs offer a higher level of security, they are not immune to attacks. Researchers have discovered vulnerabilities in various TEE implementations, emphasizing the need for ongoing research and development to enhance the security of these environments.</p>
+<hr />
+<p><strong>Question:</strong> Please summarize Intel SGX and ARM TrustZone in tables. <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Here&rsquo;s a summary of Intel SGX and ARM TrustZone in table format:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Intel SGX</th>
+<th>ARM TrustZone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full Name</td>
+<td>Intel Software Guard Extensions</td>
+<td>ARM TrustZone</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Hardware-based security feature</td>
+<td>Hardware-based security feature</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Create secure enclaves for running trusted code &amp; data</td>
+<td>Create a secure environment for running trusted code &amp; data</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>x86-based processors</td>
+<td>ARM-based processors</td>
+</tr>
+<tr>
+<td>Isolation Method</td>
+<td>Enclaves</td>
+<td>Two worlds (Secure and Non-secure)</td>
+</tr>
+<tr>
+<td>Memory Protection</td>
+<td>Hardware-based encryption of enclave memory</td>
+<td>Secure memory is isolated from the non-secure world</td>
+</tr>
+<tr>
+<td>Remote Attestation</td>
+<td>Supported, enables remote verification of enclave integrity</td>
+<td>Supported, enables remote verification of secure world integrity</td>
+</tr>
+<tr>
+<td>Applications</td>
+<td>Secure computation, data protection, key management, etc.</td>
+<td>Secure boot, DRM, mobile payments, key management, etc.</td>
+</tr>
+<tr>
+<td>Vulnerabilities</td>
+<td>Side-channel attacks, Spectre, Meltdown, etc.</td>
+<td>Side-channel attacks, information leakage, etc.</td>
+</tr>
+</tbody>
+</table>
+<p>Both Intel SGX and ARM TrustZone are hardware-based security features designed to provide isolated execution environments for trusted code and data. They offer different mechanisms for isolation (enclaves vs. two worlds) and have unique implementations in their respective processor architectures (x86-based for SGX and ARM-based for TrustZone). While these technologies enhance the security of sensitive operations, they are not immune to various attacks, and ongoing research and development is required to improve their security.</p>
+<hr />
+<p><strong>Question:</strong> What are different between ARM SMC and Intel SMI? Please also summarize in a table. <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>ARM SMC (Secure Monitor Call) and Intel SMI (System Management Interrupt) are both mechanisms used in their respective processor architectures for managing secure or privileged operations. Here&rsquo;s a summary of their differences in table format:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>ARM SMC</th>
+<th>Intel SMI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full Name</td>
+<td>Secure Monitor Call</td>
+<td>System Management Interrupt</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Instruction for switching between secure &amp; non-secure worlds</td>
+<td>Interrupt for managing system-level functions</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>ARM-based processors</td>
+<td>x86-based processors</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Transition between secure and non-secure worlds in ARM TrustZone</td>
+<td>Execute system management functions in System Management Mode (SMM)</td>
+</tr>
+<tr>
+<td>Invocation</td>
+<td>Issued by software to request a switch between worlds</td>
+<td>Triggered by hardware events or software requests</td>
+</tr>
+<tr>
+<td>Execution Context</td>
+<td>Secure world in ARM TrustZone</td>
+<td>System Management Mode on x86 processors</td>
+</tr>
+<tr>
+<td>Privilege Level</td>
+<td>Highest privilege level in ARM TrustZone</td>
+<td>Highest privilege level in x86 processors</td>
+</tr>
+<tr>
+<td>Applications</td>
+<td>Secure boot, DRM, mobile payments, key management, etc.</td>
+<td>Power management, hardware configuration, firmware updates, etc.</td>
+</tr>
+</tbody>
+</table>
+<p>ARM SMC is an instruction used in ARM-based processors to switch between the secure and non-secure worlds of ARM TrustZone, enabling the processor to execute secure operations. In contrast, Intel SMI is an interrupt mechanism used in x86-based processors to manage system-level functions, such as power management and hardware configuration, in the System Management Mode (SMM). While both mechanisms operate at the highest privilege levels of their respective architectures, they serve different purposes and are invoked under different circumstances.</p>
+<hr />
+<p><strong>Question:</strong> Please describe TEE in Intel. <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In Intel processors, the primary Trusted Execution Environment (TEE) technology is Intel Software Guard Extensions (SGX). Intel SGX provides a hardware-based TEE to securely execute sensitive code and protect data within isolated regions, known as enclaves.</p>
+<p>Here&rsquo;s an overview of Intel SGX:</p>
+<ol>
+<li>
+<p>Enclaves: Enclaves are secure, isolated regions in the processor&rsquo;s memory that cannot be accessed by other processes or privileged software, such as the operating system, hypervisors, or other system software. They provide confidentiality and integrity for the data and code being executed within the enclave.</p>
+</li>
+<li>
+<p>Memory encryption: Intel SGX encrypts the enclave memory using hardware-based encryption, which ensures that the data within the enclave remains confidential even if the physical memory is compromised.</p>
+</li>
+<li>
+<p>Remote attestation: Intel SGX supports remote attestation, which enables a remote party to verify the integrity and authenticity of the enclave. This process ensures that the enclave is running the expected code and has not been tampered with.</p>
+</li>
+<li>
+<p>Sealing: Intel SGX provides sealing functionality, which allows data to be encrypted and stored outside the enclave using a key that is bound to the enclave&rsquo;s identity. This ensures that the data can only be decrypted by the same enclave or an enclave with the same identity, providing confidentiality for data at rest.</p>
+</li>
+<li>
+<p>Application development: Developers can create applications that use Intel SGX by partitioning their code and data into trusted and untrusted components. The trusted components, which contain sensitive operations and data, are executed within enclaves, while the untrusted components are executed outside the enclave.</p>
+</li>
+</ol>
+<p>Intel SGX is a powerful TEE solution that provides an additional layer of security for sensitive code and data execution. However, it is important to note that Intel SGX is not immune to attacks, and researchers have discovered vulnerabilities in the technology, emphasizing the need for ongoing research and development to enhance its security.</p>
+<hr />
+<p><strong>Question:</strong> What are APIs of TEE? Please classify them. <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Trusted Execution Environment (TEE) APIs are interfaces that enable developers to create applications that leverage the features of a TEE. They allow developers to interact with the secure environment and manage its resources, such as enclaves, secure storage, and cryptographic operations.</p>
+<p>These APIs can be classified into several categories:</p>
+<ol>
+<li>
+<p>TEE Management APIs:
+   - Enclave or secure world creation and destruction
+   - Resource management, such as memory allocation and deallocation
+   - Context switching between the secure and non-secure worlds</p>
+</li>
+<li>
+<p>Cryptographic APIs:
+   - Key management, including key generation, import, export, and storage
+   - Cryptographic operations, such as encryption, decryption, signing, and verification
+   - Secure random number generation
+   - Cryptographic hash functions and message authentication codes (MACs)</p>
+</li>
+<li>
+<p>Secure Storage APIs:
+   - Secure storage of sensitive data, keys, and credentials
+   - Data integrity and confidentiality protection
+   - Access control and permission management</p>
+</li>
+<li>
+<p>Attestation APIs:
+   - Enclave or secure world measurement and reporting
+   - Remote attestation to verify the integrity and authenticity of a TEE
+   - Sealing and unsealing of data bound to the enclave or secure world identity</p>
+</li>
+<li>
+<p>Communication APIs:
+   - Secure communication channels between the TEE and external entities
+   - Secure communication between enclaves or secure worlds</p>
+</li>
+</ol>
+<p>Examples of TEE API implementations include the GlobalPlatform TEE APIs, which provide a standardized set of APIs for TEEs, and platform-specific APIs like Intel SGX SDK for Intel Software Guard Extensions and ARM TrustZone APIs for ARM TrustZone-based TEEs.</p>
+<p>It is important to note that the specific APIs available and their implementation may vary depending on the TEE technology used. However, the general categories mentioned above should apply to most TEE implementations.</p>
+<hr />
+<p><strong>Question:</strong> Can I add a myself TEE API? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Adding your own TEE API is possible but depends on the specific TEE implementation you are working with and the level of access and customization it allows. Some TEEs offer more flexibility for developers to extend and create their own APIs, while others may have more restrictive environments.</p>
+<p>Here are a few steps to consider when adding your own TEE API:</p>
+<ol>
+<li>
+<p>Understand the TEE platform: Gain a deep understanding of the TEE platform you are working with, its architecture, and the existing APIs it provides. Familiarize yourself with the development environment, tools, and documentation.</p>
+</li>
+<li>
+<p>Identify the use case: Determine the specific functionality or use case you want to address with your custom TEE API. Ensure that it is not already covered by existing APIs and that it aligns with the security objectives of the TEE.</p>
+</li>
+<li>
+<p>Design the API: Design the API interface, considering factors such as function signatures, input and output parameters, and error handling. Keep security best practices in mind during the design process.</p>
+</li>
+<li>
+<p>Implement the API: Write the code for your custom TEE API, following the platform&rsquo;s guidelines and using the development tools provided by the TEE vendor. Be sure to adhere to secure coding practices to avoid introducing vulnerabilities in your implementation.</p>
+</li>
+<li>
+<p>Test and validate: Thoroughly test your custom TEE API, including edge cases and potential error conditions. Validate its functionality and security in the context of the TEE platform.</p>
+</li>
+<li>
+<p>Integrate and document: Integrate your custom TEE API with your application or system, and create documentation to help other developers understand how to use your API.</p>
+</li>
+</ol>
+<p>Keep in mind that adding your own TEE API may introduce security risks if not done properly. It is crucial to ensure that your implementation adheres to security best practices and does not compromise the integrity and confidentiality of the TEE.</p>
+<p>Before attempting to add your own TEE API, it is recommended to explore existing APIs and functionality provided by the TEE platform, as they are designed to address common use cases and have undergone extensive testing and validation.</p>
+<hr />
+<p><strong>Question:</strong> Is TEE a software? <code>(2023-04-01)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A Trusted Execution Environment (TEE) is not just a software; it is a combination of hardware, software, and firmware components that work together to provide a secure and isolated environment for executing sensitive operations. The TEE aims to protect sensitive data and code from unauthorized access, tampering, or leakage, even if the main operating system is compromised.</p>
+<p>The main components of a TEE include:</p>
+<ol>
+<li>
+<p><strong>Hardware</strong>: The hardware provides the necessary features to create an isolated environment that is separate from the main processor or the &ldquo;Normal World.&rdquo; This can include dedicated CPU modes, memory protection mechanisms, and secure storage. Examples of hardware-based TEE implementations are ARM TrustZone and Intel Software Guard Extensions (SGX).</p>
+</li>
+<li>
+<p><strong>Software</strong>: The TEE software includes a secure operating system (often called a &ldquo;Trusted OS&rdquo; or &ldquo;Secure OS&rdquo;) and a set of APIs that enable developers to create and interact with Trusted Applications (TAs). The software may also include additional security components, such as secure boot, cryptographic libraries, and attestation mechanisms. Examples of TEE software include OP-TEE for ARM TrustZone and Intel SGX SDK.</p>
+</li>
+<li>
+<p><strong>Firmware</strong>: Firmware components can also play a role in the TEE by providing low-level support for the hardware and software components. Firmware can be involved in the secure boot process, managing the lifecycle of the TEE, or providing cryptographic services.</p>
+</li>
+</ol>
+<p>In summary, a TEE is a combination of hardware, software, and firmware components designed to provide a secure environment for executing sensitive operations. It is not merely a software solution but an integrated system that leverages various layers of the computing stack to ensure security and isolation.</p>
+<hr />
+<p><strong>Question:</strong> Does GlobalPlatform contains Chinese Cryptographic Standard? <code>(2023-04-01)</code></p>
+<p><strong>Answer:</strong></p>
+<p>GlobalPlatform does not specifically include Chinese Cryptographic Standards as part of its core specifications. GlobalPlatform provides a standardized framework for implementing secure elements, TEEs (Trusted Execution Environments), and SE (Secure Element) management. It focuses on defining the APIs, protocols, and security requirements for these environments, but it does not mandate specific cryptographic algorithms.</p>
+<p>However, GlobalPlatform&rsquo;s specifications are designed to be flexible and extensible, allowing individual TEE or secure element implementations to support various cryptographic algorithms, including Chinese Cryptographic Standards, as required by the specific use case or market requirements.</p>
+<p>For example, a TEE implementation targeting the Chinese market may choose to integrate Chinese Cryptographic Standards such as:</p>
+<ol>
+<li>SM2: An elliptic curve cryptography (ECC) standard for digital signatures, key exchange, and public key encryption.</li>
+<li>SM3: A cryptographic hash function with a 256-bit digest.</li>
+<li>SM4: A symmetric encryption algorithm with a 128-bit block size and a 128-bit key size.</li>
+</ol>
+<p>These algorithms can be integrated into the TEE or secure element implementation, either as built-in functions or through third-party cryptographic libraries. As long as the implementation adheres to GlobalPlatform&rsquo;s specifications regarding the APIs, protocols, and security requirements, it can support a wide range of cryptographic algorithms, including Chinese Cryptographic Standards.</p>
+<hr />
+<p><strong>Question:</strong> How do I check the TEE OS is secure. Are there any secure certificates of TEE OS? <code>(2023/4/14)</code></p>
+<p><strong>Answer:</strong></p>
+<p>To ensure that a TEE OS (Trusted Execution Environment Operating System) is secure, you can look for several indicators, including compliance with industry standards, certifications, and independent security evaluations. While there isn&rsquo;t a single &ldquo;secure certificate&rdquo; for TEE OSes, there are certifications and evaluation processes that can help you assess the security of a particular TEE OS.</p>
+<ol>
+<li>
+<p><strong>Common Criteria (CC) Certification</strong>: Common Criteria is an international standard for evaluating the security of IT products, including TEE OSes. A TEE OS that has undergone a Common Criteria evaluation and achieved a certification provides a certain level of assurance regarding its security properties. The certification levels range from EAL1 (lowest) to EAL7 (highest), indicating the depth and rigor of the evaluation. Check for a TEE OS with a relevant Common Criteria certification (e.g., EAL4 or higher) for a higher level of confidence in its security.</p>
+</li>
+<li>
+<p><strong>FIPS 140-2/140-3 Certification</strong>: The Federal Information Processing Standards (FIPS) 140-2 and 140-3 are U.S. government standards for cryptographic modules used in IT products, including TEE OSes. A TEE OS with FIPS 140-2 or 140-3 certification has undergone testing and validation to ensure that its cryptographic implementations meet specific security requirements. Although this certification focuses on the cryptographic aspects, it can provide additional assurance regarding the security of a TEE OS.</p>
+</li>
+<li>
+<p><strong>GlobalPlatform Compliance</strong>: GlobalPlatform is an industry organization that defines standards and specifications for secure elements and TEEs. A TEE OS that is compliant with GlobalPlatform specifications demonstrates adherence to a set of industry-defined security requirements and best practices.</p>
+</li>
+<li>
+<p><strong>Independent Security Evaluations</strong>: In addition to certifications, a TEE OS that has undergone independent security evaluations, audits, or penetration testing by reputable security firms or researchers can provide further assurance regarding its security. Look for published reports or case studies detailing the results of such evaluations.</p>
+</li>
+<li>
+<p><strong>Vendor Reputation</strong>: Consider the reputation and track record of the TEE OS vendor when evaluating the security of a TEE OS. A vendor with a history of providing secure solutions and promptly addressing vulnerabilities can be a good indicator of the overall security of their products.</p>
+</li>
+</ol>
+<p>In summary, there isn&rsquo;t a single &ldquo;secure certificate&rdquo; for TEE OSes, but a combination of certifications, industry standard compliance, independent security evaluations, and the vendor&rsquo;s reputation can provide a good indication of the security of a particular TEE OS.</p>
+<hr />
+<p><strong>Question:</strong> Does OP-TEE mach the certificates? <code>(2023/4/14)</code></p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE (Open Portable Trusted Execution Environment) is an open-source TEE project that provides a TEE OS and related components, with a focus on portability and compliance with GlobalPlatform specifications. While OP-TEE aims to follow industry standards and best practices, it is essential to differentiate between the OP-TEE project and commercial products based on OP-TEE.</p>
+<p>As an open-source project, OP-TEE itself does not directly hold certifications like Common Criteria or FIPS 140-2/140-3. However, OP-TEE-based solutions developed by vendors or integrated into commercial products may undergo such certifications or evaluations.</p>
+<p>Commercial TEE products based on OP-TEE may pursue certifications, such as:</p>
+<ol>
+<li>
+<p><strong>Common Criteria Certification</strong>: Vendors can choose to submit their OP-TEE-based products for Common Criteria evaluation, achieving certification at the appropriate EAL (Evaluation Assurance Level) to demonstrate the security of their solution.</p>
+</li>
+<li>
+<p><strong>FIPS 140-2/140-3 Certification</strong>: OP-TEE-based products can also be submitted for FIPS 140-2 or 140-3 certification to validate the security of the cryptographic modules used in the product.</p>
+</li>
+<li>
+<p><strong>GlobalPlatform Compliance</strong>: While OP-TEE is designed to be compliant with GlobalPlatform TEE specifications, individual implementations may still need to undergo testing and validation to ensure full compliance with the standards.</p>
+</li>
+</ol>
+<p>It is essential to recognize that the certifications belong to the specific commercial products based on OP-TEE and not to the OP-TEE project itself. When evaluating the security of an OP-TEE-based solution, consider the certifications and evaluations obtained by the specific product or vendor, as well as their overall reputation and track record in the industry.</p>
+<hr />
+<h2>CA &amp; TA</h2>
+<p><strong>Question:</strong> How does an  application in normal world request a service with shared memory of a trusted application in a secure world? Please describe the process with APIs. <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In a Trusted Execution Environment (TEE), a normal world application can request a service from a trusted application in the secure world using shared memory for data exchange. The process involves allocating a memory buffer that can be accessed by both the normal world and the secure world, allowing for efficient and secure communication between the two. Here&rsquo;s an outline of the process using the GlobalPlatform TEE APIs as an example:</p>
+<ol>
+<li>
+<p>Initialize context: The normal world application initializes a TEE context, which represents a connection to the TEE. In the GlobalPlatform TEE APIs, this is done using the <code>TEEC_InitializeContext</code> function.</p>
+</li>
+<li>
+<p>Open session: The normal world application opens a session with the trusted application in the secure world. In the GlobalPlatform TEE APIs, this is done using the <code>TEEC_OpenSession</code> function.</p>
+</li>
+<li>
+<p>Allocate shared memory: The normal world application allocates a shared memory buffer that can be accessed by both the normal world and the secure world. In the GlobalPlatform TEE APIs, this is done using the <code>TEEC_RegisterSharedMemory</code> function.</p>
+</li>
+<li>
+<p>Prepare data: The normal world application writes the input data and any necessary parameters into the shared memory buffer.</p>
+</li>
+<li>
+<p>Issue the call: The normal world application issues a call to the trusted application in the secure world to request the service, providing a reference to the shared memory buffer as part of the call. In the GlobalPlatform TEE APIs, this is done using the <code>TEEC_InvokeCommand</code> function.</p>
+</li>
+<li>
+<p>Process the request: The trusted application in the secure world processes the request, reads the input data from the shared memory buffer, performs the required operations, and writes the response back into the shared memory buffer.</p>
+</li>
+<li>
+<p>Return to the normal world: Once the trusted application in the secure world has completed processing the request, control is returned to the normal world application.</p>
+</li>
+<li>
+<p>Process the response: The normal world application reads the response from the shared memory buffer and processes it accordingly.</p>
+</li>
+<li>
+<p>Release shared memory: After the response has been processed, the normal world application releases the shared memory buffer. In the GlobalPlatform TEE APIs, this is done using the <code>TEEC_ReleaseSharedMemory</code> function.</p>
+</li>
+<li>
+<p>Close session: The normal world application closes the session with the trusted application in the secure world. In the GlobalPlatform TEE APIs, this is done using the <code>TEEC_CloseSession</code> function.</p>
+</li>
+<li>
+<p>Finalize context: The normal world application finalizes the TEE context, releasing any resources associated with it. In the GlobalPlatform TEE APIs, this is done using the <code>TEEC_FinalizeContext</code> function.</p>
+</li>
+</ol>
+<p>Please note that the specific APIs and mechanisms for requesting a service using shared memory in the secure world may vary depending on the TEE implementation being used. The example provided above is based on the GlobalPlatform TEE APIs, which are widely used in the industry for TEE development. Other TEE implementations, such as Intel SGX or ARM TrustZone, may have different APIs and mechanisms for managing shared memory communication between the normal world and the secure world.</p>
+<hr />
+<p><strong>Question:</strong> Which functions are used by TA (trusted application) in the above process? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the process described above, the Trusted Application (TA) in the secure world is responsible for handling requests from the normal world application and performing the requested operations. To do this, the TA needs to implement certain functions to interact with the TEE and the normal world application. The specific functions depend on the TEE implementation being used. Here, we&rsquo;ll use the GlobalPlatform TEE Internal APIs as an example:</p>
+<ol>
+<li>
+<p>TA_CreateEntryPoint: This function is called when the TA is first loaded by the TEE. It can be used to perform initial setup or resource allocation. The function is optional and may be left empty if no specific actions are required at this stage.</p>
+</li>
+<li>
+<p>TA_DestroyEntryPoint: This function is called when the TA is unloaded by the TEE. It can be used to perform cleanup or resource deallocation. The function is optional and may be left empty if no specific actions are required at this stage.</p>
+</li>
+<li>
+<p>TA_OpenSessionEntryPoint: This function is called when the normal world application opens a session with the TA. It can be used to perform session-specific setup, such as allocating session-specific resources or initializing session context. The function should return TEE_SUCCESS on success or an appropriate error code on failure.</p>
+</li>
+<li>
+<p>TA_CloseSessionEntryPoint: This function is called when the normal world application closes a session with the TA. It can be used to perform session-specific cleanup, such as deallocating session-specific resources or clearing session context. The function is optional and may be left empty if no specific actions are required at this stage.</p>
+</li>
+<li>
+<p>TA_InvokeCommandEntryPoint: This function is called when the normal world application issues a call to the TA to request a service. The function is responsible for processing the request, reading the input data from the shared memory buffer (if used), performing the required operations, and writing the response back into the shared memory buffer (if used). The function should return TEE_SUCCESS on success or an appropriate error code on failure.</p>
+</li>
+</ol>
+<p>The specific functions and APIs used by a Trusted Application (TA) may vary depending on the TEE implementation being used. The example provided above is based on the GlobalPlatform TEE Internal APIs, which are widely used in the industry for developing TAs in a TEE. Other TEE implementations, such as Intel SGX or ARM TrustZone, may have different functions and APIs for implementing TAs in the secure world.</p>
+<hr />
+<p><strong>Question:</strong> Could you please draw a sequence diagram of TEEC_InitializeContext, TEEC_OpenSession, TEEC_RegisterSharedMemory, TEEC_InvokeCommand, TEEC_ReleaseSharedMemory, TEEC_CloseSession, TEEC_FinalizeContext, TA_CreateEntryPoint, TA_DestroyEntryPoint, TA_OpenSessionEntryPoint, TA_CloseSessionEntryPoint, TA_InvokeCommandEntryPoint <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>As a text-based AI language model, I cannot directly draw diagrams. However, I can describe the sequence of events and interactions between the normal world application and the trusted application in the secure world using the APIs mentioned in your question. You can use this description to create your own sequence diagram.</p>
+<ol>
+<li>
+<p>The normal world application calls <code>TEEC_InitializeContext</code> to initialize a TEE context.</p>
+</li>
+<li>
+<p>The normal world application calls <code>TEEC_OpenSession</code> to open a session with the trusted application.
+   a. The TEE loads the trusted application if not already loaded.
+   b. The TEE calls <code>TA_CreateEntryPoint</code> in the trusted application for initialization.</p>
+</li>
+<li>
+<p>The normal world application calls <code>TEEC_RegisterSharedMemory</code> to allocate a shared memory buffer.</p>
+</li>
+<li>
+<p>The normal world application writes input data to the shared memory buffer.</p>
+</li>
+<li>
+<p>The normal world application calls <code>TEEC_InvokeCommand</code>, passing a reference to the shared memory buffer.
+   a. The TEE calls <code>TA_OpenSessionEntryPoint</code> in the trusted application to indicate a new session is opened.
+   b. The TEE calls <code>TA_InvokeCommandEntryPoint</code> in the trusted application to process the request.
+      i. The trusted application reads input data from the shared memory buffer.
+      ii. The trusted application performs the requested operations.
+      iii. The trusted application writes the response back to the shared memory buffer.</p>
+</li>
+<li>
+<p>The normal world application reads the response from the shared memory buffer.</p>
+</li>
+<li>
+<p>The normal world application calls <code>TEEC_ReleaseSharedMemory</code> to release the shared memory buffer.</p>
+</li>
+<li>
+<p>The normal world application calls <code>TEEC_CloseSession</code> to close the session with the trusted application.
+   a. The TEE calls <code>TA_CloseSessionEntryPoint</code> in the trusted application to indicate the session is closed.</p>
+</li>
+<li>
+<p>The normal world application calls <code>TEEC_FinalizeContext</code> to finalize the TEE context.
+   a. The TEE unloads the trusted application if no other sessions are open.
+   b. The TEE calls <code>TA_DestroyEntryPoint</code> in the trusted application for cleanup.</p>
+</li>
+</ol>
+<p>You can use this sequence of events to create a diagram illustrating the interactions between the normal world application, the TEE system, and the trusted application in the secure world using the specified APIs.</p>
+<hr />
+<p><strong>Question:</strong> Is the above sequence described in GlobalPlatform? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the sequence of events and interactions between the normal world application and the trusted application in the secure world, as described in the previous response, is based on the GlobalPlatform TEE specifications. GlobalPlatform provides a set of standard APIs, including the TEE Client API (used by the normal world application) and the TEE Internal API (used by the trusted application), to facilitate secure communication and service invocation in a Trusted Execution Environment (TEE).</p>
+<p>The GlobalPlatform TEE specifications can be found on the GlobalPlatform website, which provides detailed documentation on the APIs and their usage: https://www.globalplatform.org/specs-library/?search=tee</p>
+<p>It&rsquo;s important to note that the specific APIs and mechanisms for requesting a service using shared memory in the secure world may vary depending on the TEE implementation being used. The example provided in the previous response is based on the GlobalPlatform TEE APIs, which are widely used in the industry for TEE development. Other TEE implementations, such as Intel SGX or ARM TrustZone, may have different APIs and mechanisms for managing shared memory communication between the normal world and the secure world.</p>
+<hr />
+<p><strong>Question:</strong> Which document describe it? <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The sequence described in the previous responses is based on the GlobalPlatform TEE specifications, which are divided into two main documents:</p>
+<ol>
+<li>GlobalPlatform TEE Client API Specification: This document describes the APIs used by the normal world application to interact with the TEE, such as <code>TEEC_InitializeContext</code>, <code>TEEC_OpenSession</code>, <code>TEEC_RegisterSharedMemory</code>, <code>TEEC_InvokeCommand</code>, <code>TEEC_ReleaseSharedMemory</code>, <code>TEEC_CloseSession</code>, and <code>TEEC_FinalizeContext</code>. The latest version of this document can be found at:</li>
+</ol>
+<p>https://globalplatform.org/specs-library/tee-client-api-specification/</p>
+<ol start="2">
+<li>GlobalPlatform TEE Internal Core API Specification: This document describes the APIs used by the trusted application in the secure world, such as <code>TA_CreateEntryPoint</code>, <code>TA_DestroyEntryPoint</code>, <code>TA_OpenSessionEntryPoint</code>, <code>TA_CloseSessionEntryPoint</code>, and <code>TA_InvokeCommandEntryPoint</code>. The latest version of this document can be found at:</li>
+</ol>
+<p>https://globalplatform.org/specs-library/tee-internal-core-api-specification/</p>
+<p>Both documents provide detailed information on the APIs and their usage, including the sequence of interactions between the normal world application and the trusted application in the secure world. By studying these documents, you can gain a deep understanding of the TEE development process based on the GlobalPlatform specifications.</p>
+<hr />
+<p><strong>Question:</strong> Please give me two sample codes of the above sequence. One is for CA and another is for TA. <code>(2023-03-29)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Here are two sample codes for the normal world application (Client Application, CA) and the secure world application (Trusted Application, TA) based on the GlobalPlatform TEE APIs:</p>
+<p>Client Application (CA) - Normal World:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tee_client_api.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#define TA_UUID {0x12345678, 0x1234, 0x1234, {0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF}}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">TEEC_Result</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">TEEC_Context</span><span class="w"> </span><span class="n">ctx</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">TEEC_Session</span><span class="w"> </span><span class="n">session</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">TEEC_SharedMemory</span><span class="w"> </span><span class="n">sharedMem</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">TEEC_Operation</span><span class="w"> </span><span class="n">operation</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">returnOrigin</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Initialize context</span>
+<span class="w">    </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEEC_InitializeContext</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">TEEC_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to initialize context</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Open session</span>
+<span class="w">    </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEEC_OpenSession</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">session</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TA_UUID</span><span class="p">,</span><span class="w"> </span><span class="n">TEEC_LOGIN_PUBLIC</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">returnOrigin</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">TEEC_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to open session</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">TEEC_FinalizeContext</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Allocate shared memory</span>
+<span class="w">    </span><span class="n">sharedMem</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">sharedMem</span><span class="p">.</span><span class="n">flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEEC_MEM_INPUT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">TEEC_MEM_OUTPUT</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEEC_RegisterSharedMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sharedMem</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">TEEC_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to allocate shared memory</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">TEEC_CloseSession</span><span class="p">(</span><span class="o">&amp;</span><span class="n">session</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">TEEC_FinalizeContext</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Prepare operation</span>
+<span class="w">    </span><span class="n">operation</span><span class="p">.</span><span class="n">paramTypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEEC_PARAM_TYPES</span><span class="p">(</span><span class="n">TEEC_MEMREF_PARTIAL_INPUT</span><span class="p">,</span><span class="w"> </span><span class="n">TEEC_MEMREF_PARTIAL_OUTPUT</span><span class="p">,</span><span class="w"> </span><span class="n">TEEC_NONE</span><span class="p">,</span><span class="w"> </span><span class="n">TEEC_NONE</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">operation</span><span class="p">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">memref</span><span class="p">.</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sharedMem</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">operation</span><span class="p">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">memref</span><span class="p">.</span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">operation</span><span class="p">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">memref</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">operation</span><span class="p">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">memref</span><span class="p">.</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sharedMem</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">operation</span><span class="p">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">memref</span><span class="p">.</span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">operation</span><span class="p">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">memref</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">inputData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">outputData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="n">sharedMem</span><span class="p">.</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">inputData</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Invoke command</span>
+<span class="w">    </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEEC_InvokeCommand</span><span class="p">(</span><span class="o">&amp;</span><span class="n">session</span><span class="p">,</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">operation</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">returnOrigin</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">TEEC_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to invoke command</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">outputData</span><span class="p">,</span><span class="w"> </span><span class="n">sharedMem</span><span class="p">.</span><span class="n">buffer</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Input: %d, Output: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">inputData</span><span class="p">,</span><span class="w"> </span><span class="n">outputData</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Release shared memory</span>
+<span class="w">    </span><span class="n">TEEC_ReleaseSharedMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sharedMem</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Close session and finalize context</span>
+<span class="w">    </span><span class="n">TEEC_CloseSession</span><span class="p">(</span><span class="o">&amp;</span><span class="n">session</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">TEEC_FinalizeContext</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>Trusted Application (TA) - Secure World:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tee_internal_api.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tee_internal_api_extensions.h&gt;</span><span class="cp"></span>
+
+<span class="n">TEE_Result</span><span class="w"> </span><span class="nf">TA_CreateEntryPoint</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">TEE_SUCCESS</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">TA_DestroyEntryPoint</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">TEE_Result</span><span class="w"> </span><span class="nf">TA_OpenSessionEntryPoint</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">paramTypes</span><span class="p">,</span><span class="w"> </span><span class="n">TEE_Param</span><span class="w"> </span><span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">sessionContext</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">TEE_SUCCESS</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">TA_CloseSessionEntryPoint</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">sessionContext</span><span class="w"></span>
+
+<span class="o">---</span><span class="w"></span>
+
+<span class="o">**</span><span class="nl">Question</span><span class="p">:</span><span class="o">**</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">TA</span><span class="w"> </span><span class="n">again</span><span class="p">.</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">complete</span><span class="p">.</span><span class="w"> </span><span class="err">`</span><span class="p">(</span><span class="mi">2023</span><span class="mo">-03</span><span class="mi">-29</span><span class="p">)</span><span class="err">`</span><span class="w"></span>
+
+<span class="o">**</span><span class="nl">Answer</span><span class="p">:</span><span class="o">**</span><span class="w"></span>
+
+<span class="n">Apologies</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">incomplete</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">earlier</span><span class="p">.</span><span class="w"> </span><span class="n">Here</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">complete</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Trusted</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">(</span><span class="n">TA</span><span class="p">)</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">secure</span><span class="w"> </span><span class="n">world</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">GlobalPlatform</span><span class="w"> </span><span class="n">TEE</span><span class="w"> </span><span class="n">Internal</span><span class="w"> </span><span class="nl">API</span><span class="p">:</span><span class="w"></span>
+
+<span class="err">```</span><span class="n">c</span><span class="w"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tee_internal_api.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;tee_internal_api_extensions.h&gt;</span><span class="cp"></span>
+
+<span class="n">TEE_Result</span><span class="w"> </span><span class="n">TA_CreateEntryPoint</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">TEE_Result</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEE_SUCCESS</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Perform initialization tasks, if needed</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">TA_DestroyEntryPoint</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Perform cleanup tasks, if needed</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">TEE_Result</span><span class="w"> </span><span class="nf">TA_OpenSessionEntryPoint</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">paramTypes</span><span class="p">,</span><span class="w"> </span><span class="n">TEE_Param</span><span class="w"> </span><span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">sessionContext</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">TEE_Result</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEE_SUCCESS</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Perform session-specific initialization tasks, if needed</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">TA_CloseSessionEntryPoint</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">sessionContext</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Perform session-specific cleanup tasks, if needed</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">TEE_Result</span><span class="w"> </span><span class="nf">TA_InvokeCommandEntryPoint</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">sessionContext</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">commandID</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">paramTypes</span><span class="p">,</span><span class="w"> </span><span class="n">TEE_Param</span><span class="w"> </span><span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">TEE_Result</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEE_ERROR_NOT_SUPPORTED</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">commandID</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Sample command</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">paramTypes</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">TEE_PARAM_TYPES</span><span class="p">(</span><span class="n">TEE_PARAM_TYPE_MEMREF_INPUT</span><span class="p">,</span><span class="w"> </span><span class="n">TEE_PARAM_TYPE_MEMREF_OUTPUT</span><span class="p">,</span><span class="w"> </span><span class="n">TEE_PARAM_TYPE_NONE</span><span class="p">,</span><span class="w"> </span><span class="n">TEE_PARAM_TYPE_NONE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">TEE_ERROR_BAD_PARAMETERS</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">TEE_MemBuffer</span><span class="w"> </span><span class="o">*</span><span class="n">inputBuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">memref</span><span class="p">.</span><span class="n">buffer</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">TEE_MemBuffer</span><span class="w"> </span><span class="o">*</span><span class="n">outputBuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">memref</span><span class="p">.</span><span class="n">buffer</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">memref</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">memref</span><span class="p">.</span><span class="n">size</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">TEE_ERROR_BAD_PARAMETERS</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">inputData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">TEE_MemMove</span><span class="p">(</span><span class="o">&amp;</span><span class="n">inputData</span><span class="p">,</span><span class="w"> </span><span class="n">inputBuffer</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">outputData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inputData</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">TEE_MemMove</span><span class="p">(</span><span class="n">outputBuffer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">outputData</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TEE_SUCCESS</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>This sample Trusted Application code defines the required entry points for creating, destroying, opening, and closing a session. The <code>TA_InvokeCommandEntryPoint</code> function implements a simple command that reads an integer from the input buffer, multiplies it by 2, and writes the result back to the output buffer.</p>
+<hr />
+<p><strong>Question:</strong> Can CA and TA be implemented  in other languages? <code>(2023-03-31)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, both the Client Application (CA) and the Trusted Application (TA) can be implemented in other programming languages, as long as the language supports interfacing with the required TEE APIs. Many TEE implementations provide APIs and language bindings for multiple programming languages.</p>
+<p>For instance, the GlobalPlatform TEE Client API (for the CA) is generally available as a C API, but you can create language bindings for other languages like Python, Java, or Rust. You might need to use the Foreign Function Interface (FFI) or a similar mechanism to interface with the C API from another language.</p>
+<p>As for the Trusted Application (TA), the choice of programming languages may be more limited, depending on the TEE implementation and the underlying hardware. Some TAs are typically written in C or C++ for performance and low-level access to hardware features, but there are implementations that support other languages like Rust.</p>
+<p>For example, the Rust programming language has gained traction in TEE development, as it provides strong safety guarantees and is suitable for systems programming. There are projects like Teaclave SGX SDK (https://github.com/apache/teaclave-sgx-sdk) for Intel SGX and Rust OP-TEE TrustZone SDK (https://github.com/OP-TEE/optee-rust) for ARM TrustZone, which enable developers to write TAs in Rust.</p>
+<p>In summary, while the choice of programming languages for CA and TA might be determined by the specific TEE implementation and hardware, it is possible to use languages other than C or C++ for both normal world and secure world applications.</p>
+<hr />
+<p><strong>Question:</strong> How does TA authenticate request from CA? <code>(2023-03-31)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Trusted Applications (TAs) can authenticate requests from Client Applications (CAs) using a variety of mechanisms. One common approach is to establish a secure session between the CA and the TA, which can involve authentication, key exchange, and secure communication. This ensures that only authorized CAs can access the services provided by the TA.</p>
+<p>Here are some methods that can be used to authenticate requests from a CA to a TA:</p>
+<ol>
+<li>
+<p><strong>Login Methods</strong>: Different TEE implementations support various login methods to authenticate the origin of the request. GlobalPlatform TEE, for instance, supports multiple login types such as <code>TEEC_LOGIN_PUBLIC</code>, <code>TEEC_LOGIN_USER</code>, <code>TEEC_LOGIN_GROUP</code>, and <code>TEEC_LOGIN_APPLICATION</code>. These login types define different levels of trust and can be used to authenticate the CA based on the user, group, or application identity.</p>
+</li>
+<li>
+<p><strong>Client Authentication</strong>: When a CA opens a session with a TA, it can provide authentication data (e.g., a certificate, a pre-shared key, or a signature) as part of the session&rsquo;s parameters. The TA can verify this authentication data to ensure the CA is authorized to access its services. This can be implemented using custom or standardized cryptographic protocols.</p>
+</li>
+<li>
+<p><strong>Secure Channels</strong>: The CA and TA can establish a secure communication channel, which provides message confidentiality, integrity, and optionally, replay protection. This can be done by performing a key exchange and using shared secrets to encrypt and authenticate the communication between the CA and the TA.</p>
+</li>
+<li>
+<p><strong>Attestation</strong>: In some cases, the CA and/or the TA may require additional trust guarantees from the TEE or the platform. This can be achieved through attestation mechanisms, where a trusted third party (e.g., the TEE vendor or the platform owner) vouches for the authenticity and integrity of the TEE, the TA, or the CA. Examples of attestation mechanisms include Intel SGX&rsquo;s remote attestation and ARM TrustZone&rsquo;s secure boot.</p>
+</li>
+</ol>
+<p>The specific method of authentication and the level of trust required between the CA and the TA depend on the use case, the TEE implementation, and the underlying hardware. To ensure the highest level of security, it is essential to choose appropriate authentication mechanisms and follow best practices in implementing them.</p>
+<hr />
+<p><strong>Question:</strong> What are kinds of TA? <code>(2023-04-01)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Trusted Applications (TAs) can be broadly classified into two main categories based on their purpose and level of trust:</p>
+<ol>
+<li>
+<p><strong>Rich Trusted Applications (RTAs)</strong>: Rich Trusted Applications are TAs that provide more complex services and often interact with external components, such as peripherals, network services, or other TAs. RTAs are typically used for high-level security services like data encryption, digital rights management (DRM), secure payment processing, or secure authentication. These applications might run in a more feature-rich environment with support for a wider range of APIs, libraries, and services. RTAs generally have higher privileges and access to more resources than LTAs.</p>
+</li>
+<li>
+<p><strong>Lightweight Trusted Applications (LTAs)</strong>: Lightweight Trusted Applications are smaller, more focused TAs that provide specific security services. These applications usually have limited functionality and are designed for low-latency, low-power, or resource-constrained environments. LTAs typically have a smaller Trusted Computing Base (TCB), which reduces the attack surface and increases the security of the TA. Examples of LTAs include secure key storage, cryptographic operations, and basic device attestation.</p>
+</li>
+</ol>
+<p>Additionally, TAs can be classified based on their development model and level of trust:</p>
+<ol>
+<li>
+<p><strong>Vendor Trusted Applications</strong>: These are TAs developed by the TEE vendor or the device manufacturer. They are often pre-installed on the device and have the highest level of trust. Vendor TAs are typically responsible for managing the TEE, providing basic security services, or implementing device-specific features.</p>
+</li>
+<li>
+<p><strong>Third-Party Trusted Applications</strong>: These are TAs developed by third-party developers, such as independent software vendors (ISVs) or enterprise developers. Third-party TAs usually provide additional security services or features that are not covered by the vendor TAs. The trust level of third-party TAs depends on the authentication and attestation mechanisms used by the TEE and the device.</p>
+</li>
+</ol>
+<p>In summary, TAs can be classified based on their purpose, complexity, level of trust, and development model. The specific types of TAs supported by a TEE may vary depending on the TEE implementation, the underlying hardware, and the security requirements of the device.</p>
+<hr />
+<h2>TEE Identification</h2>
+<p><strong>Question:</strong> What is TEE identification? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TEE identification refers to the process of uniquely identifying a Trusted Execution Environment (TEE) within a device or across multiple devices. This identification can be used for various purposes, such as attestation, secure communication, and device management. TEE identification typically involves the use of a unique identifier or a set of identifiers that can be securely associated with a specific TEE instance.</p>
+<p>Some common methods for TEE identification are:</p>
+<ol>
+<li>
+<p><strong>Unique Device Identifier (UDID)</strong>: A unique identifier assigned to the device that hosts the TEE. This identifier can be used to differentiate between devices, but it may not be specific to the TEE itself.</p>
+</li>
+<li>
+<p><strong>TEE Instance Identifier</strong>: A unique identifier assigned to a specific instance of a TEE. This identifier is typically generated during the TEE&rsquo;s initialization or secure boot process and can be used to uniquely identify the TEE within the device.</p>
+</li>
+<li>
+<p><strong>Attestation Identity Key (AIK)</strong>: In some TEE implementations, such as Intel SGX, the TEE generates a unique asymmetric key pair called the Attestation Identity Key. The AIK can be used to identify the TEE during remote attestation processes, allowing other parties to verify the authenticity and integrity of the TEE.</p>
+</li>
+<li>
+<p><strong>Certificates</strong>: Some TEE implementations may use certificates issued by trusted Certificate Authorities (CAs) to identify the TEE. These certificates can be used to establish the authenticity of the TEE and to securely associate it with a specific device or entity.</p>
+</li>
+</ol>
+<p>TEE identification plays a crucial role in ensuring the security and trustworthiness of the TEE and the applications running within it. It enables secure communication between the TEE and other components, remote attestation of the TEE, and secure management of devices and services that rely on the TEE.</p>
+<hr />
+<p><strong>Question:</strong> Is TEE identification obversable? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TEE identification is typically not directly observable by normal applications running in the non-secure world (also called the Rich Execution Environment, or REE). The main purpose of a TEE is to provide a secure and isolated environment for sensitive operations, which includes protecting the TEE&rsquo;s identification information from unauthorized access.</p>
+<p>However, some TEE implementations may provide APIs or services that allow authorized applications in the normal world to interact with the TEE and obtain some identification-related information, such as public keys or certificates, for specific purposes like establishing a secure communication channel or performing remote attestation. Access to this information is usually tightly controlled and limited to authorized applications that meet specific security requirements.</p>
+<p>For example, in Intel SGX, an application in the normal world can request a remote attestation report, which includes a public key called the Attestation Identity Key (AIK) that can be used to identify the SGX enclave. The remote attestation process involves communication with Intel&rsquo;s Attestation Service, which verifies the enclave&rsquo;s authenticity and provides a signed attestation report.</p>
+<p>In summary, while TEE identification information is not directly observable by normal applications, authorized applications may be able to access certain identification-related information through specific APIs or services provided by the TEE, under controlled conditions and for specific purposes.</p>
+<hr />
+<p><strong>Question:</strong> Can I use DID as TEE identification? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Decentralized Identifiers (DIDs) can potentially be used as a TEE identification mechanism, although this would require integrating the DID concept into the TEE framework. DIDs are a new type of identifier designed for decentralized identity management systems, which allow entities to create, manage, and control their own identifiers without relying on centralized authorities.</p>
+<p>To use DIDs as TEE identification, you would need to consider the following steps:</p>
+<ol>
+<li>
+<p><strong>Generate DID for TEE</strong>: When a TEE is initialized, generate a DID to uniquely identify the TEE instance. This DID should be securely associated with the TEE and stored within the secure environment.</p>
+</li>
+<li>
+<p><strong>Create DID Document</strong>: A DID Document is a JSON-LD file that contains the public keys, authentication mechanisms, and service endpoints associated with the DID. In the context of TEE identification, the DID Document should include the TEE&rsquo;s public keys, supported authentication methods, and any secure communication endpoints.</p>
+</li>
+<li>
+<p><strong>Associate DID with TEE</strong>: The DID should be securely associated with the TEE and its related cryptographic keys. This can be done through secure storage within the TEE, attestation mechanisms, or other secure binding techniques.</p>
+</li>
+<li>
+<p><strong>Integrate DID APIs and Protocols</strong>: To use DIDs for TEE identification, you would need to integrate DID APIs and protocols into the TEE framework. This may involve modifying the TEE APIs to support DID-based identification, as well as implementing DID resolution and verification mechanisms within the TEE or through external services.</p>
+</li>
+<li>
+<p><strong>Leverage Decentralized Identity Ecosystem</strong>: By adopting DIDs for TEE identification, you can potentially leverage the growing ecosystem of decentralized identity solutions, such as Verifiable Credentials, DID-based authentication, and secure communication protocols.</p>
+</li>
+</ol>
+<p>Using DIDs for TEE identification is an innovative idea that could potentially enhance the security, privacy, and interoperability of TEE-based systems. However, it is important to note that integrating DIDs into the TEE framework would require significant development effort, as well as coordination with existing TEE implementations and standards. Moreover, it would be necessary to carefully evaluate the security implications and trade-offs of using DIDs in this context.</p>
+<hr />
+<h2>Revocation of TA</h2>
+<p><strong>Question:</strong> What is revocation for Trusted Application? <code>(2023/4/10)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Revocation for Trusted Applications (TAs) refers to the process of invalidating, removing, or disabling a TA from a Trusted Execution Environment (TEE). The revocation process may be necessary under various circumstances, such as when a TA has been compromised, contains vulnerabilities, or is no longer needed.</p>
+<p>Revocation can help maintain the security and integrity of the TEE by ensuring that only trusted and up-to-date TAs are allowed to execute within the secure environment. The specific process for revoking a TA depends on the TEE implementation and the device management policies.</p>
+<p>Here are some common steps involved in the revocation of a Trusted Application:</p>
+<ol>
+<li>
+<p><strong>Detection</strong>: Identify the need for revocation, such as discovering a security vulnerability in the TA or determining that the TA is no longer required.</p>
+</li>
+<li>
+<p><strong>Notification</strong>: Notify the relevant parties, such as the device owner, system administrator, or TEE vendor, of the need for revocation.</p>
+</li>
+<li>
+<p><strong>Distribution</strong>: Distribute a revocation list, update, or patch that includes the necessary information to revoke the affected TA. This could be in the form of a signed revocation list or a firmware update containing the new list of authorized TAs.</p>
+</li>
+<li>
+<p><strong>Revocation</strong>: The TEE or the device management system applies the revocation, which may involve disabling the TA, removing its associated keys and data, or preventing it from being loaded into the TEE.</p>
+</li>
+<li>
+<p><strong>Verification</strong>: Verify that the TA has been successfully revoked and can no longer be executed within the TEE.</p>
+</li>
+<li>
+<p><strong>Reporting</strong>: Notify relevant parties of the successful revocation and provide any necessary information for further action, such as updating other affected devices or systems.</p>
+</li>
+</ol>
+<p>It is important to note that the specific revocation process and mechanisms will depend on the TEE implementation, the device management policies, and the security requirements of the system. Some TEEs may provide built-in support for revocation, while others may rely on external device management systems or custom solutions.</p>
+<hr />
+    </article>
+  </body>
+</html>

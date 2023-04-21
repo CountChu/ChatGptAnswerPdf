@@ -1,0 +1,64 @@
+2023-04-18
+
+Questions
+
+Documents @ SGX.0418.md
+[09:09] [title] Sealing and Attestation in Intel SGX
+[09:14] What is relationship between secure enclave and secure memory?
+[10:00] Intel SGX Product Brief
+
+EGETKEY @ SGX.0418.md
+[10:18] What is enclave software?
+[10:19] Is the EGETKEY instruction only called by enclave software?
+[10:21] Can I get hardware-protected key by calling EGETKEY instruction in enclave software?
+[10:22] So after I get the hardware-protected key, I can print it. Is it safe?
+
+MRSIGNER @ SGX.0418.md
+[11:11] [title] Is MRSIGNER unique to every enclave?
+
+EPID @ SGX.0418.md
+[13:59] What is EPID?
+[15:06] How does EPID work?
+[20:59] Which problems does EPID solve?
+[21:03] How do I make sure that the EPID issuer doesn't retain private keys?
+[21:04] How does EPID revoke a compromised device?
+[21:08] How to get the EPID of the compromised device?
+[21:10] But if the compromised device reports a fake EPID, what should I do?
+
+Attestation @ SGX.0418.md
+[14:20] What is attestation?
+[15:04] Please build a cross table. The x axis is hardwared-based and software-based, The y axis is Remote and Local. Please contain Intel SGX, TPM, TLS, SSH, digital signatures, secure boot
+
+Paper - Innovative Technology for CPU Based Attestation and Sealing @ Papers.SGX.0419.md
+[21:18] [title] Abstract and INTRODUCTION
+[21:29] [title] 2 MEASUREMENT
+[21:34] [title] 3 ATTESTATION
+[21:47] [title] 4 SEALING
+[21:51] [title] 5 RELATED WORK, 6 CONCLUSIONS, 7 ACKNOWLEDGMENTS
+[21:52] [title] 8 REFERENCES
+
+Sealing Identity @ Papers.SGX.0419.md
+[22:38] Is "Sealing Identity" a MRSIGNER?
+
+Chats
+
+SGX.0418.md
+[10:24] Please write code to get hardware-protected key by calling EGETKEY instruction in enclave software.
+[10:25] Please write code to get platform key by calling EGETKEY instruction in enclave software.
+[11:03] What is enclave identity?
+[11:07] How to generate MRSIGNER?
+[11:17] Where to save the private key generated in the process of generating MRSIGNER?
+[14:21] Is secure boot of an attestation?
+[14:53] Which type of attestation is secure boot?
+[14:54] What are types of attestation?
+[14:56] Are remote or local attestations hardware or software?
+[14:57] Please summarize the above text as a cross table.
+[14:58] Does Intel SGX support local attestation?
+[14:58] Please add Intel SGX local attestation in the above cross table.
+[15:02] Please build a cross table. The x axis is hardwared-based and software-based, The y axis is Remote and Local. Please also contain Intel SGX attestation (remote and local)
+
+Papers.SGX.0419.md
+[22:34] Please list the table of contents of the paper
+[22:36] What does MRSIGNER contain?
+[22:37] What does MRSIGNER contain? Please list them?
+

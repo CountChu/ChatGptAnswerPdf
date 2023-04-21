@@ -90,6 +90,12 @@ def markdown_to_html(fn_md, name, extensions, fn_html):
 def main():
 
     #
+    # Read home of the app.
+    #
+
+    home = os.path.dirname(sys.argv[0])    
+
+    #
     # Read arguments.
     #
 
@@ -117,8 +123,10 @@ def main():
     # Copy github.css
     #
 
-    fn_css = 'github.css'
-    fn_css_dst = os.path.join(args.output, fn_css)
+    fn_css = os.path.join(home, 'github.css')
+    print('fn_css: %s' % fn_css)
+    fn_css_dst = os.path.join(args.output, 'github.css')
+    print('fn_css_dst: %s' % fn_css_dst)    
     shutil.copy2(fn_css, fn_css_dst)
 
     #

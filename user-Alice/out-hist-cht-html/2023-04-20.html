@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github.css" type="text/css">
+    <title>2023-04-20</title>    
+  </head>
+  <body>
+    <article class="markdown-body">
+        <!-- Markdown-generated HTML content here -->
+        <h1>2023-04-20</h1>
+<p>Created: 2023-04-22 01:03:03</p>
+<h1>Chats</h1>
+<ul>
+<li>SGX.0418.md<ul>
+<li><code>[09:22]</code> Is secure boot a hardware or software attestation?</li>
+<li><code>[09:23]</code> Is UEFI Secure Boot a hardware or software attestation?</li>
+<li><code>[09:24]</code> Do you mean that UEFI Secure Boot requires TPM?</li>
+<li><code>[09:36]</code> What is enclave in Intel SGX?</li>
+<li><code>[09:41]</code> Which key is encrypt memory encrypted by?</li>
+<li><code>[09:43]</code> How does CPU run code in the encrypted memory in enclave?</li>
+<li><code>[09:52]</code> What is MRSIGNER?</li>
+<li><code>[10:34]</code> Who does generate MRSIGNER?</li>
+<li><code>[10:38]</code> So the MRSIGNER value is generated in offline not at runtime. Right?</li>
+<li><code>[10:39]</code> Where is the private key stored?</li>
+<li><code>[14:20]</code> Does Intel EPID require TPM?</li>
+<li><code>[14:26]</code> How is EPID keys enrolled into a device?</li>
+<li><code>[17:16]</code> Can a program in an enclave see outside?</li>
+</ul>
+</li>
+<li>Papers.SGX.0419.md<ul>
+<li><code>[10:19]</code> What is enclave identity described in the paper?</li>
+<li><code>[10:19]</code> What is data structure of enclave identity in C language?</li>
+<li><code>[10:31]</code> Where does the paper describe &ldquo;The enclave identity is a combination of the MRENCLAVE value&rdquo;?</li>
+<li><code>[10:36]</code> Who does generate MRSIGNER?</li>
+<li><code>[10:55]</code> When does the enclave builder enroll SIGSTRUCT into hardware?</li>
+<li><code>[10:57]</code> Please explain the sentence in the paper: &ldquo;The enclave builder presents the hardware with an RSA signed enclave certificate (SIGSTRUCT)&rdquo;</li>
+<li><code>[10:59]</code> Please explain the sentence in the paper: &ldquo;The enclave builder presents the hardware with an RSA signed enclave certificate (SIGSTRUCT)&rdquo; and list the steps.</li>
+<li><code>[11:19]</code> What is Sealing Key?</li>
+<li><code>[11:30]</code> How does &ldquo;Sealing to the Sealing Identity&rdquo; work? Please list steps.</li>
+<li><code>[11:32]</code> Please compare &ldquo;Sealing to the Enclave Identity&rdquo; and &ldquo;Sealing to the Sealing Identity&rdquo; in a table.</li>
+<li><code>[14:21]</code> Does Intel EPID require TPM?</li>
+</ul>
+</li>
+<li>Slides.SGX.0420.md<ul>
+<li><code>[14:36]</code> Below slideshow is &ldquo;Intro to Intel SGX&rdquo; &hellip; &hellip;</li>
+<li><code>[14:39]</code> Why is Intel SGX not suited for password managers?</li>
+<li><code>[15:01]</code> What does &ldquo;size of TCB&rdquo; mean?</li>
+<li><code>[15:06]</code> What is &ldquo;accountable decryption&rdquo;?</li>
+<li><code>[15:10]</code> What is &ldquo;Launch Enclave&rdquo;?</li>
+<li><code>[15:11]</code> Is Launch Enclave a software?</li>
+<li><code>[15:12]</code> Does  Launch Enclave  run in OS?</li>
+<li><code>[15:13]</code> Does the binary of Launch Enclave exits in BIOS or ME?</li>
+<li><code>[15:16]</code> Is Launch Enclave provided by another vendor (No Intel)?</li>
+<li><code>[16:03]</code> What is endorsement key?</li>
+<li><code>[16:14]</code> How does the Solution 1 &ldquo;Privacy CA for provisioning ak&rdquo; work? Please list the steps.</li>
+<li><code>[16:16]</code> How does the Solution 1 &ldquo;Privacy CA for provisioning ak&rdquo; work with Intel SGX? Please list the steps.</li>
+<li><code>[16:18]</code> What is &ldquo;Privacy CA&rdquo;?</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1>Q &amp; A</h1>
+<h2>SGX.0418.md</h2>
+<p><strong>Question:</strong> <code>[09:22]</code> Is secure boot a hardware or software attestation?</p>
+<p><strong>Answer:</strong></p>
+<p>Secure Boot can be considered a form of hardware-based attestation, as it relies on the hardware components of a system to ensure the integrity of the boot process. It leverages the capabilities of a Trusted Platform Module (TPM) or similar security hardware to verify the digital signatures of firmware, boot loaders, and operating system components. This ensures that only trusted software is executed during the boot process.</p>
+<p>However, Secure Boot also involves software components, such as firmware, boot loaders, and digital signature verification routines. So, while it is primarily hardware-based attestation, it also relies on software to perform certain tasks and checks.</p>
+<hr />
+<p><strong>Question:</strong> <code>[09:23]</code> Is UEFI Secure Boot a hardware or software attestation?</p>
+<p><strong>Answer:</strong></p>
+<p>UEFI Secure Boot is a mixture of both hardware and software attestation. It is a security feature built into the Unified Extensible Firmware Interface (UEFI) firmware, which is the software component that initializes the hardware during the boot process.</p>
+<p>Secure Boot relies on hardware components, such as a Trusted Platform Module (TPM) or other security hardware, to store and manage cryptographic keys used for verifying digital signatures of firmware, boot loaders, and operating system components.</p>
+<p>At the same time, it also involves software components, including the UEFI firmware itself, boot loaders, and digital signature verification routines. These components work together to ensure that only trusted and authorized software is executed during the boot process.</p>
+<p>In summary, UEFI Secure Boot can be considered a combination of hardware and software attestation, as it uses both types of components to provide a secure boot environment.</p>
+<hr />
+<p><strong>Question:</strong> <code>[09:24]</code> Do you mean that UEFI Secure Boot requires TPM?</p>
+<p><strong>Answer:</strong></p>
+<p>I apologize for any confusion. UEFI Secure Boot does not strictly require a Trusted Platform Module (TPM). However, a TPM can be used in conjunction with UEFI Secure Boot to enhance security and provide additional functionality.</p>
+<p>UEFI Secure Boot primarily focuses on verifying the digital signatures of firmware, boot loaders, and operating system components to ensure that only trusted and authorized software is executed during the boot process. This verification process can be carried out without the need for a TPM.</p>
+<p>That said, a TPM can be used to securely store and manage cryptographic keys and attest to the integrity of the boot process, providing a hardware root of trust. When used in combination with UEFI Secure Boot, a TPM can enhance security by offering additional features, such as measuring the boot process, providing a secure way to store cryptographic keys, and supporting remote attestation.</p>
+<p>In summary, while UEFI Secure Boot does not require a TPM, the two can be used together to provide a more secure boot environment.</p>
+<hr />
+<p><strong>Question:</strong> <code>[09:36]</code> What is enclave in Intel SGX?</p>
+<p><strong>Answer:</strong></p>
+<p>An enclave in the context of Intel Software Guard Extensions (SGX) is a protected region of memory within the application&rsquo;s address space. This region is isolated and secured from other processes running on the same system, including privileged processes and the operating system itself. The primary purpose of an enclave is to provide a secure environment for executing sensitive code and processing sensitive data.</p>
+<p>When an application creates an enclave, the SGX hardware creates a secure container that encrypts the enclave&rsquo;s memory. This encrypted memory can only be accessed by the enclave&rsquo;s code, and even the operating system or hypervisor cannot directly access it. Enclaves also have their own isolated execution environment, which helps protect against side-channel attacks and other threats.</p>
+<p>Developers can use Intel SGX to create enclaves for various purposes, such as secure key management, encrypted data storage, or privacy-preserving computation. Enclaves are useful for protecting sensitive code and data from potential threats, ensuring the confidentiality and integrity of the data being processed.</p>
+<hr />
+<p><strong>Question:</strong> <code>[09:41]</code> Which key is encrypt memory encrypted by?</p>
+<p><strong>Answer:</strong></p>
+<p>In Intel SGX, the memory of an enclave is encrypted using a key called the Memory Encryption Engine Key (MEE-K). This key is hardware-generated and unique to each processor. The MEE-K is not accessible to software, ensuring the confidentiality and integrity of the enclave&rsquo;s memory.</p>
+<hr />
+<p><strong>Question:</strong> <code>[09:43]</code> How does CPU run code in the encrypted memory in enclave?</p>
+<p><strong>Answer:</strong></p>
+<p>When the CPU executes code inside an enclave, it decrypts the memory contents on-the-fly using the Memory Encryption Engine (MEE) integrated into the CPU. This process is transparent to the software running inside the enclave.</p>
+<p>When data is read from the enclave memory, the MEE decrypts it before passing it to the CPU for processing. When data is written back to the enclave memory, the MEE encrypts it before storing it. This encryption and decryption process is done in real-time and ensures that the code and data inside the enclave are protected from unauthorized access or tampering, even if an attacker has physical access to the system memory.</p>
+<hr />
+<p><strong>Question:</strong> <code>[09:52]</code> What is MRSIGNER?</p>
+<p><strong>Answer:</strong></p>
+<p>MRSIGNER is a term used in the context of Intel SGX (Software Guard Extensions) to refer to the measurement of the signer of an enclave. It is a 256-bit hash value that represents the public key of the signer who created and signed the enclave. This value is stored within the enclave&rsquo;s metadata and is part of the enclave&rsquo;s identity.</p>
+<p>MRSIGNER is used during the attestation process to ensure that the enclave was created by a trusted party. During attestation, the MRSIGNER value is checked against a list of trusted signer public keys to determine whether the enclave&rsquo;s creator is trusted. If the MRSIGNER matches one of the trusted public keys, the attestation can proceed, indicating that the enclave is genuine and created by a trusted party.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:34]</code> Who does generate MRSIGNER?</p>
+<p><strong>Answer:</strong></p>
+<p>MRSIGNER is generated by the enclave&rsquo;s developer or creator. The developer creates the enclave code and then signs it using their private key. The MRSIGNER value is a hash of the public key that corresponds to the private key used for signing the enclave.</p>
+<p>During the build process, the enclave&rsquo;s code, data, and metadata are combined, and a measurement of the enclave&rsquo;s contents (MRENCLAVE) is calculated. The developer then signs the measurement and other metadata with their private key, creating a signature. The corresponding public key is hashed to generate the MRSIGNER value, which is stored as part of the enclave&rsquo;s metadata.</p>
+<p>When the enclave is loaded and initialized, the MRSIGNER value is checked during the attestation process to verify the enclave&rsquo;s origin and ensure that it was created by a trusted party.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:38]</code> So the MRSIGNER value is generated in offline not at runtime. Right?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, that&rsquo;s correct. The MRSIGNER value is generated offline during the enclave build process, not at runtime. The enclave developer signs the enclave with their private key, and the corresponding public key is hashed to generate the MRSIGNER value. This value is then stored as part of the enclave&rsquo;s metadata.</p>
+<p>During runtime, the attestation process uses the MRSIGNER value to verify the enclave&rsquo;s origin and ensure that it was created by a trusted party. The value is not generated or altered during runtime.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:39]</code> Where is the private key stored?</p>
+<p><strong>Answer:</strong></p>
+<p>The private key used to sign an enclave is typically stored securely by the enclave developer or their organization. It is crucial to keep the private key confidential to prevent unauthorized access or modification of the enclave software.</p>
+<p>In practice, private keys may be stored in various secure storage solutions, such as hardware security modules (HSMs), encrypted storage, or secure key management systems. The choice of storage depends on the specific security requirements and policies of the organization responsible for the enclave.</p>
+<hr />
+<p><strong>Question:</strong> <code>[14:20]</code> Does Intel EPID require TPM?</p>
+<p><strong>Answer:</strong></p>
+<p>Intel EPID (Enhanced Privacy ID) does not require a Trusted Platform Module (TPM) to function. EPID is a separate privacy-preserving technology designed for remote attestation and device authentication in a scalable and anonymous manner.</p>
+<p>Although both Intel EPID and TPM provide security features, they serve different purposes and can be used independently or in conjunction with each other, depending on the specific use case and security requirements of a system.</p>
+<hr />
+<p><strong>Question:</strong> <code>[14:26]</code> How is EPID keys enrolled into a device?</p>
+<p><strong>Answer:</strong></p>
+<p>The EPID keys are enrolled into a device during its manufacturing process. Here&rsquo;s an outline of the typical EPID key enrollment process:</p>
+<ol>
+<li>
+<p>Device manufacturer generates an EPID private key and public key pair for each device during the manufacturing process.</p>
+</li>
+<li>
+<p>The device manufacturer contacts the EPID Issuer (which is responsible for managing EPID keys). The manufacturer provides the device&rsquo;s public key and a unique device identifier.</p>
+</li>
+<li>
+<p>The EPID Issuer validates the authenticity of the device manufacturer and the device public key. After validation, the EPID Issuer issues a certificate (also known as an EPID signature) that binds the device&rsquo;s public key to its unique identifier. The certificate serves as proof that the device&rsquo;s public key is part of the EPID group.</p>
+</li>
+<li>
+<p>The device manufacturer then securely stores the EPID private key and the corresponding certificate within the device, typically in a protected storage area.</p>
+</li>
+</ol>
+<p>The enrollment process ensures that each device has a unique EPID key pair and a valid certificate. The private key is securely stored within the device and is used for signing attestation requests, while the public key can be used by remote parties to verify the authenticity of the device&rsquo;s attestation signatures.</p>
+<hr />
+<p><strong>Question:</strong> <code>[17:16]</code> Can a program in an enclave see outside?</p>
+<p><strong>Answer:</strong></p>
+<p>A program running inside an Intel SGX enclave cannot directly access memory outside the enclave. The enclave&rsquo;s memory is isolated from the rest of the system, including other processes and even the operating system. This isolation helps protect the confidentiality and integrity of the data and code within the enclave.</p>
+<p>However, an enclave program can communicate with the outside world through well-defined interfaces. The enclave can expose secure entry points, called e-calls, that allow the application outside the enclave to call functions within the enclave. Similarly, the enclave can make o-calls to interact with the outside world, for example, to request external services or perform I/O operations.</p>
+<p>These interactions must be carefully designed to avoid leaking sensitive information or exposing vulnerabilities. Data passed between the enclave and the external environment should be appropriately encrypted and authenticated to protect it from unauthorized access or tampering. Additionally, the enclave&rsquo;s exposed interfaces should be minimal and thoroughly reviewed to ensure their security.</p>
+<hr />
+<h2>Papers.SGX.0419.md</h2>
+<p><strong>Question:</strong> <code>[10:19]</code> What is enclave identity described in the paper?</p>
+<p><strong>Answer:</strong></p>
+<p>In the paper, the term &ldquo;enclave identity&rdquo; refers to the unique identifier associated with an enclave. The enclave identity is a combination of the MRENCLAVE value, which represents the enclave&rsquo;s code and data, and the MRSIGNER value, which represents the enclave&rsquo;s signer or the entity that signed the enclave.</p>
+<p>The enclave identity is used in various security policies, such as attestation and sealing. For example, when an enclave wants to attest its identity to a remote party, it provides a REPORT containing the MRENCLAVE and MRSIGNER values as part of the attestation process. Similarly, when sealing data, the sealing policy may be based on the enclave identity to ensure that the sealed data can only be accessed by specific enclaves with matching MRENCLAVE and/or MRSIGNER values.</p>
+<p>In summary, the enclave identity in the paper is a combination of MRENCLAVE and MRSIGNER values that uniquely identify an enclave, and it is used in various security policies and operations related to attestation and sealing.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:19]</code> What is data structure of enclave identity in C language?</p>
+<p><strong>Answer:</strong></p>
+<p>In the paper, the term &ldquo;enclave identity&rdquo; refers to the unique combination of MRENCLAVE and MRSIGNER values associated with an enclave. MRENCLAVE is the hash of the enclave&rsquo;s initial code and data, while MRSIGNER is the public key of the entity that signed the enclave. Together, these two values provide a unique identifier for the enclave, which can be used for attestation, sealing, and other security-related purposes.</p>
+<p>The paper discusses two different sealing policies based on the enclave identity:</p>
+<ol>
+<li>
+<p>Sealing to the Enclave Identity: In this policy, the sealing key is derived from the MRENCLAVE value. This means that the sealed data can only be unsealed by an enclave with the same code and data. This policy is useful when you want to restrict access to sealed data to a specific version of an enclave.</p>
+</li>
+<li>
+<p>Sealing to the Sealing Authority: In this policy, the sealing key is derived from the MRSIGNER value. This allows enclaves signed by the same authority to share sealed data, even if their code and data are different. This policy is useful when you want to allow multiple enclaves signed by the same entity to access the same sealed data.</p>
+</li>
+</ol>
+<p>In both cases, the enclave identity plays a crucial role in determining access to sealed data and serves as the foundation for secure enclave communication and data protection.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:31]</code> Where does the paper describe &ldquo;The enclave identity is a combination of the MRENCLAVE value&rdquo;?</p>
+<p><strong>Answer:</strong></p>
+<p>Apologies for the confusion earlier. The paper does not explicitly state that &ldquo;the enclave identity is a combination of the MRENCLAVE value.&rdquo; The paper discusses MRENCLAVE and MRSIGNER separately in various contexts.</p>
+<p>In the context of sealing data, the paper states the following in section 4.4: &ldquo;The enclave author can define policies for sealing. Some example policies are sealing to the enclave identity, sealing to the signing identity, sealing to the platform.&rdquo; In this context, the enclave identity refers to MRENCLAVE, and the signing identity refers to MRSIGNER. They are used separately for different sealing policies.</p>
+<p>So, the paper does not explicitly define &ldquo;enclave identity&rdquo; as a combination of MRENCLAVE and MRSIGNER. It refers to them separately for various purposes, and my previous response was incorrect in that regard.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:36]</code> Who does generate MRSIGNER?</p>
+<p><strong>Answer:</strong></p>
+<p>MRSIGNER is generated when an enclave is built and signed. The enclave developer or author writes the enclave code and compiles it. After that, the developer signs the enclave binary using their private key. The MRSIGNER value is the hash of the public key corresponding to the private key used to sign the enclave.</p>
+<p>In summary, MRSIGNER is generated by the enclave developer or author during the enclave signing process, and it represents the identity of the enclave signer.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:55]</code> When does the enclave builder enroll SIGSTRUCT into hardware?</p>
+<p><strong>Answer:</strong></p>
+<p>The enclave builder does not enroll the SIGSTRUCT into hardware. Instead, when an enclave is loaded and initialized, the system will verify the SIGSTRUCT as part of the enclave&rsquo;s initialization process. The Intel SGX hardware checks the enclave&rsquo;s signature and other attributes to ensure the enclave is valid and meets the necessary security requirements.</p>
+<p>During this process, the Intel SGX hardware will use the information in the SIGSTRUCT to set the MRSIGNER register inside the enclave. The MRSIGNER register will hold the identity of the enclave signer, which can be used for attestation and other security-related purposes.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:57]</code> Please explain the sentence in the paper: &ldquo;The enclave builder presents the hardware with an RSA signed enclave certificate (SIGSTRUCT)&rdquo;</p>
+<p><strong>Answer:</strong></p>
+<p>The sentence &ldquo;The enclave builder presents the hardware with an RSA signed enclave certificate (SIGSTRUCT)&rdquo; in the paper refers to the process of loading and initializing an enclave. When an enclave is created, the enclave builder is responsible for generating the SIGSTRUCT, which is an RSA-signed enclave certificate containing important information about the enclave, such as the measurement of the enclave code (MRENCLAVE), the measurement of the enclave signer (MRSIGNER), and various attributes.</p>
+<p>During the enclave loading and initialization process, the enclave builder provides the SIGSTRUCT to the Intel SGX hardware. The hardware then verifies the SIGSTRUCT to ensure the enclave&rsquo;s authenticity and integrity. This verification process includes checking the RSA signature of the SIGSTRUCT, as well as other attributes and measurements. If the verification is successful, the hardware will allow the enclave to be loaded and initialized, and the enclave can begin secure execution.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:59]</code> Please explain the sentence in the paper: &ldquo;The enclave builder presents the hardware with an RSA signed enclave certificate (SIGSTRUCT)&rdquo; and list the steps.</p>
+<p><strong>Answer:</strong></p>
+<p>The sentence &ldquo;The enclave builder presents the hardware with an RSA signed enclave certificate (SIGSTRUCT)&rdquo; describes a step in the process of creating, loading, and initializing an enclave in the Intel SGX architecture. Let&rsquo;s break down the steps involved:</p>
+<ol>
+<li>
+<p>Enclave Creation: The enclave developer writes the enclave code and prepares it for execution in a secure environment provided by the Intel SGX.</p>
+</li>
+<li>
+<p>Enclave Signing: The enclave developer or a trusted authority signs the enclave using a private key, generating a SIGSTRUCT, which is an RSA-signed enclave certificate. The SIGSTRUCT contains important information about the enclave, such as the MRENCLAVE (measurement of the enclave code), MRSIGNER (measurement of the enclave signer), and various attributes.</p>
+</li>
+<li>
+<p>Enclave Loading: The enclave builder prepares the enclave for loading into the SGX-enabled hardware. This includes setting up the memory layout, copying the enclave code into the secure enclave memory, and preparing any necessary data structures.</p>
+</li>
+<li>
+<p>Presenting SIGSTRUCT to Hardware: In the step described by the sentence, the enclave builder presents the hardware with the SIGSTRUCT. This step is necessary for the hardware to verify the authenticity and integrity of the enclave.</p>
+</li>
+<li>
+<p>Verification by Hardware: The Intel SGX hardware verifies the SIGSTRUCT by checking the RSA signature, the MRENCLAVE, the MRSIGNER, and other attributes. If the verification is successful, the hardware determines that the enclave is authentic and has not been tampered with.</p>
+</li>
+<li>
+<p>Enclave Initialization: If the verification is successful, the hardware initializes the enclave, setting up the necessary runtime environment for the enclave code to execute securely.</p>
+</li>
+<li>
+<p>Secure Execution: Once the enclave is initialized, it can begin secure execution within the protected environment provided by the Intel SGX architecture.</p>
+</li>
+</ol>
+<hr />
+<p><strong>Question:</strong> <code>[11:19]</code> What is Sealing Key?</p>
+<p><strong>Answer:</strong></p>
+<p>A Sealing Key is a cryptographic key used in Intel SGX (Software Guard Extensions) to protect sensitive data in the context of an enclave. The purpose of the sealing key is to encrypt and decrypt (or &ldquo;seal&rdquo; and &ldquo;unseal&rdquo;) the data, ensuring that it remains confidential and can only be accessed by the enclave that generated the sealing key or other authorized enclaves.</p>
+<p>Sealing keys are derived from a combination of the enclave&rsquo;s identity (MRENCLAVE or MRSIGNER) and the platform-specific key material. This ensures that the sealing keys are unique to a particular enclave and the platform it is running on.</p>
+<p>In the Intel SGX architecture, sealing keys are used for the following purposes:</p>
+<ol>
+<li>
+<p>Confidentiality: Ensuring that the sensitive data remains confidential and is not accessible to unauthorized entities, including other enclaves, applications, or the operating system.</p>
+</li>
+<li>
+<p>Integrity: Protecting the sensitive data from unauthorized modifications and ensuring that it remains consistent and unaltered.</p>
+</li>
+<li>
+<p>Binding: Tying the sensitive data to a specific enclave or group of enclaves, ensuring that only authorized enclaves can access the data.</p>
+</li>
+</ol>
+<p>The sealing and unsealing processes are critical to the overall security of Intel SGX, as they ensure that sensitive data remains protected even when it is stored outside the secure enclave memory or transmitted between enclaves.</p>
+<hr />
+<p><strong>Question:</strong> <code>[11:30]</code> How does &ldquo;Sealing to the Sealing Identity&rdquo; work? Please list steps.</p>
+<p><strong>Answer:</strong></p>
+<p>&ldquo;Sealing to the Sealing Identity&rdquo; refers to the process of encrypting data with a sealing key that is derived from the enclave&rsquo;s identity. This ensures that the sealed data can only be accessed by the same enclave or other authorized enclaves that share the same identity. Here are the steps involved in this process:</p>
+<ol>
+<li>
+<p>Determine the Sealing Identity: The sealing identity is typically a combination of the MRENCLAVE (measurement of the enclave code and data) or MRSIGNER (measurement of the enclave signer) values. It is used as the basis for generating the sealing key.</p>
+</li>
+<li>
+<p>Generate the Sealing Key: The enclave requests a sealing key from the Intel SGX hardware using the EGETKEY instruction. The key is derived from the sealing identity, the platform-specific key material, and the enclave&rsquo;s attributes. This ensures that the sealing key is unique to the enclave and the platform it runs on.</p>
+</li>
+<li>
+<p>Encrypt the Data: The enclave uses the sealing key to encrypt the sensitive data. This process is known as &ldquo;sealing.&rdquo; It ensures that the data remains confidential and can only be accessed by the enclave that generated the sealing key or other authorized enclaves.</p>
+</li>
+<li>
+<p>Store the Sealed Data: The sealed data can be stored outside the enclave, either in the application&rsquo;s untrusted memory or in a persistent storage location such as a disk file. Since the data is encrypted, it remains protected even when stored outside the secure enclave memory.</p>
+</li>
+<li>
+<p>Unseal the Data: When the enclave or another authorized enclave with the same identity needs to access the sealed data, it follows a similar process to generate the sealing key using the EGETKEY instruction. With the sealing key, the enclave can decrypt and access the sealed data.</p>
+</li>
+<li>
+<p>Verify Integrity: Optionally, the sealing process can also include a message authentication code (MAC) or digital signature to ensure the integrity of the sealed data. During the unsealing process, the enclave verifies the MAC or digital signature to ensure that the data has not been tampered with.</p>
+</li>
+</ol>
+<p>By following these steps, &ldquo;Sealing to the Sealing Identity&rdquo; ensures that sensitive data remains confidential and can only be accessed by authorized enclaves that share the same identity. This provides a secure way to store and share data between enclaves and protect it from unauthorized access or tampering.</p>
+<hr />
+<p><strong>Question:</strong> <code>[11:32]</code> Please compare &ldquo;Sealing to the Enclave Identity&rdquo; and &ldquo;Sealing to the Sealing Identity&rdquo; in a table.</p>
+<p><strong>Answer:</strong></p>
+<p>Here is a comparison table of &ldquo;Sealing to the Enclave Identity&rdquo; and &ldquo;Sealing to the Sealing Identity&rdquo;:</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Sealing to the Enclave Identity</th>
+<th>Sealing to the Sealing Identity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity Basis</td>
+<td>MRENCLAVE</td>
+<td>MRENCLAVE or MRSIGNER</td>
+</tr>
+<tr>
+<td>Enclave Measurement</td>
+<td>Unique to each enclave build</td>
+<td>Shared by same signer or enclave</td>
+</tr>
+<tr>
+<td>Key Derivation</td>
+<td>Based on MRENCLAVE</td>
+<td>Based on MRENCLAVE or MRSIGNER</td>
+</tr>
+<tr>
+<td>Use Case</td>
+<td>Specific enclave instance</td>
+<td>Enclaves with same identity</td>
+</tr>
+<tr>
+<td>Data Accessibility</td>
+<td>Limited to the specific enclave</td>
+<td>Accessible by authorized enclaves</td>
+</tr>
+<tr>
+<td>Flexibility</td>
+<td>Lower, tied to a single enclave</td>
+<td>Higher, shared among same identity</td>
+</tr>
+<tr>
+<td>Software Update Considerations</td>
+<td>Need to migrate data to new MRENCLAVE</td>
+<td>Easier with same MRSIGNER</td>
+</tr>
+</tbody>
+</table>
+<p>In summary, &ldquo;Sealing to the Enclave Identity&rdquo; provides more restrictive access to sealed data, ensuring that it can only be accessed by a specific enclave instance. This method is suitable for scenarios where data must be strictly protected and accessible only to that specific enclave.</p>
+<p>On the other hand, &ldquo;Sealing to the Sealing Identity&rdquo; allows for more flexibility in data access among enclaves with the same identity, which can be based on MRENCLAVE or MRSIGNER. This method is suitable for scenarios where multiple enclaves need to access shared data or when enclaves have a common signer, such as when dealing with software updates or versions.</p>
+<hr />
+<p><strong>Question:</strong> <code>[14:21]</code> Does Intel EPID require TPM?</p>
+<p><strong>Answer:</strong></p>
+<p>No, Intel Enhanced Privacy ID (EPID) does not require a Trusted Platform Module (TPM). EPID is a privacy-preserving digital signature scheme developed by Intel, and it is designed to be used independently of a TPM. EPID can provide secure device authentication without revealing unique device identities, which is particularly useful for IoT devices.</p>
+<p>EPID and TPM are two separate technologies that can be used for different purposes. TPM is a hardware-based security module that provides a secure environment for storing sensitive data and performing cryptographic operations. It is used for various purposes, such as secure boot, attestation, and key management.</p>
+<p>In the context of Intel SGX, EPID is used for remote attestation to prove the integrity and identity of an enclave to a remote party without exposing the unique device identity. While both EPID and TPM can be used for attestation, they are separate technologies and do not depend on each other.</p>
+<hr />
+<h2>Slides.SGX.0420.md</h2>
+<p><strong>Question:</strong> <code>[14:36]</code> Below slideshow is &ldquo;Intro to Intel SGX&rdquo; &hellip; &hellip;</p>
+<p><strong>Answer:</strong></p>
+<p>Intel SGX (Software Guard Extensions) is a set of processor instructions that enable secure execution of code and data within protected memory regions called enclaves. These enclaves are designed to protect code and data from unauthorized access, even by the operating system and other software. Intel SGX is particularly suited for cloud computing scenarios where data privacy and protection are essential.</p>
+<p>Some key features of Intel SGX include:</p>
+<ol>
+<li>Enclave creation: Setting up a protected memory region that holds the code and data securely.</li>
+<li>Enclave lifecycle management: Managing the creation, loading, initialization, and teardown of enclaves.</li>
+<li>Identity attestation: Attesting the identity (MRENCLAVE or MRSIGNER/ISVPRODID) of an enclave to a remote party.</li>
+<li>Data sealing: Encrypting data using a key that only the enclave can access, enabling secure persistent storage.</li>
+<li>Remote attestation: Allowing a remote party to verify that they are communicating with a specific enclave and securely exchange data.</li>
+</ol>
+<p>However, Intel SGX does not protect against side-channel attacks and hardware attacks, such as chip decapsulation or vulnerabilities introduced in the supply chain.</p>
+<p>Intel SGX can be used in various scenarios, such as ensuring confidentiality from cloud providers or implementing DRM (Digital Rights Management) systems. It is not well-suited for applications that involve I/O on the platform, like password managers or banking apps.</p>
+<hr />
+<p><strong>Question:</strong> <code>[14:39]</code> Why is Intel SGX not suited for password managers?</p>
+<p><strong>Answer:</strong></p>
+<p>Intel SGX is not well-suited for password managers primarily because of its limitations in handling input/output (I/O) operations. Password managers usually require user interaction for entering master passwords, copying generated passwords, and auto-filling login forms. These actions involve I/O operations that are outside the scope of the enclave&rsquo;s protected environment.</p>
+<p>In addition, Intel SGX is vulnerable to certain side-channel attacks, which can potentially leak sensitive information, such as passwords or encryption keys, by analyzing the access patterns of the CPU cache or other hardware resources. While Intel SGX provides strong isolation and protection against software-based attacks, it cannot completely secure applications that require sensitive I/O operations, such as password managers or banking apps.</p>
+<p>However, this does not mean that Intel SGX is entirely useless for such applications. It can still be used to enhance specific aspects of these applications, like securing the storage and processing of sensitive data within the enclave. But, due to the I/O limitations and side-channel vulnerabilities, it is not a comprehensive solution for securing password managers or similar applications.</p>
+<hr />
+<p><strong>Question:</strong> <code>[15:01]</code> What does &ldquo;size of TCB&rdquo; mean?</p>
+<p><strong>Answer:</strong></p>
+<p>&ldquo;Size of TCB&rdquo; refers to the size of the Trusted Computing Base. The Trusted Computing Base is a term used in computer security to describe the set of all hardware, firmware, and software components that are critical to a system&rsquo;s security. The TCB is responsible for enforcing the security policies of a system, and its integrity is crucial to maintain the overall security of the system.</p>
+<p>The size of the TCB is an important consideration because it generally correlates with the potential attack surface and the complexity of the system. A smaller TCB typically indicates a more focused and manageable set of components, which can be more easily analyzed, verified, and secured. On the other hand, a larger TCB can introduce more potential vulnerabilities and make it more difficult to ensure the security of the system.</p>
+<p>In the context of hardware security mechanisms, like Intel SGX, a smaller TCB may provide stronger protection against attacks, as there are fewer components that could be exploited. Reducing the size of the TCB is one of the primary goals in designing secure systems, as it helps to minimize the attack surface and the potential for security vulnerabilities.</p>
+<hr />
+<p><strong>Question:</strong> <code>[15:06]</code> What is &ldquo;accountable decryption&rdquo;?</p>
+<p><strong>Answer:</strong></p>
+<p>Accountable decryption is a concept in cryptography that aims to ensure that the decryption of encrypted data can be traced back to a specific party or entity. This concept is often employed in systems where multiple parties have access to the decryption keys, and it&rsquo;s important to know who decrypted the data for various reasons, such as security, auditing, or legal compliance.</p>
+<p>In an accountable decryption scheme, the decryption process generates a unique proof or decryption tag that can be used to identify the party responsible for the decryption. This proof or tag is often linked to the decryption key or the party&rsquo;s identity in a way that cannot be forged or tampered with. This allows for the attribution of decryption actions to specific parties, enabling better control and monitoring of access to sensitive information.</p>
+<p>Accountable decryption can be implemented through various cryptographic techniques, including threshold cryptography, digital signatures, and zero-knowledge proofs. The choice of technique depends on the specific requirements and the overall system design.</p>
+<hr />
+<p><strong>Question:</strong> <code>[15:10]</code> What is &ldquo;Launch Enclave&rdquo;?</p>
+<p><strong>Answer:</strong></p>
+<p>A Launch Enclave is a secure environment in the context of Intel Software Guard Extensions (SGX), a set of security-related instruction codes that are built into some Intel processors. The Launch Enclave is responsible for verifying and controlling the launch of other secure enclaves within the SGX environment.</p>
+<p>In Intel SGX, enclaves are isolated, protected memory regions that run sensitive code and store sensitive data. They are designed to protect the confidentiality and integrity of this information from external threats, even in the presence of compromised operating systems or hardware.</p>
+<p>The Launch Enclave is a special enclave provided by Intel that plays a crucial role in the SGX ecosystem. When an application wants to create and run a new enclave, it must first request the Launch Enclave to create a launch token. The Launch Enclave verifies the new enclave&rsquo;s identity and attributes, and if everything is in order, it creates the launch token. This token is then used by the application to launch the new enclave.</p>
+<p>By controlling the launch of other enclaves, the Launch Enclave helps maintain the security and integrity of the SGX environment. It ensures that only trusted and authorized enclaves can be created and executed, thus preventing rogue enclaves from compromising the security of the system.</p>
+<hr />
+<p><strong>Question:</strong> <code>[15:11]</code> Is Launch Enclave a software?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the Launch Enclave is a software component provided by Intel as part of the Intel Software Guard Extensions (SGX) framework. It is designed to run within the secure environment of an Intel SGX-enabled processor.</p>
+<p>The Launch Enclave is a specific enclave with predefined functionality that manages the creation and launch of other secure enclaves within the SGX environment. By acting as a gatekeeper, the Launch Enclave helps ensure that only authorized and trusted enclaves are executed, maintaining the overall security of the system.</p>
+<hr />
+<p><strong>Question:</strong> <code>[15:12]</code> Does  Launch Enclave  run in OS?</p>
+<p><strong>Answer:</strong></p>
+<p>The Launch Enclave runs within the secure environment provided by Intel SGX, which is a set of security-related instruction codes built into Intel processors. While it is not part of the operating system (OS) itself, it does interact with the OS through a set of APIs and drivers.</p>
+<p>The OS plays a role in managing the resources and interactions between the untrusted, non-secure part of the system and the secure enclave environment. In this sense, the Launch Enclave does run on a system with an OS, but it operates within the protected enclave environment provided by the Intel SGX, isolated from the untrusted portion of the OS.</p>
+<hr />
+<p><strong>Question:</strong> <code>[15:13]</code> Does the binary of Launch Enclave exits in BIOS or ME?</p>
+<p><strong>Answer:</strong></p>
+<p>The binary of the Launch Enclave does not reside in the BIOS or the Intel Management Engine (ME). The Launch Enclave is a part of the Intel SGX software stack, which is installed on the operating system. The Intel SGX software stack includes the Intel SGX SDK and Platform Software (PSW).</p>
+<p>The Launch Enclave is loaded as part of the Intel SGX runtime system when an application wants to create a new enclave. The Launch Enclave binary is signed by Intel, and its primary purpose is to verify and manage the launch of other enclaves, ensuring that they have been signed with an authorized launch key.</p>
+<p>While the Launch Enclave is not directly part of the BIOS or ME, both the BIOS and ME play a role in enabling Intel SGX on the system. The BIOS must support and properly configure the hardware for Intel SGX, and the Intel ME is responsible for managing security features and providing cryptographic services to the system, including those related to Intel SGX.</p>
+<hr />
+<p><strong>Question:</strong> <code>[15:16]</code> Is Launch Enclave provided by another vendor (No Intel)?</p>
+<p><strong>Answer:</strong></p>
+<p>No, the Launch Enclave is provided by Intel as part of the Intel SGX software stack. Intel is responsible for signing the Launch Enclave binary and distributing it as a part of the Intel SGX SDK and Platform Software (PSW). This is an important aspect of the SGX security model, as it allows Intel to maintain control over the trustworthiness of the Launch Enclave and ensure that only authorized enclaves can be launched on SGX-enabled systems.</p>
+<hr />
+<p><strong>Question:</strong> <code>[16:03]</code> What is endorsement key?</p>
+<p><strong>Answer:</strong></p>
+<p>An endorsement key (EK) is a unique, private cryptographic key that is embedded within a security device or module, such as a Trusted Platform Module (TPM) or a hardware security module (HSM). This key is generated during the manufacturing process and is paired with a corresponding public key. The private portion of the endorsement key is never exposed outside of the secure environment and is used to prove the authenticity and integrity of the device.</p>
+<p>The public portion of the endorsement key is typically used along with a certificate issued by the manufacturer, which serves as a proof of the device&rsquo;s authenticity. This certificate is called the endorsement certificate and is used to establish trust in the device&rsquo;s identity during secure communications or attestation processes.</p>
+<p>In summary, the endorsement key is a fundamental component of hardware-based security solutions, as it helps to establish trust and verify the authenticity of a device or module in secure communications and attestation scenarios.</p>
+<hr />
+<p><strong>Question:</strong> <code>[16:14]</code> How does the Solution 1 &ldquo;Privacy CA for provisioning ak&rdquo; work? Please list the steps.</p>
+<p><strong>Answer:</strong></p>
+<p>&ldquo;Privacy CA for provisioning ak&rdquo; refers to using a Privacy Certification Authority (Privacy CA) to provision an Attestation Key (ak) for a TPM (Trusted Platform Module) while maintaining the privacy of the device. The process allows a TPM to interact with third parties without disclosing its unique identity. Here are the steps involved in this solution:</p>
+<ol>
+<li>
+<p>TPM generates an Attestation Key (ak) pair: The TPM generates a public-private key pair intended for use in attestation. The private part of the key remains within the TPM, while the public part is shared externally.</p>
+</li>
+<li>
+<p>TPM creates an Attestation Key Certificate Request: The TPM generates a certificate signing request (CSR) for the public portion of the Attestation Key. This request typically includes information about the TPM, such as its public Endorsement Key (EK) and the desired ak.</p>
+</li>
+<li>
+<p>Privacy CA verifies TPM identity: The Privacy CA receives the CSR and verifies the authenticity of the TPM using the provided public EK and the corresponding endorsement certificate issued by the TPM manufacturer. The Privacy CA may also check other information, such as the platform&rsquo;s conformance to certain security standards.</p>
+</li>
+<li>
+<p>Privacy CA issues an Attestation Key Certificate: Once the Privacy CA is satisfied with the TPM&rsquo;s authenticity, it signs the CSR and generates an Attestation Key Certificate. This certificate is then sent back to the TPM.</p>
+</li>
+<li>
+<p>TPM receives and stores the Attestation Key Certificate: The TPM securely stores the Attestation Key Certificate, linking the ak to a trusted Privacy CA. This certificate can be used in future attestation processes to establish trust with third parties.</p>
+</li>
+</ol>
+<p>In summary, using a Privacy CA for provisioning an Attestation Key (ak) involves generating an ak pair within the TPM, creating a CSR for the public ak, verifying the TPM&rsquo;s identity by the Privacy CA, issuing an Attestation Key Certificate, and securely storing this certificate in the TPM. This process allows the TPM to prove its authenticity and integrity while preserving its privacy.</p>
+<hr />
+<p><strong>Question:</strong> <code>[16:16]</code> How does the Solution 1 &ldquo;Privacy CA for provisioning ak&rdquo; work with Intel SGX? Please list the steps.</p>
+<p><strong>Answer:</strong></p>
+<p>Intel SGX (Software Guard Extensions) is a set of hardware-based security features that enable secure execution of applications within isolated enclaves, protecting data and code from unauthorized access. While Intel SGX doesn&rsquo;t rely on TPM for its operation, it also follows a remote attestation process that involves provisioning an attestation key. Here are the steps involved in this process:</p>
+<ol>
+<li>
+<p>Application Developer creates an SGX Enclave: The developer writes an application and creates an enclave to protect the sensitive parts of the application. The enclave contains both code and data that must be protected from unauthorized access.</p>
+</li>
+<li>
+<p>Enclave is signed: The enclave must be cryptographically signed by the application developer, ensuring its integrity and authenticity. The enclave&rsquo;s identity and metadata are included in the enclave signature.</p>
+</li>
+<li>
+<p>Enclave is loaded and initialized: When the application runs, the enclave is loaded into the protected memory area, called the Enclave Page Cache (EPC). The processor initializes the enclave and verifies the enclave&rsquo;s signature.</p>
+</li>
+<li>
+<p>Provisioning Enclave Attestation Key (ak) pair: Similar to the TPM process, Intel SGX generates a public-private key pair for attestation within the enclave. The private part of the key remains within the enclave, while the public part is shared externally.</p>
+</li>
+<li>
+<p>Creating a certificate signing request (CSR): The enclave generates a CSR for the public portion of the Attestation Key (ak). This request typically includes information about the enclave, such as its identity and metadata.</p>
+</li>
+<li>
+<p>Remote Attestation Service (IAS): Intel provides an Intel Attestation Service (IAS) that serves as a Privacy CA for Intel SGX enclaves. The CSR is sent to the IAS, which verifies the authenticity and integrity of the enclave and its measurements.</p>
+</li>
+<li>
+<p>IAS issues an Attestation Key Certificate: Once the IAS is satisfied with the enclave&rsquo;s authenticity and integrity, it signs the CSR and generates an Attestation Key Certificate. This certificate is then sent back to the enclave.</p>
+</li>
+<li>
+<p>Enclave receives and stores the Attestation Key Certificate: The enclave securely stores the Attestation Key Certificate, linking the ak to the trusted IAS. This certificate can be used in future remote attestation processes to establish trust with third parties.</p>
+</li>
+</ol>
+<p>In summary, the remote attestation process for Intel SGX enclaves involves creating an enclave, signing it, loading and initializing it, provisioning an attestation key pair, creating a CSR, verifying the enclave&rsquo;s authenticity and integrity through the IAS, issuing an Attestation Key Certificate, and securely storing the certificate within the enclave. This process enables secure communication between the enclave and external parties, while maintaining privacy and ensuring integrity.</p>
+<hr />
+<p><strong>Question:</strong> <code>[16:18]</code> What is &ldquo;Privacy CA&rdquo;?</p>
+<p><strong>Answer:</strong></p>
+<p>A Privacy Certification Authority (Privacy CA) is a trusted third-party entity that issues digital certificates in a privacy-preserving manner. Privacy CAs play a crucial role in remote attestation processes for secure hardware platforms, such as Intel SGX (Software Guard Extensions) and Trusted Platform Modules (TPMs).</p>
+<p>The main purpose of a Privacy CA is to verify the authenticity and integrity of a secure hardware platform or an enclave (in the case of Intel SGX) without revealing sensitive information about the platform or enclave to other parties. The Privacy CA is responsible for validating the identity and measurements of the secure platform, and then issuing a digital certificate as proof of the platform&rsquo;s trustworthiness.</p>
+<p>In this process, the Privacy CA acts as an intermediary between the secure platform and the external party seeking to establish a trusted communication channel. The Privacy CA helps to maintain the confidentiality of the platform&rsquo;s sensitive information while still providing the necessary level of assurance to the external party.</p>
+<p>For example, in the context of Intel SGX, the Privacy CA is the Intel Attestation Service (IAS). The IAS issues digital certificates for Intel SGX enclaves after verifying their authenticity and integrity based on measurements provided by the enclave during the remote attestation process.</p>
+<hr />
+    </article>
+  </body>
+</html>

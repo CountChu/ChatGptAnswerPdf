@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github.css" type="text/css">
+    <title>2023-04-18</title>    
+  </head>
+  <body>
+    <article class="markdown-body">
+        <!-- Markdown-generated HTML content here -->
+        <h1>2023-04-18</h1>
+<p>Created: 2023-04-22 01:02:45</p>
+<h1>Questions</h1>
+<ul>
+<li>Documents @ SGX.0418.md<ul>
+<li><code>[09:09]</code> Sealing and Attestation in Intel SGX <span style="color:blue"><code>[title]</code></span></li>
+<li><code>[09:14]</code> What is relationship between secure enclave and secure memory?</li>
+<li><code>[10:00]</code> Intel SGX Product Brief</li>
+</ul>
+</li>
+<li>EGETKEY @ SGX.0418.md<ul>
+<li><code>[10:18]</code> What is enclave software?</li>
+<li><code>[10:19]</code> Is the EGETKEY instruction only called by enclave software?</li>
+<li><code>[10:21]</code> Can I get hardware-protected key by calling EGETKEY instruction in enclave software?</li>
+<li><code>[10:22]</code> So after I get the hardware-protected key, I can print it. Is it safe?</li>
+</ul>
+</li>
+<li>MRSIGNER @ SGX.0418.md<ul>
+<li><code>[11:11]</code> Is MRSIGNER unique to every enclave? <span style="color:blue"><code>[title]</code></span></li>
+</ul>
+</li>
+<li>EPID @ SGX.0418.md<ul>
+<li><code>[13:59]</code> What is EPID?</li>
+<li><code>[15:06]</code> How does EPID work?</li>
+<li><code>[20:59]</code> Which problems does EPID solve?</li>
+<li><code>[21:03]</code> How do I make sure that the EPID issuer doesn&rsquo;t retain private keys?</li>
+<li><code>[21:04]</code> How does EPID revoke a compromised device?</li>
+<li><code>[21:08]</code> How to get the EPID of the compromised device?</li>
+<li><code>[21:10]</code> But if the compromised device reports a fake EPID, what should I do?</li>
+</ul>
+</li>
+<li>Attestation @ SGX.0418.md<ul>
+<li><code>[14:20]</code> What is attestation?</li>
+<li><code>[15:04]</code> Please build a cross table. The x axis is hardwared-based and software-based, The y axis is Remote and Local. Please contain Intel SGX, TPM, TLS, SSH, digital signatures, secure boot</li>
+</ul>
+</li>
+<li>Paper - Innovative Technology for CPU Based Attestation and Sealing @ Papers.SGX.0419.md<ul>
+<li><code>[21:18]</code> Abstract and INTRODUCTION <span style="color:blue"><code>[title]</code></span></li>
+<li><code>[21:29]</code> 2 MEASUREMENT <span style="color:blue"><code>[title]</code></span></li>
+<li><code>[21:34]</code> 3 ATTESTATION <span style="color:blue"><code>[title]</code></span></li>
+<li><code>[21:47]</code> 4 SEALING <span style="color:blue"><code>[title]</code></span></li>
+<li><code>[21:51]</code> 5 RELATED WORK, 6 CONCLUSIONS, 7 ACKNOWLEDGMENTS <span style="color:blue"><code>[title]</code></span></li>
+<li><code>[21:52]</code> 8 REFERENCES <span style="color:blue"><code>[title]</code></span></li>
+</ul>
+</li>
+<li>Sealing Identity @ Papers.SGX.0419.md<ul>
+<li><code>[22:38]</code> Is &ldquo;Sealing Identity&rdquo; a MRSIGNER?</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1>Q &amp; A</h1>
+<h2>Documents @ SGX.0418.md</h2>
+<p><strong>Question:</strong> <code>[09:09]</code> Sealing and Attestation in Intel SGX <span style="color:blue"><code>[title]</code></span></p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> <code>[09:14]</code> What is relationship between secure enclave and secure memory?</p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:00]</code> Intel SGX Product Brief</p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<h2>EGETKEY @ SGX.0418.md</h2>
+<p><strong>Question:</strong> <code>[10:18]</code> What is enclave software?</p>
+<p><strong>Answer:</strong></p>
+<p>Enclave software refers to a part of an application that runs inside a protected area of memory called an enclave. Enclaves are created using Intel Software Guard Extensions (Intel SGX) technology to provide a higher level of security for sensitive code and data. The enclave isolates the protected code and data from the rest of the application, the operating system, and other processes running on the same system.</p>
+<p>Enclave software is designed to perform specific tasks or process sensitive information while ensuring confidentiality, integrity, and protection against unauthorized access or modification. This can be particularly useful for applications handling sensitive data, such as cryptographic keys, personal information, or proprietary algorithms. By running the sensitive part of the application within an enclave, developers can reduce the attack surface and provide an additional layer of security.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:19]</code> Is the EGETKEY instruction only called by enclave software?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the EGETKEY instruction is specific to Intel Software Guard Extensions (Intel SGX) and is used only by enclave software. EGETKEY is an instruction designed to derive a cryptographic key from a hardware-protected key hierarchy within an enclave. The key derived using EGETKEY is unique to each enclave and is based on the enclave&rsquo;s measurement and identity, providing an additional layer of security.</p>
+<p>Enclave software uses the EGETKEY instruction to obtain a secret key for various cryptographic operations, such as encrypting or decrypting sensitive data or for generating a Message Authentication Code (MAC). By using EGETKEY, the key material is kept secure, and the risk of unauthorized access is minimized, since the key is not exposed outside of the enclave.</p>
+<p>Only code running inside the enclave is authorized to execute the EGETKEY instruction, ensuring that the derived key remains protected and accessible only to the enclave software.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:21]</code> Can I get hardware-protected key by calling EGETKEY instruction in enclave software?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, by calling the EGETKEY instruction in enclave software, you can obtain a hardware-protected key. This key is derived from a hardware-protected key hierarchy within an enclave, which is part of Intel Software Guard Extensions (Intel SGX).</p>
+<p>The EGETKEY instruction generates a secret key unique to each enclave based on the enclave&rsquo;s measurement and identity. This provides an added layer of security, ensuring that the key material remains secure and minimizing the risk of unauthorized access. The derived key can then be used for various cryptographic operations, such as encrypting/decrypting sensitive data or generating a Message Authentication Code (MAC).</p>
+<p>Keep in mind that only code running inside the enclave is authorized to execute the EGETKEY instruction. This restriction ensures that the derived key remains protected and is accessible only to the enclave software.</p>
+<hr />
+<p><strong>Question:</strong> <code>[10:22]</code> So after I get the hardware-protected key, I can print it. Is it safe?</p>
+<p><strong>Answer:</strong></p>
+<p>Printing or logging the hardware-protected key would undermine its security. One of the primary purposes of using a hardware-protected key is to ensure that sensitive data remains secure even in the presence of compromised software or hardware. Exposing the key by printing or logging it outside of the enclave would make it vulnerable to theft and unauthorized access.</p>
+<p>If you need to use the hardware-protected key outside of the enclave for some purpose, it is crucial to maintain the key&rsquo;s confidentiality. You should transmit the key securely, ideally using encryption or secure channels, and only share it with trusted parties. Printing or logging the key should be avoided to minimize the risk of exposure.</p>
+<hr />
+<h2>MRSIGNER @ SGX.0418.md</h2>
+<p><strong>Question:</strong> <code>[11:11]</code> Is MRSIGNER unique to every enclave? <span style="color:blue"><code>[title]</code></span></p>
+<p><strong>Answer:</strong></p>
+<p>MRSIGNER is not unique to every enclave; it is unique to the entity that signed the enclave. Multiple enclaves signed by the same entity (using the same public-private key pair) will have the same MRSIGNER value.</p>
+<p>In other words, MRSIGNER is a way to identify the signer of an enclave rather than the enclave itself. When you verify an enclave&rsquo;s identity during the remote attestation process, you may use the MRSIGNER to check if the enclave was signed by a trusted entity.</p>
+<p>For example, if a company produces multiple enclaves, they may sign all their enclaves with the same key pair. All these enclaves will have the same MRSIGNER, which represents the company&rsquo;s public key. In this case, MRSIGNER serves as an identifier for the company as the enclave signer.</p>
+<hr />
+<h2>EPID @ SGX.0418.md</h2>
+<p><strong>Question:</strong> <code>[13:59]</code> What is EPID?</p>
+<p><strong>Answer:</strong></p>
+<p>EPID (Enhanced Privacy ID) is a privacy-enhancing technology developed by Intel for anonymous attestation of trusted computing platforms. It is primarily used in Intel SGX (Software Guard Extensions) to verify the authenticity and integrity of an enclave without revealing the identity of the platform.</p>
+<p>EPID enables a group signature scheme that allows a platform to prove its membership in a group without revealing its individual identity. This allows for anonymous attestation, where a service provider can verify that a platform is genuine and running trusted enclave software without needing to know the specific identity of the platform. This helps protect user privacy and reduces the risk of tracking or linking activities back to individual users.</p>
+<p>EPID is particularly useful in scenarios where privacy is essential, such as in cloud computing or IoT environments, where platforms may need to attest their trustworthiness to remote service providers without revealing their unique identities.</p>
+<hr />
+<p><strong>Question:</strong> <code>[15:06]</code> How does EPID work?</p>
+<p><strong>Answer:</strong></p>
+<p>EPID (Enhanced Privacy ID) is a group signature scheme developed by Intel, which allows anonymous attestation for Intel SGX-enabled platforms. It provides privacy-preserving remote attestation, meaning the verifier cannot link the attestation to a specific device or user. The key principles of EPID are:</p>
+<ol>
+<li>
+<p>Anonymous credentials: Each platform receives a unique private key that is part of a group, and the corresponding public key represents the group. When an attestation is performed, it&rsquo;s not possible to determine which platform or user was involved, only that the platform belongs to the group.</p>
+</li>
+<li>
+<p>Issuer: A trusted authority (Intel, in the case of SGX) issues the credentials to the platforms. The issuer creates the group public key and a private key for each platform in the group. The issuer signs the credentials and ensures the platforms receive their private keys securely.</p>
+</li>
+<li>
+<p>Revocation: The issuer can revoke credentials for individual platforms if required (e.g., when a security vulnerability is discovered). Revocation lists are distributed to verifiers, who can then reject attestations from revoked platforms.</p>
+</li>
+<li>
+<p>Signature generation: When a platform wants to attest to its identity, it creates a signature using its EPID private key and the message (typically a quote from an enclave) to be signed. The signature proves that the platform belongs to the group without revealing its specific identity.</p>
+</li>
+<li>
+<p>Signature verification: The verifier checks the signature using the group public key and the revocation list. If the signature is valid and the platform&rsquo;s credentials haven&rsquo;t been revoked, the verifier accepts the attestation as genuine.</p>
+</li>
+</ol>
+<p>In summary, EPID enables privacy-preserving remote attestation for Intel SGX-enabled platforms by using anonymous group signatures. The verifier can confirm that the platform is part of a trusted group without being able to link the attestation to a specific device or user.</p>
+<hr />
+<p><strong>Question:</strong> <code>[20:59]</code> Which problems does EPID solve?</p>
+<p><strong>Answer:</strong></p>
+<p>EPID (Enhanced Privacy ID) solves several problems related to remote attestation and device identity management, particularly for Intel SGX-enabled platforms. Some of the key problems EPID addresses are:</p>
+<ol>
+<li>
+<p>Privacy: Traditional attestation schemes can potentially reveal the identity of the device or user, which may lead to privacy concerns. EPID utilizes anonymous group signatures to ensure that the verifier can only determine that the attesting platform belongs to a trusted group, without revealing the specific identity of the device or user.</p>
+</li>
+<li>
+<p>Scalability: In scenarios where a large number of devices require attestation, managing individual public keys for each device can be cumbersome. EPID simplifies this by using a single group public key for all devices within a group. This allows verifiers to validate attestations using a single public key, making the process more scalable.</p>
+</li>
+<li>
+<p>Revocation: EPID provides an efficient mechanism to revoke the credentials of compromised or vulnerable devices. The issuer maintains a revocation list that allows verifiers to reject attestations from revoked platforms. This helps maintain the security and trust of the attestation process.</p>
+</li>
+<li>
+<p>Device onboarding: EPID allows for a smoother and more secure onboarding process for new devices. The trusted authority (e.g., Intel) issues credentials for each device, ensuring that they receive their private keys securely. This helps streamline device provisioning and management.</p>
+</li>
+<li>
+<p>Interoperability: EPID can be integrated into various attestation protocols and systems, promoting interoperability between different devices, platforms, and services. It can be used in conjunction with other security mechanisms, such as Transport Layer Security (TLS) or secure boot, to create secure communication channels and establish trust.</p>
+</li>
+</ol>
+<p>In summary, EPID addresses key challenges in remote attestation, device identity management, and privacy. It helps create a more secure and scalable system for verifying the trustworthiness of devices and protecting user privacy.</p>
+<hr />
+<p><strong>Question:</strong> <code>[21:03]</code> How do I make sure that the EPID issuer doesn&rsquo;t retain private keys?</p>
+<p><strong>Answer:</strong></p>
+<p>To ensure that the EPID issuer doesn&rsquo;t retain private keys, you can implement a few strategies:</p>
+<ol>
+<li>
+<p>Use a Trusted Third Party (TTP): Instead of relying on the EPID issuer to generate private keys, you can employ a TTP to issue the private keys to devices. The TTP can be an independent entity that all parties trust, ensuring that the EPID issuer doesn&rsquo;t have access to the private keys.</p>
+</li>
+<li>
+<p>Generate keys on the device: One way to prevent the EPID issuer from retaining private keys is by generating the keys directly on the device itself. This can be done using a hardware-based secure element or a Trusted Platform Module (TPM) to generate and securely store the private key. By doing this, the private key never leaves the device, ensuring that the EPID issuer doesn&rsquo;t have access to it.</p>
+</li>
+<li>
+<p>Zero-knowledge proofs: Zero-knowledge proofs can be used to prove the validity of a private key without revealing the key itself. This can help ensure that the EPID issuer doesn&rsquo;t have access to the private keys while still being able to verify their authenticity.</p>
+</li>
+<li>
+<p>Audits and transparency: Regular audits and transparency reports can help build trust between the EPID issuer and the devices. By allowing third-party audits of their key management practices and infrastructure, the EPID issuer can demonstrate that they do not retain private keys.</p>
+</li>
+<li>
+<p>Legal and contractual agreements: Establishing legal and contractual agreements between the EPID issuer and the device manufacturers or users can help define the responsibilities and limitations of the issuer. These agreements can include clauses that prohibit the issuer from retaining private keys and specify penalties for non-compliance.</p>
+</li>
+</ol>
+<p>In summary, ensuring that the EPID issuer doesn&rsquo;t retain private keys requires a combination of technical and procedural measures, along with trust-building mechanisms like audits and legal agreements.</p>
+<hr />
+<p><strong>Question:</strong> <code>[21:04]</code> How does EPID revoke a compromised device?</p>
+<p><strong>Answer:</strong></p>
+<p>EPID (Enhanced Privacy ID) revocation works through the use of revocation lists, specifically the Group Revocation List (GRL) and the Private Key-Based Revocation List (PRL). When a device is compromised or its private key is deemed insecure, its identifier (member ID or private key-based identifier) is added to one of these lists. This process ensures that the compromised device will no longer be considered valid during the attestation process.</p>
+<p>Here&rsquo;s an overview of how EPID revocation works:</p>
+<ol>
+<li>
+<p>Detection of compromise: The first step is identifying that a device or its private key has been compromised. This can be done through monitoring, reporting, or other means.</p>
+</li>
+<li>
+<p>Adding the identifier to the revocation list: Once a device is identified as compromised, its identifier (member ID or private key-based identifier) is added to the appropriate revocation list (GRL or PRL).</p>
+</li>
+<li>
+<p>Distribution of revocation lists: The revocation lists are periodically updated and distributed to relying parties, such as service providers and verifiers, who need to validate the authenticity of devices during attestation.</p>
+</li>
+<li>
+<p>Attestation process: During the attestation process, the device generates a signature using its private key and EPID parameters. The verifier checks the signature against the public parameters and the revocation lists.</p>
+</li>
+<li>
+<p>Verification and revocation: If the device&rsquo;s identifier is found in a revocation list, the verifier will consider the attestation invalid, effectively revoking the device&rsquo;s access to services or data. If the device&rsquo;s identifier is not in any revocation list, the verifier will proceed with the attestation process and grant access accordingly.</p>
+</li>
+</ol>
+<p>In summary, EPID revokes a compromised device by adding its identifier to a revocation list, which is then distributed to relying parties. During the attestation process, the device&rsquo;s signature is checked against the revocation lists, and if it&rsquo;s found on a list, the attestation is considered invalid, effectively revoking the device&rsquo;s access to services or data.</p>
+<hr />
+<p><strong>Question:</strong> <code>[21:08]</code> How to get the EPID of the compromised device?</p>
+<p><strong>Answer:</strong></p>
+<p>To get the EPID (Enhanced Privacy ID) of a compromised device, you&rsquo;ll typically need to follow an incident response process to gather information about the device, its security status, and potential threats. Here&rsquo;s a general outline of the steps you should take:</p>
+<ol>
+<li>
+<p>Incident detection: The first step is to detect a potential security incident or compromise involving the device. This can be done through monitoring systems, alerts, or reports from users or administrators.</p>
+</li>
+<li>
+<p>Incident investigation: Once you&rsquo;ve detected a potential compromise, you need to investigate the incident to determine the cause, scope, and impact. This may involve analyzing logs, network traffic, and other relevant data.</p>
+</li>
+<li>
+<p>Device identification: During the investigation, you&rsquo;ll need to identify the specific device(s) involved in the incident. This may involve correlating information from logs, network traffic, or other sources to pinpoint the affected device(s).</p>
+</li>
+<li>
+<p>Collecting device information: Once you&rsquo;ve identified the compromised device, collect relevant information about it, such as the serial number, hardware and software configurations, and any unique identifiers, like EPID parameters or other security-related data.</p>
+</li>
+<li>
+<p>Identifying the EPID: With the collected device information, identify the device&rsquo;s EPID by analyzing its EPID parameters (e.g., member ID or private key-based identifier). This may require accessing the device directly or working with the device manufacturer or platform provider.</p>
+</li>
+<li>
+<p>Revoking the EPID: Once you have the EPID of the compromised device, you can add it to the appropriate revocation list (Group Revocation List or Private Key-Based Revocation List) to revoke its access to services or data during the attestation process.</p>
+</li>
+</ol>
+<p>Remember that the specific steps and processes may vary depending on the device type, platform, and organization&rsquo;s incident response procedures. It&rsquo;s crucial to have a well-defined incident response plan in place to ensure an efficient and effective response to security incidents.</p>
+<hr />
+<p><strong>Question:</strong> <code>[21:10]</code> But if the compromised device reports a fake EPID, what should I do?</p>
+<p><strong>Answer:</strong></p>
+<p>If a compromised device is suspected of reporting a fake EPID, there are several steps you can take to mitigate the risk and verify the authenticity of the device:</p>
+<ol>
+<li>
+<p>Verify attestation reports: When using remote attestation, check the attestation reports provided by the device to ensure they are genuine and have been signed by a trusted attestation service. This can help detect fake EPIDs by verifying the signature, certificate chain, and the data contained within the report.</p>
+</li>
+<li>
+<p>Monitor for anomalous behavior: Continuously monitor the behavior of devices and their network communications. Look for unusual patterns or activities that could indicate a compromised device or the use of a fake EPID.</p>
+</li>
+<li>
+<p>Implement intrusion detection and prevention systems (IDS/IPS): Use IDS/IPS to monitor network traffic and detect potential threats, such as attempts to use fake EPIDs or unauthorized access to sensitive data.</p>
+</li>
+<li>
+<p>Implement strong authentication and access controls: Ensure that devices are required to authenticate themselves using strong methods, such as multi-factor authentication, before they can access sensitive data or services. This can help prevent unauthorized access by compromised devices using fake EPIDs.</p>
+</li>
+<li>
+<p>Regularly update and patch software: Keep the software on devices up-to-date and apply security patches promptly to minimize the risk of vulnerabilities being exploited.</p>
+</li>
+<li>
+<p>Conduct regular security assessments and audits: Perform regular security assessments and audits to identify potential risks and vulnerabilities in your environment. This can help uncover compromised devices and attempts to use fake EPIDs.</p>
+</li>
+<li>
+<p>Establish and enforce security policies: Develop and implement security policies that define the acceptable use of devices, outline the responsibilities of users and administrators, and specify the requirements for reporting and responding to security incidents.</p>
+</li>
+<li>
+<p>Train users and administrators: Provide regular training and awareness programs to educate users and administrators about the risks of compromised devices and the use of fake EPIDs. This can help ensure that they are better prepared to detect and respond to potential threats.</p>
+</li>
+<li>
+<p>Collaborate with vendors and partners: Work closely with device manufacturers, platform providers, and other partners to share information about potential threats, vulnerabilities, and best practices for detecting and mitigating the risk of compromised devices and fake EPIDs.</p>
+</li>
+</ol>
+<p>In case a fake EPID is detected, follow your organization&rsquo;s incident response plan to contain the threat, investigate the issue, and recover from the incident.</p>
+<hr />
+<h2>Attestation @ SGX.0418.md</h2>
+<p><strong>Question:</strong> <code>[14:20]</code> What is attestation?</p>
+<p><strong>Answer:</strong></p>
+<p>Attestation is a security process that allows one entity to verify the authenticity, integrity, and trustworthiness of another entity, typically in the context of software or hardware systems. In the realm of computer security, attestation involves checking that a system or application is running as intended, without unauthorized modifications or tampering.</p>
+<p>Attestation can occur between different entities, such as:</p>
+<ol>
+<li>
+<p>Local attestation: This takes place between two entities on the same platform, such as two enclaves within the same system. They verify each other&rsquo;s trustworthiness before proceeding with a secure communication or data exchange.</p>
+</li>
+<li>
+<p>Remote attestation: This occurs when an entity on one platform attests its trustworthiness to another entity on a different platform, usually over a network. In this case, the verifier, which could be a service provider or another system, checks the trustworthiness of the prover, which is the platform running the enclave or secure application.</p>
+</li>
+</ol>
+<p>Attestation often relies on cryptographic techniques, such as digital signatures, to ensure that the evidence provided during the attestation process is genuine and trustworthy. In the context of Intel SGX (Software Guard Extensions), attestation involves verifying the authenticity and integrity of an enclave to ensure that the software running inside it is trusted and has not been tampered with.</p>
+<hr />
+<p><strong>Question:</strong> <code>[15:04]</code> Please build a cross table. The x axis is hardwared-based and software-based, The y axis is Remote and Local. Please contain Intel SGX, TPM, TLS, SSH, digital signatures, secure boot</p>
+<p><strong>Answer:</strong></p>
+<p>Here&rsquo;s the cross table with the x-axis representing hardware-based and software-based attestation, and the y-axis representing remote and local attestation. Intel SGX, TPM, TLS, SSH, digital signatures, and secure boot are included:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">+-------------------+----------------+-----------------+</span><span class="c"></span>
+<span class="c">|                   | Hardware</span><span class="nb">-</span><span class="c">based | Software</span><span class="nb">-</span><span class="c">based  |</span>
+<span class="nb">+-------------------+----------------+-----------------+</span><span class="c"></span>
+<span class="c">| Local Attestation | Intel SGX      | Secure Boot     |</span>
+<span class="c">|                   | TPM            | Digital Signatures |</span>
+<span class="nb">+-------------------+----------------+-----------------+</span><span class="c"></span>
+<span class="c">| Remote Attestation| Intel SGX      | TLS             |</span>
+<span class="c">|                   | TPM            | SSH             |</span>
+<span class="nb">+-------------------+----------------+-----------------+</span><span class="c"></span>
+</code></pre></div>
+
+<p>In this table, Intel SGX and TPM are listed under the &ldquo;Hardware-based&rdquo; column for both &ldquo;Local Attestation&rdquo; and &ldquo;Remote Attestation.&rdquo; Secure Boot and Digital Signatures are listed under the &ldquo;Software-based&rdquo; column for &ldquo;Local Attestation.&rdquo; TLS and SSH are listed under the &ldquo;Software-based&rdquo; column for &ldquo;Remote Attestation.&rdquo; This table provides an overview of the different types of attestation used by various technologies.</p>
+<hr />
+<h2>Paper - Innovative Technology for CPU Based Attestation and Sealing @ Papers.SGX.0419.md</h2>
+<p><strong>Question:</strong> <code>[21:18]</code> Abstract and INTRODUCTION <span style="color:blue"><code>[title]</code></span></p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> <code>[21:29]</code> 2 MEASUREMENT <span style="color:blue"><code>[title]</code></span></p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> <code>[21:34]</code> 3 ATTESTATION <span style="color:blue"><code>[title]</code></span></p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> <code>[21:47]</code> 4 SEALING <span style="color:blue"><code>[title]</code></span></p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> <code>[21:51]</code> 5 RELATED WORK, 6 CONCLUSIONS, 7 ACKNOWLEDGMENTS <span style="color:blue"><code>[title]</code></span></p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<p><strong>Question:</strong> <code>[21:52]</code> 8 REFERENCES <span style="color:blue"><code>[title]</code></span></p>
+<p><strong>Answer:</strong> (Hide)</p>
+<hr />
+<h2>Sealing Identity @ Papers.SGX.0419.md</h2>
+<p><strong>Question:</strong> <code>[22:38]</code> Is &ldquo;Sealing Identity&rdquo; a MRSIGNER?</p>
+<p><strong>Answer:</strong></p>
+<p>Sealing Identity is not the same as MRSIGNER. However, MRSIGNER is a part of the Sealing Identity. Sealing Identity is a policy used when invoking EGETKEY in Intel® SGX to determine which enclaves can access a sealing key. The Sealing Identity policy is based on the enclave&rsquo;s MRSIGNER value (identity of the Sealing Authority) and the enclave&rsquo;s version. This policy allows for data migration between different versions of enclaves signed by the same Sealing Authority.</p>
+<hr />
+    </article>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+2023-04-13
+
+Questions
+
+Types of ARM CPU @ Arm.0410.md
+[09:13] Below ariticle "In aarch32 state, what is the mechanism to switch to aarch64 in software?" come from
+[09:17] How do I specify only AArch32 of Armv8-A at run-time?
+[09:34] Is uboot 32-bit or 64-bit?
+
+1 - Introduction @ EME.0413.md
+[11:06] The below text is "1. Introduction" chapter of https://www.w3.org/TR/encrypted-media
+[11:13] What is CDN?
+[11:15] What is Media Stack?
+[11:17] What is MediaKeySession?
+[11:19] Which components does MediaKeySession contain?
+[11:20] Does Media Stack contain many MediaKeySession?
+[11:22] Where do frames exist in Encrypted Media Extensions?
+
+Abstract & Status of This Document @ EME.0413.md
+[11:07] The below text is "Abstract" and "Status of This Document" chapters of https://www.w3.org/TR/encrypted-media
+
+2 - Definitions @ EME.0413.md
+[11:10] The below text is "2. Definitions" chapter of https://www.w3.org/TR/encrypted-media
+[11:11] The below text is the second part of "2. Definitions" chapter of https://www.w3.org/TR/encrypted-media
+
+Memory @ OP-TEE.0327.md
+[17:07] Who can allocate SMAF memory? TA or CA
+
+Basic Concept @ DRM.0402.md
+[17:15] What is secure data path?
+
+Basic Concepts @ OP-TEE.0327.md
+[18:01] What is Op-TEE Dispatcher?
+
+FF-A, TF-A, and TrustZone @ FF-A.0409.md
+[21:09] What is SMCCC?
+[22:45] What is SPL?
+[22:56] What is fip.bin?
+
+Qualcomm @ OP-TEE.History.0407.md
+[21:37] What is SPU?
+[21:40] Does SPU have secret keys?
+
+Development @ OP-TEE.0327.md
+[21:54] What is libteec.so?
+[21:55] Does libteec.so run in EL0 or EL1?
+[21:56] Does optee.ko run in EL1?
+[21:58] What is TEE supplicant?
+
+Privilege Levels @ TrustZone.0329.md
+[22:31] Are EL3 and S-EL3 same?
+
+PKCS#11 @ OP-TEE.0327.md
+[23:03] What is HUK?
+[23:04] So what is TSK?
+
+Chats
+
+Arm.0410.md
+[08:48] How do I specify the execution states (64-bit, 32-bit) of Armv8-A?
+[08:50] How do I specify AArch32 and AArch64 of Armv8-A?
+
+OP-TEE.0327.md
+[17:58] What is opteed?
+
