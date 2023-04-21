@@ -5,6 +5,7 @@ import re
 import datetime
 import my_pkg.util as util
 import my_pkg.qs as qs
+import my_pkg.report as report
 
 import pdb
 br = pdb.set_trace
@@ -128,7 +129,7 @@ def main():
     #
 
     if not args.silence:
-        util.dump_sections(section_ls)
+        qs.dump_sections(section_ls)
 
     #
     # Build fn_qa_ls_d
@@ -163,7 +164,7 @@ def main():
     #
 
     print('Write: %s' % fn_answer)
-    util.write_sections(section_ls, [], fn_answer, dis_date=True, dis_q_date=True, dis_q_time=False)
+    report.write_sections(section_ls, [], fn_answer, dis_date=True, dis_q_date=True, dis_q_time=False)
 
 if __name__ == '__main__':
     main()

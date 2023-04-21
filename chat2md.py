@@ -2,8 +2,9 @@ import argparse
 import sys
 import os
 import json
-import util
 import pdb
+
+import my_pkg.util as util 
 
 br = pdb.set_trace
 

@@ -5,15 +5,17 @@ import re
 import datetime
 import my_pkg.util as util
 import my_pkg.qs as qs
+import my_pkg.report as report
 
 import pdb
 br = pdb.set_trace
 
 def build_args():
     desc = '''
-    Usage 1: python history.py -q questions -c chats -o out-qst
-    Usage 2: python history.py -q questions -c chats -o out-qst --merge    
-    Usage 3: python history.py -c chats -o out-cht
+    Usage 1: python history.py -q questions -c chats -o out-hist-qst
+    Usage 2: python history.py -q questions -c chats -o out-hist-mrg --merge    
+    Usage 3: python history.py -q questions -c chats -o out-hist-mrg -t out-hist-mrg-txt --merge        
+    Usage 4: python history.py -c chats -o out-hist-cht
 '''
 
     #
@@ -38,7 +40,12 @@ def build_args():
             '-o',
             dest='output',
             required=True,
-            help='A directory that contains answers in MD files by date. E.g., "output-hist"')
+            help='A directory that contains answers in MD files by date. E.g., "out-hist-mrg"')
+
+    parser.add_argument(
+            '-t',
+            dest='output_text',
+            help='A directory that contains only questions in TXT files by date. E.g., "out-hist-mrg-txt"')
 
     parser.add_argument(
             '--merge',
@@ -267,6 +274,18 @@ def main():
         os.mkdir(args.output)
 
     #
+    # If use -t, check if the output_text directory exists.
+    # If not, make it.
+    #
+
+    if args.output_text != None:
+        if not os.path.exists(args.output_text):
+            print('The directory does not exist.')
+            print('Making it.')
+            print(args.output_text)
+            os.mkdir(args.output_text)
+
+    #
     # If use -q, build question_ls from questions with answers from chats.
     #
 
@@ -319,7 +338,14 @@ def main():
 
         fn_history = os.path.join(args.output, '%s.md' % date)
 
-        util.write_sections(q_section_ls, c_section_ls, fn_history, dis_date = False, dis_q_date=False, dis_q_time=True)
+        fn_history_txt = None 
+        if args.output_text:
+             fn_history_txt = os.path.join(args.output_text, '%s.txt' % date)
+
+        report.write_sections(q_section_ls, c_section_ls, fn_history, dis_date = False, dis_q_date=False, dis_q_time=True)
+        if args.output_text:
+            report.write_sections_in_text(q_section_ls, c_section_ls, fn_history_txt, dis_date = False, dis_q_date=False, dis_q_time=True)
+
 
 if __name__ == '__main__':
     main()

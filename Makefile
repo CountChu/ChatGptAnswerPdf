@@ -30,12 +30,12 @@ topdf:
 update:
 	python chatpdf.py update
 
-build:
-	python chatpdf.py build
-
 chat2md:
 	rm -rf chats
-	python chat2md.py -i download-230419 -o chats
+	python chat2md.py -i download-230421 -o chats
+
+build:
+	python chatpdf.py build
 
 hist-qst:
 	python history.py -q questions -c chats -o out-hist-qst
@@ -48,11 +48,27 @@ hist-cht:
 	#python topdf.py -i out-hist-cht-html -o out-hist-cht-pdf
 
 hist-all:
-	python history.py -q questions -c chats -o out-hist-mgr --merge
-	python tohtml.py -i out-hist-mgr -o out-hist-mgr-html
-	#python topdf.py -i out-hist-mgr-html -o out-hist-mgr-pdf
+	python history.py -q questions -c chats -o out-hist-mrg -t out-hist-mrg-txt --merge
+	python tohtml.py -i out-hist-mrg -o out-hist-mrg-html
+	#python topdf.py -i out-hist-mrg-html -o out-hist-mrg-pdf
 
-clean:
+clean-hist:
+	rm -rf out-hist-cht 
+	rm -rf out-hist-cht-html 
+	rm -rf out-hist-cht-pdf 
+	rm -rf out-hist-qst 
+	rm -rf out-hist-qst-html 
+	rm -rf out-hist-qst-pdf 
+	rm -rf out-hist-mrg 
+	rm -rf out-hist-mrg-txt 
+	rm -rf out-hist-mrg-html 
+	rm -rf out-hist-mrg-pdf 	
+
+build-hist: hist-qst hist-cht hist-all
+
+build-all: build hist-qst hist-cht hist-all
+
+clean-all:
 	rm -rf out-ans 
 	rm -rf out-ans-html 
 	rm -rf out-ans-pdf 
@@ -62,6 +78,9 @@ clean:
 	rm -rf out-hist-qst 
 	rm -rf out-hist-qst-html 
 	rm -rf out-hist-qst-pdf 
-
+	rm -rf out-hist-mrg 
+	rm -rf out-hist-mrg-txt 
+	rm -rf out-hist-mrg-html 
+	rm -rf out-hist-mrg-pdf 
 
 

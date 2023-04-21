@@ -2,6 +2,7 @@ import argparse
 import sys
 import os
 import markdown
+import shutil
 
 import my_pkg.util as util
 
@@ -53,7 +54,7 @@ def build_args():
 
     return args  
 
-def markdown_to_html(fn_md, name, extensions, css, fn_html): 
+def markdown_to_html(fn_md, name, extensions, fn_html): 
     print('Generating: %s' % (fn_html))
 
     f = open(fn_md, encoding='utf-8')
@@ -68,9 +69,7 @@ def markdown_to_html(fn_md, name, extensions, css, fn_html):
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    {css}
-    </style>
+    <link rel="stylesheet" href="github.css" type="text/css">
     <title>{name}</title>    
   </head>
   <body>
@@ -115,6 +114,14 @@ def main():
         os.mkdir(args.output)
 
     #
+    # Copy github.css
+    #
+
+    fn_css = 'github.css'
+    fn_css_dst = os.path.join(args.output, fn_css)
+    shutil.copy2(fn_css, fn_css_dst)
+
+    #
     # Build extensions.
     #
 
@@ -137,15 +144,6 @@ def main():
     ]    
 
     #
-    # Get CSS content.
-    #
-
-    fn_css = 'github.css'
-    f = open(fn_css)
-    css = f.read()
-    f.close()
-
-    #
     # Collect input Markdown files.
     #
 
@@ -162,7 +160,7 @@ def main():
             continue 
 
         fn_out = os.path.join(args.output, "%s.html" % (name))
-        markdown_to_html(fn, name, extensions, css, fn_out) 
+        markdown_to_html(fn, name, extensions, fn_out) 
 
 if __name__ == '__main__':
     main()
