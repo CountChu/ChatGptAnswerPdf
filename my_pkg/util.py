@@ -67,7 +67,7 @@ def get_files(dn):
 
 def read_lines(fn):
     lines = []
-    f = open(fn)
+    f = open(fn, encoding='utf-8')
     for line in f:
         line = line.strip()
         if line == '':
