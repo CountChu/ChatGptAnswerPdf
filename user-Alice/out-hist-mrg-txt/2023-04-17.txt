@@ -2,7 +2,7 @@
 
 Questions
 
-2022 WATZ @ Papers.OP-TEE.0406.md
+2022 WATZ ```(230406.Papers.OP-TEE.txt)```
 [22:34] Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone
 [22:40] What is the benefit of using WASM in TEE?
 [22:44] Is WATZ extended from OP-TEE?

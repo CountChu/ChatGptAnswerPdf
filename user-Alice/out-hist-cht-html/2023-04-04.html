@@ -11,37 +11,37 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-04</h1>
-<p>Created: 2023-04-22 01:03:03</p>
+<p>Created: 2023-04-26 23:54:36</p>
 <h1>Chats</h1>
 <ul>
 <li>TrustZone.0329.md<ul>
-<li><code>[09:25]</code> What are SCP and AP?</li>
-<li><code>[09:26]</code> Do SCP and AP in ARM share memory?</li>
-<li><code>[10:18]</code> What is difference between TrustZone and HSM? Please also summarize in a table.</li>
-<li><code>[10:19]</code> What are relationships between TrustZone and HSM?</li>
-<li><code>[10:20]</code> Can TrustZone totally replace HSM?</li>
-<li><code>[14:19]</code> What is differenct between Armv8-A and Armv8-M</li>
-<li><code>[14:20]</code> What is differenct between Armv8-A and Armv8-M? Please summarize as a table.</li>
+<li><code>[09:25]</code> What are SCP and AP? <code>(TrustZone.0329.md)</code></li>
+<li><code>[09:26]</code> Do SCP and AP in ARM share memory? <code>(TrustZone.0329.md)</code></li>
+<li><code>[10:18]</code> What is difference between TrustZone and HSM? Please also summarize in a table. <code>(TrustZone.0329.md)</code></li>
+<li><code>[10:19]</code> What are relationships between TrustZone and HSM? <code>(TrustZone.0329.md)</code></li>
+<li><code>[10:20]</code> Can TrustZone totally replace HSM? <code>(TrustZone.0329.md)</code></li>
+<li><code>[14:19]</code> What is differenct between Armv8-A and Armv8-M <code>(TrustZone.0329.md)</code></li>
+<li><code>[14:20]</code> What is differenct between Armv8-A and Armv8-M? Please summarize as a table. <code>(TrustZone.0329.md)</code></li>
 </ul>
 </li>
 <li>OP-TEE.0327.md<ul>
-<li><code>[09:29]</code> Why does OP-TEE initialize secondary cores when reset?</li>
-<li><code>[09:37]</code> How to detect OP-TEE dead?</li>
-<li><code>[09:38]</code> How to recovery the dead OP-TEE?</li>
-<li><code>[09:39]</code> How to automatically recovery the crashed OP-TEE?</li>
-<li><code>[09:42]</code> Can I develop a dual OP-TEE so that if one is crashed, run another.</li>
-<li><code>[10:08]</code> How to recover a crashed static TA?</li>
-<li><code>[10:10]</code> How to recover a crashed dynamic TA?</li>
-<li><code>[10:23]</code> Hot to detect if OP-TEE is tamperred at run-time?</li>
-<li><code>[10:24]</code> How to detect if OP-TEE is tamperred at run-time?</li>
-<li><code>[14:49]</code> Whare are kinds of methods to attack OP-TEE?</li>
+<li><code>[09:29]</code> Why does OP-TEE initialize secondary cores when reset? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[09:37]</code> How to detect OP-TEE dead? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[09:38]</code> How to recovery the dead OP-TEE? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[09:39]</code> How to automatically recovery the crashed OP-TEE? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[09:42]</code> Can I develop a dual OP-TEE so that if one is crashed, run another. <code>(OP-TEE.0327.md)</code></li>
+<li><code>[10:08]</code> How to recover a crashed static TA? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[10:10]</code> How to recover a crashed dynamic TA? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[10:23]</code> Hot to detect if OP-TEE is tamperred at run-time? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[10:24]</code> How to detect if OP-TEE is tamperred at run-time? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[14:49]</code> Whare are kinds of methods to attack OP-TEE? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
 <h2>TrustZone.0329.md</h2>
-<p><strong>Question:</strong> <code>[09:25]</code> What are SCP and AP?</p>
+<p><strong>Question:</strong> <code>[09:25]</code> What are SCP and AP? <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>SCP (System Control Processor) and AP (Application Processor) are two different types of processors often found in a system-on-chip (SoC) or embedded systems.</p>
 <ol>
@@ -56,14 +56,14 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>In summary, the SCP is responsible for managing low-level system functions, while the AP is responsible for running the OS and executing user applications. Together, they enable efficient and seamless operation of the system.</p>
 <hr />
-<p><strong>Question:</strong> <code>[09:26]</code> Do SCP and AP in ARM share memory?</p>
+<p><strong>Question:</strong> <code>[09:26]</code> Do SCP and AP in ARM share memory? <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>In an ARM-based system-on-chip (SoC), the System Control Processor (SCP) and Application Processor (AP) may share memory, depending on the specific SoC design and implementation. Shared memory is often used as a means of communication and data exchange between the two processors.</p>
 <p>In many cases, the SCP and AP will have access to a region of shared memory, typically implemented as SRAM, DRAM, or on-chip memory. This shared memory space allows the SCP and AP to exchange information, synchronize operations, or pass messages between them. The shared memory region can be protected by appropriate access control mechanisms, such as TrustZone or memory protection units (MPUs), to prevent unauthorized access or data corruption.</p>
 <p>However, it is essential to note that the exact memory architecture and sharing mechanism depend on the specific SoC design and implementation. In some cases, the SCP and AP may have separate memory spaces, with communication occurring through dedicated hardware channels or interfaces.</p>
 <p>In summary, SCP and AP in ARM-based SoCs can share memory depending on the specific design and implementation, enabling efficient communication and data exchange between the two processors.</p>
 <hr />
-<p><strong>Question:</strong> <code>[10:18]</code> What is difference between TrustZone and HSM? Please also summarize in a table.</p>
+<p><strong>Question:</strong> <code>[10:18]</code> What is difference between TrustZone and HSM? Please also summarize in a table. <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>TrustZone and HSM (Hardware Security Module) are both technologies that provide security features, but they are designed for different purposes and have distinct characteristics. Here is a comparison of the two:</p>
 <p>TrustZone:
@@ -136,7 +136,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </table>
 <p>Please note that the comparison above is a generalization, and specific implementations of TrustZone and HSMs may have different features and performance characteristics.</p>
 <hr />
-<p><strong>Question:</strong> <code>[10:19]</code> What are relationships between TrustZone and HSM?</p>
+<p><strong>Question:</strong> <code>[10:19]</code> What are relationships between TrustZone and HSM? <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>TrustZone and HSM (Hardware Security Module) can be used together or independently to provide security features in a system. They are not mutually exclusive and can complement each other in various ways. Here are some relationships between TrustZone and HSM:</p>
 <ol>
@@ -155,7 +155,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>In summary, TrustZone and HSM can be seen as complementary technologies that can work together to provide a comprehensive security solution. TrustZone provides isolation and protection for sensitive operations and data, while HSM delivers high-performance cryptographic operations and secure key management. Depending on the application and security requirements, they can be used together or independently.</p>
 <hr />
-<p><strong>Question:</strong> <code>[10:20]</code> Can TrustZone totally replace HSM?</p>
+<p><strong>Question:</strong> <code>[10:20]</code> Can TrustZone totally replace HSM? <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>TrustZone cannot entirely replace an HSM because they serve different purposes and have different strengths and limitations. While TrustZone can provide a secure execution environment for sensitive applications, it does not offer the same level of security, performance, and tamper-resistance as a dedicated HSM.</p>
 <p>Here are some reasons why TrustZone cannot fully replace an HSM:</p>
@@ -175,7 +175,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>In summary, while TrustZone can provide a secure environment for sensitive applications, it cannot fully replace an HSM in terms of security, performance, and tamper-resistance. Both technologies have their use cases, and depending on the security requirements, one or both can be employed in a system.</p>
 <hr />
-<p><strong>Question:</strong> <code>[14:19]</code> What is differenct between Armv8-A and Armv8-M</p>
+<p><strong>Question:</strong> <code>[14:19]</code> What is differenct between Armv8-A and Armv8-M <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Armv8-A and Armv8-M are two different profiles within the ARMv8 architecture, each targeting different types of systems and applications. Here are the main differences between Armv8-A and Armv8-M:</p>
 <ol>
@@ -207,7 +207,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>In summary, Armv8-A is designed for high-performance systems and supports both 32-bit and 64-bit instruction sets, while Armv8-M is targeted at low-power microcontrollers and supports only the 32-bit instruction set. The memory management, TrustZone implementation, and exception handling mechanisms are also tailored to the specific needs of their target applications.</p>
 <hr />
-<p><strong>Question:</strong> <code>[14:20]</code> What is differenct between Armv8-A and Armv8-M? Please summarize as a table.</p>
+<p><strong>Question:</strong> <code>[14:20]</code> What is differenct between Armv8-A and Armv8-M? Please summarize as a table. <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Here is a summary of the differences between Armv8-A and Armv8-M in a table format:</p>
 <table>
@@ -249,13 +249,13 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 <p>Armv8-A is designed for high-performance systems and supports both 32-bit and 64-bit instruction sets, while Armv8-M is targeted at low-power microcontrollers and supports only the 32-bit instruction set. The memory management, TrustZone implementation, and exception handling mechanisms are also tailored to the specific needs of their target applications.</p>
 <hr />
 <h2>OP-TEE.0327.md</h2>
-<p><strong>Question:</strong> <code>[09:29]</code> Why does OP-TEE initialize secondary cores when reset?</p>
+<p><strong>Question:</strong> <code>[09:29]</code> Why does OP-TEE initialize secondary cores when reset? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>OP-TEE initializes secondary cores during the reset process to properly configure and synchronize them with the primary core. This is important for maintaining a consistent and secure execution environment across all cores.</p>
 <p>When the system is reset, the primary core (core 0) is responsible for initializing the OP-TEE OS, including the secure world and shared resources. Once the primary core has completed the initialization process, it sends a signal to secondary cores to begin their own initialization process. Each secondary core then initializes its own secure world environment and sets up necessary data structures and configurations in alignment with the primary core.</p>
 <p>This process ensures that all cores have a consistent view of the secure world, enabling the execution of Trusted Applications (TAs) across multiple cores while maintaining security and isolation.</p>
 <hr />
-<p><strong>Question:</strong> <code>[09:37]</code> How to detect OP-TEE dead?</p>
+<p><strong>Question:</strong> <code>[09:37]</code> How to detect OP-TEE dead? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Detecting if OP-TEE is dead or non-responsive can be done through various mechanisms. Here are some approaches:</p>
 <ol>
@@ -277,7 +277,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>In case OP-TEE is determined to be non-responsive or dead, a proper recovery or debugging mechanism should be in place to handle such situations. This might include resetting the device, collecting debug information, or triggering a fail-safe mechanism.</p>
 <hr />
-<p><strong>Question:</strong> <code>[09:38]</code> How to recovery the dead OP-TEE?</p>
+<p><strong>Question:</strong> <code>[09:38]</code> How to recovery the dead OP-TEE? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Recovering from a dead or non-responsive OP-TEE depends on the root cause of the issue and the available recovery mechanisms. Here are some general steps to consider for recovery:</p>
 <ol>
@@ -302,7 +302,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>Keep in mind that the specific recovery steps will depend on your device, its hardware and software stack, and the specific issue encountered. It is essential to have a well-defined recovery plan and debugging mechanism in place for such situations.</p>
 <hr />
-<p><strong>Question:</strong> <code>[09:39]</code> How to automatically recovery the crashed OP-TEE?</p>
+<p><strong>Question:</strong> <code>[09:39]</code> How to automatically recovery the crashed OP-TEE? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Automatically recovering a crashed OP-TEE can be challenging, as the recovery process depends on the root cause of the crash and the available recovery mechanisms. However, you can implement a watchdog mechanism to detect and attempt to recover from a crash automatically. Here are some general steps to consider:</p>
 <ol>
@@ -327,7 +327,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>Please note that the specific implementation of an automatic recovery mechanism will depend on your device, its hardware and software stack, and the nature of the crash. Implementing such a mechanism can be complex and requires careful consideration of security implications and system behavior. It is essential to have a well-defined recovery plan and debugging mechanism in place for such situations.</p>
 <hr />
-<p><strong>Question:</strong> <code>[09:42]</code> Can I develop a dual OP-TEE so that if one is crashed, run another.</p>
+<p><strong>Question:</strong> <code>[09:42]</code> Can I develop a dual OP-TEE so that if one is crashed, run another. <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Developing a dual OP-TEE setup to provide redundancy in case one crashes is an interesting idea. Although it might not be straightforward, you can consider the following approach:</p>
 <ol>
@@ -349,7 +349,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>Please note that implementing a dual OP-TEE setup can be complex and may introduce additional security risks and performance overhead. It is essential to carefully analyze the system design, security implications, and potential trade-offs before implementing such a solution. Additionally, thorough testing and validation will be required to ensure the dual OP-TEE setup functions as intended without introducing new vulnerabilities or unexpected side effects.</p>
 <hr />
-<p><strong>Question:</strong> <code>[10:08]</code> How to recover a crashed static TA?</p>
+<p><strong>Question:</strong> <code>[10:08]</code> How to recover a crashed static TA? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Recovering a crashed static TA in OP-TEE may not be a straightforward process, as static TAs are linked with the OP-TEE OS binary and run in the same context as the OS. However, you can try the following steps to recover from a crashed static TA:</p>
 <ol>
@@ -374,7 +374,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>Please note that the recovery process for a crashed static TA is not ideal, as it may involve resetting the entire secure world. It is essential to design and implement the static TA with robust error handling and recovery mechanisms to minimize the risk of crashes. Additionally, you might consider using dynamic TAs instead of static TAs, as dynamic TAs offer better isolation and can be loaded and unloaded independently, making recovery easier in case of crashes.</p>
 <hr />
-<p><strong>Question:</strong> <code>[10:10]</code> How to recover a crashed dynamic TA?</p>
+<p><strong>Question:</strong> <code>[10:10]</code> How to recover a crashed dynamic TA? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Recovering a crashed dynamic TA in OP-TEE is generally more manageable than recovering a static TA since dynamic TAs run in separate contexts and can be loaded and unloaded independently. Here&rsquo;s a suggested process to recover a crashed dynamic TA:</p>
 <ol>
@@ -402,7 +402,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>Please note that it&rsquo;s essential to design and implement the dynamic TA with robust error handling and recovery mechanisms to minimize the risk of crashes. Be sure to thoroughly test and validate the TA to ensure its stability and reliability.</p>
 <hr />
-<p><strong>Question:</strong> <code>[10:23]</code> Hot to detect if OP-TEE is tamperred at run-time?</p>
+<p><strong>Question:</strong> <code>[10:23]</code> Hot to detect if OP-TEE is tamperred at run-time? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Detecting if OP-TEE has been tampered with at runtime is a challenging task, as an attacker who successfully infiltrates the TEE environment could attempt to hide their activities. However, you can implement some techniques to help identify potential tampering:</p>
 <ol>
@@ -430,7 +430,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>Keep in mind that no single technique can provide complete protection against tampering. It is crucial to use a combination of methods and maintain a strong security posture through continuous monitoring, testing, and updating of your system&rsquo;s security mechanisms.</p>
 <hr />
-<p><strong>Question:</strong> <code>[10:24]</code> How to detect if OP-TEE is tamperred at run-time?</p>
+<p><strong>Question:</strong> <code>[10:24]</code> How to detect if OP-TEE is tamperred at run-time? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Detecting if OP-TEE has been tampered with at runtime is a challenging task, as an attacker who successfully infiltrates the TEE environment could attempt to hide their activities. However, you can implement some techniques to help identify potential tampering:</p>
 <ol>
@@ -458,7 +458,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>Keep in mind that no single technique can provide complete protection against tampering. It is crucial to use a combination of methods and maintain a strong security posture through continuous monitoring, testing, and updating of your system&rsquo;s security mechanisms.</p>
 <hr />
-<p><strong>Question:</strong> <code>[14:49]</code> Whare are kinds of methods to attack OP-TEE?</p>
+<p><strong>Question:</strong> <code>[14:49]</code> Whare are kinds of methods to attack OP-TEE? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>There are various methods an attacker might use to target OP-TEE. Some of the common attack vectors include:</p>
 <ol>

@@ -2,55 +2,51 @@
 
 Questions
 
-Virtualization @ OP-TEE.0327.md
+Virtualization ```(230327.OP-TEE.txt)```
 [10:54] Does OP-TEE support VMs?
 [11:05] Is the technology of OP-TEE supporting VMs mature?
 
-Hypervisor & TrustZone @ OP-TEE.0327.md
+Hypervisor & TrustZone ```(230407.Arm.Hypervisor.txt)```
 [10:54] Can hypervisor run in secure world?
 [11:03] What is difference of runnin hypervisor in secure world and normal world. Please also summarize it in a table.
+[20:56] Please compare TrustZone and Hypervisor and also summarize in a table.
 
-2017 vTZ @ Papers.OP-TEE.0406.md
+2017 vTZ ```(230406.Papers.OP-TEE.txt)```
 [11:33] Paper: vTZ: Virtualizing ARM TrustZone
 
-2019 TrustedVIM @ Papers.OP-TEE.0406.md
+2019 TrustedVIM ```(230406.Papers.OP-TEE.txt)```
 [11:34] Paper: Cloud & Edge Trusted Virtualized Infrastructure Manager (VIM) - Security and Trust in OpenStack
 
-Compare 2017 vTZ and 2019 TrustedVIM @ Papers.OP-TEE.0406.md
+Compare 2017 vTZ and 2019 TrustedVIM ```(230406.Papers.OP-TEE.txt)```
 [11:35] What is difference between two papers? Please also summarize it in a table.
 [11:36] What is same between two papers?
 [11:39] What is difference of virtualization tech between two papers?
 
-Hypervisor @ OP-TEE.0327.md
+Hypervisor ```(230407.Arm.Hypervisor.txt)```
 [16:07] What is hypervisor?
+[20:58] Is hypervisor a software or a hardware?
 
-2020 HETEE @ Papers.OP-TEE.0406.md
+2020 HETEE ```(230406.Papers.OP-TEE.txt)```
 [16:33] Title: Enabling Rack-scale Confidential Computing using Heterogeneous Trusted Execution Environment
 
-2020 SoK TrustZone @ Papers.OP-TEE.0406.md
+2020 SoK TrustZone ```(230406.Papers.OP-TEE.txt)```
 [16:55] Title: SoK: Understanding the Prevailing Security Vulnerabilities in TrustZone-assisted TEE Systems
 
-2020 RusTEE @ Papers.OP-TEE.0406.md
+2020 RusTEE ```(230406.Papers.OP-TEE.txt)```
 [17:27] Title: RusTEE: Developing Memory-Safe ARMTrustZone Applications
 
-2020 Bao @ Papers.OP-TEE.0406.md
+2020 Bao ```(230406.Papers.OP-TEE.txt)```
 [20:36] Paper: Bao: A Lightweight Static Partitioning Hypervisor for Modern Multi-Core Embedded Systems
 [22:26] What is static partitioning?
 
-2019 Research on TrustZone @ Papers.OP-TEE.0406.md
+2019 Research on TrustZone ```(230406.Papers.OP-TEE.txt)```
 [20:39] Paper: Research on ARM TrustZone
 [21:15] The below context comes from "Other Platforms: IoT, Drone, Cloud" of the paper "Research on ARM TrustZone"
 [21:17] In the context, vTZ run in normal world. Why does not vTZ run in normal world need to trust REE hypervisor?
 
-2019 TEEv @ Papers.OP-TEE.0406.md
+2019 TEEv ```(230406.Papers.OP-TEE.txt)```
 [20:41] Paper: TEEv: Virtualizing Trusted Execution Environmentson Mobile Platforms
 [21:54] Please compare TEEv and vTZ and also summarize them in a table.
-
-Hypervisor & TrustZone @ TrustZone.0329.md
-[20:56] Please compare TrustZone and Hypervisor and also summarize in a table.
-
-Hypervisor @ TrustZone.0329.md
-[20:58] Is hypervisor a software or a hardware?
 
 Chats
 

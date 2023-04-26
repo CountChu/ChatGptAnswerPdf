@@ -2,30 +2,30 @@
 
 Questions
 
-2020 Bao @ Papers.OP-TEE.0406.md
+2020 Bao ```(230406.Papers.OP-TEE.txt)```
 [09:02] Is Bao a hypervisor?
 
-Hypervisor & Virtualization @ Papers.OP-TEE.0406.md
+Hypervisor & Virtualization ```(230407.Arm.Hypervisor.txt)```
 [09:04] Please compare hypervisor and virtualization and also summarize them in a table.
 [09:05] Is TrustZone a hypervisor or virtualization?
 [09:06] Is OP-TEE a hypervisor or virtualization?
 [09:07] Does virtualization depend on hypervisor?
 [14:05] Are there alnatives of hypervisor?
 
-VM @ Papers.OP-TEE.0406.md
+VM ```(230407.Arm.Hypervisor.txt)```
 [13:56] Does VM require hypervisor?
 [14:07] Can a VM contain VMs?
 
-Virtualization @ Papers.OP-TEE.0406.md
+Virtualization ```(230407.Arm.Hypervisor.txt)```
 [13:59] What are types of virtualization techs?
 
-Hypervisor @ Papers.OP-TEE.0406.md
+Hypervisor ```(230407.Arm.Hypervisor.txt)```
 [14:04] Is hypvervisor a virtual machine manager?
 
-TCB @ TrustZone.0329.md
+TCB ```(230407.Arm.Hypervisor.txt)```
 [16:32] What are components in TCB?
 
-History @ OP-TEE.History.0407.md
+History ```(230407.OP-TEE.History.txt)```
 [21:23] Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone about TrustZone and Qualcomm about TEE. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail.
 [21:26] Please display above context in a table. X axis of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm.  Y asis of the table are years.
 [21:30] When did Qualcomm release QTEE?

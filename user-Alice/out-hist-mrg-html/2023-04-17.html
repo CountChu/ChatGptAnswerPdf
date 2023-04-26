@@ -11,21 +11,21 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-17</h1>
-<p>Created: 2023-04-22 01:03:21</p>
+<p>Created: 2023-04-26 23:54:58</p>
 <h1>Questions</h1>
 <ul>
-<li>2022 WATZ @ Papers.OP-TEE.0406.md<ul>
-<li><code>[22:34]</code> Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone</li>
-<li><code>[22:40]</code> What is the benefit of using WASM in TEE?</li>
-<li><code>[22:44]</code> Is WATZ extended from OP-TEE?</li>
-<li><code>[22:55]</code> What is Remote Attestation?</li>
-<li><code>[22:59]</code> So the software is provided by the remote device and the party verify the signature of the software before run it. Right?</li>
-<li><code>[23:01]</code> Is remote attestation only used  to verify software?</li>
-<li><code>[23:03]</code> How does a remote device declare that secure boot is enabled?</li>
-<li><code>[23:07]</code> But how does the party(verifier) determine if the report is fake if the device is breached?</li>
-<li><code>[23:11]</code> How does the party(verifier) verify the root of trust of the device?</li>
-<li><code>[23:13]</code> Can remote attestation help the party know if the remote device is breached?</li>
-<li><code>[23:19]</code> Can TEE guarantee the code?</li>
+<li>2022 WATZ <code>(230406.Papers.OP-TEE.txt)</code><ul>
+<li><code>[22:34]</code> Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:40]</code> What is the benefit of using WASM in TEE? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:44]</code> Is WATZ extended from OP-TEE? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:55]</code> What is Remote Attestation? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:59]</code> So the software is provided by the remote device and the party verify the signature of the software before run it. Right? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:01]</code> Is remote attestation only used  to verify software? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:03]</code> How does a remote device declare that secure boot is enabled? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:07]</code> But how does the party(verifier) determine if the report is fake if the device is breached? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:11]</code> How does the party(verifier) verify the root of trust of the device? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:13]</code> Can remote attestation help the party know if the remote device is breached? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:19]</code> Can TEE guarantee the code? <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
 </ul>
@@ -33,15 +33,15 @@
 <h1>Chats</h1>
 <ul>
 <li>Papers.OP-TEE.0406.md<ul>
-<li><code>[22:38]</code> What is perormance of WATZ?</li>
-<li><code>[22:42]</code> Is WATZ a TA?</li>
+<li><code>[22:38]</code> What is perormance of WATZ? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:42]</code> Is WATZ a TA? <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
-<h2>2022 WATZ @ Papers.OP-TEE.0406.md</h2>
-<p><strong>Question:</strong> <code>[22:34]</code> Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone</p>
+<h2>2022 WATZ <code>(230406.Papers.OP-TEE.txt)</code></h2>
+<p><strong>Question:</strong> <code>[22:34]</code> Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The paper &ldquo;WATZ: A Trusted WebAssembly Runtime Environment with Remote Attestation for TrustZone&rdquo; presents WATZ, a runtime environment designed for the efficient and secure execution of WebAssembly (Wasm) code within Arm&rsquo;s TrustZone trusted execution environment (TEE). The runtime also incorporates a lightweight remote attestation system tailored to Wasm applications running in TrustZone, as TrustZone lacks built-in mechanisms for attestation.</p>
 <p>The primary research questions that WATZ aims to address include:
@@ -51,7 +51,7 @@
 <p>WATZ extends OP-TEE, a popular open-source trusted OS, and the prototype is validated with Arm hardware. The system successfully hosts Wasm applications in TrustZone, leveraging the WASI standard, a POSIX-like layer for Wasm, to interact with the TEE facilities. The paper also proposes a remote attestation protocol to attest Wasm code embedded in the trusted environment, ensuring that executed Wasm binaries are trustworthy, similarly to Intel SGX.</p>
 <p>In terms of performance, WATZ is on par with Wasm applications executed outside of the TEE, and up to 2.12 times slower compared to native execution. This difference is considered negligible given the security benefits provided by WATZ.</p>
 <hr />
-<p><strong>Question:</strong> <code>[22:40]</code> What is the benefit of using WASM in TEE?</p>
+<p><strong>Question:</strong> <code>[22:40]</code> What is the benefit of using WASM in TEE? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Using WebAssembly (WASM) in a Trusted Execution Environment (TEE) provides several benefits, making it a valuable choice for enhancing security and interoperability in various applications:</p>
 <ol>
@@ -73,29 +73,29 @@
 </ol>
 <p>Overall, integrating WASM in TEEs allows for enhanced security, performance, and interoperability in various use cases, including smartphones, automotive applications, IoT devices, and edge computing.</p>
 <hr />
-<p><strong>Question:</strong> <code>[22:44]</code> Is WATZ extended from OP-TEE?</p>
+<p><strong>Question:</strong> <code>[22:44]</code> Is WATZ extended from OP-TEE? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, WATZ is extended from OP-TEE. OP-TEE (Open Portable Trusted Execution Environment) is a popular open-source trusted operating system for Arm TrustZone. WATZ extends OP-TEE by adding support for running WebAssembly (WASM) code inside Arm&rsquo;s TrustZone TEE and providing a lightweight remote attestation system optimized for WASM applications running in TrustZone. This extension allows WATZ to offer a secure and efficient runtime environment for WASM applications within the TrustZone TEE.</p>
 <hr />
-<p><strong>Question:</strong> <code>[22:55]</code> What is Remote Attestation?</p>
+<p><strong>Question:</strong> <code>[22:55]</code> What is Remote Attestation? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Remote attestation is a security mechanism used to verify the authenticity and integrity of software running on a remote device, typically within a trusted execution environment (TEE) or a secure enclave, like Intel SGX or Arm TrustZone. It helps establish trust between a remote device and a verifying party by providing evidence that the software running on the remote device is genuine, unaltered, and operating in a secure environment.</p>
 <p>In a remote attestation process, the remote device generates a cryptographic signature or proof, which includes information about the software&rsquo;s state and the secure environment. This proof is then sent to the verifying party, who can validate the signature using a public key or a pre-shared key. If the signature is valid and the software&rsquo;s state meets the expected criteria, the verifying party can trust the remote device and its software.</p>
 <p>Remote attestation is particularly useful in scenarios where devices are deployed in untrusted or potentially compromised environments, such as IoT devices or cloud servers. It enables the establishment of trust between distributed devices and helps ensure the confidentiality and integrity of sensitive data and processes.</p>
 <hr />
-<p><strong>Question:</strong> <code>[22:59]</code> So the software is provided by the remote device and the party verify the signature of the software before run it. Right?</p>
+<p><strong>Question:</strong> <code>[22:59]</code> So the software is provided by the remote device and the party verify the signature of the software before run it. Right? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, that&rsquo;s correct. In remote attestation, the software running on the remote device generates a cryptographic signature or proof, which includes information about the software&rsquo;s state and the secure environment. This proof is then sent to the verifying party.</p>
 <p>The verifying party checks the signature using a public key or a pre-shared key, and if the signature is valid and the software&rsquo;s state meets the expected criteria, the verifying party can trust that the software running on the remote device is genuine and unaltered.</p>
 <p>In other words, remote attestation allows the verifying party to confirm the authenticity and integrity of the software running on the remote device before deciding to trust it and establish secure communication or share sensitive data.</p>
 <hr />
-<p><strong>Question:</strong> <code>[23:01]</code> Is remote attestation only used  to verify software?</p>
+<p><strong>Question:</strong> <code>[23:01]</code> Is remote attestation only used  to verify software? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Remote attestation is primarily used to verify the authenticity and integrity of software running in a secure environment, such as a trusted execution environment (TEE) or secure enclave. However, remote attestation can also be extended to cover aspects of the underlying hardware or firmware.</p>
 <p>In some cases, remote attestation can be used to verify the configuration and state of the hardware or firmware to ensure it meets specific security requirements or complies with certain policies. For example, it can be used to verify that secure boot has been enabled, or that a specific hardware component is genuine and not tampered with.</p>
 <p>So, while remote attestation is primarily focused on software, it can also be applied to hardware and firmware components in certain scenarios to provide a higher level of assurance about the security and trustworthiness of the entire system.</p>
 <hr />
-<p><strong>Question:</strong> <code>[23:03]</code> How does a remote device declare that secure boot is enabled?</p>
+<p><strong>Question:</strong> <code>[23:03]</code> How does a remote device declare that secure boot is enabled? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>A remote device can declare that secure boot is enabled by providing evidence in the form of a signed measurement or attestation report. This process involves the following steps:</p>
 <ol>
@@ -117,7 +117,7 @@
 </ol>
 <p>This process allows the remote party to verify that secure boot is enabled on the device and that the device&rsquo;s boot chain components are genuine and have not been tampered with.</p>
 <hr />
-<p><strong>Question:</strong> <code>[23:07]</code> But how does the party(verifier) determine if the report is fake if the device is breached?</p>
+<p><strong>Question:</strong> <code>[23:07]</code> But how does the party(verifier) determine if the report is fake if the device is breached? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The remote attestation process relies on the hardware-backed security provided by secure elements like TPM (Trusted Platform Module) or TEE (Trusted Execution Environment) to ensure the integrity and authenticity of the attestation report. However, if the device is breached and the attacker can compromise these secure elements, the remote attestation process could potentially be fooled.</p>
 <p>To minimize the risk of accepting fake reports, the verifier should follow these best practices:</p>
@@ -140,7 +140,7 @@
 </ol>
 <p>It is important to note that no security measure is foolproof, and sophisticated attackers might still find ways to breach a system. However, following best practices and employing a defense-in-depth approach can significantly increase the difficulty for an attacker to compromise the remote attestation process.</p>
 <hr />
-<p><strong>Question:</strong> <code>[23:11]</code> How does the party(verifier) verify the root of trust of the device?</p>
+<p><strong>Question:</strong> <code>[23:11]</code> How does the party(verifier) verify the root of trust of the device? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>To verify the root of trust (RoT) of a device, the verifier (the party receiving the attestation report) must follow these steps:</p>
 <ol>
@@ -162,7 +162,7 @@
 </ol>
 <p>By following these steps, the verifier can establish trust in the device&rsquo;s root of trust, making it difficult for an attacker to generate a fake attestation report. However, it is essential to maintain up-to-date trust anchors (e.g., root certificates) and follow best practices to ensure the security of the remote attestation process.</p>
 <hr />
-<p><strong>Question:</strong> <code>[23:13]</code> Can remote attestation help the party know if the remote device is breached?</p>
+<p><strong>Question:</strong> <code>[23:13]</code> Can remote attestation help the party know if the remote device is breached? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Remote attestation can help the party (verifier) determine if the remote device might be breached, but it does not provide a 100% guarantee. Remote attestation provides information about the device&rsquo;s hardware, firmware, and software configuration, as well as measurements of the boot process and the integrity of the executed code.</p>
 <p>If the device is compromised, there is a chance that the integrity measurements included in the attestation report will not match the expected values. The verifier can then detect the discrepancy and decide not to trust the device. However, if the breach is sophisticated enough and can tamper with the attestation process itself, it might be challenging to detect the breach using remote attestation alone.</p>
@@ -176,7 +176,7 @@
 </ol>
 <p>By employing a comprehensive security approach and using remote attestation as one of the security mechanisms, the verifier can have a higher level of confidence in detecting if a remote device is breached. However, it is essential to remember that no security measure can provide absolute certainty.</p>
 <hr />
-<p><strong>Question:</strong> <code>[23:19]</code> Can TEE guarantee the code?</p>
+<p><strong>Question:</strong> <code>[23:19]</code> Can TEE guarantee the code? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>A Trusted Execution Environment (TEE) can provide a high level of assurance regarding the integrity and confidentiality of the code executed within it, but it cannot provide an absolute guarantee. A TEE isolates sensitive code and data from the rest of the system, protecting them from unauthorized access or tampering by malicious software or external attackers.</p>
 <p>TEEs, such as ARM TrustZone or Intel SGX, leverage hardware-based security features to create a secure enclave where sensitive operations can be performed. These enclaves provide a range of security properties, including:</p>
@@ -190,12 +190,12 @@
 <p>While TEEs can provide a high level of assurance for the code they execute, it is essential to remember that no security measure can offer absolute certainty. Regularly updating the software, firmware, and security configurations of the TEE, as well as employing a comprehensive security approach that includes other security mechanisms, can help reduce the risk of compromise.</p>
 <hr />
 <h2>Papers.OP-TEE.0406.md</h2>
-<p><strong>Question:</strong> <code>[22:38]</code> What is perormance of WATZ?</p>
+<p><strong>Question:</strong> <code>[22:38]</code> What is perormance of WATZ? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The performance of WATZ, a Trusted WebAssembly Runtime Environment for TrustZone, is quite promising. According to the paper, the performance of WATZ is on par with WebAssembly (Wasm) applications executed outside of the trusted execution environment (TEE). The runtime has a performance overhead of up to 2.12 times compared to native execution.</p>
 <p>Despite the performance overhead, the difference is considered negligible when compared to the security benefits provided by WATZ. The system allows for the efficient and secure execution of Wasm code within Arm&rsquo;s TrustZone TEE and adds support for remote attestation, enhancing the security and trustworthiness of Wasm applications.</p>
 <hr />
-<p><strong>Question:</strong> <code>[22:42]</code> Is WATZ a TA?</p>
+<p><strong>Question:</strong> <code>[22:42]</code> Is WATZ a TA? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>No, WATZ is not a Trusted Application (TA). WATZ, or WebAssembly TrustZone, is a trusted runtime environment for executing WebAssembly (WASM) code inside Arm&rsquo;s TrustZone TEE (Trusted Execution Environment). It also includes a lightweight remote attestation system optimized for WASM applications running in TrustZone, as TrustZone itself lacks built-in mechanisms for attestation.</p>
 <p>WATZ is designed to provide a secure and efficient way to run WASM applications inside the TrustZone TEE while offering remote attestation capabilities. It is not a specific Trusted Application, but rather an environment in which multiple WASM-based TAs can be executed securely.</p>

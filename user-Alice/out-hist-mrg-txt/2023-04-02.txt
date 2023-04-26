@@ -2,13 +2,13 @@
 
 Questions
 
-Secure Storage @ OP-TEE.0327.md
+Secure Storage ```(230327.OP-TEE.txt)```
 [08:10] How does OP-TEE generate SSK from HUK in tee_fs_init_key_manager()?
 [08:12] In the function, can I read the content of the HUK?
 [08:18] How do I protect HUK from reading in OP-TEE?
 [08:20] Is SSK defined in GlobalPlatform?
 
-Basic Concept @ DRM.0402.md
+Basic Concept ```(230402.DRM.txt)```
 [14:25] What is DRM?
 [14:26] How does DRM protect digital contents?
 [14:28] Please describe more detail about encryption method.
@@ -17,24 +17,22 @@ Basic Concept @ DRM.0402.md
 [16:56] What is PlayReady?
 [17:00] What is kind of DRM?
 
-DRM @ OP-TEE.0327.md
+DRM ```(230327.OP-TEE.txt)```
 [14:35] How do I implement DRM of content decryption with OP-TEE?
 [14:39] So the content is decrypted in TA in secure world. Right?
 [14:41] But does it slow down the playback speed because of switching between normal world and secure world?
 [14:44] Can I use multi cores to solve the problem? For example, one core decrypts content and another core play content at the same time.
-[15:49] Does OP-TEE support TUI?
-[15:51] Can I develop a TA with TUI to play video in OP-TEE?
 [16:10] How do I implement a DRM solution using ClearKey in OP-TEE?
 
-Memory @ OP-TEE.0327.md
+Memory ```(230327.OP-TEE.txt)```
 [17:33] What is SMAF?
 [17:45] What is CMA?
 
-Qualcomm @ OP-TEE.0327.md
+Qualcomm ```(230327.OP-TEE.txt)```
 [20:26] Does Qualcomm support OP-TEE?
 [20:28] Is QTEE open source?
 
-Static TA and Dynamic TA @ OP-TEE.0327.md
+Static TA and Dynamic TA ```(230327.OP-TEE.txt)```
 [20:31] What are Static TA and Dynamic TA? Please also summarize them in a table.
 
 Chats
@@ -42,6 +40,8 @@ Chats
 OP-TEE.0327.md
 [08:09] How does OP-TEE generate SSK from HUK?
 [14:33] How do I implement DRM with OP-TEE?
+[15:49] Does OP-TEE support TUI?
+[15:51] Can I develop a TA with TUI to play video in OP-TEE?
 [16:09] What is ClearKey in OP-TEE?
 
 DRM.0402.md

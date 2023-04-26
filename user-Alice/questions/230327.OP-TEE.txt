@@ -132,8 +132,6 @@ DRM
     q: So the content is decrypted in TA in secure world. Right?
     q: But does it slow down the playback speed because of switching between normal world and secure world?
     q: Can I use multi cores to solve the problem? For example, one core decrypts content and another core play content at the same time.
-    q: Does OP-TEE support TUI?
-    q: Can I develop a TA with TUI to play video in OP-TEE?
     q: How do I implement a DRM solution using ClearKey in OP-TEE?
 
     q-prefix: Below text comes from "BKK16-201 - PlayReady OPTEE Integration with Secure Video Path"

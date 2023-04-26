@@ -11,32 +11,32 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-08</h1>
-<p>Created: 2023-04-22 01:02:45</p>
+<p>Created: 2023-04-26 23:54:14</p>
 <h1>Questions</h1>
 <ul>
-<li>2020 Demystifying TEE Client API @ Papers.OP-TEE.0406.md<ul>
-<li><code>[11:30]</code> Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE</li>
+<li>2020 Demystifying TEE Client API <code>(230406.Papers.OP-TEE.txt)</code><ul>
+<li><code>[11:30]</code> Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
-<li>Virtualization @ OP-TEE.0327.md<ul>
-<li><code>[23:11]</code> The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html</li>
-<li><code>[23:15]</code> Does the hypervisor relied on OP-TEE run in normal world or secure world?</li>
-<li><code>[23:19]</code> Does a TA run in a VM described in the article?</li>
+<li>Virtualization <code>(230327.OP-TEE.txt)</code><ul>
+<li><code>[23:11]</code> The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html <code>(OP-TEE.0327.md)</code></li>
+<li><code>[23:15]</code> Does the hypervisor relied on OP-TEE run in normal world or secure world? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[23:19]</code> Does a TA run in a VM described in the article? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
-<h2>2020 Demystifying TEE Client API @ Papers.OP-TEE.0406.md</h2>
-<p><strong>Question:</strong> <code>[11:30]</code> Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE</p>
+<h2>2020 Demystifying TEE Client API <code>(230406.Papers.OP-TEE.txt)</code></h2>
+<p><strong>Question:</strong> <code>[11:30]</code> Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Title: Demystifying ARM TrustZone TEE Client API using OP-TEE</p>
 <p>Abstract:
 With the increased use of mobile devices for various purposes, such as payment systems, the need for secure storage of critical data has become more important. Trusted Execution Environment (TEE) technology has emerged as a solution to provide a secure execution environment for sensitive data. ARM TrustZone technology, primarily used in mobile devices, divides a physical processor into the Normal World and Secure World, ensuring a safer execution environment. While various manufacturers have adopted TrustZone technology, existing commercial TEEs have limitations in conducting security research using TrustZone.</p>
 <p>This paper introduces OP-TEE, an open-source project for implementing ARM TrustZone technology, and the TEE Client API that enables communication with Trusted Applications within the TrustZone Secure World. To demystify the TEE Client API, the authors also implemented a simple trusted application for communication between the Normal World and Secure World in the OP-TEE OS using the QEMU emulator. This research aims to make the TEE Client API more accessible and easier to understand for researchers and developers working with ARM TrustZone technology.</p>
 <hr />
-<h2>Virtualization @ OP-TEE.0327.md</h2>
-<p><strong>Question:</strong> <code>[23:11]</code> The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html</p>
+<h2>Virtualization <code>(230327.OP-TEE.txt)</code></h2>
+<p><strong>Question:</strong> <code>[23:11]</code> The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The following is a summary of OP-TEE&rsquo;s experimental virtualization support, as described in the article:</p>
 <ul>
@@ -50,11 +50,11 @@ With the increased use of mobile devices for various purposes, such as payment s
 </ul>
 <p>This summary provides an overview of OP-TEE&rsquo;s experimental virtualization support, but it is essential to refer to the original documentation for a complete understanding of the technology, its requirements, and its limitations.</p>
 <hr />
-<p><strong>Question:</strong> <code>[23:15]</code> Does the hypervisor relied on OP-TEE run in normal world or secure world?</p>
+<p><strong>Question:</strong> <code>[23:15]</code> Does the hypervisor relied on OP-TEE run in normal world or secure world? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The hypervisor that OP-TEE relies on runs in the normal world. It is responsible for managing multiple virtual machines and handling the communication between the normal world and OP-TEE in the secure world. The hypervisor must be aware of OP-TEE, handle SMCs from virtual guests, perform IPA &lt;-&gt; PA address translation, and manage memory pages shared between VMs and OP-TEE.</p>
 <hr />
-<p><strong>Question:</strong> <code>[23:19]</code> Does a TA run in a VM described in the article?</p>
+<p><strong>Question:</strong> <code>[23:19]</code> Does a TA run in a VM described in the article? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>No, a Trusted Application (TA) does not run inside a Virtual Machine (VM) as described in the article. Instead, the TA runs in the secure world within the OP-TEE environment. The hypervisor manages the VMs in the normal world and is responsible for handling the communication between the normal world and OP-TEE in the secure world. When OP-TEE has virtualization support enabled, it allows multiple VMs to utilize a single OP-TEE instance for running TAs while maintaining isolation between the VM-related states.</p>
 <hr />

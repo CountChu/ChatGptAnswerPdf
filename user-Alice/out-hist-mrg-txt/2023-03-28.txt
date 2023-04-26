@@ -2,7 +2,7 @@
 
 Questions
 
-Basic Concepts @ OP-TEE.0327.md
+Basic Concepts ```(230327.OP-TEE.txt)```
 [09:12] What is OP-TEE?
 [09:13] What is thre prefix OP of OP-TEE?
 [09:13] Are there alternative technologies of OP-TEE?
@@ -12,21 +12,21 @@ Basic Concepts @ OP-TEE.0327.md
 [09:16] What are different between ARM OP-TEE and Intel SMM? Please also summarize in a table.
 [15:19] https://github.com/OP-TEE
 
-Multi-Thread & Multi-Process @ OP-TEE.0327.md
+Multi-Thread & Multi-Process ```(230327.OP-TEE.txt)```
 [13:51] What is secure context switching in TrustZone?
 [13:53] Does OP-TEE support multi-process?
 [13:56] Can secure kernel and trusted applications in OP-TEE can be multi-thread?
 [13:57] Does OP-TEE support IPC?
 
-Memory @ OP-TEE.0327.md
+Memory ```(230327.OP-TEE.txt)```
 [13:59] Does OP-TEE support shared memory?
 [14:06] Can secure world can access memory in normal world?
 [14:07] Can normal world access memory in secure world?
 
-Network @ OP-TEE.0327.md
+Network ```(230327.OP-TEE.txt)```
 [14:08] Does OP-TEE support network communication in secure world?
 
-The ariticle @ TrustZone.0329.md
+The ariticle ```(230329.TrustZone.txt)```
 [15:30] https://genode.org/documentation/articles/trustzone
 [15:31] Please summarize the following articles in short.
 [17:37] Please compare TrustZone and TPM in a table.

@@ -11,24 +11,24 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-12</h1>
-<p>Created: 2023-04-22 01:03:21</p>
+<p>Created: 2023-04-26 23:54:58</p>
 <h1>Questions</h1>
 <ul>
-<li>TCB @ Papers.OP-TEE.0406.md<ul>
-<li><code>[10:36]</code> What are Security Building Blocks?</li>
-<li><code>[10:37]</code> What compare Security Building Block and TCB and also summarize them in a table.</li>
+<li>TCB <code>(230407.Arm.Hypervisor.txt)</code><ul>
+<li><code>[10:36]</code> What are Security Building Blocks? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[10:37]</code> What compare Security Building Block and TCB and also summarize them in a table. <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
-<li>FF-A, TF-A, and TrustZone @ FF-A.0409.md<ul>
-<li><code>[10:59]</code> Is TF-A persistent in memory at run-time?</li>
+<li>FF-A, TF-A, and TrustZone <code>(230409.FF-A.txt)</code><ul>
+<li><code>[10:59]</code> Is TF-A persistent in memory at run-time? <code>(FF-A.0409.md)</code></li>
 </ul>
 </li>
-<li>Development @ OP-TEE.0327.md<ul>
-<li><code>[14:47]</code> What is about size of tee.bin?</li>
+<li>Development <code>(230327.OP-TEE.txt)</code><ul>
+<li><code>[14:47]</code> What is about size of tee.bin? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Types of ARM CPU @ Arm.0410.md<ul>
-<li><code>[16:48]</code> Can I get Armv8-A with only 32-bit for cost down?</li>
+<li>Types of ARM CPU <code>(230410.Arm.txt)</code><ul>
+<li><code>[16:48]</code> Can I get Armv8-A with only 32-bit for cost down? <code>(Arm.0410.md)</code></li>
 </ul>
 </li>
 </ul>
@@ -36,17 +36,17 @@
 <h1>Chats</h1>
 <ul>
 <li>OP-TEE.0327.md<ul>
-<li><code>[14:46]</code> What is size of tee.bin?</li>
-<li><code>[15:37]</code> Is SMAF of OP-TEE?</li>
-<li><code>[15:39]</code> How is SMAF used in DRM?</li>
-<li><code>[15:41]</code> What is Clear Key?</li>
+<li><code>[14:46]</code> What is size of tee.bin? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[15:37]</code> Is SMAF of OP-TEE? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[15:39]</code> How is SMAF used in DRM? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[15:41]</code> What is Clear Key? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
-<h2>TCB @ Papers.OP-TEE.0406.md</h2>
-<p><strong>Question:</strong> <code>[10:36]</code> What are Security Building Blocks?</p>
+<h2>TCB <code>(230407.Arm.Hypervisor.txt)</code></h2>
+<p><strong>Question:</strong> <code>[10:36]</code> What are Security Building Blocks? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Security Building Blocks refer to the fundamental components or technologies used to design and implement a secure system. These building blocks form the foundation for creating secure software, hardware, and network architectures. They are essential for safeguarding sensitive information and ensuring that systems are resistant to unauthorized access, manipulation, or other forms of attack. Some common security building blocks include:</p>
 <ol>
@@ -80,7 +80,7 @@
 </ol>
 <p>These building blocks, when combined and implemented correctly, create a robust and secure foundation for any system, ensuring the protection of data and the prevention of unauthorized access or attacks.</p>
 <hr />
-<p><strong>Question:</strong> <code>[10:37]</code> What compare Security Building Block and TCB and also summarize them in a table.</p>
+<p><strong>Question:</strong> <code>[10:37]</code> What compare Security Building Block and TCB and also summarize them in a table. <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Security Building Blocks and Trusted Computing Base (TCB) are two related concepts in the context of secure system design. Here is a comparison between the two:</p>
 <table>
@@ -121,27 +121,27 @@
 </table>
 <p>In summary, Security Building Blocks are the fundamental components and technologies used to create secure systems, while the Trusted Computing Base (TCB) represents the minimal set of critical components essential for ensuring the security of a system. Security Building Blocks can be seen as the elements that are combined to create a secure system, whereas the TCB is the core of the system, ensuring its overall security.</p>
 <hr />
-<h2>FF-A, TF-A, and TrustZone @ FF-A.0409.md</h2>
-<p><strong>Question:</strong> <code>[10:59]</code> Is TF-A persistent in memory at run-time?</p>
+<h2>FF-A, TF-A, and TrustZone <code>(230409.FF-A.txt)</code></h2>
+<p><strong>Question:</strong> <code>[10:59]</code> Is TF-A persistent in memory at run-time? <code>(FF-A.0409.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, the Trusted Firmware-A (TF-A) is typically persistent in memory at run-time. It resides in the secure memory region and provides various services, such as Secure Monitor Call (SMC) handling, Power State Coordination Interface (PSCI) implementation, and other platform-specific services. Since it acts as a secure monitor, it must remain present in memory during the system&rsquo;s operation to handle any secure world requests or transitions between secure and non-secure worlds.</p>
 <hr />
-<h2>Development @ OP-TEE.0327.md</h2>
-<p><strong>Question:</strong> <code>[14:47]</code> What is about size of tee.bin?</p>
+<h2>Development <code>(230327.OP-TEE.txt)</code></h2>
+<p><strong>Question:</strong> <code>[14:47]</code> What is about size of tee.bin? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The size of the <code>tee.bin</code> file, which is the OP-TEE OS binary, can vary depending on various factors such as the target platform, configuration options, and enabled features. It&rsquo;s difficult to give an exact size for a specific <code>tee.bin</code> file without knowing the specific build configuration.</p>
 <p>However, generally speaking, the size of the <code>tee.bin</code> file is relatively small, usually ranging from a few hundred kilobytes to a couple of megabytes. This small footprint is one of the reasons why OP-TEE is suitable for use in constrained environments, such as embedded systems and IoT devices.</p>
 <p>Keep in mind that the actual size of the <code>tee.bin</code> file in your specific case can be different depending on the factors mentioned earlier.</p>
 <hr />
-<h2>Types of ARM CPU @ Arm.0410.md</h2>
-<p><strong>Question:</strong> <code>[16:48]</code> Can I get Armv8-A with only 32-bit for cost down?</p>
+<h2>Types of ARM CPU <code>(230410.Arm.txt)</code></h2>
+<p><strong>Question:</strong> <code>[16:48]</code> Can I get Armv8-A with only 32-bit for cost down? <code>(Arm.0410.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>While the Armv8-A architecture includes both 64-bit (AArch64) and 32-bit (AArch32) execution states, there is no specific variant of Armv8-A that exclusively supports 32-bit operation for cost reduction. The idea behind Armv8-A&rsquo;s dual execution states is to provide compatibility with existing 32-bit software while taking advantage of 64-bit enhancements.</p>
 <p>If you are looking for a lower-cost, 32-bit ARM processor option, you may want to consider Cortex-M or Cortex-R series processors. These processors are designed for cost-sensitive, low-power, and real-time applications, respectively.</p>
 <p>Cortex-M series processors, in particular, are widely used in microcontroller and Internet of Things (IoT) applications, where power efficiency and lower costs are essential. Cortex-R series processors cater to real-time systems that require fast, deterministic response times and high reliability. While both of these processor families are primarily 32-bit, the Armv8-M architecture for Cortex-M series also introduced a 64-bit variant (Armv8-M Mainline).</p>
 <hr />
 <h2>OP-TEE.0327.md</h2>
-<p><strong>Question:</strong> <code>[14:46]</code> What is size of tee.bin?</p>
+<p><strong>Question:</strong> <code>[14:46]</code> What is size of tee.bin? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The size of <code>tee.bin</code> (the OP-TEE OS binary) can vary depending on the configuration, target platform, and enabled features. It is not possible to provide an exact size, as it can change with each build based on the selected options.</p>
 <p>To get the size of your specific <code>tee.bin</code> file, you can use the following command in your terminal (assuming you have already built the OP-TEE OS binary):</p>
@@ -155,13 +155,13 @@
 
 <p>Again, replace <code>path/to/your/tee.bin</code> with the actual path to the binary file. This command will output the file size in bytes.</p>
 <hr />
-<p><strong>Question:</strong> <code>[15:37]</code> Is SMAF of OP-TEE?</p>
+<p><strong>Question:</strong> <code>[15:37]</code> Is SMAF of OP-TEE? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>SMAF (Secure Memory Allocation Framework) is not directly related to OP-TEE. SMAF is a generic term used to describe a framework for securely allocating memory in a computer system. It is designed to prevent unauthorized access to memory regions and protect sensitive information.</p>
 <p>OP-TEE (Open Portable Trusted Execution Environment) is a separate project that provides a TEE (Trusted Execution Environment) implementation for ARM TrustZone-enabled platforms. OP-TEE is designed to secure critical code and data by isolating it from the normal world operating system.</p>
 <p>While OP-TEE itself doesn&rsquo;t include a specific component called SMAF, it does provide secure memory allocation and management within the TEE. OP-TEE manages memory allocations securely to ensure the integrity and confidentiality of data within the TEE.</p>
 <hr />
-<p><strong>Question:</strong> <code>[15:39]</code> How is SMAF used in DRM?</p>
+<p><strong>Question:</strong> <code>[15:39]</code> How is SMAF used in DRM? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>SMAF (Secure Memory Allocation Framework) can be used in Digital Rights Management (DRM) systems to provide an additional layer of security for protecting sensitive content, such as media files or streaming data. In a DRM context, SMAF can help ensure that only authorized applications or devices can access the protected content.</p>
 <p>Here&rsquo;s a high-level overview of how SMAF can be utilized in a DRM system:</p>
@@ -181,7 +181,7 @@
 </ol>
 <p>By using SMAF in a DRM system, content providers can enhance the security of their content and ensure that it is only accessed by authorized users, devices, and applications.</p>
 <hr />
-<p><strong>Question:</strong> <code>[15:41]</code> What is Clear Key?</p>
+<p><strong>Question:</strong> <code>[15:41]</code> What is Clear Key? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Clear Key is a simple key management system used in the context of the Encrypted Media Extensions (EME) API, which is part of the HTML5 standard for providing protected media playback in web browsers. The EME API enables web-based applications to use encrypted content and interact with DRM (Digital Rights Management) systems to handle the encryption and decryption of the content.</p>
 <p>Clear Key is a basic, non-proprietary key management system provided as part of the EME specification. It is intended primarily for testing and development purposes, rather than for robust content protection in a production environment. Clear Key is not a full-fledged DRM solution; instead, it is a simple way to demonstrate the functionality of the EME API.</p>

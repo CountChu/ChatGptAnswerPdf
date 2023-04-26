@@ -2,15 +2,15 @@
 
 Questions
 
-Normal World & Secure World @ TrustZone.0329.md
+Normal World & Secure World ```(230329.TrustZone.txt)```
 [08:51] Can Normal world and Secure World run at the same time in ARM?
 [08:52] But can Normal world and Secure World run at the same time in multi processors of ARM?
 
-Memory @ TrustZone.0329.md
+Memory ```(230329.TrustZone.txt)```
 [08:53] How to define memory size of secure world?
 [08:53] Can memory size of secure world be changed?
 
-SM & SPM & SPD @ TrustZone.0329.md
+SM & SPM & SPD ```(230329.TrustZone.txt)```
 [08:55] What is SMC?
 [08:57] Can secure world request a service in normal world via SMC?
 [09:00] What is SPD?
@@ -18,7 +18,7 @@ SM & SPM & SPD @ TrustZone.0329.md
 [09:05] What is SPM?
 [09:41] Why are SPD and SPM mutually exclusive?
 
-Secure Partition @ TrustZone.0329.md
+Secure Partition ```(230329.TrustZone.txt)```
 [09:04] What is SP?
 [09:05] Can different SPs communicate together?
 [09:06] How to create a SP and when?
@@ -28,10 +28,10 @@ Secure Partition @ TrustZone.0329.md
 [09:43] Can a SP host many TAs?
 [09:44] Can a TA communicate different SP?
 
-Privilege Levels @ TrustZone.0329.md
+Privilege Levels ```(230329.TrustZone.txt)```
 [09:44] What are EL0, EL1, EL2, S-EL0, S-EL1, S-EL2, S-EL3?
 
-Basic Concepts @ TEE.0328.md
+Basic Concepts ```(230328.TEE.txt)```
 [10:04] https://en.wikipedia.org/wiki/Trusted_execution_environment
 [13:55] Please summarize Intel SGX and ARM TrustZone in tables.
 [13:58] What are different between ARM SMC and Intel SMI? Please also summarize in a table.
@@ -39,14 +39,14 @@ Basic Concepts @ TEE.0328.md
 [14:00] What are APIs of TEE? Please classify them.
 [14:02] Can I add a myself TEE API?
 
-Memory @ OP-TEE.0327.md
+Memory ```(230327.OP-TEE.txt)```
 [16:19] How does OP-TEE manage memory?
 [16:27] Are data in memory in secure world encrypted?
 
-Signature @ OP-TEE.0327.md
+Signature ```(230327.OP-TEE.txt)```
 [16:44] Is signature required when a normal world application request a service in secure world?
 
-CA & TA @ TEE.0328.md
+CA & TA ```(230328.TEE.txt)```
 [16:56] How does an  application in normal world request a service with shared memory of a trusted application in a secure world? Please describe the process with APIs.
 [17:10] Which functions are used by TA (trusted application) in the above process?
 [17:16] Could you please draw a sequence diagram of TEEC_InitializeContext, TEEC_OpenSession, TEEC_RegisterSharedMemory, TEEC_InvokeCommand, TEEC_ReleaseSharedMemory, TEEC_CloseSession, TEEC_FinalizeContext, TA_CreateEntryPoint, TA_DestroyEntryPoint, TA_OpenSessionEntryPoint, TA_CloseSessionEntryPoint, TA_InvokeCommandEntryPoint

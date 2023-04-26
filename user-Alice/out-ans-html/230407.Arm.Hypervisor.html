@@ -11,51 +11,51 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230407.Arm.Hypervisor</h1>
-<p>Created: 2023-04-22 01:02:39</p>
+<p>Created: 2023-04-26 23:54:04</p>
 <h1>Questions</h1>
 <ul>
 <li>TCB<ul>
-<li>What are components in TCB? <code>(2023-04-07)</code></li>
-<li>What are components in ARM TCB? <code>(2023-04-09)</code></li>
-<li>What are Security Building Blocks? <code>(2023/4/12)</code></li>
-<li>What compare Security Building Block and TCB and also summarize them in a table. <code>(2023/4/12)</code></li>
+<li>What are components in TCB? <code>(TrustZone.0329.md)</code></li>
+<li>What are components in ARM TCB? <code>(TrustZone.0329.md)</code></li>
+<li>What are Security Building Blocks? <code>(2023/4/12)</code> <code>(Papers.OP-TEE.0406.md)</code></li>
+<li>What compare Security Building Block and TCB and also summarize them in a table. <code>(2023/4/12)</code> <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
 <li>Virtualization<ul>
-<li>What are types of virtualization techs? <code>(2023-04-07)</code></li>
+<li>What are types of virtualization techs? <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
 <li>Hypervisor<ul>
-<li>What is hypervisor? <code>(2023-04-06)</code></li>
-<li>Is hypvervisor a virtual machine manager? <code>(2023-04-07)</code></li>
-<li>Is hypervisor a software or a hardware? <code>(2023-04-06)</code></li>
+<li>What is hypervisor? <code>(OP-TEE.0327.md)</code></li>
+<li>Is hypvervisor a virtual machine manager? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li>Is hypervisor a software or a hardware? <code>(TrustZone.0329.md)</code></li>
 </ul>
 </li>
 <li>Hypervisor &amp; Virtualization<ul>
-<li>Please compare hypervisor and virtualization and also summarize them in a table. <code>(2023-04-07)</code></li>
-<li>Is TrustZone a hypervisor or virtualization? <code>(2023-04-07)</code></li>
-<li>Is OP-TEE a hypervisor or virtualization? <code>(2023-04-07)</code></li>
-<li>Does virtualization depend on hypervisor? <code>(2023-04-07)</code></li>
-<li>Are there alnatives of hypervisor? <code>(2023-04-07)</code></li>
+<li>Please compare hypervisor and virtualization and also summarize them in a table. <code>(Papers.OP-TEE.0406.md)</code></li>
+<li>Is TrustZone a hypervisor or virtualization? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li>Is OP-TEE a hypervisor or virtualization? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li>Does virtualization depend on hypervisor? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li>Are there alnatives of hypervisor? <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
 <li>VM<ul>
-<li>Does VM require hypervisor? <code>(2023-04-07)</code></li>
-<li>Can a VM contain VMs? <code>(2023-04-07)</code></li>
+<li>Does VM require hypervisor? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li>Can a VM contain VMs? <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
 <li>Hypervisor &amp; TrustZone<ul>
-<li>Please compare TrustZone and Hypervisor and also summarize in a table. <code>(2023-04-06)</code></li>
-<li>Can hypervisor run in secure world? <code>(2023-04-06)</code></li>
-<li>What is difference of runnin hypervisor in secure world and normal world. Please also summarize it in a table. <code>(2023-04-06)</code></li>
-<li>Does TrustZone require hypervisor? <code>(2023-04-09)</code></li>
+<li>Please compare TrustZone and Hypervisor and also summarize in a table. <code>(TrustZone.0329.md)</code></li>
+<li>Can hypervisor run in secure world? <code>(OP-TEE.0327.md)</code></li>
+<li>What is difference of runnin hypervisor in secure world and normal world. Please also summarize it in a table. <code>(OP-TEE.0327.md)</code></li>
+<li>Does TrustZone require hypervisor? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
 <h2>TCB</h2>
-<p><strong>Question:</strong> What are components in TCB? <code>(2023-04-07)</code></p>
+<p><strong>Question:</strong> What are components in TCB? <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The Trusted Computing Base (TCB) is the set of all hardware, firmware, and software components critical to the security of a system. These components are responsible for enforcing the security policy and maintaining the system&rsquo;s integrity, confidentiality, and availability. The exact components of a TCB may vary depending on the specific system architecture and implementation. However, some common components in a TCB include:</p>
 <ol>
@@ -90,7 +90,7 @@
 </ol>
 <p>These components work together to ensure the security of a system and provide a trusted foundation for applications and services. Note that the components listed above are just examples, and the actual TCB components may differ based on the specific system and its security requirements.</p>
 <hr />
-<p><strong>Question:</strong> What are components in ARM TCB? <code>(2023-04-09)</code></p>
+<p><strong>Question:</strong> What are components in ARM TCB? <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The Trusted Computing Base (TCB) of an ARM system consists of the essential components responsible for maintaining security properties and enforcing security policies. In the context of ARM TrustZone and related technologies, the TCB can include the following components:</p>
 <ol>
@@ -124,7 +124,7 @@
 </ol>
 <p>Please note that the specific components in an ARM TCB may vary depending on the system&rsquo;s architecture, SoC, and security requirements. The list above provides a general overview of the typical components in an ARM TrustZone-based TCB.</p>
 <hr />
-<p><strong>Question:</strong> What are Security Building Blocks? <code>(2023/4/12)</code></p>
+<p><strong>Question:</strong> What are Security Building Blocks? <code>(2023/4/12)</code> <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Security Building Blocks refer to the fundamental components or technologies used to design and implement a secure system. These building blocks form the foundation for creating secure software, hardware, and network architectures. They are essential for safeguarding sensitive information and ensuring that systems are resistant to unauthorized access, manipulation, or other forms of attack. Some common security building blocks include:</p>
 <ol>
@@ -158,7 +158,7 @@
 </ol>
 <p>These building blocks, when combined and implemented correctly, create a robust and secure foundation for any system, ensuring the protection of data and the prevention of unauthorized access or attacks.</p>
 <hr />
-<p><strong>Question:</strong> What compare Security Building Block and TCB and also summarize them in a table. <code>(2023/4/12)</code></p>
+<p><strong>Question:</strong> What compare Security Building Block and TCB and also summarize them in a table. <code>(2023/4/12)</code> <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Security Building Blocks and Trusted Computing Base (TCB) are two related concepts in the context of secure system design. Here is a comparison between the two:</p>
 <table>
@@ -200,7 +200,7 @@
 <p>In summary, Security Building Blocks are the fundamental components and technologies used to create secure systems, while the Trusted Computing Base (TCB) represents the minimal set of critical components essential for ensuring the security of a system. Security Building Blocks can be seen as the elements that are combined to create a secure system, whereas the TCB is the core of the system, ensuring its overall security.</p>
 <hr />
 <h2>Virtualization</h2>
-<p><strong>Question:</strong> What are types of virtualization techs? <code>(2023-04-07)</code></p>
+<p><strong>Question:</strong> What are types of virtualization techs? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>There are various types of virtualization technologies, each targeting a specific layer of computing or specific use cases. Here are some of the major types:</p>
 <ol>
@@ -226,7 +226,7 @@
 <p>These are just a few examples of virtualization technologies, and many more specific solutions and implementations exist in the industry.</p>
 <hr />
 <h2>Hypervisor</h2>
-<p><strong>Question:</strong> What is hypervisor? <code>(2023-04-06)</code></p>
+<p><strong>Question:</strong> What is hypervisor? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>A hypervisor, also known as a virtual machine monitor (VMM), is a type of software that enables the creation and management of virtual machines (VMs) on a physical host machine. The hypervisor is responsible for abstracting the underlying hardware resources of the host and allocating them to the virtual machines, allowing multiple VMs to run simultaneously on a single host.</p>
 <p>There are two main types of hypervisors:</p>
@@ -240,12 +240,12 @@
 </ol>
 <p>Hypervisors enable efficient use of computing resources, making it possible to run multiple operating systems and applications on the same physical hardware, improving resource utilization, and enabling greater flexibility in managing workloads. They are widely used in data centers, cloud computing environments, and for virtualization in general.</p>
 <hr />
-<p><strong>Question:</strong> Is hypvervisor a virtual machine manager? <code>(2023-04-07)</code></p>
+<p><strong>Question:</strong> Is hypvervisor a virtual machine manager? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, a hypervisor is often referred to as a virtual machine manager (VMM). A hypervisor is a software or firmware that manages the creation, execution, and management of virtual machines (VMs) on a host system. It allows multiple VMs to run concurrently on the same physical hardware, while providing isolation and resource management between them.</p>
 <p>Hypervisors are responsible for abstracting the physical hardware resources and allocating them to the VMs, handling the VMs&rsquo; requests for resources, and ensuring that the VMs do not interfere with each other or the host system. They play a crucial role in the virtualization process, making it possible to create and manage VMs efficiently and securely.</p>
 <hr />
-<p><strong>Question:</strong> Is hypervisor a software or a hardware? <code>(2023-04-06)</code></p>
+<p><strong>Question:</strong> Is hypervisor a software or a hardware? <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>A hypervisor is a software component that enables virtualization, allowing multiple operating systems or environments to run on a single physical host. Hypervisors can be classified into two types:</p>
 <ol>
@@ -259,7 +259,7 @@
 <p>In summary, hypervisors are software components that enable virtualization and are not hardware themselves. However, some modern processors have hardware-assisted virtualization features that can improve the performance and security of hypervisors.</p>
 <hr />
 <h2>Hypervisor &amp; Virtualization</h2>
-<p><strong>Question:</strong> Please compare hypervisor and virtualization and also summarize them in a table. <code>(2023-04-07)</code></p>
+<p><strong>Question:</strong> Please compare hypervisor and virtualization and also summarize them in a table. <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Hypervisor and virtualization are related concepts but serve different purposes. Here&rsquo;s a comparison and summary of both in a table:</p>
 <table>
@@ -300,19 +300,19 @@
 </table>
 <p>In summary, a hypervisor is a software layer or firmware that enables and manages virtualization. Virtualization, on the other hand, is the process of creating isolated virtual environments on a single physical hardware platform, allowing for more efficient resource utilization, flexibility, and increased security.</p>
 <hr />
-<p><strong>Question:</strong> Is TrustZone a hypervisor or virtualization? <code>(2023-04-07)</code></p>
+<p><strong>Question:</strong> Is TrustZone a hypervisor or virtualization? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>TrustZone is neither a hypervisor nor virtualization. TrustZone is a hardware-based security technology developed by ARM. It provides an isolated and secure environment called the Trusted Execution Environment (TEE) for running sensitive and security-critical applications, alongside the Rich Execution Environment (REE) where the main operating system and applications run.</p>
 <p>TrustZone creates two separate worlds - the secure world and the normal world - by partitioning the hardware resources such as processor, memory, and peripherals. The secure world is designed to protect sensitive data and operations, while the normal world runs the typical operating system and applications. The two worlds are isolated at the hardware level, ensuring that security vulnerabilities in the normal world do not compromise the secure world.</p>
 <p>In summary, TrustZone is a security feature designed to provide hardware-level isolation for sensitive operations and data, rather than a hypervisor or virtualization technology.</p>
 <hr />
-<p><strong>Question:</strong> Is OP-TEE a hypervisor or virtualization? <code>(2023-04-07)</code></p>
+<p><strong>Question:</strong> Is OP-TEE a hypervisor or virtualization? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>OP-TEE (Open Portable Trusted Execution Environment) is neither a hypervisor nor virtualization. It is a Trusted Execution Environment (TEE) designed to work with ARM TrustZone technology. OP-TEE is an open-source software solution that provides a secure environment for running security-critical applications.</p>
 <p>When used in conjunction with TrustZone, OP-TEE provides the secure operating system and services that run within the secure world created by TrustZone. It manages access to secure resources and protects sensitive data and operations from unauthorized access in the normal world.</p>
 <p>In summary, OP-TEE is a TEE solution that works with TrustZone to provide a secure environment for security-critical applications, rather than a hypervisor or virtualization technology.</p>
 <hr />
-<p><strong>Question:</strong> Does virtualization depend on hypervisor? <code>(2023-04-07)</code></p>
+<p><strong>Question:</strong> Does virtualization depend on hypervisor? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, virtualization typically depends on a hypervisor. A hypervisor is a critical component of virtualization technology, as it is responsible for creating, managing, and running virtual machines (VMs) on a physical host system. The hypervisor manages the distribution of resources, such as CPU, memory, and storage, among the various VMs and provides isolation between them.</p>
 <p>There are two types of hypervisors:</p>
@@ -326,7 +326,7 @@
 </ol>
 <p>In both cases, the hypervisor is the key component that enables virtualization, providing the necessary management and isolation between virtual machines running on a single physical host.</p>
 <hr />
-<p><strong>Question:</strong> Are there alnatives of hypervisor? <code>(2023-04-07)</code></p>
+<p><strong>Question:</strong> Are there alnatives of hypervisor? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, there are alternatives to hypervisors for creating isolated environments. Some of these alternatives include:</p>
 <ol>
@@ -346,12 +346,12 @@
 <p>These alternatives each have their own advantages and trade-offs, and their suitability depends on the specific use case and requirements of the system being virtualized.</p>
 <hr />
 <h2>VM</h2>
-<p><strong>Question:</strong> Does VM require hypervisor? <code>(2023-04-07)</code></p>
+<p><strong>Question:</strong> Does VM require hypervisor? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, virtual machines (VMs) typically require a hypervisor to function. A hypervisor is the essential component responsible for creating, managing, and running VMs on a physical host system. It allocates the physical resources, such as CPU, memory, and storage, among the VMs and provides isolation between them. VMs are essentially software-based environments running on the hypervisor, which simulates the hardware and allows multiple VMs with different operating systems to share the same physical hardware resources.</p>
 <p>There are alternative virtualization technologies, such as containerization (e.g., Docker), which do not rely on a hypervisor but instead use the host operating system&rsquo;s kernel to isolate and manage containers. However, in the context of traditional virtual machines, a hypervisor is a necessary component for their operation.</p>
 <hr />
-<p><strong>Question:</strong> Can a VM contain VMs? <code>(2023-04-07)</code></p>
+<p><strong>Question:</strong> Can a VM contain VMs? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, a virtual machine (VM) can contain other VMs, a concept known as nested virtualization. In nested virtualization, a hypervisor runs inside a virtual machine created by another hypervisor. This creates a hierarchy of virtual machines, where the primary hypervisor manages the first-level virtual machines, and the nested hypervisors manage the second-level virtual machines.</p>
 <p>Nested virtualization can be useful in various scenarios, such as:</p>
@@ -363,7 +363,7 @@
 <p>However, nested virtualization can also introduce additional overhead and complexity, which can negatively impact the performance of the nested VMs. Additionally, not all hypervisors support nested virtualization, and hardware virtualization support may be required for acceptable performance.</p>
 <hr />
 <h2>Hypervisor &amp; TrustZone</h2>
-<p><strong>Question:</strong> Please compare TrustZone and Hypervisor and also summarize in a table. <code>(2023-04-06)</code></p>
+<p><strong>Question:</strong> Please compare TrustZone and Hypervisor and also summarize in a table. <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>TrustZone and hypervisors serve different purposes in providing security and isolation in computer systems, but they can also be complementary. Here&rsquo;s a comparison between the two:</p>
 <p>TrustZone:
@@ -417,13 +417,13 @@
 </table>
 <p>Keep in mind that TrustZone and hypervisors can be used together in some cases to enhance the overall security of a system. For example, a TrustZone-enabled secure world can host a secure hypervisor to further isolate and protect sensitive applications.</p>
 <hr />
-<p><strong>Question:</strong> Can hypervisor run in secure world? <code>(2023-04-06)</code></p>
+<p><strong>Question:</strong> Can hypervisor run in secure world? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, a hypervisor can run in the secure world, but it is less common. Typically, hypervisors run in the normal world, and they manage VMs in the normal world while ensuring their isolation. However, there are secure world hypervisors, like ARM TrustZone-based hypervisors, which are designed to run in the secure world and manage secure partitions or secure VMs.</p>
 <p>A secure world hypervisor manages the secure partitions, including OP-TEE, and ensures their isolation from each other and the normal world. In this configuration, OP-TEE acts as one of the secure partitions managed by the secure world hypervisor. This approach allows multiple secure services to coexist in the secure world, each running in its own isolated partition or secure VM.</p>
 <p>It&rsquo;s worth mentioning that having a hypervisor in the secure world adds complexity to the system, and its implementation must ensure that it does not introduce vulnerabilities or weaken the security guarantees provided by the secure world.</p>
 <hr />
-<p><strong>Question:</strong> What is difference of runnin hypervisor in secure world and normal world. Please also summarize it in a table. <code>(2023-04-06)</code></p>
+<p><strong>Question:</strong> What is difference of runnin hypervisor in secure world and normal world. Please also summarize it in a table. <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <table>
 <thead>
@@ -467,7 +467,7 @@
 </tbody>
 </table>
 <hr />
-<p><strong>Question:</strong> Does TrustZone require hypervisor? <code>(2023-04-09)</code></p>
+<p><strong>Question:</strong> Does TrustZone require hypervisor? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>No, TrustZone does not require a hypervisor. TrustZone is a hardware-based security technology implemented in Arm processors that provides a secure execution environment by creating two separate worlds: the Secure World and the Normal World. TrustZone itself is not dependent on a hypervisor.</p>
 <p>A hypervisor is a software layer that manages and coordinates multiple virtual machines (VMs) running on a single hardware platform. Hypervisors can be used in conjunction with TrustZone to provide additional isolation and management capabilities for virtualized systems.</p>
