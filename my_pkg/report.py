@@ -1,8 +1,12 @@
 import datetime
-
+import pdb
 import my_pkg.util as util
 
+br = pdb.set_trace
+
 def get_q(question, dis_date, dis_q_date, dis_q_time):
+    #br()
+    
     if 'q1' in question:
         q = question['q1']
     elif 'q1-prefix' in question:
@@ -36,6 +40,8 @@ def get_q(question, dis_date, dis_q_date, dis_q_time):
             q = '`[%s]` %s' % (question['q_time'][:5], q)
     else:
             q = '%s `(%s)`' % (q, question['date'])
+
+    q = '%s `(%s)`' % (q, question['from'])
 
     return q
 
@@ -135,7 +141,7 @@ def write_sections(q_section_ls, c_section_ls, fn, dis_date, dis_q_date, dis_q_t
 
 
                 if question['hide']:
-                    f.write('**Answer:** (Hide)\n')
+                    f.write('**Answer:** ... ...\n')
                     f.write('\n')
 
                 else:
