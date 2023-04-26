@@ -201,7 +201,7 @@ def get_title(question):
     if question['sec_title'] == None:
         title = '%s' % (question['from'])
     else:
-        title = '%s @ %s' % (question['sec_title'], question['from'])
+        title = '%s ```(%s)```' % (question['sec_title'], question['qs'])
 
     return title
 
