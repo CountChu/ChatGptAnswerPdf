@@ -78,7 +78,7 @@ def run_it(cmd):
     print(cmd)
 
     res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    print(res.stdout.decode())
+    print(res.stdout.decode(errors='replace'))
     
     if res.returncode != 0:
         print('Error! ----------------')
