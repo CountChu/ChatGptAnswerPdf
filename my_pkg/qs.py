@@ -147,7 +147,8 @@ def read_sections(lines, qs_name, default_chat, default_date):
 
         elif s == 'sec_title':
             if line.find(':') >= 0:
-                print('Error. line = %s' % line)
+                print('Error! line = %s' % line)
+                print('qs_name = %s' % qs_name)
                 sys.exit(1) 
 
             if section != None:
