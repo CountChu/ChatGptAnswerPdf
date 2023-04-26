@@ -42,9 +42,23 @@ def build_args():
 
     return args  
 
+def refine_md_1(part):
+    return part.strip()
+
+def refine_md(part):
+    out = ''
+    lines = part.split('\n')
+    for line in lines:
+        if line.find('```') != -1:
+            line = line.strip()
+
+        out += f"{line}\n"
+
+    return out.strip()
+
 def handle_chat(output, chat): 
     title = chat['title']
-    #if title != 'TEE-PP.0414':
+    #if title != 'OP-TEE.CryptoEngine.0423':
     #    return
 
     fn = os.path.join(output, "%s.md" % title)
@@ -101,7 +115,8 @@ def handle_chat(output, chat):
             #else:
             #    f.write(part)
 
-            f.write(part.strip())
+            part = refine_md(part)
+            f.write(part)
 
         f.write('\n\n')
         f.write('* * *\n\n')
