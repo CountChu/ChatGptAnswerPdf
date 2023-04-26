@@ -60,7 +60,7 @@ def html_to_pdf(fn_css, fn_html, fn_pdf):
     css_text = '<style>%s</style>' % css_text 
 
 
-    f = open(fn_html)
+    f = open(fn_html, encoding='utf-8')
     html_text = f.read()
     f.close()
 
