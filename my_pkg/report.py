@@ -183,7 +183,7 @@ def write_sections_in_text(q_section_ls, c_section_ls, fn, dis_date, dis_q_date,
             f.write('%s\n\n' % title)
 
         for section in section_ls:
-            f.write('%s\n' % section['sec_title'])
+            f.write('%s\n' % section['sec_title'].replace('```', ''))
 
             for question in section['question_ls']:
                 #if question['hide']:
