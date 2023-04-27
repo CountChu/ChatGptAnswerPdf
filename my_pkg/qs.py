@@ -63,6 +63,8 @@ def read_sections(lines, qs_name, default_chat, default_date):
         line = line.strip()
         if line == '':
             continue
+        if line[0] == '#':
+            continue
 
         if line.startswith('q:'):
             s = 'q'
