@@ -23,7 +23,7 @@ class TestQsModule(unittest.TestCase):
     def test_parse(self):
         fn_qs = os.path.join('user-Alice', 'questions', '230327.OP-TEE.txt')
 
-        lines = util.read_lines(fn_qs, strip=False)
+        lines = qs.read_lines(fn_qs)
         
         from_chat, date, sections = qs.parse(lines)
 
