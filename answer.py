@@ -101,7 +101,7 @@ def main():
     # Read context of the questions.
     #
 
-    lines = util.read_lines(args.questions)
+    lines = qs.read_lines(args.questions)
 
     #
     # Parse lines.
