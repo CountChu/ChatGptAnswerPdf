@@ -102,8 +102,8 @@ python history.py -c chats -o out-hist-cht
     history.py      ---- A main Python app that generate answers in MD files
                          for each date.
     answer.py       ---- A Python app that generate MD files.
-    tohtml.py       ---- A Python app that transform MD files into HTML files.
-    topdf.py        ---- A Python app that transform HTML files into pdf files.
+    tohtml.py       ---- A Python app that converts MD files into HTML files.
+    topdf.py        ---- A Python app that converts HTML files into pdf files.
 ```
 
 
