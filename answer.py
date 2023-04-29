@@ -3,9 +3,7 @@ import sys
 import os
 import re
 import datetime
-import my_pkg.util as util
-import my_pkg.qs as qs
-import my_pkg.report as report
+from core import util, qs, report
 
 import pdb
 br = pdb.set_trace
@@ -109,7 +107,7 @@ def main():
     # Parse lines.
     #
 
-    chat, date, sections = qs.parse_context(lines)
+    chat, date, sections = qs.parse(lines)
 
     #
     # Read sections
