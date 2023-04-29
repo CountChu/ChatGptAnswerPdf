@@ -49,7 +49,7 @@ def read_section(section, qs_name, default_chat, default_date):
         else:
             assert False, f'{s} | {line}'
 
-        print('%10s | %s' % (s, line))
+        #print('%10s | %s' % (s, line))
 
         if s == 'q':
             _, line = line.split(':', 1)
@@ -202,7 +202,7 @@ def parse(lines):
         else:
             assert False, f'{s} | {line}'
 
-        print('%20s | %s' % (s, line))
+        #print('%20s | %s' % (s, line))
 
         if s == 'init':
             pass
