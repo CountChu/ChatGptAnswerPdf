@@ -2,21 +2,21 @@
 
 Questions
 
-Documents ```(230418.SGX.txt)```
+Documents (230418.SGX.txt)
 [09:09] [title] Sealing and Attestation in Intel SGX
 [09:14] What is relationship between secure enclave and secure memory?
 [10:00] Intel SGX Product Brief
 
-EGETKEY ```(230418.SGX.txt)```
+EGETKEY (230418.SGX.txt)
 [10:18] What is enclave software?
 [10:19] Is the EGETKEY instruction only called by enclave software?
 [10:21] Can I get hardware-protected key by calling EGETKEY instruction in enclave software?
 [10:22] So after I get the hardware-protected key, I can print it. Is it safe?
 
-MRSIGNER ```(230418.SGX.txt)```
+MRSIGNER (230418.SGX.txt)
 [11:11] [title] Is MRSIGNER unique to every enclave?
 
-EPID ```(230418.SGX.txt)```
+EPID (230418.SGX.txt)
 [13:59] What is EPID?
 [15:06] How does EPID work?
 [20:59] Which problems does EPID solve?
@@ -25,11 +25,11 @@ EPID ```(230418.SGX.txt)```
 [21:08] How to get the EPID of the compromised device?
 [21:10] But if the compromised device reports a fake EPID, what should I do?
 
-Attestation ```(230418.SGX.txt)```
+Attestation (230418.SGX.txt)
 [14:20] What is attestation?
 [15:04] Please build a cross table. The x axis is hardwared-based and software-based, The y axis is Remote and Local. Please contain Intel SGX, TPM, TLS, SSH, digital signatures, secure boot
 
-Paper - Innovative Technology for CPU Based Attestation and Sealing ```(230418.SGX.txt)```
+Paper - Innovative Technology for CPU Based Attestation and Sealing (230418.SGX.txt)
 [21:18] [title] Abstract and INTRODUCTION
 [21:29] [title] 2 MEASUREMENT
 [21:34] [title] 3 ATTESTATION
@@ -37,7 +37,7 @@ Paper - Innovative Technology for CPU Based Attestation and Sealing ```(230418.S
 [21:51] [title] 5 RELATED WORK, 6 CONCLUSIONS, 7 ACKNOWLEDGMENTS
 [21:52] [title] 8 REFERENCES
 
-Sealing Identity ```(230418.SGX.txt)```
+Sealing Identity (230418.SGX.txt)
 [22:38] Is "Sealing Identity" a MRSIGNER?
 
 Chats

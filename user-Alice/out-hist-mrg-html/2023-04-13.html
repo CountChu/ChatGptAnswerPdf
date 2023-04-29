@@ -11,7 +11,7 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-13</h1>
-<p>Created: 2023-04-26 23:54:58</p>
+<p>Created: 2023-04-29 22:45:29</p>
 <h1>Questions</h1>
 <ul>
 <li>Types of ARM CPU <code>(230410.Arm.txt)</code><ul>
@@ -48,7 +48,7 @@
 </ul>
 </li>
 <li>Basic Concepts <code>(230327.OP-TEE.txt)</code><ul>
-<li><code>[18:01]</code> What is Op-TEE Dispatcher? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[18:01]</code> What is OP-TEE Dispatcher? <span style="color:blue"><code>[title]</code></span> <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
 <li>FF-A, TF-A, and TrustZone <code>(230409.FF-A.txt)</code><ul>
@@ -269,7 +269,7 @@
 <p>By implementing a secure data path, content providers and DRM systems can protect sensitive information and digital content from unauthorized access, tampering, or eavesdropping, ensuring that the content is only accessible and consumable by authorized users or devices according to the specified usage rights and restrictions.</p>
 <hr />
 <h2>Basic Concepts <code>(230327.OP-TEE.txt)</code></h2>
-<p><strong>Question:</strong> <code>[18:01]</code> What is Op-TEE Dispatcher? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Question:</strong> <code>[18:01]</code> What is OP-TEE Dispatcher? <span style="color:blue"><code>[title]</code></span> <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The OP-TEE dispatcher, sometimes referred to as the &ldquo;Secure Monitor Call (SMC) dispatcher&rdquo; or simply &ldquo;dispatcher,&rdquo; is a component within the OP-TEE Trusted Execution Environment that handles communication between the normal world (non-secure) and the secure world (OP-TEE environment).</p>
 <p>When a client application (CA) in the normal world wants to communicate with a trusted application (TA) in the secure world, it sends a request through the OP-TEE driver (opteed) in the form of an SMC call. The SMC call is then intercepted by the OP-TEE dispatcher, which is responsible for processing the call, routing it to the appropriate TA, and returning the results back to the caller.</p>

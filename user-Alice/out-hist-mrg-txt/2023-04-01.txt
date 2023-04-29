@@ -2,43 +2,43 @@
 
 Questions
 
-OP-TEE ```(230410.Arm.txt)```
+OP-TEE (230410.Arm.txt)
 [10:50] Does OP-TEE support ARMv7 and ARMv8?
 
-Boot ```(230329.TrustZone.txt)```
+Boot (230329.TrustZone.txt)
 [15:46] What is ATF?
 
-Basic Concepts ```(230328.TEE.txt)```
+Basic Concepts (230328.TEE.txt)
 [15:48] Is TEE a software?
 [23:45] Does GlobalPlatform contains Chinese Cryptographic Standard?
 
-Development ```(230327.OP-TEE.txt)```
+Development (230327.OP-TEE.txt)
 [19:29] Does OP-TEE have a shell?
 
-Secure Storage ```(230327.OP-TEE.txt)```
+Secure Storage (230327.OP-TEE.txt)
 [19:30] Does OP-TEE support file system?
 
-Static TA and Dynamic TA ```(230327.OP-TEE.txt)```
+Static TA and Dynamic TA (230327.OP-TEE.txt)
 [21:16] Can I create a TA at run-time?
 [21:23] But what is TEECI_LoadSecureModule()
 [23:20] Does TEE define Static TA and Dynamic TA?
 
-Memory ```(230329.TrustZone.txt)```
+Memory (230329.TrustZone.txt)
 [21:58] What is MMU?
 [22:01] What is TLB?
 
-CA & TA ```(230328.TEE.txt)```
+CA & TA (230328.TEE.txt)
 [23:16] What are kinds of TA?
 
-CPU ```(230329.TrustZone.txt)```
+CPU (230329.TrustZone.txt)
 [23:31] What is SMP?
 [23:41] What are difference between primary and seconday CPU cores?
 [23:42] Please summarize the two types of CPU cores as a table.
 
-Boot ```(230327.OP-TEE.txt)```
+Boot (230327.OP-TEE.txt)
 [23:36] Why does OP-TEE's reset function have two branches reset_primary and reset_secondary?
 
-Signature ```(230327.OP-TEE.txt)```
+Signature (230327.OP-TEE.txt)
 [23:57] Does OP-TEE support to verify a signature of a TA in X.509 certificate?
 
 Chats

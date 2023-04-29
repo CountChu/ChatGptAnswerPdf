@@ -2,30 +2,30 @@
 
 Questions
 
-CPU ```(230329.TrustZone.txt)```
+CPU (230329.TrustZone.txt)
 [09:25] What are SCP and AP?
 [09:26] Do SCP and AP in ARM share memory?
 [14:20] What is differenct between Armv8-A and Armv8-M? Please summarize as a table.
 
-Boot ```(230327.OP-TEE.txt)```
+Boot (230327.OP-TEE.txt)
 [09:29] Why does OP-TEE initialize secondary cores when reset?
 
-Recover OP-TEE ```(230327.OP-TEE.txt)```
+Recover OP-TEE (230327.OP-TEE.txt)
 [09:37] How to detect OP-TEE dead?
 [09:39] How to automatically recovery the crashed OP-TEE?
 [09:42] Can I develop a dual OP-TEE so that if one is crashed, run another.
 [10:24] How to detect if OP-TEE is tamperred at run-time?
 
-Static TA and Dynamic TA ```(230327.OP-TEE.txt)```
+Static TA and Dynamic TA (230327.OP-TEE.txt)
 [10:08] How to recover a crashed static TA?
 [10:10] How to recover a crashed dynamic TA?
 
-TrustZone & HSM ```(230329.TrustZone.txt)```
+TrustZone & HSM (230329.TrustZone.txt)
 [10:18] What is difference between TrustZone and HSM? Please also summarize in a table.
 [10:19] What are relationships between TrustZone and HSM?
 [10:20] Can TrustZone totally replace HSM?
 
-Attack ```(230327.OP-TEE.txt)```
+Attack (230327.OP-TEE.txt)
 [14:49] Whare are kinds of methods to attack OP-TEE?
 
 Chats

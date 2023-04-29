@@ -2,22 +2,22 @@
 
 Questions
 
-Keys ```(230418.SGX.txt)```
+Keys (230418.SGX.txt)
 [09:17] What are types of Intel SGX Keys?
 
-Enclave ```(230418.SGX.txt)```
+Enclave (230418.SGX.txt)
 [13:56] What are Intel provided enclaves?
 
-SIGSTRUCT ```(230418.SGX.txt)```
+SIGSTRUCT (230418.SGX.txt)
 [14:45] Is a SIGSTRUCT a certificate?
 [15:11] Can I say that SIGSTRUCT contains enclave identity?
 
-MRSIGNER ```(230418.SGX.txt)```
+MRSIGNER (230418.SGX.txt)
 [15:23] [error] Does MRSIGNER reside in SIGSTRUCT?
 [15:40] What is Intel's hard-coded MRSIGNER?
 [15:41] What is the value of the hard-coded MRSIGNER provided by Intel?
 
-My Enclave ```(230418.SGX.txt)```
+My Enclave (230418.SGX.txt)
 [15:58] Can I create myself enclave with SIGSTRUCT signed by my RSA private key and run the enclave in Intel SGX environment?
 [16:24] How do I allow the platform owner to trust my enclave?
 [16:26] Where the trusted signer list reside in Intel SGX environment?

@@ -2,17 +2,17 @@
 
 Questions
 
-TCB ```(230407.Arm.Hypervisor.txt)```
+TCB (230407.Arm.Hypervisor.txt)
 [10:36] What are Security Building Blocks?
 [10:37] What compare Security Building Block and TCB and also summarize them in a table.
 
-FF-A, TF-A, and TrustZone ```(230409.FF-A.txt)```
+FF-A, TF-A, and TrustZone (230409.FF-A.txt)
 [10:59] Is TF-A persistent in memory at run-time?
 
-Development ```(230327.OP-TEE.txt)```
+Development (230327.OP-TEE.txt)
 [14:47] What is about size of tee.bin?
 
-Types of ARM CPU ```(230410.Arm.txt)```
+Types of ARM CPU (230410.Arm.txt)
 [16:48] Can I get Armv8-A with only 32-bit for cost down?
 
 Chats

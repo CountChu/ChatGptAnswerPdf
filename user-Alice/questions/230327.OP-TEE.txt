@@ -4,22 +4,26 @@ d: 2023/4/1
 # comments
 
 Basic Concepts
-    # comments
-    q: https://github.com/OP-TEE
-    q: What is OP-TEE?
+    q-prefix: https://github.com/OP-TEE
+    hide: 
+    
+    q-prefix: What is OP-TEE?
+    hide:
+
     q: What is thre prefix OP of OP-TEE?
     q: Are there alternative technologies of OP-TEE?
     q: Does OP-TEE a software or a hardware solution?
     q: Is OP-TEE a firmware?
     q: Does OP-TEE only exist in secure world?
     q: Are there successfull cases of OP-TEE?
-    q: What are different between ARM OP-TEE and Intel SMM? Please also summarize in a table.
+    q-prefix: What are different between ARM OP-TEE and Intel SMM?    
 
     q: What is Op-TEE Dispatcher?
     title: What is OP-TEE Dispatcher?
     d: 2023/4/13
 
 Boot
+    # comments
     q: Does OP-TEE OS exist in a single core or multiple cores at run-time?
     q: Why does OP-TEE's reset function have two branches reset_primary and reset_secondary?
     q: Why does OP-TEE initialize secondary cores when reset?

@@ -2,10 +2,10 @@
 
 Questions
 
-2020 Demystifying TEE Client API ```(230406.Papers.OP-TEE.txt)```
+2020 Demystifying TEE Client API (230406.Papers.OP-TEE.txt)
 [11:30] Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE
 
-Virtualization ```(230327.OP-TEE.txt)```
+Virtualization (230327.OP-TEE.txt)
 [23:11] The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html
 [23:15] Does the hypervisor relied on OP-TEE run in normal world or secure world?
 [23:19] Does a TA run in a VM described in the article?

@@ -2,42 +2,42 @@
 
 Questions
 
-Sealing Identity ```(230418.SGX.txt)```
+Sealing Identity (230418.SGX.txt)
 [07:40] What is difference between Sealing Identity and Identity of the Sealing Authority?
 [09:07] What is Sealing Identity?
 [09:18] Coud I say that SIGSTRUCT is Sealing Identity?
 [09:27] What is the value of Sealing Identity in the paper?
 [09:29] What is the value of Sealing Identity in the policy "Sealing to the Enclave Identity" in the paper?
 
-Sealing Authority ```(230418.SGX.txt)```
+Sealing Authority (230418.SGX.txt)
 [07:43] Is Sealing Authority a enclave builder?
 [09:09] What is Sealing Authority?
 
-MRSIGNER ```(230418.SGX.txt)```
+MRSIGNER (230418.SGX.txt)
 [07:54] Who can write MRENCLAVE and MRSIGNER?
 [07:57] Only hardware can write the both registers. Right?
 
-SIGSTRUCT ```(230418.SGX.txt)```
+SIGSTRUCT (230418.SGX.txt)
 [07:58] What does SIGSTRUCT contain? please list them.
 [09:16] Who does prepare SIGSTRUCT?
 
-Attestation Assertion ```(230418.SGX.txt)```
+Attestation Assertion (230418.SGX.txt)
 [09:40] Who produces attestation assertion?
 
-Attestation Key ```(230418.SGX.txt)```
+Attestation Key (230418.SGX.txt)
 [09:50] [error] Where is attestation key sotred in Intel SGX arch?
 [09:52] What is attestation key?
 [09:53] Is there only one attestation key in a device?
 
-EREPORT ```(230418.SGX.txt)```
+EREPORT (230418.SGX.txt)
 [10:27] What does REPORT contain? Please list them?
 
-MRENCLAVE ```(230418.SGX.txt)```
+MRENCLAVE (230418.SGX.txt)
 [14:18] What is MRENCLAVE?
 [14:19] Who generates MRENCLAVE?
 [14:37] I have enclave A and enclave B. How does enclave A know the enclave B before A wants to get MRENCLAVE value of B?
 
-Enclave ```(230418.SGX.txt)```
+Enclave (230418.SGX.txt)
 [14:28] [title] Can untrusted software create an enclave?
 
 Chats

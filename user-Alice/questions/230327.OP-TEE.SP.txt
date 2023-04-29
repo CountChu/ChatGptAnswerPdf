@@ -2,15 +2,15 @@ from: OP-TEE.SP.0327.md
 
 Basic Concepts
 
-	q: https://github.com/OP-TEE/optee_os/pull/3973
-	a-prefix: This comment is discussing the implementation of
+    q: https://github.com/OP-TEE/optee_os/pull/3973
+    a-prefix: This comment is discussing the implementation of
 
-	q: What is StMM?
+    q: What is StMM?
 
-	q: What is FFA?
+    q: What is FFA?
 
-	q: Why are SPD and SPM mutually exclusive?
+    q: Why are SPD and SPM mutually exclusive?
 
-	q: What is BL32_AP_MM.fd?
+    q: What is BL32_AP_MM.fd?
 
-	q: Does OP-TEE require UEFI?
+    q: Does OP-TEE require UEFI?

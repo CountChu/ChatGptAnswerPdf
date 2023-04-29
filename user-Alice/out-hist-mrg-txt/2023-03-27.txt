@@ -2,7 +2,7 @@
 
 Questions
 
-Basic Concepts ```(230327.OP-TEE.SP.txt)```
+Basic Concepts (230327.OP-TEE.SP.txt)
 [09:19] https://github.com/OP-TEE/optee_os/pull/3973
 [09:21] What is StMM?
 [09:22] What is FFA?

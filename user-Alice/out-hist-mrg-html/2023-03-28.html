@@ -11,7 +11,7 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-03-28</h1>
-<p>Created: 2023-04-26 23:54:58</p>
+<p>Created: 2023-04-29 22:45:29</p>
 <h1>Questions</h1>
 <ul>
 <li>Basic Concepts <code>(230327.OP-TEE.txt)</code><ul>
@@ -21,7 +21,7 @@
 <li><code>[09:14]</code> Does OP-TEE a software or a hardware solution? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[09:15]</code> Is OP-TEE a firmware? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[09:15]</code> Are there successfull cases of OP-TEE? <code>(OP-TEE.0327.md)</code></li>
-<li><code>[09:16]</code> What are different between ARM OP-TEE and Intel SMM? Please also summarize in a table. <code>(OP-TEE.0327.md)</code></li>
+<li><code>[09:16]</code> What are different between ARM OP-TEE and Intel SMM? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[15:19]</code> https://github.com/OP-TEE <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
@@ -86,16 +86,7 @@
 <h1>Q &amp; A</h1>
 <h2>Basic Concepts <code>(230327.OP-TEE.txt)</code></h2>
 <p><strong>Question:</strong> <code>[09:12]</code> What is OP-TEE? <code>(OP-TEE.0327.md)</code></p>
-<p><strong>Answer:</strong></p>
-<p>OP-TEE (Open Portable Trusted Execution Environment) is an open-source project that aims to provide a secure and trusted execution environment for software applications on devices. OP-TEE is primarily designed for Arm TrustZone technology, which is used in various processors to create a secure area (trusted execution environment) separate from the normal operating system. This separation helps protect sensitive data and code from unauthorized access or tampering.</p>
-<p>OP-TEE is made up of several components, including:</p>
-<ol>
-<li>Secure kernel: This is the core component of OP-TEE that runs in the secure world and manages trusted applications (TAs) and their execution.</li>
-<li>Trusted applications: These are the secure applications that run within the secure world, providing security services to normal applications.</li>
-<li>Client API: This is the interface that normal applications use to communicate with trusted applications.</li>
-<li>TEE Internal Core API: This is the interface used by trusted applications to access TEE services provided by the secure kernel.</li>
-</ol>
-<p>OP-TEE is widely used in industries like mobile devices, IoT, automotive, and more, where security is of paramount importance. The project is maintained by Linaro, a collaborative organization that focuses on improving open-source software for Arm-based platforms.</p>
+<p><strong>Answer:</strong> &hellip; &hellip;</p>
 <hr />
 <p><strong>Question:</strong> <code>[09:13]</code> What is thre prefix OP of OP-TEE? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
@@ -157,7 +148,7 @@
 </ol>
 <p>While specific implementations may vary, these examples demonstrate the versatility and effectiveness of OP-TEE in providing a secure and trusted environment for a wide range of applications. The open-source nature of OP-TEE also makes it possible for developers and organizations to customize and adapt the software to fit their unique security requirements.</p>
 <hr />
-<p><strong>Question:</strong> <code>[09:16]</code> What are different between ARM OP-TEE and Intel SMM? Please also summarize in a table. <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Question:</strong> <code>[09:16]</code> What are different between ARM OP-TEE and Intel SMM? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>ARM OP-TEE and Intel SMM are different security technologies that provide secure and isolated execution environments for sensitive operations. Here&rsquo;s a comparison of the two:</p>
 <ol>
@@ -218,24 +209,7 @@
 <p>Please note that while both technologies provide a secure and isolated execution environment, they serve different purposes and target different platforms. ARM OP-TEE is designed to enable secure applications on ARM-based devices, while Intel SMM is used for low-level system management tasks on Intel x86-based systems.</p>
 <hr />
 <p><strong>Question:</strong> <code>[15:19]</code> https://github.com/OP-TEE <code>(OP-TEE.0327.md)</code></p>
-<p><strong>Answer:</strong></p>
-<p>The link you provided, https://github.com/OP-TEE, is the official GitHub repository for the OP-TEE project. This repository contains the source code, documentation, and other resources related to OP-TEE, an open-source Trusted Execution Environment (TEE) based on the Arm TrustZone technology.</p>
-<p>The repository is organized into several sub-projects, including:</p>
-<ol>
-<li>
-<p>optee_os: The core component, which includes the secure kernel and related components that run within the secure world. It manages trusted applications, resources, and secure context switching.</p>
-</li>
-<li>
-<p>optee_client: The library implementing the GlobalPlatform TEE Client API, which enables normal world applications to communicate with trusted applications in the secure world.</p>
-</li>
-<li>
-<p>optee_test: A set of tests and examples to verify the functionality of the OP-TEE system, including trusted application examples and test suites for various cryptographic operations.</p>
-</li>
-<li>
-<p>build: A set of scripts and configuration files to help users build and compile the OP-TEE components for different target platforms.</p>
-</li>
-</ol>
-<p>The GitHub repository is an excellent starting point for developers interested in working with OP-TEE, as it provides the necessary resources and documentation to understand, build, and deploy OP-TEE on supported platforms. If you are interested in learning more or contributing to the project, you can explore the repository, read the documentation, and follow the guidelines provided.</p>
+<p><strong>Answer:</strong> &hellip; &hellip;</p>
 <hr />
 <h2>Multi-Thread &amp; Multi-Process <code>(230327.OP-TEE.txt)</code></h2>
 <p><strong>Question:</strong> <code>[13:51]</code> What is secure context switching in TrustZone? <code>(OP-TEE.0327.md)</code></p>
