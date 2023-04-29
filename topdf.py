@@ -1,9 +1,22 @@
+#
+# FILENAME.
+#       topdf.py - To PDF Python App.
+#
+# FUNCTIONAL DESCRIPTION.
+#       The app converts HTML files into pdf files.
+#
+# NOTICE.
+#       Author: visualge@gmail.com (CountChu)
+#       Created on 2023/4/5
+#       Updated on 2023/4/29
+#
+
 import argparse
 import sys
 import os
 import pdfkit
 
-import my_pkg.util as util
+from core import util
 
 import pdb
 br = pdb.set_trace
@@ -70,7 +83,6 @@ def html_to_pdf(fn_css, fn_html, fn_pdf):
     html_text = html_text.replace(link_text, css_text)
     
     pdfkit.from_string(html_text, fn_pdf)
-
 
 def main():
 
