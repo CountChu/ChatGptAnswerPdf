@@ -1,3 +1,18 @@
+#
+# FILENAME.
+#       chat2md.py - Chat To Markdown Python App.
+#
+# FUNCTIONAL DESCRIPTION.
+#       The app converts conversations.json into Markdown files compatible 
+#       to the plugin [ChatGPT to Markdown]
+#       (https://chatopenai.pro/chatgpt-to-markdown/).
+#
+# NOTICE.
+#       Author: visualge@gmail.com (CountChu)
+#       Created on 2023/4/15
+#       Updated on 2023/4/29
+#
+
 import argparse
 import sys
 import os
