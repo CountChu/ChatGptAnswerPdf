@@ -1,8 +1,23 @@
+#
+# FILENAME.
+#       chatpdf.py - Chat PDF Python App.
+#
+# FUNCTIONAL DESCRIPTION.
+#       The app generates answers of ChatGPT and saves them in HTML and PDF files 
+#       by running answer.py, tohtml.py, and topdf.py. 
+#
+# NOTICE.
+#       Author: visualge@gmail.com (CountChu)
+#       Created on 2023/4/5
+#       Updated on 2023/4/29
+#
+
 import argparse
 import sys
 import os
 import subprocess
-import my_pkg.util as util
+
+from core import util
 
 import pdb
 br = pdb.set_trace
