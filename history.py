@@ -1,11 +1,24 @@
+#
+# FILENAME.
+#       history.py - History Python App.
+#
+# FUNCTIONAL DESCRIPTION.
+#       The app generates answers in Markdown files for each date. The answers 
+#       come from all question set files answered by chat files or all chat files.
+#
+# NOTICE.
+#       Author: visualge@gmail.com (CountChu)
+#       Created on 2023/4/17
+#       Updated on 2023/4/29
+#
+
 import argparse
 import sys
 import os
 import re
 import datetime
-import my_pkg.util as util
-import my_pkg.qs as qs
-import my_pkg.report as report
+from core import util, qs, report
+
 
 import pdb
 br = pdb.set_trace
@@ -78,7 +91,7 @@ def get_questions(questions_dn, chats_dn):
         #
         # Read sections to build section_ls.
         #       section_ls = [section]
-        #       section = {'sec_title', 'question_ls'}
+        #       section = {'title', 'question_ls'}
         #       question_ls = [question]
         #       question = {'q1', ...'date', ...}
         #
@@ -222,7 +235,7 @@ def build_sections_by_title(question_ls):
 
     section_ls = []
     for title in sorted_title_ls:
-        section = {'sec_title': title, 'question_ls': title_question_ls_d[title]}
+        section = {'title': title, 'question_ls': title_question_ls_d[title]}
         section_ls.append(section)
 
     for section in section_ls:
