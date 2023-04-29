@@ -19,7 +19,7 @@ import os
 import json
 import pdb
 
-import my_pkg.util as util 
+from core import util 
 
 br = pdb.set_trace
 
