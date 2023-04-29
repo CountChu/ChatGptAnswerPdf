@@ -1,10 +1,23 @@
+#
+# FILENAME.
+#       tohtml.py - To HTML Python App.
+#
+# FUNCTIONAL DESCRIPTION.
+#       The app converts MD files into HTML files. 
+#
+# NOTICE.
+#       Author: visualge@gmail.com (CountChu)
+#       Created on 2023/4/5
+#       Updated on 2023/4/29
+#
+
 import argparse
 import sys
 import os
 import markdown
 import shutil
 
-import my_pkg.util as util
+from core import util
 
 import pdb
 br = pdb.set_trace
