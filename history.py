@@ -85,8 +85,8 @@ def get_questions(questions_dn, chats_dn):
     for bn, fn in bn_fn_ls:
         print(fn)
 
-        lines = util.read_lines(fn)
-        chat, date, sections = qs.parse_context(lines)
+        lines = qs.read_lines(fn)
+        chat, date, sections = qs.parse(lines)
 
         #
         # Read sections to build section_ls.
