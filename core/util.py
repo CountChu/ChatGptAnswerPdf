@@ -65,21 +65,6 @@ def get_files(dn):
 
     return bn_fn_ls
 
-def read_lines(fn, strip=True):
-    lines = []
-    f = open(fn, encoding='utf-8')
-    for line in f:
-        if strip:
-            line = line.strip()
-        
-        if line.strip() == '':
-            continue    
-        
-        line = line.rstrip()
-        lines.append(line)
-
-    return lines
-
 #
 # q, q1, a, a1, q, q1, a, a1, q, q1, q, q1, a, a1, a, a1
 #

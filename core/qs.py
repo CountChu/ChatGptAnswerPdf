@@ -20,10 +20,6 @@ br = pdb.set_trace
 # Private functions.
 #
 
-def _build_question(qs_name):
-    question = {'hide': False, 'error': False, 'qs': qs_name}
-    return question
-
 def read_section(section, qs_name, default_chat, default_date):
     
     out = {} 
@@ -61,7 +57,7 @@ def read_section(section, qs_name, default_chat, default_date):
             q1 = line 
             q2 = line.replace('_', '\\_')
             
-            question = _build_question(qs_name)
+            question = build_question(qs_name)
             question['q1'] = q1
             question['q2'] = q2 
 
@@ -79,7 +75,7 @@ def read_section(section, qs_name, default_chat, default_date):
             q1_prefix = line
             q2_prefix = line.replace('_', '\\_')
 
-            question = _build_question(qs_name)
+            question = build_question(qs_name)
             question['q1-prefix'] = q1_prefix
             question['q2-prefix'] = q2_prefix
             
@@ -121,11 +117,12 @@ def read_section(section, qs_name, default_chat, default_date):
             assert False, s
 
     #
-    # Assign sec_title.
+    # Assign sec_title and is_short
     #
 
     for question in question_ls:
         question['sec_title'] = section['title']
+        question['is_short'] = False
 
     out['question_ls'] = question_ls
 
@@ -134,6 +131,32 @@ def read_section(section, qs_name, default_chat, default_date):
 #
 # Public functions.
 #
+
+def read_lines(fn):
+    lines = []
+    f = open(fn, encoding='utf-8')
+    for line in f:
+        if line.find('\t') != -1:
+            print('Error. A tab character is not allowed.')
+            print(f'line = {line}')
+            sys.exit(1)
+
+        s_line = line.strip()
+
+        if s_line == '':
+            continue
+
+        if s_line[0] == '#':
+            continue
+
+        line = line.rstrip()
+        lines.append(line)
+
+    return lines
+
+def build_question(qs_name):
+    question = {'hide': False, 'error': False, 'qs': qs_name}
+    return question
 
 def parse(lines):
     out_from = None 
@@ -149,7 +172,7 @@ def parse(lines):
             continue 
 
         if s_line[0] == '#':
-            continue 
+            continue
 
         if s == 'init':
             if line[0] != ' ':
