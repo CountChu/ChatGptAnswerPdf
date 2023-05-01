@@ -11,33 +11,33 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-11</h1>
-<p>Created: 2023-04-29 22:44:53</p>
+<p>Created: 2023-05-01 22:17:45</p>
 <h1>Questions</h1>
 <ul>
-<li>DRM <code>(230327.OP-TEE.txt)</code><ul>
+<li>DRM <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[08:58]</code> How is SMAF used in DRM? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[10:00]</code> What is Clear Key? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Memory <code>(230327.OP-TEE.txt)</code><ul>
+<li>Memory <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[08:59]</code> Is SMAF of OP-TEE? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>TrustZone &amp; HSM <code>(230329.TrustZone.txt)</code><ul>
+<li>TrustZone &amp; HSM <code>(230329.TrustZone.yaml)</code><ul>
 <li><code>[14:23]</code> Is HSM cost than TrustZone? <code>(TrustZone.0329.md)</code></li>
 <li><code>[14:25]</code> Is HSM more performance than ARM TrustZone in crypto operations? <code>(TrustZone.0329.md)</code></li>
 <li><code>[14:27]</code> What are security certifications of TrustZone? <code>(TrustZone.0329.md)</code></li>
 </ul>
 </li>
-<li>Static TA and Dynamic TA <code>(230327.OP-TEE.txt)</code><ul>
+<li>Static TA and Dynamic TA <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[18:46]</code> Which privilege levels do static TA and dynamic TA run in? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Multi-Thread &amp; Multi-Process <code>(230327.OP-TEE.txt)</code><ul>
+<li>Multi-Thread &amp; Multi-Process <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[18:49]</code> Is a TA assigned to only one thread? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Boot <code>(230327.OP-TEE.txt)</code><ul>
+<li>Boot <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[21:07]</code> Can I reset OP-TEE at run-time? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[21:19]</code> Where does OP-TEE initialize secondary cores? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[21:23]</code> Below code comes from part 1 of entry_a64.S of OP-TEE <code>(OP-TEE.0327.md)</code></li>
@@ -53,22 +53,22 @@
 <li><code>[23:10]</code> What are difference boot of OP-TEE between AArch64 and AArch32? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>FF-A, TF-A, and TrustZone <code>(230409.FF-A.txt)</code><ul>
+<li>FF-A, TF-A, and TrustZone <code>(230409.FF-A.yaml)</code><ul>
 <li><code>[21:56]</code> When to enable secondary cores? <code>(FF-A.0409.md)</code></li>
 </ul>
 </li>
-<li>TF-A <code>(230410.Arm.txt)</code><ul>
+<li>TF-A <code>(230410.Arm.yaml)</code><ul>
 <li><code>[22:59]</code> Which types of ARM cores is supported by TF-A? <code>(FF-A.0409.md)</code></li>
 <li><code>[23:05]</code> Must AArch64 have TF-A? <code>(FF-A.0409.md)</code></li>
 </ul>
 </li>
-<li>Types of ARM CPU <code>(230410.Arm.txt)</code><ul>
+<li>Types of ARM CPU <code>(230410.Arm.yaml)</code><ul>
 <li><code>[23:15]</code> What are types of ARM CPU? Please also describe them in a table with 32 bits and 64 bits. <code>(Arm.0410.md)</code></li>
 <li><code>[23:18]</code> Does Armv8-A has 32 bits? <code>(Arm.0410.md)</code></li>
 <li><code>[23:19]</code> Does Armv7-A has 64 bits? <code>(Arm.0410.md)</code></li>
 </ul>
 </li>
-<li>Ch 2 - Introduction <code>(230409.FF-A.txt)</code><ul>
+<li>Ch 2 - Introduction <code>(230409.FF-A.yaml)</code><ul>
 <li><code>[23:23]</code> What is &ldquo;Arm A-profile&rdquo;? <code>(FF-A.0409.md)</code></li>
 <li><code>[23:24]</code> Does &ldquo;Arm Firmware Framework for Arm A-profile&rdquo; document is only about Cortex-A? <code>(FF-A.0409.md)</code></li>
 </ul>
@@ -76,7 +76,7 @@
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
-<h2>DRM <code>(230327.OP-TEE.txt)</code></h2>
+<h2>DRM <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[08:58]</code> How is SMAF used in DRM? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The Secure Memory Allocator Framework (SMAF) is a framework that can be used in conjunction with Digital Rights Management (DRM) systems to provide an additional layer of security for handling sensitive data. In a DRM context, sensitive data can include encryption keys, decrypted content, or any other data that must be protected from unauthorized access.</p>
@@ -96,14 +96,14 @@
 <p>Clear Key is essentially a key management system that allows for the decryption of media content using clear-text (unencrypted) cryptographic keys. The primary purpose of Clear Key is to serve as a reference implementation for testing and development purposes. It is not meant to be a robust DRM solution for commercial use, as it lacks the sophisticated security features offered by other DRM systems, such as Google&rsquo;s Widevine or Microsoft&rsquo;s PlayReady.</p>
 <p>In summary, Clear Key is a simple and open DRM system used mainly for testing and development of EME-supported web browsers and applications.</p>
 <hr />
-<h2>Memory <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Memory <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[08:59]</code> Is SMAF of OP-TEE? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, SMAF is a part of the OP-TEE (Open Portable Trusted Execution Environment) framework. OP-TEE is an open-source implementation of the TEE (Trusted Execution Environment) for ARM processors, which provides a secure environment for running trusted applications.</p>
 <p>SMAF, or Secure Memory Allocator Framework, is a component within the OP-TEE framework that enables the secure allocation and management of memory for trusted applications. It helps protect sensitive data, such as encryption keys and decrypted content, from unauthorized access in the normal world or by untrusted applications.</p>
 <p>By integrating SMAF into OP-TEE, the framework can provide a higher level of security for applications, such as DRM systems, that require secure memory management for their sensitive data.</p>
 <hr />
-<h2>TrustZone &amp; HSM <code>(230329.TrustZone.txt)</code></h2>
+<h2>TrustZone &amp; HSM <code>(230329.TrustZone.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[14:23]</code> Is HSM cost than TrustZone? <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>It&rsquo;s difficult to make a direct comparison between the cost of a hardware security module (HSM) and TrustZone, as they serve different purposes and have different implementations. Here are some points to consider:</p>
@@ -156,7 +156,7 @@
 </ol>
 <p>Note that achieving these certifications depends on the specific product, its implementation, and the security features provided. It&rsquo;s essential to verify the certifications of a TrustZone-based product depending on the use case and the required security level.</p>
 <hr />
-<h2>Static TA and Dynamic TA <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Static TA and Dynamic TA <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[18:46]</code> Which privilege levels do static TA and dynamic TA run in? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>In the context of ARM TrustZone and OP-TEE, there are two types of Trusted Applications (TAs): static and dynamic.</p>
@@ -164,14 +164,14 @@
 <p>Dynamic TAs, on the other hand, are standalone binaries that are loaded and executed by the OP-TEE OS on-demand. They run at a lower privilege level compared to the OP-TEE OS. In the ARMv8 architecture, dynamic TAs run at Secure EL0 (Secure Exception Level 0).</p>
 <p>By running dynamic TAs at a lower privilege level, the system can provide better isolation between the TAs themselves and the OP-TEE OS, thereby improving security.</p>
 <hr />
-<h2>Multi-Thread &amp; Multi-Process <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Multi-Thread &amp; Multi-Process <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[18:49]</code> Is a TA assigned to only one thread? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>In OP-TEE, a Trusted Application (TA) can be single or multi-threaded, depending on its design and implementation. However, OP-TEE employs a single-threaded model by default, which means that each TA instance is typically associated with one thread, and there is no concurrency within a single instance of the TA.</p>
 <p>If an application requires concurrent access to the TA, multiple instances of the TA can be created. Each instance runs in a separate thread, and the TA developer must take care of synchronization and shared resources within the TA code.</p>
 <p>In summary, a TA is not inherently limited to a single thread, but the default behavior in OP-TEE is to use one thread per TA instance. If the TA is designed to support multiple threads, it can be done, but the developer must handle synchronization and shared resources carefully.</p>
 <hr />
-<h2>Boot <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Boot <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[21:07]</code> Can I reset OP-TEE at run-time? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>There isn&rsquo;t a direct mechanism to reset only the OP-TEE (Trusted Execution Environment) at runtime without affecting the rest of the system. OP-TEE runs alongside the Normal World operating system, and both share the same hardware resources.</p>
@@ -401,7 +401,7 @@
 </ol>
 <p>Despite these differences, the high-level boot process and functionality of OP-TEE remain consistent between AArch64 and AArch32. The architectural differences are primarily reflected in the low-level implementation details, such as register usage, memory management, and exception handling.</p>
 <hr />
-<h2>FF-A, TF-A, and TrustZone <code>(230409.FF-A.txt)</code></h2>
+<h2>FF-A, TF-A, and TrustZone <code>(230409.FF-A.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[21:56]</code> When to enable secondary cores? <code>(FF-A.0409.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Secondary cores are typically enabled after the primary core has successfully initialized the system and started the operating system. The exact process for enabling secondary cores can vary depending on the hardware and operating system being used. Here is a general outline of when secondary cores are enabled:</p>
@@ -424,7 +424,7 @@
 </ol>
 <p>It is important to note that the specific process for enabling secondary cores depends on the hardware platform, firmware, bootloader, and operating system in use. Some systems may require additional configuration or software support to enable secondary cores.</p>
 <hr />
-<h2>TF-A <code>(230410.Arm.txt)</code></h2>
+<h2>TF-A <code>(230410.Arm.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[22:59]</code> Which types of ARM cores is supported by TF-A? <code>(FF-A.0409.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Trusted Firmware-A (TF-A) supports Armv8-A and Armv7-A processors. The Armv8-A architecture encompasses both the 64-bit (AArch64) and the 32-bit (AArch32) execution states, while the Armv7-A architecture is a 32-bit (AArch32) execution state. TF-A provides a reference implementation of Secure World software for a variety of Arm Cortex-A cores within these architectures, including Cortex-A53, Cortex-A57, Cortex-A72, Cortex-A75, and Cortex-A76, among others.</p>
@@ -433,7 +433,7 @@
 <p><strong>Answer:</strong></p>
 <p>No, AArch64 does not require TF-A (Arm Trusted Firmware-A). TF-A is an open-source project that provides a reference implementation of the software components needed for the secure boot and runtime firmware on Armv8-A platforms. While it is commonly used and recommended for secure firmware development on Armv8-A platforms, it is not mandatory. You can use other firmware solutions or develop custom secure firmware for AArch64 platforms, depending on your requirements and platform constraints.</p>
 <hr />
-<h2>Types of ARM CPU <code>(230410.Arm.txt)</code></h2>
+<h2>Types of ARM CPU <code>(230410.Arm.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[23:15]</code> What are types of ARM CPU? Please also describe them in a table with 32 bits and 64 bits. <code>(Arm.0410.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>ARM CPUs come in a variety of architectures and designs, each tailored to specific needs and applications. Some common types of ARM CPUs are Cortex-A, Cortex-R, and Cortex-M series. Here&rsquo;s a table describing these three series along with their support for 32-bit and 64-bit execution states:</p>
@@ -484,7 +484,7 @@
 <p>No, Armv7-A architecture does not have 64-bit support. Armv7-A is a 32-bit architecture that was used in many smartphones, tablets, and other devices before the introduction of Armv8-A. Armv7-A supports the ARM and Thumb instruction sets and includes features like NEON SIMD (Single Instruction, Multiple Data) and hardware floating-point support.</p>
 <p>Armv8-A is the successor to Armv7-A and introduced the 64-bit execution state (AArch64) alongside the 32-bit execution state (AArch32) for backward compatibility with Armv7-A software. The 64-bit support in Armv8-A allows for improved performance, larger addressable memory, and additional architectural enhancements compared to Armv7-A.</p>
 <hr />
-<h2>Ch 2 - Introduction <code>(230409.FF-A.txt)</code></h2>
+<h2>Ch 2 - Introduction <code>(230409.FF-A.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[23:23]</code> What is &ldquo;Arm A-profile&rdquo;? <code>(FF-A.0409.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The Arm A-profile is a family of Arm CPU architectures that are designed for high-performance and power-efficient applications, including mobile devices, consumer electronics, servers, and networking infrastructure. The A-profile CPUs are based on the Armv7-A and Armv8-A architectures, which support both 32-bit (AArch32) and 64-bit (AArch64) execution states. The A-profile processors provide a wide range of performance and power options to suit various use cases and include popular cores like Cortex-A series (e.g., Cortex-A72, Cortex-A57, Cortex-A53, etc.).</p>

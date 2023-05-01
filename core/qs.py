@@ -3,7 +3,7 @@
 #       qs.py - Question Set Python Module.
 #
 # FUNCTIONAL DESCRIPTION.
-#       The package parses the question set TXT file.
+#       The package parses the question set YAML file.
 #
 # NOTICE.
 #       Author: visualge@gmail.com (CountChu)

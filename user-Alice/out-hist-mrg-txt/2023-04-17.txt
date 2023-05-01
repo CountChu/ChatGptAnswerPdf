@@ -2,22 +2,22 @@
 
 Questions
 
-2022 WATZ (230406.Papers.OP-TEE.txt)
-[22:34] Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone
-[22:40] What is the benefit of using WASM in TEE?
-[22:44] Is WATZ extended from OP-TEE?
-[22:55] What is Remote Attestation?
-[22:59] So the software is provided by the remote device and the party verify the signature of the software before run it. Right?
-[23:01] Is remote attestation only used  to verify software?
-[23:03] How does a remote device declare that secure boot is enabled?
-[23:07] But how does the party(verifier) determine if the report is fake if the device is breached?
-[23:11] How does the party(verifier) verify the root of trust of the device?
-[23:13] Can remote attestation help the party know if the remote device is breached?
-[23:19] Can TEE guarantee the code?
+2022 WATZ (230406.Papers.OP-TEE.yaml)
+22:34 | Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone
+22:40 | What is the benefit of using WASM in TEE?
+22:44 | Is WATZ extended from OP-TEE?
+22:55 | What is Remote Attestation?
+22:59 | So the software is provided by the remote device and the party verify the signature of the software before run it. Right?
+23:01 | Is remote attestation only used  to verify software?
+23:03 | How does a remote device declare that secure boot is enabled?
+23:07 | But how does the party(verifier) determine if the report is fake if the device is breached?
+23:11 | How does the party(verifier) verify the root of trust of the device?
+23:13 | Can remote attestation help the party know if the remote device is breached?
+23:19 | Can TEE guarantee the code?
 
 Chats
 
 Papers.OP-TEE.0406.md
-[22:38] What is perormance of WATZ?
-[22:42] Is WATZ a TA?
+22:38 | What is perormance of WATZ?
+22:42 | Is WATZ a TA?
 

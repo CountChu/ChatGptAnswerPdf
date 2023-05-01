@@ -7,7 +7,7 @@ Support python applications that can help you convert your ChatGPT conversations
 
 The app generates answers of ChatGPT and saves them in HTML and PDF files by running answer.py, tohtml.py, and topdf.py. 
 
-The answers are found in Markdown chat files and organized by question set files with extension TXT in a specific format.
+The answers are found in Markdown chat files and organized by question set files with extension yaml in a YAML format.
 
 The chat files are captured by the Chrome plugin [ChatGPT to Markdown](https://chatopenai.pro/chatgpt-to-markdown/) or converted by chat2md.py from conversations.json.
 
@@ -28,14 +28,14 @@ List all question set files.
 % python chatpdf.py list
 
 Question Sets in the directory "questions":
-    230327.OP-TEE.SP.txt
-    230327.OP-TEE.txt
-    230328.TEE.txt
-    230329.TrustZone.txt
-    230330.OP-TEE.Intel.txt
-    230330.OP-TEE.j721e.txt
-    230330.Questions.txt
-    230402.DRM.txt
+    230327.OP-TEE.SP.yaml
+    230327.OP-TEE.yaml
+    230328.TEE.yaml
+    230329.TrustZone.yaml
+    230330.OP-TEE.Intel.yaml
+    230330.OP-TEE.j721e.yaml
+    230330.Questions.yaml
+    230402.DRM.yaml
 ```
 
 Update PDF files if your question set files are updated.
@@ -50,7 +50,7 @@ Enforce to update (clean build) all PDF files for all question set files.
 
 Enforce to build the PDF files by a given question set file.
 ```
-% python chatpdf.py build -f 230328.TEE.txt
+% python chatpdf.py build -f 230328.TEE.yaml
 ```
 
 Convert conversations.json into Markdown files for each chat. The download-230414 is an example directory where conversations.json resides.

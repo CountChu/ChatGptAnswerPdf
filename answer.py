@@ -10,7 +10,7 @@ br = pdb.set_trace
 
 def build_args():
     desc = '''
-    Usage 1: python answer.py -q "questions/230328 TEE.txt" -c "chats" -a "out-ans"
+    Usage 1: python answer.py -q "questions/230328.TEE.yaml" -c "chats" -a "out-ans"
 '''
     #
     # Build an ArgumentParser object to parse arguments.
@@ -24,7 +24,7 @@ def build_args():
             '-q',
             dest='questions',
             required=True,
-            help='E.g., "questions/230328 OP-TEE.txt"')    
+            help='E.g., "questions/230328.OP-TEE.yaml"')    
 
     parser.add_argument(
             '-c',

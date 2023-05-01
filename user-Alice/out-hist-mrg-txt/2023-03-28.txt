@@ -2,61 +2,61 @@
 
 Questions
 
-Basic Concepts (230327.OP-TEE.txt)
-[09:12] What is OP-TEE?
-[09:13] What is thre prefix OP of OP-TEE?
-[09:13] Are there alternative technologies of OP-TEE?
-[09:14] Does OP-TEE a software or a hardware solution?
-[09:15] Is OP-TEE a firmware?
-[09:15] Are there successfull cases of OP-TEE?
-[09:16] What are different between ARM OP-TEE and Intel SMM?
-[15:19] https://github.com/OP-TEE
+Basic Concepts (230327.OP-TEE.yaml)
+09:12 | What is OP-TEE?
+09:13 | What is thre prefix OP of OP-TEE?
+09:13 | Are there alternative technologies of OP-TEE?
+09:14 | Does OP-TEE a software or a hardware solution?
+09:15 | Is OP-TEE a firmware?
+09:15 | Are there successfull cases of OP-TEE?
+09:16 | What are different between ARM OP-TEE and Intel SMM?
+15:19 | https://github.com/OP-TEE
 
-Multi-Thread & Multi-Process (230327.OP-TEE.txt)
-[13:51] What is secure context switching in TrustZone?
-[13:53] Does OP-TEE support multi-process?
-[13:56] Can secure kernel and trusted applications in OP-TEE can be multi-thread?
-[13:57] Does OP-TEE support IPC?
+Multi-Thread & Multi-Process (230327.OP-TEE.yaml)
+13:51 | What is secure context switching in TrustZone?
+13:53 | Does OP-TEE support multi-process?
+13:56 | Can secure kernel and trusted applications in OP-TEE can be multi-thread?
+13:57 | Does OP-TEE support IPC?
 
-Memory (230327.OP-TEE.txt)
-[13:59] Does OP-TEE support shared memory?
-[14:06] Can secure world can access memory in normal world?
-[14:07] Can normal world access memory in secure world?
+Memory (230327.OP-TEE.yaml)
+13:59 | Does OP-TEE support shared memory?
+14:06 | Can secure world can access memory in normal world?
+14:07 | Can normal world access memory in secure world?
 
-Network (230327.OP-TEE.txt)
-[14:08] Does OP-TEE support network communication in secure world?
+Network (230327.OP-TEE.yaml)
+14:08 | Does OP-TEE support network communication in secure world?
 
-The ariticle (230329.TrustZone.txt)
-[15:30] https://genode.org/documentation/articles/trustzone
-[15:31] Please summarize the following articles in short.
-[17:37] Please compare TrustZone and TPM in a table.
-[17:40] What is bootstrap code?
-[17:44] What are two lines in the section "Starting point" in the article?
+The ariticle (230329.TrustZone.yaml)
+15:30 | https://genode.org/documentation/articles/trustzone
+15:31 | Please summarize the following articles in short.
+17:37 | Please compare TrustZone and TPM in a table.
+17:40 | What is bootstrap code?
+17:44 | What are two lines in the section "Starting point" in the article?
 
 Chats
 
 OP-TEE.0327.md
-[09:17] What is RPMB?
-[09:18] What is HS in OP-TEE?
-[09:19] What is KEK in OP-TEE?
-[13:45] Does OP-TEE support multi-thread?
-[14:03] Please summarize multi-process, IPC, and shared memory of OP-TEE.
+09:17 | What is RPMB?
+09:18 | What is HS in OP-TEE?
+09:19 | What is KEK in OP-TEE?
+13:45 | Does OP-TEE support multi-thread?
+14:03 | Please summarize multi-process, IPC, and shared memory of OP-TEE.
 
 TrustZone.0329.md
-[15:32] An Exploration of ARM TrustZone Technology ... ...
-[15:33] Starting point ... ...
-[15:34] The design and genesis of our custom base-hw kernel platform ... ...
-[15:37] Hypervisor managing the non-secure world ... ...
-[15:38] World switch between non-secure world and secure world ... ...
-[17:26] User-level Virtual Machine Monitor (VMM) ... ...
-[17:26] Simple test kernel for the non-secure world ... ...
-[17:27] Interrupts ... ...
-[17:28] Booting Linux in the non-secure world ... ...
-[17:28] Device emulation ... ...
-[17:29] TrustZone demonstrated in color ... ...
-[17:30] Additional device drivers ... ...
-[17:30] Demonstration scenario ... ...
-[17:31] Common questions, answered ... ...
-[17:32] Does it make sense to run commodity OSes like Android in the secure world? ... ...
-[17:43] What are two lines of experimentation? Please summarize them in short.
+15:32 | An Exploration of ARM TrustZone Technology ... ...
+15:33 | Starting point ... ...
+15:34 | The design and genesis of our custom base-hw kernel platform ... ...
+15:37 | Hypervisor managing the non-secure world ... ...
+15:38 | World switch between non-secure world and secure world ... ...
+17:26 | User-level Virtual Machine Monitor (VMM) ... ...
+17:26 | Simple test kernel for the non-secure world ... ...
+17:27 | Interrupts ... ...
+17:28 | Booting Linux in the non-secure world ... ...
+17:28 | Device emulation ... ...
+17:29 | TrustZone demonstrated in color ... ...
+17:30 | Additional device drivers ... ...
+17:30 | Demonstration scenario ... ...
+17:31 | Common questions, answered ... ...
+17:32 | Does it make sense to run commodity OSes like Android in the secure world? ... ...
+17:43 | What are two lines of experimentation? Please summarize them in short.
 

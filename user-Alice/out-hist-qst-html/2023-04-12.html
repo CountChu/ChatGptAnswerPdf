@@ -11,30 +11,30 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-12</h1>
-<p>Created: 2023-04-29 22:44:53</p>
+<p>Created: 2023-05-01 22:17:45</p>
 <h1>Questions</h1>
 <ul>
-<li>TCB <code>(230407.Arm.Hypervisor.txt)</code><ul>
+<li>TCB <code>(230407.Arm.Hypervisor.yaml)</code><ul>
 <li><code>[10:36]</code> What are Security Building Blocks? <code>(Papers.OP-TEE.0406.md)</code></li>
 <li><code>[10:37]</code> What compare Security Building Block and TCB and also summarize them in a table. <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
-<li>FF-A, TF-A, and TrustZone <code>(230409.FF-A.txt)</code><ul>
+<li>FF-A, TF-A, and TrustZone <code>(230409.FF-A.yaml)</code><ul>
 <li><code>[10:59]</code> Is TF-A persistent in memory at run-time? <code>(FF-A.0409.md)</code></li>
 </ul>
 </li>
-<li>Development <code>(230327.OP-TEE.txt)</code><ul>
+<li>Development <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[14:47]</code> What is about size of tee.bin? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Types of ARM CPU <code>(230410.Arm.txt)</code><ul>
+<li>Types of ARM CPU <code>(230410.Arm.yaml)</code><ul>
 <li><code>[16:48]</code> Can I get Armv8-A with only 32-bit for cost down? <code>(Arm.0410.md)</code></li>
 </ul>
 </li>
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
-<h2>TCB <code>(230407.Arm.Hypervisor.txt)</code></h2>
+<h2>TCB <code>(230407.Arm.Hypervisor.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[10:36]</code> What are Security Building Blocks? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Security Building Blocks refer to the fundamental components or technologies used to design and implement a secure system. These building blocks form the foundation for creating secure software, hardware, and network architectures. They are essential for safeguarding sensitive information and ensuring that systems are resistant to unauthorized access, manipulation, or other forms of attack. Some common security building blocks include:</p>
@@ -110,19 +110,19 @@
 </table>
 <p>In summary, Security Building Blocks are the fundamental components and technologies used to create secure systems, while the Trusted Computing Base (TCB) represents the minimal set of critical components essential for ensuring the security of a system. Security Building Blocks can be seen as the elements that are combined to create a secure system, whereas the TCB is the core of the system, ensuring its overall security.</p>
 <hr />
-<h2>FF-A, TF-A, and TrustZone <code>(230409.FF-A.txt)</code></h2>
+<h2>FF-A, TF-A, and TrustZone <code>(230409.FF-A.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[10:59]</code> Is TF-A persistent in memory at run-time? <code>(FF-A.0409.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, the Trusted Firmware-A (TF-A) is typically persistent in memory at run-time. It resides in the secure memory region and provides various services, such as Secure Monitor Call (SMC) handling, Power State Coordination Interface (PSCI) implementation, and other platform-specific services. Since it acts as a secure monitor, it must remain present in memory during the system&rsquo;s operation to handle any secure world requests or transitions between secure and non-secure worlds.</p>
 <hr />
-<h2>Development <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Development <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[14:47]</code> What is about size of tee.bin? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The size of the <code>tee.bin</code> file, which is the OP-TEE OS binary, can vary depending on various factors such as the target platform, configuration options, and enabled features. It&rsquo;s difficult to give an exact size for a specific <code>tee.bin</code> file without knowing the specific build configuration.</p>
 <p>However, generally speaking, the size of the <code>tee.bin</code> file is relatively small, usually ranging from a few hundred kilobytes to a couple of megabytes. This small footprint is one of the reasons why OP-TEE is suitable for use in constrained environments, such as embedded systems and IoT devices.</p>
 <p>Keep in mind that the actual size of the <code>tee.bin</code> file in your specific case can be different depending on the factors mentioned earlier.</p>
 <hr />
-<h2>Types of ARM CPU <code>(230410.Arm.txt)</code></h2>
+<h2>Types of ARM CPU <code>(230410.Arm.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[16:48]</code> Can I get Armv8-A with only 32-bit for cost down? <code>(Arm.0410.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>While the Armv8-A architecture includes both 64-bit (AArch64) and 32-bit (AArch32) execution states, there is no specific variant of Armv8-A that exclusively supports 32-bit operation for cost reduction. The idea behind Armv8-A&rsquo;s dual execution states is to provide compatibility with existing 32-bit software while taking advantage of 64-bit enhancements.</p>

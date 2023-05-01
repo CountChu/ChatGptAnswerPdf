@@ -2,29 +2,29 @@
 
 Questions
 
-2020 Demystifying TEE Client API (230406.Papers.OP-TEE.txt)
-[11:30] Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE
+2020 Demystifying TEE Client API (230406.Papers.OP-TEE.yaml)
+11:30 | Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE
 
-Virtualization (230327.OP-TEE.txt)
-[23:11] The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html
-[23:15] Does the hypervisor relied on OP-TEE run in normal world or secure world?
-[23:19] Does a TA run in a VM described in the article?
+Virtualization (230327.OP-TEE.yaml)
+23:11 | The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html
+23:15 | Does the hypervisor relied on OP-TEE run in normal world or secure world?
+23:19 | Does a TA run in a VM described in the article?
 
 Chats
 
 OP-TEE.0327.md
-[11:00] Can OP-TEE be ported in Qualcomm devices?
-[11:02] Who did port OP-TEE in Qualcomm devices successfully?
-[23:25] What is SPMC?
-[23:27] Is SPMC of TrustZone?
-[23:47] What is FF-A?
+11:00 | Can OP-TEE be ported in Qualcomm devices?
+11:02 | Who did port OP-TEE in Qualcomm devices successfully?
+23:25 | What is SPMC?
+23:27 | Is SPMC of TrustZone?
+23:47 | What is FF-A?
 
 OP-TEE.History.0407.md
-[11:42] Please list history of Linaro OP-TEE with years.
-[11:43] Please list history of Linaro OP-TEE with years after 2015.
-[11:45] Please list history of Qualcomm QTEE with years after 2017.
+11:42 | Please list history of Linaro OP-TEE with years.
+11:43 | Please list history of Linaro OP-TEE with years after 2015.
+11:45 | Please list history of Qualcomm QTEE with years after 2017.
 
 TrustZone.0329.md
-[23:32] Is Secure Partition of TrustZone?
-[23:33] Is SPMC of TrustZone?
+23:32 | Is Secure Partition of TrustZone?
+23:33 | Is SPMC of TrustZone?
 

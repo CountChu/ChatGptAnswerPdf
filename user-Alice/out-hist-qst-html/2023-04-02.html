@@ -11,17 +11,17 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-02</h1>
-<p>Created: 2023-04-29 22:44:53</p>
+<p>Created: 2023-05-01 22:17:45</p>
 <h1>Questions</h1>
 <ul>
-<li>Secure Storage <code>(230327.OP-TEE.txt)</code><ul>
+<li>Secure Storage <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[08:10]</code> How does OP-TEE generate SSK from HUK in tee_fs_init_key_manager()? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[08:12]</code> In the function, can I read the content of the HUK? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[08:18]</code> How do I protect HUK from reading in OP-TEE? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[08:20]</code> Is SSK defined in GlobalPlatform? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Basic Concept <code>(230402.DRM.txt)</code><ul>
+<li>Basic Concept <code>(230402.DRM.yaml)</code><ul>
 <li><code>[14:25]</code> What is DRM? <code>(DRM.0402.md)</code></li>
 <li><code>[14:26]</code> How does DRM protect digital contents? <code>(DRM.0402.md)</code></li>
 <li><code>[14:28]</code> Please describe more detail about encryption method. <code>(DRM.0402.md)</code></li>
@@ -31,7 +31,7 @@
 <li><code>[17:00]</code> What is kind of DRM? <code>(DRM.0402.md)</code></li>
 </ul>
 </li>
-<li>DRM <code>(230327.OP-TEE.txt)</code><ul>
+<li>DRM <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[14:35]</code> How do I implement DRM of content decryption with OP-TEE? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[14:39]</code> So the content is decrypted in TA in secure world. Right? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[14:41]</code> But does it slow down the playback speed because of switching between normal world and secure world? <code>(OP-TEE.0327.md)</code></li>
@@ -39,24 +39,24 @@
 <li><code>[16:10]</code> How do I implement a DRM solution using ClearKey in OP-TEE? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Memory <code>(230327.OP-TEE.txt)</code><ul>
+<li>Memory <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[17:33]</code> What is SMAF? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[17:45]</code> What is CMA? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Qualcomm <code>(230327.OP-TEE.txt)</code><ul>
+<li>Qualcomm <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[20:26]</code> Does Qualcomm support OP-TEE? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[20:28]</code> Is QTEE open source? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Static TA and Dynamic TA <code>(230327.OP-TEE.txt)</code><ul>
+<li>Static TA and Dynamic TA <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[20:31]</code> What are Static TA and Dynamic TA? Please also summarize them in a table. <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
-<h2>Secure Storage <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Secure Storage <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[08:10]</code> How does OP-TEE generate SSK from HUK in tee_fs_init_key_manager()? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>In OP-TEE, the <code>tee_fs_init_key_manager()</code> function is responsible for generating the Secure Storage Key (SSK) from the Hardware Unique Key (HUK). This process takes place during the initialization of the secure file system. The function can be found in the <code>core/tee/tee_fs_key_manager.c</code> file in the OP-TEE source code.</p>
@@ -131,7 +131,7 @@
 <p>In OP-TEE, the SSK is used for encrypting and decrypting data stored in the secure storage. It is derived from the Hardware Unique Key (HUK) using a Key Derivation Function (KDF). While this implementation choice is specific to OP-TEE, it aligns with the broader security goals outlined by the GlobalPlatform TEE specifications, such as ensuring the confidentiality and integrity of data in secure storage.</p>
 <p>The GlobalPlatform TEE specifications provide guidance on general security requirements, but individual TEE implementations, such as OP-TEE, can choose how to implement specific features like secure storage and key management, as long as they meet the overall security objectives of the specifications.</p>
 <hr />
-<h2>Basic Concept <code>(230402.DRM.txt)</code></h2>
+<h2>Basic Concept <code>(230402.DRM.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[14:25]</code> What is DRM? <code>(DRM.0402.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>DRM stands for Digital Rights Management. It is a set of technologies and techniques used by copyright holders, publishers, and content providers to control the access, distribution, and usage of digital media, such as software, ebooks, music, and movies. The primary goal of DRM is to protect intellectual property rights and prevent unauthorized copying, sharing, or modification of digital content.</p>
@@ -260,7 +260,7 @@
 </ol>
 <p>These DRM systems protect digital content by implementing various access control measures and restrictions, such as encryption, licensing, and usage limitations, to prevent unauthorized copying, sharing, and modification. Each DRM system targets different platforms, devices, and use cases, offering varying levels of content protection and compatibility.</p>
 <hr />
-<h2>DRM <code>(230327.OP-TEE.txt)</code></h2>
+<h2>DRM <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[14:35]</code> How do I implement DRM of content decryption with OP-TEE? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Implementing DRM content decryption with OP-TEE requires the development of a Trusted Application (TA) that handles the decryption process securely within the TEE environment. Here is a step-by-step guide to help you implement DRM content decryption using OP-TEE:</p>
@@ -386,7 +386,7 @@
 </ol>
 <p>Keep in mind that ClearKey is a basic key system primarily intended for testing and development purposes. In a production environment, you may want to use a more robust and secure DRM system, such as Widevine or PlayReady, depending on your requirements and platform support. Additionally, be aware that implementing a DRM solution in OP-TEE can be complex, and you&rsquo;ll need to consider the hardware and platform limitations, performance, and security requirements for your specific use case.</p>
 <hr />
-<h2>Memory <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Memory <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[17:33]</code> What is SMAF? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>SMAF stands for Secure Memory Allocation Framework, which is a part of the OP-TEE project. SMAF is designed to provide secure memory allocation and management in a Trusted Execution Environment (TEE). It allows OP-TEE to allocate, deallocate, and manage memory resources efficiently and securely within the secure world.</p>
@@ -414,7 +414,7 @@
 <p>CMA is not specific to OP-TEE but can be used in conjunction with OP-TEE in some cases. For example, OP-TEE may use CMA to allocate a large block of memory for a Trusted Application (TA) that requires a significant amount of contiguous memory. Additionally, CMA can be used to manage memory shared between the normal world and the secure world, ensuring that the shared memory regions are allocated contiguously and can be efficiently accessed by both worlds.</p>
 <p>It is important to note that CMA should be used with caution, as reserving a large portion of memory for the CMA pool can impact overall system performance and memory utilization. Careful consideration of the trade-offs and system requirements is necessary when using CMA in a specific implementation.</p>
 <hr />
-<h2>Qualcomm <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Qualcomm <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[20:26]</code> Does Qualcomm support OP-TEE? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>As of my knowledge cutoff in September 2021, Qualcomm does not officially support OP-TEE for their platforms. Instead, they provide their own Trusted Execution Environment (TEE) solution, known as Qualcomm Trusted Execution Environment (QTEE). QTEE is based on ARM TrustZone technology and is designed to provide a secure environment for running trusted applications on Qualcomm Snapdragon processors.</p>
@@ -427,7 +427,7 @@
 <p>Qualcomm provides certain tools, libraries, and APIs to facilitate the development of trusted applications (TAs) for QTEE, and some of these resources may be available as open-source projects. However, the QTEE OS and other critical components are closed-source and maintained by Qualcomm.</p>
 <p>This is in contrast to OP-TEE, which is an open-source TEE solution maintained by Linaro and supported by various industry partners. With OP-TEE, developers have access to the full source code, enabling them to examine, modify, and contribute to the project as needed.</p>
 <hr />
-<h2>Static TA and Dynamic TA <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Static TA and Dynamic TA <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[20:31]</code> What are Static TA and Dynamic TA? Please also summarize them in a table. <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Static TA (Trusted Application) and Dynamic TA are two types of Trusted Applications used within the OP-TEE framework. Here&rsquo;s a summary of their differences in a table:</p>

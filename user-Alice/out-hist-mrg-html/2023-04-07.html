@@ -11,14 +11,14 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-07</h1>
-<p>Created: 2023-04-29 22:45:29</p>
+<p>Created: 2023-05-01 22:18:21</p>
 <h1>Questions</h1>
 <ul>
-<li>2020 Bao <code>(230406.Papers.OP-TEE.txt)</code><ul>
+<li>2020 Bao <code>(230406.Papers.OP-TEE.yaml)</code><ul>
 <li><code>[09:02]</code> Is Bao a hypervisor? <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
-<li>Hypervisor &amp; Virtualization <code>(230407.Arm.Hypervisor.txt)</code><ul>
+<li>Hypervisor &amp; Virtualization <code>(230407.Arm.Hypervisor.yaml)</code><ul>
 <li><code>[09:04]</code> Please compare hypervisor and virtualization and also summarize them in a table. <code>(Papers.OP-TEE.0406.md)</code></li>
 <li><code>[09:05]</code> Is TrustZone a hypervisor or virtualization? <code>(Papers.OP-TEE.0406.md)</code></li>
 <li><code>[09:06]</code> Is OP-TEE a hypervisor or virtualization? <code>(Papers.OP-TEE.0406.md)</code></li>
@@ -26,24 +26,24 @@
 <li><code>[14:05]</code> Are there alnatives of hypervisor? <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
-<li>VM <code>(230407.Arm.Hypervisor.txt)</code><ul>
+<li>VM <code>(230407.Arm.Hypervisor.yaml)</code><ul>
 <li><code>[13:56]</code> Does VM require hypervisor? <code>(Papers.OP-TEE.0406.md)</code></li>
 <li><code>[14:07]</code> Can a VM contain VMs? <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
-<li>Virtualization <code>(230407.Arm.Hypervisor.txt)</code><ul>
+<li>Virtualization <code>(230407.Arm.Hypervisor.yaml)</code><ul>
 <li><code>[13:59]</code> What are types of virtualization techs? <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
-<li>Hypervisor <code>(230407.Arm.Hypervisor.txt)</code><ul>
+<li>Hypervisor <code>(230407.Arm.Hypervisor.yaml)</code><ul>
 <li><code>[14:04]</code> Is hypvervisor a virtual machine manager? <code>(Papers.OP-TEE.0406.md)</code></li>
 </ul>
 </li>
-<li>TCB <code>(230407.Arm.Hypervisor.txt)</code><ul>
+<li>TCB <code>(230407.Arm.Hypervisor.yaml)</code><ul>
 <li><code>[16:32]</code> What are components in TCB? <code>(TrustZone.0329.md)</code></li>
 </ul>
 </li>
-<li>History <code>(230407.OP-TEE.History.txt)</code><ul>
+<li>History <code>(230407.OP-TEE.History.yaml)</code><ul>
 <li><code>[21:23]</code> Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone about TrustZone and Qualcomm about TEE. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail. <code>(OP-TEE.History.0407.md)</code></li>
 <li><code>[21:26]</code> Please display above context in a table. X axis of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm.  Y asis of the table are years. <code>(OP-TEE.History.0407.md)</code></li>
 <li><code>[21:30]</code> When did Qualcomm release QTEE? <code>(OP-TEE.History.0407.md)</code></li>
@@ -83,12 +83,12 @@
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
-<h2>2020 Bao <code>(230406.Papers.OP-TEE.txt)</code></h2>
+<h2>2020 Bao <code>(230406.Papers.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[09:02]</code> Is Bao a hypervisor? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, Bao is a hypervisor. Specifically, it is a lightweight static partitioning hypervisor designed for modern multi-core embedded systems. The Bao hypervisor provides a minimal, standalone, and clean-slate implementation of the static partitioning architecture for Armv8 and RISC-V platforms. Its main goal is to achieve strong spatial and temporal isolation with minimal virtualization overhead in embedded systems.</p>
 <hr />
-<h2>Hypervisor &amp; Virtualization <code>(230407.Arm.Hypervisor.txt)</code></h2>
+<h2>Hypervisor &amp; Virtualization <code>(230407.Arm.Hypervisor.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[09:04]</code> Please compare hypervisor and virtualization and also summarize them in a table. <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Hypervisor and virtualization are related concepts but serve different purposes. Here&rsquo;s a comparison and summary of both in a table:</p>
@@ -175,7 +175,7 @@
 </ol>
 <p>These alternatives each have their own advantages and trade-offs, and their suitability depends on the specific use case and requirements of the system being virtualized.</p>
 <hr />
-<h2>VM <code>(230407.Arm.Hypervisor.txt)</code></h2>
+<h2>VM <code>(230407.Arm.Hypervisor.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[13:56]</code> Does VM require hypervisor? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, virtual machines (VMs) typically require a hypervisor to function. A hypervisor is the essential component responsible for creating, managing, and running VMs on a physical host system. It allocates the physical resources, such as CPU, memory, and storage, among the VMs and provides isolation between them. VMs are essentially software-based environments running on the hypervisor, which simulates the hardware and allows multiple VMs with different operating systems to share the same physical hardware resources.</p>
@@ -192,7 +192,7 @@
 </ol>
 <p>However, nested virtualization can also introduce additional overhead and complexity, which can negatively impact the performance of the nested VMs. Additionally, not all hypervisors support nested virtualization, and hardware virtualization support may be required for acceptable performance.</p>
 <hr />
-<h2>Virtualization <code>(230407.Arm.Hypervisor.txt)</code></h2>
+<h2>Virtualization <code>(230407.Arm.Hypervisor.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[13:59]</code> What are types of virtualization techs? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>There are various types of virtualization technologies, each targeting a specific layer of computing or specific use cases. Here are some of the major types:</p>
@@ -218,13 +218,13 @@
 </ol>
 <p>These are just a few examples of virtualization technologies, and many more specific solutions and implementations exist in the industry.</p>
 <hr />
-<h2>Hypervisor <code>(230407.Arm.Hypervisor.txt)</code></h2>
+<h2>Hypervisor <code>(230407.Arm.Hypervisor.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[14:04]</code> Is hypvervisor a virtual machine manager? <code>(Papers.OP-TEE.0406.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Yes, a hypervisor is often referred to as a virtual machine manager (VMM). A hypervisor is a software or firmware that manages the creation, execution, and management of virtual machines (VMs) on a host system. It allows multiple VMs to run concurrently on the same physical hardware, while providing isolation and resource management between them.</p>
 <p>Hypervisors are responsible for abstracting the physical hardware resources and allocating them to the VMs, handling the VMs&rsquo; requests for resources, and ensuring that the VMs do not interfere with each other or the host system. They play a crucial role in the virtualization process, making it possible to create and manage VMs efficiently and securely.</p>
 <hr />
-<h2>TCB <code>(230407.Arm.Hypervisor.txt)</code></h2>
+<h2>TCB <code>(230407.Arm.Hypervisor.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[16:32]</code> What are components in TCB? <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>The Trusted Computing Base (TCB) is the set of all hardware, firmware, and software components critical to the security of a system. These components are responsible for enforcing the security policy and maintaining the system&rsquo;s integrity, confidentiality, and availability. The exact components of a TCB may vary depending on the specific system architecture and implementation. However, some common components in a TCB include:</p>
@@ -260,7 +260,7 @@
 </ol>
 <p>These components work together to ensure the security of a system and provide a trusted foundation for applications and services. Note that the components listed above are just examples, and the actual TCB components may differ based on the specific system and its security requirements.</p>
 <hr />
-<h2>History <code>(230407.OP-TEE.History.txt)</code></h2>
+<h2>History <code>(230407.OP-TEE.History.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[21:23]</code> Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone about TrustZone and Qualcomm about TEE. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail. <code>(OP-TEE.History.0407.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Here&rsquo;s a detailed history of TEE, TrustZone, and OP-TEE, along with information about the iPhone and Qualcomm in relation to TrustZone and TEE, as well as details on ARMv7 and ARMv8 architectures:</p>

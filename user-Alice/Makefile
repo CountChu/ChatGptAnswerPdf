@@ -1,5 +1,5 @@
 answer:
-	python ../answer.py -q "questions-230402/230327.OP-TEE.SP.txt" -c "chats-manual" -a "out-ans"
+	python ../answer.py -q "questions-230402/230327.OP-TEE.SP.yaml" -c "chats-manual" -a "out-ans"
 
 tohtml:
 	python ../tohtml.py -i out-ans -o out-ans-html
@@ -67,6 +67,7 @@ clean-hist:
 
 clean-all: clean-ans clean-hist
 
-
+txt2yaml:
+	python ../txt2yaml.py -i questions-txt -o questions 
 
 

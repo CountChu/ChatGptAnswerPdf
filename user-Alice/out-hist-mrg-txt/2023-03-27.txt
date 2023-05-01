@@ -2,21 +2,21 @@
 
 Questions
 
-Basic Concepts (230327.OP-TEE.SP.txt)
-[09:19] https://github.com/OP-TEE/optee_os/pull/3973
-[09:21] What is StMM?
-[09:22] What is FFA?
-[09:38] Why are SPD and SPM mutually exclusive?
-[09:47] What is BL32_AP_MM.fd?
-[10:13] Does OP-TEE require UEFI?
+Basic Concepts (230327.OP-TEE.SP.yaml)
+09:19 | https://github.com/OP-TEE/optee_os/pull/3973
+09:21 | What is StMM?
+09:22 | What is FFA?
+09:38 | Why are SPD and SPM mutually exclusive?
+09:47 | What is BL32_AP_MM.fd?
+10:13 | Does OP-TEE require UEFI?
 
 Chats
 
 OP-TEE.SP.0327.md
-[09:18] https://github.com/OP-TEE/optee_os/pull/3973
-[09:20] What is SPD?
-[09:20] What is SPM?
-[09:46] What is SP?
-[17:43] What are EL0, EL1, EL2, S-EL0, S-EL1, S-EL2, S-EL3?
-[17:47] Is UEFI required in ARM?
+09:18 | https://github.com/OP-TEE/optee_os/pull/3973
+09:20 | What is SPD?
+09:20 | What is SPM?
+09:46 | What is SP?
+17:43 | What are EL0, EL1, EL2, S-EL0, S-EL1, S-EL2, S-EL3?
+17:47 | Is UEFI required in ARM?
 

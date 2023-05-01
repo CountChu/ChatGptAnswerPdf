@@ -29,9 +29,9 @@ def build_args():
     Usage 3: python chatpdf.py update
     Usage 4: python chatpdf.py update -q questions-230402 -c chats-manual
     Usage 5: python chatpdf.py build
-    Usage 6: python chatpdf.py build -f 230328.TEE.txt
+    Usage 6: python chatpdf.py build -f 230328.TEE.yaml
     Usage 7: python chatpdf.py build -q questions-230402 -c chats-manual   
-    Usage 8: python chatpdf.py build -q questions-230402 -f 230327.OP-TEE.txt -c chats-manual   
+    Usage 8: python chatpdf.py build -q questions-230402 -f 230327.OP-TEE.yaml -c chats-manual   
 '''
     #
     # Build an ArgumentParser object to parse arguments.
@@ -68,7 +68,7 @@ def build_args():
     parser.add_argument(
             '-f',
             dest='file',
-            help='E.g., "230328.TEE.txt"')    
+            help='E.g., "230328.TEE.yaml"')    
 
     #
     # Check arguments and return.

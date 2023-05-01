@@ -11,7 +11,7 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>230418.SGX</h1>
-<p>Created: 2023-04-29 22:44:44</p>
+<p>Created: 2023-05-01 22:17:29</p>
 <h1>Questions</h1>
 <ul>
 <li>Documents<ul>
@@ -31,13 +31,7 @@
 </li>
 <li>Keys<ul>
 <li>What are types of Intel SGX Keys? <code>(SGX.0418.md)</code></li>
-</ul>
-</li>
-<li>Sealing Key<ul>
 <li>What is Sealing Key? <code>(Papers.SGX.0419.md)</code></li>
-</ul>
-</li>
-<li>Attestation Key<ul>
 <li>What is attestation key? <code>(SGX.0418.md)</code></li>
 <li>Is there only one attestation key in a device? <code>(SGX.0418.md)</code></li>
 <li>Where is attestation key sotred in Intel SGX arch? <span style="color:red"><code>[error]</code></span> <code>(SGX.0418.md)</code></li>
@@ -191,7 +185,6 @@
 </ol>
 <p>These keys play different roles in ensuring the security and privacy of enclaves and their associated data. They are generated and managed by the SGX architecture in a way that provides strong isolation and protection against unauthorized access or tampering.</p>
 <hr />
-<h2>Sealing Key</h2>
 <p><strong>Question:</strong> What is Sealing Key? <code>(Papers.SGX.0419.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>A Sealing Key is a cryptographic key used in Intel SGX (Software Guard Extensions) to protect sensitive data in the context of an enclave. The purpose of the sealing key is to encrypt and decrypt (or &ldquo;seal&rdquo; and &ldquo;unseal&rdquo;) the data, ensuring that it remains confidential and can only be accessed by the enclave that generated the sealing key or other authorized enclaves.</p>
@@ -210,7 +203,6 @@
 </ol>
 <p>The sealing and unsealing processes are critical to the overall security of Intel SGX, as they ensure that sensitive data remains protected even when it is stored outside the secure enclave memory or transmitted between enclaves.</p>
 <hr />
-<h2>Attestation Key</h2>
 <p><strong>Question:</strong> What is attestation key? <code>(SGX.0418.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>An attestation key is a cryptographic key used in the process of attestation to prove the authenticity and integrity of a system, software, or hardware component. The attestation key is typically an asymmetric key pair, consisting of a private key and a public key.</p>

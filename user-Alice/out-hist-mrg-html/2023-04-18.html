@@ -11,27 +11,27 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-18</h1>
-<p>Created: 2023-04-29 22:45:29</p>
+<p>Created: 2023-05-01 22:18:21</p>
 <h1>Questions</h1>
 <ul>
-<li>Documents <code>(230418.SGX.txt)</code><ul>
+<li>Documents <code>(230418.SGX.yaml)</code><ul>
 <li><code>[09:09]</code> Sealing and Attestation in Intel SGX <span style="color:blue"><code>[title]</code></span> <code>(SGX.0418.md)</code></li>
 <li><code>[09:14]</code> What is relationship between secure enclave and secure memory? <code>(SGX.0418.md)</code></li>
 <li><code>[10:00]</code> Intel SGX Product Brief <code>(SGX.0418.md)</code></li>
 </ul>
 </li>
-<li>EGETKEY <code>(230418.SGX.txt)</code><ul>
+<li>EGETKEY <code>(230418.SGX.yaml)</code><ul>
 <li><code>[10:18]</code> What is enclave software? <code>(SGX.0418.md)</code></li>
 <li><code>[10:19]</code> Is the EGETKEY instruction only called by enclave software? <code>(SGX.0418.md)</code></li>
 <li><code>[10:21]</code> Can I get hardware-protected key by calling EGETKEY instruction in enclave software? <code>(SGX.0418.md)</code></li>
 <li><code>[10:22]</code> So after I get the hardware-protected key, I can print it. Is it safe? <code>(SGX.0418.md)</code></li>
 </ul>
 </li>
-<li>MRSIGNER <code>(230418.SGX.txt)</code><ul>
+<li>MRSIGNER <code>(230418.SGX.yaml)</code><ul>
 <li><code>[11:11]</code> Is MRSIGNER unique to every enclave? <span style="color:blue"><code>[title]</code></span> <code>(SGX.0418.md)</code></li>
 </ul>
 </li>
-<li>EPID <code>(230418.SGX.txt)</code><ul>
+<li>EPID <code>(230418.SGX.yaml)</code><ul>
 <li><code>[13:59]</code> What is EPID? <code>(SGX.0418.md)</code></li>
 <li><code>[15:06]</code> How does EPID work? <code>(SGX.0418.md)</code></li>
 <li><code>[20:59]</code> Which problems does EPID solve? <code>(SGX.0418.md)</code></li>
@@ -41,12 +41,12 @@
 <li><code>[21:10]</code> But if the compromised device reports a fake EPID, what should I do? <code>(SGX.0418.md)</code></li>
 </ul>
 </li>
-<li>Attestation <code>(230418.SGX.txt)</code><ul>
+<li>Attestation <code>(230418.SGX.yaml)</code><ul>
 <li><code>[14:20]</code> What is attestation? <code>(SGX.0418.md)</code></li>
 <li><code>[15:04]</code> Please build a cross table. The x axis is hardwared-based and software-based, The y axis is Remote and Local. Please contain Intel SGX, TPM, TLS, SSH, digital signatures, secure boot <code>(SGX.0418.md)</code></li>
 </ul>
 </li>
-<li>Paper - Innovative Technology for CPU Based Attestation and Sealing <code>(230418.SGX.txt)</code><ul>
+<li>Paper - Innovative Technology for CPU Based Attestation and Sealing <code>(230418.SGX.yaml)</code><ul>
 <li><code>[21:18]</code> Abstract and INTRODUCTION <span style="color:blue"><code>[title]</code></span> <code>(Papers.SGX.0419.md)</code></li>
 <li><code>[21:29]</code> 2 MEASUREMENT <span style="color:blue"><code>[title]</code></span> <code>(Papers.SGX.0419.md)</code></li>
 <li><code>[21:34]</code> 3 ATTESTATION <span style="color:blue"><code>[title]</code></span> <code>(Papers.SGX.0419.md)</code></li>
@@ -55,7 +55,7 @@
 <li><code>[21:52]</code> 8 REFERENCES <span style="color:blue"><code>[title]</code></span> <code>(Papers.SGX.0419.md)</code></li>
 </ul>
 </li>
-<li>Sealing Identity <code>(230418.SGX.txt)</code><ul>
+<li>Sealing Identity <code>(230418.SGX.yaml)</code><ul>
 <li><code>[22:38]</code> Is &ldquo;Sealing Identity&rdquo; a MRSIGNER? <code>(Papers.SGX.0419.md)</code></li>
 </ul>
 </li>
@@ -88,7 +88,7 @@
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
-<h2>Documents <code>(230418.SGX.txt)</code></h2>
+<h2>Documents <code>(230418.SGX.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[09:09]</code> Sealing and Attestation in Intel SGX <span style="color:blue"><code>[title]</code></span> <code>(SGX.0418.md)</code></p>
 <p><strong>Answer:</strong> &hellip; &hellip;</p>
 <hr />
@@ -98,7 +98,7 @@
 <p><strong>Question:</strong> <code>[10:00]</code> Intel SGX Product Brief <code>(SGX.0418.md)</code></p>
 <p><strong>Answer:</strong> &hellip; &hellip;</p>
 <hr />
-<h2>EGETKEY <code>(230418.SGX.txt)</code></h2>
+<h2>EGETKEY <code>(230418.SGX.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[10:18]</code> What is enclave software? <code>(SGX.0418.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Enclave software refers to a part of an application that runs inside a protected area of memory called an enclave. Enclaves are created using Intel Software Guard Extensions (Intel SGX) technology to provide a higher level of security for sensitive code and data. The enclave isolates the protected code and data from the rest of the application, the operating system, and other processes running on the same system.</p>
@@ -121,14 +121,14 @@
 <p>Printing or logging the hardware-protected key would undermine its security. One of the primary purposes of using a hardware-protected key is to ensure that sensitive data remains secure even in the presence of compromised software or hardware. Exposing the key by printing or logging it outside of the enclave would make it vulnerable to theft and unauthorized access.</p>
 <p>If you need to use the hardware-protected key outside of the enclave for some purpose, it is crucial to maintain the key&rsquo;s confidentiality. You should transmit the key securely, ideally using encryption or secure channels, and only share it with trusted parties. Printing or logging the key should be avoided to minimize the risk of exposure.</p>
 <hr />
-<h2>MRSIGNER <code>(230418.SGX.txt)</code></h2>
+<h2>MRSIGNER <code>(230418.SGX.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[11:11]</code> Is MRSIGNER unique to every enclave? <span style="color:blue"><code>[title]</code></span> <code>(SGX.0418.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>MRSIGNER is not unique to every enclave; it is unique to the entity that signed the enclave. Multiple enclaves signed by the same entity (using the same public-private key pair) will have the same MRSIGNER value.</p>
 <p>In other words, MRSIGNER is a way to identify the signer of an enclave rather than the enclave itself. When you verify an enclave&rsquo;s identity during the remote attestation process, you may use the MRSIGNER to check if the enclave was signed by a trusted entity.</p>
 <p>For example, if a company produces multiple enclaves, they may sign all their enclaves with the same key pair. All these enclaves will have the same MRSIGNER, which represents the company&rsquo;s public key. In this case, MRSIGNER serves as an identifier for the company as the enclave signer.</p>
 <hr />
-<h2>EPID <code>(230418.SGX.txt)</code></h2>
+<h2>EPID <code>(230418.SGX.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[13:59]</code> What is EPID? <code>(SGX.0418.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>EPID (Enhanced Privacy ID) is a privacy-enhancing technology developed by Intel for anonymous attestation of trusted computing platforms. It is primarily used in Intel SGX (Software Guard Extensions) to verify the authenticity and integrity of an enclave without revealing the identity of the platform.</p>
@@ -283,7 +283,7 @@
 </ol>
 <p>In case a fake EPID is detected, follow your organization&rsquo;s incident response plan to contain the threat, investigate the issue, and recover from the incident.</p>
 <hr />
-<h2>Attestation <code>(230418.SGX.txt)</code></h2>
+<h2>Attestation <code>(230418.SGX.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[14:20]</code> What is attestation? <code>(SGX.0418.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Attestation is a security process that allows one entity to verify the authenticity, integrity, and trustworthiness of another entity, typically in the context of software or hardware systems. In the realm of computer security, attestation involves checking that a system or application is running as intended, without unauthorized modifications or tampering.</p>
@@ -314,7 +314,7 @@
 
 <p>In this table, Intel SGX and TPM are listed under the &ldquo;Hardware-based&rdquo; column for both &ldquo;Local Attestation&rdquo; and &ldquo;Remote Attestation.&rdquo; Secure Boot and Digital Signatures are listed under the &ldquo;Software-based&rdquo; column for &ldquo;Local Attestation.&rdquo; TLS and SSH are listed under the &ldquo;Software-based&rdquo; column for &ldquo;Remote Attestation.&rdquo; This table provides an overview of the different types of attestation used by various technologies.</p>
 <hr />
-<h2>Paper - Innovative Technology for CPU Based Attestation and Sealing <code>(230418.SGX.txt)</code></h2>
+<h2>Paper - Innovative Technology for CPU Based Attestation and Sealing <code>(230418.SGX.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[21:18]</code> Abstract and INTRODUCTION <span style="color:blue"><code>[title]</code></span> <code>(Papers.SGX.0419.md)</code></p>
 <p><strong>Answer:</strong> &hellip; &hellip;</p>
 <hr />
@@ -333,7 +333,7 @@
 <p><strong>Question:</strong> <code>[21:52]</code> 8 REFERENCES <span style="color:blue"><code>[title]</code></span> <code>(Papers.SGX.0419.md)</code></p>
 <p><strong>Answer:</strong> &hellip; &hellip;</p>
 <hr />
-<h2>Sealing Identity <code>(230418.SGX.txt)</code></h2>
+<h2>Sealing Identity <code>(230418.SGX.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[22:38]</code> Is &ldquo;Sealing Identity&rdquo; a MRSIGNER? <code>(Papers.SGX.0419.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Sealing Identity is not the same as MRSIGNER. However, MRSIGNER is a part of the Sealing Identity. Sealing Identity is a policy used when invoking EGETKEY in Intel® SGX to determine which enclaves can access a sealing key. The Sealing Identity policy is based on the enclave&rsquo;s MRSIGNER value (identity of the Sealing Authority) and the enclave&rsquo;s version. This policy allows for data migration between different versions of enclaves signed by the same Sealing Authority.</p>

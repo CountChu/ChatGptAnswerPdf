@@ -11,38 +11,38 @@
     <article class="markdown-body">
         <!-- Markdown-generated HTML content here -->
         <h1>2023-04-04</h1>
-<p>Created: 2023-04-29 22:45:29</p>
+<p>Created: 2023-05-01 22:18:21</p>
 <h1>Questions</h1>
 <ul>
-<li>CPU <code>(230329.TrustZone.txt)</code><ul>
+<li>CPU <code>(230329.TrustZone.yaml)</code><ul>
 <li><code>[09:25]</code> What are SCP and AP? <code>(TrustZone.0329.md)</code></li>
 <li><code>[09:26]</code> Do SCP and AP in ARM share memory? <code>(TrustZone.0329.md)</code></li>
 <li><code>[14:20]</code> What is differenct between Armv8-A and Armv8-M? Please summarize as a table. <code>(TrustZone.0329.md)</code></li>
 </ul>
 </li>
-<li>Boot <code>(230327.OP-TEE.txt)</code><ul>
+<li>Boot <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[09:29]</code> Why does OP-TEE initialize secondary cores when reset? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Recover OP-TEE <code>(230327.OP-TEE.txt)</code><ul>
+<li>Recover OP-TEE <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[09:37]</code> How to detect OP-TEE dead? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[09:39]</code> How to automatically recovery the crashed OP-TEE? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[09:42]</code> Can I develop a dual OP-TEE so that if one is crashed, run another. <code>(OP-TEE.0327.md)</code></li>
 <li><code>[10:24]</code> How to detect if OP-TEE is tamperred at run-time? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>Static TA and Dynamic TA <code>(230327.OP-TEE.txt)</code><ul>
+<li>Static TA and Dynamic TA <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[10:08]</code> How to recover a crashed static TA? <code>(OP-TEE.0327.md)</code></li>
 <li><code>[10:10]</code> How to recover a crashed dynamic TA? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
-<li>TrustZone &amp; HSM <code>(230329.TrustZone.txt)</code><ul>
+<li>TrustZone &amp; HSM <code>(230329.TrustZone.yaml)</code><ul>
 <li><code>[10:18]</code> What is difference between TrustZone and HSM? Please also summarize in a table. <code>(TrustZone.0329.md)</code></li>
 <li><code>[10:19]</code> What are relationships between TrustZone and HSM? <code>(TrustZone.0329.md)</code></li>
 <li><code>[10:20]</code> Can TrustZone totally replace HSM? <code>(TrustZone.0329.md)</code></li>
 </ul>
 </li>
-<li>Attack <code>(230327.OP-TEE.txt)</code><ul>
+<li>Attack <code>(230327.OP-TEE.yaml)</code><ul>
 <li><code>[14:49]</code> Whare are kinds of methods to attack OP-TEE? <code>(OP-TEE.0327.md)</code></li>
 </ul>
 </li>
@@ -62,7 +62,7 @@
 </ul>
 <hr />
 <h1>Q &amp; A</h1>
-<h2>CPU <code>(230329.TrustZone.txt)</code></h2>
+<h2>CPU <code>(230329.TrustZone.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[09:25]</code> What are SCP and AP? <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>SCP (System Control Processor) and AP (Application Processor) are two different types of processors often found in a system-on-chip (SoC) or embedded systems.</p>
@@ -126,14 +126,14 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </table>
 <p>Armv8-A is designed for high-performance systems and supports both 32-bit and 64-bit instruction sets, while Armv8-M is targeted at low-power microcontrollers and supports only the 32-bit instruction set. The memory management, TrustZone implementation, and exception handling mechanisms are also tailored to the specific needs of their target applications.</p>
 <hr />
-<h2>Boot <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Boot <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[09:29]</code> Why does OP-TEE initialize secondary cores when reset? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>OP-TEE initializes secondary cores during the reset process to properly configure and synchronize them with the primary core. This is important for maintaining a consistent and secure execution environment across all cores.</p>
 <p>When the system is reset, the primary core (core 0) is responsible for initializing the OP-TEE OS, including the secure world and shared resources. Once the primary core has completed the initialization process, it sends a signal to secondary cores to begin their own initialization process. Each secondary core then initializes its own secure world environment and sets up necessary data structures and configurations in alignment with the primary core.</p>
 <p>This process ensures that all cores have a consistent view of the secure world, enabling the execution of Trusted Applications (TAs) across multiple cores while maintaining security and isolation.</p>
 <hr />
-<h2>Recover OP-TEE <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Recover OP-TEE <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[09:37]</code> How to detect OP-TEE dead? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Detecting if OP-TEE is dead or non-responsive can be done through various mechanisms. Here are some approaches:</p>
@@ -231,7 +231,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>Keep in mind that no single technique can provide complete protection against tampering. It is crucial to use a combination of methods and maintain a strong security posture through continuous monitoring, testing, and updating of your system&rsquo;s security mechanisms.</p>
 <hr />
-<h2>Static TA and Dynamic TA <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Static TA and Dynamic TA <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[10:08]</code> How to recover a crashed static TA? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>Recovering a crashed static TA in OP-TEE may not be a straightforward process, as static TAs are linked with the OP-TEE OS binary and run in the same context as the OS. However, you can try the following steps to recover from a crashed static TA:</p>
@@ -285,7 +285,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>Please note that it&rsquo;s essential to design and implement the dynamic TA with robust error handling and recovery mechanisms to minimize the risk of crashes. Be sure to thoroughly test and validate the TA to ensure its stability and reliability.</p>
 <hr />
-<h2>TrustZone &amp; HSM <code>(230329.TrustZone.txt)</code></h2>
+<h2>TrustZone &amp; HSM <code>(230329.TrustZone.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[10:18]</code> What is difference between TrustZone and HSM? Please also summarize in a table. <code>(TrustZone.0329.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>TrustZone and HSM (Hardware Security Module) are both technologies that provide security features, but they are designed for different purposes and have distinct characteristics. Here is a comparison of the two:</p>
@@ -398,7 +398,7 @@ The AP, on the other hand, is a more powerful processor responsible for running 
 </ol>
 <p>In summary, while TrustZone can provide a secure environment for sensitive applications, it cannot fully replace an HSM in terms of security, performance, and tamper-resistance. Both technologies have their use cases, and depending on the security requirements, one or both can be employed in a system.</p>
 <hr />
-<h2>Attack <code>(230327.OP-TEE.txt)</code></h2>
+<h2>Attack <code>(230327.OP-TEE.yaml)</code></h2>
 <p><strong>Question:</strong> <code>[14:49]</code> Whare are kinds of methods to attack OP-TEE? <code>(OP-TEE.0327.md)</code></p>
 <p><strong>Answer:</strong></p>
 <p>There are various methods an attacker might use to target OP-TEE. Some of the common attack vectors include:</p>

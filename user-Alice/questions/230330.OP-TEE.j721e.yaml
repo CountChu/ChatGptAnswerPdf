@@ -1,0 +1,14 @@
+from: OP-TEE.j721e.0330.md
+
+Basic Concepts:
+  questions:
+    - q: https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-rt-jacinto7/08_04_00_03/exports/docs/linux/Foundational_Components_OPTEE.html?highlight=trusted
+      a-prefix: Based on the information provided, the instructions explain
+
+    - q: What is GP?
+
+    - q: What is RPMB?
+
+    - q: What is KEK?
+
+    - q: Is a KEK unique for each device?
