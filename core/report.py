@@ -75,7 +75,7 @@ def get_q_in_text(question, dis_date, dis_q_date, dis_q_time):
         elif dis_q_date and not dis_q_time:
             q = '%s (%s)' % (q, question['q_date'])
         elif not dis_q_date and dis_q_time:
-            q = '[%s] %s' % (question['q_time'][:5], q)
+            q = '%s | %s' % (question['q_time'][:5], q)
     else:
             q = '%s (%s)' % (q, question['date'])
 
