@@ -2,9 +2,27 @@ import os
 import sys
 import datetime
 import hashlib
+import json
 import pdb
 
 br = pdb.set_trace
+
+def check_file_exist(fn):
+    if not os.path.exists(fn):
+        print('Error. The file does not exist.')
+        print(fn)
+        sys.exit(1)
+
+def check_dir_exist(dn):
+    if not os.path.exists(dn):
+        print('Error. The directory does not exist.')
+        print(dn)
+        sys.exit(1)
+
+def check_dir_exist_make(dn):
+    if not os.path.exists(dn):
+        print(f'Make {dn}')
+        os.mkdir(dn)  
 
 def get_name(fn):
     name = os.path.basename(fn)
@@ -269,9 +287,9 @@ def find_qa(qa_ls, question, chat):
         if out == None:
             print('Error. The answer of the question is not found.')
             print('chat = %s' % chat)
-            print('q1 = %s' % question['q1'])
-            print('q2 = %s' % question['q2'])
-            print('a-prefix: %s' % question['a-prefix'])
+            print('question =')
+            print(json.dumps(question, indent=4))
+
             sys.exit(1)
 
     else:
@@ -286,12 +304,12 @@ def find_qa(qa_ls, question, chat):
                     out = qa
                     break
 
-            if 'q2-prefix' in question:
+            if 'q1-prefix' in question:
                 if qa['q'].startswith(question['q1-prefix']):
                     out = qa
                     break
 
-            if 'q2' in question:
+            if 'q1' in question:
                 if qa['q'] == question['q1']:
                     out = qa
                     break                    
@@ -299,12 +317,8 @@ def find_qa(qa_ls, question, chat):
         if out == None:
             print('Error. The answer of the question is not found.')
             print('chat = %s' % chat)
-
-            if 'q1' in question:
-                print('q1 = %s' % question['q1'])
-                print('q2 = %s' % question['q2'])
-            elif 'q1-prefix' in question:
-                print('q1-prefix = %s' % question['q1-prefix'])
+            print('question =')
+            print(json.dumps(question, indent=4))
 
             sys.exit(1)
 

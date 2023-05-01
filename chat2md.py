@@ -147,25 +147,8 @@ def main():
 
     args = build_args()
     
-    #
-    # Check if the input directory exists.
-    #
-
-    if not os.path.exists(args.input):
-        print('Error. The directory does not exist.')
-        print(args.input)
-        sys.exit(1)    
-
-    #
-    # Check if the output directory exists.
-    # If not, make it.
-    #
-
-    if not os.path.exists(args.output):
-        print('The directory does not exist.')
-        print('Making it.')
-        print(args.output)
-        os.mkdir(args.output)
+    util.check_dir_exist(args.input)
+    util.check_dir_exist_make(args.output)
 
     #
     # Read conversations.json
@@ -192,3 +175,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
