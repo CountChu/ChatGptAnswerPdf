@@ -1,3 +1,15 @@
+#
+# FILENAME.
+#       txt2yaml.py - TXT To YAML Python App.
+#
+# FUNCTIONAL DESCRIPTION.
+#       The app converts question set files from TXT to YAML.
+#
+# NOTICE.
+#       Author: visualge@gmail.com (CountChu)
+#       Created on 2023/5/1
+#
+
 import argparse
 import sys
 import os
