@@ -20,32 +20,44 @@ br = pdb.set_trace
 
 class TestQsModule(unittest.TestCase):
 
-    def test_parse(self):
-        fn_qs = os.path.join('user-Alice', 'questions', '230327.OP-TEE.txt')
-
-        lines = qs.read_lines(fn_qs)
+    def test_parse_1(self):
+        qs_fn = os.path.join('user-Alice', 'questions', '230327.OP-TEE.yaml')
         
-        from_chat, date, sections = qs.parse(lines)
+        section_ls = qs.parse(qs_fn)
+        qs.check_sections(section_ls)           
 
-        self.assertEqual(from_chat, 'OP-TEE.0327.md')
-        self.assertEqual(date, '2023/4/1')
-        self.assertEqual(len(sections), 15)
-        self.assertEqual(sections[0]['title'], 'Basic Concepts')
-        self.assertEqual(sections[-1]['title'], 'PKCS#11')
-
-        qs_name = os.path.basename(fn_qs)
-        section_ls = qs.read_sections(sections, qs_name, from_chat, date)   
         self.assertEqual(len(section_ls), 15)
 
         section = section_ls[0]
         self.assertEqual(section['title'], 'Basic Concepts')
-        self.assertEqual(len(section['question_ls']), 10)
-
+        self.assertEqual(len(section['question_ls']), 10)     
+        
         question = section['question_ls'][9]
         self.assertEqual(question['q_title'], 'What is OP-TEE Dispatcher?')
         self.assertEqual(question['date'], '2023/4/13')
 
-        qs.check_sections(section_ls)
+
+    def test_parse_2(self):
+        qs_fn = os.path.join('user-Alice', 'questions', '230330.Questions.yaml')
+
+        section_ls = qs.parse(qs_fn)
+        qs.check_sections(section_ls)           
+
+        self.assertEqual(len(section_ls), 4)
+
+        section = section_ls[0]
+        self.assertEqual(section['title'], 'Intel KGT & Intel SGX')
+
+        question_ls = section['question_ls']
+        self.assertEqual(question_ls[0]['from'], 'OP-TEE.Intel.0330.md')
+
+        section = section_ls[3]
+        self.assertEqual(section['title'], 'Development')
+
+        question_ls = section['question_ls']
+        self.assertEqual(question_ls[0]['from'], 'TEE.0328.md')
+        self.assertEqual(question_ls[1]['from'], 'OP-TEE.0327.md')
+        self.assertEqual(question_ls[2]['from'], 'OP-TEE.0327.md')
 
 if __name__ == '__main__':
     unittest.main()

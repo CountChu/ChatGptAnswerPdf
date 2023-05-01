@@ -85,9 +85,6 @@ def get_questions(questions_dn, chats_dn):
     for bn, fn in bn_fn_ls:
         print(fn)
 
-        lines = qs.read_lines(fn)
-        chat, date, sections = qs.parse(lines)
-
         #
         # Read sections to build section_ls.
         #       section_ls = [section]
@@ -96,7 +93,7 @@ def get_questions(questions_dn, chats_dn):
         #       question = {'q1', ...'date', ...}
         #
 
-        section_ls = qs.read_sections(sections, bn, chat, date)
+        section_ls = qs.parse(fn)
 
         #
         # Check section_ls
@@ -139,7 +136,7 @@ def get_questions(questions_dn, chats_dn):
     return question_ls
 
 def transform_to_question(qa, title):
-    question = qs.build_question(None)
+    question = {'hide': False, 'error': False}
     question['q1'] = qa['q']
     question['q2'] = qa['q']
     question['is_short'] = qa['is_short']

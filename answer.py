@@ -98,23 +98,10 @@ def main():
     fn_answer = os.path.join(args.answers, fn_answer)
 
     #
-    # Read context of the questions.
+    # Prase question set file
     #
 
-    lines = qs.read_lines(args.questions)
-
-    #
-    # Parse lines.
-    #
-
-    chat, date, sections = qs.parse(lines)
-
-    #
-    # Read sections
-    #
-
-    qs_name = os.path.basename(args.questions)
-    section_ls = qs.read_sections(sections, qs_name, chat, date)
+    section_ls = qs.parse(args.questions)
 
     #
     # Check section_ls

@@ -12,6 +12,8 @@
 #
 
 import sys
+import yaml
+import os
 import pdb
 
 br = pdb.set_trace
@@ -20,221 +22,55 @@ br = pdb.set_trace
 # Private functions.
 #
 
-def read_section(section, qs_name, default_chat, default_date):
-    
-    out = {} 
-    out['title'] = section['title'] 
+def build_question(default_chat, default_date, sec_chat, qst):
+    question = {'hide': False, 'error': False}
 
-    question_ls = []    
-    s = None
-    for line in section['lines']:
-        line = line.strip()
+    if default_chat != None:
+        question['from'] = default_chat
 
-        if line.startswith('q:'):
-            s = 'q'
-        elif line.startswith('q-prefix:'):
-            s = 'q-prefix'
-        elif line.startswith('a-prefix:'):
-            s = 'a-prefix'
-        elif line.startswith('from:'):
-            s = 'from'
-        elif line.startswith('hide:'):
-            s = 'hide'
-        elif line.startswith('d:'):
-            s = 'date'            
-        elif line.startswith('title:'):
-            s = 'q_title'  
-        elif line.startswith('error:'):
-            s = 'error'  
-        else:
-            assert False, f'{s} | {line}'
+    if default_date != None:
+        question['date'] = default_date
 
-        #print('%10s | %s' % (s, line))
+    if sec_chat != None:
+        question['from'] = sec_chat
 
-        if s == 'q':
-            _, line = line.split(':', 1)
-            line = line.strip()
-            q1 = line 
-            q2 = line.replace('_', '\\_')
-            
-            question = build_question(qs_name)
-            question['q1'] = q1
-            question['q2'] = q2 
+    if 'q' in qst:
+        q1 = qst['q']
+        q2 = q1.replace('_', '\\_')
 
-            if default_date != None:
-                question['date'] = default_date
+        question['q1'] = q1 
+        question['q2'] = q2 
 
-            if 'from' not in question:
-                question['from'] = default_chat
+    if 'q-prefix' in qst:
+        q1_prefix = qst['q-prefix']
+        q2_prefix = q1_prefix.replace('_', '\\_')
 
-            question_ls.append(question)
+        question['q1-prefix'] = q1_prefix 
+        question['q2-prefix'] = q2_prefix 
 
-        elif s == 'q-prefix':
-            _, line = line.split(':', 1)
-            line = line.strip()
-            q1_prefix = line
-            q2_prefix = line.replace('_', '\\_')
+    if 'a-prefix' in qst:
+        question['a-prefix'] = qst['a-prefix']
 
-            question = build_question(qs_name)
-            question['q1-prefix'] = q1_prefix
-            question['q2-prefix'] = q2_prefix
-            
-            if default_date != None:
-                question['date'] = default_date
+    if 'from' in qst:
+        question['from'] = qst['from']
 
-            if 'from' not in question:
-                question['from'] = default_chat                
+    if 'd' in qst:
+        question['date'] = qst['d']        
 
-            question_ls.append(question)
+    if 'hide' in qst:
+        question['hide'] = True
 
-        elif s == 'a-prefix':
-            _, line = line.split(':', 1)
-            line = line.strip()
-            question['a-prefix'] = line
+    if 'error' in qst:
+        question['error'] = True
 
-        elif s == 'from':
-            _, line = line.split(':', 1)
-            line = line.strip()
-            question['from'] = line
+    if 'title' in qst:
+        question['q_title'] = qst['title']
 
-        elif s == 'hide':
-            question['hide'] = True  
-
-        elif s == 'error':
-            question['error'] = True                  
-
-        elif s == 'date':
-            _, line = line.split(':', 1)
-            line = line.strip()
-            question['date'] = line
-
-        elif s == 'q_title':
-            _, line = line.split(':', 1)
-            line = line.strip()
-            question['q_title'] = line            
-
-        else:
-            assert False, s
-
-    #
-    # Assign sec_title and is_short
-    #
-
-    for question in question_ls:
-        question['sec_title'] = section['title']
-        question['is_short'] = False
-
-    out['question_ls'] = question_ls
-
-    return out
+    return question
 
 #
 # Public functions.
 #
-
-def read_lines(fn):
-    lines = []
-    f = open(fn, encoding='utf-8')
-    for line in f:
-        if line.find('\t') != -1:
-            print('Error. A tab character is not allowed.')
-            print(f'line = {line}')
-            sys.exit(1)
-
-        s_line = line.strip()
-
-        if s_line == '':
-            continue
-
-        if s_line[0] == '#':
-            continue
-
-        line = line.rstrip()
-        lines.append(line)
-
-    return lines
-
-def build_question(qs_name):
-    question = {'hide': False, 'error': False, 'qs': qs_name}
-    return question
-
-def parse(lines):
-    out_from = None 
-    out_date = None    
-    out_sec_ls = []                     # out_sec_ls = [{title, lines}] 
-
-    s = 'init'                          # init, head, sec-title, sec-content
-
-    sec = None
-    for line in lines:
-        s_line = line.strip()
-        if s_line == '':
-            continue 
-
-        if s_line[0] == '#':
-            continue
-
-        if s == 'init':
-            if line[0] != ' ':
-                if line.find(':') == -1:
-                    s = 'sec-title'
-                else:
-                    s = 'head'
-
-            else:
-                assert False, f'{s} | {line}'
-
-        elif s == 'head':
-            if line[0] != ' ':
-                if line.find(':') != -1:
-                    s = 'head'
-                else:
-                    s = 'sec-title'
-            else:
-                assert False, f'{s} | {line}'
-
-        elif s in ['sec-title', 'sec-content']:
-            if line[0] != ' ':
-                s = 'sec-title'
-            else:
-                s = 'sec-content'
-
-        else:
-            assert False, f'{s} | {line}'
-
-        #print('%20s | %s' % (s, line))
-
-        if s == 'init':
-            pass
-
-        elif s == 'head':
-            if line.startswith('from:'):
-                _, out_from = line.split(':', 1)
-                out_from = out_from.strip()
-
-            elif line.startswith('d:'):
-                _, out_date = line.split(':', 1)
-                out_date = out_date.strip()
-
-            else:
-                assert False, f'{s} | {line}'
-
-        elif s == 'sec-title':
-            if sec != None:
-                 out_sec_ls.append(sec)
-
-            sec = {'title': line.strip(), 'lines': []}
-
-        elif s == 'sec-content':
-            sec['lines'].append(line.strip())
-
-        else:
-            assert False, f'{s} | {line}'
-
-    if sec != None:
-        out_sec_ls.append(sec)
-
-    return out_from, out_date, out_sec_ls
 
 #
 # section_ls = [section]
@@ -250,22 +86,55 @@ def parse(lines):
 #
 # q1 = https://en.wikipedia.org/wiki/Trusted_execution_environment
 # q2 = https://en.wikipedia.org/wiki/Trusted\_execution\_environment
-#
+#    
 
-def read_sections(sections, qs_name, default_chat, default_date):
+def parse(fn):
+    f = open(fn)
+    y = yaml.load(f, Loader=yaml.loader.SafeLoader)
+    f.close()
 
-    sec_ls = []
-    for section in sections:
-        sec = read_section(section, qs_name, default_chat, default_date)
-        sec_ls.append(sec)
+    qs_name = os.path.basename(fn)
 
-    return sec_ls
+    default_chat = None 
+    default_date = None 
+
+    if 'from' in y:
+        default_chat = y['from']
+        del y['from']
+
+    if 'd' in y:
+        default_date = y['d']
+        del y['d']
+
+    section_ls = []
+    for sec_title, sec in y.items():
+        section = {}
+        section['title'] = sec_title
+        
+        sec_chat = None 
+        if 'from' in sec:
+            sec_chat = sec['from']
+        
+        question_ls = []
+        for qst in sec['questions']:
+            question = build_question(default_chat, default_date, sec_chat, qst)
+            question['qs'] = qs_name
+            question['sec_title'] = sec_title
+            question['is_short'] = False
+
+            question_ls.append(question)
+        
+        section['question_ls'] = question_ls
+
+        section_ls.append(section)
+
+    return section_ls
 
 def check_sections(section_ls):
     for section in section_ls:
         for question in section['question_ls']:
             assert not ('q1' in question and 'q1-prefix' in question)
-            assert 'from' in question
+            assert 'from' in question, question
             assert question['from'] != None
             assert 'qs' in question
             assert 'sec_title' in question
