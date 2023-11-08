@@ -1,0 +1,1237 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    word-wrap: break-word;
+}
+
+.markdown-body .octicon-link:before {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: '\f05c';
+  vertical-align: middle;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+</style><title>230409.FF-A</title></head><body><article class="markdown-body"><h1 id="user-content-230409ff-a"><a class="heading-link" href="#230409ff-a">230409.FF-A<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p>Created: 2023-11-08 14:16:20</p>
+<h1 id="user-content-questions"><a class="heading-link" href="#questions">Questions<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>Ch 2 - Introduction
+<ul>
+<li>The below text are chapter 2 of "Arm Firmware Framework for Arm A-profile" <code>(FF-A.0409.md)</code>
+</li>
+<li>What is "Arm A-profile"? <code>(2023-04-11)</code> <code>(FF-A.0409.md)</code>
+</li>
+<li>Does "Arm Firmware Framework for Arm A-profile" document is only about Cortex-A? <code>(2023-04-11)</code> <code>(FF-A.0409.md)</code>
+</li>
+</ul>
+</li>
+<li>Ch 3 - Software Architecture
+<ul>
+<li>The below text are chapter 3 of "Arm Firmware Framework for Arm A-profile" <code>(FF-A.0409.md)</code>
+</li>
+</ul>
+</li>
+<li>Ch 3.1 - Isolation boundaries
+<ul>
+<li>The below text are chapter 3.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it. <code>(FF-A.0409.md)</code>
+</li>
+</ul>
+</li>
+<li>Ch 3.2 - Partitions
+<ul>
+<li>The below text are chapter 3.2 of "Arm Firmware Framework for Arm A-profile". Please summarize it. <code>(FF-A.0409.md)</code>
+</li>
+</ul>
+</li>
+<li>Ch 3.3 - Partition manager
+<ul>
+<li>The below text are chapter 3.3 of "Arm Firmware Framework for Arm A-profile". Please summarize it. <code>(FF-A.0409.md)</code>
+</li>
+<li>So SPM and Hypervisor are partition managers. Right? <code>(FF-A.0409.md)</code>
+</li>
+<li>What is VMSA? <code>(FF-A.0409.md)</code>
+</li>
+<li>Is VMSA a software or a hardware? <code>(FF-A.0409.md)</code>
+</li>
+</ul>
+</li>
+<li>Ch 3.4 Example configurations
+<ul>
+<li>The below text are chapter 3.4 of "Arm Firmware Framework for Arm A-profile". Please summarize it. <code>(FF-A.0409.md)</code>
+</li>
+<li>Can SPM see SP0 and SP1? <code>(FF-A.0409.md)</code>
+</li>
+<li>Can SP0 or SP1 see SPM? <code>(FF-A.0409.md)</code>
+</li>
+<li>Is TrustZone isolation boundary physical isolation or logical isolation? <code>(FF-A.0409.md)</code>
+</li>
+</ul>
+</li>
+<li>Ch 4.1 - SPM architecture
+<ul>
+<li>The below text are chapter 4.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it. <code>(FF-A.0409.md)</code>
+</li>
+<li>What is SPMC in the document? <code>(FF-A.0409.md)</code>
+</li>
+<li>Is SPMC of TrustZone? <code>(FF-A.0409.md)</code>
+</li>
+</ul>
+</li>
+<li>FF-A, TF-A, and TrustZone
+<ul>
+<li>What is TF-A? <code>(2023-04-10)</code> <code>(FF-A.0409.md)</code>
+</li>
+<li>Please draw the relationship among TrustZone, TF-A, and FF-A. <code>(2023-04-10)</code> <code>(FF-A.0409.md)</code>
+</li>
+<li>What is relationship between FF-A and TF-A? <code>(2023-04-10)</code> <code>(FF-A.0409.md)</code>
+</li>
+<li>Could I say that TF-A refers FF-A? <code>(2023-04-10)</code> <code>(FF-A.0409.md)</code>
+</li>
+<li>When to enable secondary cores? <code>(2023-04-11)</code> <code>(FF-A.0409.md)</code>
+</li>
+<li>Is TF-A persistent in memory at run-time? <code>(2023-04-12)</code> <code>(FF-A.0409.md)</code>
+</li>
+<li>What is SMCCC? <code>(2023-04-13)</code> <code>(FF-A.0409.md)</code>
+</li>
+<li>What is SPL? <code>(2023-04-13)</code> <code>(FF-A.0409.md)</code>
+</li>
+<li>What is fip.bin? <code>(2023-04-13)</code> <code>(FF-A.0409.md)</code>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="user-content-q--a"><a class="heading-link" href="#q--a">Q &amp; A<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<h2 id="user-content-ch-2---introduction"><a class="heading-link" href="#ch-2---introduction">Ch 2 - Introduction<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> The below text are chapter 2 of "Arm Firmware Framework for Arm A-profile" <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong> ... ...</p>
+<hr>
+<p><strong>Question:</strong> What is "Arm A-profile"? <code>(2023-04-11)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The Arm A-profile is a family of Arm CPU architectures that are designed for high-performance and power-efficient applications, including mobile devices, consumer electronics, servers, and networking infrastructure. The A-profile CPUs are based on the Armv7-A and Armv8-A architectures, which support both 32-bit (AArch32) and 64-bit (AArch64) execution states. The A-profile processors provide a wide range of performance and power options to suit various use cases and include popular cores like Cortex-A series (e.g., Cortex-A72, Cortex-A57, Cortex-A53, etc.).</p>
+<hr>
+<p><strong>Question:</strong> Does "Arm Firmware Framework for Arm A-profile" document is only about Cortex-A? <code>(2023-04-11)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The "Arm Firmware Framework for Arm A-profile" document is focused on the Arm A-profile architecture, which includes Cortex-A series processors. However, it is not limited to Cortex-A processors only. The document provides guidelines and specifications for developing firmware for Arm A-profile processors in general, including Cortex-A series processors and potentially other A-profile processors developed by Arm or its partners. It aims to ensure a consistent approach to firmware development, security, and functionality across different Arm A-profile implementations.</p>
+<hr>
+<h2 id="user-content-ch-3---software-architecture"><a class="heading-link" href="#ch-3---software-architecture">Ch 3 - Software Architecture<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> The below text are chapter 3 of "Arm Firmware Framework for Arm A-profile" <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong> ... ...</p>
+<hr>
+<h2 id="user-content-ch-31---isolation-boundaries"><a class="heading-link" href="#ch-31---isolation-boundaries">Ch 3.1 - Isolation boundaries<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> The below text are chapter 3.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it. <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong> ... ...</p>
+<hr>
+<h2 id="user-content-ch-32---partitions"><a class="heading-link" href="#ch-32---partitions">Ch 3.2 - Partitions<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> The below text are chapter 3.2 of "Arm Firmware Framework for Arm A-profile". Please summarize it. <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong> ... ...</p>
+<hr>
+<h2 id="user-content-ch-33---partition-manager"><a class="heading-link" href="#ch-33---partition-manager">Ch 3.3 - Partition manager<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> The below text are chapter 3.3 of "Arm Firmware Framework for Arm A-profile". Please summarize it. <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong> ... ...</p>
+<hr>
+<p><strong>Question:</strong> So SPM and Hypervisor are partition managers. Right? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, that's correct. In the context of the Arm Firmware Framework for Arm A-profile, the Secure Partition Manager (SPM) operates in the Secure world, while the Hypervisor operates in the Normal world. Both SPM and Hypervisor are partition managers responsible for creating and managing the physical isolation boundaries of partitions, assigning resources, and enabling inter-partition communication.</p>
+<hr>
+<p><strong>Question:</strong> What is VMSA? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>VMSA, or Virtual Memory System Architecture, is a part of the Arm architecture that defines the memory management and address translation mechanisms. It is responsible for managing the address spaces and memory protection features in Arm systems. VMSA allows for the creation of separate virtual address spaces for each process, providing isolation between processes and the operating system. In the context of the Arm A-profile, the Hypervisor uses the virtualization extension in VMSA to create physical isolation boundaries between different partitions or virtual machines.</p>
+<hr>
+<p><strong>Question:</strong> Is VMSA a software or a hardware? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>VMSA (Virtual Memory System Architecture) is not a specific piece of software or hardware, but rather a part of the Arm architecture specification that defines how memory management and address translation should be implemented in Arm-based systems. VMSA provides guidelines for designing hardware and software components that handle memory management, address translation, and access control, allowing for the creation of separate virtual address spaces and ensuring proper isolation between processes and the operating system.</p>
+<hr>
+<h2 id="user-content-ch-34-example-configurations"><a class="heading-link" href="#ch-34-example-configurations">Ch 3.4 Example configurations<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> The below text are chapter 3.4 of "Arm Firmware Framework for Arm A-profile". Please summarize it. <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong> ... ...</p>
+<hr>
+<p><strong>Question:</strong> Can SPM see SP0 and SP1? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the Secure Partition Manager (SPM) can "see" and manage both SP0 and SP1. The SPM is responsible for creating and managing the physical isolation boundaries of Secure Partitions (SPs) like SP0 and SP1. It uses partition manifests to assign resources, initialize the partitions, and enable discovery of their services. Additionally, the SPM implements FF-A ABIs (Application Binary Interfaces) to enable inter-partition communication for access to partition services. So, while the SPM isolates SP0 and SP1 from each other, it still has visibility and control over both partitions.</p>
+<hr>
+<p><strong>Question:</strong> Can SP0 or SP1 see SPM? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the ARM Firmware Framework, SP0 and SP1 can communicate with the Secure Partition Manager (SPM) through well-defined interfaces, such as FF-A ABIs (Application Binary Interfaces). While the SPM is physically isolated from SP0 and SP1 in scenarios where they are physical partitions, they can still interact with the SPM using these interfaces for communication, service discovery, and memory management.</p>
+<p>However, it is important to note that SP0 and SP1 cannot access the internal workings or the memory of the SPM directly. They can only communicate with the SPM through the defined interfaces, ensuring that the isolation between them is maintained.</p>
+<hr>
+<p><strong>Question:</strong> Is TrustZone isolation boundary physical isolation or logical isolation? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone isolation boundary is a form of physical isolation. TrustZone is a security extension in ARM architecture that separates the processor's resources, such as memory and peripherals, into two distinct security domains: the Secure world and the Non-secure world. By utilizing hardware-based isolation, TrustZone ensures that sensitive data and functions in the Secure world are protected from unauthorized access by software running in the Non-secure world.</p>
+<hr>
+<h2 id="user-content-ch-41---spm-architecture"><a class="heading-link" href="#ch-41---spm-architecture">Ch 4.1 - SPM architecture<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> The below text are chapter 4.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it. <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong> ... ...</p>
+<hr>
+<p><strong>Question:</strong> What is SPMC in the document? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the document "Arm Firmware Framework for Arm A-profile," the SPMC (Secure Partition Manager Core) is a component of the Secure Partition Manager (SPM) responsible for:</p>
+<ol>
+<li>Initializing and isolating Secure Partitions (SPs) at boot time.</li>
+<li>Ensuring inter-partition isolation during runtime.</li>
+<li>Managing inter-partition communication between Secure Endpoints (S-Endpoints) and Non-Secure Endpoints (NS-Endpoints).</li>
+</ol>
+<p>The SPMC can co-reside with the SPM Dispatcher (SPMD) in EL3 or reside in adjacent exception levels, such as S-EL1 or S-EL2. It is a part of the Trusted Computing Base and has access to the entire physical address space.</p>
+<hr>
+<p><strong>Question:</strong> Is SPMC of TrustZone? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The SPMC (Secure Partition Manager Core) is part of the Arm Firmware Framework for Arm A-profile, which is built on top of the Arm TrustZone technology. TrustZone provides the underlying hardware support for isolation and security, while the SPMC is responsible for managing partitions and their communication within the Secure world enabled by TrustZone. So, while the SPMC is not TrustZone itself, it is a component that utilizes and operates within the TrustZone technology.</p>
+<hr>
+<h2 id="user-content-ff-a-tf-a-and-trustzone"><a class="heading-link" href="#ff-a-tf-a-and-trustzone">FF-A, TF-A, and TrustZone<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> What is TF-A? <code>(2023-04-10)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TF-A, or Trusted Firmware-A, is a reference implementation of secure world software for Arm A-profile processors. It provides a platform for implementing security features and building trusted execution environments in devices that use Armv8-A processors, such as smartphones, tablets, and other embedded systems.</p>
+<p>TF-A includes implementations of various Arm security technologies, such as Secure Boot, Secure Monitor (for switching between secure and non-secure worlds), and runtime services. The project is open-source, allowing developers to use and modify the code to develop secure firmware solutions that meet the requirements of their specific applications.</p>
+<hr>
+<p><strong>Question:</strong> Please draw the relationship among TrustZone, TF-A, and FF-A. <code>(2023-04-10)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone, TF-A, and FF-A are technologies and frameworks related to the security aspects of Arm-based systems. Here's a simple representation of their relationships:</p>
+<pre><code>+-----------------+
+|   TrustZone     |
+|  (Technology)   |
+| +-------------+ |
+| |    TF-A     | |
+| | (Firmware)  | |
+| +-------------+ |
+| +-------------+ |
+| |    FF-A     | |
+| |  (Framework)| |
+| +-------------+ |
++-----------------+
+</code></pre>
+<ol>
+<li>
+<p>TrustZone is a hardware-based security technology built into Arm processors. It provides a secure execution environment by creating two separate worlds: a Secure World and a Non-secure World. TrustZone ensures that the Secure World's data and code are protected from unauthorized access.</p>
+</li>
+<li>
+<p>Trusted Firmware-A (TF-A) is an open-source reference implementation of secure world software for Arm A-profile processors. It leverages TrustZone technology and provides secure boot, runtime services, and a secure monitor for switching between the secure and non-secure worlds.</p>
+</li>
+<li>
+<p>Firmware Framework for Armv8-A (FF-A) is a software architecture specification that aims to standardize the way partitions, services, and communication are managed in Arm A-profile systems. It defines the interactions between the Secure Partition Manager (SPM), partitions, and the Non-secure world. FF-A can be used in conjunction with TrustZone and TF-A to build a complete secure software solution.</p>
+</li>
+</ol>
+<hr>
+<p><strong>Question:</strong> What is relationship between FF-A and TF-A? <code>(2023-04-10)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The relationship between FF-A (Firmware Framework for Armv8-A) and TF-A (Trusted Firmware-A) is that FF-A provides a standardized software architecture specification for managing partitions, services, and communication on Arm A-profile systems, while TF-A is an open-source reference implementation of secure world software that leverages TrustZone technology.</p>
+<p>TF-A can be used as a base for implementing the secure world software stack on Arm A-profile systems, and it can be extended or adapted to conform to the FF-A architecture. By aligning the TF-A implementation with the FF-A specification, developers can achieve a more modular, maintainable, and interoperable software stack that can better address the needs of secure systems.</p>
+<p>In summary, the relationship between FF-A and TF-A is complementary, with FF-A providing the architectural guidelines, and TF-A serving as a reference implementation that can be tailored to adhere to those guidelines.</p>
+<hr>
+<p><strong>Question:</strong> Could I say that TF-A refers FF-A? <code>(2023-04-10)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, you can say that TF-A refers to FF-A, as TF-A can be extended or adapted to conform to the FF-A architecture. The FF-A provides the architectural guidelines for secure systems, while TF-A serves as a reference implementation that can be tailored to adhere to those guidelines. By aligning the TF-A implementation with the FF-A specification, developers can achieve a more modular, maintainable, and interoperable software stack for secure systems.</p>
+<hr>
+<p><strong>Question:</strong> When to enable secondary cores? <code>(2023-04-11)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Secondary cores are typically enabled after the primary core has successfully initialized the system and started the operating system. The exact process for enabling secondary cores can vary depending on the hardware and operating system being used. Here is a general outline of when secondary cores are enabled:</p>
+<ol>
+<li>
+<p>Power on the system, and the primary core initializes hardware components and executes the bootloader (e.g., Trusted Firmware-A for Arm-based systems).</p>
+</li>
+<li>
+<p>The bootloader loads and starts the operating system on the primary core.</p>
+</li>
+<li>
+<p>The operating system initializes its kernel, essential components, and device drivers on the primary core.</p>
+</li>
+<li>
+<p>After the primary core has completed its initialization, the operating system enables the secondary cores. This process is often referred to as "core bring-up" or "CPU hotplug."</p>
+</li>
+<li>
+<p>The operating system assigns tasks or processes to the secondary cores, allowing them to participate in executing applications and system processes.</p>
+</li>
+</ol>
+<p>It is important to note that the specific process for enabling secondary cores depends on the hardware platform, firmware, bootloader, and operating system in use. Some systems may require additional configuration or software support to enable secondary cores.</p>
+<hr>
+<p><strong>Question:</strong> Is TF-A persistent in memory at run-time? <code>(2023-04-12)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the Trusted Firmware-A (TF-A) is typically persistent in memory at run-time. It resides in the secure memory region and provides various services, such as Secure Monitor Call (SMC) handling, Power State Coordination Interface (PSCI) implementation, and other platform-specific services. Since it acts as a secure monitor, it must remain present in memory during the system's operation to handle any secure world requests or transitions between secure and non-secure worlds.</p>
+<hr>
+<p><strong>Question:</strong> What is SMCCC? <code>(2023-04-13)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The SMCCC (Secure Monitor Call Calling Convention) is a standardized calling convention for ARM-based systems, which defines how Secure Monitor Calls (SMCs) are used to request services from a secure monitor, such as Trusted Firmware-A (TF-A). SMCCC provides a consistent interface for communication between the non-secure world (e.g., an operating system) and the secure world (e.g., a trusted execution environment or firmware). This standardized interface allows for better interoperability between different software components and platforms in ARM-based systems.</p>
+<hr>
+<p><strong>Question:</strong> What is SPL? <code>(2023-04-13)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>SPL (Secondary Program Loader) is a term used in the context of embedded systems and bootloaders. It is a small, lightweight bootloader that runs before the primary bootloader and is responsible for initializing essential hardware components, such as clocks, memory, and peripherals. After performing the required initialization, the SPL loads the primary bootloader (e.g., U-Boot) into memory and transfers control to it, allowing the primary bootloader to continue the boot process and eventually load the operating system. The use of an SPL can help improve boot time, reduce the complexity of the primary bootloader, and provide a uniform interface for different hardware platforms.</p>
+<hr>
+<p><strong>Question:</strong> What is fip.bin? <code>(2023-04-13)</code> <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p><code>fip.bin</code> (Firmware Image Package) is a binary file used in Arm Trusted Firmware-A (TF-A) for packing multiple firmware images into a single file. It is used as a part of the boot process in Arm-based systems, particularly in the context of Armv8-A architecture.</p>
+<p>The <code>fip.bin</code> file typically contains a collection of firmware images, such as:</p>
+<ol>
+<li>BL1 (First Level Bootloader): Responsible for initial platform setup and loading BL2.</li>
+<li>BL2 (Second Level Bootloader): Responsible for loading BL3x images.</li>
+<li>BL3-1 (EL3 Runtime Firmware): Provides runtime services, such as PSCI (Power State Coordination Interface), to the lower ELs (Exception Levels).</li>
+<li>BL3-2 (Trusted OS Firmware): The Secure-EL1 Payload, typically the TrustZone-based OS or a secure monitor.</li>
+<li>BL3-3 (Non-Trusted Firmware): The Non-secure-EL1 Payload, usually the main OS bootloader like U-Boot or GRUB.</li>
+</ol>
+<p>The <code>fip.bin</code> file is created using the <code>fiptool</code> utility provided by Arm Trusted Firmware. The tool combines the various firmware images into a single binary, which can then be loaded and executed by the platform's bootloader during the boot process. This approach simplifies firmware management and distribution while also enabling the bootloader to locate and authenticate the required images more easily.</p>
+<hr>
+</article></body></html>
