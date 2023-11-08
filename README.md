@@ -1,5 +1,5 @@
 # ChatGptAnswerPdf
-The project converts ChatGPT conversations from Markdown files into HTML and PDF files. You can: 
+The project manages ChatGPT conversations and converts them from Markdown files into HTML and PDF files. You can: 
 1) organize ChatGPT conversations by your question set files.
 2) delete unused conversations which are specified in config.yaml.
 3) Daily report conversations. 
