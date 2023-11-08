@@ -7,9 +7,7 @@ sftp-config.json
 README.html
 user-Count
 prompts.txt
-user-Alice/out-hist-cht
-user-Alice/out-hist-cht-html
-user-Alice/out-hist-cht-pdf
-user-Alice/out-hist-qst
-user-Alice/out-hist-qst-html
-user-Alice/out-hist-qst-pdf
+test
+test-md
+history.txt
+.gitignore
