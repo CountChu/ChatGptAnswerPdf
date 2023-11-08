@@ -1,0 +1,37 @@
+2023-03-31
+
+Questions
+
+CA & TA (230328.TEE.yaml)
+08:36 | Can CA and TA be implemented  in other languages? (TEE.0328.md)
+08:46 | How does TA authenticate request from CA? (TEE.0328.md)
+
+Development (230330.Questions.yaml)
+08:36 | Can CA and TA be implemented  in other languages? (TEE.0328.md)
+09:40 | Which languages do I use to develop apps in OP-TEE or to customize OP-TEE? (OP-TEE.0327.md)
+09:40 | Can I use other langauges? (OP-TEE.0327.md)
+
+Boot (230330.Questions.yaml)
+08:46 | How does TA authenticate request from CA? (TEE.0328.md)
+
+Intel KGT & Intel SGX (230330.OP-TEE.Intel.yaml)
+09:06 | Which isolation method is safe? (OP-TEE.Intel.0330.md)
+
+Isolation (230330.Questions.yaml)
+09:06 | Which isolation method is safe? (OP-TEE.Intel.0330.md)
+
+Development (230327.OP-TEE.yaml)
+09:40 | Which languages do I use to develop apps in OP-TEE or to customize OP-TEE? (OP-TEE.0327.md)
+09:40 | Can I use other langauges? (OP-TEE.0327.md)
+
+Basic Concepts (230329.TrustZone.yaml)
+16:11 | Is TrustZone a software or hardware? (TrustZone.0329.md)
+
+Chats
+
+TrustZone.0329.md
+16:22 | Can TrustZone replace HSM? (TrustZone.0329.md)
+
+OP-TEE.Automative.0331.md
+16:59 | Joakim Bech | Wednesday, September 3, 2014 | 6 mins read ... ... (OP-TEE.Automative.0331.md)
+

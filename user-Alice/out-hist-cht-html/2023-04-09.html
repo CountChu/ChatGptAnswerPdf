@@ -1,0 +1,1969 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body {
+  max-width: 980px;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable,
+.markdown-body .highlighttable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr,
+.markdown-body .highlighttable {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite,
+.markdown-body .highlighttable pre,
+.markdown-body .highlighttable div.highlight {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td,
+.markdown-body .highlighttable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headerlink {
+  font: normal 400 16px fontawesome-mini;
+  vertical-align: middle;
+  margin-left: -16px;
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0;
+  color: #333;
+}
+
+.markdown-body .headerlink:focus {
+  outline: none;
+}
+
+.markdown-body h1 .headerlink {
+  margin-top: 0.8rem;
+}
+
+.markdown-body h2 .headerlink,
+.markdown-body h3 .headerlink {
+  margin-top: 0.6rem;
+}
+
+.markdown-body h4 .headerlink {
+  margin-top: 0.2rem;
+}
+
+.markdown-body h5 .headerlink,
+.markdown-body h6 .headerlink {
+  margin-top: 0;
+}
+
+.markdown-body .headerlink:hover,
+.markdown-body h1:hover .headerlink,
+.markdown-body h2:hover .headerlink,
+.markdown-body h3:hover .headerlink,
+.markdown-body h4:hover .headerlink,
+.markdown-body h5:hover .headerlink,
+.markdown-body h6:hover .headerlink {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 3px;
+}
+
+.markdown-body code:not(.highlight):not(.codehilite), .markdown-body samp {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight,
+.markdown-body pre {
+  border-radius: 3px;
+}
+
+.markdown-body :not(.highlight) > pre {
+  background-color: #f7f7f7;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* MultiMarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px fontawesome-mini;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\e157';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+.markdown-body diagram-div, .markdown-body div.uml-sequence-diagram, .markdown-body, div.uml-flowchart {
+  overflow: auto;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js'></script><script>MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: ".*|",
+    processClass: "arithmatex"
+  },
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
+    },
+    unicode: {
+      fonts: "STIXGeneral,'Arial Unicode MS'"
+    }
+  },
+  showProcessingMessages: false,
+  messageStyle: 'none'
+});
+</script><style>/*GitHub*/
+.highlight {background-color:#f7f7f7;color:#333333;}
+.highlight .hll {background-color:#ffffcc;}
+.highlight .c{color:#999988;font-style:italic}
+.highlight .err{color:#a61717;background-color:#e3d2d2}
+.highlight .k{font-weight:bold}
+.highlight .o{font-weight:bold}
+.highlight .cm{color:#999988;font-style:italic}
+.highlight .cp{color:#999999;font-weight:bold}
+.highlight .c1{color:#999988;font-style:italic}
+.highlight .cs{color:#999999;font-weight:bold;font-style:italic}
+.highlight .gd{color:#000000;background-color:#ffdddd}
+.highlight .ge{font-style:italic}
+.highlight .gr{color:#aa0000}
+.highlight .gh{color:#999999}
+.highlight .gi{color:#000000;background-color:#ddffdd}
+.highlight .go{color:#888888}
+.highlight .gp{color:#555555}
+.highlight .gs{font-weight:bold}
+.highlight .gu{color:#800080;font-weight:bold}
+.highlight .gt{color:#aa0000}
+.highlight .kc{font-weight:bold}
+.highlight .kd{font-weight:bold}
+.highlight .kn{font-weight:bold}
+.highlight .kp{font-weight:bold}
+.highlight .kr{font-weight:bold}
+.highlight .kt{color:#445588;font-weight:bold}
+.highlight .m{color:#009999}
+.highlight .s{color:#dd1144}
+.highlight .n{color:#333333}
+.highlight .na{color:teal}
+.highlight .nb{color:#0086b3}
+.highlight .nc{color:#445588;font-weight:bold}
+.highlight .no{color:teal}
+.highlight .ni{color:purple}
+.highlight .ne{color:#990000;font-weight:bold}
+.highlight .nf{color:#990000;font-weight:bold}
+.highlight .nn{color:#555555}
+.highlight .nt{color:navy}
+.highlight .nv{color:teal}
+.highlight .ow{font-weight:bold}
+.highlight .w{color:#bbbbbb}
+.highlight .mf{color:#009999}
+.highlight .mh{color:#009999}
+.highlight .mi{color:#009999}
+.highlight .mo{color:#009999}
+.highlight .sb{color:#dd1144}
+.highlight .sc{color:#dd1144}
+.highlight .sd{color:#dd1144}
+.highlight .s2{color:#dd1144}
+.highlight .se{color:#dd1144}
+.highlight .sh{color:#dd1144}
+.highlight .si{color:#dd1144}
+.highlight .sx{color:#dd1144}
+.highlight .sr{color:#009926}
+.highlight .s1{color:#dd1144}
+.highlight .ss{color:#990073}
+.highlight .bp{color:#999999}
+.highlight .vc{color:teal}
+.highlight .vg{color:teal}
+.highlight .vi{color:teal}
+.highlight .il{color:#009999}
+.highlight .gc{color:#999;background-color:#EAF2F5}
+</style><title>2023-04-09</title></head><body><article class="markdown-body"><h1>2023-04-09</h1>
+<p>Created: 2023-11-08 12:40:14</p>
+<h1>Chats</h1>
+<ul>
+<li>FF-A.0409.md<ul>
+<li><code>[09:00]</code> The below text are chapter 2 of "Arm Firmware Framework for Arm A-profile" ... ... <code>(FF-A.0409.md)</code></li>
+<li><code>[09:09]</code> The below text are chapter 3 of "Arm Firmware Framework for Arm A-profile" ... ... <code>(FF-A.0409.md)</code></li>
+<li><code>[09:17]</code> The below text are chapter 3.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it. ... ... <code>(FF-A.0409.md)</code></li>
+<li><code>[09:21]</code> The below text are chapter 3.2 of "Arm Firmware Framework for Arm A-profile". Please summarize it. ... ... <code>(FF-A.0409.md)</code></li>
+<li><code>[09:45]</code> The below text are chapter 3.3 of "Arm Firmware Framework for Arm A-profile". Please summarize it. ... ... <code>(FF-A.0409.md)</code></li>
+<li><code>[09:52]</code> The below text are chapter 3.4 of "Arm Firmware Framework for Arm A-profile". Please summarize it. ... ... <code>(FF-A.0409.md)</code></li>
+<li><code>[10:05]</code> In ARM partition manager, Whan A is isolated from B. Could I say that B is also isolated from A? <code>(FF-A.0409.md)</code></li>
+<li><code>[10:05]</code> Are you sure? <code>(FF-A.0409.md)</code></li>
+<li><code>[10:14]</code> Can SPM see SP0 and SP1? <code>(FF-A.0409.md)</code></li>
+<li><code>[10:15]</code> Can SP0 or SP1 see SPM? <code>(FF-A.0409.md)</code></li>
+<li><code>[10:17]</code> Is TrustZone isolation boundary physical isolation or logical isolation? <code>(FF-A.0409.md)</code></li>
+<li><code>[10:26]</code> The below text are chapter 4.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it. ... ... <code>(FF-A.0409.md)</code></li>
+<li><code>[10:46]</code> What is SPMC? <code>(FF-A.0409.md)</code></li>
+<li><code>[10:48]</code> What is SPMC in the document? <code>(FF-A.0409.md)</code></li>
+<li><code>[10:48]</code> Is SPMC of TrustZone? <code>(FF-A.0409.md)</code></li>
+<li><code>[11:15]</code> So SPM and Hypervisor are partition managers. Right? <code>(FF-A.0409.md)</code></li>
+<li><code>[11:15]</code> What is VMSA? <code>(FF-A.0409.md)</code></li>
+<li><code>[11:16]</code> Is VMSA a software or a hardware? <code>(FF-A.0409.md)</code></li>
+</ul>
+</li>
+<li>OP-TEE.0327.md<ul>
+<li><code>[10:32]</code> Does TrustZone require hypervisor? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[20:37]</code> https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html <code>(OP-TEE.0327.md)</code></li>
+<li><code>[20:40]</code> The following text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html ... ... <code>(OP-TEE.0327.md)</code></li>
+<li><code>[20:42]</code> The following continued text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html ... ... <code>(OP-TEE.0327.md)</code></li>
+<li><code>[20:44]</code> How does OP-TEE work with HUK? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[21:07]</code> What are common device that store HUK in ARM platform with OP-TEE? <code>(OP-TEE.0327.md)</code></li>
+</ul>
+</li>
+<li>TrustZone.0329.md<ul>
+<li><code>[11:21]</code> What are components in ARM TCB? <code>(TrustZone.0329.md)</code></li>
+<li><code>[18:24]</code> Does TrustZone require SPM? <code>(TrustZone.0329.md)</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1>Q &amp; A</h1>
+<h2>FF-A.0409.md</h2>
+<p><strong>Question:</strong></p>
+<pre><code>The below text are chapter 2 of "Arm Firmware Framework for Arm A-profile"
+
+Chapter 2
+Introduction
+The Armv8.4 architecture introduces the Virtualization extension in the Secure state. The Arm® SMMU
+v3.2 architecture [1] adds support for stage 2 translations for Secure streams to complement the Secure EL2
+translation regime in an Armv8.4 PE. These architectural features enable isolation of mutually mistrusting software
+components in the Secure state from each other. Isolation is a mechanism for implementing the principle of least
+privilege:
+A software component must be able to access only regions in the physical address space and system resources for
+example, interrupts in the GIC that are necessary for its correct operation.
+Virtualization in the Secure state enables application of this principle in the following ways:
+1. Firmware in EL3 can be isolated from software in S-EL1 for example, a Trusted OS.
+2. Firmware components in EL3 can be isolated from each other by migrating vendor-specific components to a
+sandbox in S-EL1 or S-EL0.
+3. Normal world software can be isolated from software in S-EL1 to mitigate against privilege escalation
+attacks.
+This specification describes a software architecture that achieves the following goals.
+1. Uses the Virtualization extension to isolate software images provided by an ecosystem of vendors from each
+other.
+2. Describes interfaces that standardize communication between the various software images. This includes
+communication between images in the Secure world and Normal world.
+3. Generalizes interaction between a software image and privileged firmware in the Secure state.
+This software architecture is the Firmware Framework1 for Arm® A-profile processors. The term Framework and
+abbreviation FF-A are used interchangeably with Firmware Framework in this specification.
+
+This Framework also goes beyond the preceding goals to ensure that the guidance can be used,
+1. In the absence of the Virtualization extension in the Secure state. This provides a migration path for existing
+Secure world software images to a system that implements the Virtualization extension in the Secure state.
+2. Between VMs managed by a Hypervisor in the Normal world. The Virtualization extension in the Secure
+state mirrors its counterpart in the Non-secure state (see also [2]). Therefore, a Hypervisor could use the
+Firmware Framework to enable communication and manage isolation between VMs it manages.
+More rationale about the introduction of the Virtualization extension in Secure state and goals of the Firmware
+Framework is provided in the white-paper titled Isolation using virtualization in the Secure world [3].
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Chapter 2: Introduction</p>
+<p>The Armv8.4 architecture introduces the Virtualization extension in the Secure state, and the Arm® SMMU v3.2 architecture adds support for stage 2 translations for Secure streams. These features enable the isolation of mutually mistrusting software components in the Secure state, thereby implementing the principle of least privilege. Virtualization in the Secure state allows for the isolation of firmware in EL3 from software in S-EL1, firmware components in EL3 from each other, and normal world software from software in S-EL1.</p>
+<p>This specification outlines a software architecture called the Firmware Framework for Arm® A-profile processors (also referred to as FF-A), which aims to:</p>
+<ol>
+<li>Use the Virtualization extension to isolate software images provided by different vendors.</li>
+<li>Standardize interfaces for communication between various software images in the Secure and Normal worlds.</li>
+<li>Generalize interactions between a software image and privileged firmware in the Secure state.</li>
+</ol>
+<p>The Framework also provides guidance for systems without the Virtualization extension in the Secure state and for communication between VMs managed by a Hypervisor in the Normal world. This ensures a migration path for existing Secure world software images and allows Hypervisors to use the Firmware Framework for communication and isolation management between VMs.</p>
+<p>More information about the introduction of the Virtualization extension in the Secure state and the goals of the Firmware Framework can be found in the white paper titled "Isolation using virtualization in the Secure world".</p>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>The below text are chapter 3 of "Arm Firmware Framework for Arm A-profile"
+
+The Firmware Framework is made up of the following building blocks as illustrated in Figure 3.1.
+1. Isolation boundaries.
+2. Partition interfaces.
+3. Partitions.
+4. Partition manifest.
+5. Partition manager.
+The following sub-sections describe these building blocks in more detail.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Chapter 3: Building Blocks of the Firmware Framework</p>
+<p>The Firmware Framework for Arm A-profile consists of five main building blocks, as shown in Figure 3.1:</p>
+<ol>
+<li>Isolation Boundaries</li>
+<li>Partition Interfaces</li>
+<li>Partitions</li>
+<li>Partition Manifest</li>
+<li>Partition Manager</li>
+</ol>
+<p>The following sub-sections provide more details about these building blocks:</p>
+<ol>
+<li>
+<p>Isolation Boundaries: These boundaries separate and protect software components from one another, ensuring that they cannot access each other's resources without proper authorization. This helps to maintain the principle of least privilege and provides a secure environment for software execution.</p>
+</li>
+<li>
+<p>Partition Interfaces: These interfaces standardize communication between software components within the Secure and Normal worlds. They enable the exchange of information and requests between partitions, ensuring that components can communicate effectively while maintaining isolation.</p>
+</li>
+<li>
+<p>Partitions: Partitions are the individual software components that run within the framework. They can include firmware, trusted operating systems, or other secure services. Each partition is isolated from the others and operates within its own environment, with access to only the resources it needs to function properly.</p>
+</li>
+<li>
+<p>Partition Manifest: The Partition Manifest is a metadata file that describes the properties and requirements of a partition. It includes information such as the partition's entry points, memory requirements, and other resources it needs to function. The Partition Manager uses this manifest to configure and manage the partition within the system.</p>
+</li>
+<li>
+<p>Partition Manager: The Partition Manager is a critical component of the Firmware Framework, responsible for managing partitions and their associated resources. It oversees the lifecycle of partitions, including their creation, execution, and termination. The Partition Manager also ensures that partitions are properly isolated and that they only have access to the resources defined in their Partition Manifest.</p>
+</li>
+</ol>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>The below text are chapter 3.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+
+3.1 Isolation boundaries
+The Framework defines two types of isolation boundaries.
+1. A Logical isolation boundary that can be used to,
+1. Isolate one software module e.g. a library or a device driver from another within a software image in an
+exception level through an IMPLEMENTATION DEFINED mechanism. One or more services implemented
+inside a module are accessed through a IMPLEMENTATION DEFINED application programming interface
+(API).
+2. Isolate one software image from another by,
+1. Deploying them in separate exception levels.
+2. Deploying them in the same exception level. The images are temporally isolated from each other on
+a given PE.
+One or more services implemented inside a software image are accessed through an application binary
+interface (ABI).
+2. A Physical isolation boundary that can be used to spatially isolate the physical address space of one software
+image from another through the following mechanisms.
+1. The Arm® TrustZone Security extension. It is used to protect the Secure physical address space ranges
+assigned to software images in the Secure state from software images in the Non-secure state.
+2. Virtual memory-based memory protection provided by the Arm A-profile VMSA. It is used to protect the
+physical address space ranges assigned to a software image from other software images in the same
+security state.
+The Framework assumes that a physically isolated software image is logically isolated as well. For example,
+• A Guest OS running inside a VM is both physically and logically isolated from a Guest OS in another VM.
+• A Hypervisor running in EL2 is both physically and logically isolated from all VMs it manages.
+• Firmware in EL3 is physically and logically isolated from any software image in the Normal world.
+The Framework does not assume that a logically isolated software image is physically isolated as well. For
+example, a Trusted OS in S-EL1 is logically but not physically isolated from firmware in EL3 when any of the
+following scenarios apply.
+1. S-EL2 is not present i.e. ID_AA64PFR0_EL1.SEL2=0.
+2. S-EL2 is not enabled on the system by setting SCR_EL3.EEL2=1.
+3. S-EL2 is present and enabled but Stage 2 address translation in the Secure EL1&amp;0 translation regime is
+disabled i.e. HCR_EL2.VM=0.
+The two images are not physically isolated since software in S-EL1 can access the physical address space of
+software in EL3.
+The Framework defines ABIs that enable communication between software images across an exception level
+boundary. The images are logically isolated and could be physically isolated as well.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Chapter 3.1: Isolation Boundaries</p>
+<p>The Firmware Framework defines two types of isolation boundaries: logical isolation and physical isolation.</p>
+<ol>
+<li>
+<p>Logical Isolation Boundary: This boundary can be used to isolate software modules (e.g. libraries or device drivers) within a software image in an exception level or to isolate software images from one another. These services can be accessed through an IMPLEMENTATION DEFINED API or an application binary interface (ABI).</p>
+</li>
+<li>
+<p>Physical Isolation Boundary: This boundary is used to spatially isolate the physical address space of one software image from another. It relies on mechanisms such as the Arm® TrustZone Security extension and the Arm A-profile VMSA to protect the physical address space ranges assigned to software images.</p>
+</li>
+</ol>
+<p>The Framework assumes that a physically isolated software image is also logically isolated but does not assume that a logically isolated software image is physically isolated. The Framework defines ABIs that enable communication between software images across an exception level boundary, allowing for logical and potential physical isolation.</p>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>The below text are chapter 3.2 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+
+3.2 Partitions
+A partition is defined as a software module or image that implements one or more services within an isolation
+boundary such that a service is accessible across the boundary only via well defined interfaces. If the partition is
+a software image, then the well defined interface is an FF-A ABI. If the partition is a software module, the well
+defined interface is an IMPLEMENTATION DEFINED API.
+The Framework defines ABIs that partitions can invoke at their exception level boundaries for the following
+purposes.
+1. Discover the presence of a partition, its properties and services it implements.
+2. Synchronous and asynchronous message passing between partitions.
+3. Memory management between partitions.
+A partition that is logically isolated but not physically isolated is called a logical partition. A partition that is both
+physically and logically isolated is called a physical partition. The term partition is used when it is not required
+to distinguish between a logical and physical partition. The term endpoint is used interchangeably with the term
+partition.
+1. A VM (when the virtualization extension is enabled) or the OS kernel (when the virtualization extension is
+disabled or unavailable) is a physical or logical endpoint that runs in EL1 in the Non-secure security state.
+These endpoints are called NS-Endpoints in scenarios where it is not necessary to distinguish between them.
+2. A partition in the Secure security state is called a Secure Partition (SP) and could be,
+1. A logical partition that runs in EL3, S-EL2 or S-EL1.
+2. A physical partition that runs in S-EL1 or S-EL0.
+SPs are called S-Endpoints in scenarios where it is not necessary to distinguish between them on the basis of
+the exception level they run in.
+A partition manifest describes the physical address space ranges and system resources a partition needs, identity of
+partition services to enable their discovery and other attributes of the partition that govern its run-time behavior
+(also see Chapter 5 Setup).
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Chapter 3.2: Partitions</p>
+<p>A partition in the Firmware Framework is a software module or image that implements one or more services within an isolation boundary. These services are accessible across the boundary only via well-defined interfaces, such as FF-A ABIs for software images and IMPLEMENTATION DEFINED APIs for software modules.</p>
+<p>The Framework defines ABIs for partitions to discover other partitions, their properties, and services, as well as for synchronous and asynchronous message passing and memory management between partitions.</p>
+<p>Partitions can be logical (logically isolated but not physically isolated) or physical (both physically and logically isolated). The term "endpoint" is used interchangeably with "partition." There are two types of endpoints:</p>
+<ol>
+<li>NS-Endpoints: VMs or OS kernels running in EL1 in the Non-secure security state. These can be either physical or logical partitions.</li>
+<li>S-Endpoints: Secure Partitions (SPs) in the Secure security state, which can be logical partitions running in EL3, S-EL2, or S-EL1, or physical partitions running in S-EL1 or S-EL0.</li>
+</ol>
+<p>A partition manifest describes the required physical address space ranges, system resources, partition services, and other attributes governing the partition's run-time behavior.</p>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>The below text are chapter 3.3 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+
+3.3 Partition manager
+A partition manager is responsible for creating and managing the physical isolation boundary of a partition. It
+uses a partition manifest to assign physical address space ranges and system resources to a partition, initialize it as
+per the specified attributes and enable discovery of its services. The partition manager also implements FF-A ABIs
+to enable inter-partition communication for access to partition services.
+1. In the Secure world, this component is called the Secure Partition Manager (SPM).
+2. In the Normal world it is a Hypervisor1 (if the virtualization extension is enabled).
+A partition manager is physically isolated from physical partitions and logically isolated from logical partitions it
+manages. All partitions managed by a partition manager reside at the same or a numerically lower exception level
+than the partition manager.
+The term partition manager is used in the rest of this specification to collectively refer to the SPM and Hypervisor
+in scenarios where they have the same responsibilities, and it is not necessary to distinguish between them.
+The Hypervisor uses the virtualization extension in the Arm A-profile VMSA to create physical isolation boundaries
+as follows.
+• The EL1&amp;0 stage 2 translation regime, when EL2 is enabled in a PE in the Non-secure state, is used to
+restrict visibility of the Non-secure physical address space from a VM to only those regions that have been
+assigned to the VM.
+See 4.1 SPM architecture for a description of how the SPM creates and manages isolation boundaries for SPs.
+See 4.2 DMA isolation for a description of how a partition manager creates and manages isolation boundaries for
+DMA capable devices.
+The following trust boundaries are defined by the Firmware Framework vis-a-vis the partition managers and
+partitions.
+• The SPM is a part of the TCB for a system resource or physical address space range assigned to the Secure
+state.
+• Both the Hypervisor and SPM are a part of the TCB for a system resource or physical address space range
+assigned to the Non-secure state.
+• A VM trusts the Hypervisor to protect its resources from other VMs by creating and maintaining the correct
+physical isolation boundaries in the Non-secure physical address space.
+• Every endpoint trusts the SPM to protect its resources from other endpoints by creating and maintaining the
+correct physical isolation boundaries in both the Secure and Non-secure physical address spaces.
+• An SP does not trust the state of any Non-secure resource it has access to. Therefore, it does not trust the
+Hypervisor or a NS-Endpoint that could also access the same resource.
+The term FF-A component is used to collectively refer to partitions and partition managers.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Chapter 3.3: Partition Manager</p>
+<p>The Partition Manager is responsible for creating and managing the physical isolation boundary of a partition. It uses a partition manifest to assign resources to a partition, initialize it, and enable the discovery of its services. The Partition Manager also implements FF-A ABIs for inter-partition communication. In the Secure world, this component is called the Secure Partition Manager (SPM), while in the Normal world, it is a Hypervisor.</p>
+<p>A Partition Manager is physically isolated from physical partitions and logically isolated from logical partitions it manages. The term "partition manager" is used to refer to both the SPM and Hypervisor when their responsibilities are the same.</p>
+<p>The Hypervisor uses the virtualization extension in the Arm A-profile VMSA to create physical isolation boundaries, while the SPM does so for SPs. The Firmware Framework defines trust boundaries concerning partition managers and partitions. The SPM is part of the Trusted Computing Base (TCB) for resources assigned to the Secure state, and both the Hypervisor and SPM are part of the TCB for resources assigned to the Non-secure state. VMs trust the Hypervisor, and all endpoints trust the SPM to protect their resources. However, an SP does not trust the state of any Non-secure resource it has access to, and therefore does not trust the Hypervisor or a NS-Endpoint that could also access the same resource. The term "FF-A component" is used to refer to partitions and partition managers collectively.</p>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>The below text are chapter 3.4 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+
+3.4 Example configurations
+The Non-secure and Secure security states in the Arm A-profile architecture typically adopt a client-server model
+where a partition in the Non-secure state is a client of services implemented by a partition in the Secure state.
+Partitions within a security state could adopt the client-server model as well. Furthermore, a partition can be both a
+consumer of another partition’s services and provider of its own services.
+The FF-A software architecture generalizes the programming model to access a partition’s services within and
+between the Non-secure and Secure security states.
+Some example deployment scenarios of the FF-A software architecture on various configurations of an Arm
+A-profile system are listed in the following sub-sections.
+
+3.4.1 FF-A deployment without S-EL2
+Figure 3.2: Example FF-A deployment without S-EL2
+In Figure 3.2, the virtualization extension is enabled in the Non-secure state. It is either unavailable or disabled in
+the Secure state.
+Both VM0 and VM1 implement an FF-A driver in EL1 to access services in S-Endpoints. They could use the
+same driver to access each other’s services as well.
+The Hypervisor facilitates access to services in S-Endpoints from VM0 and VM1 by implementing an FF-A driver
+in EL2. It could use the same driver to enable them to access each other’s services.
+The following software images are deployed in the Secure world.
+1. A firmware image in EL3. It implements the SPM.
+2. A firmware image in S-EL1 (SP1).
+3. A Trusted OS image in S-EL1 (SP0).
+SP0 and SP1 are temporally isolated logical partitions and could access each other’s services via the SPM. The
+SPM is logically isolated from SP0 and SP1.
+
+3.4.2 FF-A deployment with S-EL2
+Figure 3.3: Example FF-A deployment with S-EL2
+In Figure 3.3, the virtualization extension is enabled in both security states. The Normal world software stack in
+unchanged from Figure 3.2.
+The following software images are deployed in the Secure world.
+1. A firmware image in EL3.
+2. An SPM image in S-EL2.
+3. A firmware image in S-EL1 (SP1).
+4. A Trusted OS image in S-EL1 (SP0).
+SP0 and SP1 are physical partitions and could access each other’s services via the SPM. The SPM is physically
+isolated from SP0 and SP1.
+
+3.4.3 FF-A deployment with S-EL2 and Armv8.1-VHE
+Figure 3.4: Example FF-A deployment with S-EL2 and Armv8.1-VHE
+In Figure 3.4, the virtualization extension is enabled in both security states. Additionally, Armv8.1 VHE is enabled
+in the Secure world to manage S-EL0 SPs. The Normal world software stack in unchanged from Figure 3.2.
+The following software images are deployed in the Secure world.
+1. A firmware image in EL3.
+2. An SPM image in S-EL2.
+3. A firmware image in S-EL0 (SP1).
+4. A firmware image in S-EL0 (SP0).
+SP0 and SP1 are physical partitions that could access each other’s services. The SPM is physically isolated from
+SP0 and SP1.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Chapter 3.4: Example Configurations</p>
+<p>The Arm Firmware Framework for Arm A-profile can be deployed in various configurations on an Arm A-profile system. The programming model is generalized to access a partition's services within and between the Non-secure and Secure security states. Some example deployment scenarios are:</p>
+<p>3.4.1 FF-A deployment without S-EL2:
+In this scenario, the virtualization extension is enabled in the Non-secure state, but unavailable or disabled in the Secure state. VM0 and VM1 use FF-A drivers to access services in S-Endpoints. The Hypervisor facilitates access to these services. In the Secure world, a firmware image in EL3 implements the SPM, and firmware images in S-EL1 (SP1) and a Trusted OS image in S-EL1 (SP0) are deployed as temporally isolated logical partitions.</p>
+<p>3.4.2 FF-A deployment with S-EL2:
+In this scenario, the virtualization extension is enabled in both security states. The Normal world software stack remains unchanged from the previous example. In the Secure world, a firmware image in EL3, an SPM image in S-EL2, a firmware image in S-EL1 (SP1), and a Trusted OS image in S-EL1 (SP0) are deployed. SP0 and SP1 are physical partitions that can access each other's services via the SPM, which is physically isolated from them.</p>
+<p>3.4.3 FF-A deployment with S-EL2 and Armv8.1-VHE:
+In this scenario, the virtualization extension is enabled in both security states, and Armv8.1 VHE is enabled in the Secure world to manage S-EL0 SPs. The Normal world software stack remains unchanged from the first example. In the Secure world, a firmware image in EL3, an SPM image in S-EL2, and firmware images in S-EL0 (SP1 and SP0) are deployed. SP0 and SP1 are physical partitions that can access each other's services, and the SPM is physically isolated from them.</p>
+<hr />
+<p><strong>Question:</strong> In ARM partition manager, Whan A is isolated from B. Could I say that B is also isolated from A?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, in the ARM partition manager, when partition A is isolated from partition B, it means that B is also isolated from A. Isolation boundaries ensure that both partitions cannot directly access each other's resources, providing security and stability for each partition's operation.</p>
+<hr />
+<p><strong>Question:</strong> Are you sure?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, I am sure. In the ARM Firmware Framework, isolation boundaries are designed to prevent unauthorized access between partitions. When partition A is isolated from partition B, it implies that both partitions are protected from each other, and neither partition can access the other's resources without proper authorization. So, when A is isolated from B, it also means that B is isolated from A.</p>
+<hr />
+<p><strong>Question:</strong> Can SPM see SP0 and SP1?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the Secure Partition Manager (SPM) can "see" and manage both SP0 and SP1. The SPM is responsible for creating and managing the physical isolation boundaries of Secure Partitions (SPs) like SP0 and SP1. It uses partition manifests to assign resources, initialize the partitions, and enable discovery of their services. Additionally, the SPM implements FF-A ABIs (Application Binary Interfaces) to enable inter-partition communication for access to partition services. So, while the SPM isolates SP0 and SP1 from each other, it still has visibility and control over both partitions.</p>
+<hr />
+<p><strong>Question:</strong> Can SP0 or SP1 see SPM?</p>
+<p><strong>Answer:</strong></p>
+<p>In the ARM Firmware Framework, SP0 and SP1 can communicate with the Secure Partition Manager (SPM) through well-defined interfaces, such as FF-A ABIs (Application Binary Interfaces). While the SPM is physically isolated from SP0 and SP1 in scenarios where they are physical partitions, they can still interact with the SPM using these interfaces for communication, service discovery, and memory management.</p>
+<p>However, it is important to note that SP0 and SP1 cannot access the internal workings or the memory of the SPM directly. They can only communicate with the SPM through the defined interfaces, ensuring that the isolation between them is maintained.</p>
+<hr />
+<p><strong>Question:</strong> Is TrustZone isolation boundary physical isolation or logical isolation?</p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone isolation boundary is a form of physical isolation. TrustZone is a security extension in ARM architecture that separates the processor's resources, such as memory and peripherals, into two distinct security domains: the Secure world and the Non-secure world. By utilizing hardware-based isolation, TrustZone ensures that sensitive data and functions in the Secure world are protected from unauthorized access by software running in the Non-secure world.</p>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>The below text are chapter 4.1 of "Arm Firmware Framework for Arm A-profile". Please summarize it.
+
+4.1 SPM architecture
+The responsibilities of the SPM are split between two components: the SPM Dispatcher (SPMD) and SPM
+Core (SPMC). Both components have access to the entire physical address space and are a part of the Trusted
+computing base. The term SPM is used when it is not necessary to distinguish between these two components.
+The responsibilities of these components are listed below.
+1. The SPMD resides in EL3 and runs in either the AArch64 or AArch32 execution state. It is responsible for:
+• SPM Core initialization at boot time.
+• Forwarding FF-A calls from Normal world to the SPM Core.
+• Forwarding FF-A calls from the SPM Core to the Normal world.
+2. The SPMC either co-resides with the SPMD in EL3 or in an adjacent exception level i.e. S-EL1 or S-EL2. It
+is responsible for:
+• SP initialization and isolation at boot time.
+• Inter-partition isolation at run-time.
+• Inter-partition communication at run-time between:
+– S-Endpoints.
+– S-Endpoints and NS-Endpoints.
+Table 4.1 lists the SPMC and SPMD configurations supported by the Framework vis-a-vis the exception levels
+they can reside in and the execution states they can run in.
+
+Table 4.1: Valid SPM configurations in AArch64 and AArch32 Execution state
+SPM
+config
+number SPMD EL and Execution state SPMC EL and Execution state Name of configuration
+1.
+EL3 (Aarch64) EL3 (AArch64) EL3 SPMC
+2.
+EL3 (AArch32) EL3 (AArch32) EL3 SPMC
+3.
+EL3 (AArch64) S-EL1 (AArch64) S-EL1 SPMC
+4.
+EL3 (AArch64) S-EL1 (AArch32) S-EL1 SPMC
+5.
+EL3 (AArch64) S-EL2 (AArch64) S-EL2 SPMC
+In SPM configurations where the SPMD and SPMC reside in adjacent exception levels,
+• They implement and report a mutually compatible version of the Firmware Framework. See 13.2.3 SPM
+usage for details.
+• The mechanism used by the SPMD to initialize the SPMC is IMPLEMENTATION DEFINED. The guidance
+provided in Chapter 5 Setup could be used by the implementation.
+• They use the ABIs defined in this specification for communication.
+A description of each SPM configuration is provided in the following sections.
+• 4.1.1 Secure EL2 SPM core component.
+• 4.1.3 EL3 SPM core component.
+• 4.1.2 S-EL1 SPM core component.
+The SPM configurations without S-EL2 are used in the following scenarios.
+• Reduce the size of the TCB by migrating EL3 &amp; S-EL1 firmware components, that should not be a part of
+the TCB, to one or more physically isolated S-EL0 SPs.
+• Make the TCB implementation more robust by migrating its components from EL3 &amp; S-EL1 to one or more
+physically isolated S-EL0 SPs.
+• Adopt the generalized programming model specified by the Framework to ease the migration of the Secure
+world software stack to an Arm A-profile system with S-EL2 enabled.
+• Adopt the generalized programming model specified by the Framework for accessing services in S-Endpoints
+from NS-Endpoints irrespective of whether S-EL2 is used in the Secure world.
+
+4.1.1 Secure EL2 SPM core component
+Figure 4.1: Example S-EL2 SPM Core and SP configuration
+The S-EL2 SPMC is fundamental to enforcing the principle of least privilege in the Secure state on Armv8.4 or
+later systems as described in Chapter 2 Introduction. It supports one or more of the following SP configurations.
+1. The SPMC uses Armv8.1 VHE to manage one or more physical SPs that run in S-EL0. Each SP runs in either
+the AArch32 or AArch64 execution state.
+The physical address space assigned to an SP is isolated from other FF-A components through the single
+stage of address translation implemented by the Secure EL2&amp;0 translation regime.
+2. The SPMC manages one or more physical SPs that run in S-EL1. Each SP runs in either the AArch32 or
+AArch64 execution state.
+The physical address space assigned to an SP is isolated from other FF-A components by the Secure EL1&amp;0
+stage 2 translation regime, when EL2 is enabled.
+An example of these configurations is illustrated in Figure 4.1.
+
+4.1.2 S-EL1 SPM core component
+Figure 4.2: Example S-EL1 SPM Core and SP configuration
+A S-EL1 SPMC runs in either the AArch64 or AArch32 execution state. It supports one or more of the following
+SP configurations.
+1. The SPMC manages one or more physical SPs that run in S-EL0. Each SP runs in either the AArch32 or
+AArch64 (only if S-EL1 SPMC runs in AArch64 too) execution state.
+The physical address space assigned to an SP is isolated from other FF-A components through the single
+stage of address translation implemented by the Secure EL1&amp;0 translation regime in either execution state.
+2. The SPMC manages a single SP that also runs in S-EL1. The SPMC and SP are packaged in the same
+software image and logically isolated from each other.
+In this configuration:
+• The interface between the SPMC and the SP component is IMPLEMENTATION DEFINED for example, a
+set of C programming language APIs.
+• Any FF-A calls targeted to the SP from the Normal world must be received by the SPMC and forwarded
+to the SP component through the IMPLEMENTATION DEFINED interface.
+• The SPMC and SP are initialized through an IMPLEMENTATION DEFINED mechanism. See Chapter 5
+Setup for more information.
+Figure 4.2 illustrates a combination of these configurations.
+
+4.1.3 EL3 SPM core component
+The EL3 SPMC co-exists with the SPMD in either the AArch64 or AArch32 execution state. It supports one of the
+following mutually exclusive SP configurations.
+Figure 4.3: Example EL3 SPM Core and S-EL0 SP configuration
+1. One or more physical SPs that run in S-EL0. Each SP runs in either the AArch32 or AArch64 (only if EL3
+SPMC runs in AArch64 too) execution state.
+The physical address space assigned to an SP is isolated from other FF-A components through the single
+stage of address translation implemented by the Secure EL1&amp;0 translation regime.
+This configuration is illustrated in Figure 4.3.
+
+Chapter 4. Concepts
+4.1. SPM architecture
+Figure 4.4: Example EL3 SPM Core and S-EL1 SP configuration
+2. The SPMC and SPMD co-exist in EL3 in the AArch64 execution state. One or more logical SPs reside in
+S-EL1. Each SP runs in either the AArch32 or AArch64 execution state. The SPs are temporally isolated
+from each other by the SPMC.
+This configuration is illustrated in Figure 4.4.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Chapter 4.1 of the "Arm Firmware Framework for Arm A-profile" discusses the Secure Partition Manager (SPM) architecture. The SPM is divided into two components: the SPM Dispatcher (SPMD) and the SPM Core (SPMC). Both components are part of the Trusted Computing Base and have access to the entire physical address space.</p>
+<p>The SPMD resides in EL3 and is responsible for the SPM Core initialization at boot time, forwarding FF-A calls between the Normal world and the SPM Core. The SPMC can reside in EL3, S-EL1, or S-EL2 and is responsible for SP initialization and isolation at boot time, inter-partition isolation, and inter-partition communication between S-Endpoints and NS-Endpoints.</p>
+<p>The document describes various SPM configurations based on the exception levels and execution states of the SPMD and SPMC. It also provides examples of these configurations for Secure EL2 SPM core component, S-EL1 SPM core component, and EL3 SPM core component.</p>
+<p>These configurations are essential for enforcing the principle of least privilege, reducing the size of the Trusted Computing Base, making the TCB implementation more robust, and adopting the generalized programming model specified by the Framework.</p>
+<hr />
+<p><strong>Question:</strong> What is SPMC?</p>
+<p><strong>Answer:</strong></p>
+<p>SPMC stands for Secure Partition Manager Core. It is one of the two main components of the Secure Partition Manager (SPM) in the Arm Firmware Framework for Arm A-profile. The SPMC is responsible for Secure Partition (SP) initialization and isolation at boot time, ensuring inter-partition isolation during runtime, and managing inter-partition communication between Secure Endpoints (S-Endpoints) and Non-Secure Endpoints (NS-Endpoints). The SPMC can reside in EL3 (Exception Level 3), S-EL1 (Secure Exception Level 1), or S-EL2 (Secure Exception Level 2), depending on the configuration.</p>
+<hr />
+<p><strong>Question:</strong> What is SPMC in the document?</p>
+<p><strong>Answer:</strong></p>
+<p>In the document "Arm Firmware Framework for Arm A-profile," the SPMC (Secure Partition Manager Core) is a component of the Secure Partition Manager (SPM) responsible for:</p>
+<ol>
+<li>Initializing and isolating Secure Partitions (SPs) at boot time.</li>
+<li>Ensuring inter-partition isolation during runtime.</li>
+<li>Managing inter-partition communication between Secure Endpoints (S-Endpoints) and Non-Secure Endpoints (NS-Endpoints).</li>
+</ol>
+<p>The SPMC can co-reside with the SPM Dispatcher (SPMD) in EL3 or reside in adjacent exception levels, such as S-EL1 or S-EL2. It is a part of the Trusted Computing Base and has access to the entire physical address space.</p>
+<hr />
+<p><strong>Question:</strong> Is SPMC of TrustZone?</p>
+<p><strong>Answer:</strong></p>
+<p>The SPMC (Secure Partition Manager Core) is part of the Arm Firmware Framework for Arm A-profile, which is built on top of the Arm TrustZone technology. TrustZone provides the underlying hardware support for isolation and security, while the SPMC is responsible for managing partitions and their communication within the Secure world enabled by TrustZone. So, while the SPMC is not TrustZone itself, it is a component that utilizes and operates within the TrustZone technology.</p>
+<hr />
+<p><strong>Question:</strong> So SPM and Hypervisor are partition managers. Right?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, that's correct. In the context of the Arm Firmware Framework for Arm A-profile, the Secure Partition Manager (SPM) operates in the Secure world, while the Hypervisor operates in the Normal world. Both SPM and Hypervisor are partition managers responsible for creating and managing the physical isolation boundaries of partitions, assigning resources, and enabling inter-partition communication.</p>
+<hr />
+<p><strong>Question:</strong> What is VMSA?</p>
+<p><strong>Answer:</strong></p>
+<p>VMSA, or Virtual Memory System Architecture, is a part of the Arm architecture that defines the memory management and address translation mechanisms. It is responsible for managing the address spaces and memory protection features in Arm systems. VMSA allows for the creation of separate virtual address spaces for each process, providing isolation between processes and the operating system. In the context of the Arm A-profile, the Hypervisor uses the virtualization extension in VMSA to create physical isolation boundaries between different partitions or virtual machines.</p>
+<hr />
+<p><strong>Question:</strong> Is VMSA a software or a hardware?</p>
+<p><strong>Answer:</strong></p>
+<p>VMSA (Virtual Memory System Architecture) is not a specific piece of software or hardware, but rather a part of the Arm architecture specification that defines how memory management and address translation should be implemented in Arm-based systems. VMSA provides guidelines for designing hardware and software components that handle memory management, address translation, and access control, allowing for the creation of separate virtual address spaces and ensuring proper isolation between processes and the operating system.</p>
+<hr />
+<h2>OP-TEE.0327.md</h2>
+<p><strong>Question:</strong> Does TrustZone require hypervisor?</p>
+<p><strong>Answer:</strong></p>
+<p>No, TrustZone does not require a hypervisor. TrustZone is a hardware-based security technology implemented in Arm processors that provides a secure execution environment by creating two separate worlds: the Secure World and the Normal World. TrustZone itself is not dependent on a hypervisor.</p>
+<p>A hypervisor is a software layer that manages and coordinates multiple virtual machines (VMs) running on a single hardware platform. Hypervisors can be used in conjunction with TrustZone to provide additional isolation and management capabilities for virtualized systems.</p>
+<p>While TrustZone and hypervisors can work together, they serve different purposes and are not dependent on one another. TrustZone focuses on providing a secure environment for trusted applications, while hypervisors manage VMs and their resources.</p>
+<hr />
+<p><strong>Question:</strong> https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html</p>
+<p><strong>Answer:</strong></p>
+<p>The link you provided directs to the OP-TEE porting guidelines, which offer information on how to port OP-TEE to a new platform. OP-TEE, or Open Portable Trusted Execution Environment, is an open-source implementation of TEE that provides a secure environment for trusted applications to run on Arm processors with TrustZone.</p>
+<p>The porting guidelines cover the following topics:</p>
+<ol>
+<li>
+<p>Prerequisites: This section describes the requirements for porting OP-TEE, including the platform's support for Arm TrustZone, a GlobalPlatform TEE compliant API, a working toolchain, and the necessary cryptographic libraries.</p>
+</li>
+<li>
+<p>Source tree structure: This section explains the directory structure of the OP-TEE project and where to add new platform-specific code.</p>
+</li>
+<li>
+<p>Platform configuration: This section discusses the various configuration options available for a new platform, such as the platform flavor, the target CPU architecture, and the memory layout.</p>
+</li>
+<li>
+<p>Adding a new platform: This section provides a step-by-step guide on how to add a new platform to the OP-TEE project, including creating a new directory for the platform, implementing platform-specific code, and updating the platform configuration files.</p>
+</li>
+<li>
+<p>Platform-specific code: This section covers the platform-specific code that needs to be implemented when porting OP-TEE to a new platform, such as initialization routines, memory management, and interrupt handling.</p>
+</li>
+<li>
+<p>Core APIs: This section discusses the core APIs that need to be implemented for a new platform, including cache maintenance, MMU configuration, and Secure Monitor Call (SMC) handling.</p>
+</li>
+<li>
+<p>Testing and debugging: This section provides guidance on testing and debugging a new platform, including using the xtest suite for testing and recommendations for debugging tools.</p>
+</li>
+</ol>
+<p>By following these guidelines, developers can port OP-TEE to a new platform, allowing the platform to leverage the security features provided by OP-TEE and TrustZone.</p>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>The following text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
+
+Porting guidelines
+This document serves a dual purpose:
+
+Serve as a base for getting OP-TEE up and running on a new device with initial xtest validation passing. This is the first part of this document (section 2).
+
+Highlight the missing pieces if you intend to make a real secure product, that is what the second part of this document is about.
+
+We are trying our best to implement full end to end security in OP-TEE in a generic way, but due to the nature of devices being different, NDA etc, it is not always possible for us to do so and in those cases, we most often try to write a generic API, but we will just stub the code. This porting guideline highlights the missing pieces that must be addressed in a real secure consumer device. Hopefully we will sooner or later get access to devices where we at least can make reference implementations publicly available to everyone for the missing pieces we are talking about here.
+
+Add a new platform
+The first thing you need to do after you have decided to port OP-TEE to another device is to add a new platform device. That can either be adding a new platform variant (PLATFORM_FLAVOR) if it is a device from a family already supported, or it can be a brand new platform family (PLATFORM). Typically this initial setup involve configuring UART, memory addresses etc. For simplicity let us call our fictive platform for “gendev” just so we have something to refer to when writing examples further down.
+
+core/arch/arm
+In core/arch/arm you will find all the currently supported devices. That is where you are supposed to add a new platform or modify an existing one. Typically you will find this set of files in a specific platform folder:
+
+$ ls
+conf.mk  main.c  platform_config.h  sub.mk
+So for the gendev platform it means that the files should be placed in this folder:
+
+core/arch/arm/plat-gendev
+conf.mk
+
+This is the device specific makefile where you define configurations unique to your platform. This mainly comprises two things: - OP-TEE configuration variables (CFG_), which may be assigned values in two ways. CFG_FOO ?= bar should be used to provide a default value that may be modified at compile time. On the other hand, variables that must be set to some value and cannot be modified should be set by: $(call force,CFG_FOO,bar). - Compiler flags for the TEE core, the user mode libraries and the Trusted Applications, which may be added to macros used by the build system. Please see Platform-specific configuration and flags in the build system documentation.
+
+It is recommended to use a existing platform configuration file as a starting point. For instance, core/arch/arm/plat-hikey/conf.mk.
+
+The platform conf.mk file should at least define the default platform flavor for the platform, the core configurations (architecture and number of cores), the main configuration directives (generic boot, arm trusted firmware support, generic time source, console driver, etc…) and some platform default configuration settings.
+
+PLATFORM_FLAVOR ?= hikey
+
+include core/arch/arm/cpu/cortex-armv8-0.mk
+
+$(call force,CFG_TEE_CORE_NB_CORE,8)
+$(call force,CFG_GENERIC_BOOT,y)
+$(call force,CFG_PL011,y)
+$(call force,CFG_PM_STUBS,y)
+$(call force,CFG_SECURE_TIME_SOURCE_CNTPCT,y)
+$(call force,CFG_WITH_ARM_TRUSTED_FW,y)
+$(call force,CFG_WITH_LPAE,y)
+
+ta-targets = ta_arm32
+ta-targets += ta_arm64
+
+CFG_NUM_THREADS ?= 8
+CFG_CRYPTO_WITH_CE ?= y
+CFG_WITH_STACK_CANARIES ?= y
+CFG_CONSOLE_UART ?= 3
+CFG_DRAM_SIZE_GB ?= 2
+main.c
+
+This platform specific file will contain power management handlers and code related to the UART. We will talk more about the information related to the handlers further down in this document. For our gendev device it could look like this (here we are excluding the necessary license header to save some space):
+
+#include &lt;console.h&gt;
+#include &lt;drivers/serial8250_uart.h&gt;
+#include &lt;kernel/generic_boot.h&gt;
+#include &lt;kernel/panic.h&gt;
+#include &lt;kernel/pm_stubs.h&gt;
+#include &lt;mm/core_mmu.h&gt;
+#include &lt;platform_config.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;tee/entry_fast.h&gt;
+#include &lt;tee/entry_std.h&gt;
+
+static void main_fiq(void)
+{
+    panic();
+}
+
+static const struct thread_handlers handlers = {
+    .std_smc = tee_entry_std,
+    .fast_smc = tee_entry_fast,
+    .nintr = main_fiq,
+    .cpu_on = cpu_on_handler,
+    .cpu_off = pm_do_nothing,
+    .cpu_suspend = pm_do_nothing,
+    .cpu_resume = pm_do_nothing,
+    .system_off = pm_do_nothing,
+    .system_reset = pm_do_nothing,
+};
+
+const struct thread_handlers *generic_boot_get_handlers(void)
+{
+    return &amp;handlers;
+}
+
+/*
+ * Register the physical memory area for peripherals etc. Here we are
+ * registering the UART console.
+ */
+register_phys_mem(MEM_AREA_IO_NSEC, CONSOLE_UART_BASE, SERIAL8250_UART_REG_SIZE);
+
+static struct serial8250_uart_data console_data;
+
+void console_init(void)
+{
+    serial8250_uart_init(&amp;console_data, CONSOLE_UART_BASE,
+                         CONSOLE_UART_CLK_IN_HZ, CONSOLE_BAUDRATE);
+    register_serial_console(&amp;console_data.chip);
+}
+platform_config.h
+
+This is a mandatory header file for every platform, since there are several files relaying upon the existence of this particular file. This file is where you will find the major differences between different platforms, since this is where you do the memory configuration, define base addresses etc. we are going to list a few here, but it probably makes more sense to have a look at the already existing platform_config.h files for the other platforms. Our fictive gendev could look like this:
+
+#ifndef PLATFORM_CONFIG_H
+#define PLATFORM_CONFIG_H
+
+/* Make stacks aligned to data cache line length */
+#define STACK_ALIGNMENT             64
+
+/* 8250 UART */
+#define CONSOLE_UART_BASE   0xcafebabe /* UART0 */
+#define CONSOLE_BAUDRATE    115200
+#define CONSOLE_UART_CLK_IN_HZ      19200000
+
+/* Optional: when used with CFG_WITH_PAGER, defines the device SRAM */
+#define TZSRAM_BASE         0x3F000000
+#define TZSRAM_SIZE         (200 * 1024)
+
+/* Mandatory main secure RAM usually DDR */
+#define TZDRAM_BASE         0x60000000
+#define TZDRAM_SIZE         (32 * 1024 * 1024)
+
+/* Mandatory TEE RAM location and core load address */
+#define TEE_RAM_START               TZDRAM_BASE
+#define TEE_RAM_PH_SIZE             TEE_RAM_VA_SIZE
+#define TEE_RAM_VA_SIZE             (4 * 1024 * 1024)
+#define TEE_LOAD_ADDR               (TZDRAM_BASE + 0x20000)
+
+/* Mandatory TA RAM (external less secure RAM) */
+#define TA_RAM_START                (TZDRAM_BASE + TEE_RAM_VA_SIZE)
+#define TA_RAM_SIZE         (TZDRAM_SIZE - TEE_RAM_VA_SIZE)
+
+/* Mandatory: for static SHM, need a hardcoded physical address */
+#define TEE_SHMEM_START             0x08000000
+#define TEE_SHMEM_SIZE              (4 * 1024 * 1024)
+
+#endif /* PLATFORM_CONFIG_H */
+This is minimal amount of information in the platform_config.h file. I.e, the memory layout for on-chip and external RAM. Note that parts of the DDR typically will need to be shared with normal world, so there is need for some kind of memory firewall for this (more about that further down). As you can see we have also added the UART configuration here, i.e., the DEVICE0_xyz part.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>The text you shared from the OP-TEE porting guidelines provides a detailed overview of how to add a new platform to OP-TEE. This involves creating and configuring platform-specific files within the core/arch/arm directory, such as:</p>
+<ol>
+<li>
+<p>conf.mk: A device-specific makefile to define configurations unique to your platform, such as OP-TEE configuration variables (CFG_) and compiler flags.</p>
+</li>
+<li>
+<p>main.c: A platform-specific file containing power management handlers and UART-related code.</p>
+</li>
+<li>
+<p>platform_config.h: A mandatory header file for every platform, which contains memory configuration, base addresses, and other platform-specific definitions.</p>
+</li>
+</ol>
+<p>In the provided text, a fictitious platform named "gendev" is used as an example to illustrate the process of creating and configuring the necessary files for a new platform. The text covers the setup of the platform's UART, memory addresses, and other configurations.</p>
+<p>Keep in mind that this is only a part of the porting process; there are other aspects to consider, such as implementing platform-specific code, core APIs, and testing and debugging the new platform.</p>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>The following continued text are from https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
+
+Official board support in OP-TEE?
+We do encourage everyone to submit their board support to the OP-TEE project itself, so it becomes part of the official releases and will be maintained by the OP-TEE community itself. If you intend to do so, then there are a few more things that you are supposed to do.
+
+Update platforms supported
+
+There is a section at the Platforms supported page that lists all devices officially supported in OP-TEE, that is where you also shall list your device. It should contain the name of the platform, then composite PLATFORM flag and whether the device is publicly available or not. If there is a product page on the internet for the device, please also create a link when writing the device name.
+
+Update .shippable.yml
+
+Since we are using Shippable to test pull requests etc, we would like that you also add your device to the .shippable.yml file, so that it will at least be built when someone is doing a pull request. Add a line at the end of file:
+
+- _make PLATFORM=&lt;platform-name&gt;_
+Maintainer
+
+If you are submitting the board support upstream we are going to ask you to become the maintainer for the device you have added. This means that you should also update the MAINTAINERS.md file accordingly. By being a maintainer for a device you are responsible to keep it up to date and you will be asked every quarter as part of the OP-TEE release schedule to test your device running the latest OP-TEE software.
+
+Update build.git and manifest.git
+
+This isn’t strictly necessary, but we are trying to create and maintain OP-TEE developer builds that should make it easy to setup, build and deploy OP-TEE on various devices. We encourage all maintainers to do the same for the boards they are in charge of. Therefore please consider creating a new manifest (and a new *.mk in build) for the device you have added to OP-TEE.
+
+Hardware Unique Key
+Most devices have some kind of Hardware Unique Key (HUK) that is mainly used to derive other keys. The HUK could for example be used when deriving keys used in secure storage etc. The important thing with the HUK is that it needs to be well protected and in the best case the HUK should never ever be readable directly from software, not even from the secure side. There are different solutions to this, crypto accelerator might have support for it or, it could involve another secure co-processor.
+
+In OP-TEE the HUK is just stubbed and you will see that in the function called tee_otp_get_hw_unique_key(...) in core/include/kernel/tee_common_otp.h. In a real secure product you must replace this with something else. If your device lacks the hardware support for a HUK, then you must at least change this to something else than just zeroes. But, remember it is not good secure practice to store a key in software, especially not the key that is the root for everything else, so this is not something we recommend that you should do.
+
+Secure Clock
+The Time API in GlobalPlatform Internal Core API specification defines three sources of time; system time, TA persistent time and REE time. The REE time is by nature considered as an unsecure source of time, but the other two should in a fully trustable hardware make use of trustable source of time, i.e., a secure clock. Note that from GlobalPlatform point of view it is not required to make use of a secure clock, i.e., it is OK to use time from REE, but the level of trust should be reflected by the gpd.tee.systemTime.protectionLevel property and the gpd.tee.TAPersistentTime.protectionLevel property (100=REE controlled clock, 1000=TEE controlled clock). So the functions that one needs to pay attention to are tee_time_get_sys_time(...) and tee_time_get_ta_time(...). If your hardware has a secure clock, then you probably want to change the implementation there to instead use the secure clock (and then you would also need to update the property accordingly, i.e., tee_time_get_sys_time_protection_level() and the variable ta_time_prot_lvl in tee_svc.c).
+
+Root and Chain of Trust
+To be able to assure that your devices are running the (untampered) binaries you intended to run you will need to establish some kind of trust anchor on the devices.
+
+The most common way of doing that is to put the root public key in some read only memory on the device. Quite often SoC’s/OEM’s stores public key(s) directly or the hash(es) of the public key(s) in OTP. When the boot ROM (which indeed needs to be ROM) is about to load the first stage bootloader it typically reads the public key from the software binary itself, hash the key and compare it to the key in OTP. If they are matching, then the boot ROM can be sure that the first stage bootloader was indeed signed with the corresponding private key.
+
+In OP-TEE you will not find any code at all related to this and this is a good example when it is hard for us to do this in a generic way since device manufacturers all tend to do this in their own unique way and they are not very keen on sharing their low level boot details and security implementation with the rest of the world. This is especially true on ARMv7-A. For ARMv8-A it looks bit better, since Arm in Trusted Firmware A have implemented and defined how a abstract the chain of trust (see auth-framework.rst). We have successfully verified OP-TEE by using the authentication framework from Trusted Firmware A (see Secure boot for the details).
+
+Hardware Crypto IP
+By default OP-TEE uses a software crypto library (currently mbed TLS and LibTomCrypt) and you have the ability to enable Crypto Extensions that were introduced with ARMv8-A (if the device is capable of that). Some of the devices we have in our hands do have hardware crypto IP’s, but due to NDA’s etc it has not been possible to enable it. If you have a device capable of doing crypto operations on a dedicated crypto block and you prefer to use that in favor for the software implementation, then you will need to implement relevant functions defined in core/include/crypto/crypto.h, the Crypto API, and write the low level driver that communicates with the device. Our Cryptographic implementation page describes in detail how the Crypto API is integrated. Since the communication with crypto blocks tends to be quite different depending on what kind of crypto IP you have, we have not written how that should be done. It might be that we do that in the future when get hold of a device where we can use the crypto block.
+
+Random Number Generator
+By default OP-TEE is configured with a software PRNG. The entropy is added to software PRNG at various places, but unfortunately it is still quite easy to predict the data added as entropy. As a consequence, unless the RNG is based on hardware the generated random will be quite weak.
+
+If your platform has a hardware entropy source, you should set CFG_WITH_SOFTWARE_PRNG to n, and provide an implementation for hw_get_random_bytes(), which returns multiple bytes of entropy.
+
+When CFG_WITH_SOFTWARE_PRNG=n, the platform can enable a PTA service for normal world to retrieve good quality random bytes. See configuration switches CFG_HWRNG_PTA and CFG_HWRNG_QUALITY, from 0 to 1024.
+
+When CFG_WITH_SOFTWARE_PRNG=n, the random number generator is made available to OP-TEE drivers and frameworks, including Trusted Applications (thoguh GP TEE Internal Core API) and normal world (when CFG_HWRNG_PTA=y).
+
+Power Management / PSCI
+In the Add a new platform section where we talked about the file main.c, we added a couple of handlers related to power management, we are talking about the following lines:
+
+.cpu_on = cpu_on_handler,
+.cpu_off = pm_do_nothing,
+.cpu_suspend = pm_do_nothing,
+.cpu_resume = pm_do_nothing,
+.system_off = pm_do_nothing,
+.system_reset = pm_do_nothing,
+The only function that actually does something there is the cpu_on function, the rest of them are stubbed. The main reason for that is because we think that how to suspend and resume is a device dependent thing. The code in OP-TEE is prepared so that callbacks etc from Trusted Firmware A will be routed to OP-TEE, but since the function(s) are just stubbed we will not do anything and just return. In a real production device, you would probably want to save and restore CPU states, secure hardware IPs’ registers and TZASC and other memory firewall related setting when these callbacks are being called.
+
+Memory firewalls / TZASC
+Arm have defined a system IP / SoC peripheral called TrustZone Address Space Controller (TZASC, see TZC-380 and TZC-400). TZASC can be used to configure DDR memory into separate regions in the physcial address space, where each region can have an individual security level setting. After enabling TZASC, it will perform security checks on transactions to memory or peripherals. It is not always the case that TZASC is on a device, in some cases the SoC has developed something equivalent. In OP-TEE this is very well reflected, i.e., different platforms have different ways of protecting their memory. On ARMv8-A platforms we are in most of the cases using Trusted Firmware A as the boot firmware and there the secure bootloader is the one that configures secure vs non-secure memory using TZASC (see plat_arm_security_setup in TF-A). The takeaway here is that you must make sure that you have configured whatever memory firewall your device has such that it has a secure and a non-secure memory area.
+
+Trusted Application private/public keypair
+By default all Trusted Applications (TA’s) are signed with the pre-generated 2048-bit RSA development key (private key). This key is located in the keys folder (in the root of optee_os.git) and is named default_ta.pem. This key must be replaced with your own key and you should never ever check-in this private key in the source code tree when in use in a real product. The recommended way to store private keys is to use some kind of HSM (Hardware Security Module), but an alternative would be temporary put the private key on a computer considered as secure when you are about to sign TA’s intended to be used in real products. Typically it is only a few number of people having access to this type of key in company. The key handling in OP-TEE is currently a bit limited since we only support a single key which is used for all TA’s. We have plans on extending this to make it a bit more flexible. Exactly when that will happen has not been decided yet.
+
+Platform ports
+OP-TEE is a reference implementation for developers and device manufacturers. This also implies that there are certain configurations and settings that cannot be done in OP-TEE reference code. In short, there are cases when the default configuration hasn’t enabled all necessary security features for the end product. There are a couple of reasons for that.
+
+Chipmakers and Semiconductors might only share specifications telling how to securely configure their devices with partners who have signed an NDA with them.
+
+In some cases a setting might be perfectly fine when OP-TEE is used in one particular environment, but the same setting might be insecure in another environment.
+
+Because of this we always urge companies and device manufacturers making the end product to follow the security guidelines from the chipmaker they are basing their products on. Refer also to Platform documentation
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>and platform-specific security guidelines for more information on the security features and configurations specific to your device.</p>
+<p>Conclusion</p>
+<p>This document provides an overview of the process of porting OP-TEE to a new platform, including the steps involved and the various considerations to ensure security features are properly implemented. However, it is essential to consult platform-specific documentation and guidelines provided by the chip manufacturer to ensure the security of the end product.</p>
+<p>Some of the key aspects to consider when porting OP-TEE to a new platform include:</p>
+<ol>
+<li>Official board support in OP-TEE: Update platforms supported, .shippable.yml, maintainers, and build.git and manifest.git files.</li>
+<li>Hardware Unique Key (HUK): Ensure a secure implementation for the device's hardware unique key.</li>
+<li>Secure Clock: Implement a trustable source of time if available on the hardware.</li>
+<li>Root and Chain of Trust: Establish a trust anchor on the device to ensure untampered binaries are running.</li>
+<li>Hardware Crypto IP: Implement the Crypto API for the device's dedicated crypto block if available.</li>
+<li>Random Number Generator: Make use of a hardware entropy source if available on the platform.</li>
+<li>Power Management / PSCI: Implement power management functions specific to the device.</li>
+<li>Memory firewalls / TZASC: Ensure proper configuration of memory firewalls on the device.</li>
+<li>Trusted Application private/public keypair: Replace the default key and securely manage private keys used for signing Trusted Applications.</li>
+</ol>
+<p>By carefully considering and implementing these aspects, you can ensure a secure port of OP-TEE to your target platform. Always refer to the chip manufacturer's documentation and guidelines for platform-specific security configurations and best practices.</p>
+<hr />
+<p><strong>Question:</strong> How does OP-TEE work with HUK?</p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE (Open Portable Trusted Execution Environment) is designed to provide a secure environment for the execution of trusted applications on a device. One of the critical components for providing security within OP-TEE is the use of a Hardware Unique Key (HUK).</p>
+<p>A Hardware Unique Key is a device-specific secret key that is usually derived from or securely stored in hardware. HUKs are essential for providing a secure root of trust, as they can be used to derive other cryptographic keys and establish secure communication channels between different components of a system.</p>
+<p>Here's how OP-TEE works with HUK:</p>
+<ol>
+<li>
+<p>In OP-TEE, the HUK is used to derive other keys for various purposes, such as secure storage or cryptographic operations. The derived keys are typically used in combination with other keys or cryptographic primitives to ensure the confidentiality, integrity, and authenticity of the data being processed.</p>
+</li>
+<li>
+<p>The function tee_otp_get_hw_unique_key(...) in core/include/kernel/tee_common_otp.h is responsible for retrieving the HUK from the hardware. In a real secure product, this function must be replaced with an implementation that retrieves the HUK from the device's hardware. This ensures that the HUK remains protected and cannot be accessed directly from software, even on the secure side.</p>
+</li>
+<li>
+<p>If the device does not have hardware support for a HUK, it is crucial to change the implementation of the tee_otp_get_hw_unique_key(...) function to use something other than zeroes. Storing a key in software is not a secure practice, especially for a key that serves as the root for all other keys. As such, it is not recommended, but it may be necessary if hardware support is lacking.</p>
+</li>
+<li>
+<p>Once the HUK is securely retrieved, it can be used by OP-TEE to derive other keys or perform cryptographic operations necessary for securing trusted applications and their data. The HUK helps establish a root of trust that can be extended to other parts of the system.</p>
+</li>
+</ol>
+<p>In summary, OP-TEE works with HUKs by leveraging them to derive other cryptographic keys and establish a root of trust for secure operations. The HUK is typically retrieved from the hardware using a secure function, and it is essential for providing a strong foundation for the security of the entire system.</p>
+<hr />
+<p><strong>Question:</strong> What are common device that store HUK in ARM platform with OP-TEE?</p>
+<p><strong>Answer:</strong></p>
+<p>Many devices in the ARM platform, especially those utilizing TrustZone technology, store Hardware Unique Keys (HUKs) for providing a secure root of trust. Some common devices that store HUKs and are compatible with OP-TEE include:</p>
+<ol>
+<li>
+<p>NXP i.MX family: Devices in the i.MX family, like i.MX6, i.MX7, and i.MX8, use ARM TrustZone and secure boot capabilities. They have integrated security features, such as cryptographic accelerators and secure storage, where the HUK can be stored.</p>
+</li>
+<li>
+<p>Xilinx Zynq UltraScale+ MPSoC: The Zynq UltraScale+ MPSoC has ARM Cortex-A53 and Cortex-R5 cores with TrustZone technology. It provides secure boot and supports storage of HUK in the on-chip eFUSE memory.</p>
+</li>
+<li>
+<p>STMicroelectronics STM32MP1: The STM32MP1 series, with its ARM Cortex-A7 and Cortex-M4 cores, supports OP-TEE and TrustZone. It provides secure storage for HUKs using its OTP (One-Time Programmable) memory or other secure storage mechanisms.</p>
+</li>
+<li>
+<p>HiSilicon HiKey and HiKey 960: These development boards, based on HiSilicon's Kirin SoCs, feature ARM Cortex-A cores with TrustZone technology. They can be used with OP-TEE and support secure storage for HUKs.</p>
+</li>
+<li>
+<p>Raspberry Pi 3 (unofficially): While not officially supported by OP-TEE, Raspberry Pi 3, featuring a Broadcom SoC with ARM Cortex-A53 cores, has been known to run OP-TEE. However, the secure storage of HUKs on Raspberry Pi 3 may not be as robust as in other devices designed with hardware security features in mind.</p>
+</li>
+</ol>
+<p>These are just a few examples of devices that store HUKs and can work with OP-TEE on the ARM platform. It's important to note that the secure storage and management of HUKs may vary depending on the specific device, its hardware features, and the implementation of OP-TEE. Always consult the device's documentation and follow the manufacturer's guidelines to ensure proper security measures are in place.</p>
+<hr />
+<h2>TrustZone.0329.md</h2>
+<p><strong>Question:</strong> What are components in ARM TCB?</p>
+<p><strong>Answer:</strong></p>
+<p>The Trusted Computing Base (TCB) of an ARM system consists of the essential components responsible for maintaining security properties and enforcing security policies. In the context of ARM TrustZone and related technologies, the TCB can include the following components:</p>
+<ol>
+<li>
+<p>Secure Boot: This is the mechanism that ensures the integrity and authenticity of the boot process, making sure that only trusted software components are executed during the system startup.</p>
+</li>
+<li>
+<p>ARM TrustZone: A hardware-based security feature in ARM processors, which provides a secure execution environment (Secure World) and isolates it from the less secure environment (Normal World).</p>
+</li>
+<li>
+<p>Secure Monitor: This is the lowest-level software component running in the Secure World. It manages transitions between the Secure and Normal Worlds and provides an interface for Secure World services.</p>
+</li>
+<li>
+<p>Trusted Firmware-A (TF-A) or other trusted firmware: This firmware runs in the Secure World and provides various services, such as secure boot, power management, and platform-specific configurations.</p>
+</li>
+<li>
+<p>OP-TEE or other Trusted Execution Environment (TEE) implementations: TEEs, like OP-TEE, provide a secure environment for running trusted applications (TAs) within the Secure World, ensuring that sensitive code and data are protected from unauthorized access or tampering.</p>
+</li>
+<li>
+<p>Secure Partition Manager (SPM): This component manages Secure Partitions (SPs) within the TrustZone Secure World, including creating, configuring, and managing SPs, as well as inter-partition communication and resource management.</p>
+</li>
+<li>
+<p>Trusted Applications (TAs): These are secure software components that run within the Secure World and provide security-sensitive services or perform security-critical operations.</p>
+</li>
+<li>
+<p>Security-sensitive hardware components: These components, such as cryptographic accelerators, secure storage, and hardware random number generators, provide additional security features and services to the system.</p>
+</li>
+<li>
+<p>Secure peripherals: These are peripherals that can be accessed only from the Secure World, providing additional isolation and protection for sensitive data and operations.</p>
+</li>
+</ol>
+<p>Please note that the specific components in an ARM TCB may vary depending on the system's architecture, SoC, and security requirements. The list above provides a general overview of the typical components in an ARM TrustZone-based TCB.</p>
+<hr />
+<p><strong>Question:</strong> Does TrustZone require SPM?</p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone itself does not inherently require a Secure Partition Manager (SPM). TrustZone is a hardware-based security feature in ARM processors that provides a secure execution environment (Secure World) and isolates it from the less secure environment (Normal World).</p>
+<p>However, when using ARMv8.4-A architecture or later, which introduces the concept of Secure Partitions (SPs) to improve isolation and modularity of the Secure World components, an SPM becomes an important part of the system. The SPM is responsible for managing the lifecycle of Secure Partitions and handling inter-partition communication and resource management.</p>
+<p>So, while TrustZone doesn't require an SPM in its basic form, utilizing SPM can enhance the security and modularity of the system when working with Secure Partitions in newer ARM architectures.</p>
+<hr /></article></body></html>

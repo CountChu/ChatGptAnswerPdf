@@ -1,0 +1,1409 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body {
+  max-width: 980px;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable,
+.markdown-body .highlighttable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr,
+.markdown-body .highlighttable {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite,
+.markdown-body .highlighttable pre,
+.markdown-body .highlighttable div.highlight {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td,
+.markdown-body .highlighttable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headerlink {
+  font: normal 400 16px fontawesome-mini;
+  vertical-align: middle;
+  margin-left: -16px;
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0;
+  color: #333;
+}
+
+.markdown-body .headerlink:focus {
+  outline: none;
+}
+
+.markdown-body h1 .headerlink {
+  margin-top: 0.8rem;
+}
+
+.markdown-body h2 .headerlink,
+.markdown-body h3 .headerlink {
+  margin-top: 0.6rem;
+}
+
+.markdown-body h4 .headerlink {
+  margin-top: 0.2rem;
+}
+
+.markdown-body h5 .headerlink,
+.markdown-body h6 .headerlink {
+  margin-top: 0;
+}
+
+.markdown-body .headerlink:hover,
+.markdown-body h1:hover .headerlink,
+.markdown-body h2:hover .headerlink,
+.markdown-body h3:hover .headerlink,
+.markdown-body h4:hover .headerlink,
+.markdown-body h5:hover .headerlink,
+.markdown-body h6:hover .headerlink {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 3px;
+}
+
+.markdown-body code:not(.highlight):not(.codehilite), .markdown-body samp {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight,
+.markdown-body pre {
+  border-radius: 3px;
+}
+
+.markdown-body :not(.highlight) > pre {
+  background-color: #f7f7f7;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* MultiMarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px fontawesome-mini;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\e157';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+.markdown-body diagram-div, .markdown-body div.uml-sequence-diagram, .markdown-body, div.uml-flowchart {
+  overflow: auto;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js'></script><script>MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: ".*|",
+    processClass: "arithmatex"
+  },
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
+    },
+    unicode: {
+      fonts: "STIXGeneral,'Arial Unicode MS'"
+    }
+  },
+  showProcessingMessages: false,
+  messageStyle: 'none'
+});
+</script><style>/*GitHub*/
+.highlight {background-color:#f7f7f7;color:#333333;}
+.highlight .hll {background-color:#ffffcc;}
+.highlight .c{color:#999988;font-style:italic}
+.highlight .err{color:#a61717;background-color:#e3d2d2}
+.highlight .k{font-weight:bold}
+.highlight .o{font-weight:bold}
+.highlight .cm{color:#999988;font-style:italic}
+.highlight .cp{color:#999999;font-weight:bold}
+.highlight .c1{color:#999988;font-style:italic}
+.highlight .cs{color:#999999;font-weight:bold;font-style:italic}
+.highlight .gd{color:#000000;background-color:#ffdddd}
+.highlight .ge{font-style:italic}
+.highlight .gr{color:#aa0000}
+.highlight .gh{color:#999999}
+.highlight .gi{color:#000000;background-color:#ddffdd}
+.highlight .go{color:#888888}
+.highlight .gp{color:#555555}
+.highlight .gs{font-weight:bold}
+.highlight .gu{color:#800080;font-weight:bold}
+.highlight .gt{color:#aa0000}
+.highlight .kc{font-weight:bold}
+.highlight .kd{font-weight:bold}
+.highlight .kn{font-weight:bold}
+.highlight .kp{font-weight:bold}
+.highlight .kr{font-weight:bold}
+.highlight .kt{color:#445588;font-weight:bold}
+.highlight .m{color:#009999}
+.highlight .s{color:#dd1144}
+.highlight .n{color:#333333}
+.highlight .na{color:teal}
+.highlight .nb{color:#0086b3}
+.highlight .nc{color:#445588;font-weight:bold}
+.highlight .no{color:teal}
+.highlight .ni{color:purple}
+.highlight .ne{color:#990000;font-weight:bold}
+.highlight .nf{color:#990000;font-weight:bold}
+.highlight .nn{color:#555555}
+.highlight .nt{color:navy}
+.highlight .nv{color:teal}
+.highlight .ow{font-weight:bold}
+.highlight .w{color:#bbbbbb}
+.highlight .mf{color:#009999}
+.highlight .mh{color:#009999}
+.highlight .mi{color:#009999}
+.highlight .mo{color:#009999}
+.highlight .sb{color:#dd1144}
+.highlight .sc{color:#dd1144}
+.highlight .sd{color:#dd1144}
+.highlight .s2{color:#dd1144}
+.highlight .se{color:#dd1144}
+.highlight .sh{color:#dd1144}
+.highlight .si{color:#dd1144}
+.highlight .sx{color:#dd1144}
+.highlight .sr{color:#009926}
+.highlight .s1{color:#dd1144}
+.highlight .ss{color:#990073}
+.highlight .bp{color:#999999}
+.highlight .vc{color:teal}
+.highlight .vg{color:teal}
+.highlight .vi{color:teal}
+.highlight .il{color:#009999}
+.highlight .gc{color:#999;background-color:#EAF2F5}
+</style><title>2023-04-17</title></head><body><article class="markdown-body"><h1>2023-04-17</h1>
+<p>Created: 2023-11-08 12:40:14</p>
+<h1>Chats</h1>
+<ul>
+<li>Papers.OP-TEE.0406.md<ul>
+<li><code>[22:34]</code> Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone ... ... <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:38]</code> What is perormance of WATZ? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:40]</code> What is the benefit of using WASM in TEE? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:42]</code> Is WATZ a TA? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:44]</code> Is WATZ extended from OP-TEE? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:55]</code> What is Remote Attestation? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[22:59]</code> So the software is provided by the remote device and the party verify the signature of the software before run it. Right? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:01]</code> Is remote attestation only used  to verify software? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:03]</code> How does a remote device declare that secure boot is enabled? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:07]</code> But how does the party(verifier) determine if the report is fake if the device is breached? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:11]</code> How does the party(verifier) verify the root of trust of the device? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:13]</code> Can remote attestation help the party know if the remote device is breached? <code>(Papers.OP-TEE.0406.md)</code></li>
+<li><code>[23:19]</code> Can TEE guarantee the code? <code>(Papers.OP-TEE.0406.md)</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1>Q &amp; A</h1>
+<h2>Papers.OP-TEE.0406.md</h2>
+<p><strong>Question:</strong></p>
+<pre><code>Paper: WATZ: A Trusted WebAssembly RuntimeEnvironment with Remote Attestation for TrustZone
+
+Abstract—WebAssembly (Wasm) is a novel low-level bytecodeformat that swiftly gained popularity for its efficiency, versatilityand security, with near-native performance. Besides, trustedexecution environments (TEEs) shield critical software assetsagainst compromised infrastructures. However, TEEs do notguarantee the code to be trustworthy or that it was not tamperedwith. Instead, one relies on remote attestation to assess thecode before execution. This paper describes WATZ, which is (i)an efficient and secure runtime for trusted execution of Wasmcode for Arm’s TrustZone TEE, and (ii) a lightweight remoteattestation system optimised for Wasm applications running inTrustZone, as it lacks built-in mechanisms for attestation. Theremote attestation protocol is formally verified using a state-of-the-art analyser and model checker. Our extensive evaluation ofArm-based hardware uses synthetic and real-world benchmarks,illustrating typical tasks IoT devices achieve. WATZ’s executionspeed is on par with Wasm runtimes in the normal world andreaches roughly half the speed of native execution, which iscompensated by the additional security guarantees and the inter-operability offered by Wasm. WATZ is open-source and availableon GitHub along with instructions to reproduce our experiments.
+
+I. INTRODUCTION
+Security is critical when designing and deploying distributed
+applications for mutually distrusting stakeholders, e.g., hosting
+companies. The problem grows in complexity in heterogeneous
+systems, when one considers decentralised operations of
+IoT, edge and cloud devices, all at risk of being compromised.
+Trusted execution environments (TEEs), e.g., Intel SGX [1]
+and Arm TrustZone [2], offer hardware support for securely
+executing applications in shielded environments. While TEEs
+are promoted by the commercial offerings of major cloud
+providers, they do not guarantee that the code itself is trustworthy
+and has not been tampered with. Remote attestation [3]–[7]
+is typically used to assess the code before its execution. However,
+while this key security feature is provided by some TEEs
+(e.g., Intel SGX [8]), Arm TrustZone lacks built-in support
+for remote attestation. Given the swift growth of popularity of
+Arm-based architectures in the IoT edge computing [9] and
+its recent adoption in the general computer market [10], this
+is concerning. In addition, recent attacks have shown how to
+compromise IoT devices via malicious firmware updates [11]
+or software flaws [12], typically beyond the threat model
+of TrustZone. Nonetheless, the inability of manufacturers to
+verify the authenticity of their software upon execution makes
+these platforms inadequate for handling sensitive tasks and
+data, in particular when dealing with recent scenarios such as
+trustworthy machine learning systems at the edge [13].
+WebAssembly (Wasm) [14] is a new bytecode standard for
+running applications at near-native speed. It enables developers
+to build their software components with the productivity
+benefits of modern programming languages while supporting
+legacy code, since modern compilers support Wasm [15].
+TrustZone is a constrained environment that runs small executables
+using a specialised API. Wasm fits well in this model,
+thanks to its small runtime overhead, portability, supporting
+non-standard system interfaces, and fast as the bytecode can
+be compiled just-in-time and ahead-of-time.
+Embedding Wasm in TrustZone can be helpful in many use
+cases. The smartphone industry could rely on Wasm as an
+interoperable bytecode to execute secure applications inside
+TrustZone, as exclusively reserved for the manufacturer’s
+needs or for strategic partners [16]. Automotive applications
+could rely on IoT devices to run machine learning algorithms
+inside enclaves, ensuring the validity of the results via attestation
+and using Wasm to leverage legacy machine learning
+frameworks. We demonstrate the latter in §VI-F.
+We present WATZ, an efficient and secure runtime for
+trusted execution of Wasm code inside TrustZone, adding support
+for remote attestation. We leverage the sandbox isolation
+of Wasm to mitigate, and possibly prevent, vertical privilege
+escalations and lateral attacks. We combine TrustZone with
+Wasm bytecode to issue trustworthy evidence, attesting the
+genuineness of running software. In §IV, we adapted and fully
+implemented the remote attestation protocol from SGX [17],
+using a public-key infrastructure. As such, we facilitate the
+deployment of fully decentralised applications spanning various
+devices at the core or the edge of the network. WATZ
+extends OP-TEE [18], a popular open-source trusted OS, and
+we validated our prototype with Arm hardware.
+The main research questions that WATZ intends to answer,
+and the main contributions of this work are the following.
+RQ1: Are there system challenges when embedding Wasm
+into Arm TrustZone?
+TrustZone requires using a trusted operating system, which
+declares a non-standardised API to interact with system resources.
+This, coupled with the constrained nature of TEEs
+(e.g., no system call, limited memory), increases the complexity
+of hosting general-purpose applications compiled in Wasm.
+We show (§III) that WATZ is the first system to run Wasm applications
+in TrustZone, while leveraging the WASI standard, a
+POSIX-like layer for Wasm, to interact with the TEE facilities.
+As such, hosted applications seamlessly communicate with TrustZone, while abstracting from that trusted environment’s
+specific API. This software encapsulation strategy for Trust-
+Zone enhances the state of the art: each software deployed
+in the trusted world is fully isolated and cannot interfere with
+others, similarly to SGX enclaves, thanks to the robust sandbox
+provided by Wasm. Our WATZ prototype supports a subset of
+WASI API to run general-purpose software and to evaluate a
+database engine (SQLite [19]), as well as a machine learning
+library (Genann [20]). We plan to widen the WASI support
+for additional system calls, e.g., file system and networking.
+RQ2: How can relying parties trust the remote execution
+of Wasm applications?
+Given the lack of built-in remote attestation in TrustZone,
+we propose a protocol (§IV) to attest Wasm code embedded
+in our trusted environment. Hence, we ensure executed Wasm
+binaries are trustworthy, similarly to Intel SGX. We identify
+the hardware requirements of IoT devices to provide attestable
+guarantees (e.g., root of trust, secure boot), showing how to
+be combined with the trusted environment to verify Wasm binaries.
+We contribute an extension of the WASI specifications,
+called WASI-RA, to enable the hosted Wasm applications to
+attest against trusted parties and communicate shared secrets
+and confidential data, based on Intel SGX’s remote attestation
+protocol. Finally, we demonstrate that WATZ is an end-toend
+solution that leverages the fingerprint (i.e., a hash of the
+bytecode) of isolated Wasm applications, hardware elements
+and the attestation mechanism to induce trust into IoT devices.
+RQ3: How does the performance of Wasm applications
+compare when hosted in the trusted environment?
+We extensively evaluate WATZ (§VI) against micro- and
+macro-benchmarks, together with SQLite and Genann. Performance
+is on par with Wasm applications executed outside
+of the TEE, and up to 2.12  compared to native execution,
+deemed negligible compared to the benefits WATZ offers. We
+contribute and describe an extension of the trusted kernel (OPTEE)
+to execute ahead-of-time compiled Wasm applications to
+achieve these performance results. Besides, we perform a security
+analysis of WATZ (§VII), as well as formal verification
+of the remote attestation protocol.
+Roadmap. The remainder of the paper is organised as follows.
+We first present background information and related
+work in §II. §III introduces the overall design and architecture
+of our WATZ runtime. The remote attestation mechanism of
+WATZ is described in §IV. We elaborate on some implementation
+details in §V and present our extensive evaluation of
+WATZ in §VI. We analyse the security of our approach in
+§VII, before concluding in §VIII.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>The paper "WATZ: A Trusted WebAssembly Runtime Environment with Remote Attestation for TrustZone" presents WATZ, a runtime environment designed for the efficient and secure execution of WebAssembly (Wasm) code within Arm's TrustZone trusted execution environment (TEE). The runtime also incorporates a lightweight remote attestation system tailored to Wasm applications running in TrustZone, as TrustZone lacks built-in mechanisms for attestation.</p>
+<p>The primary research questions that WATZ aims to address include:
+1. System challenges in embedding Wasm into Arm TrustZone.
+2. The trustworthiness of remote execution of Wasm applications.
+3. Performance comparison of Wasm applications when hosted in the trusted environment.</p>
+<p>WATZ extends OP-TEE, a popular open-source trusted OS, and the prototype is validated with Arm hardware. The system successfully hosts Wasm applications in TrustZone, leveraging the WASI standard, a POSIX-like layer for Wasm, to interact with the TEE facilities. The paper also proposes a remote attestation protocol to attest Wasm code embedded in the trusted environment, ensuring that executed Wasm binaries are trustworthy, similarly to Intel SGX.</p>
+<p>In terms of performance, WATZ is on par with Wasm applications executed outside of the TEE, and up to 2.12 times slower compared to native execution. This difference is considered negligible given the security benefits provided by WATZ.</p>
+<hr />
+<p><strong>Question:</strong> What is perormance of WATZ?</p>
+<p><strong>Answer:</strong></p>
+<p>The performance of WATZ, a Trusted WebAssembly Runtime Environment for TrustZone, is quite promising. According to the paper, the performance of WATZ is on par with WebAssembly (Wasm) applications executed outside of the trusted execution environment (TEE). The runtime has a performance overhead of up to 2.12 times compared to native execution.</p>
+<p>Despite the performance overhead, the difference is considered negligible when compared to the security benefits provided by WATZ. The system allows for the efficient and secure execution of Wasm code within Arm's TrustZone TEE and adds support for remote attestation, enhancing the security and trustworthiness of Wasm applications.</p>
+<hr />
+<p><strong>Question:</strong> What is the benefit of using WASM in TEE?</p>
+<p><strong>Answer:</strong></p>
+<p>Using WebAssembly (WASM) in a Trusted Execution Environment (TEE) provides several benefits, making it a valuable choice for enhancing security and interoperability in various applications:</p>
+<ol>
+<li>
+<p>Portability: WASM is platform-agnostic, allowing developers to write code once and run it on various platforms, including TEEs. This increases the reusability and flexibility of applications running in TEEs.</p>
+</li>
+<li>
+<p>Isolation and security: WASM provides a sandboxed execution environment, which ensures that applications are isolated from each other and from the host system. This isolation helps mitigate potential security risks, such as privilege escalation or lateral attacks.</p>
+</li>
+<li>
+<p>Interoperability: WASM allows developers to build software components using modern programming languages and leverage existing code, making it easier to deploy applications in TEEs without the need to rewrite or recompile them.</p>
+</li>
+<li>
+<p>Efficiency: WASM is designed for near-native performance, which means that applications running within TEEs can benefit from the efficiency and speed of WASM execution, even in resource-constrained environments like IoT devices.</p>
+</li>
+<li>
+<p>Support for non-standard system interfaces: WASM can interact with non-standard system interfaces, making it suitable for TEEs that might have unique APIs or restrictions.</p>
+</li>
+</ol>
+<p>Overall, integrating WASM in TEEs allows for enhanced security, performance, and interoperability in various use cases, including smartphones, automotive applications, IoT devices, and edge computing.</p>
+<hr />
+<p><strong>Question:</strong> Is WATZ a TA?</p>
+<p><strong>Answer:</strong></p>
+<p>No, WATZ is not a Trusted Application (TA). WATZ, or WebAssembly TrustZone, is a trusted runtime environment for executing WebAssembly (WASM) code inside Arm's TrustZone TEE (Trusted Execution Environment). It also includes a lightweight remote attestation system optimized for WASM applications running in TrustZone, as TrustZone itself lacks built-in mechanisms for attestation.</p>
+<p>WATZ is designed to provide a secure and efficient way to run WASM applications inside the TrustZone TEE while offering remote attestation capabilities. It is not a specific Trusted Application, but rather an environment in which multiple WASM-based TAs can be executed securely.</p>
+<hr />
+<p><strong>Question:</strong> Is WATZ extended from OP-TEE?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, WATZ is extended from OP-TEE. OP-TEE (Open Portable Trusted Execution Environment) is a popular open-source trusted operating system for Arm TrustZone. WATZ extends OP-TEE by adding support for running WebAssembly (WASM) code inside Arm's TrustZone TEE and providing a lightweight remote attestation system optimized for WASM applications running in TrustZone. This extension allows WATZ to offer a secure and efficient runtime environment for WASM applications within the TrustZone TEE.</p>
+<hr />
+<p><strong>Question:</strong> What is Remote Attestation?</p>
+<p><strong>Answer:</strong></p>
+<p>Remote attestation is a security mechanism used to verify the authenticity and integrity of software running on a remote device, typically within a trusted execution environment (TEE) or a secure enclave, like Intel SGX or Arm TrustZone. It helps establish trust between a remote device and a verifying party by providing evidence that the software running on the remote device is genuine, unaltered, and operating in a secure environment.</p>
+<p>In a remote attestation process, the remote device generates a cryptographic signature or proof, which includes information about the software's state and the secure environment. This proof is then sent to the verifying party, who can validate the signature using a public key or a pre-shared key. If the signature is valid and the software's state meets the expected criteria, the verifying party can trust the remote device and its software.</p>
+<p>Remote attestation is particularly useful in scenarios where devices are deployed in untrusted or potentially compromised environments, such as IoT devices or cloud servers. It enables the establishment of trust between distributed devices and helps ensure the confidentiality and integrity of sensitive data and processes.</p>
+<hr />
+<p><strong>Question:</strong> So the software is provided by the remote device and the party verify the signature of the software before run it. Right?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, that's correct. In remote attestation, the software running on the remote device generates a cryptographic signature or proof, which includes information about the software's state and the secure environment. This proof is then sent to the verifying party.</p>
+<p>The verifying party checks the signature using a public key or a pre-shared key, and if the signature is valid and the software's state meets the expected criteria, the verifying party can trust that the software running on the remote device is genuine and unaltered.</p>
+<p>In other words, remote attestation allows the verifying party to confirm the authenticity and integrity of the software running on the remote device before deciding to trust it and establish secure communication or share sensitive data.</p>
+<hr />
+<p><strong>Question:</strong> Is remote attestation only used  to verify software?</p>
+<p><strong>Answer:</strong></p>
+<p>Remote attestation is primarily used to verify the authenticity and integrity of software running in a secure environment, such as a trusted execution environment (TEE) or secure enclave. However, remote attestation can also be extended to cover aspects of the underlying hardware or firmware.</p>
+<p>In some cases, remote attestation can be used to verify the configuration and state of the hardware or firmware to ensure it meets specific security requirements or complies with certain policies. For example, it can be used to verify that secure boot has been enabled, or that a specific hardware component is genuine and not tampered with.</p>
+<p>So, while remote attestation is primarily focused on software, it can also be applied to hardware and firmware components in certain scenarios to provide a higher level of assurance about the security and trustworthiness of the entire system.</p>
+<hr />
+<p><strong>Question:</strong> How does a remote device declare that secure boot is enabled?</p>
+<p><strong>Answer:</strong></p>
+<p>A remote device can declare that secure boot is enabled by providing evidence in the form of a signed measurement or attestation report. This process involves the following steps:</p>
+<ol>
+<li>
+<p>Secure boot process: When the device boots up, the secure boot mechanism ensures that each component in the boot chain (bootloader, firmware, and operating system) is verified using digital signatures before being executed. This process creates a series of measurements (hashes) of the loaded components.</p>
+</li>
+<li>
+<p>Platform Configuration Registers (PCRs): The measurements obtained during the secure boot process are stored in the device's Trusted Platform Module (TPM) or another secure element, in special registers called Platform Configuration Registers (PCRs).</p>
+</li>
+<li>
+<p>Attestation request: A remote party (verifier) can request an attestation report from the device to verify that secure boot is enabled. The device generates a report that includes the PCR values, a nonce provided by the verifier, and other relevant information about the device's state.</p>
+</li>
+<li>
+<p>Signing the report: The device signs the attestation report using a private key that corresponds to a public key known to the verifier. This key can be an endorsement key, an attestation identity key, or another key tied to the device's secure element.</p>
+</li>
+<li>
+<p>Verifying the report: The remote party receives the signed report and verifies the signature using the corresponding public key. If the signature is valid, the remote party can examine the PCR values and other information in the report to determine if secure boot is enabled and if the device's configuration meets the required security policies.</p>
+</li>
+</ol>
+<p>This process allows the remote party to verify that secure boot is enabled on the device and that the device's boot chain components are genuine and have not been tampered with.</p>
+<hr />
+<p><strong>Question:</strong> But how does the party(verifier) determine if the report is fake if the device is breached?</p>
+<p><strong>Answer:</strong></p>
+<p>The remote attestation process relies on the hardware-backed security provided by secure elements like TPM (Trusted Platform Module) or TEE (Trusted Execution Environment) to ensure the integrity and authenticity of the attestation report. However, if the device is breached and the attacker can compromise these secure elements, the remote attestation process could potentially be fooled.</p>
+<p>To minimize the risk of accepting fake reports, the verifier should follow these best practices:</p>
+<ol>
+<li>
+<p>Verify the root of trust: Ensure that the device's secure element (e.g., TPM or TEE) has a legitimate and trusted root of trust, such as a hardware-based root of trust or a known and trusted manufacturer's certificate.</p>
+</li>
+<li>
+<p>Use a strong attestation protocol: Employ a secure and well-established attestation protocol, which has been formally verified and widely reviewed by the security community.</p>
+</li>
+<li>
+<p>Verify the attestation report's signature: Ensure that the report is signed with a valid and trusted key tied to the device's secure element. The verifier must have access to the corresponding public key and validate the signature.</p>
+</li>
+<li>
+<p>Check the nonce: The verifier should provide a unique nonce (number used once) during the attestation request, which the device must include in the attestation report. This ensures that the report is fresh and generated for the specific request, mitigating replay attacks.</p>
+</li>
+<li>
+<p>Evaluate the report's content: The verifier should carefully analyze the attestation report's contents, including PCR values and other device state information, to ensure that it meets the required security policies and that the device's configuration is as expected.</p>
+</li>
+</ol>
+<p>It is important to note that no security measure is foolproof, and sophisticated attackers might still find ways to breach a system. However, following best practices and employing a defense-in-depth approach can significantly increase the difficulty for an attacker to compromise the remote attestation process.</p>
+<hr />
+<p><strong>Question:</strong> How does the party(verifier) verify the root of trust of the device?</p>
+<p><strong>Answer:</strong></p>
+<p>To verify the root of trust (RoT) of a device, the verifier (the party receiving the attestation report) must follow these steps:</p>
+<ol>
+<li>
+<p>Obtain the device's attestation report: The attestation report, generated by the device's secure element (e.g., TPM or TEE), includes information about the device's hardware, firmware, and software configuration, as well as a digital signature created using the device's private attestation key.</p>
+</li>
+<li>
+<p>Verify the attestation key: The device's attestation key must be tied to a trusted certificate issued by the device manufacturer or another trusted authority. The verifier should validate the attestation key's certificate chain up to a trusted root certificate that is pre-installed or obtained from a trusted source. This process ensures the attestation key is genuine and belongs to a legitimate device.</p>
+</li>
+<li>
+<p>Verify the attestation report's signature: The verifier must use the device's public attestation key (corresponding to the private attestation key used to sign the report) to verify the digital signature on the attestation report. If the signature is valid, it means the report was generated by the device with the genuine attestation key.</p>
+</li>
+<li>
+<p>Check the nonce: To ensure the freshness of the attestation report and prevent replay attacks, the verifier should provide a unique nonce (number used once) during the attestation request. This nonce must be included in the attestation report, and the verifier should confirm its presence and correctness.</p>
+</li>
+<li>
+<p>Examine the report's content: The verifier should carefully analyze the attestation report's contents to ensure that the device's hardware, firmware, and software configuration meet the required security policies. This includes checking measurements of the secure boot process, firmware versions, and other relevant security properties.</p>
+</li>
+</ol>
+<p>By following these steps, the verifier can establish trust in the device's root of trust, making it difficult for an attacker to generate a fake attestation report. However, it is essential to maintain up-to-date trust anchors (e.g., root certificates) and follow best practices to ensure the security of the remote attestation process.</p>
+<hr />
+<p><strong>Question:</strong> Can remote attestation help the party know if the remote device is breached?</p>
+<p><strong>Answer:</strong></p>
+<p>Remote attestation can help the party (verifier) determine if the remote device might be breached, but it does not provide a 100% guarantee. Remote attestation provides information about the device's hardware, firmware, and software configuration, as well as measurements of the boot process and the integrity of the executed code.</p>
+<p>If the device is compromised, there is a chance that the integrity measurements included in the attestation report will not match the expected values. The verifier can then detect the discrepancy and decide not to trust the device. However, if the breach is sophisticated enough and can tamper with the attestation process itself, it might be challenging to detect the breach using remote attestation alone.</p>
+<p>To further enhance the security of remote attestation and reduce the chances of not detecting a breach, it is essential to follow best practices:</p>
+<ol>
+<li>Use hardware-based roots of trust (e.g., TPM or TEE) to increase the difficulty for attackers to tamper with the attestation process.</li>
+<li>Keep trust anchors (e.g., root certificates) up-to-date and manage them securely.</li>
+<li>Regularly update the device's firmware, software, and security configurations to minimize vulnerabilities.</li>
+<li>Use secure communication channels to transmit attestation reports and other sensitive information.</li>
+<li>Combine remote attestation with other security mechanisms (e.g., intrusion detection systems, secure logging, and monitoring) to increase the chances of detecting breaches.</li>
+</ol>
+<p>By employing a comprehensive security approach and using remote attestation as one of the security mechanisms, the verifier can have a higher level of confidence in detecting if a remote device is breached. However, it is essential to remember that no security measure can provide absolute certainty.</p>
+<hr />
+<p><strong>Question:</strong> Can TEE guarantee the code?</p>
+<p><strong>Answer:</strong></p>
+<p>A Trusted Execution Environment (TEE) can provide a high level of assurance regarding the integrity and confidentiality of the code executed within it, but it cannot provide an absolute guarantee. A TEE isolates sensitive code and data from the rest of the system, protecting them from unauthorized access or tampering by malicious software or external attackers.</p>
+<p>TEEs, such as ARM TrustZone or Intel SGX, leverage hardware-based security features to create a secure enclave where sensitive operations can be performed. These enclaves provide a range of security properties, including:</p>
+<ol>
+<li>Code isolation: The code running in the TEE is isolated from the rest of the system, ensuring that other applications or the OS cannot access or modify it.</li>
+<li>Data protection: Data stored or processed within the TEE is encrypted and protected from unauthorized access or tampering.</li>
+<li>Secure boot: TEEs often support secure boot, which ensures that the code loaded into the TEE has not been tampered with and comes from a trusted source.</li>
+<li>Remote attestation: TEEs can provide remote attestation capabilities, allowing a remote party to verify the integrity and authenticity of the code running in the TEE.</li>
+</ol>
+<p>Despite these security properties, TEEs are not infallible, and vulnerabilities have been discovered in the past. For example, side-channel attacks have been demonstrated against Intel SGX, potentially allowing an attacker to extract sensitive information from the enclave.</p>
+<p>While TEEs can provide a high level of assurance for the code they execute, it is essential to remember that no security measure can offer absolute certainty. Regularly updating the software, firmware, and security configurations of the TEE, as well as employing a comprehensive security approach that includes other security mechanisms, can help reduce the risk of compromise.</p>
+<hr /></article></body></html>

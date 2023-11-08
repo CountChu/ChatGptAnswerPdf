@@ -1,0 +1,57 @@
+2023-04-07
+
+Questions
+
+2020 Bao (230406.Papers.OP-TEE.yaml)
+09:02 | Is Bao a hypervisor? (Papers.OP-TEE.0406.md)
+
+Hypervisor & Virtualization (230407.Arm.Hypervisor.yaml)
+09:04 | Please compare hypervisor and virtualization and also summarize them in a table. (Papers.OP-TEE.0406.md)
+09:05 | Is TrustZone a hypervisor or virtualization? (Papers.OP-TEE.0406.md)
+09:06 | Is OP-TEE a hypervisor or virtualization? (Papers.OP-TEE.0406.md)
+09:07 | Does virtualization depend on hypervisor? (Papers.OP-TEE.0406.md)
+14:05 | Are there alnatives of hypervisor? (Papers.OP-TEE.0406.md)
+
+VM (230407.Arm.Hypervisor.yaml)
+13:56 | Does VM require hypervisor? (Papers.OP-TEE.0406.md)
+14:07 | Can a VM contain VMs? (Papers.OP-TEE.0406.md)
+
+Virtualization (230407.Arm.Hypervisor.yaml)
+13:59 | What are types of virtualization techs? (Papers.OP-TEE.0406.md)
+
+Hypervisor (230407.Arm.Hypervisor.yaml)
+14:04 | Is hypvervisor a virtual machine manager? (Papers.OP-TEE.0406.md)
+
+TCB (230407.Arm.Hypervisor.yaml)
+16:32 | What are components in TCB? (TrustZone.0329.md)
+
+History (230407.OP-TEE.History.yaml)
+21:23 | Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone about TrustZone and Qualcomm about TEE. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail. (OP-TEE.History.0407.md)
+21:26 | Please display above context in a table. X axis of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm.  Y asis of the table are years. (OP-TEE.History.0407.md)
+21:30 | When did Qualcomm release QTEE? (OP-TEE.History.0407.md)
+21:36 | Please list history of Qualcomm TEE with years in detail. (OP-TEE.History.0407.md)
+21:40 | Where do you find the year when Qualcomm introduced QTEE? (OP-TEE.History.0407.md)
+
+Chats
+
+Papers.OP-TEE.0406.md
+08:09 | What does the paper "Bao: A Lightweight Static Partitioning Hypervisor for Modern Multi-Core Embedded Systems" talk about? Virtualization, TEE or TrustZone? (Papers.OP-TEE.0406.md)
+08:18 | Is OP-TEE required in TrustedVIM described in the page "Cloud & Edge Trusted Virtualized Infrastructure Manager (VIM) - Security and Trust in OpenStac" (Papers.OP-TEE.0406.md)
+
+TrustZone.0329.md
+16:31 | Is OP-TEE a kind of TCB? (TrustZone.0329.md)
+16:31 | Is secure boot a TCB? (TrustZone.0329.md)
+
+OP-TEE.0327.md
+16:55 | Please list history with years of TEE, TrustZone, and OP-TEE. (OP-TEE.0327.md)
+16:58 | Please also contain the iPhone about TrustZone. (OP-TEE.0327.md)
+17:00 | Please also contain qualcomm about TrustZone. (OP-TEE.0327.md)
+17:03 | When did Qualcomm release QTEE? (OP-TEE.0327.md)
+17:06 | What is difference between QSEE and QTEE? (OP-TEE.0327.md)
+
+OP-TEE.History.0407.md
+21:14 | Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone and Qualcomm about TustZone. (OP-TEE.History.0407.md)
+21:16 | Please display them in a table. Columns of the table are TEE, TrustZone, OP-TEE, iPhone and Qualcomm. (OP-TEE.History.0407.md)
+21:21 | Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone and Qualcomm about TustZone. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail. (OP-TEE.History.0407.md)
+21:25 | Please display above context in a table. Columns of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm. (OP-TEE.History.0407.md)
+

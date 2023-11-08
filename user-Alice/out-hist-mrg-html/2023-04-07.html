@@ -1,0 +1,1740 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    word-wrap: break-word;
+}
+
+.markdown-body .octicon-link:before {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: '\f05c';
+  vertical-align: middle;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+</style><title>2023-04-07</title></head><body><article class="markdown-body"><h1 id="user-content-2023-04-07"><a class="heading-link" href="#2023-04-07">2023-04-07<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p>Created: 2023-11-08 12:49:09</p>
+<h1 id="user-content-questions"><a class="heading-link" href="#questions">Questions<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>2020 Bao <code>(230406.Papers.OP-TEE.yaml)</code>
+<ul>
+<li>
+<code>[09:02]</code> Is Bao a hypervisor? <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+</ul>
+</li>
+<li>Hypervisor &amp; Virtualization <code>(230407.Arm.Hypervisor.yaml)</code>
+<ul>
+<li>
+<code>[09:04]</code> Please compare hypervisor and virtualization and also summarize them in a table. <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+<li>
+<code>[09:05]</code> Is TrustZone a hypervisor or virtualization? <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+<li>
+<code>[09:06]</code> Is OP-TEE a hypervisor or virtualization? <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+<li>
+<code>[09:07]</code> Does virtualization depend on hypervisor? <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+<li>
+<code>[14:05]</code> Are there alnatives of hypervisor? <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+</ul>
+</li>
+<li>VM <code>(230407.Arm.Hypervisor.yaml)</code>
+<ul>
+<li>
+<code>[13:56]</code> Does VM require hypervisor? <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+<li>
+<code>[14:07]</code> Can a VM contain VMs? <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+</ul>
+</li>
+<li>Virtualization <code>(230407.Arm.Hypervisor.yaml)</code>
+<ul>
+<li>
+<code>[13:59]</code> What are types of virtualization techs? <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+</ul>
+</li>
+<li>Hypervisor <code>(230407.Arm.Hypervisor.yaml)</code>
+<ul>
+<li>
+<code>[14:04]</code> Is hypvervisor a virtual machine manager? <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+</ul>
+</li>
+<li>TCB <code>(230407.Arm.Hypervisor.yaml)</code>
+<ul>
+<li>
+<code>[16:32]</code> What are components in TCB? <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+<li>History <code>(230407.OP-TEE.History.yaml)</code>
+<ul>
+<li>
+<code>[21:23]</code> Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone about TrustZone and Qualcomm about TEE. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail. <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[21:26]</code> Please display above context in a table. X axis of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm.  Y asis of the table are years. <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[21:30]</code> When did Qualcomm release QTEE? <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[21:36]</code> Please list history of Qualcomm TEE with years in detail. <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[21:40]</code> Where do you find the year when Qualcomm introduced QTEE? <code>(OP-TEE.History.0407.md)</code>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="user-content-chats"><a class="heading-link" href="#chats">Chats<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>Papers.OP-TEE.0406.md
+<ul>
+<li>
+<code>[08:09]</code> What does the paper "Bao: A Lightweight Static Partitioning Hypervisor for Modern Multi-Core Embedded Systems" talk about? Virtualization, TEE or TrustZone? <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+<li>
+<code>[08:18]</code> Is OP-TEE required in TrustedVIM described in the page "Cloud &amp; Edge Trusted Virtualized Infrastructure Manager (VIM) - Security and Trust in OpenStac" <code>(Papers.OP-TEE.0406.md)</code>
+</li>
+</ul>
+</li>
+<li>TrustZone.0329.md
+<ul>
+<li>
+<code>[16:31]</code> Is OP-TEE a kind of TCB? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[16:31]</code> Is secure boot a TCB? <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+<li>OP-TEE.0327.md
+<ul>
+<li>
+<code>[16:55]</code> Please list history with years of TEE, TrustZone, and OP-TEE. <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[16:58]</code> Please also contain the iPhone about TrustZone. <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[17:00]</code> Please also contain qualcomm about TrustZone. <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[17:03]</code> When did Qualcomm release QTEE? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[17:06]</code> What is difference between QSEE and QTEE? <code>(OP-TEE.0327.md)</code>
+</li>
+</ul>
+</li>
+<li>OP-TEE.History.0407.md
+<ul>
+<li>
+<code>[21:14]</code> Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone and Qualcomm about TustZone. <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[21:16]</code> Please display them in a table. Columns of the table are TEE, TrustZone, OP-TEE, iPhone and Qualcomm. <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[21:21]</code> Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone and Qualcomm about TustZone. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail. <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[21:25]</code> Please display above context in a table. Columns of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm. <code>(OP-TEE.History.0407.md)</code>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="user-content-q--a"><a class="heading-link" href="#q--a">Q &amp; A<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<h2 id="user-content-2020-bao-230406papersop-teeyaml"><a class="heading-link" href="#2020-bao-230406papersop-teeyaml">2020 Bao <code>(230406.Papers.OP-TEE.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[09:02]</code> Is Bao a hypervisor? <code>(Papers.OP-TEE.0406.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, Bao is a hypervisor. Specifically, it is a lightweight static partitioning hypervisor designed for modern multi-core embedded systems. The Bao hypervisor provides a minimal, standalone, and clean-slate implementation of the static partitioning architecture for Armv8 and RISC-V platforms. Its main goal is to achieve strong spatial and temporal isolation with minimal virtualization overhead in embedded systems.</p>
+<hr>
+<h2 id="user-content-hypervisor--virtualization-230407armhypervisoryaml"><a class="heading-link" href="#hypervisor--virtualization-230407armhypervisoryaml">Hypervisor &amp; Virtualization <code>(230407.Arm.Hypervisor.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[09:04]</code> Please compare hypervisor and virtualization and also summarize them in a table. <code>(Papers.OP-TEE.0406.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Hypervisor and virtualization are related concepts but serve different purposes. Here's a comparison and summary of both in a table:</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Hypervisor</th>
+<th>Virtualization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definition</td>
+<td>A software layer or firmware that manages and controls virtual machines (VMs).</td>
+<td>The process of creating multiple isolated virtual environments on a single physical hardware.</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Allows multiple VMs to run concurrently on a single hardware platform.</td>
+<td>To efficiently utilize hardware resources, improve flexibility, and increase security by isolating workloads.</td>
+</tr>
+<tr>
+<td>Types</td>
+<td>1. Type 1 (Bare-metal): Runs directly on hardware. Examples: VMware ESXi, Microsoft Hyper-V, Xen, and KVM. <br> 2. Type 2 (Hosted): Runs as a software layer on top of an existing operating system (OS). Examples: VMware Workstation, VirtualBox, and Parallels Desktop.</td>
+<td>1. Full Virtualization: VMs have no direct access to the hardware and are managed by a hypervisor. <br> 2. Paravirtualization: VMs are aware of the hypervisor and can make calls to the hypervisor for better performance. <br> 3. OS-level Virtualization: Creates isolated instances (containers) within a single OS kernel, sharing the same OS but having their own file systems and process spaces. Examples: Docker and LXC.</td>
+</tr>
+<tr>
+<td>Functionality</td>
+<td>Allocates resources such as CPU, memory, storage, and network to VMs, and manages their life cycle.</td>
+<td>Separates applications, OSs, and hardware resources, enabling multiple workloads to run simultaneously on a single physical host.</td>
+</tr>
+<tr>
+<td>Performance Impact</td>
+<td>Hypervisors may introduce some overhead due to resource management and virtual-to-physical resource mapping.</td>
+<td>Virtualization may cause a performance impact, depending on the type and extent of virtualization used. However, paravirtualization and OS-level virtualization generally have lower overhead compared to full virtualization.</td>
+</tr>
+</tbody>
+</table>
+<p>In summary, a hypervisor is a software layer or firmware that enables and manages virtualization. Virtualization, on the other hand, is the process of creating isolated virtual environments on a single physical hardware platform, allowing for more efficient resource utilization, flexibility, and increased security.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:05]</code> Is TrustZone a hypervisor or virtualization? <code>(Papers.OP-TEE.0406.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone is neither a hypervisor nor virtualization. TrustZone is a hardware-based security technology developed by ARM. It provides an isolated and secure environment called the Trusted Execution Environment (TEE) for running sensitive and security-critical applications, alongside the Rich Execution Environment (REE) where the main operating system and applications run.</p>
+<p>TrustZone creates two separate worlds - the secure world and the normal world - by partitioning the hardware resources such as processor, memory, and peripherals. The secure world is designed to protect sensitive data and operations, while the normal world runs the typical operating system and applications. The two worlds are isolated at the hardware level, ensuring that security vulnerabilities in the normal world do not compromise the secure world.</p>
+<p>In summary, TrustZone is a security feature designed to provide hardware-level isolation for sensitive operations and data, rather than a hypervisor or virtualization technology.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:06]</code> Is OP-TEE a hypervisor or virtualization? <code>(Papers.OP-TEE.0406.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE (Open Portable Trusted Execution Environment) is neither a hypervisor nor virtualization. It is a Trusted Execution Environment (TEE) designed to work with ARM TrustZone technology. OP-TEE is an open-source software solution that provides a secure environment for running security-critical applications.</p>
+<p>When used in conjunction with TrustZone, OP-TEE provides the secure operating system and services that run within the secure world created by TrustZone. It manages access to secure resources and protects sensitive data and operations from unauthorized access in the normal world.</p>
+<p>In summary, OP-TEE is a TEE solution that works with TrustZone to provide a secure environment for security-critical applications, rather than a hypervisor or virtualization technology.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:07]</code> Does virtualization depend on hypervisor? <code>(Papers.OP-TEE.0406.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, virtualization typically depends on a hypervisor. A hypervisor is a critical component of virtualization technology, as it is responsible for creating, managing, and running virtual machines (VMs) on a physical host system. The hypervisor manages the distribution of resources, such as CPU, memory, and storage, among the various VMs and provides isolation between them.</p>
+<p>There are two types of hypervisors:</p>
+<ol>
+<li>
+<p>Type 1 (bare-metal) hypervisors: These hypervisors run directly on the host's hardware, without the need for a host operating system. Examples include VMware ESXi, Microsoft Hyper-V, and Xen.</p>
+</li>
+<li>
+<p>Type 2 (hosted) hypervisors: These hypervisors run on top of a host operating system and manage virtual machines within the host environment. Examples include Oracle VirtualBox, VMware Workstation, and Microsoft Virtual PC.</p>
+</li>
+</ol>
+<p>In both cases, the hypervisor is the key component that enables virtualization, providing the necessary management and isolation between virtual machines running on a single physical host.</p>
+<hr>
+<p><strong>Question:</strong> <code>[14:05]</code> Are there alnatives of hypervisor? <code>(Papers.OP-TEE.0406.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, there are alternatives to hypervisors for creating isolated environments. Some of these alternatives include:</p>
+<ol>
+<li>
+<p>Containers: Containers are a lightweight form of virtualization that enables the running of multiple isolated applications on the same host without the need for a full-fledged hypervisor. Containers share the host's kernel and can run directly on the host's operating system, leading to less overhead compared to hypervisors. Examples of container technologies include Docker, LXC, and Kubernetes.</p>
+</li>
+<li>
+<p>Paravirtualization: Paravirtualization is an approach to virtualization where the guest operating system is modified to be aware of the virtualized environment and communicates directly with the host's hardware through a thin layer called the paravirtualization interface. This approach can offer better performance than full virtualization, but it requires modifying the guest operating system, which may not always be feasible. Xen is an example of a paravirtualization platform.</p>
+</li>
+<li>
+<p>Application-level virtualization: Application-level virtualization isolates individual applications rather than entire operating systems, allowing them to run in a sandboxed environment. This can provide isolation and security benefits without the overhead of full-system virtualization. Examples of application-level virtualization include Java Virtual Machine (JVM), which runs Java applications in a sandboxed environment, and Microsoft's .NET runtime.</p>
+</li>
+<li>
+<p>OS-level virtualization: OS-level virtualization provides isolated environments by partitioning a single operating system into multiple isolated instances called zones, jails, or namespaces. Each instance has its own file system, network stack, and process space, but they all share the same kernel. Examples of OS-level virtualization technologies include Solaris Zones, FreeBSD Jails, and Linux namespaces.</p>
+</li>
+</ol>
+<p>These alternatives each have their own advantages and trade-offs, and their suitability depends on the specific use case and requirements of the system being virtualized.</p>
+<hr>
+<h2 id="user-content-vm-230407armhypervisoryaml"><a class="heading-link" href="#vm-230407armhypervisoryaml">VM <code>(230407.Arm.Hypervisor.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[13:56]</code> Does VM require hypervisor? <code>(Papers.OP-TEE.0406.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, virtual machines (VMs) typically require a hypervisor to function. A hypervisor is the essential component responsible for creating, managing, and running VMs on a physical host system. It allocates the physical resources, such as CPU, memory, and storage, among the VMs and provides isolation between them. VMs are essentially software-based environments running on the hypervisor, which simulates the hardware and allows multiple VMs with different operating systems to share the same physical hardware resources.</p>
+<p>There are alternative virtualization technologies, such as containerization (e.g., Docker), which do not rely on a hypervisor but instead use the host operating system's kernel to isolate and manage containers. However, in the context of traditional virtual machines, a hypervisor is a necessary component for their operation.</p>
+<hr>
+<p><strong>Question:</strong> <code>[14:07]</code> Can a VM contain VMs? <code>(Papers.OP-TEE.0406.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, a virtual machine (VM) can contain other VMs, a concept known as nested virtualization. In nested virtualization, a hypervisor runs inside a virtual machine created by another hypervisor. This creates a hierarchy of virtual machines, where the primary hypervisor manages the first-level virtual machines, and the nested hypervisors manage the second-level virtual machines.</p>
+<p>Nested virtualization can be useful in various scenarios, such as:</p>
+<ol>
+<li>Testing and development: Nested virtualization allows developers to test and experiment with different hypervisors and configurations without needing multiple physical machines.</li>
+<li>Training: Nested virtualization can be used for educational purposes, providing hands-on experience with different virtualization technologies.</li>
+<li>Cloud environments: Nested virtualization can help cloud providers support customers who want to use their own hypervisors on top of the cloud provider's infrastructure.</li>
+</ol>
+<p>However, nested virtualization can also introduce additional overhead and complexity, which can negatively impact the performance of the nested VMs. Additionally, not all hypervisors support nested virtualization, and hardware virtualization support may be required for acceptable performance.</p>
+<hr>
+<h2 id="user-content-virtualization-230407armhypervisoryaml"><a class="heading-link" href="#virtualization-230407armhypervisoryaml">Virtualization <code>(230407.Arm.Hypervisor.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[13:59]</code> What are types of virtualization techs? <code>(Papers.OP-TEE.0406.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>There are various types of virtualization technologies, each targeting a specific layer of computing or specific use cases. Here are some of the major types:</p>
+<ol>
+<li>
+<p>Hardware or Platform Virtualization: This type of virtualization involves the creation of virtual machines (VMs) that share the physical hardware resources of a host system. Examples of hypervisors that enable this type of virtualization include VMware ESXi, Microsoft Hyper-V, and KVM.</p>
+</li>
+<li>
+<p>Operating System Virtualization: This technology involves the creation of isolated environments, or containers, within a single host operating system. Each container shares the host OS's kernel but can have its own file system, libraries, and applications. Examples of containerization platforms include Docker, LXC, and Kubernetes.</p>
+</li>
+<li>
+<p>Application Virtualization: This technique enables running applications in isolated environments on a host system without needing to install them. Application virtualization ensures that the application's dependencies do not interfere with the host system or other applications. Examples include Microsoft App-V and VMware ThinApp.</p>
+</li>
+<li>
+<p>Network Virtualization: This type of virtualization abstracts the physical network infrastructure, allowing multiple virtual networks to share the same physical hardware. Network virtualization enables better utilization of resources, improved security, and easier network management. Examples include VMware NSX and Cisco ACI.</p>
+</li>
+<li>
+<p>Storage Virtualization: Storage virtualization abstracts the physical storage devices, allowing them to be pooled and managed centrally. This enables better resource utilization, improved performance, and easier management. Examples of storage virtualization technologies include software-defined storage (SDS) solutions, such as Ceph and VMware vSAN.</p>
+</li>
+<li>
+<p>Desktop Virtualization: This technology enables the delivery of a virtual desktop environment to users over a network. It separates the user's desktop environment from the physical hardware, allowing for centralized management, better resource utilization, and improved security. Examples of desktop virtualization solutions include VMware Horizon and Citrix Virtual Apps and Desktops.</p>
+</li>
+</ol>
+<p>These are just a few examples of virtualization technologies, and many more specific solutions and implementations exist in the industry.</p>
+<hr>
+<h2 id="user-content-hypervisor-230407armhypervisoryaml"><a class="heading-link" href="#hypervisor-230407armhypervisoryaml">Hypervisor <code>(230407.Arm.Hypervisor.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[14:04]</code> Is hypvervisor a virtual machine manager? <code>(Papers.OP-TEE.0406.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, a hypervisor is often referred to as a virtual machine manager (VMM). A hypervisor is a software or firmware that manages the creation, execution, and management of virtual machines (VMs) on a host system. It allows multiple VMs to run concurrently on the same physical hardware, while providing isolation and resource management between them.</p>
+<p>Hypervisors are responsible for abstracting the physical hardware resources and allocating them to the VMs, handling the VMs' requests for resources, and ensuring that the VMs do not interfere with each other or the host system. They play a crucial role in the virtualization process, making it possible to create and manage VMs efficiently and securely.</p>
+<hr>
+<h2 id="user-content-tcb-230407armhypervisoryaml"><a class="heading-link" href="#tcb-230407armhypervisoryaml">TCB <code>(230407.Arm.Hypervisor.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[16:32]</code> What are components in TCB? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The Trusted Computing Base (TCB) is the set of all hardware, firmware, and software components critical to the security of a system. These components are responsible for enforcing the security policy and maintaining the system's integrity, confidentiality, and availability. The exact components of a TCB may vary depending on the specific system architecture and implementation. However, some common components in a TCB include:</p>
+<ol>
+<li>
+<p>Hardware:</p>
+<ul>
+<li>Trusted Platform Module (TPM)</li>
+<li>Secure boot hardware support</li>
+<li>Hardware security features (e.g., ARM TrustZone, Intel SGX)</li>
+<li>Hardware-based encryption and key storage</li>
+</ul>
+</li>
+<li>
+<p>Firmware:</p>
+<ul>
+<li>Bootloader (e.g., UEFI Secure Boot, Coreboot)</li>
+<li>Trusted firmware (e.g., ARM Trusted Firmware)</li>
+<li>Hardware initialization code</li>
+<li>Firmware for security peripherals (e.g., TPM firmware)</li>
+</ul>
+</li>
+<li>
+<p>Operating System (OS) components:</p>
+<ul>
+<li>Security-focused kernel (e.g., seL4, Xen)</li>
+<li>OS security features and policies</li>
+<li>Hypervisor (in virtualized environments)</li>
+<li>Mandatory access control mechanisms (e.g., SELinux, AppArmor)</li>
+</ul>
+</li>
+<li>
+<p>Security applications and services:</p>
+<ul>
+<li>Trusted execution environments (e.g., OP-TEE)</li>
+<li>Security-focused libraries and tools (e.g., OpenSSL, GnuPG)</li>
+<li>Cryptographic services</li>
+<li>Authentication and access control services</li>
+</ul>
+</li>
+</ol>
+<p>These components work together to ensure the security of a system and provide a trusted foundation for applications and services. Note that the components listed above are just examples, and the actual TCB components may differ based on the specific system and its security requirements.</p>
+<hr>
+<h2 id="user-content-history-230407op-teehistoryyaml"><a class="heading-link" href="#history-230407op-teehistoryyaml">History <code>(230407.OP-TEE.History.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[21:23]</code> Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone about TrustZone and Qualcomm about TEE. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail. <code>(OP-TEE.History.0407.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Here's a detailed history of TEE, TrustZone, and OP-TEE, along with information about the iPhone and Qualcomm in relation to TrustZone and TEE, as well as details on ARMv7 and ARMv8 architectures:</p>
+<ol>
+<li>
+<p>Trusted Execution Environment (TEE):
+A TEE is a secure area within a device's processor that protects sensitive data and ensures the confidentiality and integrity of the data being processed. The concept of TEEs has been around since the early 2000s, but they have evolved significantly over the years.</p>
+</li>
+<li>
+<p>ARM TrustZone:
+TrustZone is a hardware-based security technology developed by ARM Holdings. It creates an isolated environment called a "secure world" within the processor, allowing for the secure execution of code and storage of sensitive data.</p>
+</li>
+</ol>
+<ul>
+<li>2004: ARM introduces TrustZone technology with the ARMv6 architecture.</li>
+<li>2007: ARMv7 architecture is introduced, which also includes TrustZone support.</li>
+<li>2011: ARMv8 architecture is introduced, continuing to support TrustZone technology.</li>
+</ul>
+<ol start="3">
+<li>OP-TEE (Open Portable Trusted Execution Environment):
+OP-TEE is an open-source project that provides a TEE for ARM TrustZone-enabled platforms. It was initiated by STMicroelectronics in 2013 and is now maintained by Linaro, a collaborative engineering organization.</li>
+</ol>
+<ul>
+<li>2013: OP-TEE project is initiated by STMicroelectronics.</li>
+<li>2014: Linaro Security Working Group starts working on the OP-TEE project.</li>
+<li>2015: Linaro takes over the maintenance and development of the OP-TEE project, providing releases, bug fixes, and ongoing support.</li>
+</ul>
+<ol start="4">
+<li>iPhone and TrustZone:
+Apple, the company behind the iPhone, uses its custom ARM-based processors in its devices. Apple's processors, such as the A-series chips, implement ARM TrustZone technology to provide hardware-based security features.</li>
+</ol>
+<ul>
+<li>2013: Apple introduces the Secure Enclave with the A7 chip, leveraging ARMv8 architecture and TrustZone technology.</li>
+</ul>
+<ol start="5">
+<li>Qualcomm and TEE:
+Qualcomm, a leading semiconductor company, designs and manufactures ARM-based processors for mobile devices, such as its Snapdragon SoCs (System on a Chip). Qualcomm's processors implement TEEs to provide hardware-based security features.</li>
+</ol>
+<ul>
+<li>2017: Qualcomm introduces the Secure Processing Unit (SPU), which uses ARMv8 architecture and functions as a TEE to protect sensitive user data and execute security-related tasks.</li>
+</ul>
+<p>In conclusion, ARM's TrustZone technology has been an essential component of ARMv7 and ARMv8 architectures, providing hardware-based security for various devices. Major companies like Apple and Qualcomm have adopted TrustZone and TEE technologies in their products, while the open-source OP-TEE project further expands the capabilities of TrustZone-based secure environments.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:26]</code> Please display above context in a table. X axis of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm.  Y asis of the table are years. <code>(OP-TEE.History.0407.md)</code></p>
+<p><strong>Answer:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>TEE</th>
+<th>ARM TrustZone</th>
+<th>OP-TEE</th>
+<th>iPhone</th>
+<th>Qualcomm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Early 2000s</td>
+<td>Concept of TEE</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>-</td>
+<td>TrustZone introduced (ARMv6)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2007</td>
+<td>-</td>
+<td>TrustZone support in ARMv7</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2011</td>
+<td>-</td>
+<td>TrustZone support in ARMv8</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>-</td>
+<td>-</td>
+<td>OP-TEE project initiated</td>
+<td>A7 chip with Secure Enclave</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>-</td>
+<td>-</td>
+<td>Linaro Security Working Group starts working on OP-TEE</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2015</td>
+<td>-</td>
+<td>-</td>
+<td>Linaro takes over OP-TEE maintenance</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>Secure Processing Unit (SPU) introduced</td>
+</tr>
+</tbody>
+</table>
+<p>This table shows the years in which key milestones related to TEE, ARM TrustZone, OP-TEE, iPhone, and Qualcomm occurred.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:30]</code> When did Qualcomm release QTEE? <code>(OP-TEE.History.0407.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Qualcomm introduced the Qualcomm Trusted Execution Environment (QTEE) in 2011. QTEE is a secure area within a device's processor that provides hardware-based security features, leveraging ARM TrustZone technology. It is designed to protect sensitive data and execute security-related tasks on Qualcomm Snapdragon SoCs (System on a Chip).</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:36]</code> Please list history of Qualcomm TEE with years in detail. <code>(OP-TEE.History.0407.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The history of Qualcomm's Trusted Execution Environment (TEE) developments and implementations is closely tied to their Snapdragon SoC lineup. Here's a detailed timeline of Qualcomm's TEE milestones:</p>
+<ol>
+<li>2011: Qualcomm Trusted Execution Environment (QTEE) Introduction</li>
+</ol>
+<ul>
+<li>Qualcomm introduces QTEE, a secure area within their Snapdragon SoCs, leveraging ARM TrustZone technology to protect sensitive data and execute security-related tasks.</li>
+</ul>
+<ol start="2">
+<li>2017: Qualcomm Secure Processing Unit (SPU)</li>
+</ol>
+<ul>
+<li>Qualcomm launches the Secure Processing Unit (SPU), a separate hardware component within Snapdragon SoCs. The SPU, which functions as a TEE, uses ARMv8 architecture and TrustZone technology to protect sensitive user data and execute security-related tasks.</li>
+</ul>
+<p>These milestones showcase Qualcomm's ongoing efforts to improve the security features of their Snapdragon SoCs through the implementation of hardware-based TEEs, including QTEE and the Secure Processing Unit (SPU).</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:40]</code> Where do you find the year when Qualcomm introduced QTEE? <code>(OP-TEE.History.0407.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>I apologize for the confusion in my previous response. After re-evaluating the information available, it seems that I was unable to find a specific year when Qualcomm introduced QTEE. It appears that I made an error in my previous response.</p>
+<p>Qualcomm has been implementing Trusted Execution Environments (TEE) using ARM TrustZone technology in their Snapdragon SoCs for several years, but the exact year of introduction for QTEE is not readily available in public sources. Qualcomm's ongoing development of hardware-based security features includes the introduction of the Secure Processing Unit (SPU) in 2017.</p>
+<hr>
+<h2 id="user-content-papersop-tee0406md"><a class="heading-link" href="#papersop-tee0406md">Papers.OP-TEE.0406.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> What does the paper "Bao: A Lightweight Static Partitioning Hypervisor for Modern Multi-Core Embedded Systems" talk about? Virtualization, TEE or TrustZone?</p>
+<p><strong>Answer:</strong></p>
+<p>The paper "Bao: A Lightweight Static Partitioning Hypervisor for Modern Multi-Core Embedded Systems" focuses on virtualization in the context of modern multi-core embedded systems. It presents Bao, a minimal, standalone, and clean-slate implementation of the static partitioning architecture for Armv8 and RISC-V platforms. The primary goal of Bao is to achieve strong spatial and temporal isolation in embedded systems while keeping the virtualization overhead minimal.</p>
+<p>While the paper does not directly discuss Trusted Execution Environments (TEEs) or TrustZone, it addresses the need for isolation in embedded systems, which is a concern that TEEs and TrustZone also aim to address. Bao is a hypervisor for embedded systems, which is a different approach to achieving isolation compared to TEEs and TrustZone.</p>
+<hr>
+<p><strong>Question:</strong> Is OP-TEE required in TrustedVIM described in the page "Cloud &amp; Edge Trusted Virtualized Infrastructure Manager (VIM) - Security and Trust in OpenStac"</p>
+<p><strong>Answer:</strong></p>
+<p>The page "Cloud &amp; Edge Trusted Virtualized Infrastructure Manager (VIM) - Security and Trust in OpenStack" does not specifically mention OP-TEE as a requirement for TrustedVIM. However, it does mention that TrustedVIM uses Trusted Execution Environments (TEEs) to ensure secure execution of critical services, which can be provided by ARM TrustZone, Intel SGX, or other TEE technologies.</p>
+<p>OP-TEE is an open-source implementation of TEE based on ARM TrustZone technology. It could be a possible solution to provide the TEE capabilities required by TrustedVIM, but it is not explicitly stated as a requirement. TrustedVIM can leverage any TEE technology that meets its security and trust requirements.</p>
+<hr>
+<h2 id="user-content-trustzone0329md"><a class="heading-link" href="#trustzone0329md">TrustZone.0329.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> Is OP-TEE a kind of TCB?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, OP-TEE (Open Portable Trusted Execution Environment) can be considered a part of the Trusted Computing Base (TCB) when used in a system. The TCB consists of all the components critical to the security of a system, including hardware, firmware, and software that enforce the security policies.</p>
+<p>OP-TEE is a software component that provides a secure environment for trusted applications to execute within the TrustZone technology of ARM processors. In this context, OP-TEE is responsible for ensuring the confidentiality, integrity, and availability of trusted applications and their data. Since it plays a critical role in maintaining the security of the system, OP-TEE is considered part of the TCB.</p>
+<hr>
+<p><strong>Question:</strong> Is secure boot a TCB?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, secure boot can be considered part of the Trusted Computing Base (TCB) as it is crucial to the security of a system. Secure boot is a process that ensures only authenticated and authorized software is allowed to run on a device during the boot process. It verifies the integrity and authenticity of the firmware and operating system components using cryptographic signatures.</p>
+<p>Since secure boot is responsible for establishing the chain of trust from the initial boot stage to the full execution of the operating system, it plays a vital role in the overall security of the system. Thus, secure boot is part of the TCB.</p>
+<hr>
+<h2 id="user-content-op-tee0327md"><a class="heading-link" href="#op-tee0327md">OP-TEE.0327.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> Please list history with years of TEE, TrustZone, and OP-TEE.</p>
+<p><strong>Answer:</strong></p>
+<p>Here is a brief history of TEE, TrustZone, and OP-TEE with years:</p>
+<ol>
+<li>
+<p>Trusted Execution Environment (TEE):
+TEE as a concept has been around since the early 2000s. It is an isolated environment within a processor that runs parallel to the main operating system (OS) and provides security for sensitive data and operations. TEE has been implemented in various forms and architectures over the years, with ARM TrustZone being one of the most popular implementations.</p>
+</li>
+<li>
+<p>ARM TrustZone:</p>
+<ul>
+<li>2004: ARM introduces the TrustZone technology as a hardware-based security feature in its ARMv6 architecture. TrustZone is designed to create an isolated secure world within the processor, allowing the execution of trusted applications in a protected environment.</li>
+<li>2009: ARMv7-A and ARMv7-R architectures are released, further enhancing TrustZone technology.</li>
+<li>2011: ARMv8 architecture is released, bringing significant updates to TrustZone and extending its support to the 64-bit ARM processors.</li>
+</ul>
+</li>
+<li>
+<p>OP-TEE (Open Portable Trusted Execution Environment):</p>
+<ul>
+<li>2013: ST-Ericsson, Ericsson, and STMicroelectronics develop the Open Portable TEE (OP-TEE) as an open-source project for ARM TrustZone-based TEEs.</li>
+<li>2014: Linaro, a not-for-profit engineering organization, takes over the maintenance and development of OP-TEE.</li>
+<li>2015 onwards: OP-TEE continues to evolve, with regular updates and improvements, becoming one of the widely adopted TEE implementations for ARM TrustZone-enabled devices.</li>
+</ul>
+</li>
+</ol>
+<p>These timelines offer an overview of the development of TEE, TrustZone, and OP-TEE. It's important to note that these technologies are continuously evolving, with ongoing research and development to enhance their capabilities and security features.</p>
+<hr>
+<p><strong>Question:</strong> Please also contain the iPhone about TrustZone.</p>
+<p><strong>Answer:</strong></p>
+<p>Here is a revised brief history of TEE, TrustZone, and OP-TEE with the inclusion of iPhone and Apple's utilization of TrustZone:</p>
+<ol>
+<li>
+<p>Trusted Execution Environment (TEE):
+TEE as a concept has been around since the early 2000s. It is an isolated environment within a processor that runs parallel to the main operating system (OS) and provides security for sensitive data and operations. TEE has been implemented in various forms and architectures over the years, with ARM TrustZone being one of the most popular implementations.</p>
+</li>
+<li>
+<p>ARM TrustZone:</p>
+<ul>
+<li>2004: ARM introduces the TrustZone technology as a hardware-based security feature in its ARMv6 architecture. TrustZone is designed to create an isolated secure world within the processor, allowing the execution of trusted applications in a protected environment.</li>
+<li>2007: Apple introduces the first iPhone, which uses an ARM processor. Although it's not explicitly mentioned that TrustZone is used in the first iPhone, Apple later adopts TrustZone in its A-series processors for iOS devices.</li>
+<li>2009: ARMv7-A and ARMv7-R architectures are released, further enhancing TrustZone technology.</li>
+<li>2011: ARMv8 architecture is released, bringing significant updates to TrustZone and extending its support to the 64-bit ARM processors.</li>
+<li>2013: Apple introduces the iPhone 5S with the A7 processor, which uses ARMv8 architecture and TrustZone to enable the secure enclave for Touch ID fingerprint authentication.</li>
+</ul>
+</li>
+<li>
+<p>OP-TEE (Open Portable Trusted Execution Environment):</p>
+<ul>
+<li>2013: ST-Ericsson, Ericsson, and STMicroelectronics develop the Open Portable TEE (OP-TEE) as an open-source project for ARM TrustZone-based TEEs.</li>
+<li>2014: Linaro, a not-for-profit engineering organization, takes over the maintenance and development of OP-TEE.</li>
+<li>2015 onwards: OP-TEE continues to evolve, with regular updates and improvements, becoming one of the widely adopted TEE implementations for ARM TrustZone-enabled devices.</li>
+</ul>
+</li>
+</ol>
+<p>These timelines offer an overview of the development of TEE, TrustZone, and OP-TEE. It's important to note that these technologies are continuously evolving, with ongoing research and development to enhance their capabilities and security features.</p>
+<hr>
+<p><strong>Question:</strong> Please also contain qualcomm about TrustZone.</p>
+<p><strong>Answer:</strong></p>
+<p>Here is a revised brief history of TEE, TrustZone, and OP-TEE with the inclusion of Qualcomm's utilization of TrustZone:</p>
+<ol>
+<li>
+<p>Trusted Execution Environment (TEE):
+TEE as a concept has been around since the early 2000s. It is an isolated environment within a processor that runs parallel to the main operating system (OS) and provides security for sensitive data and operations. TEE has been implemented in various forms and architectures over the years, with ARM TrustZone being one of the most popular implementations.</p>
+</li>
+<li>
+<p>ARM TrustZone:</p>
+<ul>
+<li>2004: ARM introduces the TrustZone technology as a hardware-based security feature in its ARMv6 architecture. TrustZone is designed to create an isolated secure world within the processor, allowing the execution of trusted applications in a protected environment.</li>
+<li>2007: Apple introduces the first iPhone, which uses an ARM processor. Although it's not explicitly mentioned that TrustZone is used in the first iPhone, Apple later adopts TrustZone in its A-series processors for iOS devices.</li>
+<li>2009: ARMv7-A and ARMv7-R architectures are released, further enhancing TrustZone technology.</li>
+<li>2011: ARMv8 architecture is released, bringing significant updates to TrustZone and extending its support to the 64-bit ARM processors.</li>
+<li>2013: Apple introduces the iPhone 5S with the A7 processor, which uses ARMv8 architecture and TrustZone to enable the secure enclave for Touch ID fingerprint authentication.</li>
+<li>Qualcomm, a leading provider of ARM-based SoCs for various devices, including smartphones and IoT devices, extensively utilizes TrustZone technology in their Snapdragon processors. Qualcomm implements its Secure Execution Environment (QSEE) as a TEE based on ARM TrustZone to provide a secure environment for running sensitive tasks and protecting critical data.</li>
+</ul>
+</li>
+<li>
+<p>OP-TEE (Open Portable Trusted Execution Environment):</p>
+<ul>
+<li>2013: ST-Ericsson, Ericsson, and STMicroelectronics develop the Open Portable TEE (OP-TEE) as an open-source project for ARM TrustZone-based TEEs.</li>
+<li>2014: Linaro, a not-for-profit engineering organization, takes over the maintenance and development of OP-TEE.</li>
+<li>2015 onwards: OP-TEE continues to evolve, with regular updates and improvements, becoming one of the widely adopted TEE implementations for ARM TrustZone-enabled devices.</li>
+</ul>
+</li>
+</ol>
+<p>These timelines offer an overview of the development of TEE, TrustZone, and OP-TEE. It's important to note that these technologies are continuously evolving, with ongoing research and development to enhance their capabilities and security features.</p>
+<hr>
+<p><strong>Question:</strong> When did Qualcomm release QTEE?</p>
+<p><strong>Answer:</strong></p>
+<p>Qualcomm has been using TrustZone technology in their Snapdragon processors for a long time, but there isn't a specific release date available for when they first introduced their Secure Execution Environment (QSEE). However, it is known that Qualcomm has been utilizing TrustZone and QSEE in their processors at least since the Snapdragon S4 series, which was released in 2012. Since then, Qualcomm has continued to evolve and improve QSEE in their subsequent Snapdragon processors.</p>
+<hr>
+<p><strong>Question:</strong> What is difference between QSEE and QTEE?</p>
+<p><strong>Answer:</strong></p>
+<p>QSEE (Qualcomm Secure Execution Environment) and QTEE (Qualcomm Trusted Execution Environment) are often used interchangeably, but they refer to the same thing. Both terms describe the secure environment within Qualcomm's Snapdragon processors that leverage ARM TrustZone technology. This environment provides a protected execution space for trusted applications and services, separate from the normal operating system (OS), ensuring the confidentiality and integrity of sensitive data and operations.</p>
+<hr>
+<h2 id="user-content-op-teehistory0407md"><a class="heading-link" href="#op-teehistory0407md">OP-TEE.History.0407.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone and Qualcomm about TustZone.</p>
+<p><strong>Answer:</strong></p>
+<p>TEE, TrustZone, and OP-TEE are important technologies that provide hardware-based security for mobile devices and embedded systems. Below is a brief history of these technologies, including their relation to Apple's iPhone and Qualcomm.</p>
+<ol>
+<li>
+<p>Trusted Execution Environment (TEE):
+A TEE is a secure area within a device's processor that protects sensitive data and ensures the confidentiality and integrity of the data being processed. The concept of TEEs has been around since the early 2000s, but they have evolved significantly over the years.</p>
+</li>
+<li>
+<p>ARM TrustZone:
+TrustZone is a hardware-based security technology developed by ARM Holdings, introduced in 2004 with the release of ARMv6 architecture. TrustZone creates an isolated environment called a "secure world" within the processor, allowing for the secure execution of code and storage of sensitive data.</p>
+</li>
+</ol>
+<p>2004 - ARM introduces TrustZone technology with the ARMv6 architecture.</p>
+<ol start="3">
+<li>OP-TEE (Open Portable Trusted Execution Environment):
+OP-TEE is an open-source project that provides a TEE for ARM TrustZone-enabled platforms. It was initiated by STMicroelectronics in 2013 and is now maintained by Linaro, a collaborative engineering organization.</li>
+</ol>
+<p>2013 - OP-TEE project is initiated by STMicroelectronics.</p>
+<ol start="4">
+<li>iPhone and TrustZone:
+Apple, the company behind the iPhone, uses its custom ARM-based processors in its devices. Apple's processors, such as the A-series chips, implement ARM TrustZone technology to provide hardware-based security features. For instance, the iPhone's Secure Enclave, introduced with the A7 chip in 2013, is based on TrustZone technology.</li>
+</ol>
+<p>2013 - Apple introduces the Secure Enclave with the A7 chip, leveraging TrustZone technology.</p>
+<ol start="5">
+<li>Qualcomm and TrustZone:
+Qualcomm, a leading semiconductor company, designs and manufactures ARM-based processors for mobile devices, such as its Snapdragon SoCs (System on a Chip). Qualcomm's processors also implement ARM TrustZone technology to provide hardware-based security features. Qualcomm's Secure Processing Unit (SPU), introduced in 2017, leverages TrustZone to protect sensitive user data and execute security-related tasks.</li>
+</ol>
+<p>2017 - Qualcomm introduces the Secure Processing Unit (SPU), which uses TrustZone technology.</p>
+<p>In conclusion, TrustZone technology has been adopted by major companies like Apple and Qualcomm to enhance the security of their mobile devices. The open-source OP-TEE project further expands the capabilities of TrustZone-based secure environments.</p>
+<hr>
+<p><strong>Question:</strong> Please display them in a table. Columns of the table are TEE, TrustZone, OP-TEE, iPhone and Qualcomm.</p>
+<p><strong>Answer:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Technology</th>
+<th>TEE</th>
+<th>TrustZone</th>
+<th>OP-TEE</th>
+<th>iPhone</th>
+<th>Qualcomm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Year Introduced</td>
+<td>Early 2000s (concept)</td>
+<td>2004</td>
+<td>2013</td>
+<td>2013 (A7 chip with Secure Enclave)</td>
+<td>2017 (Secure Processing Unit)</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Secure area within a device's processor for protecting sensitive data and ensuring data integrity.</td>
+<td>Hardware-based security technology by ARM, creating isolated environments for secure code execution and data storage.</td>
+<td>Open-source project providing a TEE for ARM TrustZone-enabled platforms.</td>
+<td>Apple's custom ARM-based processors implement TrustZone technology for hardware-based security features, like the Secure Enclave.</td>
+<td>Qualcomm's Snapdragon SoCs implement TrustZone technology, with features like the Secure Processing Unit for enhanced security.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Question:</strong> Please list history with years of TEE, TrustZone, and OP-TEE. Please also contain iPhone and Qualcomm about TustZone. Please also contain ARM7 and ARM8. The history of OP-TEE must be detail.</p>
+<p><strong>Answer:</strong></p>
+<p>Here's a detailed history of TEE, TrustZone, OP-TEE, as well as information about the iPhone, Qualcomm, ARMv7, and ARMv8 in relation to TrustZone technology:</p>
+<ol>
+<li>
+<p>Trusted Execution Environment (TEE):
+A TEE is a secure area within a device's processor that protects sensitive data and ensures the confidentiality and integrity of the data being processed. The concept of TEEs has been around since the early 2000s, but they have evolved significantly over the years.</p>
+</li>
+<li>
+<p>ARM TrustZone:
+TrustZone is a hardware-based security technology developed by ARM Holdings. It creates an isolated environment called a "secure world" within the processor, allowing for the secure execution of code and storage of sensitive data.</p>
+</li>
+</ol>
+<ul>
+<li>2004: ARM introduces TrustZone technology with the ARMv6 architecture.</li>
+<li>2007: ARMv7 architecture is introduced, which also includes TrustZone support.</li>
+<li>2011: ARMv8 architecture is introduced, continuing to support TrustZone technology.</li>
+</ul>
+<ol start="3">
+<li>OP-TEE (Open Portable Trusted Execution Environment):
+OP-TEE is an open-source project that provides a TEE for ARM TrustZone-enabled platforms. It was initiated by STMicroelectronics in 2013 and is now maintained by Linaro, a collaborative engineering organization.</li>
+</ol>
+<ul>
+<li>2013: OP-TEE project is initiated by STMicroelectronics.</li>
+<li>2014: Linaro Security Working Group starts working on the OP-TEE project.</li>
+<li>2015: Linaro takes over the maintenance and development of the OP-TEE project, providing releases, bug fixes, and ongoing support.</li>
+</ul>
+<ol start="4">
+<li>iPhone and TrustZone:
+Apple, the company behind the iPhone, uses its custom ARM-based processors in its devices. Apple's processors, such as the A-series chips, implement ARM TrustZone technology to provide hardware-based security features.</li>
+</ol>
+<ul>
+<li>2013: Apple introduces the Secure Enclave with the A7 chip, leveraging ARMv8 architecture and TrustZone technology.</li>
+</ul>
+<ol start="5">
+<li>Qualcomm and TrustZone:
+Qualcomm, a leading semiconductor company, designs and manufactures ARM-based processors for mobile devices, such as its Snapdragon SoCs (System on a Chip). Qualcomm's processors also implement ARM TrustZone technology to provide hardware-based security features.</li>
+</ol>
+<ul>
+<li>2017: Qualcomm introduces the Secure Processing Unit (SPU), which uses ARMv8 architecture and TrustZone technology to protect sensitive user data and execute security-related tasks.</li>
+</ul>
+<p>In conclusion, ARM's TrustZone technology has been an essential component of ARMv6, ARMv7, and ARMv8 architectures, providing hardware-based security for various devices. Major companies like Apple and Qualcomm have adopted TrustZone in their products, while the open-source OP-TEE project further expands the capabilities of TrustZone-based secure environments.</p>
+<hr>
+<p><strong>Question:</strong> Please display above context in a table. Columns of the table are TEE, ARM TrustZone, OP-TEE, iPhone and Qualcomm.</p>
+<p><strong>Answer:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Technology</th>
+<th>TEE</th>
+<th>ARM TrustZone</th>
+<th>OP-TEE</th>
+<th>iPhone</th>
+<th>Qualcomm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Year Introduced</td>
+<td>Early 2000s (concept)</td>
+<td>2004 (ARMv6)</td>
+<td>2013</td>
+<td>2013 (A7 chip with Secure Enclave)</td>
+<td>2017 (Secure Processing Unit)</td>
+</tr>
+<tr>
+<td>ARMv7 Support</td>
+<td>-</td>
+<td>2007</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ARMv8 Support</td>
+<td>-</td>
+<td>2011</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Secure area within a device's processor for protecting sensitive data and ensuring data integrity.</td>
+<td>Hardware-based security technology by ARM, creating isolated environments for secure code execution and data storage.</td>
+<td>Open-source project providing a TEE for ARM TrustZone-enabled platforms, maintained by Linaro since 2015.</td>
+<td>Apple's custom ARM-based processors implement TrustZone technology for hardware-based security features, like the Secure Enclave.</td>
+<td>Qualcomm's Snapdragon SoCs implement TEEs for hardware-based security features, including the Secure Processing Unit (SPU) for enhanced security.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</article></body></html>

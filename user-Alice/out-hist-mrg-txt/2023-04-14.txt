@@ -1,0 +1,15 @@
+2023-04-14
+
+Questions
+
+Basic Concepts (230328.TEE.yaml)
+09:47 | How do I check the TEE OS is secure. Are there any secure certificates of TEE OS? (TEE.0328.md)
+09:54 | Does OP-TEE mach the certificates? (TEE.0328.md)
+
+Chats
+
+TEE-PP.0414.md
+09:13 | GlobalPlatform Technology ... ... (TEE-PP.0414.md)
+09:15 | What is PP? (TEE-PP.0414.md)
+09:33 | OE.ROLLBACK ... ... (TEE-PP.0414.md)
+

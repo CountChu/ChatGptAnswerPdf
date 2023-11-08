@@ -1,0 +1,54 @@
+2023-04-19
+
+Questions
+
+Sealing Identity (230418.SGX.yaml)
+07:40 | What is difference between Sealing Identity and Identity of the Sealing Authority? (Papers.SGX.0419.md)
+09:07 | What is Sealing Identity? (Papers.SGX.0419.md)
+09:18 | Coud I say that SIGSTRUCT is Sealing Identity? (Papers.SGX.0419.md)
+09:27 | What is the value of Sealing Identity in the paper? (Papers.SGX.0419.md)
+09:29 | What is the value of Sealing Identity in the policy "Sealing to the Enclave Identity" in the paper? (Papers.SGX.0419.md)
+
+Sealing Authority (230418.SGX.yaml)
+07:43 | Is Sealing Authority a enclave builder? (Papers.SGX.0419.md)
+09:09 | What is Sealing Authority? (Papers.SGX.0419.md)
+
+MRSIGNER (230418.SGX.yaml)
+07:54 | Who can write MRENCLAVE and MRSIGNER? (Papers.SGX.0419.md)
+07:57 | Only hardware can write the both registers. Right? (Papers.SGX.0419.md)
+
+SIGSTRUCT (230418.SGX.yaml)
+07:58 | What does SIGSTRUCT contain? please list them. (Papers.SGX.0419.md)
+09:16 | Who does prepare SIGSTRUCT? (Papers.SGX.0419.md)
+
+Attestation Assertion (230418.SGX.yaml)
+09:40 | Who produces attestation assertion? (Papers.SGX.0419.md)
+
+Keys (230418.SGX.yaml)
+09:50 | [error] Where is attestation key sotred in Intel SGX arch? (SGX.0418.md)
+09:52 | What is attestation key? (SGX.0418.md)
+09:53 | Is there only one attestation key in a device? (SGX.0418.md)
+
+EREPORT (230418.SGX.yaml)
+10:27 | What does REPORT contain? Please list them? (Papers.SGX.0419.md)
+
+MRENCLAVE (230418.SGX.yaml)
+14:18 | What is MRENCLAVE? (Papers.SGX.0419.md)
+14:19 | Who generates MRENCLAVE? (Papers.SGX.0419.md)
+14:37 | I have enclave A and enclave B. How does enclave A know the enclave B before A wants to get MRENCLAVE value of B? (Papers.SGX.0419.md)
+
+Enclave (230418.SGX.yaml)
+14:28 | [title] Can untrusted software create an enclave? (Papers.SGX.0419.md)
+
+Chats
+
+Papers.SGX.0419.md
+09:12 | Is Sealing Auhority a software or a hardware? (Papers.SGX.0419.md)
+09:13 | Is Sealing Authority a software or a hardware? (Papers.SGX.0419.md)
+09:45 | What is attestation key? (Papers.SGX.0419.md)
+09:46 | How to generate attestation key? (Papers.SGX.0419.md)
+09:47 | Is there only one attestation key in a device? (Papers.SGX.0419.md)
+09:49 | Where is attestation key sotred in Intel SGX arch? (Papers.SGX.0419.md)
+14:27 | Who creates an enclave? (Papers.SGX.0419.md)
+14:30 | How to get the MRENCLAVE value of an enclave? (Papers.SGX.0419.md)
+

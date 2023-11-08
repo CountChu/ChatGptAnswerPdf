@@ -1,0 +1,88 @@
+2023-04-10
+
+Questions
+
+Qualcomm (230407.OP-TEE.History.yaml)
+10:33 | What is relationship between QTEE and SPU? (OP-TEE.History.0407.md)
+10:36 | When was source code of QTEE opened? (OP-TEE.History.0407.md)
+11:03 | Does SPU rely on ARMv8? (OP-TEE.History.0407.md)
+
+Privilege Levels (230329.TrustZone.yaml)
+14:42 | What is exception level? (TrustZone.0329.md)
+14:43 | How does a software component know which EL it owns? (TrustZone.0329.md)
+14:45 | Can a software component change the EL? (TrustZone.0329.md)
+14:47 | Are ELs of TrustZone? (TrustZone.0329.md)
+
+TrustZone (230410.Arm.yaml)
+14:50 | Which types of ARM CPU have TrustZone? (TrustZone.0329.md)
+14:51 | Does ARM Cortex-R series have TrustZone? (TrustZone.0329.md)
+
+Boot (230329.TrustZone.yaml)
+15:20 | What is FF-A? (TrustZone.0329.md)
+15:21 | Does TF-A rely on FF-A? (TrustZone.0329.md)
+15:24 | Does TF-A rely on TrustZone? (TrustZone.0329.md)
+
+FF-A, TF-A, and TrustZone (230409.FF-A.yaml)
+15:28 | What is TF-A? (FF-A.0409.md)
+15:29 | Please draw the relationship among TrustZone, TF-A, and FF-A. (FF-A.0409.md)
+15:36 | What is relationship between FF-A and TF-A? (FF-A.0409.md)
+15:37 | Could I say that TF-A refers FF-A? (FF-A.0409.md)
+
+Basic Concept (230402.DRM.yaml)
+21:08 | What is license key? (DRM.0402.md)
+21:10 | What if the license key is stolen? (DRM.0402.md)
+21:11 | What is content key? (DRM.0402.md)
+21:13 | What if the content key is stolen? (DRM.0402.md)
+21:35 | What is identification attacker? (DRM.0402.md)
+21:36 | What is exploitation attacker? (DRM.0402.md)
+21:38 | Please summarize both in a table. (DRM.0402.md)
+
+TEE Identification (230328.TEE.yaml)
+21:20 | What is TEE identification? (TEE.0328.md)
+21:22 | Is TEE identification obversable? (TEE.0328.md)
+21:26 | Can I use DID as TEE identification? (TEE.0328.md)
+
+Revocation of TA (230328.TEE.yaml)
+22:07 | What is revocation for Trusted Application? (TEE.0328.md)
+
+DRM (230327.OP-TEE.yaml)
+22:31 | Below text comes from "BKK16-201 - PlayReady OPTEE Integration with Secure Video Path" (OP-TEE.0327.md)
+22:33 | What is secure data path? (OP-TEE.0327.md)
+22:35 | So the video is played in secure world. Right? (OP-TEE.0327.md)
+22:37 | How do we protect the video that displays in normal world? (OP-TEE.0327.md)
+22:41 | What is "EME with OP-TEE on Hikey"? (OP-TEE.0327.md)
+22:43 | What is AES OCDMI? (OP-TEE.0327.md)
+23:01 | What is OCDM? (OP-TEE.0327.md)
+
+Chats
+
+Arm.0410.md
+09:07 | What are types of ARM CPU? Please also describe them in a table. (Arm.0410.md)
+09:10 | Does the FF-A document is only about Cortex-A? (Arm.0410.md)
+09:12 | https://developer.arm.com/documentation/den0077/latest/ (Arm.0410.md)
+09:15 | The below text comes from chapter 2 in "Arm Firmware Framework for ... ... (Arm.0410.md)
+09:16 | The below text comes from chapter 2 in "Arm Firmware Framework for Arm A-profile" document. ... ... (Arm.0410.md)
+09:18 | What is "Arm A-profile"? (Arm.0410.md)
+09:19 | Does "Arm Firmware Framework for Arm A-profile" document is only about Cortex-A? (Arm.0410.md)
+
+OP-TEE.History.0407.md
+10:59 | Please list history of Linaro OP-TEE with years after 2015. (OP-TEE.History.0407.md)
+20:03 | What is relationship between QTEE and SPU? (OP-TEE.History.0407.md)
+20:05 | When was source code of QTEE opened? (OP-TEE.History.0407.md)
+
+TrustZone.0329.md
+15:25 | Does TrustZone rely on FF-A? (TrustZone.0329.md)
+15:25 | Does FF-A rely on TrustZone? (TrustZone.0329.md)
+15:26 | Please draw the relationship among TrustZone, TF-A, and FF-A. (TrustZone.0329.md)
+
+FF-A.0409.md
+15:31 | Does TF-A rely on FF-A? (FF-A.0409.md)
+15:38 | Could I say that FF-A refers TF-A? (FF-A.0409.md)
+
+DRM.0402.md
+21:18 | What is TEE identification? (DRM.0402.md)
+
+OP-TEE.0327.md
+22:50 | What is SMAF? (OP-TEE.0327.md)
+23:06 | What is HDCP? (OP-TEE.0327.md)
+

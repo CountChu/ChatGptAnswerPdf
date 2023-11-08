@@ -1,0 +1,1935 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    word-wrap: break-word;
+}
+
+.markdown-body .octicon-link:before {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: '\f05c';
+  vertical-align: middle;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+</style><title>2023-04-10</title></head><body><article class="markdown-body"><h1 id="user-content-2023-04-10"><a class="heading-link" href="#2023-04-10">2023-04-10<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p>Created: 2023-11-08 12:49:09</p>
+<h1 id="user-content-questions"><a class="heading-link" href="#questions">Questions<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>Qualcomm <code>(230407.OP-TEE.History.yaml)</code>
+<ul>
+<li>
+<code>[10:33]</code> What is relationship between QTEE and SPU? <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[10:36]</code> When was source code of QTEE opened? <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[11:03]</code> Does SPU rely on ARMv8? <code>(OP-TEE.History.0407.md)</code>
+</li>
+</ul>
+</li>
+<li>Privilege Levels <code>(230329.TrustZone.yaml)</code>
+<ul>
+<li>
+<code>[14:42]</code> What is exception level? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[14:43]</code> How does a software component know which EL it owns? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[14:45]</code> Can a software component change the EL? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[14:47]</code> Are ELs of TrustZone? <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+<li>TrustZone <code>(230410.Arm.yaml)</code>
+<ul>
+<li>
+<code>[14:50]</code> Which types of ARM CPU have TrustZone? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[14:51]</code> Does ARM Cortex-R series have TrustZone? <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+<li>Boot <code>(230329.TrustZone.yaml)</code>
+<ul>
+<li>
+<code>[15:20]</code> What is FF-A? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[15:21]</code> Does TF-A rely on FF-A? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[15:24]</code> Does TF-A rely on TrustZone? <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+<li>FF-A, TF-A, and TrustZone <code>(230409.FF-A.yaml)</code>
+<ul>
+<li>
+<code>[15:28]</code> What is TF-A? <code>(FF-A.0409.md)</code>
+</li>
+<li>
+<code>[15:29]</code> Please draw the relationship among TrustZone, TF-A, and FF-A. <code>(FF-A.0409.md)</code>
+</li>
+<li>
+<code>[15:36]</code> What is relationship between FF-A and TF-A? <code>(FF-A.0409.md)</code>
+</li>
+<li>
+<code>[15:37]</code> Could I say that TF-A refers FF-A? <code>(FF-A.0409.md)</code>
+</li>
+</ul>
+</li>
+<li>Basic Concept <code>(230402.DRM.yaml)</code>
+<ul>
+<li>
+<code>[21:08]</code> What is license key? <code>(DRM.0402.md)</code>
+</li>
+<li>
+<code>[21:10]</code> What if the license key is stolen? <code>(DRM.0402.md)</code>
+</li>
+<li>
+<code>[21:11]</code> What is content key? <code>(DRM.0402.md)</code>
+</li>
+<li>
+<code>[21:13]</code> What if the content key is stolen? <code>(DRM.0402.md)</code>
+</li>
+<li>
+<code>[21:35]</code> What is identification attacker? <code>(DRM.0402.md)</code>
+</li>
+<li>
+<code>[21:36]</code> What is exploitation attacker? <code>(DRM.0402.md)</code>
+</li>
+<li>
+<code>[21:38]</code> Please summarize both in a table. <code>(DRM.0402.md)</code>
+</li>
+</ul>
+</li>
+<li>TEE Identification <code>(230328.TEE.yaml)</code>
+<ul>
+<li>
+<code>[21:20]</code> What is TEE identification? <code>(TEE.0328.md)</code>
+</li>
+<li>
+<code>[21:22]</code> Is TEE identification obversable? <code>(TEE.0328.md)</code>
+</li>
+<li>
+<code>[21:26]</code> Can I use DID as TEE identification? <code>(TEE.0328.md)</code>
+</li>
+</ul>
+</li>
+<li>Revocation of TA <code>(230328.TEE.yaml)</code>
+<ul>
+<li>
+<code>[22:07]</code> What is revocation for Trusted Application? <code>(TEE.0328.md)</code>
+</li>
+</ul>
+</li>
+<li>DRM <code>(230327.OP-TEE.yaml)</code>
+<ul>
+<li>
+<code>[22:31]</code> Below text comes from "BKK16-201 - PlayReady OPTEE Integration with Secure Video Path" <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[22:33]</code> What is secure data path? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[22:35]</code> So the video is played in secure world. Right? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[22:37]</code> How do we protect the video that displays in normal world? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[22:41]</code> What is "EME with OP-TEE on Hikey"? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[22:43]</code> What is AES OCDMI? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[23:01]</code> What is OCDM? <code>(OP-TEE.0327.md)</code>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="user-content-chats"><a class="heading-link" href="#chats">Chats<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>Arm.0410.md
+<ul>
+<li>
+<code>[09:07]</code> What are types of ARM CPU? Please also describe them in a table. <code>(Arm.0410.md)</code>
+</li>
+<li>
+<code>[09:10]</code> Does the FF-A document is only about Cortex-A? <code>(Arm.0410.md)</code>
+</li>
+<li>
+<code>[09:12]</code> <a href="https://developer.arm.com/documentation/den0077/latest/" rel="nofollow">https://developer.arm.com/documentation/den0077/latest/</a> <code>(Arm.0410.md)</code>
+</li>
+<li>
+<code>[09:15]</code> The below text comes from chapter 2 in "Arm Firmware Framework for ... ... <code>(Arm.0410.md)</code>
+</li>
+<li>
+<code>[09:16]</code> The below text comes from chapter 2 in "Arm Firmware Framework for Arm A-profile" document. ... ... <code>(Arm.0410.md)</code>
+</li>
+<li>
+<code>[09:18]</code> What is "Arm A-profile"? <code>(Arm.0410.md)</code>
+</li>
+<li>
+<code>[09:19]</code> Does "Arm Firmware Framework for Arm A-profile" document is only about Cortex-A? <code>(Arm.0410.md)</code>
+</li>
+</ul>
+</li>
+<li>OP-TEE.History.0407.md
+<ul>
+<li>
+<code>[10:59]</code> Please list history of Linaro OP-TEE with years after 2015. <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[20:03]</code> What is relationship between QTEE and SPU? <code>(OP-TEE.History.0407.md)</code>
+</li>
+<li>
+<code>[20:05]</code> When was source code of QTEE opened? <code>(OP-TEE.History.0407.md)</code>
+</li>
+</ul>
+</li>
+<li>TrustZone.0329.md
+<ul>
+<li>
+<code>[15:25]</code> Does TrustZone rely on FF-A? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[15:25]</code> Does FF-A rely on TrustZone? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[15:26]</code> Please draw the relationship among TrustZone, TF-A, and FF-A. <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+<li>FF-A.0409.md
+<ul>
+<li>
+<code>[15:31]</code> Does TF-A rely on FF-A? <code>(FF-A.0409.md)</code>
+</li>
+<li>
+<code>[15:38]</code> Could I say that FF-A refers TF-A? <code>(FF-A.0409.md)</code>
+</li>
+</ul>
+</li>
+<li>DRM.0402.md
+<ul>
+<li>
+<code>[21:18]</code> What is TEE identification? <code>(DRM.0402.md)</code>
+</li>
+</ul>
+</li>
+<li>OP-TEE.0327.md
+<ul>
+<li>
+<code>[22:50]</code> What is SMAF? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[23:06]</code> What is HDCP? <code>(OP-TEE.0327.md)</code>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="user-content-q--a"><a class="heading-link" href="#q--a">Q &amp; A<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<h2 id="user-content-qualcomm-230407op-teehistoryyaml"><a class="heading-link" href="#qualcomm-230407op-teehistoryyaml">Qualcomm <code>(230407.OP-TEE.History.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[10:33]</code> What is relationship between QTEE and SPU? <code>(OP-TEE.History.0407.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The Qualcomm Trusted Execution Environment (QTEE) and the Secure Processing Unit (SPU) are both security features implemented within Qualcomm's Snapdragon SoCs (System on a Chip) to provide hardware-based security for devices using these chips.</p>
+<p>The QTEE leverages ARM TrustZone technology to create an isolated secure environment within the main processor. This environment ensures that sensitive data is protected and that security-related tasks are executed separately from the normal operating system, thereby reducing the attack surface for potential vulnerabilities.</p>
+<p>The SPU, introduced in 2017, is a separate hardware component within the Snapdragon SoCs designed to handle secure tasks and protect sensitive data. It functions as a TEE and also uses ARM TrustZone technology. The SPU provides an additional layer of hardware-based security by isolating security functions from the main processor, further enhancing the security of the device.</p>
+<p>In summary, both QTEE and SPU are security features implemented in Qualcomm's Snapdragon SoCs to provide hardware-based security. While they serve similar purposes, the SPU offers an additional layer of security by functioning as a separate, dedicated hardware component for handling security-related tasks, whereas QTEE creates a secure environment within the main processor itself.</p>
+<hr>
+<p><strong>Question:</strong> <code>[10:36]</code> When was source code of QTEE opened? <code>(OP-TEE.History.0407.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>As of my last knowledge update in September 2021, the source code of Qualcomm's Trusted Execution Environment (QTEE) has not been made publicly available or open-source. QTEE is a proprietary technology developed by Qualcomm, and the company has not released its source code for public access or contribution.</p>
+<p>Please note that this information may be outdated or incomplete, as I do not have access to real-time updates or knowledge beyond September 2021.</p>
+<hr>
+<p><strong>Question:</strong> <code>[11:03]</code> Does SPU rely on ARMv8? <code>(OP-TEE.History.0407.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Qualcomm's Secure Processing Unit (SPU) is a hardware component introduced in 2017 within their Snapdragon SoCs. While the SPU functions as a Trusted Execution Environment (TEE) and leverages ARM TrustZone technology, it is not specifically dependent on ARMv8 architecture.</p>
+<p>However, it is worth noting that many of Qualcomm's Snapdragon SoCs, including those that feature the SPU, do utilize the ARMv8 architecture. The ARMv8 architecture provides improved performance, energy efficiency, and security features, including support for TrustZone.</p>
+<p>In summary, while the SPU does not exclusively rely on ARMv8, it is often used in conjunction with ARMv8-based Snapdragon SoCs to provide hardware-based security features.</p>
+<hr>
+<h2 id="user-content-privilege-levels-230329trustzoneyaml"><a class="heading-link" href="#privilege-levels-230329trustzoneyaml">Privilege Levels <code>(230329.TrustZone.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[14:42]</code> What is exception level? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Exception level (EL) is a concept in the ARM architecture that defines different privilege levels for executing software. The ARMv8-A architecture, for instance, supports four exception levels: EL0, EL1, EL2, and EL3. Each level has different access rights and capabilities, which provide a mechanism for isolating different types of software and ensuring that less privileged software cannot interfere with more privileged software.</p>
+<p>Here's a brief overview of the exception levels in ARMv8-A architecture:</p>
+<ul>
+<li>
+<p>EL0: This is the least privileged level and is used for running user applications. Software at this level has limited access to system resources and cannot directly access privileged hardware operations.</p>
+</li>
+<li>
+<p>EL1: This level is used for running operating system kernels and is more privileged than EL0. Software at this level can access system resources and control hardware operations but is still restricted from certain sensitive operations.</p>
+</li>
+<li>
+<p>EL2: This level is used for running hypervisors, which manage and control virtual machines. Software at this level has more privileged access to hardware resources and can control the operation of multiple EL1 instances (virtual machines).</p>
+</li>
+<li>
+<p>EL3: This is the most privileged level and is typically used for secure monitor or firmware code, which manages the TrustZone security features. Software at this level has full control over the hardware resources and can enforce secure access policies across the entire system.</p>
+</li>
+</ul>
+<p>These exception levels provide a structured way to separate software components based on their required privileges and ensure a secure execution environment.</p>
+<hr>
+<p><strong>Question:</strong> <code>[14:43]</code> How does a software component know which EL it owns? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A software component does not inherently "know" its exception level (EL). However, when it is executed, it runs at the EL designated by the system configuration and the control registers set by more privileged software.</p>
+<p>Typically, software components are designed to operate at specific exception levels. The boot process and the system's firmware, which run at the highest privilege level (e.g., EL3 in ARMv8-A), are responsible for setting up the initial exception levels and transitioning to lower-privileged levels as needed. During this process, they load and configure less privileged software components (such as the hypervisor, operating system kernel, and user applications) to execute at the appropriate EL.</p>
+<p>At runtime, a software component can determine its current exception level by querying the CurrentEL register. This register contains a field that indicates the current exception level, allowing the software to determine its current privilege level and act accordingly.</p>
+<p>It's important to note that this query can only be performed if the software component is designed to check its own exception level, and it is assumed that the component has been correctly loaded and configured by the more privileged software in the system.</p>
+<hr>
+<p><strong>Question:</strong> <code>[14:45]</code> Can a software component change the EL? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A software component can't directly change its own exception level (EL), but it can initiate a process that results in a change of EL. This typically happens through a specific event or instruction that triggers a change in privilege level, such as an exception, interrupt, or a special instruction like the "Secure Monitor Call" (SMC) in ARM systems.</p>
+<p>For example, when an exception occurs, the processor switches to a higher EL to handle the exception. Once the exception has been dealt with, the software running at the higher EL can return to the previous, lower EL using the "Exception Return" (ERET) instruction in ARM systems or a similar mechanism in other architectures.</p>
+<p>In the ARM architecture, a lower EL software can also request services from a higher EL software (e.g., from the normal world to the secure world in TrustZone) using the SMC instruction. The SMC instruction causes a switch to a higher EL, where the requested service is provided, and then the control is returned back to the lower EL.</p>
+<p>Keep in mind that a software component can only initiate a change to a higher EL if it has been designed to do so and the system is configured to allow such transitions. The actual EL transition is managed by the hardware and the more privileged software components.</p>
+<hr>
+<p><strong>Question:</strong> <code>[14:47]</code> Are ELs of TrustZone? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Exception Levels (ELs) are a concept in the ARM architecture, not specific to TrustZone. However, TrustZone does make use of the ELs to separate and manage privileges between the secure and non-secure worlds.</p>
+<p>In ARMv8-A architecture, there are four ELs (EL0 to EL3). TrustZone operates on EL3 and S-EL1. EL3 is the Secure Monitor level, responsible for managing the transition between the secure and non-secure worlds. S-EL1 is used for secure operating systems or hypervisors.</p>
+<p>In summary, while ELs are part of the ARM architecture, TrustZone does make use of them to manage privileges and ensure security between the two worlds (secure and non-secure).</p>
+<hr>
+<h2 id="user-content-trustzone-230410armyaml"><a class="heading-link" href="#trustzone-230410armyaml">TrustZone <code>(230410.Arm.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[14:50]</code> Which types of ARM CPU have TrustZone? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone technology is available in various ARM CPU cores, particularly in the ARM Cortex-A and ARM Cortex-M series.</p>
+<ol>
+<li>
+<p>ARM Cortex-A series: TrustZone is supported in many Cortex-A cores, including Cortex-A5, Cortex-A7, Cortex-A8, Cortex-A9, Cortex-A12, Cortex-A15, Cortex-A17, Cortex-A32, Cortex-A35, Cortex-A53, Cortex-A55, Cortex-A57, Cortex-A72, Cortex-A73, Cortex-A75, Cortex-A76, and Cortex-A77.</p>
+</li>
+<li>
+<p>ARM Cortex-M series: The ARMv8-M architecture introduces TrustZone technology for Cortex-M processors. Examples of Cortex-M cores with TrustZone support include Cortex-M23 and Cortex-M33.</p>
+</li>
+</ol>
+<p>Keep in mind that ARM continues to develop new processor cores, and the list above might not be exhaustive. Always refer to the official ARM documentation for the most up-to-date information on specific cores and their features.</p>
+<hr>
+<p><strong>Question:</strong> <code>[14:51]</code> Does ARM Cortex-R series have TrustZone? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, some ARM Cortex-R series processors also have TrustZone support. TrustZone for Cortex-R processors is designed for real-time systems that require high performance, safety, and security. One example of a Cortex-R processor with TrustZone support is the Cortex-R52.</p>
+<p>As with other series, it's essential to consult the official ARM documentation or the specific processor datasheet to verify TrustZone support for each Cortex-R processor.</p>
+<hr>
+<h2 id="user-content-boot-230329trustzoneyaml"><a class="heading-link" href="#boot-230329trustzoneyaml">Boot <code>(230329.TrustZone.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[15:20]</code> What is FF-A? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>FF-A, or Firmware Framework for Armv8-A, is a specification that defines a standard interface for Armv8-A-based systems to support secure firmware components, such as Secure Partitions and Secure Partition Managers. This framework aims to promote interoperability between different firmware components from different vendors and provides a consistent method for handling security, communication, and resource management.</p>
+<p>FF-A enables the development of secure, modular firmware components that can be used across multiple platforms and SoCs, simplifying firmware development and reducing the need for custom solutions. It supports various use cases, including secure boot, trusted execution environments, and virtualization.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:21]</code> Does TF-A rely on FF-A? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, Arm Trusted Firmware-A (TF-A) relies on and implements the Firmware Framework for Armv8-A (FF-A) specification. TF-A provides a reference implementation of secure world software for Armv8-A platforms, including support for Secure Partition Manager (SPM) and Secure Partitions (SPs) as defined by the FF-A specification.</p>
+<p>By relying on FF-A, TF-A ensures that it follows a standardized interface for secure firmware components, enabling compatibility and interoperability with various platforms and SoCs. This helps simplify firmware development and promote the use of secure, modular firmware components across different Armv8-A-based systems.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:24]</code> Does TF-A rely on TrustZone? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, Arm Trusted Firmware-A (TF-A) relies on and utilizes the TrustZone technology for providing a secure execution environment on Armv8-A platforms. TrustZone is a hardware-based security feature that creates a secure and isolated environment (Secure World) for running sensitive applications and handling secure data.</p>
+<p>TF-A is a reference implementation of secure world software that provides various security services, such as secure boot, runtime firmware services, and a Secure Partition Manager (SPM) for managing Secure Partitions (SPs). By leveraging TrustZone, TF-A ensures that these security services and sensitive applications are protected from the less secure, normal world applications and potential vulnerabilities.</p>
+<hr>
+<h2 id="user-content-ff-a-tf-a-and-trustzone-230409ff-ayaml"><a class="heading-link" href="#ff-a-tf-a-and-trustzone-230409ff-ayaml">FF-A, TF-A, and TrustZone <code>(230409.FF-A.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[15:28]</code> What is TF-A? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TF-A, or Trusted Firmware-A, is a reference implementation of secure world software for Arm A-profile processors. It provides a platform for implementing security features and building trusted execution environments in devices that use Armv8-A processors, such as smartphones, tablets, and other embedded systems.</p>
+<p>TF-A includes implementations of various Arm security technologies, such as Secure Boot, Secure Monitor (for switching between secure and non-secure worlds), and runtime services. The project is open-source, allowing developers to use and modify the code to develop secure firmware solutions that meet the requirements of their specific applications.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:29]</code> Please draw the relationship among TrustZone, TF-A, and FF-A. <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TrustZone, TF-A, and FF-A are technologies and frameworks related to the security aspects of Arm-based systems. Here's a simple representation of their relationships:</p>
+<pre><code>+-----------------+
+|   TrustZone     |
+|  (Technology)   |
+| +-------------+ |
+| |    TF-A     | |
+| | (Firmware)  | |
+| +-------------+ |
+| +-------------+ |
+| |    FF-A     | |
+| |  (Framework)| |
+| +-------------+ |
++-----------------+
+</code></pre>
+<ol>
+<li>
+<p>TrustZone is a hardware-based security technology built into Arm processors. It provides a secure execution environment by creating two separate worlds: a Secure World and a Non-secure World. TrustZone ensures that the Secure World's data and code are protected from unauthorized access.</p>
+</li>
+<li>
+<p>Trusted Firmware-A (TF-A) is an open-source reference implementation of secure world software for Arm A-profile processors. It leverages TrustZone technology and provides secure boot, runtime services, and a secure monitor for switching between the secure and non-secure worlds.</p>
+</li>
+<li>
+<p>Firmware Framework for Armv8-A (FF-A) is a software architecture specification that aims to standardize the way partitions, services, and communication are managed in Arm A-profile systems. It defines the interactions between the Secure Partition Manager (SPM), partitions, and the Non-secure world. FF-A can be used in conjunction with TrustZone and TF-A to build a complete secure software solution.</p>
+</li>
+</ol>
+<hr>
+<p><strong>Question:</strong> <code>[15:36]</code> What is relationship between FF-A and TF-A? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The relationship between FF-A (Firmware Framework for Armv8-A) and TF-A (Trusted Firmware-A) is that FF-A provides a standardized software architecture specification for managing partitions, services, and communication on Arm A-profile systems, while TF-A is an open-source reference implementation of secure world software that leverages TrustZone technology.</p>
+<p>TF-A can be used as a base for implementing the secure world software stack on Arm A-profile systems, and it can be extended or adapted to conform to the FF-A architecture. By aligning the TF-A implementation with the FF-A specification, developers can achieve a more modular, maintainable, and interoperable software stack that can better address the needs of secure systems.</p>
+<p>In summary, the relationship between FF-A and TF-A is complementary, with FF-A providing the architectural guidelines, and TF-A serving as a reference implementation that can be tailored to adhere to those guidelines.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:37]</code> Could I say that TF-A refers FF-A? <code>(FF-A.0409.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, you can say that TF-A refers to FF-A, as TF-A can be extended or adapted to conform to the FF-A architecture. The FF-A provides the architectural guidelines for secure systems, while TF-A serves as a reference implementation that can be tailored to adhere to those guidelines. By aligning the TF-A implementation with the FF-A specification, developers can achieve a more modular, maintainable, and interoperable software stack for secure systems.</p>
+<hr>
+<h2 id="user-content-basic-concept-230402drmyaml"><a class="heading-link" href="#basic-concept-230402drmyaml">Basic Concept <code>(230402.DRM.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[21:08]</code> What is license key? <code>(DRM.0402.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A license key, in the context of DRM (Digital Rights Management) systems, is a unique alphanumeric code or data object that grants users or devices access to protected digital content. The license key is typically generated by the DRM system and contains information about usage rights, restrictions, and other conditions associated with the content.</p>
+<p>When a user purchases or acquires access to DRM-protected content, they receive a license key associated with that content. The license key enables the authorized user or device to access, decrypt, and play the content according to the specified rules and restrictions. These rules may include limitations on playback duration, the number of devices the content can be accessed on, or the ability to make copies or modifications.</p>
+<p>In addition to granting access to the content, the license key serves as a method of enforcing content protection by ensuring that only authorized users or devices can access and use the protected content. The DRM system checks the validity of the license key before allowing access to the content, preventing unauthorized access, copying, or sharing.</p>
+<p>It's important to note that the term "license key" can also refer to a code used to activate or unlock software products, but the concept is similar – it is a unique identifier that grants access to a specific product, feature, or service.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:10]</code> What if the license key is stolen? <code>(DRM.0402.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>If a license key is stolen or obtained by unauthorized users, it can potentially compromise the DRM (Digital Rights Management) system's content protection. Unauthorized users may gain access to the protected content, violating the intended usage rights and restrictions. This can result in revenue loss for content providers, as well as unauthorized distribution or copying of the content.</p>
+<p>To mitigate the risks associated with stolen license keys, DRM systems employ various security measures:</p>
+<ol>
+<li>
+<p>Secure key exchange: DRM systems use secure protocols and encryption methods to transmit license keys between the content server and the client device. This minimizes the risk of license keys being intercepted or stolen during transmission.</p>
+</li>
+<li>
+<p>Device binding: DRM systems often bind license keys to specific devices or user accounts, ensuring that the license key can only be used on authorized devices or by authorized users. If a license key is stolen, it would not work on an unauthorized device or account.</p>
+</li>
+<li>
+<p>License key revocation: In cases where a license key is known to be compromised, content providers or DRM systems may revoke the license key, rendering it invalid. This prevents unauthorized users from accessing the content using the stolen key. Revocation can also be used to disable access to the content on specific devices if they are suspected of being compromised.</p>
+</li>
+<li>
+<p>Monitoring and analytics: Content providers can use monitoring and analytics tools to track the usage of license keys and detect suspicious activity. If abnormal usage patterns or multiple access attempts from different devices are detected, the content provider can investigate the issue and take appropriate action, such as revoking the license key or blocking access from specific devices.</p>
+</li>
+<li>
+<p>Hardware-based security: In more advanced DRM systems, like PlayReady SL3000, hardware-based security features are used to further protect license keys and content. These features make it more difficult for attackers to extract or tamper with license keys, reducing the risk of keys being stolen.</p>
+</li>
+</ol>
+<p>While these security measures can reduce the risk of license key theft, no system is completely foolproof. Content providers must continuously monitor, update, and improve their DRM systems to address new threats and vulnerabilities.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:11]</code> What is content key? <code>(DRM.0402.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A content key, in the context of DRM (Digital Rights Management) systems, is a cryptographic key used to encrypt and decrypt protected digital content. Content keys help ensure that only authorized users or devices can access and consume the content, as they need the corresponding content key to decrypt it.</p>
+<p>When a content provider wants to protect their digital content, such as audio, video, or multimedia files, they use encryption algorithms and a content key to encrypt the data. The encrypted content is then distributed to users or devices, but it remains unreadable without the content key.</p>
+<p>When a user or device wants to access the protected content, they must first obtain a license from the DRM system. This license typically includes the content key, along with usage rights and restrictions for the content. The user's device uses the content key to decrypt the content, allowing it to be played or consumed according to the specified rules and limitations.</p>
+<p>To maintain security, DRM systems often use secure key exchange protocols and encryption methods to transmit content keys between the content server and the client device. Additionally, the content key may be further protected by binding it to a specific device or user account, ensuring that only authorized users or devices can use the key to decrypt the content.</p>
+<p>In summary, a content key is a critical component of DRM systems, as it enables encryption and decryption of protected content, ensuring that only authorized users or devices can access and consume the content according to the rules and restrictions set by the content provider.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:13]</code> What if the content key is stolen? <code>(DRM.0402.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>If a content key is stolen or obtained by unauthorized users, it can compromise the DRM (Digital Rights Management) system's content protection. Unauthorized users with the content key can potentially decrypt and access the protected content, violating the intended usage rights and restrictions. This can lead to unauthorized distribution, copying, or sharing of the content, and revenue loss for content providers.</p>
+<p>To mitigate the risks associated with stolen content keys, DRM systems employ various security measures:</p>
+<ol>
+<li>
+<p>Secure key exchange: DRM systems use secure protocols and encryption methods to transmit content keys between the content server and the client device. This minimizes the risk of content keys being intercepted or stolen during transmission.</p>
+</li>
+<li>
+<p>License management: Content keys are usually delivered as part of a license that contains usage rights and restrictions. DRM systems control access to content keys by granting licenses only to authorized users or devices. This helps prevent unauthorized access to content keys.</p>
+</li>
+<li>
+<p>Device binding: DRM systems often bind content keys to specific devices or user accounts, ensuring that the content key can only be used on authorized devices or by authorized users. If a content key is stolen, it would not work on an unauthorized device or account.</p>
+</li>
+<li>
+<p>Monitoring and analytics: Content providers can use monitoring and analytics tools to track the usage of content keys and detect suspicious activity. If abnormal usage patterns or multiple access attempts from different devices are detected, the content provider can investigate the issue and take appropriate action, such as revoking the content key or blocking access from specific devices.</p>
+</li>
+<li>
+<p>Hardware-based security: Advanced DRM systems, like PlayReady SL3000, use hardware-based security features to protect content keys and content. These features make it more difficult for attackers to extract or tamper with content keys, reducing the risk of keys being stolen.</p>
+</li>
+</ol>
+<p>While these security measures can reduce the risk of content key theft, no system is completely foolproof. Content providers must continuously monitor, update, and improve their DRM systems to address new threats and vulnerabilities.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:35]</code> What is identification attacker? <code>(DRM.0402.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>An identification attacker, also known as an identity spoofing attacker or impersonation attacker, is a malicious actor who attempts to assume the identity of a legitimate user, device, or system to gain unauthorized access, privileges, or sensitive information. Identification attacks can target various entities, such as individuals, servers, devices, or even Trusted Execution Environments (TEEs), as previously mentioned in the context of TEE identification.</p>
+<p>Identification attackers employ various techniques to achieve their goals, including:</p>
+<ol>
+<li>
+<p>Phishing: Attackers may use phishing emails, messages, or websites to trick users into providing their login credentials or other sensitive information, which can then be used to impersonate the victim.</p>
+</li>
+<li>
+<p>Man-in-the-middle (MITM) attacks: In this type of attack, the attacker intercepts communication between two parties, such as a user and a server, and can potentially modify, inject, or steal data. This allows the attacker to impersonate one or both parties, gaining access to sensitive information or resources.</p>
+</li>
+<li>
+<p>Password attacks: Attackers may use methods like brute-force, dictionary attacks, or credential stuffing to guess or obtain a user's password, enabling them to assume the user's identity.</p>
+</li>
+<li>
+<p>Social engineering: Social engineering tactics can be used to manipulate individuals into providing sensitive information or access, which can then be used to impersonate the victim.</p>
+</li>
+<li>
+<p>Key theft or compromise: If an attacker can obtain a user's or device's cryptographic keys, they can potentially impersonate that entity in secure communications, gaining unauthorized access to protected resources or information.</p>
+</li>
+<li>
+<p>Device spoofing: An attacker may attempt to spoof a device's unique identifiers, such as MAC addresses or hardware-based identifiers, to impersonate the device and gain access to secure networks or resources.</p>
+</li>
+</ol>
+<p>To defend against identification attacks, organizations and individuals should employ strong authentication mechanisms, such as multi-factor authentication (MFA), use secure communication protocols like TLS, keep software and systems up-to-date, and educate users about safe online practices and how to recognize phishing attempts or other social engineering tactics.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:36]</code> What is exploitation attacker? <code>(DRM.0402.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>An exploitation attacker is a malicious actor who seeks to take advantage of vulnerabilities, weaknesses, or misconfigurations in software, hardware, or systems to gain unauthorized access, escalate privileges, steal sensitive information, or disrupt services. Exploitation attackers typically target known or unknown security flaws (also called "zero-day vulnerabilities") to compromise systems, install malware, or perform other malicious activities.</p>
+<p>Exploitation attackers use various techniques and tools to carry out their attacks, including:</p>
+<ol>
+<li>
+<p>Exploit kits: These are software tools or packages that contain a collection of exploits targeting different vulnerabilities in popular software applications, such as web browsers or operating systems. Attackers can use exploit kits to automate the exploitation process and compromise vulnerable systems.</p>
+</li>
+<li>
+<p>Buffer overflow attacks: This type of attack occurs when an attacker overflows a memory buffer with more data than it can handle, potentially causing the program to crash or execute arbitrary code provided by the attacker.</p>
+</li>
+<li>
+<p>Injection attacks: Injection attacks, such as SQL injection or cross-site scripting (XSS), involve inserting malicious code or data into a vulnerable application or system. This can allow the attacker to gain unauthorized access, steal sensitive information, or manipulate the targeted system.</p>
+</li>
+<li>
+<p>Privilege escalation: Exploitation attackers may seek to exploit vulnerabilities that allow them to escalate their privileges within a system, granting them greater access and control.</p>
+</li>
+<li>
+<p>Social engineering: Attackers can use social engineering tactics to manipulate users into installing malware, revealing sensitive information, or granting access to secure systems.</p>
+</li>
+</ol>
+<p>To defend against exploitation attackers, organizations and individuals should adopt strong security practices, such as keeping software and systems up-to-date with the latest security patches, implementing strong access controls and authentication mechanisms, monitoring systems for signs of compromise, and educating users about safe online behavior and potential attack methods. Additionally, employing intrusion detection and prevention systems (IDPS), firewalls, and antivirus software can help detect and block exploitation attempts.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:38]</code> Please summarize both in a table. <code>(DRM.0402.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Here's a table summarizing the key aspects of identification attackers and exploitation attackers:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Identification Attacker</th>
+<th>Exploitation Attacker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Goal</td>
+<td>Assume the identity of a legitimate user, device, or system to gain unauthorized access or privileges</td>
+<td>Exploit vulnerabilities, weaknesses, or misconfigurations to gain unauthorized access, escalate privileges, or disrupt services</td>
+</tr>
+<tr>
+<td>Attack Techniques</td>
+<td>Phishing, Man-in-the-middle attacks, Password attacks, Social engineering, Key theft or compromise, Device spoofing</td>
+<td>Exploit kits, Buffer overflow attacks, Injection attacks, Privilege escalation, Social engineering</td>
+</tr>
+<tr>
+<td>Defenses</td>
+<td>Multi-factor authentication, Secure communication protocols (e.g., TLS), Software and system updates, User education</td>
+<td>Security patch management, Access controls and authentication mechanisms, System monitoring, User education, Intrusion detection and prevention systems, Firewalls, Antivirus software</td>
+</tr>
+</tbody>
+</table>
+<p>This table provides a high-level overview of the differences between identification attackers and exploitation attackers, focusing on their primary goals, attack techniques, and recommended defenses. While there may be some overlap in the techniques used by both types of attackers, their objectives and methods of compromising systems differ.</p>
+<hr>
+<h2 id="user-content-tee-identification-230328teeyaml"><a class="heading-link" href="#tee-identification-230328teeyaml">TEE Identification <code>(230328.TEE.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[21:20]</code> What is TEE identification? <code>(TEE.0328.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TEE identification refers to the process of uniquely identifying a Trusted Execution Environment (TEE) within a device or across multiple devices. This identification can be used for various purposes, such as attestation, secure communication, and device management. TEE identification typically involves the use of a unique identifier or a set of identifiers that can be securely associated with a specific TEE instance.</p>
+<p>Some common methods for TEE identification are:</p>
+<ol>
+<li>
+<p><strong>Unique Device Identifier (UDID)</strong>: A unique identifier assigned to the device that hosts the TEE. This identifier can be used to differentiate between devices, but it may not be specific to the TEE itself.</p>
+</li>
+<li>
+<p><strong>TEE Instance Identifier</strong>: A unique identifier assigned to a specific instance of a TEE. This identifier is typically generated during the TEE's initialization or secure boot process and can be used to uniquely identify the TEE within the device.</p>
+</li>
+<li>
+<p><strong>Attestation Identity Key (AIK)</strong>: In some TEE implementations, such as Intel SGX, the TEE generates a unique asymmetric key pair called the Attestation Identity Key. The AIK can be used to identify the TEE during remote attestation processes, allowing other parties to verify the authenticity and integrity of the TEE.</p>
+</li>
+<li>
+<p><strong>Certificates</strong>: Some TEE implementations may use certificates issued by trusted Certificate Authorities (CAs) to identify the TEE. These certificates can be used to establish the authenticity of the TEE and to securely associate it with a specific device or entity.</p>
+</li>
+</ol>
+<p>TEE identification plays a crucial role in ensuring the security and trustworthiness of the TEE and the applications running within it. It enables secure communication between the TEE and other components, remote attestation of the TEE, and secure management of devices and services that rely on the TEE.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:22]</code> Is TEE identification obversable? <code>(TEE.0328.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>TEE identification is typically not directly observable by normal applications running in the non-secure world (also called the Rich Execution Environment, or REE). The main purpose of a TEE is to provide a secure and isolated environment for sensitive operations, which includes protecting the TEE's identification information from unauthorized access.</p>
+<p>However, some TEE implementations may provide APIs or services that allow authorized applications in the normal world to interact with the TEE and obtain some identification-related information, such as public keys or certificates, for specific purposes like establishing a secure communication channel or performing remote attestation. Access to this information is usually tightly controlled and limited to authorized applications that meet specific security requirements.</p>
+<p>For example, in Intel SGX, an application in the normal world can request a remote attestation report, which includes a public key called the Attestation Identity Key (AIK) that can be used to identify the SGX enclave. The remote attestation process involves communication with Intel's Attestation Service, which verifies the enclave's authenticity and provides a signed attestation report.</p>
+<p>In summary, while TEE identification information is not directly observable by normal applications, authorized applications may be able to access certain identification-related information through specific APIs or services provided by the TEE, under controlled conditions and for specific purposes.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:26]</code> Can I use DID as TEE identification? <code>(TEE.0328.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Decentralized Identifiers (DIDs) can potentially be used as a TEE identification mechanism, although this would require integrating the DID concept into the TEE framework. DIDs are a new type of identifier designed for decentralized identity management systems, which allow entities to create, manage, and control their own identifiers without relying on centralized authorities.</p>
+<p>To use DIDs as TEE identification, you would need to consider the following steps:</p>
+<ol>
+<li>
+<p><strong>Generate DID for TEE</strong>: When a TEE is initialized, generate a DID to uniquely identify the TEE instance. This DID should be securely associated with the TEE and stored within the secure environment.</p>
+</li>
+<li>
+<p><strong>Create DID Document</strong>: A DID Document is a JSON-LD file that contains the public keys, authentication mechanisms, and service endpoints associated with the DID. In the context of TEE identification, the DID Document should include the TEE's public keys, supported authentication methods, and any secure communication endpoints.</p>
+</li>
+<li>
+<p><strong>Associate DID with TEE</strong>: The DID should be securely associated with the TEE and its related cryptographic keys. This can be done through secure storage within the TEE, attestation mechanisms, or other secure binding techniques.</p>
+</li>
+<li>
+<p><strong>Integrate DID APIs and Protocols</strong>: To use DIDs for TEE identification, you would need to integrate DID APIs and protocols into the TEE framework. This may involve modifying the TEE APIs to support DID-based identification, as well as implementing DID resolution and verification mechanisms within the TEE or through external services.</p>
+</li>
+<li>
+<p><strong>Leverage Decentralized Identity Ecosystem</strong>: By adopting DIDs for TEE identification, you can potentially leverage the growing ecosystem of decentralized identity solutions, such as Verifiable Credentials, DID-based authentication, and secure communication protocols.</p>
+</li>
+</ol>
+<p>Using DIDs for TEE identification is an innovative idea that could potentially enhance the security, privacy, and interoperability of TEE-based systems. However, it is important to note that integrating DIDs into the TEE framework would require significant development effort, as well as coordination with existing TEE implementations and standards. Moreover, it would be necessary to carefully evaluate the security implications and trade-offs of using DIDs in this context.</p>
+<hr>
+<h2 id="user-content-revocation-of-ta-230328teeyaml"><a class="heading-link" href="#revocation-of-ta-230328teeyaml">Revocation of TA <code>(230328.TEE.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[22:07]</code> What is revocation for Trusted Application? <code>(TEE.0328.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Revocation for Trusted Applications (TAs) refers to the process of invalidating, removing, or disabling a TA from a Trusted Execution Environment (TEE). The revocation process may be necessary under various circumstances, such as when a TA has been compromised, contains vulnerabilities, or is no longer needed.</p>
+<p>Revocation can help maintain the security and integrity of the TEE by ensuring that only trusted and up-to-date TAs are allowed to execute within the secure environment. The specific process for revoking a TA depends on the TEE implementation and the device management policies.</p>
+<p>Here are some common steps involved in the revocation of a Trusted Application:</p>
+<ol>
+<li>
+<p><strong>Detection</strong>: Identify the need for revocation, such as discovering a security vulnerability in the TA or determining that the TA is no longer required.</p>
+</li>
+<li>
+<p><strong>Notification</strong>: Notify the relevant parties, such as the device owner, system administrator, or TEE vendor, of the need for revocation.</p>
+</li>
+<li>
+<p><strong>Distribution</strong>: Distribute a revocation list, update, or patch that includes the necessary information to revoke the affected TA. This could be in the form of a signed revocation list or a firmware update containing the new list of authorized TAs.</p>
+</li>
+<li>
+<p><strong>Revocation</strong>: The TEE or the device management system applies the revocation, which may involve disabling the TA, removing its associated keys and data, or preventing it from being loaded into the TEE.</p>
+</li>
+<li>
+<p><strong>Verification</strong>: Verify that the TA has been successfully revoked and can no longer be executed within the TEE.</p>
+</li>
+<li>
+<p><strong>Reporting</strong>: Notify relevant parties of the successful revocation and provide any necessary information for further action, such as updating other affected devices or systems.</p>
+</li>
+</ol>
+<p>It is important to note that the specific revocation process and mechanisms will depend on the TEE implementation, the device management policies, and the security requirements of the system. Some TEEs may provide built-in support for revocation, while others may rely on external device management systems or custom solutions.</p>
+<hr>
+<h2 id="user-content-drm-230327op-teeyaml"><a class="heading-link" href="#drm-230327op-teeyaml">DRM <code>(230327.OP-TEE.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[22:31]</code> Below text comes from "BKK16-201 - PlayReady OPTEE Integration with Secure Video Path" <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>This text appears to be an excerpt from a presentation, "BKK16-201 - PlayReady OPTEE Integration with Secure Video Path." The presenter is Zoltan Kuscsik, PhD, and the presentation took place on March 8, 2016, during the Linaro Connect BKK16 event. The presentation deals with the integration of key components such as the W3C EME Working Draft, Microsoft PlayReady DRM Porting Kit v3.0, OP-TEE OS, OpenCDM/OpenCDMI, and Chromium v45.</p>
+<p>The talk provides updates since SFO15, such as the progress on the proof of concept for Secure Data Path with OP-TEE/Playready on STM B2120, the integration of the Secure Memory Allocator Framework (SMAF), and the implementation of Playready TA with support for the Playready Interface For TEE (PRiTEE).</p>
+<p>Supported boards mentioned in the presentation include STM B2120 and 96boards - HiKey. The presentation also discusses various aspects related to EME, secure memory allocation, Playready integration, Open CDM, and the implementation overview for Chromium.</p>
+<p>There are several links provided at the end of the presentation for further information on Playready, OP-TEE, and Linaro OpenCDM.</p>
+<hr>
+<p><strong>Question:</strong> <code>[22:33]</code> What is secure data path? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A Secure Data Path (SDP) is a mechanism that ensures the confidentiality, integrity, and protection of sensitive data while it is being processed, transmitted, or stored. In the context of multimedia applications and Digital Rights Management (DRM) systems, a secure data path ensures that the content is protected from unauthorized access or tampering at all stages of its life cycle, from decoding to rendering on the display.</p>
+<p>The SDP is designed to prevent unauthorized access and data leaks by isolating the sensitive data and processing it within a secure environment, such as a Trusted Execution Environment (TEE) or hardware-protected memory regions. This isolation ensures that even if the rest of the system is compromised, the sensitive data remains protected.</p>
+<p>In the case of multimedia applications, the secure data path provides end-to-end protection for encrypted content. It ensures that decrypted data (e.g., video or audio frames) is not exposed to the untrusted parts of the system, such as the general-purpose operating system, applications, or untrusted hardware components. This protection is critical for DRM systems to prevent content piracy and maintain the trust of content providers.</p>
+<hr>
+<p><strong>Question:</strong> <code>[22:35]</code> So the video is played in secure world. Right? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Not exactly. The video is not played entirely within the secure world. Instead, the sensitive parts of the video processing, such as decryption and decoding, are performed within the secure world, using technologies like Trusted Execution Environment (TEE) or hardware-protected memory regions. Once the video data is processed securely, it is then passed to the normal world for rendering and display.</p>
+<p>The purpose of this approach is to protect sensitive data and operations from unauthorized access or tampering while minimizing the performance overhead of the secure world. By only processing the critical parts of the video pipeline securely, the system can maintain a balance between security and performance.</p>
+<hr>
+<p><strong>Question:</strong> <code>[22:37]</code> How do we protect the video that displays in normal world? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Protecting the video data when it is displayed in the normal world is a crucial aspect of maintaining the security of the content. Here are some techniques and technologies used to achieve this protection:</p>
+<ol>
+<li>
+<p>Secure Data Path (SDP): SDP is a technique that ensures the secure handling of sensitive data throughout the entire video pipeline. In SDP, the decrypted and decoded video data is transferred from the secure world to the normal world through a protected memory path. This prevents unauthorized access or tampering during the data transfer.</p>
+</li>
+<li>
+<p>Hardware-based content protection: Certain hardware components, such as display controllers and graphics processors, can offer built-in content protection features. These features ensure that the video data remains secure when it is passed to the display device.</p>
+</li>
+<li>
+<p>High-bandwidth Digital Content Protection (HDCP): HDCP is a widely used technology for protecting video content transmitted over digital interfaces like HDMI, DisplayPort, or DVI. HDCP encrypts the video data during transmission, preventing unauthorized access or copying.</p>
+</li>
+<li>
+<p>Output Protection Management (OPM): OPM is a system that enforces the use of HDCP or other content protection mechanisms when video data is transmitted from a source device to a display device. OPM ensures that the video data is protected throughout the entire transmission process.</p>
+</li>
+<li>
+<p>Frame buffer encryption: Some systems support the encryption of frame buffers, which store the video data before it is rendered on the display. This feature provides an additional layer of protection for the video data as it is stored in the memory.</p>
+</li>
+</ol>
+<p>By employing a combination of these techniques and technologies, the video data can be adequately protected even when it is displayed in the normal world.</p>
+<hr>
+<p><strong>Question:</strong> <code>[22:41]</code> What is "EME with OP-TEE on Hikey"? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>"EME with OP-TEE on Hikey" refers to the implementation of the Encrypted Media Extensions (EME) using the OP-TEE (Open Portable Trusted Execution Environment) on the HiKey development board.</p>
+<p>EME is a W3C (World Wide Web Consortium) specification that provides a standard interface for content protection in web browsers. It allows web applications to communicate with Content Decryption Modules (CDMs) to enable the playback of encrypted multimedia content.</p>
+<p>OP-TEE is an open-source Trusted Execution Environment (TEE) that provides a secure environment for the execution of sensitive code and data protection. OP-TEE leverages ARM TrustZone technology to isolate the secure world from the normal world.</p>
+<p>HiKey is a development board built around a 64-bit ARM-based SoC (System on Chip) and is part of the 96Boards family of development platforms. It is widely used for prototyping and development purposes, including the implementation of secure solutions.</p>
+<p>In summary, "EME with OP-TEE on Hikey" refers to a solution that integrates EME and OP-TEE on the HiKey development board to provide secure playback of encrypted multimedia content within web applications. This implementation ensures the protection of sensitive data and operations related to content decryption and key management within the secure world of the TEE.</p>
+<hr>
+<p><strong>Question:</strong> <code>[22:43]</code> What is AES OCDMI? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>AES OCDMI refers to an implementation of the Open Content Decryption Module Interface (OCDMI) that uses the Advanced Encryption Standard (AES) algorithm for content decryption.</p>
+<p>OCDMI is a part of the OpenCDM project, which aims to provide an open-source and modular Content Decryption Module (CDM) solution for various DRM systems. CDMs are used in conjunction with the Encrypted Media Extensions (EME) to enable the playback of encrypted multimedia content in web browsers.</p>
+<p>AES (Advanced Encryption Standard) is a widely used symmetric encryption algorithm that provides strong security for data encryption and decryption. In the context of AES OCDMI, the AES algorithm is used to decrypt the protected multimedia content within the secure environment provided by the OpenCDM framework.</p>
+<p>To sum up, AES OCDMI is an open-source solution for securely decrypting protected multimedia content using the AES encryption algorithm within the OpenCDM framework.</p>
+<hr>
+<p><strong>Question:</strong> <code>[23:01]</code> What is OCDM? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>OCDM stands for Open Content Decryption Module. It is an open-source implementation of a Content Decryption Module (CDM) designed to work with the Encrypted Media Extensions (EME) standard, which is part of the HTML5 specification. EME provides a framework for playing encrypted multimedia content in web browsers without the need for third-party plugins such as Adobe Flash or Microsoft Silverlight.</p>
+<p>The primary purpose of OCDM is to enable the decryption and playback of protected multimedia content in web browsers, while still maintaining the necessary security and Digital Rights Management (DRM) requirements set by content providers. OCDM aims to provide a standard, cross-platform interface for integrating various DRM systems into web browsers, making it easier for developers to create and deploy secure media solutions.</p>
+<p>OCDM is designed to work with various DRM systems and can be extended to support new DRM technologies as they emerge. This allows content providers to use a single, unified solution for delivering protected content to multiple platforms and devices, reducing the complexity of managing multiple DRM systems.</p>
+<hr>
+<h2 id="user-content-arm0410md"><a class="heading-link" href="#arm0410md">Arm.0410.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> What are types of ARM CPU? Please also describe them in a table.</p>
+<p><strong>Answer:</strong></p>
+<p>ARM CPUs come in a variety of architectures and designs, each tailored to specific needs and applications. Some common types of ARM CPUs are Cortex-A, Cortex-R, and Cortex-M series. Here's a table describing these three series:</p>
+<table>
+<thead>
+<tr>
+<th>Series</th>
+<th>Target Applications</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cortex-A</td>
+<td>High-performance systems</td>
+<td>Designed for high-performance devices like smartphones, tablets, and other consumer electronics, as well as servers. These processors provide high performance and power efficiency, suitable for running complex operating systems like Linux, Android, and iOS. Typical examples include Cortex-A72, Cortex-A75, and Cortex-A76.</td>
+</tr>
+<tr>
+<td>Cortex-R</td>
+<td>Real-time systems</td>
+<td>Targeted towards real-time systems that require fast, deterministic response times like automotive electronics, industrial control systems, and medical devices. These processors prioritize reliability, fault tolerance, and real-time performance. Examples include Cortex-R4, Cortex-R5, and Cortex-R8.</td>
+</tr>
+<tr>
+<td>Cortex-M</td>
+<td>Low-power microcontrollers</td>
+<td>Optimized for low-power, cost-sensitive applications like IoT devices, wearables, and other embedded systems. These processors are designed to offer low-latency response times, energy efficiency, and ease of use. Examples include Cortex-M0, Cortex-M3, Cortex-M4, and Cortex-M7.</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that within each series, there are multiple specific processor models with different performance levels, features, and target applications. The examples provided above are not exhaustive.</p>
+<hr>
+<p><strong>Question:</strong> Does the FF-A document is only about Cortex-A?</p>
+<p><strong>Answer:</strong></p>
+<p>The ARM Flexible Access for Startups (FF-A) program is not solely about Cortex-A processors. The FF-A program is designed to help startups and other small companies gain access to a wide range of ARM IP (intellectual property) without any upfront costs. This enables these companies to design, prototype, and evaluate their product concepts before they commit to a full licensing agreement.</p>
+<p>The program provides access to various ARM IP products, including Cortex-A, Cortex-R, and Cortex-M series processors, as well as Mali GPUs, System IP, and various software and tools. The FF-A program is intended to help accelerate innovation, reduce costs, and minimize risks for startups and small businesses in the early stages of product development.</p>
+<hr>
+<p><strong>Question:</strong> <a href="https://developer.arm.com/documentation/den0077/latest/" rel="nofollow">https://developer.arm.com/documentation/den0077/latest/</a></p>
+<p><strong>Answer:</strong></p>
+<p>The link you've provided leads to the documentation for the ARM System Control and Management Interface (SCMI) specification. This specification defines a standardized interface for software components running on an ARM-based System on Chip (SoC) to interact with various system control and management functions.</p>
+<p>SCMI is designed to be OS-agnostic and supports various power, performance, and system management use cases. It enables a consistent way of managing and controlling system resources across different platforms, which simplifies the software development process for developers and system architects.</p>
+<p>The SCMI specification is not limited to Cortex-A processors. It can be used with different ARM processor families, including Cortex-A, Cortex-R, and Cortex-M, as well as other ARM-based systems. By providing a standardized interface, the SCMI specification aims to improve interoperability, scalability, and flexibility in ARM-based SoCs.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>The below text comes from chapter 2 in "Arm Firmware Framework for
+Arm A-profile" document.
+
+Chapter 2
+Introduction
+The Armv8.4 architecture introduces the Virtualization extension in the Secure state. The Arm® SMMU
+v3.2 architecture [1] adds support for stage 2 translations for Secure streams to complement the Secure EL2
+translation regime in an Armv8.4 PE. These architectural features enable isolation of mutually mistrusting software
+components in the Secure state from each other. Isolation is a mechanism for implementing the principle of least
+privilege:
+A software component must be able to access only regions in the physical address space and system resources for
+example, interrupts in the GIC that are necessary for its correct operation.
+Virtualization in the Secure state enables application of this principle in the following ways:
+1. Firmware in EL3 can be isolated from software in S-EL1 for example, a Trusted OS.
+2. Firmware components in EL3 can be isolated from each other by migrating vendor-specific components to a
+sandbox in S-EL1 or S-EL0.
+3. Normal world software can be isolated from software in S-EL1 to mitigate against privilege escalation
+attacks.
+This specification describes a software architecture that achieves the following goals.
+1. Uses the Virtualization extension to isolate software images provided by an ecosystem of vendors from each
+other.
+2. Describes interfaces that standardize communication between the various software images. This includes
+communication between images in the Secure world and Normal world.
+3. Generalizes interaction between a software image and privileged firmware in the Secure state.
+This software architecture is the Firmware Framework1 for Arm® A-profile processors. The term Framework and
+abbreviation FF-A are used interchangeably with Firmware Framework in this specification.
+
+This Framework also goes beyond the preceding goals to ensure that the guidance can be used,
+1. In the absence of the Virtualization extension in the Secure state. This provides a migration path for existing
+Secure world software images to a system that implements the Virtualization extension in the Secure state.
+2. Between VMs managed by a Hypervisor in the Normal world. The Virtualization extension in the Secure
+state mirrors its counterpart in the Non-secure state (see also [2]). Therefore, a Hypervisor could use the
+Firmware Framework to enable communication and manage isolation between VMs it manages.
+More rationale about the introduction of the Virtualization extension in Secure state and goals of the Firmware
+Framework is provided in the white-paper titled Isolation using virtualization in the Secure world [3].
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>The text you provided comes from the "Arm Firmware Framework for Arm A-profile" document, which describes a software architecture designed to leverage the virtualization extension in the Secure state introduced in the Armv8.4 architecture. This framework, referred to as Firmware Framework or FF-A, aims to improve security and isolation between various software components running on Arm A-profile processors.</p>
+<p>The key goals of the FF-A are:</p>
+<ol>
+<li>Use the Virtualization extension to isolate software images provided by different vendors from one another.</li>
+<li>Standardize interfaces for communication between various software images, including communication between Secure and Normal worlds.</li>
+<li>Generalize interactions between a software image and privileged firmware in the Secure state.</li>
+</ol>
+<p>Additionally, the FF-A is designed to be used even without the Virtualization extension in the Secure state, providing a migration path for existing Secure world software images. It can also be applied between VMs managed by a Hypervisor in the Normal world, enabling communication and isolation management.</p>
+<p>The FF-A helps to create a more secure environment by isolating software components and enabling the principle of least privilege, allowing software components to access only the necessary resources for their correct operation.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>The below text comes from chapter 2 in "Arm Firmware Framework for Arm A-profile" document.
+
+Chapter 2
+Introduction
+The Armv8.4 architecture introduces the Virtualization extension in the Secure state. The Arm® SMMU
+v3.2 architecture [1] adds support for stage 2 translations for Secure streams to complement the Secure EL2
+translation regime in an Armv8.4 PE. These architectural features enable isolation of mutually mistrusting software
+components in the Secure state from each other. Isolation is a mechanism for implementing the principle of least
+privilege:
+A software component must be able to access only regions in the physical address space and system resources for
+example, interrupts in the GIC that are necessary for its correct operation.
+Virtualization in the Secure state enables application of this principle in the following ways:
+1. Firmware in EL3 can be isolated from software in S-EL1 for example, a Trusted OS.
+2. Firmware components in EL3 can be isolated from each other by migrating vendor-specific components to a
+sandbox in S-EL1 or S-EL0.
+3. Normal world software can be isolated from software in S-EL1 to mitigate against privilege escalation
+attacks.
+This specification describes a software architecture that achieves the following goals.
+1. Uses the Virtualization extension to isolate software images provided by an ecosystem of vendors from each
+other.
+2. Describes interfaces that standardize communication between the various software images. This includes
+communication between images in the Secure world and Normal world.
+3. Generalizes interaction between a software image and privileged firmware in the Secure state.
+This software architecture is the Firmware Framework1 for Arm® A-profile processors. The term Framework and
+abbreviation FF-A are used interchangeably with Firmware Framework in this specification.
+
+This Framework also goes beyond the preceding goals to ensure that the guidance can be used,
+1. In the absence of the Virtualization extension in the Secure state. This provides a migration path for existing
+Secure world software images to a system that implements the Virtualization extension in the Secure state.
+2. Between VMs managed by a Hypervisor in the Normal world. The Virtualization extension in the Secure
+state mirrors its counterpart in the Non-secure state (see also [2]). Therefore, a Hypervisor could use the
+Firmware Framework to enable communication and manage isolation between VMs it manages.
+More rationale about the introduction of the Virtualization extension in Secure state and goals of the Firmware
+Framework is provided in the white-paper titled Isolation using virtualization in the Secure world [3].
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>The link you provided refers to the "Arm® SystemReady™ SR and LS Base Boot Requirements" document. This document is not exclusively about Cortex-A processors. Instead, it focuses on the base boot requirements for Arm SystemReady SR (ServerReady) and Arm SystemReady LS (Linux-Boot SystemReady) compliant systems.</p>
+<p>Arm SystemReady is a set of standards that ensure compatibility and interoperability of Arm-based devices with generic, off-the-shelf operating systems like Linux distributions or Windows. The goal of SystemReady is to provide a consistent and reliable experience across Arm-based systems.</p>
+<p>The document covers the following topics:</p>
+<ol>
+<li>Introduction: Overview of the Arm SystemReady program and its goals.</li>
+<li>Glossary: Definitions of terms used throughout the document.</li>
+<li>Boot flow: Describes the boot process for Arm SystemReady SR and LS compliant systems.</li>
+<li>Firmware requirements: Details the firmware requirements for the devices, including UEFI (Unified Extensible Firmware Interface) and ACPI (Advanced Configuration and Power Interface).</li>
+<li>Hardware requirements: Specifies the hardware requirements, such as the presence of a Trusted Platform Module (TPM) and the support for Non-Volatile Memory Express (NVMe) devices.</li>
+<li>Security requirements: Describes security-related requirements, including Secure Boot and firmware update mechanisms.</li>
+<li>Test suite: Provides information about the test suite used to validate compliance with the Arm SystemReady program.</li>
+</ol>
+<p>Overall, the document outlines the requirements and standards that Arm-based devices must meet to achieve Arm SystemReady SR and LS certification, ensuring compatibility with common operating systems. It is not limited to Cortex-A processors but applies to any Arm-based system that intends to be SystemReady SR or LS compliant.</p>
+<hr>
+<p><strong>Question:</strong> What is "Arm A-profile"?</p>
+<p><strong>Answer:</strong></p>
+<p>"Arm A-profile" refers to a specific family of Arm processors that are designed for high-performance and power-efficient applications. These processors are part of the Cortex-A series, which is well-suited for devices such as smartphones, tablets, and other consumer electronics, as well as servers and networking equipment.</p>
+<p>A-profile processors are based on the Armv8-A architecture, which includes both 64-bit (AArch64) and 32-bit (AArch32) execution states. The Armv8-A architecture introduced several enhancements over the previous Armv7 architecture, such as improved performance, better energy efficiency, and increased security features.</p>
+<p>Cortex-A processors are used in various systems running complex operating systems like Linux, Android, and iOS. They offer advanced features such as out-of-order execution, superscalar pipelines, and support for virtualization and memory management.</p>
+<p>In summary, the term "Arm A-profile" refers to the Cortex-A series of Arm processors that are designed for high-performance and power-efficient applications in devices such as smartphones, tablets, and servers.</p>
+<hr>
+<p><strong>Question:</strong> Does "Arm Firmware Framework for Arm A-profile" document is only about Cortex-A?</p>
+<p><strong>Answer:</strong></p>
+<p>The "Arm Firmware Framework for Arm A-profile" document primarily focuses on the Cortex-A series processors, as they are the high-performance processors designed for running complex operating systems and applications. However, the document also encompasses other Arm A-profile processors based on the Armv8-A architecture.</p>
+<p>While the document is primarily targeted at Cortex-A processors and their associated firmware, some concepts and features may be applicable to other Arm processor families as well, such as Cortex-R and Cortex-M. The Firmware Framework aims to provide a standardized software architecture for security, isolation, and communication between software components running on Arm A-profile processors.</p>
+<hr>
+<h2 id="user-content-op-teehistory0407md"><a class="heading-link" href="#op-teehistory0407md">OP-TEE.History.0407.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> Please list history of Linaro OP-TEE with years after 2015.</p>
+<p><strong>Answer:</strong></p>
+<p>After Linaro took over the maintenance and development of OP-TEE in 2015, the project continued to evolve, with new features and improvements being added over time. Here are some of the notable developments in Linaro's OP-TEE since 2015:</p>
+<ol>
+<li>2016: OP-TEE 2.0.0 release</li>
+</ol>
+<ul>
+<li>Linaro releases OP-TEE version 2.0.0, which includes several new features, improvements, and bug fixes.</li>
+</ul>
+<ol start="2">
+<li>2017: GlobalPlatform Compliance</li>
+</ol>
+<ul>
+<li>OP-TEE becomes GlobalPlatform compliant, meeting the organization's TEE specifications and providing compatibility with a wider range of devices and use cases.</li>
+</ul>
+<ol start="3">
+<li>2018: OP-TEE 3.0.0 release</li>
+</ol>
+<ul>
+<li>Linaro releases OP-TEE version 3.0.0, offering better performance, improved security, and bug fixes.</li>
+</ul>
+<ol start="4">
+<li>2019: OP-TEE 3.7.0 release</li>
+</ol>
+<ul>
+<li>Linaro releases OP-TEE version 3.7.0, further enhancing security, adding support for more platforms, and fixing various issues.</li>
+</ul>
+<ol start="5">
+<li>2020: OP-TEE 3.10.0 release</li>
+</ol>
+<ul>
+<li>Linaro releases OP-TEE version 3.10.0, continuing to improve security, performance, and stability while also adding support for additional platforms.</li>
+</ul>
+<p>Since the last knowledge update in September 2021, there have been several releases, with the latest one being OP-TEE 3.15.0. Please refer to the official OP-TEE GitHub repository (<a href="https://github.com/OP-TEE/optee_os/releases">https://github.com/OP-TEE/optee_os/releases</a>) for the most up-to-date information on release history and features.</p>
+<p>Throughout these years, Linaro has been actively maintaining and improving the OP-TEE project, ensuring that it remains a valuable resource for implementing Trusted Execution Environments on ARM TrustZone-enabled platforms.</p>
+<hr>
+<p><strong>Question:</strong> What is relationship between QTEE and SPU?</p>
+<p><strong>Answer:</strong></p>
+<p>The Qualcomm Trusted Execution Environment (QTEE) and the Secure Processing Unit (SPU) are both security solutions developed by Qualcomm for their Snapdragon SoCs (System on a Chip). Both QTEE and SPU leverage ARM TrustZone technology to create isolated secure environments within the processor, where sensitive data can be protected, and security-related tasks can be executed.</p>
+<p>The relationship between QTEE and SPU can be summarized as follows:</p>
+<ol>
+<li>
+<p>QTEE is an implementation of a Trusted Execution Environment within Qualcomm's Snapdragon SoCs. It provides a secure area within the processor to protect sensitive data and execute security-related tasks. QTEE relies on ARM TrustZone technology to create this secure environment.</p>
+</li>
+<li>
+<p>The Secure Processing Unit (SPU) is a separate hardware component introduced by Qualcomm in 2017. It is designed to enhance the security capabilities of Snapdragon SoCs. Like QTEE, the SPU also uses ARM TrustZone technology and functions as a Trusted Execution Environment. However, the SPU is a dedicated security subsystem separate from the main CPU, providing an additional layer of hardware-based security.</p>
+</li>
+</ol>
+<p>In summary, QTEE and SPU are both Qualcomm-developed security solutions for their Snapdragon SoCs, providing hardware-based security features using ARM TrustZone technology. While QTEE is an implementation of a TEE within the processor, the SPU is a separate hardware component that adds an extra layer of security.</p>
+<hr>
+<p><strong>Question:</strong> When was source code of QTEE opened?</p>
+<p><strong>Answer:</strong></p>
+<p>Qualcomm has not released the source code for their Trusted Execution Environment (QTEE) as it is a proprietary implementation of a Trusted Execution Environment within their Snapdragon SoCs. The source code for QTEE remains closed-source and is not available to the public.</p>
+<p>In contrast, OP-TEE (Open Portable Trusted Execution Environment) is an open-source project providing a TEE for ARM TrustZone-enabled platforms. It was initiated by STMicroelectronics in 2013 and is now maintained by Linaro, a collaborative engineering organization. OP-TEE's source code is openly available on GitHub (<a href="https://github.com/OP-TEE/optee_os">https://github.com/OP-TEE/optee_os</a>).</p>
+<hr>
+<h2 id="user-content-trustzone0329md"><a class="heading-link" href="#trustzone0329md">TrustZone.0329.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> Does TrustZone rely on FF-A?</p>
+<p><strong>Answer:</strong></p>
+<p>No, TrustZone does not rely on Arm Flexible Firmware Architecture (FF-A). TrustZone is a hardware-based security feature provided by Arm processors that creates a secure and isolated environment (Secure World) for running sensitive applications and handling secure data.</p>
+<p>FF-A, on the other hand, is a specification that defines a standardized interface for communication between software components running in different privilege levels and execution environments on Arm platforms. While FF-A can be used in conjunction with TrustZone to facilitate secure communication between software components, TrustZone itself does not rely on FF-A to function. TrustZone is a foundational technology that can work independently of the FF-A specification.</p>
+<hr>
+<p><strong>Question:</strong> Does FF-A rely on TrustZone?</p>
+<p><strong>Answer:</strong></p>
+<p>No, FF-A does not rely on TrustZone. Arm Flexible Firmware Architecture (FF-A) is a specification that defines a standardized interface for communication between software components running in different privilege levels and execution environments on Arm platforms. FF-A is designed to be platform-agnostic and can work with a wide range of security technologies, including TrustZone.</p>
+<p>However, when used in conjunction with TrustZone, FF-A can help facilitate secure communication between software components running in the Secure and Normal Worlds. Although FF-A can be used to enhance TrustZone-based security solutions, it does not inherently rely on TrustZone to function.</p>
+<hr>
+<p><strong>Question:</strong> Please draw the relationship among TrustZone, TF-A, and FF-A.</p>
+<p><strong>Answer:</strong></p>
+<p>Here is a textual representation of the relationship among TrustZone, TF-A, and FF-A:</p>
+<pre><code>--------------------------------
+|         TrustZone            |
+|     (Hardware Security)      |
+|   ------------------------   |
+|   |       TF-A            |  |
+|   | (Trusted Firmware-A)  |  |
+|   ------------------------   |
+--------------------------------
+               |
+               V
+--------------------------------
+|          FF-A                 |
+| (Flexible Firmware Architecture)|
+| (Standardized Communication)   |
+--------------------------------
+</code></pre>
+<ol>
+<li>
+<p>TrustZone: A hardware-based security feature in Arm processors that provides isolation between the Secure World and the Normal World.</p>
+</li>
+<li>
+<p>TF-A (Trusted Firmware-A): A reference implementation of secure world software that leverages TrustZone for Armv8-A based systems. It provides a secure boot and runtime services for Arm platforms.</p>
+</li>
+<li>
+<p>FF-A (Flexible Firmware Architecture): A specification defining a standardized interface for communication between software components running in different privilege levels and execution environments on Arm platforms. It can be used alongside TrustZone and TF-A to facilitate secure communication but is not dependent on either TrustZone or TF-A.</p>
+</li>
+</ol>
+<hr>
+<h2 id="user-content-ff-a0409md"><a class="heading-link" href="#ff-a0409md">FF-A.0409.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> Does TF-A rely on FF-A?</p>
+<p><strong>Answer:</strong></p>
+<p>TF-A (Trusted Firmware-A) does not rely on FF-A (Firmware Framework for Armv8-A), but they can be used together to provide a more standardized and structured approach to managing secure partitions, services, and communication on Arm A-profile systems.</p>
+<p>TF-A is an open-source reference implementation of secure world software that leverages TrustZone technology to provide secure boot, runtime services, and a secure monitor for switching between the secure and non-secure worlds.</p>
+<p>FF-A is a software architecture specification that standardizes the way partitions, services, and communication are managed in Arm A-profile systems. It helps in creating modular and portable secure software.</p>
+<p>While they can be used independently, using them together can enhance the overall security, maintainability, and interoperability of an Arm A-profile system's software stack.</p>
+<hr>
+<p><strong>Question:</strong> Could I say that FF-A refers TF-A?</p>
+<p><strong>Answer:</strong></p>
+<p>No, you cannot say that FF-A refers to TF-A. FF-A (Arm Firmware Framework for Arm A-profile) is a set of architectural guidelines for building secure systems on Arm A-profile processors. It defines the requirements and interfaces for firmware components, partition management, and communication between partitions.</p>
+<p>TF-A (Trusted Firmware-A), on the other hand, is a reference implementation of secure world software for Arm A-profile processors that can be adapted to conform to the FF-A architecture. While TF-A can refer to FF-A to follow its guidelines, FF-A does not refer to TF-A, as it is a higher-level specification independent of any specific implementation.</p>
+<hr>
+<h2 id="user-content-drm0402md"><a class="heading-link" href="#drm0402md">DRM.0402.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> What is TEE identification?</p>
+<p><strong>Answer:</strong></p>
+<p>TEE identification refers to the process of uniquely identifying a Trusted Execution Environment (TEE) within a device. A Trusted Execution Environment is a secure, isolated area within a device's processor that runs separately from the main operating system. It provides a higher level of security for executing sensitive operations, such as handling cryptographic keys and processing DRM-related functions, by protecting these operations from potential software attacks or vulnerabilities in the main operating system.</p>
+<p>TEE identification is important for ensuring the integrity and authenticity of a TEE when it is communicating with external entities, such as DRM servers or other secure services. By uniquely identifying the TEE, it is possible to establish a secure channel for communication and exchange of sensitive information, such as content keys, licenses, or encrypted data.</p>
+<p>To achieve TEE identification, various mechanisms can be used:</p>
+<ol>
+<li>
+<p>Hardware-based identifiers: Some TEEs have unique hardware-based identifiers, such as serial numbers or device IDs, that can be used to uniquely identify the TEE. These identifiers are typically hard-wired into the hardware during manufacturing and are difficult to tamper with or forge.</p>
+</li>
+<li>
+<p>Cryptographic keys and certificates: TEEs can generate or store unique cryptographic key pairs that can be used to establish secure communication channels with external entities. The public key of the TEE's key pair can be used as a unique identifier. Additionally, the TEE may have a digital certificate issued by a trusted authority that attests to the authenticity and integrity of the TEE.</p>
+</li>
+<li>
+<p>Attestation: Attestation is a process where a TEE provides a signed statement or proof of its identity and the integrity of its environment. This proof can be verified by external entities to confirm the authenticity of the TEE. Attestation typically involves the use of cryptographic keys and digital signatures to provide a tamper-proof and verifiable proof of identity.</p>
+</li>
+</ol>
+<p>TEE identification plays a crucial role in secure communication and information exchange between TEEs and external entities, ensuring that sensitive data and operations are protected from unauthorized access or tampering.</p>
+<hr>
+<h2 id="user-content-op-tee0327md"><a class="heading-link" href="#op-tee0327md">OP-TEE.0327.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> What is SMAF?</p>
+<p><strong>Answer:</strong></p>
+<p>SMAF stands for Secure Memory Allocator Framework. It is a framework designed to manage the allocation of secure memory in systems where secure data processing is required, such as in DRM (Digital Rights Management) systems, secure boot, or secure video playback.</p>
+<p>SMAF provides a mechanism for allocating memory regions that are protected from unauthorized access, ensuring that sensitive data remains secure while it is being processed. This is particularly important in environments where both secure and non-secure applications are running concurrently, such as in the case of ARM TrustZone technology.</p>
+<p>In the context of secure media playback, SMAF helps manage the allocation and protection of memory buffers used to store decrypted content or other sensitive data, preventing unauthorized access or tampering. This plays a crucial role in maintaining the security and integrity of the content throughout the playback process.</p>
+<hr>
+<p><strong>Question:</strong> What is HDCP?</p>
+<p><strong>Answer:</strong></p>
+<p>HDCP (High-bandwidth Digital Content Protection) is a digital copy protection technology developed by Intel Corporation to prevent unauthorized copying and distribution of copyrighted digital content, such as movies, TV shows, and audio files. It is commonly used to protect content transmitted over HDMI, DisplayPort, and DVI connections between devices, such as between a media player and a display or a television and a set-top box.</p>
+<p>HDCP works by encrypting the digital content as it is transmitted between devices. The transmitting device, such as a Blu-ray player or a streaming media box, encrypts the content before sending it to the receiving device, such as a television or a monitor. The receiving device then decrypts the content and displays it. Both devices must support HDCP and have a secure connection to ensure that the content remains protected throughout the transmission.</p>
+<p>This system helps to prevent unauthorized devices, such as unauthorized recording equipment, from intercepting and copying the digital content. HDCP is widely used in consumer electronics and is required for playback of many high-definition and 4K content sources, including Blu-ray discs and streaming services like Netflix and Amazon Prime Video.</p>
+<hr>
+</article></body></html>

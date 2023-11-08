@@ -1,0 +1,1410 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body {
+  max-width: 980px;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable,
+.markdown-body .highlighttable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr,
+.markdown-body .highlighttable {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite,
+.markdown-body .highlighttable pre,
+.markdown-body .highlighttable div.highlight {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td,
+.markdown-body .highlighttable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headerlink {
+  font: normal 400 16px fontawesome-mini;
+  vertical-align: middle;
+  margin-left: -16px;
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0;
+  color: #333;
+}
+
+.markdown-body .headerlink:focus {
+  outline: none;
+}
+
+.markdown-body h1 .headerlink {
+  margin-top: 0.8rem;
+}
+
+.markdown-body h2 .headerlink,
+.markdown-body h3 .headerlink {
+  margin-top: 0.6rem;
+}
+
+.markdown-body h4 .headerlink {
+  margin-top: 0.2rem;
+}
+
+.markdown-body h5 .headerlink,
+.markdown-body h6 .headerlink {
+  margin-top: 0;
+}
+
+.markdown-body .headerlink:hover,
+.markdown-body h1:hover .headerlink,
+.markdown-body h2:hover .headerlink,
+.markdown-body h3:hover .headerlink,
+.markdown-body h4:hover .headerlink,
+.markdown-body h5:hover .headerlink,
+.markdown-body h6:hover .headerlink {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 3px;
+}
+
+.markdown-body code:not(.highlight):not(.codehilite), .markdown-body samp {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight,
+.markdown-body pre {
+  border-radius: 3px;
+}
+
+.markdown-body :not(.highlight) > pre {
+  background-color: #f7f7f7;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* MultiMarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px fontawesome-mini;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\e157';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+.markdown-body diagram-div, .markdown-body div.uml-sequence-diagram, .markdown-body, div.uml-flowchart {
+  overflow: auto;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js'></script><script>MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: ".*|",
+    processClass: "arithmatex"
+  },
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
+    },
+    unicode: {
+      fonts: "STIXGeneral,'Arial Unicode MS'"
+    }
+  },
+  showProcessingMessages: false,
+  messageStyle: 'none'
+});
+</script><style>/*GitHub*/
+.highlight {background-color:#f7f7f7;color:#333333;}
+.highlight .hll {background-color:#ffffcc;}
+.highlight .c{color:#999988;font-style:italic}
+.highlight .err{color:#a61717;background-color:#e3d2d2}
+.highlight .k{font-weight:bold}
+.highlight .o{font-weight:bold}
+.highlight .cm{color:#999988;font-style:italic}
+.highlight .cp{color:#999999;font-weight:bold}
+.highlight .c1{color:#999988;font-style:italic}
+.highlight .cs{color:#999999;font-weight:bold;font-style:italic}
+.highlight .gd{color:#000000;background-color:#ffdddd}
+.highlight .ge{font-style:italic}
+.highlight .gr{color:#aa0000}
+.highlight .gh{color:#999999}
+.highlight .gi{color:#000000;background-color:#ddffdd}
+.highlight .go{color:#888888}
+.highlight .gp{color:#555555}
+.highlight .gs{font-weight:bold}
+.highlight .gu{color:#800080;font-weight:bold}
+.highlight .gt{color:#aa0000}
+.highlight .kc{font-weight:bold}
+.highlight .kd{font-weight:bold}
+.highlight .kn{font-weight:bold}
+.highlight .kp{font-weight:bold}
+.highlight .kr{font-weight:bold}
+.highlight .kt{color:#445588;font-weight:bold}
+.highlight .m{color:#009999}
+.highlight .s{color:#dd1144}
+.highlight .n{color:#333333}
+.highlight .na{color:teal}
+.highlight .nb{color:#0086b3}
+.highlight .nc{color:#445588;font-weight:bold}
+.highlight .no{color:teal}
+.highlight .ni{color:purple}
+.highlight .ne{color:#990000;font-weight:bold}
+.highlight .nf{color:#990000;font-weight:bold}
+.highlight .nn{color:#555555}
+.highlight .nt{color:navy}
+.highlight .nv{color:teal}
+.highlight .ow{font-weight:bold}
+.highlight .w{color:#bbbbbb}
+.highlight .mf{color:#009999}
+.highlight .mh{color:#009999}
+.highlight .mi{color:#009999}
+.highlight .mo{color:#009999}
+.highlight .sb{color:#dd1144}
+.highlight .sc{color:#dd1144}
+.highlight .sd{color:#dd1144}
+.highlight .s2{color:#dd1144}
+.highlight .se{color:#dd1144}
+.highlight .sh{color:#dd1144}
+.highlight .si{color:#dd1144}
+.highlight .sx{color:#dd1144}
+.highlight .sr{color:#009926}
+.highlight .s1{color:#dd1144}
+.highlight .ss{color:#990073}
+.highlight .bp{color:#999999}
+.highlight .vc{color:teal}
+.highlight .vg{color:teal}
+.highlight .vi{color:teal}
+.highlight .il{color:#009999}
+.highlight .gc{color:#999;background-color:#EAF2F5}
+</style><title>2023-05-08</title></head><body><article class="markdown-body"><h1>2023-05-08</h1>
+<p>Created: 2023-11-08 14:14:27</p>
+<h1>Chats</h1>
+<ul>
+<li>2018.Tee101.0508.md<ul>
+<li><code>[14:05]</code> The total length of the content titled "TEE 101: A Primer" that I want to send you is too large to send in only one piece. ... ... <code>(2018.Tee101.0508.md)</code></li>
+<li><span style="color:lightgray"> <code>[14:05]</code> <code>[del]</code> part_1 ... ... <code>(2018.Tee101.0508.md)</code> </span></li>
+<li><span style="color:lightgray"> <code>[14:06]</code> <code>[del]</code> What is the title of the document? <code>(2018.Tee101.0508.md)</code> </span></li>
+<li><span style="color:lightgray"> <code>[14:06]</code> <code>[del]</code> part_2 ... ... <code>(2018.Tee101.0508.md)</code> </span></li>
+<li><span style="color:lightgray"> <code>[14:06]</code> <code>[del]</code> part_3 ... ... <code>(2018.Tee101.0508.md)</code> </span></li>
+<li><code>[14:07]</code> What is the title of the document?? <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:07]</code> part_4 ... ... <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:07]</code> ALL PARTS SENT <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:07]</code> How many pages in the document? <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:08]</code> What is the purpose of the document? Please list it. <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:08]</code> 'What is multitrust TEE described in the document? <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:09]</code> What are challenges in the document? Please list them. <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:10]</code> Why not all devices include an SE? Please list them. <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:11]</code> What are use cases in the document? Please describe each use case in 50 words. <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:12]</code> What about IoT Use Case? <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:13]</code> What are TEE challenges described in the chapter "6 TEE Challenges" in the document? ... ... <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:14]</code> What is the challenge that TEE provides privileged access to peripherals? <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:14]</code> What is Remote TA Management? <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:15]</code> What is multiple concurrent TAs? <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:15]</code> What are types of peripherals in the document? <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:16]</code> What are two types of peripherals? <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:17]</code> What are two types of peripherals described in the chapter 3.1? <code>(2018.Tee101.0508.md)</code></li>
+<li><code>[14:22]</code> What is Multitrust TEE described in the document? <code>(2018.Tee101.0508.md)</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1>Q &amp; A</h1>
+<h2>2018.Tee101.0508.md</h2>
+<p><strong>Question:</strong></p>
+<pre><code>The total length of the content titled "TEE 101: A Primer" that I want to send you is too large to send in only one piece.
+
+For sending you that content, I will follow this rule:
+
+part_1
+&lt;&lt;&lt;
+this is the content of the part_1
+&gt;&gt;&gt;
+
+Then you just answer: "I received part_1 and remember it."
+
+And when I tell you "ALL PARTS SENT", then you can continue processing the data and answering my requests.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>I understand the rule. Please send the parts of the content "TEE 101: A Primer" as you described, and I'll confirm receipt of each part. Once you have sent all parts, please let me know by stating "ALL PARTS SENT".</p>
+<hr />
+<p><strong>Question:</strong>  <span style="color:lightgray"> <code>[14:05]</code> <code>[del]</code> part_1 ... ... <code>(2018.Tee101.0508.md)</code> </span></p>
+<p><strong>Answer:</strong> <span style="color:lightgray">[del]</span></p>
+<hr />
+<p><strong>Question:</strong>  <span style="color:lightgray"> <code>[14:06]</code> <code>[del]</code> What is the title of the document? <code>(2018.Tee101.0508.md)</code> </span></p>
+<p><strong>Answer:</strong> <span style="color:lightgray">[del]</span></p>
+<hr />
+<p><strong>Question:</strong>  <span style="color:lightgray"> <code>[14:06]</code> <code>[del]</code> part_2 ... ... <code>(2018.Tee101.0508.md)</code> </span></p>
+<p><strong>Answer:</strong> <span style="color:lightgray">[del]</span></p>
+<hr />
+<p><strong>Question:</strong>  <span style="color:lightgray"> <code>[14:06]</code> <code>[del]</code> part_3 ... ... <code>(2018.Tee101.0508.md)</code> </span></p>
+<p><strong>Answer:</strong> <span style="color:lightgray">[del]</span></p>
+<hr />
+<p><strong>Question:</strong> What is the title of the document??</p>
+<p><strong>Answer:</strong></p>
+<p>The title of the document is not explicitly mentioned in the provided text. However, based on the content, it seems to be related to the Secure Technology Alliance's report or guidelines on Trusted Execution Environments (TEE) and their use cases and implementation examples.</p>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>part_4
+&lt;&lt;&lt;
+Secure Technology Alliance ©2018 Page 20
+
+6 TEE Challenges
+
+Some TEE implementations face certain challenges to enable a vibrant third-party ecosystem, including: enabling remote access; isolating applications from different solution providers; enabling secure peripheral access to a wide range of devices.
+Like the chip on a payment card, the TEE is embedded in a device, which means it has to be integrated within the device before the device is shipped. Unlike payment cards, which are typically delivered to customers with applications and data already resident on the chip, devices with embedded TEEs are usually consumer-owned devices on which applications and data must be installed remotely. The process used to load data securely therefore has unique requirements. A unique device identity (root of trust) must be embedded to enable remote attestation that the device is genuine before sensitive assets, such as application data, can be installed in the TEE, and to enable secure data transfers and remote management of TAs. TEE providers have to work directly with each of the chipset manufacturers and device makers to make this happen. The process is not very different from the process for restricting and managing access to the chips on payment cards but must be more secure to compensate for the distributed environment and number of parties that may be involved.
+
+The TEE can support multiple applications with complete separation of content and security. Therefore, the provisioning process for applications and their data needs to manage the separation and include permissions for loading the different applications to maintain segregation. GlobalPlatform has defined a TEE Management Framework (TMF)5 to administer TEE environments and manage TAs and security domains. The TMF supports the concept of multiple security domains,6 enabling the provisioning and administration of each TA in its own isolated environment.
+As described in Section 3.3, the TEE can provide privileged access to peripherals, such as a touchscreen with a trusted user interface. This feature is already available in many Android devices but is neither ubiquitous nor standardized, as each TEE manufacturer provides its own trusted driver. Like provisioning the root of trust, secure privileged access to peripherals requires integration within the device before it is shipped. GlobalPlatform is currently completing a trusted user interface specification standardizing a generic API for the trusted peripherals.
+The majority of Android smartphones and tablets support the hardware required for a TEE environment. However, the integration of the secure TEE operating system is left to the device manufacturers. While the GlobalPlatform specifications define the functionality expected of a TEE implementation, not all manufacturers have adopted it yet. On non-Android devices, the TEE is not open to third parties. For example, iOS devices embed a form of TEE, but application developers cannot develop and manage TAs inside of it. On Android devices, if a device that supports a TEE does not allow remote management of a TA, then a third party can only deploy and manage TAs in conjunction with the device maker, which complicates the go-to-market and scalability of the solution. Therefore, developers should consider developing and deploying TEE-based solutions with TEE providers that enable remote management, particularly in the mobile space. Fortunately, a large number of TEE-based mobile devices already support remote TA management.
+Currently, development and management of the TAs are hardware/OS specific. In order for TEE applications to become pervasive in the mass market, a common API should be standardized and 5 TEE Management Framework Version 1, GPD_SPE_120, Dec. 2016.
+6 The security domain for a TEE uses the same concepts as the security domain in an SE.
+
+Secure Technology Alliance ©2018 Page 21
+
+deployed across all TEE implementations. Similar to JavaCard for SEs, a common platform API would provide a cross-platform solution that would allow applications to be written once for all target devices. This would allow a large population of application developers to utilize the technology and remain agnostic to the TEE solution. Thus, there would be no need for multiple implementations of the same application based on the target platform.
+
+Secure Technology Alliance ©2018 Page 22
+
+7 Mobile Implementation Considerations
+
+By definition, the rich OS in a mobile device cannot be trusted. It can be rooted (jailbroken), cannot be certified, and is too large to be bug free. The role of the TEE is to isolate and protect sensitive data.
+
+7.1 Developing a TEE Solution
+
+A mobile solution leveraging the TEE will be composed of two distinct applications: the rich OS application and the TA. To design and develop a solution leveraging the TEE, an application developer should follow these basic guidelines:
+• The solution design should not trust the rich OS. A TA should never send unprotected sensitive data to the rich OS application.
+• Sensitive data (such cryptographic processing or sensitive data storage and processing) should be ported to the TEE. The purpose of the TEE is not to host and execute the full rich OS application, so the amount of porting should be minimal.
+• The rich OS is a bridge used to communicate securely between a TA and a remote entity (e.g., a server or SE). However, the TA should always be able to have a secured and authenticated data exchange with the remote entity that is implemented on top of the transport layer provided by the rich OS.
+• Capture and display of sensitive data should be routed through the TEE.
+Application developers should also anticipate devices that do not support the TEE and use software protection for those cases (e.g., whitebox cryptography, code protection techniques). Implementing the fallback to software protection is easy and is already available from some TEE providers.
+
+7.2 Managing a TEE Solution
+
+A TA can be pre-embedded in the rich OS application (e.g., Samsung Pay). The application bundle can be posted on any app store and downloaded by a customer.
+TA management requires an application provider and the use of a specific protocol defined in the GlobalPlatform TMF. The GlobalPlatform TMF specifications require the application provider to have the proper security mechanisms to connect to the TEE or to the provider’s TA. TMF can use PKI-based security (easy implementation) or the same secure channel protocol used by an SE for more robust security. A TEE will reject connections that do not meet the minimum security requirements.
+The application provider can be hosted on premise or leverage cloud-based environments. In any case, a business entity willing to manage TAs should collaborate with the TEE provider to make sure that the minimal security requirements are met. As described in Section 3, the TEE uses security domains to give application providers a virtual presence in the TEE. Security domains enable application providers to manage their TAs directly, without having to go through another party such as the TEE owner or the device manufacturer.
+
+Secure Technology Alliance ©2018 Page 23
+
+8 Conclusion
+
+Widespread data breaches have made it very important to harden security measures when sensitive data are being processed and stored. This is resulting in an evolution of tokenization and enhanced device security mechanisms in personal computing and connected devices technologies. As in-device payment transactions, mobile identity and authentication, corporate applications and media streaming become more popular, transaction speed and faster time to market are of utmost importance. The wide variety of other connected devices also require security to protect sensitive data. While use of an SE undoubtedly provides a higher form of security, modern devices require more speed, memory, and cost effectiveness than use of an SE can offer. In addition, the SE solution may be too complex for many use cases.
+TEE offers a dependable security platform. When built using GlobalPlatform standards, TEE offers scalability and an easily deployable solution for any device that supports the TEE architecture. In the mobile space in particular, the TEE provides a simple and quick-to-market solution across all devices that support the technology to providers willing to develop, deploy, and manage trusted applications independently from the hardware manufacturers. Using the TEE imposes no additional limitations on speed, memory, or computing power. The TEE relies on the device’s main application processor and the device’s native memory space.
+TEE is achieving a foothold in various electronic devices, including personal computing, mobile, and IoT-connected devices. While SEs continue to make sense for certain use cases, TEEs can work independently as well as with SEs to enhance processing abilities. Used alone, TEE is a prime contender for use cases where security is of high importance, such as HCE-based payments, mobile wallets, mobile POS, content protection, and connected devices. And while TEE is maturing, the next generation of mobile security can leverage TEE-based solutions to protect devices from multiple threats and vulnerabilities.
+Though there are challenges in creating a scalable TEE eco-system, many of these challenges can be overcome by participation in industry standardization efforts from industry players such as chip manufacturers, device manufacturers and TEE solution providers.
+
+Secure Technology Alliance ©2018 Page 24
+
+9 Publication Acknowledgements
+
+This white paper was developed by the Secure Technology Alliance Mobile Council to provide an educational resource on the Trusted Execution Environment and relevant use cases.
+Publication of this document by the Secure Technology Alliance does not imply the endorsement of any of the member organizations of the Alliance.
+The Secure Technology Alliance wishes to thank Council members for their contributions. Participants involved in the development and review of this white paper included: Cubic Transportation Systems; Discover Financial Services; First Data; GlobalPlatform; JPMorgan Chase; Mastercard; MIPS; Thales e-Security; Trustonic; and Visa.
+The Secure Technology Alliance thanks Sridher Swaminathan, First Data, for leading the project and the following Council members and guests who participated in the project team to write the document: • Majid Bemanian, MIPS
+• Sadiq Mohammed, Mastercard • Hank Chavers, GlobalPlatform
+• Tony Sabetti, JPMorgan Chase • David deKozan, Cubic
+• Sridher Swaminathan, First Data • Jose Diaz, Thales e-Security
+• Hans Van Tilberg, Visa • Florent Joubert, Trustonic
+The Secure Technology Alliance also thanks Council members who participated in the review of the white paper including: • Hank Chavers, GlobalPlatform
+• Hitesh Shah, Discover Financial Services • Florent Joubert, Trustonic
+• Mike Strock, Secure Technology Alliance • Cathy Medich, Secure Technology Alliance
+• Sridher Swaminathan, First Data • Cheryl Mish, Discover Financial Services
+• Christopher Tomczak, Discover Financial Services • Sadiq Mohammed, Mastercard
+Trademark Notice
+All registered trademarks, trademarks, or service marks are the property of their respective owners.
+About the Secure Technology Alliance Mobile Council
+The Secure Technology Alliance Mobile Council aims to build industry awareness around the business and security impacts of utilizing different technologies for distributing, storing and using secure credentials on personal mobile and tethered wearable devices. The Council believes raising awareness will facilitate broader discussion on creating standards. The Council will create resources to help implementations and accelerate the adoption of payments, loyalty, marketing, peer-to-peer, identity, and access control applications using mobile and tethered wearable devices. The Council focuses on activities that will help to educate the industry on implementation and security considerations and will act as a bridge between technology development/ specification and the applications that can deliver business benefits to industry stakeholders. Additional information on the Mobile Council can be found at https://www.securetechalliance.org/activities-councils-mobile-council/
+&gt;&gt;&gt;
+
+Please answer: "I received part_4 and remember it."
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>I received part_4 and remember it.</p>
+<hr />
+<p><strong>Question:</strong> ALL PARTS SENT</p>
+<p><strong>Answer:</strong></p>
+<p>Thank you. I have received and reviewed all the parts you've sent. Please feel free to ask any questions or request clarifications on the content.</p>
+<hr />
+<p><strong>Question:</strong> How many pages in the document?</p>
+<p><strong>Answer:</strong></p>
+<p>The document has a total of 24 pages.</p>
+<hr />
+<p><strong>Question:</strong> What is the purpose of the document? Please list it.</p>
+<p><strong>Answer:</strong></p>
+<p>The purpose of this document is to provide an educational resource on the Trusted Execution Environment (TEE) and relevant use cases. It aims to build industry awareness around the business and security impacts of utilizing TEE technology in various electronic devices, including personal computing, mobile, and IoT-connected devices. The document covers the fundamentals of TEE, its architecture, use cases, security features, challenges, and considerations for mobile implementation.</p>
+<hr />
+<p><strong>Question:</strong> 'What is multitrust TEE described in the document?</p>
+<p><strong>Answer:</strong></p>
+<p>The document does not specifically mention "multitrust TEE." However, it does discuss how the TEE can support multiple applications with complete separation of content and security. GlobalPlatform has defined a TEE Management Framework (TMF) to administer TEE environments and manage Trusted Applications (TAs) and security domains. The TMF supports the concept of multiple security domains, allowing the provisioning and administration of each TA in its own isolated environment. This might be what you are referring to as a "multitrust TEE" – a TEE that can securely manage multiple applications and maintain separation between them.</p>
+<hr />
+<p><strong>Question:</strong> What are challenges in the document? Please list them.</p>
+<p><strong>Answer:</strong></p>
+<p>The document outlines several challenges faced by some TEE implementations to enable a vibrant third-party ecosystem:</p>
+<ol>
+<li>
+<p>Enabling remote access: TEEs need to be integrated within devices before shipping, and applications and data must be installed remotely. A unique device identity (root of trust) must be embedded to enable remote attestation, secure data transfers, and remote management of Trusted Applications (TAs). TEE providers have to work with chipset manufacturers and device makers to achieve this.</p>
+</li>
+<li>
+<p>Isolating applications from different solution providers: The provisioning process for applications and their data needs to manage separation and include permissions for loading different applications to maintain segregation. GlobalPlatform has defined a TEE Management Framework (TMF) to administer TEE environments and manage TAs and security domains.</p>
+</li>
+<li>
+<p>Enabling secure peripheral access to a wide range of devices: The TEE can provide privileged access to peripherals like a touchscreen with a trusted user interface. However, this feature is not ubiquitous or standardized. Each TEE manufacturer provides its own trusted driver. Secure privileged access to peripherals requires integration within the device before shipping. GlobalPlatform is working on standardizing a generic API for trusted peripherals.</p>
+</li>
+<li>
+<p>The integration of the secure TEE operating system is left to device manufacturers: Although GlobalPlatform specifications define the expected functionality of a TEE implementation, not all manufacturers have adopted it yet. In non-Android devices, the TEE is not open to third parties.</p>
+</li>
+<li>
+<p>Development and management of TAs are hardware/OS specific: For TEE applications to become pervasive in the mass market, a common API should be standardized and deployed across all TEE implementations, similar to JavaCard for Secure Elements (SEs). A common platform API would allow developers to write applications once for all target devices, eliminating the need for multiple implementations of the same application based on the target platform.</p>
+</li>
+</ol>
+<hr />
+<p><strong>Question:</strong> Why not all devices include an SE? Please list them.</p>
+<p><strong>Answer:</strong></p>
+<p>Not all devices include a Secure Element (SE) due to various reasons, some of which are:</p>
+<ol>
+<li>
+<p>Cost: Integrating an SE into a device can increase the overall cost of the device, making it less attractive or affordable for some users. Manufacturers might prioritize other features over SE to keep the device price competitive.</p>
+</li>
+<li>
+<p>Complexity: The integration of an SE requires additional efforts in terms of hardware and software design, which adds complexity to the device manufacturing process. Device manufacturers may choose to avoid this complexity in favor of a more straightforward design.</p>
+</li>
+<li>
+<p>Limited use cases: Some devices may not require the high level of security that an SE provides. In such cases, the added security of an SE might not be considered a priority, and other security measures may be sufficient for the intended use of the device.</p>
+</li>
+<li>
+<p>Form factor constraints: An SE requires physical space on the device's motherboard, and integrating an SE into smaller devices with limited space can be challenging. Manufacturers may opt for alternative security solutions that consume less space.</p>
+</li>
+<li>
+<p>Speed and memory limitations: SEs can have speed, memory, and processing power limitations, which may not be suitable for certain use cases that require faster processing and larger memory capacity.</p>
+</li>
+<li>
+<p>Market demand: Manufacturers may decide not to include an SE in their devices if they believe there is insufficient market demand for the added security that an SE offers.</p>
+</li>
+<li>
+<p>Alternative security solutions: Device manufacturers may choose to implement alternative security solutions, such as Trusted Execution Environments (TEEs), which can offer a balance between security and performance without the need for a dedicated SE.</p>
+</li>
+</ol>
+<p>These reasons contribute to the decision of whether or not to include an SE in a device, depending on the device's target market, intended use, and the priorities of the manufacturer.</p>
+<hr />
+<p><strong>Question:</strong> What are use cases in the document? Please describe each use case in 50 words.</p>
+<p><strong>Answer:</strong></p>
+<ol>
+<li>
+<p>In-device payment transactions: The document discusses the use of TEEs for securing mobile payments, where sensitive data like payment credentials are stored and processed securely within the TEE, providing a safe environment for transactions and reducing the risk of fraud or data breaches.</p>
+</li>
+<li>
+<p>Mobile identity and authentication: The document highlights the use of TEEs in mobile devices for securely managing user identity and authentication processes, ensuring that user credentials are safely stored, processed, and authenticated within a protected environment, preventing unauthorized access to personal or sensitive data.</p>
+</li>
+<li>
+<p>Corporate applications: TEEs can be utilized for securing corporate applications on mobile devices, providing a secure environment for processing and storing sensitive corporate data, ensuring that the data remains protected from unauthorized access or tampering, even if the device's rich OS is compromised.</p>
+</li>
+<li>
+<p>Media streaming: The document mentions the application of TEEs in media streaming, where they can be used to protect copyrighted content and digital rights management (DRM) information, ensuring that the content is only accessed by authorized users and preventing piracy or unauthorized distribution.</p>
+</li>
+<li>
+<p>Host Card Emulation (HCE)-based payments: TEEs can be utilized in HCE-based mobile payment solutions, where payment credentials are stored and processed securely within the TEE, allowing contactless transactions without relying on a dedicated Secure Element, simplifying the deployment process and reducing the reliance on hardware-based security.</p>
+</li>
+<li>
+<p>Mobile wallets and mobile Point of Sale (POS) systems: The document discusses the use of TEEs in mobile wallets and mobile POS systems, where the secure storage and processing of payment credentials and transaction data can help ensure the security and privacy of users and merchants, reducing the risk of fraud and data breaches.</p>
+</li>
+</ol>
+<hr />
+<p><strong>Question:</strong> What about IoT Use Case?</p>
+<p><strong>Answer:</strong></p>
+<p>IoT use case: The document also highlights the application of TEEs in IoT-connected devices, where TEEs can be used to provide a secure environment for processing and storing sensitive data. As IoT devices often collect, process, and transmit vast amounts of data, TEEs can help protect that data from unauthorized access, tampering, or other security threats, ensuring the privacy and security of the data and maintaining the overall integrity of the IoT ecosystem.</p>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>What are TEE challenges described in the chapter "6 TEE Challenges" in the document?
+Please list them.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>In the "6 TEE Challenges" chapter, the document outlines several challenges faced by some TEE implementations to enable a vibrant third-party ecosystem. These challenges include:</p>
+<ol>
+<li>
+<p>Enabling remote access: TEEs are embedded in devices and must be integrated before the device is shipped. Securely loading data onto the device remotely has unique requirements, such as a unique device identity (root of trust).</p>
+</li>
+<li>
+<p>Isolating applications from different solution providers: The provisioning process for applications and their data needs to manage the separation and include permissions for loading different applications to maintain segregation. GlobalPlatform has defined a TEE Management Framework (TMF) to address this.</p>
+</li>
+<li>
+<p>Enabling secure peripheral access to a wide range of devices: Providing privileged access to peripherals, such as touchscreens with trusted user interfaces, requires integration within the device before it is shipped. This feature is neither ubiquitous nor standardized, as each TEE manufacturer provides its own trusted driver. GlobalPlatform is working on standardizing a generic API for trusted peripherals.</p>
+</li>
+<li>
+<p>Lack of standardized common API: Development and management of TAs are hardware/OS specific. A common API should be standardized and deployed across all TEE implementations to allow applications to be written once for all target devices, enabling a large population of application developers to utilize the technology and remain agnostic to the TEE solution.</p>
+</li>
+</ol>
+<hr />
+<p><strong>Question:</strong> What is the challenge that TEE provides privileged access to peripherals?</p>
+<p><strong>Answer:</strong></p>
+<p>The challenge related to TEE providing privileged access to peripherals is the lack of ubiquity and standardization. While this feature is available in many Android devices, it is not uniformly implemented, as each TEE manufacturer provides its own trusted driver.</p>
+<p>Providing privileged access to peripherals, such as touchscreens with trusted user interfaces, requires integration within the device before it is shipped. This integration can be challenging due to the differences in how TEE manufacturers implement their trusted drivers. To address this challenge, GlobalPlatform is working on completing a trusted user interface specification to standardize a generic API for the trusted peripherals, which would make it easier to implement and provide more consistent privileged access across various devices.</p>
+<hr />
+<p><strong>Question:</strong> What is Remote TA Management?</p>
+<p><strong>Answer:</strong></p>
+<p>Remote TA (Trusted Application) Management refers to the ability to remotely deploy, manage, and administer trusted applications within a Trusted Execution Environment (TEE) on a device. Remote TA Management allows third-party developers to create, update, and manage TAs, without requiring direct involvement from device makers or other stakeholders.</p>
+<p>This capability is crucial for a vibrant third-party ecosystem, as it simplifies the process of getting TEE-based solutions to market and makes it more scalable. Devices supporting remote TA management can have new applications and data installed on their TEEs from a remote location, making it easier for developers to create and maintain their solutions, while also providing a more efficient and secure way of handling sensitive data and operations.</p>
+<hr />
+<p><strong>Question:</strong> What is multiple concurrent TAs?</p>
+<p><strong>Answer:</strong></p>
+<p>Multiple concurrent TAs (Trusted Applications) refer to the ability of a Trusted Execution Environment (TEE) to support and run several trusted applications simultaneously, while ensuring complete separation of content and security. This capability allows different solution providers to run their applications within the TEE, isolated from each other and maintaining their own security domains.</p>
+<p>Running multiple concurrent TAs provides enhanced security and allows for the independent management of each application. This ensures that sensitive data and operations from one application cannot be accessed or tampered with by another application, maintaining a high level of security and privacy for each trusted application running within the TEE.</p>
+<hr />
+<p><strong>Question:</strong> What are types of peripherals in the document?</p>
+<p><strong>Answer:</strong></p>
+<p>The document does not provide an extensive list of peripherals, but it does mention one specific peripheral related to the Trusted Execution Environment (TEE) - a touchscreen with a trusted user interface. This peripheral is mentioned in the context of providing privileged access to peripherals through the TEE. A trusted user interface allows for secure input and display of sensitive data, ensuring that data is protected from potential security breaches or unauthorized access.</p>
+<hr />
+<p><strong>Question:</strong> What are two types of peripherals?</p>
+<p><strong>Answer:</strong></p>
+<p>Although the document does not provide a comprehensive list of peripherals, in general, peripherals are any external devices that connect to and enhance the functionality of a computer or mobile device. Two common types of peripherals include:</p>
+<ol>
+<li>
+<p>Input devices: These devices enable users to provide data or input to a computer or mobile device. Examples include keyboards, mice, touchscreens, game controllers, and scanners.</p>
+</li>
+<li>
+<p>Output devices: These devices receive and display data or information from a computer or mobile device. Examples include monitors, printers, speakers, and headphones.</p>
+</li>
+</ol>
+<hr />
+<p><strong>Question:</strong> What are two types of peripherals described in the chapter 3.1?</p>
+<p><strong>Answer:</strong></p>
+<p>In chapter 3.1 of the document, the two types of peripherals mentioned are:</p>
+<ol>
+<li>
+<p>Touchscreen: A touchscreen is an input device that allows users to interact directly with a computer or mobile device by touching the display. The document specifically mentions touchscreens with a trusted user interface, which is a security feature provided by the TEE.</p>
+</li>
+<li>
+<p>Camera: A camera is an input device used to capture images and videos. In the context of the document, the camera is mentioned in relation to biometric authentication, where the camera captures images of a user's face or other biometric features for secure identification.</p>
+</li>
+</ol>
+<hr />
+<p><strong>Question:</strong> What is Multitrust TEE described in the document?</p>
+<p><strong>Answer:</strong></p>
+<p>The document does not specifically mention a "Multitrust TEE." However, it does discuss the Trusted Execution Environment (TEE) in general. TEE is a secure area within a device's main processor that ensures the confidentiality and integrity of sensitive data and applications. It isolates these data and applications from the device's rich operating system (OS), providing an additional layer of security. TEE is used in various electronic devices, including personal computing, mobile, and IoT-connected devices, for use cases like HCE-based payments, mobile wallets, mobile POS, content protection, and connected devices.</p>
+<hr /></article></body></html>

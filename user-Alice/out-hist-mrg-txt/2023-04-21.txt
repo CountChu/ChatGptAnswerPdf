@@ -1,0 +1,35 @@
+2023-04-21
+
+Questions
+
+Keys (230418.SGX.yaml)
+09:17 | What are types of Intel SGX Keys? (SGX.0418.md)
+
+Enclave (230418.SGX.yaml)
+13:56 | What are Intel provided enclaves? (SGX.0418.md)
+
+SIGSTRUCT (230418.SGX.yaml)
+14:45 | Is a SIGSTRUCT a certificate? (SGX.0418.md)
+15:11 | Can I say that SIGSTRUCT contains enclave identity? (SGX.0418.md)
+
+MRSIGNER (230418.SGX.yaml)
+15:23 | [error] Does MRSIGNER reside in SIGSTRUCT? (SGX.0418.md)
+15:40 | What is Intel's hard-coded MRSIGNER? (SGX.0418.md)
+15:41 | What is the value of the hard-coded MRSIGNER provided by Intel? (SGX.0418.md)
+
+My Enclave (230418.SGX.yaml)
+15:58 | Can I create myself enclave with SIGSTRUCT signed by my RSA private key and run the enclave in Intel SGX environment? (SGX.0418.md)
+16:24 | How do I allow the platform owner to trust my enclave? (SGX.0418.md)
+16:26 | Where the trusted signer list reside in Intel SGX environment? (SGX.0418.md)
+
+Chats
+
+SGX.0418.md
+13:53 | What are default enclaves? (SGX.0418.md)
+15:10 | Can I say that SIGSTRUCT is enclave identity? (SGX.0418.md)
+15:30 | Where MRSIGNER reside? (SGX.0418.md)
+15:36 | What is hard-coded MRSIGNER? (SGX.0418.md)
+
+Papers.SGX.0419.md
+15:29 | Does MRSIGNER reside in SIGSTRUCT? (Papers.SGX.0419.md)
+

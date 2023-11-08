@@ -1,0 +1,68 @@
+2023-03-30
+
+Questions
+
+SM & SPM & SPD (230329.TrustZone.yaml)
+09:30 | What are relationships of SPD, SPM and SMC? (TrustZone.0329.md)
+09:35 | What is Secure Monitor? (TrustZone.0329.md)
+09:38 | Is SPD an optional component? (TrustZone.0329.md)
+09:40 | Can I use SPD instead of SM? (TrustZone.0329.md)
+
+Secure Partition (230329.TrustZone.yaml)
+09:41 | Is normal world a secure parition? (TrustZone.0329.md)
+09:42 | Is secure world a secure partition? (TrustZone.0329.md)
+
+Boot (230329.TrustZone.yaml)
+09:44 | Does boot loader only run in secure world, not in normal world? (TrustZone.0329.md)
+21:56 | How to swtich secure world to normal world when booting? (TrustZone.0329.md)
+
+Basic Concepts (230330.OP-TEE.j721e.yaml)
+10:20 | https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-rt-jacinto7/08_04_00_03/exports/docs/linux/Foundational_Components_OPTEE.html?highlight=trusted (OP-TEE.j721e.0330.md)
+10:23 | What is GP? (OP-TEE.j721e.0330.md)
+10:24 | What is RPMB? (OP-TEE.j721e.0330.md)
+10:26 | What is KEK? (OP-TEE.j721e.0330.md)
+10:27 | Is a KEK unique for each device? (OP-TEE.j721e.0330.md)
+
+Basic Concepts (230327.OP-TEE.yaml)
+14:54 | Does OP-TEE only exist in secure world? (OP-TEE.0327.md)
+
+The Website (230330.OP-TEE.Intel.yaml)
+21:35 | https://www.intel.com/content/www/us/en/developer/topic-technology/open/op-tee/overview.html (OP-TEE.Intel.0330.md)
+
+Intel KGT (230330.OP-TEE.Intel.yaml)
+21:39 | What is Intel KGT? (OP-TEE.Intel.0330.md)
+21:41 | Is Intel KGT compatible to TEE? (OP-TEE.Intel.0330.md)
+
+Intel KGT & Intel SGX (230330.OP-TEE.Intel.yaml)
+21:41 | What are difference and same between Intel KGT and Intel SGX? Please summarize them in a table? (OP-TEE.Intel.0330.md)
+21:42 | Intel KGT and Intel SGX. Which one is better? (OP-TEE.Intel.0330.md)
+21:49 | What are isolation methods of Intel KGT and Intel SGX? (OP-TEE.Intel.0330.md)
+21:50 | Can Intel KGT host Intel SGX? (OP-TEE.Intel.0330.md)
+21:50 | Can Intel SGX host Intel KGT? (OP-TEE.Intel.0330.md)
+21:52 | Which isolation method is better? (OP-TEE.Intel.0330.md)
+
+Intel SGX (230330.OP-TEE.Intel.yaml)
+21:43 | Be data in memory enclaves must encrypted in Intel SGX? (OP-TEE.Intel.0330.md)
+21:46 | How do I attack Intel SGX? (OP-TEE.Intel.0330.md)
+21:47 | How are data encrypted in memory enclave in Intel SGX? (OP-TEE.Intel.0330.md)
+
+Intel KGT & Intel SGX (230330.Questions.yaml)
+21:43 | Be data in memory enclaves must encrypted in Intel SGX? (OP-TEE.Intel.0330.md)
+21:46 | How do I attack Intel SGX? (OP-TEE.Intel.0330.md)
+21:47 | How are data encrypted in memory enclave in Intel SGX? (OP-TEE.Intel.0330.md)
+
+Isolation (230330.Questions.yaml)
+21:49 | What are isolation methods of Intel KGT and Intel SGX? (OP-TEE.Intel.0330.md)
+
+Boot (230330.Questions.yaml)
+21:56 | How to swtich secure world to normal world when booting? (TrustZone.0329.md)
+
+Chats
+
+OP-TEE.j721e.0330.md
+10:19 | https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-rt-jacinto7/08_04_00_03/exports/docs/linux/Foundational_Components_OPTEE.html?highlight=trusted (OP-TEE.j721e.0330.md)
+
+OP-TEE.Intel.0330.md
+21:38 | Skip To Main Content ... ... (OP-TEE.Intel.0330.md)
+21:39 | Overview ... ... (OP-TEE.Intel.0330.md)
+

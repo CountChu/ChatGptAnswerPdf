@@ -1,0 +1,1429 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    word-wrap: break-word;
+}
+
+.markdown-body .octicon-link:before {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: '\f05c';
+  vertical-align: middle;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+</style><title>2023-04-20</title></head><body><article class="markdown-body"><h1 id="user-content-2023-04-20"><a class="heading-link" href="#2023-04-20">2023-04-20<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p>Created: 2023-11-08 12:30:26</p>
+<h1 id="user-content-questions"><a class="heading-link" href="#questions">Questions<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>Attestation <code>(230418.SGX.yaml)</code>
+<ul>
+<li>
+<code>[09:22]</code> Is secure boot a hardware or software attestation? <code>(SGX.0418.md)</code>
+</li>
+<li>
+<code>[09:24]</code> Do you mean that UEFI Secure Boot requires TPM? <code>(SGX.0418.md)</code>
+</li>
+</ul>
+</li>
+<li>Enclave <code>(230418.SGX.yaml)</code>
+<ul>
+<li>
+<code>[09:36]</code> What is enclave in Intel SGX? <code>(SGX.0418.md)</code>
+</li>
+<li>
+<code>[09:41]</code> Which key is encrypt memory encrypted by? <code>(SGX.0418.md)</code>
+</li>
+<li>
+<code>[09:43]</code> How does CPU run code in the encrypted memory in enclave? <code>(SGX.0418.md)</code>
+</li>
+<li>
+<code>[17:16]</code> Can a program in an enclave see outside? <code>(SGX.0418.md)</code>
+</li>
+</ul>
+</li>
+<li>MRSIGNER <code>(230418.SGX.yaml)</code>
+<ul>
+<li>
+<code>[09:52]</code> What is MRSIGNER? <code>(SGX.0418.md)</code>
+</li>
+<li>
+<code>[10:19]</code> What is enclave identity described in the paper? <span><code>[error]</code></span> <code>(Papers.SGX.0419.md)</code>
+</li>
+<li>
+<code>[10:34]</code> Who does generate MRSIGNER? <code>(SGX.0418.md)</code>
+</li>
+<li>
+<code>[10:38]</code> So the MRSIGNER value is generated in offline not at runtime. Right? <code>(SGX.0418.md)</code>
+</li>
+<li>
+<code>[10:39]</code> Where is the private key stored? <code>(SGX.0418.md)</code>
+</li>
+</ul>
+</li>
+<li>SIGSTRUCT <code>(230418.SGX.yaml)</code>
+<ul>
+<li>
+<code>[10:59]</code> Please explain the sentence in the paper: "The enclave builder presents the hardware with an RSA signed enclave certificate (SIGSTRUCT)" and list the steps. <code>(Papers.SGX.0419.md)</code>
+</li>
+</ul>
+</li>
+<li>Keys <code>(230418.SGX.yaml)</code>
+<ul>
+<li>
+<code>[11:19]</code> What is Sealing Key? <code>(Papers.SGX.0419.md)</code>
+</li>
+</ul>
+</li>
+<li>Sealing Identity <code>(230418.SGX.yaml)</code>
+<ul>
+<li>
+<code>[11:30]</code> How does "Sealing to the Sealing Identity" work? Please list steps. <code>(Papers.SGX.0419.md)</code>
+</li>
+<li>
+<code>[11:32]</code> Please compare "Sealing to the Enclave Identity" and "Sealing to the Sealing Identity" in a table. <code>(Papers.SGX.0419.md)</code>
+</li>
+</ul>
+</li>
+<li>EPID <code>(230418.SGX.yaml)</code>
+<ul>
+<li>
+<code>[14:20]</code> Does Intel EPID require TPM? <code>(SGX.0418.md)</code>
+</li>
+<li>
+<code>[14:26]</code> How is EPID keys enrolled into a device? <code>(SGX.0418.md)</code>
+</li>
+</ul>
+</li>
+<li>Slideshow - Intro to Intel SGX <code>(230420.Slide.SGX.yaml)</code>
+<ul>
+<li>
+<code>[14:36]</code> Below slideshow is "Intro to Intel SGX" <code>(Slides.SGX.0420.md)</code>
+</li>
+</ul>
+</li>
+<li>My Questions <code>(230420.Slide.SGX.yaml)</code>
+<ul>
+<li>
+<code>[14:39]</code> Why is Intel SGX not suited for password managers? <code>(Slides.SGX.0420.md)</code>
+</li>
+<li>
+<code>[15:01]</code> What does "size of TCB" mean? <code>(Slides.SGX.0420.md)</code>
+</li>
+<li>
+<code>[15:06]</code> What is "accountable decryption"? <code>(Slides.SGX.0420.md)</code>
+</li>
+<li>
+<code>[16:03]</code> What is endorsement key? <code>(Slides.SGX.0420.md)</code>
+</li>
+</ul>
+</li>
+<li>Launch Enclave <code>(230420.Slide.SGX.yaml)</code>
+<ul>
+<li>
+<code>[15:10]</code> What is "Launch Enclave"? <code>(Slides.SGX.0420.md)</code>
+</li>
+<li>
+<code>[15:11]</code> Is Launch Enclave a software? <code>(Slides.SGX.0420.md)</code>
+</li>
+<li>
+<code>[15:12]</code> Does  Launch Enclave  run in OS? <code>(Slides.SGX.0420.md)</code>
+</li>
+<li>
+<code>[15:13]</code> Does the binary of Launch Enclave reside in BIOS or ME? <span><code>[title]</code></span> <code>(Slides.SGX.0420.md)</code>
+</li>
+<li>
+<code>[15:16]</code> Is Launch Enclave provided by another vendor (No Intel)? <code>(Slides.SGX.0420.md)</code>
+</li>
+</ul>
+</li>
+<li>Privacy CA <code>(230420.Slide.SGX.yaml)</code>
+<ul>
+<li>
+<code>[16:14]</code> How does the Solution 1 "Privacy CA for provisioning ak" work? Please list the steps. <code>(Slides.SGX.0420.md)</code>
+</li>
+<li>
+<code>[16:18]</code> What is "Privacy CA"? <code>(Slides.SGX.0420.md)</code>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="user-content-q--a"><a class="heading-link" href="#q--a">Q &amp; A<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<h2 id="user-content-attestation-230418sgxyaml"><a class="heading-link" href="#attestation-230418sgxyaml">Attestation <code>(230418.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[09:22]</code> Is secure boot a hardware or software attestation? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Secure Boot can be considered a form of hardware-based attestation, as it relies on the hardware components of a system to ensure the integrity of the boot process. It leverages the capabilities of a Trusted Platform Module (TPM) or similar security hardware to verify the digital signatures of firmware, boot loaders, and operating system components. This ensures that only trusted software is executed during the boot process.</p>
+<p>However, Secure Boot also involves software components, such as firmware, boot loaders, and digital signature verification routines. So, while it is primarily hardware-based attestation, it also relies on software to perform certain tasks and checks.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:24]</code> Do you mean that UEFI Secure Boot requires TPM? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>I apologize for any confusion. UEFI Secure Boot does not strictly require a Trusted Platform Module (TPM). However, a TPM can be used in conjunction with UEFI Secure Boot to enhance security and provide additional functionality.</p>
+<p>UEFI Secure Boot primarily focuses on verifying the digital signatures of firmware, boot loaders, and operating system components to ensure that only trusted and authorized software is executed during the boot process. This verification process can be carried out without the need for a TPM.</p>
+<p>That said, a TPM can be used to securely store and manage cryptographic keys and attest to the integrity of the boot process, providing a hardware root of trust. When used in combination with UEFI Secure Boot, a TPM can enhance security by offering additional features, such as measuring the boot process, providing a secure way to store cryptographic keys, and supporting remote attestation.</p>
+<p>In summary, while UEFI Secure Boot does not require a TPM, the two can be used together to provide a more secure boot environment.</p>
+<hr>
+<h2 id="user-content-enclave-230418sgxyaml"><a class="heading-link" href="#enclave-230418sgxyaml">Enclave <code>(230418.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[09:36]</code> What is enclave in Intel SGX? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>An enclave in the context of Intel Software Guard Extensions (SGX) is a protected region of memory within the application's address space. This region is isolated and secured from other processes running on the same system, including privileged processes and the operating system itself. The primary purpose of an enclave is to provide a secure environment for executing sensitive code and processing sensitive data.</p>
+<p>When an application creates an enclave, the SGX hardware creates a secure container that encrypts the enclave's memory. This encrypted memory can only be accessed by the enclave's code, and even the operating system or hypervisor cannot directly access it. Enclaves also have their own isolated execution environment, which helps protect against side-channel attacks and other threats.</p>
+<p>Developers can use Intel SGX to create enclaves for various purposes, such as secure key management, encrypted data storage, or privacy-preserving computation. Enclaves are useful for protecting sensitive code and data from potential threats, ensuring the confidentiality and integrity of the data being processed.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:41]</code> Which key is encrypt memory encrypted by? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In Intel SGX, the memory of an enclave is encrypted using a key called the Memory Encryption Engine Key (MEE-K). This key is hardware-generated and unique to each processor. The MEE-K is not accessible to software, ensuring the confidentiality and integrity of the enclave's memory.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:43]</code> How does CPU run code in the encrypted memory in enclave? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>When the CPU executes code inside an enclave, it decrypts the memory contents on-the-fly using the Memory Encryption Engine (MEE) integrated into the CPU. This process is transparent to the software running inside the enclave.</p>
+<p>When data is read from the enclave memory, the MEE decrypts it before passing it to the CPU for processing. When data is written back to the enclave memory, the MEE encrypts it before storing it. This encryption and decryption process is done in real-time and ensures that the code and data inside the enclave are protected from unauthorized access or tampering, even if an attacker has physical access to the system memory.</p>
+<hr>
+<p><strong>Question:</strong> <code>[17:16]</code> Can a program in an enclave see outside? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A program running inside an Intel SGX enclave cannot directly access memory outside the enclave. The enclave's memory is isolated from the rest of the system, including other processes and even the operating system. This isolation helps protect the confidentiality and integrity of the data and code within the enclave.</p>
+<p>However, an enclave program can communicate with the outside world through well-defined interfaces. The enclave can expose secure entry points, called e-calls, that allow the application outside the enclave to call functions within the enclave. Similarly, the enclave can make o-calls to interact with the outside world, for example, to request external services or perform I/O operations.</p>
+<p>These interactions must be carefully designed to avoid leaking sensitive information or exposing vulnerabilities. Data passed between the enclave and the external environment should be appropriately encrypted and authenticated to protect it from unauthorized access or tampering. Additionally, the enclave's exposed interfaces should be minimal and thoroughly reviewed to ensure their security.</p>
+<hr>
+<h2 id="user-content-mrsigner-230418sgxyaml"><a class="heading-link" href="#mrsigner-230418sgxyaml">MRSIGNER <code>(230418.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[09:52]</code> What is MRSIGNER? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>MRSIGNER is a term used in the context of Intel SGX (Software Guard Extensions) to refer to the measurement of the signer of an enclave. It is a 256-bit hash value that represents the public key of the signer who created and signed the enclave. This value is stored within the enclave's metadata and is part of the enclave's identity.</p>
+<p>MRSIGNER is used during the attestation process to ensure that the enclave was created by a trusted party. During attestation, the MRSIGNER value is checked against a list of trusted signer public keys to determine whether the enclave's creator is trusted. If the MRSIGNER matches one of the trusted public keys, the attestation can proceed, indicating that the enclave is genuine and created by a trusted party.</p>
+<hr>
+<p><strong>Question:</strong> <code>[10:19]</code> What is enclave identity described in the paper? <span><code>[error]</code></span> <code>(Papers.SGX.0419.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the paper, the term "enclave identity" refers to the unique identifier associated with an enclave. The enclave identity is a combination of the MRENCLAVE value, which represents the enclave's code and data, and the MRSIGNER value, which represents the enclave's signer or the entity that signed the enclave.</p>
+<p>The enclave identity is used in various security policies, such as attestation and sealing. For example, when an enclave wants to attest its identity to a remote party, it provides a REPORT containing the MRENCLAVE and MRSIGNER values as part of the attestation process. Similarly, when sealing data, the sealing policy may be based on the enclave identity to ensure that the sealed data can only be accessed by specific enclaves with matching MRENCLAVE and/or MRSIGNER values.</p>
+<p>In summary, the enclave identity in the paper is a combination of MRENCLAVE and MRSIGNER values that uniquely identify an enclave, and it is used in various security policies and operations related to attestation and sealing.</p>
+<hr>
+<p><strong>Question:</strong> <code>[10:34]</code> Who does generate MRSIGNER? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>MRSIGNER is generated by the enclave's developer or creator. The developer creates the enclave code and then signs it using their private key. The MRSIGNER value is a hash of the public key that corresponds to the private key used for signing the enclave.</p>
+<p>During the build process, the enclave's code, data, and metadata are combined, and a measurement of the enclave's contents (MRENCLAVE) is calculated. The developer then signs the measurement and other metadata with their private key, creating a signature. The corresponding public key is hashed to generate the MRSIGNER value, which is stored as part of the enclave's metadata.</p>
+<p>When the enclave is loaded and initialized, the MRSIGNER value is checked during the attestation process to verify the enclave's origin and ensure that it was created by a trusted party.</p>
+<hr>
+<p><strong>Question:</strong> <code>[10:38]</code> So the MRSIGNER value is generated in offline not at runtime. Right? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, that's correct. The MRSIGNER value is generated offline during the enclave build process, not at runtime. The enclave developer signs the enclave with their private key, and the corresponding public key is hashed to generate the MRSIGNER value. This value is then stored as part of the enclave's metadata.</p>
+<p>During runtime, the attestation process uses the MRSIGNER value to verify the enclave's origin and ensure that it was created by a trusted party. The value is not generated or altered during runtime.</p>
+<hr>
+<p><strong>Question:</strong> <code>[10:39]</code> Where is the private key stored? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The private key used to sign an enclave is typically stored securely by the enclave developer or their organization. It is crucial to keep the private key confidential to prevent unauthorized access or modification of the enclave software.</p>
+<p>In practice, private keys may be stored in various secure storage solutions, such as hardware security modules (HSMs), encrypted storage, or secure key management systems. The choice of storage depends on the specific security requirements and policies of the organization responsible for the enclave.</p>
+<hr>
+<h2 id="user-content-sigstruct-230418sgxyaml"><a class="heading-link" href="#sigstruct-230418sgxyaml">SIGSTRUCT <code>(230418.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[10:59]</code> Please explain the sentence in the paper: "The enclave builder presents the hardware with an RSA signed enclave certificate (SIGSTRUCT)" and list the steps. <code>(Papers.SGX.0419.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The sentence "The enclave builder presents the hardware with an RSA signed enclave certificate (SIGSTRUCT)" describes a step in the process of creating, loading, and initializing an enclave in the Intel SGX architecture. Let's break down the steps involved:</p>
+<ol>
+<li>
+<p>Enclave Creation: The enclave developer writes the enclave code and prepares it for execution in a secure environment provided by the Intel SGX.</p>
+</li>
+<li>
+<p>Enclave Signing: The enclave developer or a trusted authority signs the enclave using a private key, generating a SIGSTRUCT, which is an RSA-signed enclave certificate. The SIGSTRUCT contains important information about the enclave, such as the MRENCLAVE (measurement of the enclave code), MRSIGNER (measurement of the enclave signer), and various attributes.</p>
+</li>
+<li>
+<p>Enclave Loading: The enclave builder prepares the enclave for loading into the SGX-enabled hardware. This includes setting up the memory layout, copying the enclave code into the secure enclave memory, and preparing any necessary data structures.</p>
+</li>
+<li>
+<p>Presenting SIGSTRUCT to Hardware: In the step described by the sentence, the enclave builder presents the hardware with the SIGSTRUCT. This step is necessary for the hardware to verify the authenticity and integrity of the enclave.</p>
+</li>
+<li>
+<p>Verification by Hardware: The Intel SGX hardware verifies the SIGSTRUCT by checking the RSA signature, the MRENCLAVE, the MRSIGNER, and other attributes. If the verification is successful, the hardware determines that the enclave is authentic and has not been tampered with.</p>
+</li>
+<li>
+<p>Enclave Initialization: If the verification is successful, the hardware initializes the enclave, setting up the necessary runtime environment for the enclave code to execute securely.</p>
+</li>
+<li>
+<p>Secure Execution: Once the enclave is initialized, it can begin secure execution within the protected environment provided by the Intel SGX architecture.</p>
+</li>
+</ol>
+<hr>
+<h2 id="user-content-keys-230418sgxyaml"><a class="heading-link" href="#keys-230418sgxyaml">Keys <code>(230418.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[11:19]</code> What is Sealing Key? <code>(Papers.SGX.0419.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A Sealing Key is a cryptographic key used in Intel SGX (Software Guard Extensions) to protect sensitive data in the context of an enclave. The purpose of the sealing key is to encrypt and decrypt (or "seal" and "unseal") the data, ensuring that it remains confidential and can only be accessed by the enclave that generated the sealing key or other authorized enclaves.</p>
+<p>Sealing keys are derived from a combination of the enclave's identity (MRENCLAVE or MRSIGNER) and the platform-specific key material. This ensures that the sealing keys are unique to a particular enclave and the platform it is running on.</p>
+<p>In the Intel SGX architecture, sealing keys are used for the following purposes:</p>
+<ol>
+<li>
+<p>Confidentiality: Ensuring that the sensitive data remains confidential and is not accessible to unauthorized entities, including other enclaves, applications, or the operating system.</p>
+</li>
+<li>
+<p>Integrity: Protecting the sensitive data from unauthorized modifications and ensuring that it remains consistent and unaltered.</p>
+</li>
+<li>
+<p>Binding: Tying the sensitive data to a specific enclave or group of enclaves, ensuring that only authorized enclaves can access the data.</p>
+</li>
+</ol>
+<p>The sealing and unsealing processes are critical to the overall security of Intel SGX, as they ensure that sensitive data remains protected even when it is stored outside the secure enclave memory or transmitted between enclaves.</p>
+<hr>
+<h2 id="user-content-sealing-identity-230418sgxyaml"><a class="heading-link" href="#sealing-identity-230418sgxyaml">Sealing Identity <code>(230418.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[11:30]</code> How does "Sealing to the Sealing Identity" work? Please list steps. <code>(Papers.SGX.0419.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>"Sealing to the Sealing Identity" refers to the process of encrypting data with a sealing key that is derived from the enclave's identity. This ensures that the sealed data can only be accessed by the same enclave or other authorized enclaves that share the same identity. Here are the steps involved in this process:</p>
+<ol>
+<li>
+<p>Determine the Sealing Identity: The sealing identity is typically a combination of the MRENCLAVE (measurement of the enclave code and data) or MRSIGNER (measurement of the enclave signer) values. It is used as the basis for generating the sealing key.</p>
+</li>
+<li>
+<p>Generate the Sealing Key: The enclave requests a sealing key from the Intel SGX hardware using the EGETKEY instruction. The key is derived from the sealing identity, the platform-specific key material, and the enclave's attributes. This ensures that the sealing key is unique to the enclave and the platform it runs on.</p>
+</li>
+<li>
+<p>Encrypt the Data: The enclave uses the sealing key to encrypt the sensitive data. This process is known as "sealing." It ensures that the data remains confidential and can only be accessed by the enclave that generated the sealing key or other authorized enclaves.</p>
+</li>
+<li>
+<p>Store the Sealed Data: The sealed data can be stored outside the enclave, either in the application's untrusted memory or in a persistent storage location such as a disk file. Since the data is encrypted, it remains protected even when stored outside the secure enclave memory.</p>
+</li>
+<li>
+<p>Unseal the Data: When the enclave or another authorized enclave with the same identity needs to access the sealed data, it follows a similar process to generate the sealing key using the EGETKEY instruction. With the sealing key, the enclave can decrypt and access the sealed data.</p>
+</li>
+<li>
+<p>Verify Integrity: Optionally, the sealing process can also include a message authentication code (MAC) or digital signature to ensure the integrity of the sealed data. During the unsealing process, the enclave verifies the MAC or digital signature to ensure that the data has not been tampered with.</p>
+</li>
+</ol>
+<p>By following these steps, "Sealing to the Sealing Identity" ensures that sensitive data remains confidential and can only be accessed by authorized enclaves that share the same identity. This provides a secure way to store and share data between enclaves and protect it from unauthorized access or tampering.</p>
+<hr>
+<p><strong>Question:</strong> <code>[11:32]</code> Please compare "Sealing to the Enclave Identity" and "Sealing to the Sealing Identity" in a table. <code>(Papers.SGX.0419.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Here is a comparison table of "Sealing to the Enclave Identity" and "Sealing to the Sealing Identity":</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Sealing to the Enclave Identity</th>
+<th>Sealing to the Sealing Identity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity Basis</td>
+<td>MRENCLAVE</td>
+<td>MRENCLAVE or MRSIGNER</td>
+</tr>
+<tr>
+<td>Enclave Measurement</td>
+<td>Unique to each enclave build</td>
+<td>Shared by same signer or enclave</td>
+</tr>
+<tr>
+<td>Key Derivation</td>
+<td>Based on MRENCLAVE</td>
+<td>Based on MRENCLAVE or MRSIGNER</td>
+</tr>
+<tr>
+<td>Use Case</td>
+<td>Specific enclave instance</td>
+<td>Enclaves with same identity</td>
+</tr>
+<tr>
+<td>Data Accessibility</td>
+<td>Limited to the specific enclave</td>
+<td>Accessible by authorized enclaves</td>
+</tr>
+<tr>
+<td>Flexibility</td>
+<td>Lower, tied to a single enclave</td>
+<td>Higher, shared among same identity</td>
+</tr>
+<tr>
+<td>Software Update Considerations</td>
+<td>Need to migrate data to new MRENCLAVE</td>
+<td>Easier with same MRSIGNER</td>
+</tr>
+</tbody>
+</table>
+<p>In summary, "Sealing to the Enclave Identity" provides more restrictive access to sealed data, ensuring that it can only be accessed by a specific enclave instance. This method is suitable for scenarios where data must be strictly protected and accessible only to that specific enclave.</p>
+<p>On the other hand, "Sealing to the Sealing Identity" allows for more flexibility in data access among enclaves with the same identity, which can be based on MRENCLAVE or MRSIGNER. This method is suitable for scenarios where multiple enclaves need to access shared data or when enclaves have a common signer, such as when dealing with software updates or versions.</p>
+<hr>
+<h2 id="user-content-epid-230418sgxyaml"><a class="heading-link" href="#epid-230418sgxyaml">EPID <code>(230418.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[14:20]</code> Does Intel EPID require TPM? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Intel EPID (Enhanced Privacy ID) does not require a Trusted Platform Module (TPM) to function. EPID is a separate privacy-preserving technology designed for remote attestation and device authentication in a scalable and anonymous manner.</p>
+<p>Although both Intel EPID and TPM provide security features, they serve different purposes and can be used independently or in conjunction with each other, depending on the specific use case and security requirements of a system.</p>
+<hr>
+<p><strong>Question:</strong> <code>[14:26]</code> How is EPID keys enrolled into a device? <code>(SGX.0418.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The EPID keys are enrolled into a device during its manufacturing process. Here's an outline of the typical EPID key enrollment process:</p>
+<ol>
+<li>
+<p>Device manufacturer generates an EPID private key and public key pair for each device during the manufacturing process.</p>
+</li>
+<li>
+<p>The device manufacturer contacts the EPID Issuer (which is responsible for managing EPID keys). The manufacturer provides the device's public key and a unique device identifier.</p>
+</li>
+<li>
+<p>The EPID Issuer validates the authenticity of the device manufacturer and the device public key. After validation, the EPID Issuer issues a certificate (also known as an EPID signature) that binds the device's public key to its unique identifier. The certificate serves as proof that the device's public key is part of the EPID group.</p>
+</li>
+<li>
+<p>The device manufacturer then securely stores the EPID private key and the corresponding certificate within the device, typically in a protected storage area.</p>
+</li>
+</ol>
+<p>The enrollment process ensures that each device has a unique EPID key pair and a valid certificate. The private key is securely stored within the device and is used for signing attestation requests, while the public key can be used by remote parties to verify the authenticity of the device's attestation signatures.</p>
+<hr>
+<h2 id="user-content-slideshow---intro-to-intel-sgx-230420slidesgxyaml"><a class="heading-link" href="#slideshow---intro-to-intel-sgx-230420slidesgxyaml">Slideshow - Intro to Intel SGX <code>(230420.Slide.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[14:36]</code> Below slideshow is "Intro to Intel SGX" <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong> ... ...</p>
+<hr>
+<h2 id="user-content-my-questions-230420slidesgxyaml"><a class="heading-link" href="#my-questions-230420slidesgxyaml">My Questions <code>(230420.Slide.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[14:39]</code> Why is Intel SGX not suited for password managers? <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Intel SGX is not well-suited for password managers primarily because of its limitations in handling input/output (I/O) operations. Password managers usually require user interaction for entering master passwords, copying generated passwords, and auto-filling login forms. These actions involve I/O operations that are outside the scope of the enclave's protected environment.</p>
+<p>In addition, Intel SGX is vulnerable to certain side-channel attacks, which can potentially leak sensitive information, such as passwords or encryption keys, by analyzing the access patterns of the CPU cache or other hardware resources. While Intel SGX provides strong isolation and protection against software-based attacks, it cannot completely secure applications that require sensitive I/O operations, such as password managers or banking apps.</p>
+<p>However, this does not mean that Intel SGX is entirely useless for such applications. It can still be used to enhance specific aspects of these applications, like securing the storage and processing of sensitive data within the enclave. But, due to the I/O limitations and side-channel vulnerabilities, it is not a comprehensive solution for securing password managers or similar applications.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:01]</code> What does "size of TCB" mean? <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>"Size of TCB" refers to the size of the Trusted Computing Base. The Trusted Computing Base is a term used in computer security to describe the set of all hardware, firmware, and software components that are critical to a system's security. The TCB is responsible for enforcing the security policies of a system, and its integrity is crucial to maintain the overall security of the system.</p>
+<p>The size of the TCB is an important consideration because it generally correlates with the potential attack surface and the complexity of the system. A smaller TCB typically indicates a more focused and manageable set of components, which can be more easily analyzed, verified, and secured. On the other hand, a larger TCB can introduce more potential vulnerabilities and make it more difficult to ensure the security of the system.</p>
+<p>In the context of hardware security mechanisms, like Intel SGX, a smaller TCB may provide stronger protection against attacks, as there are fewer components that could be exploited. Reducing the size of the TCB is one of the primary goals in designing secure systems, as it helps to minimize the attack surface and the potential for security vulnerabilities.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:06]</code> What is "accountable decryption"? <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Accountable decryption is a concept in cryptography that aims to ensure that the decryption of encrypted data can be traced back to a specific party or entity. This concept is often employed in systems where multiple parties have access to the decryption keys, and it's important to know who decrypted the data for various reasons, such as security, auditing, or legal compliance.</p>
+<p>In an accountable decryption scheme, the decryption process generates a unique proof or decryption tag that can be used to identify the party responsible for the decryption. This proof or tag is often linked to the decryption key or the party's identity in a way that cannot be forged or tampered with. This allows for the attribution of decryption actions to specific parties, enabling better control and monitoring of access to sensitive information.</p>
+<p>Accountable decryption can be implemented through various cryptographic techniques, including threshold cryptography, digital signatures, and zero-knowledge proofs. The choice of technique depends on the specific requirements and the overall system design.</p>
+<hr>
+<p><strong>Question:</strong> <code>[16:03]</code> What is endorsement key? <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>An endorsement key (EK) is a unique, private cryptographic key that is embedded within a security device or module, such as a Trusted Platform Module (TPM) or a hardware security module (HSM). This key is generated during the manufacturing process and is paired with a corresponding public key. The private portion of the endorsement key is never exposed outside of the secure environment and is used to prove the authenticity and integrity of the device.</p>
+<p>The public portion of the endorsement key is typically used along with a certificate issued by the manufacturer, which serves as a proof of the device's authenticity. This certificate is called the endorsement certificate and is used to establish trust in the device's identity during secure communications or attestation processes.</p>
+<p>In summary, the endorsement key is a fundamental component of hardware-based security solutions, as it helps to establish trust and verify the authenticity of a device or module in secure communications and attestation scenarios.</p>
+<hr>
+<h2 id="user-content-launch-enclave-230420slidesgxyaml"><a class="heading-link" href="#launch-enclave-230420slidesgxyaml">Launch Enclave <code>(230420.Slide.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[15:10]</code> What is "Launch Enclave"? <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A Launch Enclave is a secure environment in the context of Intel Software Guard Extensions (SGX), a set of security-related instruction codes that are built into some Intel processors. The Launch Enclave is responsible for verifying and controlling the launch of other secure enclaves within the SGX environment.</p>
+<p>In Intel SGX, enclaves are isolated, protected memory regions that run sensitive code and store sensitive data. They are designed to protect the confidentiality and integrity of this information from external threats, even in the presence of compromised operating systems or hardware.</p>
+<p>The Launch Enclave is a special enclave provided by Intel that plays a crucial role in the SGX ecosystem. When an application wants to create and run a new enclave, it must first request the Launch Enclave to create a launch token. The Launch Enclave verifies the new enclave's identity and attributes, and if everything is in order, it creates the launch token. This token is then used by the application to launch the new enclave.</p>
+<p>By controlling the launch of other enclaves, the Launch Enclave helps maintain the security and integrity of the SGX environment. It ensures that only trusted and authorized enclaves can be created and executed, thus preventing rogue enclaves from compromising the security of the system.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:11]</code> Is Launch Enclave a software? <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the Launch Enclave is a software component provided by Intel as part of the Intel Software Guard Extensions (SGX) framework. It is designed to run within the secure environment of an Intel SGX-enabled processor.</p>
+<p>The Launch Enclave is a specific enclave with predefined functionality that manages the creation and launch of other secure enclaves within the SGX environment. By acting as a gatekeeper, the Launch Enclave helps ensure that only authorized and trusted enclaves are executed, maintaining the overall security of the system.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:12]</code> Does  Launch Enclave  run in OS? <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The Launch Enclave runs within the secure environment provided by Intel SGX, which is a set of security-related instruction codes built into Intel processors. While it is not part of the operating system (OS) itself, it does interact with the OS through a set of APIs and drivers.</p>
+<p>The OS plays a role in managing the resources and interactions between the untrusted, non-secure part of the system and the secure enclave environment. In this sense, the Launch Enclave does run on a system with an OS, but it operates within the protected enclave environment provided by the Intel SGX, isolated from the untrusted portion of the OS.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:13]</code> Does the binary of Launch Enclave reside in BIOS or ME? <span><code>[title]</code></span> <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The binary of the Launch Enclave does not reside in the BIOS or the Intel Management Engine (ME). The Launch Enclave is a part of the Intel SGX software stack, which is installed on the operating system. The Intel SGX software stack includes the Intel SGX SDK and Platform Software (PSW).</p>
+<p>The Launch Enclave is loaded as part of the Intel SGX runtime system when an application wants to create a new enclave. The Launch Enclave binary is signed by Intel, and its primary purpose is to verify and manage the launch of other enclaves, ensuring that they have been signed with an authorized launch key.</p>
+<p>While the Launch Enclave is not directly part of the BIOS or ME, both the BIOS and ME play a role in enabling Intel SGX on the system. The BIOS must support and properly configure the hardware for Intel SGX, and the Intel ME is responsible for managing security features and providing cryptographic services to the system, including those related to Intel SGX.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:16]</code> Is Launch Enclave provided by another vendor (No Intel)? <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>No, the Launch Enclave is provided by Intel as part of the Intel SGX software stack. Intel is responsible for signing the Launch Enclave binary and distributing it as a part of the Intel SGX SDK and Platform Software (PSW). This is an important aspect of the SGX security model, as it allows Intel to maintain control over the trustworthiness of the Launch Enclave and ensure that only authorized enclaves can be launched on SGX-enabled systems.</p>
+<hr>
+<h2 id="user-content-privacy-ca-230420slidesgxyaml"><a class="heading-link" href="#privacy-ca-230420slidesgxyaml">Privacy CA <code>(230420.Slide.SGX.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[16:14]</code> How does the Solution 1 "Privacy CA for provisioning ak" work? Please list the steps. <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>"Privacy CA for provisioning ak" refers to using a Privacy Certification Authority (Privacy CA) to provision an Attestation Key (ak) for a TPM (Trusted Platform Module) while maintaining the privacy of the device. The process allows a TPM to interact with third parties without disclosing its unique identity. Here are the steps involved in this solution:</p>
+<ol>
+<li>
+<p>TPM generates an Attestation Key (ak) pair: The TPM generates a public-private key pair intended for use in attestation. The private part of the key remains within the TPM, while the public part is shared externally.</p>
+</li>
+<li>
+<p>TPM creates an Attestation Key Certificate Request: The TPM generates a certificate signing request (CSR) for the public portion of the Attestation Key. This request typically includes information about the TPM, such as its public Endorsement Key (EK) and the desired ak.</p>
+</li>
+<li>
+<p>Privacy CA verifies TPM identity: The Privacy CA receives the CSR and verifies the authenticity of the TPM using the provided public EK and the corresponding endorsement certificate issued by the TPM manufacturer. The Privacy CA may also check other information, such as the platform's conformance to certain security standards.</p>
+</li>
+<li>
+<p>Privacy CA issues an Attestation Key Certificate: Once the Privacy CA is satisfied with the TPM's authenticity, it signs the CSR and generates an Attestation Key Certificate. This certificate is then sent back to the TPM.</p>
+</li>
+<li>
+<p>TPM receives and stores the Attestation Key Certificate: The TPM securely stores the Attestation Key Certificate, linking the ak to a trusted Privacy CA. This certificate can be used in future attestation processes to establish trust with third parties.</p>
+</li>
+</ol>
+<p>In summary, using a Privacy CA for provisioning an Attestation Key (ak) involves generating an ak pair within the TPM, creating a CSR for the public ak, verifying the TPM's identity by the Privacy CA, issuing an Attestation Key Certificate, and securely storing this certificate in the TPM. This process allows the TPM to prove its authenticity and integrity while preserving its privacy.</p>
+<hr>
+<p><strong>Question:</strong> <code>[16:18]</code> What is "Privacy CA"? <code>(Slides.SGX.0420.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>A Privacy Certification Authority (Privacy CA) is a trusted third-party entity that issues digital certificates in a privacy-preserving manner. Privacy CAs play a crucial role in remote attestation processes for secure hardware platforms, such as Intel SGX (Software Guard Extensions) and Trusted Platform Modules (TPMs).</p>
+<p>The main purpose of a Privacy CA is to verify the authenticity and integrity of a secure hardware platform or an enclave (in the case of Intel SGX) without revealing sensitive information about the platform or enclave to other parties. The Privacy CA is responsible for validating the identity and measurements of the secure platform, and then issuing a digital certificate as proof of the platform's trustworthiness.</p>
+<p>In this process, the Privacy CA acts as an intermediary between the secure platform and the external party seeking to establish a trusted communication channel. The Privacy CA helps to maintain the confidentiality of the platform's sensitive information while still providing the necessary level of assurance to the external party.</p>
+<p>For example, in the context of Intel SGX, the Privacy CA is the Intel Attestation Service (IAS). The IAS issues digital certificates for Intel SGX enclaves after verifying their authenticity and integrity based on measurements provided by the enclave during the remote attestation process.</p>
+<hr>
+</article></body></html>

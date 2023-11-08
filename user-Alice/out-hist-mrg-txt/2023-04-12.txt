@@ -1,0 +1,25 @@
+2023-04-12
+
+Questions
+
+TCB (230407.Arm.Hypervisor.yaml)
+10:36 | What are Security Building Blocks? (Papers.OP-TEE.0406.md)
+10:37 | What compare Security Building Block and TCB and also summarize them in a table. (Papers.OP-TEE.0406.md)
+
+FF-A, TF-A, and TrustZone (230409.FF-A.yaml)
+10:59 | Is TF-A persistent in memory at run-time? (FF-A.0409.md)
+
+Development (230327.OP-TEE.yaml)
+14:47 | What is about size of tee.bin? (OP-TEE.0327.md)
+
+Types of ARM CPU (230410.Arm.yaml)
+16:48 | Can I get Armv8-A with only 32-bit for cost down? (Arm.0410.md)
+
+Chats
+
+OP-TEE.0327.md
+14:46 | What is size of tee.bin? (OP-TEE.0327.md)
+15:37 | Is SMAF of OP-TEE? (OP-TEE.0327.md)
+15:39 | How is SMAF used in DRM? (OP-TEE.0327.md)
+15:41 | What is Clear Key? (OP-TEE.0327.md)
+

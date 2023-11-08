@@ -1,0 +1,66 @@
+2023-04-11
+
+Questions
+
+DRM (230327.OP-TEE.yaml)
+08:58 | How is SMAF used in DRM? (OP-TEE.0327.md)
+10:00 | What is Clear Key? (OP-TEE.0327.md)
+
+Memory (230327.OP-TEE.yaml)
+08:59 | Is SMAF of OP-TEE? (OP-TEE.0327.md)
+
+TrustZone & HSM (230329.TrustZone.yaml)
+14:23 | Is HSM cost than TrustZone? (TrustZone.0329.md)
+14:25 | Is HSM more performance than ARM TrustZone in crypto operations? (TrustZone.0329.md)
+14:27 | What are security certifications of TrustZone? (TrustZone.0329.md)
+
+Static TA and Dynamic TA (230327.OP-TEE.yaml)
+18:46 | Which privilege levels do static TA and dynamic TA run in? (OP-TEE.0327.md)
+
+Multi-Thread & Multi-Process (230327.OP-TEE.yaml)
+18:49 | Is a TA assigned to only one thread? (OP-TEE.0327.md)
+
+Boot (230327.OP-TEE.yaml)
+21:07 | Can I reset OP-TEE at run-time? (OP-TEE.0327.md)
+21:19 | Where does OP-TEE initialize secondary cores? (OP-TEE.0327.md)
+21:23 | Below code comes from part 1 of entry_a64.S of OP-TEE (OP-TEE.0327.md)
+21:24 | Below code comes from part 2 of entry_a64.S of OP-TEE (OP-TEE.0327.md)
+21:25 | Where to set up secondary cores in the given code? (OP-TEE.0327.md)
+21:48 | Where to reset primary core in the given code? (OP-TEE.0327.md)
+21:58 | When to enable secondary cores in OP-TEE? (OP-TEE.0327.md)
+22:11 | Please list functions and macros in entry_a64.S that I give you before. (OP-TEE.0327.md)
+22:18 | Please list functions called in entry_a64.S that I give you before. (OP-TEE.0327.md)
+22:37 | What is psci? (OP-TEE.0327.md)
+22:40 | Who to call vector_cpu_on_entry? (OP-TEE.0327.md)
+22:46 | What does vector_cpu_on_entry do with respect to OP-TEE? (OP-TEE.0327.md)
+23:10 | What are difference boot of OP-TEE between AArch64 and AArch32? (OP-TEE.0327.md)
+
+FF-A, TF-A, and TrustZone (230409.FF-A.yaml)
+21:56 | When to enable secondary cores? (FF-A.0409.md)
+
+TF-A (230410.Arm.yaml)
+22:59 | Which types of ARM cores is supported by TF-A? (FF-A.0409.md)
+23:05 | Must AArch64 have TF-A? (FF-A.0409.md)
+
+Types of ARM CPU (230410.Arm.yaml)
+23:15 | What are types of ARM CPU? Please also describe them in a table with 32 bits and 64 bits. (Arm.0410.md)
+23:18 | Does Armv8-A has 32 bits? (Arm.0410.md)
+23:19 | Does Armv7-A has 64 bits? (Arm.0410.md)
+
+Ch 2 - Introduction (230409.FF-A.yaml)
+23:23 | What is "Arm A-profile"? (FF-A.0409.md)
+23:24 | Does "Arm Firmware Framework for Arm A-profile" document is only about Cortex-A? (FF-A.0409.md)
+
+Chats
+
+OP-TEE.0327.md
+21:51 | What is the set_sp macro? (OP-TEE.0327.md)
+22:08 | Please list functions and macros in entry_a64.S (OP-TEE.0327.md)
+22:10 | Please list functions and macros in entry_a64.S that I sent you before. (OP-TEE.0327.md)
+22:42 | Who to call vector_cpu_on_entry with OP-TEE? (OP-TEE.0327.md)
+
+FF-A.0409.md
+22:58 | Does TF-A support Arm32 or Arm64? (FF-A.0409.md)
+23:01 | Does Armv7-A has 64 bits? (FF-A.0409.md)
+23:13 | Does Armv8-A has 32 bits? (FF-A.0409.md)
+

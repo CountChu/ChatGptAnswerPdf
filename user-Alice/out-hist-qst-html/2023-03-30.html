@@ -1,0 +1,1521 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    word-wrap: break-word;
+}
+
+.markdown-body .octicon-link:before {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: '\f05c';
+  vertical-align: middle;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+</style><title>2023-03-30</title></head><body><article class="markdown-body"><h1 id="user-content-2023-03-30"><a class="heading-link" href="#2023-03-30">2023-03-30<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p>Created: 2023-11-08 12:30:26</p>
+<h1 id="user-content-questions"><a class="heading-link" href="#questions">Questions<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>SM &amp; SPM &amp; SPD <code>(230329.TrustZone.yaml)</code>
+<ul>
+<li>
+<code>[09:30]</code> What are relationships of SPD, SPM and SMC? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[09:35]</code> What is Secure Monitor? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[09:38]</code> Is SPD an optional component? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[09:40]</code> Can I use SPD instead of SM? <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+<li>Secure Partition <code>(230329.TrustZone.yaml)</code>
+<ul>
+<li>
+<code>[09:41]</code> Is normal world a secure parition? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[09:42]</code> Is secure world a secure partition? <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+<li>Boot <code>(230329.TrustZone.yaml)</code>
+<ul>
+<li>
+<code>[09:44]</code> Does boot loader only run in secure world, not in normal world? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[21:56]</code> How to swtich secure world to normal world when booting? <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+<li>Basic Concepts <code>(230330.OP-TEE.j721e.yaml)</code>
+<ul>
+<li>
+<code>[10:20]</code> <a href="https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-rt-jacinto7/08_04_00_03/exports/docs/linux/Foundational_Components_OPTEE.html?highlight=trusted" rel="nofollow">https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-rt-jacinto7/08_04_00_03/exports/docs/linux/Foundational_Components_OPTEE.html?highlight=trusted</a> <code>(OP-TEE.j721e.0330.md)</code>
+</li>
+<li>
+<code>[10:23]</code> What is GP? <code>(OP-TEE.j721e.0330.md)</code>
+</li>
+<li>
+<code>[10:24]</code> What is RPMB? <code>(OP-TEE.j721e.0330.md)</code>
+</li>
+<li>
+<code>[10:26]</code> What is KEK? <code>(OP-TEE.j721e.0330.md)</code>
+</li>
+<li>
+<code>[10:27]</code> Is a KEK unique for each device? <code>(OP-TEE.j721e.0330.md)</code>
+</li>
+</ul>
+</li>
+<li>Basic Concepts <code>(230327.OP-TEE.yaml)</code>
+<ul>
+<li>
+<code>[14:54]</code> Does OP-TEE only exist in secure world? <code>(OP-TEE.0327.md)</code>
+</li>
+</ul>
+</li>
+<li>The Website <code>(230330.OP-TEE.Intel.yaml)</code>
+<ul>
+<li>
+<code>[21:35]</code> <a href="https://www.intel.com/content/www/us/en/developer/topic-technology/open/op-tee/overview.html" rel="nofollow">https://www.intel.com/content/www/us/en/developer/topic-technology/open/op-tee/overview.html</a> <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+</ul>
+</li>
+<li>Intel KGT <code>(230330.OP-TEE.Intel.yaml)</code>
+<ul>
+<li>
+<code>[21:39]</code> What is Intel KGT? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+<li>
+<code>[21:41]</code> Is Intel KGT compatible to TEE? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+</ul>
+</li>
+<li>Intel KGT &amp; Intel SGX <code>(230330.OP-TEE.Intel.yaml)</code>
+<ul>
+<li>
+<code>[21:41]</code> What are difference and same between Intel KGT and Intel SGX? Please summarize them in a table? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+<li>
+<code>[21:42]</code> Intel KGT and Intel SGX. Which one is better? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+<li>
+<code>[21:49]</code> What are isolation methods of Intel KGT and Intel SGX? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+<li>
+<code>[21:50]</code> Can Intel KGT host Intel SGX? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+<li>
+<code>[21:50]</code> Can Intel SGX host Intel KGT? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+<li>
+<code>[21:52]</code> Which isolation method is better? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+</ul>
+</li>
+<li>Intel SGX <code>(230330.OP-TEE.Intel.yaml)</code>
+<ul>
+<li>
+<code>[21:43]</code> Be data in memory enclaves must encrypted in Intel SGX? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+<li>
+<code>[21:46]</code> How do I attack Intel SGX? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+<li>
+<code>[21:47]</code> How are data encrypted in memory enclave in Intel SGX? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+</ul>
+</li>
+<li>Intel KGT &amp; Intel SGX <code>(230330.Questions.yaml)</code>
+<ul>
+<li>
+<code>[21:43]</code> Be data in memory enclaves must encrypted in Intel SGX? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+<li>
+<code>[21:46]</code> How do I attack Intel SGX? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+<li>
+<code>[21:47]</code> How are data encrypted in memory enclave in Intel SGX? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+</ul>
+</li>
+<li>Isolation <code>(230330.Questions.yaml)</code>
+<ul>
+<li>
+<code>[21:49]</code> What are isolation methods of Intel KGT and Intel SGX? <code>(OP-TEE.Intel.0330.md)</code>
+</li>
+</ul>
+</li>
+<li>Boot <code>(230330.Questions.yaml)</code>
+<ul>
+<li>
+<code>[21:56]</code> How to swtich secure world to normal world when booting? <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="user-content-q--a"><a class="heading-link" href="#q--a">Q &amp; A<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<h2 id="user-content-sm--spm--spd-230329trustzoneyaml"><a class="heading-link" href="#sm--spm--spd-230329trustzoneyaml">SM &amp; SPM &amp; SPD <code>(230329.TrustZone.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[09:30]</code> What are relationships of SPD, SPM and SMC? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The Secure Partition Manager (SPM), Secure Partition Dispatcher (SPD), and Secure Monitor Call (SMC) are related concepts in the context of ARM TrustZone technology, which provides a secure and isolated environment for sensitive applications and data. Here's a brief explanation of each concept and their relationships:</p>
+<ol>
+<li>
+<p>Secure Monitor Call (SMC): SMC is a special instruction used to switch between the Secure and Non-Secure states in ARM TrustZone. When SMC is executed, the processor transitions to the Secure state, and the Secure Monitor (typically running at S-EL3) is responsible for handling the call. The Secure Monitor can then perform the requested operation or forward the request to a more specific component, such as the SPM or an SPD.</p>
+</li>
+<li>
+<p>Secure Partition Manager (SPM): The SPM is responsible for managing Secure Partitions (SPs), which are isolated execution environments that host Trusted Applications (TAs) or other secure services. The SPM handles tasks such as creating, initializing, and terminating SPs, as well as managing access to secure resources. When the Non-Secure world needs to access a service provided by an SP, it can use the SMC instruction to request the SPM's assistance.</p>
+</li>
+<li>
+<p>Secure Partition Dispatcher (SPD): The SPD is an optional component that facilitates communication between the Non-Secure world and the Secure world, particularly when using an SMC. The SPD can handle requests from the Non-Secure world, forward them to the appropriate SP, and return the results to the Non-Secure caller. In some implementations, the SPM and SPD can be combined into a single component.</p>
+</li>
+</ol>
+<p>In summary, SMC is an instruction used to transition between Secure and Non-Secure states, while the SPM and SPD are components that manage Secure Partitions and facilitate communication between the two worlds. When an SMC is issued, the request is</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:35]</code> What is Secure Monitor? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The Secure Monitor is a critical component of the ARM TrustZone security technology that acts as an intermediary between the Secure and Non-Secure worlds. It operates at the highest privilege level (S-EL3) within the Secure world, ensuring the integrity and confidentiality of the Secure environment.</p>
+<p>The primary responsibilities of the Secure Monitor include:</p>
+<ol>
+<li>
+<p>Handling transitions between Secure and Non-Secure states: When a Secure Monitor Call (SMC) instruction is executed by the Non-Secure world, the processor switches to the Secure state, and the Secure Monitor takes control to process the request. It can either perform the requested operation or forward the request to other components, such as the Secure Partition Manager (SPM) or a specific Secure Partition (SP).</p>
+</li>
+<li>
+<p>Managing resources and access control: The Secure Monitor oversees access to secure system resources, such as memory regions, peripherals, and cryptographic keys, ensuring that only authorized Secure software components can access them.</p>
+</li>
+<li>
+<p>Enforcing the security policy: The Secure Monitor is responsible for implementing and enforcing the overall security policy for the system. This includes defining the security boundaries between the Secure and Non-Secure worlds, as well as ensuring that the Secure world remains protected from potential attacks originating from the Non-Secure world.</p>
+</li>
+</ol>
+<p>In essence, the Secure Monitor is a vital component of ARM TrustZone that provides a trusted execution environment for security-sensitive applications and data, while also managing the transitions and interactions between the Secure and Non-Secure worlds.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:38]</code> Is SPD an optional component? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, the Secure Partition Dispatcher (SPD) is an optional component within the ARM TrustZone security architecture. The SPD is responsible for managing and scheduling the execution of Secure Partitions (SPs) in the Secure world. It is a more advanced way of handling Secure services compared to the traditional monolithic Secure Monitor, which directly handles Secure world requests.</p>
+<p>Using SPD allows for a more modular and flexible approach to implementing Secure services. However, if your use case does not require the functionality provided by Secure Partitions, you can choose not to include the SPD in your system. In that case, you will rely on the Secure Monitor to handle Secure world requests directly or use a different mechanism for managing Secure services.</p>
+<p>Ultimately, the choice of whether to include an SPD in your system depends on your specific security requirements and the desired level of flexibility and modularity in your Secure software stack.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:40]</code> Can I use SPD instead of SM? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, you can use the Secure Partition Dispatcher (SPD) instead of the traditional Secure Monitor (SM) in your ARM TrustZone-enabled system. The SPD provides a more flexible and modular approach to managing Secure services by handling and scheduling the execution of Secure Partitions (SPs) in the Secure world.</p>
+<p>When using the SPD, the responsibility for managing Secure services is shifted from the monolithic Secure Monitor to the individual Secure Partitions, which are isolated from each other and can be developed and updated independently.</p>
+<p>However, keep in mind that this decision depends on your specific security requirements and the desired level of flexibility and modularity in your Secure software stack. If you choose to use the SPD, it will replace the SM as the primary mechanism for managing Secure services in your system.</p>
+<hr>
+<h2 id="user-content-secure-partition-230329trustzoneyaml"><a class="heading-link" href="#secure-partition-230329trustzoneyaml">Secure Partition <code>(230329.TrustZone.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[09:41]</code> Is normal world a secure parition? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>No, the Normal World is not a Secure Partition. The Normal World and Secure World are separate execution environments in ARM TrustZone-enabled systems. The Secure World is designed for running security-sensitive code and handling sensitive data, whereas the Normal World is intended for running general-purpose applications and operating systems.</p>
+<p>Secure Partitions (SPs) are isolated execution environments within the Secure World. These partitions allow the development and management of security services and Trusted Applications (TAs) independently from each other. They provide additional separation and isolation for sensitive code and data within the Secure World.</p>
+<p>In contrast, the Normal World does not provide the same level of protection and isolation as the Secure World and its Secure Partitions, making it unsuitable for hosting security-critical components.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:42]</code> Is secure world a secure partition? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>No, the Secure World is not a Secure Partition, but it contains Secure Partitions. The Secure World is a separate, protected execution environment enabled by ARM TrustZone technology, designed for running security-sensitive code and handling sensitive data.</p>
+<p>Secure Partitions (SPs) are isolated execution environments within the Secure World. They provide additional separation and isolation for sensitive code and data, allowing the development and management of security services and Trusted Applications (TAs) independently from each other.</p>
+<p>So, while the Secure World provides a protected environment, Secure Partitions offer even more granular isolation within the Secure World itself.</p>
+<hr>
+<h2 id="user-content-boot-230329trustzoneyaml"><a class="heading-link" href="#boot-230329trustzoneyaml">Boot <code>(230329.TrustZone.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[09:44]</code> Does boot loader only run in secure world, not in normal world? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Bootloaders can run in both the Secure World and the Normal World, depending on the specific use case and platform. In a secure boot process, the initial bootloader stages run in the Secure World to ensure the integrity and authenticity of the system's firmware and subsequent software components.</p>
+<p>Once the initial validation is complete, the bootloader may hand over control to the Normal World, allowing the operating system and applications to boot up and run.</p>
+<p>However, in some cases, a bootloader may run entirely in the Normal World if the platform doesn't require secure boot or if the secure boot process is handled differently. Ultimately, whether the bootloader runs in the Secure World or the Normal World depends on the specific hardware, firmware, and security requirements of the system.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:56]</code> How to swtich secure world to normal world when booting? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>When booting a system with TrustZone technology, the processor starts in the Secure World by default. To switch from the Secure World to the Normal World during the boot process, you can follow these general steps:</p>
+<ol>
+<li>
+<p><strong>Initialize the Secure World</strong>: In the Secure World, the secure bootloader initializes the necessary hardware components, sets up the secure environment, and configures the memory and peripherals access permissions.</p>
+</li>
+<li>
+<p><strong>Validate and load the Normal World software</strong>: The secure bootloader validates the Normal World software, such as the operating system or bootloader, using cryptographic techniques like digital signatures. Once validation is successful, it loads the software into the memory designated for the Normal World.</p>
+</li>
+<li>
+<p><strong>Configure the processor</strong>: Before switching to the Normal World, the secure bootloader sets up the processor's state, registers, and exception levels. It also configures the system registers, such as the Secure Configuration Register (SCR) and the Monitor Vector Base Address Register (MVBAR), to define the behavior of the system when switching between the Secure World and the Normal World.</p>
+</li>
+<li>
+<p><strong>Switch to the Normal World</strong>: The secure bootloader performs a Secure Monitor Call (SMC) or an Exception Return (ERET) to switch the processor from the Secure World to the Normal World. This transition is facilitated by the Secure Monitor, which is responsible for handling the state switch between the two worlds.</p>
+</li>
+</ol>
+<p>After these steps, the processor enters the Normal World, and the Normal World software, such as the operating system or bootloader, starts executing.</p>
+<p>Please note that these steps are a general outline and may vary depending on the specific platform, hardware, and firmware implementations.</p>
+<hr>
+<h2 id="user-content-basic-concepts-230330op-teej721eyaml"><a class="heading-link" href="#basic-concepts-230330op-teej721eyaml">Basic Concepts <code>(230330.OP-TEE.j721e.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[10:20]</code> <a href="https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-rt-jacinto7/08_04_00_03/exports/docs/linux/Foundational_Components_OPTEE.html?highlight=trusted" rel="nofollow">https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-rt-jacinto7/08_04_00_03/exports/docs/linux/Foundational_Components_OPTEE.html?highlight=trusted</a> <code>(OP-TEE.j721e.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Based on the information provided, the instructions explain how to build and integrate OP-TEE with the Jacinto 7 Processor for both GP and HS devices. Here's a summary of the steps:</p>
+<ol>
+<li>
+<strong>Get the OP-TEE Source Code</strong>: Clone the OP-TEE source code from GitHub.</li>
+<li>
+<strong>Get the Security Dev Tool</strong>: Clone the TI Security Development Tools repository and set the TI_SECURE_DEV_PKG environment variable.</li>
+<li>
+<strong>Build OP-TEE</strong>: Build the OP-TEE binary for the k3-j721e platform using the provided commands.</li>
+<li>
+<strong>Sign the image for HS</strong>: If you are building for an HS device, sign the tee-pager_v2.bin using the provided script.</li>
+<li>
+<strong>Enable RPMB support and secure storage</strong>: To enable RPMB support along with secure storage, additional flags need to be passed to the build instructions. You can enable the hybrid mode of RPMB along with REE_FS by following the provided example.</li>
+<li>
+<strong>Get and build the OP-TEE Client with RPMB support</strong>: Clone the OP-TEE client source code and build it with the appropriate flags. Then, update the optee-client binary and libraries on your SD card with the generated ones in the out/export/usr folder.</li>
+<li>
+<strong>Build U-Boot with OP-TEE OS</strong>: Follow the instructions to build U-Boot with the TEE parameter pointing to the newly built tee-pager_v2.bin.</li>
+<li>
+<strong>Integrate binary output into U-Boot</strong>: Re-build U-Boot with A72/A53 instructions found under "Build U-Boot," but with the TEE parameter pointing to the newly built tee-pager_v2.bin.</li>
+</ol>
+<p>Remember that tee-pager_v2.bin may be referred to as bl32.bin in other documentation.</p>
+<p>For additional information, you can refer to the official OP-TEE documentation at <a href="https://optee.readthedocs.io/en/latest/" rel="nofollow">https://optee.readthedocs.io/en/latest/</a>.</p>
+<p>Please note that this is a summary of the instructions provided, and you should follow the detailed steps in the original text to build and integrate OP-TEE successfully.</p>
+<hr>
+<p><strong>Question:</strong> <code>[10:23]</code> What is GP? <code>(OP-TEE.j721e.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the context of the instructions provided, "GP" refers to "General Purpose" devices. When discussing Texas Instruments (TI) processors, the term is used to differentiate between two types of devices: General Purpose (GP) and High Security (HS).</p>
+<p>General Purpose (GP) devices are designed for a broad range of applications and use cases. They typically do not include the same level of security features as High Security (HS) devices.</p>
+<p>High Security (HS) devices, on the other hand, are designed with additional security features and are intended for use in applications that require a higher level of security, such as automotive systems, industrial control systems, or other safety-critical applications.</p>
+<p>When building OP-TEE for a Jacinto 7 Processor, you may need to follow different steps depending on whether you are targeting a General Purpose (GP) or High Security (HS) device. For example, the instructions provided mention signing the tee-pager_v2.bin when building for an HS device, which is not required for a GP device.</p>
+<hr>
+<p><strong>Question:</strong> <code>[10:24]</code> What is RPMB? <code>(OP-TEE.j721e.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>RPMB stands for Replay Protected Memory Block. It is a security feature provided in eMMC (embedded Multi-Media Controller) and UFS (Universal Flash Storage) devices. RPMB is designed to offer a secure, tamper-resistant storage area for sensitive data and to protect against replay attacks.</p>
+<p>In the context of OP-TEE and secure storage, RPMB is used to store sensitive information in a protected environment, ensuring data confidentiality and integrity. It can be used in combination with other secure storage options, such as REE_FS (Rich Execution Environment File System), to create a hybrid storage solution. The hybrid mode uses the Secure Storage directory in the RPMB partition to check for the integrity of the data present in it, providing an added layer of security.</p>
+<p>When building OP-TEE with RPMB support, you need to pass additional flags to the build instructions, as mentioned in the provided steps. This enables the use of real eMMC storage instead of the default virtual eMMC storage.</p>
+<hr>
+<p><strong>Question:</strong> <code>[10:26]</code> What is KEK? <code>(OP-TEE.j721e.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>KEK stands for Key Encryption Key. In cryptography and secure systems, a KEK is used to securely transmit and store encryption keys. The main purpose of a KEK is to protect the actual encryption keys (also known as data encryption keys or DEKs) that are used to encrypt and decrypt sensitive data.</p>
+<p>The KEK is used to encrypt the DEKs before they are stored or transmitted, and only authorized systems with the correct KEK can decrypt the DEKs to access the actual encryption keys. This adds an additional layer of security, ensuring that even if the encrypted DEKs are intercepted or compromised, an attacker would still need the KEK to decrypt and use them.</p>
+<p>In the context of TI SoCs (System-on-Chip) with High Security (HS) configuration, a KEK is embedded in the devices and programmed across OP-TEE instances. Each HS device has its own unique signing key, which is different from other HS devices. This further enhances the security of the overall system, making it more difficult for attackers to compromise the sensitive data stored within.</p>
+<hr>
+<p><strong>Question:</strong> <code>[10:27]</code> Is a KEK unique for each device? <code>(OP-TEE.j721e.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the context of Texas Instruments (TI) System-on-Chip (SoC) devices with High Security (HS) configuration, each device does have a unique KEK (Key Encryption Key). This means that each HS device has its own signing key, which is different from other HS devices. This approach enhances the security of the overall system, making it more difficult for attackers to compromise the sensitive data stored within.</p>
+<p>However, it's essential to understand that the uniqueness of a KEK depends on the specific implementation and the security requirements of the system. In some cases, KEKs may be shared among multiple devices or systems to enable secure communication between them.</p>
+<p>In summary, while the KEKs in TI SoCs with HS configuration are unique for each device, the uniqueness of KEKs in other systems may vary depending on the specific implementation and security requirements.</p>
+<hr>
+<h2 id="user-content-basic-concepts-230327op-teeyaml"><a class="heading-link" href="#basic-concepts-230327op-teeyaml">Basic Concepts <code>(230327.OP-TEE.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[14:54]</code> Does OP-TEE only exist in secure world? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE is a Trusted Execution Environment (TEE) that leverages Arm TrustZone technology, which provides hardware-based isolation between the normal world and the secure world. OP-TEE consists of components that exist in both the normal world and the secure world.</p>
+<ol>
+<li>Secure world components:</li>
+</ol>
+<ul>
+<li>Secure kernel: The OP-TEE secure kernel resides in the secure world and manages trusted applications, secure memory, and communication between the normal world and the secure world.</li>
+<li>Trusted applications: These are secure services or applications that run in the secure world and provide functionality that requires a higher level of security and isolation.</li>
+</ul>
+<ol start="2">
+<li>Normal world components:</li>
+</ol>
+<ul>
+<li>TEE Client API: This is a library that normal world applications use to communicate with the secure world. It provides an interface for opening sessions, invoking commands, and managing shared memory with trusted applications.</li>
+<li>TEE supplicant: The TEE supplicant is a user-space daemon in the normal world that handles certain requests from the secure world, such as loading trusted applications, filesystem operations, and cryptographic operations that involve the normal world's resources.</li>
+</ul>
+<p>Both the secure world and normal world components of OP-TEE work together to provide a secure and isolated environment for trusted applications, as well as a communication channel between normal world applications and the secure world.</p>
+<p>In summary, OP-TEE does not only exist in the secure world. It consists of components in both the normal world and the secure world to create a comprehensive TEE solution that leverages Arm TrustZone technology.</p>
+<hr>
+<h2 id="user-content-the-website-230330op-teeintelyaml"><a class="heading-link" href="#the-website-230330op-teeintelyaml">The Website <code>(230330.OP-TEE.Intel.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[21:35]</code> <a href="https://www.intel.com/content/www/us/en/developer/topic-technology/open/op-tee/overview.html" rel="nofollow">https://www.intel.com/content/www/us/en/developer/topic-technology/open/op-tee/overview.html</a> <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The link you provided leads to the Intel website's page about Open-TEE, which is an open-source Trusted Execution Environment (TEE) developed by Intel. Open-TEE is designed to provide a secure and isolated environment for running trusted applications on Intel hardware platforms.</p>
+<p>A TEE is a secure area of a computer system that is isolated from the main operating system and can provide a trusted execution environment for sensitive operations. TEEs are commonly used for tasks such as secure boot, secure storage, and secure authentication.</p>
+<p>Open-TEE is based on the Trusted Computing Group's (TCG) Trusted Platform Module (TPM) specification and provides a standardized interface for interacting with the TEE. Open-TEE is designed to be platform-agnostic and can be used on a wide range of Intel hardware platforms.</p>
+<p>Open-TEE is open-source software and is released under the Apache 2.0 license. The source code is available on GitHub, and developers can contribute to the project and build their own TEE solutions using the Open-TEE codebase.</p>
+<p>Overall, Open-TEE is a useful tool for developers who need to build secure and trusted applications on Intel hardware platforms. By providing a standardized interface for interacting with the TEE, Open-TEE simplifies the development process and makes it easier to create secure applications that can be trusted to protect sensitive data and operations.</p>
+<hr>
+<h2 id="user-content-intel-kgt-230330op-teeintelyaml"><a class="heading-link" href="#intel-kgt-230330op-teeintelyaml">Intel KGT <code>(230330.OP-TEE.Intel.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[21:39]</code> What is Intel KGT? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Intel Kernel Guard Technology (KGT) is an open-source hypervisor that was released by Intel in 2015. It is designed to provide hardware-assisted isolation and protection for critical system resources in a virtualized environment.</p>
+<p>Intel KGT is built on top of the Intel Virtualization Technology (Intel VT) hardware and provides a lightweight and efficient hypervisor that can be used to run untrusted code in a protected environment. It allows the creation of isolated virtual machines that can securely execute guest operating systems and applications, while protecting the host operating system and other virtual machines from potential threats.</p>
+<p>One of the key features of Intel KGT is its ability to create virtual machines (VMs) that are very small in size and consume minimal system resources. This makes it well-suited for use cases where a lightweight hypervisor is needed, such as in embedded systems or IoT devices.</p>
+<p>Overall, Intel KGT is a useful tool for developers who need to build secure and efficient virtualized environments on Intel hardware platforms. As an open-source project, it is also available for developers to customize and contribute to, making it a flexible and versatile option for a wide range of applications.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:41]</code> Is Intel KGT compatible to TEE? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, Intel Kernel Guard Technology (KGT) is compatible with Trusted Execution Environments (TEEs). In fact, one of the use cases for Intel KGT is to provide a lightweight and efficient hypervisor for running a TEE in a virtualized environment.</p>
+<p>TEEs are designed to provide a secure and isolated environment for running trusted applications, and they are commonly used for tasks such as secure boot, secure storage, and secure authentication. By running a TEE in a virtualized environment with Intel KGT, developers can create a secure and efficient platform for running trusted applications that is protected from potential threats.</p>
+<p>Overall, Intel KGT is a useful tool for developers who need to build secure and trusted virtualized environments, including those that utilize TEEs. Its hardware-assisted isolation capabilities, combined with its lightweight design, make it well-suited for use cases where a secure and efficient virtual environment is needed.</p>
+<hr>
+<h2 id="user-content-intel-kgt--intel-sgx-230330op-teeintelyaml"><a class="heading-link" href="#intel-kgt--intel-sgx-230330op-teeintelyaml">Intel KGT &amp; Intel SGX <code>(230330.OP-TEE.Intel.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[21:41]</code> What are difference and same between Intel KGT and Intel SGX? Please summarize them in a table? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Here's a summary table that highlights some of the differences and similarities between Intel Kernel Guard Technology (KGT) and Intel Software Guard Extensions (SGX):</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Intel KGT</th>
+<th>Intel SGX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Lightweight hypervisor for virtualization</td>
+<td>Hardware-based security for protecting code and data</td>
+</tr>
+<tr>
+<td>Protection</td>
+<td>Protects critical system resources in a virtualized environment</td>
+<td>Protects code and data in memory from other processes</td>
+</tr>
+<tr>
+<td>Execution</td>
+<td>Runs untrusted code in a protected environment</td>
+<td>Executes trusted code in a protected environment</td>
+</tr>
+<tr>
+<td>Hardware</td>
+<td>Built on Intel Virtualization Technology (Intel VT) hardware</td>
+<td>Built on special CPU instructions and memory protections</td>
+</tr>
+<tr>
+<td>Use cases</td>
+<td>Embedded systems, IoT devices</td>
+<td>Cloud computing, data center security, edge computing</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>Deploys on existing systems without additional hardware</td>
+<td>Requires hardware support for Intel SGX</td>
+</tr>
+<tr>
+<td>Isolation</td>
+<td>Provides hardware-assisted isolation between virtual machines</td>
+<td>Provides hardware-assisted isolation between trusted and untrusted code</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Open-source software</td>
+<td>Closed-source software</td>
+</tr>
+<tr>
+<td>API</td>
+<td>Provides a set of APIs for interacting with the hypervisor</td>
+<td>Provides a set of APIs for creating and managing secure enclaves</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Designed to protect critical system resources and provide a secure virtual environment</td>
+<td>Designed to protect code and data from unauthorized access and tampering</td>
+</tr>
+</tbody>
+</table>
+<p>While Intel KGT and Intel SGX both provide hardware-assisted security features, they serve different purposes and are used in different use cases. Intel KGT is a lightweight hypervisor that provides hardware-assisted isolation for virtual machines, while Intel SGX is a hardware-based security feature that protects code and data from unauthorized access and tampering. Additionally, Intel KGT is open-source software that can be deployed on existing systems without additional hardware, while Intel SGX requires hardware support for SGX-enabled processors.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:42]</code> Intel KGT and Intel SGX. Which one is better? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>It's difficult to say which technology is "better" between Intel Kernel Guard Technology (KGT) and Intel Software Guard Extensions (SGX), as they serve different purposes and are used in different contexts.</p>
+<p>Intel KGT is a lightweight hypervisor that provides hardware-assisted isolation for virtual machines. It is designed to protect critical system resources in a virtualized environment and is well-suited for use cases such as embedded systems or IoT devices. Its open-source software and ability to deploy on existing systems without additional hardware make it a flexible and versatile option for building secure and efficient virtualized environments.</p>
+<p>On the other hand, Intel SGX is a hardware-based security feature that provides protection for code and data in memory from other processes. It is designed to protect against a wide range of threats, including unauthorized access, tampering, and reverse engineering. Intel SGX is well-suited for use cases such as cloud computing, data center security, and edge computing.</p>
+<p>Ultimately, the choice between Intel KGT and Intel SGX depends on the specific use case and the type of security requirements that need to be met. In some cases, both technologies may even be used together, as they can complement each other to provide a more comprehensive security solution.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:49]</code> What are isolation methods of Intel KGT and Intel SGX? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Both Intel Kernel Guard Technology (KGT) and Intel Software Guard Extensions (SGX) provide isolation mechanisms to protect against unauthorized access and tampering. However, the specific methods of isolation are different for each technology.</p>
+<p>Intel KGT provides isolation through virtualization technology, using a hypervisor to create virtual machines (VMs) that are isolated from each other and the host system. The hypervisor uses Intel VT hardware to enforce isolation between the VMs, ensuring that each VM has its own isolated memory space and access to only the resources that have been explicitly granted. This virtualization-based isolation is similar to the isolation provided by other hypervisors such as VMware or Hyper-V.</p>
+<p>On the other hand, Intel SGX provides isolation through secure enclaves, which are isolated regions of memory within a process that are protected from access by other processes, the operating system, and even the CPU itself. The memory within an enclave is encrypted and can only be accessed by code that has been trusted and signed by the enclave owner. The enclave also includes hardware protections against tampering, such as sealing and attestation, which further enhance its security.</p>
+<p>Overall, both Intel KGT and Intel SGX provide effective isolation mechanisms, but they are used in different contexts and have different strengths and weaknesses. Intel KGT is well-suited for creating secure and isolated virtualized environments, while Intel SGX is designed to protect against a wide range of attacks and provide strong protection for sensitive data and code.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:50]</code> Can Intel KGT host Intel SGX? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, Intel Kernel Guard Technology (KGT) can host Intel Software Guard Extensions (SGX) enclaves within a virtual machine (VM). This allows SGX to be used in a virtualized environment while maintaining the security and isolation benefits of both technologies.</p>
+<p>To host SGX enclaves within a VM using KGT, the hypervisor creates a VM that is configured with the necessary hardware resources to support SGX, such as Intel VT-x and Intel TXT. Within the VM, the operating system and software can then create and manage SGX enclaves as they would on a non-virtualized system.</p>
+<p>However, it is worth noting that hosting SGX within a VM can impact its performance and security. The additional layer of virtualization can introduce overhead and potential vulnerabilities, and it may not be suitable for all use cases. Therefore, it is important to carefully evaluate the security and performance implications of using SGX within a virtualized environment and implement appropriate security measures to mitigate any potential risks.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:50]</code> Can Intel SGX host Intel KGT? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>No, Intel Software Guard Extensions (SGX) cannot host Intel Kernel Guard Technology (KGT).</p>
+<p>SGX is a technology that provides secure enclaves within a process to protect code and data from unauthorized access or tampering. The purpose of SGX is to provide a secure execution environment within a process, while KGT is a lightweight hypervisor that provides isolation and protection for virtual machines.</p>
+<p>While SGX can be used in a virtualized environment, such as within a virtual machine created by a hypervisor like KGT, it cannot host or provide the functionality of KGT itself. KGT is designed to provide hardware-assisted isolation for virtual machines, while SGX is designed to protect code and data within a process.</p>
+<p>Overall, SGX and KGT serve different purposes and are used in different contexts. SGX is well-suited for protecting sensitive code and data within a process, while KGT is well-suited for creating secure and isolated virtualized environments.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:52]</code> Which isolation method is better? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>It is difficult to say which isolation method is better between Intel Kernel Guard Technology (KGT) and Intel Software Guard Extensions (SGX), as they serve different purposes and are used in different contexts.</p>
+<p>KGT provides isolation through virtualization technology, using a hypervisor to create virtual machines (VMs) that are isolated from each other and the host system. This virtualization-based isolation is well-suited for creating secure and isolated virtualized environments, such as in embedded systems or IoT devices.</p>
+<p>SGX, on the other hand, provides isolation through secure enclaves, which are isolated regions of memory within a process that are protected from access by other processes, the operating system, and even the CPU itself. SGX is designed to protect against a wide range of attacks and provide strong protection for sensitive data and code, making it well-suited for use cases such as cloud computing, data center security, and edge computing.</p>
+<p>Overall, the choice between KGT and SGX depends on the specific use case and the type of security requirements that need to be met. Both technologies provide effective isolation mechanisms, but they are used in different contexts and have different strengths and weaknesses. In some cases, both technologies may even be used together, as they can complement each other to provide a more comprehensive security solution.</p>
+<hr>
+<h2 id="user-content-intel-sgx-230330op-teeintelyaml"><a class="heading-link" href="#intel-sgx-230330op-teeintelyaml">Intel SGX <code>(230330.OP-TEE.Intel.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[21:43]</code> Be data in memory enclaves must encrypted in Intel SGX? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, data in memory enclaves must be encrypted in Intel Software Guard Extensions (SGX) to provide protection against unauthorized access or tampering.</p>
+<p>SGX provides a secure enclave within a process that is isolated from the rest of the process and the system. The enclave is created by the process and is encrypted using keys that are generated by the CPU. Data within the enclave is also encrypted using these keys, which means that even if an attacker gains access to the memory of the process, they cannot access or modify the data within the enclave.</p>
+<p>In addition to encryption, SGX also provides other security features such as sealing and attestation. Sealing allows data to be protected and securely transported between enclaves, while attestation verifies the identity and integrity of the enclave to ensure that it has not been tampered with.</p>
+<p>Overall, encryption is a critical component of SGX's security features and is essential for protecting data in memory enclaves from unauthorized access or tampering.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:46]</code> How do I attack Intel SGX? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Attacking Intel Software Guard Extensions (SGX) is a complex task that requires advanced knowledge of the technology and the underlying hardware. While it is not impossible to attack SGX, doing so requires a significant amount of effort and resources. Here are some possible attack vectors that have been identified by security researchers:</p>
+<ol>
+<li>
+<p>Side-channel attacks: Side-channel attacks involve measuring physical characteristics of a system, such as power consumption or electromagnetic radiation, to extract sensitive information. SGX is vulnerable to some types of side-channel attacks, such as cache timing attacks and power analysis attacks.</p>
+</li>
+<li>
+<p>Memory attacks: Memory attacks involve exploiting vulnerabilities in the memory management of a system to gain access to protected data. SGX is designed to protect against memory attacks, but there have been some vulnerabilities identified in the past, such as the Foreshadow attack.</p>
+</li>
+<li>
+<p>Malware attacks: Malware attacks involve infecting a system with malicious software that can bypass SGX protections or steal sensitive data from within the enclave. SGX is not designed to protect against malware attacks, so it is important to ensure that the system is secure and free from malware.</p>
+</li>
+<li>
+<p>Physical attacks: Physical attacks involve physically tampering with the system to gain access to sensitive information. This type of attack is difficult to execute and requires physical access to the system.</p>
+</li>
+</ol>
+<p>It is worth noting that Intel is continually improving SGX and addressing potential vulnerabilities as they are discovered. Regular software updates and security patches should be installed to ensure that the system is protected against known vulnerabilities. Additionally, best practices for secure coding, system hardening, and access control should be followed to reduce the risk of successful attacks.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:47]</code> How are data encrypted in memory enclave in Intel SGX? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Data in memory enclaves in Intel Software Guard Extensions (SGX) is encrypted using a combination of hardware and software encryption mechanisms.</p>
+<p>When an enclave is created, the CPU generates a unique key pair for that enclave, consisting of a public key and a private key. The private key is stored securely within the CPU and cannot be accessed or modified by software outside of the enclave. The public key is used to establish a secure channel between the enclave and the software outside of the enclave.</p>
+<p>Once the secure channel is established, software within the enclave can use standard cryptographic algorithms, such as AES or RSA, to encrypt and decrypt data as needed. The CPU provides hardware support for these cryptographic algorithms, which means that they can be executed within the enclave with minimal performance overhead.</p>
+<p>To protect against potential side-channel attacks, SGX also implements various security features, such as randomizing memory locations, encrypting the entire memory space of the enclave, and using secure hashing algorithms.</p>
+<p>Overall, the combination of hardware and software encryption mechanisms, along with additional security features, provides strong protection for data in memory enclaves in SGX. However, it is still important to follow best practices for secure coding and system hardening to ensure that the system is protected against potential attacks.</p>
+<hr>
+<h2 id="user-content-intel-kgt--intel-sgx-230330questionsyaml"><a class="heading-link" href="#intel-kgt--intel-sgx-230330questionsyaml">Intel KGT &amp; Intel SGX <code>(230330.Questions.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[21:43]</code> Be data in memory enclaves must encrypted in Intel SGX? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, data in memory enclaves must be encrypted in Intel Software Guard Extensions (SGX) to provide protection against unauthorized access or tampering.</p>
+<p>SGX provides a secure enclave within a process that is isolated from the rest of the process and the system. The enclave is created by the process and is encrypted using keys that are generated by the CPU. Data within the enclave is also encrypted using these keys, which means that even if an attacker gains access to the memory of the process, they cannot access or modify the data within the enclave.</p>
+<p>In addition to encryption, SGX also provides other security features such as sealing and attestation. Sealing allows data to be protected and securely transported between enclaves, while attestation verifies the identity and integrity of the enclave to ensure that it has not been tampered with.</p>
+<p>Overall, encryption is a critical component of SGX's security features and is essential for protecting data in memory enclaves from unauthorized access or tampering.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:46]</code> How do I attack Intel SGX? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Attacking Intel Software Guard Extensions (SGX) is a complex task that requires advanced knowledge of the technology and the underlying hardware. While it is not impossible to attack SGX, doing so requires a significant amount of effort and resources. Here are some possible attack vectors that have been identified by security researchers:</p>
+<ol>
+<li>
+<p>Side-channel attacks: Side-channel attacks involve measuring physical characteristics of a system, such as power consumption or electromagnetic radiation, to extract sensitive information. SGX is vulnerable to some types of side-channel attacks, such as cache timing attacks and power analysis attacks.</p>
+</li>
+<li>
+<p>Memory attacks: Memory attacks involve exploiting vulnerabilities in the memory management of a system to gain access to protected data. SGX is designed to protect against memory attacks, but there have been some vulnerabilities identified in the past, such as the Foreshadow attack.</p>
+</li>
+<li>
+<p>Malware attacks: Malware attacks involve infecting a system with malicious software that can bypass SGX protections or steal sensitive data from within the enclave. SGX is not designed to protect against malware attacks, so it is important to ensure that the system is secure and free from malware.</p>
+</li>
+<li>
+<p>Physical attacks: Physical attacks involve physically tampering with the system to gain access to sensitive information. This type of attack is difficult to execute and requires physical access to the system.</p>
+</li>
+</ol>
+<p>It is worth noting that Intel is continually improving SGX and addressing potential vulnerabilities as they are discovered. Regular software updates and security patches should be installed to ensure that the system is protected against known vulnerabilities. Additionally, best practices for secure coding, system hardening, and access control should be followed to reduce the risk of successful attacks.</p>
+<hr>
+<p><strong>Question:</strong> <code>[21:47]</code> How are data encrypted in memory enclave in Intel SGX? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Data in memory enclaves in Intel Software Guard Extensions (SGX) is encrypted using a combination of hardware and software encryption mechanisms.</p>
+<p>When an enclave is created, the CPU generates a unique key pair for that enclave, consisting of a public key and a private key. The private key is stored securely within the CPU and cannot be accessed or modified by software outside of the enclave. The public key is used to establish a secure channel between the enclave and the software outside of the enclave.</p>
+<p>Once the secure channel is established, software within the enclave can use standard cryptographic algorithms, such as AES or RSA, to encrypt and decrypt data as needed. The CPU provides hardware support for these cryptographic algorithms, which means that they can be executed within the enclave with minimal performance overhead.</p>
+<p>To protect against potential side-channel attacks, SGX also implements various security features, such as randomizing memory locations, encrypting the entire memory space of the enclave, and using secure hashing algorithms.</p>
+<p>Overall, the combination of hardware and software encryption mechanisms, along with additional security features, provides strong protection for data in memory enclaves in SGX. However, it is still important to follow best practices for secure coding and system hardening to ensure that the system is protected against potential attacks.</p>
+<hr>
+<h2 id="user-content-isolation-230330questionsyaml"><a class="heading-link" href="#isolation-230330questionsyaml">Isolation <code>(230330.Questions.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[21:49]</code> What are isolation methods of Intel KGT and Intel SGX? <code>(OP-TEE.Intel.0330.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Both Intel Kernel Guard Technology (KGT) and Intel Software Guard Extensions (SGX) provide isolation mechanisms to protect against unauthorized access and tampering. However, the specific methods of isolation are different for each technology.</p>
+<p>Intel KGT provides isolation through virtualization technology, using a hypervisor to create virtual machines (VMs) that are isolated from each other and the host system. The hypervisor uses Intel VT hardware to enforce isolation between the VMs, ensuring that each VM has its own isolated memory space and access to only the resources that have been explicitly granted. This virtualization-based isolation is similar to the isolation provided by other hypervisors such as VMware or Hyper-V.</p>
+<p>On the other hand, Intel SGX provides isolation through secure enclaves, which are isolated regions of memory within a process that are protected from access by other processes, the operating system, and even the CPU itself. The memory within an enclave is encrypted and can only be accessed by code that has been trusted and signed by the enclave owner. The enclave also includes hardware protections against tampering, such as sealing and attestation, which further enhance its security.</p>
+<p>Overall, both Intel KGT and Intel SGX provide effective isolation mechanisms, but they are used in different contexts and have different strengths and weaknesses. Intel KGT is well-suited for creating secure and isolated virtualized environments, while Intel SGX is designed to protect against a wide range of attacks and provide strong protection for sensitive data and code.</p>
+<hr>
+<h2 id="user-content-boot-230330questionsyaml"><a class="heading-link" href="#boot-230330questionsyaml">Boot <code>(230330.Questions.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[21:56]</code> How to swtich secure world to normal world when booting? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>When booting a system with TrustZone technology, the processor starts in the Secure World by default. To switch from the Secure World to the Normal World during the boot process, you can follow these general steps:</p>
+<ol>
+<li>
+<p><strong>Initialize the Secure World</strong>: In the Secure World, the secure bootloader initializes the necessary hardware components, sets up the secure environment, and configures the memory and peripherals access permissions.</p>
+</li>
+<li>
+<p><strong>Validate and load the Normal World software</strong>: The secure bootloader validates the Normal World software, such as the operating system or bootloader, using cryptographic techniques like digital signatures. Once validation is successful, it loads the software into the memory designated for the Normal World.</p>
+</li>
+<li>
+<p><strong>Configure the processor</strong>: Before switching to the Normal World, the secure bootloader sets up the processor's state, registers, and exception levels. It also configures the system registers, such as the Secure Configuration Register (SCR) and the Monitor Vector Base Address Register (MVBAR), to define the behavior of the system when switching between the Secure World and the Normal World.</p>
+</li>
+<li>
+<p><strong>Switch to the Normal World</strong>: The secure bootloader performs a Secure Monitor Call (SMC) or an Exception Return (ERET) to switch the processor from the Secure World to the Normal World. This transition is facilitated by the Secure Monitor, which is responsible for handling the state switch between the two worlds.</p>
+</li>
+</ol>
+<p>After these steps, the processor enters the Normal World, and the Normal World software, such as the operating system or bootloader, starts executing.</p>
+<p>Please note that these steps are a general outline and may vary depending on the specific platform, hardware, and firmware implementations.</p>
+<hr>
+</article></body></html>

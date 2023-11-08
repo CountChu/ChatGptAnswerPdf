@@ -1,0 +1,39 @@
+2023-04-04
+
+Questions
+
+CPU (230329.TrustZone.yaml)
+09:25 | What are SCP and AP? (TrustZone.0329.md)
+09:26 | Do SCP and AP in ARM share memory? (TrustZone.0329.md)
+14:20 | What is differenct between Armv8-A and Armv8-M? Please summarize as a table. (TrustZone.0329.md)
+
+Boot (230327.OP-TEE.yaml)
+09:29 | Why does OP-TEE initialize secondary cores when reset? (OP-TEE.0327.md)
+
+Recover OP-TEE (230327.OP-TEE.yaml)
+09:37 | How to detect OP-TEE dead? (OP-TEE.0327.md)
+09:39 | How to automatically recovery the crashed OP-TEE? (OP-TEE.0327.md)
+09:42 | Can I develop a dual OP-TEE so that if one is crashed, run another. (OP-TEE.0327.md)
+10:24 | How to detect if OP-TEE is tamperred at run-time? (OP-TEE.0327.md)
+
+Static TA and Dynamic TA (230327.OP-TEE.yaml)
+10:08 | How to recover a crashed static TA? (OP-TEE.0327.md)
+10:10 | How to recover a crashed dynamic TA? (OP-TEE.0327.md)
+
+TrustZone & HSM (230329.TrustZone.yaml)
+10:18 | What is difference between TrustZone and HSM? Please also summarize in a table. (TrustZone.0329.md)
+10:19 | What are relationships between TrustZone and HSM? (TrustZone.0329.md)
+10:20 | Can TrustZone totally replace HSM? (TrustZone.0329.md)
+
+Attack (230327.OP-TEE.yaml)
+14:49 | Whare are kinds of methods to attack OP-TEE? (OP-TEE.0327.md)
+
+Chats
+
+OP-TEE.0327.md
+09:38 | How to recovery the dead OP-TEE? (OP-TEE.0327.md)
+10:23 | Hot to detect if OP-TEE is tamperred at run-time? (OP-TEE.0327.md)
+
+TrustZone.0329.md
+14:19 | What is differenct between Armv8-A and Armv8-M (TrustZone.0329.md)
+

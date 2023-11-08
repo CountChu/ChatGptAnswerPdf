@@ -1,0 +1,2009 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    word-wrap: break-word;
+}
+
+.markdown-body .octicon-link:before {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  content: '\f05c';
+  vertical-align: middle;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+</style><title>2023-03-28</title></head><body><article class="markdown-body"><h1 id="user-content-2023-03-28"><a class="heading-link" href="#2023-03-28">2023-03-28<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<p>Created: 2023-11-08 12:49:09</p>
+<h1 id="user-content-questions"><a class="heading-link" href="#questions">Questions<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>Basic Concepts <code>(230327.OP-TEE.yaml)</code>
+<ul>
+<li>
+<code>[09:12]</code> What is OP-TEE? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[09:13]</code> What is thre prefix OP of OP-TEE? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[09:13]</code> Are there alternative technologies of OP-TEE? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[09:14]</code> Does OP-TEE a software or a hardware solution? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[09:15]</code> Is OP-TEE a firmware? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[09:15]</code> Are there successfull cases of OP-TEE? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[09:16]</code> What are different between ARM OP-TEE and Intel SMM? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[15:19]</code> <a href="https://github.com/OP-TEE">https://github.com/OP-TEE</a> <code>(OP-TEE.0327.md)</code>
+</li>
+</ul>
+</li>
+<li>Multi-Thread &amp; Multi-Process <code>(230327.OP-TEE.yaml)</code>
+<ul>
+<li>
+<code>[13:51]</code> What is secure context switching in TrustZone? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[13:53]</code> Does OP-TEE support multi-process? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[13:56]</code> Can secure kernel and trusted applications in OP-TEE can be multi-thread? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[13:57]</code> Does OP-TEE support IPC? <code>(OP-TEE.0327.md)</code>
+</li>
+</ul>
+</li>
+<li>Memory <code>(230327.OP-TEE.yaml)</code>
+<ul>
+<li>
+<code>[13:59]</code> Does OP-TEE support shared memory? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[14:06]</code> Can secure world can access memory in normal world? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[14:07]</code> Can normal world access memory in secure world? <code>(OP-TEE.0327.md)</code>
+</li>
+</ul>
+</li>
+<li>Network <code>(230327.OP-TEE.yaml)</code>
+<ul>
+<li>
+<code>[14:08]</code> Does OP-TEE support network communication in secure world? <code>(OP-TEE.0327.md)</code>
+</li>
+</ul>
+</li>
+<li>The ariticle <code>(230329.TrustZone.yaml)</code>
+<ul>
+<li>
+<code>[15:30]</code> <a href="https://genode.org/documentation/articles/trustzone" rel="nofollow">https://genode.org/documentation/articles/trustzone</a> <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[15:31]</code> Please summarize the following articles in short. <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:37]</code> Please compare TrustZone and TPM in a table. <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:40]</code> What is bootstrap code? <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:44]</code> What are two lines in the section "Starting point" in the article? <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="user-content-chats"><a class="heading-link" href="#chats">Chats<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<ul>
+<li>OP-TEE.0327.md
+<ul>
+<li>
+<code>[09:17]</code> What is RPMB? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[09:18]</code> What is HS in OP-TEE? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[09:19]</code> What is KEK in OP-TEE? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[13:45]</code> Does OP-TEE support multi-thread? <code>(OP-TEE.0327.md)</code>
+</li>
+<li>
+<code>[14:03]</code> Please summarize multi-process, IPC, and shared memory of OP-TEE. <code>(OP-TEE.0327.md)</code>
+</li>
+</ul>
+</li>
+<li>TrustZone.0329.md
+<ul>
+<li>
+<code>[15:32]</code> An Exploration of ARM TrustZone Technology ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[15:33]</code> Starting point ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[15:34]</code> The design and genesis of our custom base-hw kernel platform ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[15:37]</code> Hypervisor managing the non-secure world ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[15:38]</code> World switch between non-secure world and secure world ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:26]</code> User-level Virtual Machine Monitor (VMM) ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:26]</code> Simple test kernel for the non-secure world ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:27]</code> Interrupts ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:28]</code> Booting Linux in the non-secure world ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:28]</code> Device emulation ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:29]</code> TrustZone demonstrated in color ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:30]</code> Additional device drivers ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:30]</code> Demonstration scenario ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:31]</code> Common questions, answered ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:32]</code> Does it make sense to run commodity OSes like Android in the secure world? ... ... <code>(TrustZone.0329.md)</code>
+</li>
+<li>
+<code>[17:43]</code> What are two lines of experimentation? Please summarize them in short. <code>(TrustZone.0329.md)</code>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="user-content-q--a"><a class="heading-link" href="#q--a">Q &amp; A<span aria-hidden="true" class="octicon octicon-link"></span></a></h1>
+<h2 id="user-content-basic-concepts-230327op-teeyaml"><a class="heading-link" href="#basic-concepts-230327op-teeyaml">Basic Concepts <code>(230327.OP-TEE.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[09:12]</code> What is OP-TEE? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong> ... ...</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:13]</code> What is thre prefix OP of OP-TEE? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The prefix "OP" in OP-TEE stands for "Open Portable." It signifies that the project is an open-source implementation of a Trusted Execution Environment (TEE) that can be portably used across various platforms, mainly built around Arm TrustZone technology. The name highlights the goals of providing both transparency and flexibility to developers and users who want to create secure applications and services on a wide range of devices.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:13]</code> Are there alternative technologies of OP-TEE? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, there are alternative technologies to OP-TEE that provide trusted execution environments or similar security features. Some of them include:</p>
+<ol>
+<li>
+<p>Intel SGX (Software Guard Extensions): Intel SGX is a set of security-related instruction codes that are built into some Intel CPUs. It allows developers to create secure enclaves, which are isolated memory regions that protect sensitive data and code from unauthorized access, even from the host operating system or a hypervisor.</p>
+</li>
+<li>
+<p>AMD SEV (Secure Encrypted Virtualization): AMD SEV is a hardware feature found in some AMD processors that encrypts the memory of virtual machines to protect data from unauthorized access. It aims to provide a secure execution environment for applications running in virtualized environments.</p>
+</li>
+<li>
+<p>ARM TrustZone-M: TrustZone-M is a security extension for ARM Cortex-M processors, targeting microcontroller devices used in IoT, industrial control, and other embedded systems. While OP-TEE targets TrustZone technology in application processors, TrustZone-M is tailored for microcontrollers.</p>
+</li>
+<li>
+<p>Google Titan M: Titan M is a custom security chip developed by Google to provide a secure environment for storing sensitive data and performing cryptographic operations on its Pixel smartphones. It is designed to protect the integrity of the bootloader, verify the operating system, and secure user data.</p>
+</li>
+<li>
+<p>Apple Secure Enclave: The Secure Enclave is a coprocessor found in Apple devices, such as iPhones and iPads, that provides a secure environment for cryptographic operations and storage of sensitive data like encryption keys, biometric information, and device passcodes.</p>
+</li>
+</ol>
+<p>These technologies may have different implementations, features, and target applications, but they all aim to enhance security by providing isolated execution environments and protecting sensitive data from unauthorized access.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:14]</code> Does OP-TEE a software or a hardware solution? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE is primarily a software solution that leverages underlying hardware capabilities, specifically Arm TrustZone technology, to provide a secure and trusted execution environment for software applications on devices.</p>
+<p>OP-TEE includes a secure kernel, trusted applications, and APIs that enable secure communication between the normal and secure worlds. While OP-TEE is a software implementation, it relies on the hardware-based security features provided by Arm TrustZone to create a separate, secure area for sensitive data and code execution.</p>
+<p>In summary, OP-TEE is a software solution that takes advantage of hardware-based security technologies to achieve its goals of providing a secure environment for running trusted applications.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:15]</code> Is OP-TEE a firmware? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE can be considered a firmware component, as it is a low-level software that interacts directly with the hardware and provides security services to the system. It serves as the trusted execution environment for devices using Arm TrustZone technology.</p>
+<p>Firmware is a type of software that is typically stored in non-volatile memory and provides basic functionality or services to a device's hardware. In the case of OP-TEE, it provides the secure kernel, trusted applications, and APIs for managing and interacting with the secure environment.</p>
+<p>OP-TEE is often integrated into the boot process of a device, alongside other firmware components like the bootloader, and it initializes the secure environment before the main operating system starts. This ensures that the secure services and trusted applications provided by OP-TEE are available to the system throughout its operation.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:15]</code> Are there successfull cases of OP-TEE? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, there have been successful use cases of OP-TEE across various industries and applications that require a secure and trusted execution environment. Some of these include:</p>
+<ol>
+<li>
+<p>Mobile devices: OP-TEE is used in mobile devices like smartphones and tablets to provide a secure environment for handling sensitive data, such as biometric information, cryptographic keys, and DRM (Digital Rights Management) protection.</p>
+</li>
+<li>
+<p>IoT devices: Internet of Things (IoT) devices, such as smart home appliances, wearables, and industrial sensors, benefit from the security provided by OP-TEE. It enables these devices to handle sensitive data securely, execute cryptographic operations, and maintain the confidentiality and integrity of the data being transmitted.</p>
+</li>
+<li>
+<p>Automotive systems: OP-TEE can be used in automotive systems to secure in-vehicle communication, protect sensitive data, and enable secure over-the-air updates.</p>
+</li>
+<li>
+<p>Payment systems: OP-TEE can provide a secure environment for payment applications, ensuring the confidentiality and integrity of financial transactions and sensitive user data.</p>
+</li>
+<li>
+<p>Healthcare devices: Medical devices and healthcare systems can utilize OP-TEE to securely store and process patient data, protecting it from unauthorized access and tampering.</p>
+</li>
+</ol>
+<p>While specific implementations may vary, these examples demonstrate the versatility and effectiveness of OP-TEE in providing a secure and trusted environment for a wide range of applications. The open-source nature of OP-TEE also makes it possible for developers and organizations to customize and adapt the software to fit their unique security requirements.</p>
+<hr>
+<p><strong>Question:</strong> <code>[09:16]</code> What are different between ARM OP-TEE and Intel SMM? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>ARM OP-TEE and Intel SMM are different security technologies that provide secure and isolated execution environments for sensitive operations. Here's a comparison of the two:</p>
+<ol>
+<li>ARM OP-TEE:</li>
+</ol>
+<ul>
+<li>Primarily designed for ARM-based platforms using TrustZone technology.</li>
+<li>Open-source implementation, maintained by Linaro.</li>
+<li>Provides a secure kernel, trusted applications, and APIs for communication between the normal and secure worlds.</li>
+<li>Focuses on creating a Trusted Execution Environment (TEE) for secure application execution.</li>
+<li>Targets a variety of industries, including mobile devices, IoT, automotive systems, and more.</li>
+</ul>
+<ol start="2">
+<li>Intel SMM (System Management Mode):</li>
+</ol>
+<ul>
+<li>Designed for Intel x86 processors.</li>
+<li>A proprietary implementation by Intel.</li>
+<li>Provides a separate CPU mode (SMM) with its own address space and execution environment.</li>
+<li>Focuses on handling low-level system management tasks, such as power management, hardware monitoring, and firmware updates.</li>
+<li>Primarily used for system management tasks on PCs, servers, and other x86-based systems.</li>
+</ul>
+<p>Summary in a table:</p>
+<table>
+<thead>
+<tr>
+<th>Feature/Aspect</th>
+<th>ARM OP-TEE</th>
+<th>Intel SMM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Platform</td>
+<td>ARM-based systems</td>
+<td>Intel x86 processors</td>
+</tr>
+<tr>
+<td>Implementation</td>
+<td>Open-source</td>
+<td>Proprietary</td>
+</tr>
+<tr>
+<td>Primary Focus</td>
+<td>Trusted Execution Environment (TEE)</td>
+<td>System Management Tasks</td>
+</tr>
+<tr>
+<td>Typical Applications</td>
+<td>Mobile, IoT, automotive, etc.</td>
+<td>PCs, servers, x86-based systems</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>ARM TrustZone</td>
+<td>System Management Mode</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that while both technologies provide a secure and isolated execution environment, they serve different purposes and target different platforms. ARM OP-TEE is designed to enable secure applications on ARM-based devices, while Intel SMM is used for low-level system management tasks on Intel x86-based systems.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:19]</code> <a href="https://github.com/OP-TEE">https://github.com/OP-TEE</a> <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong> ... ...</p>
+<hr>
+<h2 id="user-content-multi-thread--multi-process-230327op-teeyaml"><a class="heading-link" href="#multi-thread--multi-process-230327op-teeyaml">Multi-Thread &amp; Multi-Process <code>(230327.OP-TEE.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[13:51]</code> What is secure context switching in TrustZone? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Secure context switching in TrustZone refers to the process of transitioning between different secure contexts (trusted applications) within the secure world while maintaining isolation and security. ARM TrustZone technology provides a hardware-based separation between the normal world and the secure world, allowing both to run independently and securely.</p>
+<p>In the context of OP-TEE and TrustZone, when multiple trusted applications are running or when a normal world application requests a service from a trusted application, the secure kernel manages the execution of these trusted applications by performing secure context switching. This involves:</p>
+<ol>
+<li>
+<p>Saving the current context: The secure kernel saves the current state of the active trusted application, including its register values and memory, in a secure location.</p>
+</li>
+<li>
+<p>Restoring the new context: The secure kernel restores the state of the trusted application that is being switched to by loading its previously saved register values and memory.</p>
+</li>
+<li>
+<p>Switching execution: The secure kernel transfers control to the new trusted application, allowing it to continue executing where it left off.</p>
+</li>
+</ol>
+<p>Secure context switching ensures that each trusted application's state is kept separate and secure from others, maintaining isolation and preventing unauthorized access or tampering. Additionally, it allows the secure kernel to manage the concurrent execution of multiple trusted applications and handle requests from normal world applications efficiently.</p>
+<p>In summary, secure context switching in TrustZone is the process of managing and transitioning between different trusted applications within the secure world while maintaining isolation, security, and efficient execution.</p>
+<hr>
+<p><strong>Question:</strong> <code>[13:53]</code> Does OP-TEE support multi-process? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE supports multiple trusted applications (TAs) running concurrently within the secure environment provided by the Arm TrustZone. While the secure world in OP-TEE is primarily single-threaded, it can handle multiple processes in the form of trusted applications.</p>
+<p>When multiple trusted applications are loaded and running, OP-TEE manages their execution using secure context switching. This ensures that only one trusted application is active at a time, while maintaining isolation and security between different trusted applications. The secure kernel in OP-TEE is responsible for managing resources, handling requests from the normal world, and switching between the trusted applications as needed.</p>
+<p>On the normal world side, multiple processes can communicate with different trusted applications simultaneously, and OP-TEE will manage the context switching between them.</p>
+<p>In summary, OP-TEE supports multi-process execution in the form of multiple trusted applications running concurrently within the secure environment, while also allowing multiple normal world processes to communicate with these trusted applications.</p>
+<hr>
+<p><strong>Question:</strong> <code>[13:56]</code> Can secure kernel and trusted applications in OP-TEE can be multi-thread? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>As of now, the secure kernel and trusted applications in OP-TEE are primarily single-threaded. The secure world in OP-TEE does not support multi-threading within a single trusted application, meaning each trusted application can only execute one thread at a time.</p>
+<p>However, OP-TEE does support parallelism in the sense that it allows multiple trusted applications to be loaded and executed concurrently. This is achieved through the use of secure context switching between different trusted applications, ensuring that only one trusted application is active at a time.</p>
+<p>Although the secure environment itself is single-threaded, OP-TEE still enables concurrent communication with normal world applications. Multiple normal world applications can communicate with different trusted applications simultaneously, and OP-TEE will manage the context switching between them.</p>
+<p>In summary, the secure kernel and trusted applications in OP-TEE are primarily single-threaded, but parallelism is achieved through secure context switching between multiple trusted applications and concurrent communication with normal world applications.</p>
+<hr>
+<p><strong>Question:</strong> <code>[13:57]</code> Does OP-TEE support IPC? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, OP-TEE supports Inter-Process Communication (IPC) between trusted applications (TAs) within the secure world and between normal world applications and trusted applications.</p>
+<ol>
+<li>
+<p>IPC between trusted applications: Trusted applications in OP-TEE can share data and communicate with each other by invoking other trusted applications. However, the secure kernel must intermediate such communication to ensure isolation and maintain security. Trusted applications use the TEE_InvokeTACommand function to invoke another trusted application and pass data as parameters.</p>
+</li>
+<li>
+<p>IPC between normal world applications and trusted applications: OP-TEE supports communication between normal world applications and trusted applications through the GlobalPlatform TEE Client API. Normal world applications can open a session with a trusted application, invoke commands, and share data with the trusted application while maintaining security.</p>
+</li>
+</ol>
+<p>In both cases, OP-TEE manages the IPC to ensure isolation between different trusted applications and maintain the security of the secure environment. While the communication mechanisms may vary, OP-TEE provides the necessary APIs and infrastructure to support IPC between trusted applications and between normal world applications and trusted applications.</p>
+<hr>
+<h2 id="user-content-memory-230327op-teeyaml"><a class="heading-link" href="#memory-230327op-teeyaml">Memory <code>(230327.OP-TEE.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[13:59]</code> Does OP-TEE support shared memory? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Yes, OP-TEE supports shared memory, which allows normal world applications to share data with trusted applications (TAs) within the secure environment. Shared memory is used for exchanging data between the normal world and the secure world while maintaining security and isolation.</p>
+<p>In OP-TEE, shared memory is managed by the GlobalPlatform TEE Client API, which provides functions for allocating, registering, and releasing shared memory. When a normal world application wants to share data with a trusted application, it creates a shared memory buffer using these API functions. The shared memory buffer is then passed as a parameter to the trusted application when invoking a command.</p>
+<p>The secure kernel in OP-TEE ensures that the shared memory buffer is accessible by both the normal world application and the trusted application while preventing unauthorized access or tampering. The secure kernel also maintains the isolation between different trusted applications by limiting access to the shared memory buffers associated with each trusted application.</p>
+<p>Please note that shared memory in OP-TEE is primarily used for communication between normal world applications and trusted applications. Sharing memory directly between different trusted applications is generally not supported, as it can compromise the isolation and security provided by the secure environment. Instead, trusted applications communicate with each other using the TEE_InvokeTACommand function, as mentioned in a previous answer regarding IPC support.</p>
+<p>In summary, OP-TEE supports shared memory for exchanging data between normal world applications and trusted applications while maintaining security and isolation within the secure environment.</p>
+<hr>
+<p><strong>Question:</strong> <code>[14:06]</code> Can secure world can access memory in normal world? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In general, the secure world in OP-TEE can access memory in the normal world, but it must do so with caution. The secure world has a higher level of privilege, allowing it to access both secure and normal world memory. However, accessing normal world memory from the secure world can introduce potential security risks, such as data leaks or manipulation of sensitive information.</p>
+<p>To minimize such risks, OP-TEE employs a set of precautions and guidelines:</p>
+<ol>
+<li>
+<p>Use shared memory: When secure world applications need to access data from the normal world, it is recommended to use shared memory, which is explicitly allocated and managed by the GlobalPlatform TEE Client API. This ensures proper isolation and access control for the shared data.</p>
+</li>
+<li>
+<p>Validate memory addresses: If the secure world must access normal world memory directly, it should first validate the memory address range to ensure it doesn't overlap with secure memory or any other protected memory region.</p>
+</li>
+<li>
+<p>Be cautious of data manipulation: The secure world should be aware that normal world memory can be manipulated or tampered with by potentially malicious software running in the normal world. Sensitive operations should not rely solely on data stored in normal world memory without additional validation or protection.</p>
+</li>
+<li>
+<p>Minimize normal world memory access: The secure world should minimize direct access to normal world memory whenever possible and instead rely on secure memory or shared memory buffers for data exchange.</p>
+</li>
+</ol>
+<p>While the secure world in OP-TEE can access normal world memory, it should be done with caution and following proper guidelines to maintain the security and isolation provided by the ARM TrustZone technology.</p>
+<hr>
+<p><strong>Question:</strong> <code>[14:07]</code> Can normal world access memory in secure world? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the context of OP-TEE and Arm TrustZone technology, the normal world cannot directly access the memory in the secure world. The TrustZone technology enforces hardware-based isolation between the normal and secure worlds, which prevents normal world software from accessing or tampering with secure world memory.</p>
+<p>The secure world memory, which includes the secure kernel, trusted applications, and their associated data, is protected from unauthorized access by the normal world. This ensures that sensitive data and operations within the secure world remain confidential and secure.</p>
+<p>If a normal world application needs to exchange data with a trusted application in the secure world, it must use shared memory, which is explicitly allocated and managed by the GlobalPlatform TEE Client API. This provides a controlled mechanism for data exchange between the normal and secure worlds, maintaining security and isolation.</p>
+<p>In summary, the normal world cannot directly access memory in the secure world, thanks to the hardware-based isolation provided by Arm TrustZone technology. Data exchange between the two worlds is facilitated through shared memory, which is managed by the GlobalPlatform TEE Client API.</p>
+<hr>
+<h2 id="user-content-network-230327op-teeyaml"><a class="heading-link" href="#network-230327op-teeyaml">Network <code>(230327.OP-TEE.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[14:08]</code> Does OP-TEE support network communication in secure world? <code>(OP-TEE.0327.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE does not provide built-in support for direct network communication from within the secure world. The main reason for this is to maintain the security and isolation of the secure environment, as exposing networking capabilities directly to the secure world could introduce potential vulnerabilities or attack surfaces.</p>
+<p>In most use cases, network communication is handled by normal world applications. If there is a need for secure communication involving trusted applications in the secure world, it is usually done indirectly:</p>
+<ol>
+<li>
+<p>Normal world applications handle network communication and exchange data with trusted applications in the secure world using the GlobalPlatform TEE Client API and shared memory.</p>
+</li>
+<li>
+<p>Secure operations, such as encryption, decryption, or authentication, can be performed by trusted applications in the secure world. The normal world application can then send or receive the processed data over the network.</p>
+</li>
+<li>
+<p>If end-to-end security is required, the normal world application can use additional encryption or authentication protocols, in conjunction with secure operations performed by trusted applications.</p>
+</li>
+</ol>
+<p>By handling network communication in the normal world and only exchanging data with the secure world as needed, OP-TEE maintains the isolation and security of the secure environment while still enabling secure network communication indirectly.</p>
+<p>In summary, OP-TEE does not support direct network communication within the secure world. Instead, network communication is typically handled by normal world applications, which can securely exchange data with trusted applications in the secure world using the GlobalPlatform TEE Client API and shared memory.</p>
+<hr>
+<h2 id="user-content-the-ariticle-230329trustzoneyaml"><a class="heading-link" href="#the-ariticle-230329trustzoneyaml">The ariticle <code>(230329.TrustZone.yaml)</code>
+<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> <code>[15:30]</code> <a href="https://genode.org/documentation/articles/trustzone" rel="nofollow">https://genode.org/documentation/articles/trustzone</a> <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>The link you've shared (<a href="https://genode.org/documentation/articles/trustzone" rel="nofollow">https://genode.org/documentation/articles/trustzone</a>) directs to an article on Genode's website that discusses TrustZone technology. Genode is an open-source operating system framework focused on creating a secure and scalable environment for running multiple instances of software. TrustZone is a security technology developed by ARM, which is widely used in modern processors.</p>
+<p>TrustZone technology aims to provide a secure execution environment for trusted applications, protecting them from potential security threats posed by untrusted applications. It achieves this by dividing the system into two distinct worlds: the "Secure World" and the "Normal World." These two worlds run concurrently on the same hardware, but they are isolated from each other, ensuring that sensitive data and operations remain protected.</p>
+<p>The "Secure World" is designed to handle security-sensitive tasks, while the "Normal World" handles general-purpose tasks. To switch between the two worlds, ARM provides a secure monitor call (SMC) instruction that manages the transitions.</p>
+<p>Genode leverages TrustZone technology to enhance the security of its operating system framework. By using TrustZone, Genode can isolate critical parts of the system and applications from the rest of the system, reducing the risk of sensitive data leaks or unauthorized access.</p>
+<p>If you have any specific questions about TrustZone or Genode, feel free to ask, and I'll do my best to help.</p>
+<hr>
+<p><strong>Question:</strong> <code>[15:31]</code> Please summarize the following articles in short. <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>It appears you forgot to provide the articles that you'd like me to summarize. Please provide the links or titles of the articles, and I'll be happy to provide summaries for you.</p>
+<hr>
+<p><strong>Question:</strong> <code>[17:37]</code> Please compare TrustZone and TPM in a table. <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>TrustZone</th>
+<th>TPM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Hardware-based security solution</td>
+<td>Hardware-based security solution</td>
+</tr>
+<tr>
+<td>Security functions</td>
+<td>Freely programmable</td>
+<td>Fixed-function</td>
+</tr>
+<tr>
+<td>Execution environment</td>
+<td>Secure world on ARM-based SoC</td>
+<td>Standalone chip</td>
+</tr>
+<tr>
+<td>Isolation</td>
+<td>Two worlds: Secure and Non-secure</td>
+<td>Separate from CPU</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Varies, from simple libraries to full OS</td>
+<td>Limited, designed for specific functions</td>
+</tr>
+<tr>
+<td>Interaction with peripherals</td>
+<td>NS bit determines peripheral access control</td>
+<td>Communicates via standard bus protocols</td>
+</tr>
+<tr>
+<td>Cryptographic capabilities</td>
+<td>Software implemented, based on user needs</td>
+<td>Built-in cryptographic functions</td>
+</tr>
+<tr>
+<td>Secure storage</td>
+<td>Depends on SoC implementation</td>
+<td>Built-in non-volatile storage</td>
+</tr>
+<tr>
+<td>Secure boot</td>
+<td>SoC-dependent, can be implemented</td>
+<td>Provides support for secure boot process</td>
+</tr>
+<tr>
+<td>Virtualization support</td>
+<td>Limited, not designed for virtualization</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>Flexibility</td>
+<td>More versatile, programmable functions</td>
+<td>Less versatile, fixed-function</td>
+</tr>
+<tr>
+<td>Performance impact</td>
+<td>Depends on implementation complexity</td>
+<td>Minimal, as it operates independently</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that this comparison is a high-level overview of TrustZone and TPM. The specific features and capabilities may vary depending on the implementation and the SoC used for TrustZone or the TPM version and vendor.</p>
+<hr>
+<p><strong>Question:</strong> <code>[17:40]</code> What is bootstrap code? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>Bootstrap code, also known as boot code, bootloader, or bootstrapping, is a small program responsible for initializing a computer's hardware components and loading the operating system (OS) into memory. When a computer is powered on or restarted, the bootstrap code is the first code to execute, typically stored in a fixed location, such as a Read-Only Memory (ROM) chip, or firmware like Basic Input/Output System (BIOS) or Unified Extensible Firmware Interface (UEFI).</p>
+<p>The primary function of the bootstrap code is to perform hardware checks, initialize essential hardware components (like CPU, memory, and peripherals), and locate the operating system's kernel. Once the kernel is found, the bootstrap code loads it into memory and transfers control to the kernel, enabling the OS to start and manage system resources.</p>
+<p>In summary, bootstrap code is responsible for the initial steps in the boot process, laying the groundwork for the operating system to take over and provide a functional environment for the user.</p>
+<hr>
+<p><strong>Question:</strong> <code>[17:44]</code> What are two lines in the section "Starting point" in the article? <code>(TrustZone.0329.md)</code></p>
+<p><strong>Answer:</strong></p>
+<p>In the context of the "Starting point" section of the article, two lines refer to two distinct approaches to exploring TrustZone technology:</p>
+<ol>
+<li>
+<p>Line 1: Utilize TrustZone as a virtualization solution, exploring its potential to host multiple virtual machines or support multiple operating systems in the secure and non-secure worlds. This line of experimentation seeks to understand TrustZone's capabilities as a virtualization mechanism.</p>
+</li>
+<li>
+<p>Line 2: Use TrustZone as an alternative to Trusted Platform Modules (TPM), focusing on its ability to implement security functions and protect sensitive information within the secure world. This line of experimentation aims to investigate the versatility and programmability of TrustZone as a security mechanism compared to fixed-function TPMs.</p>
+</li>
+</ol>
+<hr>
+<h2 id="user-content-op-tee0327md"><a class="heading-link" href="#op-tee0327md">OP-TEE.0327.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong> What is RPMB?</p>
+<p><strong>Answer:</strong></p>
+<p>RPMB, or Replay Protected Memory Block, is a security feature found in some eMMC (embedded MultiMediaCard) and UFS (Universal Flash Storage) devices. It is designed to provide a secure, tamper-resistant, and write-protected storage area for sensitive data, like cryptographic keys or device-specific information.</p>
+<p>The main characteristics of RPMB include:</p>
+<ol>
+<li>
+<p>Replay protection: RPMB uses a counter mechanism to prevent replay attacks. Each write operation to the RPMB partition must include a counter value greater than the current value stored in the RPMB. This ensures that old data cannot be replayed or re-written, protecting against unauthorized modifications.</p>
+</li>
+<li>
+<p>Authentication: RPMB requires that write and read operations be authenticated using a shared secret key, usually derived from a hardware unique key (HUK) or device-specific key. This ensures that only authorized entities can access or modify the data stored in the RPMB partition.</p>
+</li>
+<li>
+<p>Write protection: RPMB partitions are usually write-protected, meaning that once data is written, it cannot be modified or deleted. This ensures the integrity of the stored data and prevents unauthorized tampering.</p>
+</li>
+<li>
+<p>Limited storage capacity: RPMB partitions are typically small in size, as they are intended for storing only critical security-related data.</p>
+</li>
+</ol>
+<p>RPMB is commonly used in devices like smartphones, tablets, and other embedded systems to store sensitive data that requires a higher level of security and protection against tampering or unauthorized access.</p>
+<hr>
+<p><strong>Question:</strong> What is HS in OP-TEE?</p>
+<p><strong>Answer:</strong></p>
+<p>In the context of OP-TEE, "HS" typically refers to the "Hardware Secure" world or environment. OP-TEE leverages Arm TrustZone technology, which partitions the system into two separate environments: the Normal world (also known as Non-Secure or NS) and the Secure world (also known as Hardware Secure or HS).</p>
+<p>The Hardware Secure world is an isolated execution environment where the OP-TEE secure kernel and trusted applications run. This environment provides protection for sensitive data and secure operations, ensuring they are not accessible by the Normal world or vulnerable to tampering. The secure kernel manages the trusted applications, resources, and communication with the Normal world through APIs like the OP-TEE Client API.</p>
+<p>In summary, "HS" in OP-TEE refers to the Hardware Secure world, an isolated environment within the Arm TrustZone technology where sensitive data and secure operations are protected from unauthorized access or tampering.</p>
+<hr>
+<p><strong>Question:</strong> What is KEK in OP-TEE?</p>
+<p><strong>Answer:</strong></p>
+<p>In the context of OP-TEE and security, KEK stands for Key Encryption Key. A Key Encryption Key is a cryptographic key used to encrypt and protect other keys, typically data encryption keys, ensuring their confidentiality and integrity. By using a KEK, sensitive keys can be securely stored, transmitted, or shared among different parties or systems without the risk of exposure.</p>
+<p>In OP-TEE, Key Encryption Keys may be used to protect keys that are stored in the device or used by trusted applications for various security purposes, such as encryption, authentication, or digital signatures. The KEK itself is usually stored in a secure location, like an RPMB partition or within the secure environment provided by OP-TEE, to prevent unauthorized access or tampering.</p>
+<p>To summarize, a KEK in OP-TEE is a cryptographic key used to protect other sensitive keys, ensuring their confidentiality and integrity when stored, transmitted, or shared.</p>
+<hr>
+<p><strong>Question:</strong> Does OP-TEE support multi-thread?</p>
+<p><strong>Answer:</strong></p>
+<p>OP-TEE, in its current design, supports multi-threading with certain limitations. The secure world in OP-TEE, which includes the secure kernel and trusted applications, is primarily single-threaded. This means that only one thread can execute at a time within the secure environment, regardless of the number of CPU cores available.</p>
+<p>However, OP-TEE does support parallelism in the sense that it allows multiple trusted applications to be loaded and executed concurrently. This is achieved through the use of secure context switching between different trusted applications, ensuring that only one trusted application is active at a time.</p>
+<p>It's worth noting that OP-TEE also supports concurrency in the normal world. Multiple normal world applications can communicate with different trusted applications simultaneously, and OP-TEE will manage the context switching between them.</p>
+<p>In summary, while OP-TEE's secure environment is primarily single-threaded, it supports parallelism through the use of context switching between multiple trusted applications and concurrent communication with normal world applications.</p>
+<hr>
+<p><strong>Question:</strong> Please summarize multi-process, IPC, and shared memory of OP-TEE.</p>
+<p><strong>Answer:</strong></p>
+<p>In OP-TEE, multi-process, IPC, and shared memory are features that enable concurrent execution, communication, and data sharing between normal world applications and trusted applications, as well as between trusted applications themselves.</p>
+<ol>
+<li>
+<p>Multi-process: OP-TEE supports multiple trusted applications running concurrently within the secure environment. The secure kernel manages the execution of these applications using secure context switching, ensuring that only one trusted application is active at a time while maintaining isolation and security.</p>
+</li>
+<li>
+<p>IPC (Inter-Process Communication): OP-TEE supports communication between trusted applications and between normal world applications and trusted applications. For communication between trusted applications, the TEE_InvokeTACommand function is used. For communication between normal world applications and trusted applications, the GlobalPlatform TEE Client API is used. In both cases, OP-TEE manages the IPC to ensure isolation and maintain security.</p>
+</li>
+<li>
+<p>Shared memory: OP-TEE supports shared memory to allow normal world applications to exchange data with trusted applications securely. The GlobalPlatform TEE Client API manages shared memory buffers, which can be passed as parameters when invoking commands in trusted applications. The secure kernel ensures that the shared memory buffer is accessible by both parties while preventing unauthorized access or tampering.</p>
+</li>
+</ol>
+<p>In summary, OP-TEE provides multi-process support for concurrent execution of multiple trusted applications, IPC for communication between applications, and shared memory for secure data exchange. These features enable efficient and secure interaction between normal world and trusted applications while maintaining isolation and security within the secure environment.</p>
+<hr>
+<h2 id="user-content-trustzone0329md"><a class="heading-link" href="#trustzone0329md">TrustZone.0329.md<span aria-hidden="true" class="octicon octicon-link"></span></a></h2>
+<p><strong>Question:</strong></p>
+<pre><code>An Exploration of ARM TrustZone Technology
+ARM TrustZone technology has been around for almost a decade. It was introduced at a time when the controversial discussion about trusted platform-modules (TPM) on x86 platforms was in full swing (TCPA, Palladium). Similar to how TPM chips were meant to magically make PCs "trustworthy", TrustZone aimed at establishing trust in ARM-based platforms. In contrast to TPMs, which were designed as fixed-function devices with a predefined feature set, TrustZone represented a much more flexible approach by leveraging the CPU as a freely programmable trusted platform module. To do that, ARM introduced a special CPU mode called "secure mode" in addition to the regular normal mode, thereby establishing the notions of a "secure world" and a "normal world". The distinction between both worlds is completely orthogonal to the normal ring protection between user-level and kernel-level code and hidden from the operating system running in the normal world. Furthermore, it is not limited to the CPU but propagated over the system bus to peripheral devices and memory controllers. This way, such an ARM-based platform effectively becomes a kind of split personality. When secure mode is active, the software running on the CPU has a different view on the whole system than software running in non-secure mode. This way, system functions, in particular security functions and cryptographic credentials, can be hidden from the normal world. It goes without saying that this concept is vastly more flexible than TPM chips because the functionality of the secure world is defined by system software instead of being hard-wired.
+
+
+The figure above illustrates the concept of the two worlds. The normal world is active (non-secure bit is set), the OS running on the platform can only access a subset of the physical resources. When a world switch takes place, the secure world comes into effect. The system software running in the secure world can access the devices hidden from the normal world.
+
+As former university researchers in the field of OS security, ARM TrustZone was deemed as relevant to us. We still have fond memories of a joint research project called ROBIN with STMicroelectronics where we could see the use of TrustZone on an ARM1176-based prototype platform for co-hosting Linux with an L4-based secure OS. However, since the project ended in 2008, we haven't heard much about this technology for several years. TrustZone seemed like one of so many obscure processor features that, once introduced into products, nobody could get really excited about. Well, in the case of TrustZone this is actually not true. In 2012, we were approached from different angles with questions about ARM TrustZone. It looked like, by then, TrustZone had become a kind of marketing term used by SoC vendors to sell confidence in the security of their chips. The term "TrustZone" appeared to be quite cloudy and it carried possibly wrong expectations and misconceptions with it. A lot of questions popped up: Does TrustZone provide mechanisms for secure booting and secure storage? Isn't it a kind of virtualization technology? If yes, isn't it superseded by ARM's virtualization extensions? How does it work? Is it important to consider it when developing an operating system?
+
+These questions prompted us to dive right into the world of TrustZone. We spent two and half years on and off with experimentation on several ARM platforms, each with a quite different interpretation of TrustZone-based security. This article summarizes our findings.
+
+Section Starting point describes the starting point of our journey and lays out the possible routes we considered to take. It is followed by Section The design and genesis of our custom base-hw kernel platform, which gives the rationale behind creating a custom kernel platform to support our undertaking. Section Hypervisor managing the non-secure world goes into detail about the TrustZone-specific challenges we faced while building a prototype. The actual prototype is covered by Section TrustZone demonstrated in color. Finally, the article summarizes our findings in a Q&amp;A style in Section Common questions, answered.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: An Exploration of ARM TrustZone Technology</p>
+<p>Summary: ARM TrustZone technology is a security solution for ARM-based platforms that introduces a "secure mode" alongside the regular "normal mode." The secure mode establishes a "secure world" and a "normal world" that run concurrently but are isolated from each other, ensuring that sensitive data and operations remain protected. TrustZone is more flexible than TPM chips because its functionality is defined by system software rather than being hard-wired. Despite initial skepticism, TrustZone has gained attention as a marketing term for SoC vendors to promote confidence in their chip's security. The article delves into various aspects of TrustZone, including its rationale, design, implementation, and common questions related to the technology.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>Starting point
+The first question on the table when starting a series of experiments was the one for a suitable development platform.
+
+At the time we started our investigations, we were most interested in the ARM Cortex-A9-based SoCs. All Cortex-A9 cores are equipped with ARM's security extensions (often referred to as TrustZone capabilities). In principle, any Cortex-A9 based platform would be suitable for us. However, even though there are many low-cost ARM development boards on the market (e.g., by Samsung, TI, ST-Ericsson, NVIDIA, ZiiLABS), we discovered that none of those options provided access to the secure mode of TrustZone. In almost all cases, bootstrap code stored in the ROM switches to non-secure mode prior starting the boot loader, possibly to prevent access to certain parts of the SoC that are not intended for public use. This narrowed the potential base platforms to FreeScale's i.MX development boards and the ARM Versatile Express platform. The FreeScale i.MX platform places no restrictions on the use of the secure mode. But at the time we started, no Cortex-A9-based board was available. The most recent board i.MX53 featured a single-core Cortex-A8 processor. The ARM Versatile Express Cortex-A9 board is the official reference board by ARM, which supports ARM TrustZone. As expected, the official reference board comes with a price tag far north of your usual low-cost development board. It's not that it is an order of magnitude more expensive. It's actually two orders! Still, we were happy to get our hands on one of those and could kick off our line of experiments on the official reference platform.
+
+
+We conducted two lines of experimentation: Prototyping using an existing microkernel and the creation of a custom kernel platform. The primary motivation for the former line of work was to have a low-risk path to enable the reference hardware and to get acquainted with the principle use of ARM Cortex-A9. By taking and modifying an existing kernel platform that is known to work on this CPU core, we had a good starting point. However, to get a thorough understanding of TrustZone's mechanisms, we needed to tackle problems that lay in the scope of the kernel. Furthermore, we desired to be in complete control over the bootstrapping procedure, in particular to address questions about secure booting. Rather than patching an existing kernel and inheriting its design choices, we decided to create a custom kernel platform that gives us all the freedom needed to explore the platform without having to consider the complexities of an existing kernel implementation.
+
+For both lines of work, we used the Genode OS Framework (Genode) as foundation. Genode is a construction kit for building special-purpose operating systems. It is a collection of small building blocks, out of which complex systems can be composed. Those building blocks include not only applications but all classical OS functionalities like kernels, device drivers, and protocol stacks. Currently, Genode supports 8 different kernels and provides over 100 reusable components for both x86-based and ARM-based platforms. We figured that its low trusted computing base (TCB) complexity yet high flexibility would make it an attractive foundation for an OS designated to run on the secure side of TrustZone.
+
+For the first line of work, the enablement of the Versatile Express platform, one of the kernels L4/Fiasco, Fiasco.OC, or Codezero were principally suitable. Of these candidates, Fiasco.OC provided the broadest support for the most recent ARM SoCs. Hence, we decided to use the combination of Genode with Fiasco.OC as starting point to enable the principal use of Genode on the platform. This required us to implement low-level driver support for basic peripherals such as the PL110 display, the PL011 UART, timer, and PS/2. Even though the driver-related work was conducted using the Fiasco.OC kernel, the outcome was beneficial for both lines of work Fiasco.OC and our custom kernel as Genode's driver components are independent from the underlying kernel.
+
+In our second line of work, we supplemented Genode with a new base platform that we call "base-hw" ("hw" representing Genode running on bare hardware). In contrast to the already supported kernels, this new platform is tightly integrated with the core of Genode. Thereby, we aimed to dramatically reduce the TCB complexity of the base system compared to the use of a discrete kernel. The most significant benefit of the custom kernel platform in the context of our TrustZone experimentation are the insights into kernel-level problems when using the Cortex-A9 and TrustZone.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: Starting Point and Experimentation with ARM TrustZone Technology</p>
+<p>Summary: The article discusses the process of choosing a suitable development platform for exploring ARM TrustZone technology. It narrows down to the ARM Versatile Express Cortex-A9 board, an official reference board by ARM. Two lines of experimentation are conducted: prototyping using an existing microkernel and creating a custom kernel platform. Genode OS Framework is used as the foundation for both lines of work, due to its low trusted computing base complexity and high flexibility. The first line of work uses the combination of Genode with Fiasco.OC to enable the principal use of Genode on the platform, while the second line of work supplements Genode with a new base platform called "base-hw" to reduce the TCB complexity of the base system and gain insights into kernel-level problems when using Cortex-A9 and TrustZone.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>The design and genesis of our custom base-hw kernel platform
+In contrast to classical L4 microkernels where Genode's core process runs as user-level roottask on top of the kernel, base-hw executes Genode's core directly on the hardware with no distinct kernel underneath. Core and kernel are melted into one novel kind of hybrid kernel/userland program. Only a few code paths are executed in privileged mode but most code runs in user mode. This design has several benefits. First, the kernel part becomes much simpler. For example, there are no allocators needed in the kernel part because allocators are managed by the user-level part of core. Second, base-hw side-steps long-standing hard kernel-level problems, in particular the management of kernel resources. For the allocation of kernel objects, we can simply employ Genode's user-level resource trading concepts. Finally and most importantly, however, merging the kernel with roottask removes a lot of redundancies between both programs. Traditionally, both kernel and roottask performed the book keeping of physical-resource allocations and the existence of kernel objects such as address spaces and threads. In base-hw, those data structures exist only once. The complexity of the combined kernel/core is significantly lower than the sum of the complexities of a traditional self-sufficient kernel and a distinct roottask on top. This way, base-hw helps to make Genode's TCB less complex.
+
+
+The figure illustrates the effect of the new design on the TCB of the root of Genode's process tree. On the left, a traditional member of the L4 family of kernels is depicted. The bluish marked TCB comprises the kernel, the sigma0 root memory manager, roottask (Genode's core), and Genode's init process. These components accumulate to circa 60 thousand lines of code. On the right, the hybrid core/kernel approach of base-hw is illustrated. By merging the kernel with roottask, systems running on top of base-hw need to trust less code to be void of bugs.
+
+For realizing the base-hw kernel platform, we undertook the following steps. First, we designed and implemented the concept for bootstrapping a Genode-based system consisting of potentially many modules as a single boot image. This is the first point where using a custom platform over a stock Fiasco.OC kernel turned out to be beneficial because our boot concept is extremely simple compared to the procedure known from Fiasco.OC.
+
+The kernel entry and exit code paths had been implemented and tested on both Qemu and the reference hardware. The execution model of the kernel can be roughly characterized as a single-stack kernel. In contrast to traditional L4 kernels that maintain one kernel thread per user thread, the base-hw kernel is a mere state machine that never blocks in the kernel. This is similar to how the seL4 kernel and the NOVA microhypervisor operate.
+
+The next step was to add support for interrupt handling and preemptive multi-threading. So we implemented drivers for the PL390 interrupt controller and the Cortex-A9 core timer. Combined with the implemented kernel-entry code path and the interrupt controller, timer interrupts could be handled by Genode's user-level core. Genode's core component uses multiple threads of execution:
+
+The main thread that initializes the platform and spawns the first user-level process called init,
+
+A pager thread that receives and handles page faults,
+
+One thread per device interrupt,
+
+A so called RPC entrypoint that handles requests to the services provided by core, and
+
+The parent thread of the init process that responds to requests of the init process via the parent interface.
+
+Because the correct functioning and scheduling of those threads is fundamental for bringing-up of the system, the next logical step was the introduction of a preemptive scheduler and core-local context switching. Core-local threads do not run independently but interact with each other via synchronous inter-process communication. For example, the main thread creates the RPC entrypoint and then acts as a client of some core services. To accommodate those use cases, the kernel interface was supplemented with system calls for synchronous inter-process communication (IPC). To keep the kernel as simple as possible, IPC is performed using so-called user-level thread-control blocks (UTCB). Each thread has a corresponding memory page that is always mapped in the kernel. This UTCB page is used to carry IPC payload. The largely simplified procedure of transferring a message is as follows. (In reality, the state space is more complex because the receiver may not be in a blocking state when the sender issues the message)
+
+The user-level sender marshals its payload into its UTCB and invokes the kernel,
+
+The kernel transfers the payload from the sender's UTCB to the receiver's UTCB and schedules the receiver,
+
+The receiver retrieves the incoming message from its UTCB.
+
+Because all UTCBs are always mapped in the kernel, no page faults can occur during the second step. This way, the flow of execution within the kernel becomes predictable and always returns to the user land.
+
+In addition to IPC, threads interact via the synchronization primitives provided by the Genode API. To implement these portions of the API, the kernel was then enhanced with system calls for managing the execution control of threads.
+
+With the entity of core running on the reference platform, it was time for spawning the first non-core user-level process, namely the init process. This process is a composition out of multiple core sessions:
+
+A CPU session with the main thread of the init process,
+
+A region-manager (RM) session describing the address space of the process,
+
+A protection-domain (PD) session representing the encapsulation boundary of the process,
+
+A RAM session containing the physical memory resources available to the init process.
+
+To accommodate the implementation of these services, the kernel was enhanced with system calls that handle protection domains and page faults at user level.
+
+At the startup of the init process, its first life sign is a page fault produced by the main thread on the attempt to fetch its first instruction. The kernel translates this page fault into an IPC message to the pager thread. In contrast to core-internal IPC, this cross-PD-IPC requires the kernel to not only switch thread contexts but also address spaces.
+
+All further functionalities needed to bring up the init process such as the ELF loading were readily provided by the generic code of the Genode OS Framework.
+
+The last step towards executing real-world application scenarios on our custom kernel was the provisioning of mechanisms required by user-level device drivers. Those mechanisms are memory-mapped I/O access and IRQ delivery, which are provided via core's IO_MEM and IRQ services. To implement those services, the kernel had to be supplemented with system calls for allocating and receiving IRQs.
+
+With those functionalities in place, the path was cleared to execute user-level device drivers that we already had enabled when using the Fiasco.OC kernel, i.e., drivers for the user-level timer, framebuffer, and PS/2 input devices. Thereby, we became able to run a basic graphical interactive demo scenario on our custom kernel.
+
+For more sophisticated work loads that require asynchronous communication, we subsequently improved the kernel mechanisms. For example, we added kernel-level support for Genode's signalling API and thereby achieved full coverage of the Genode API on our custom kernel platform.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: Design and Genesis of Custom Base-HW Kernel Platform for Genode</p>
+<p>Summary: The custom base-hw kernel platform for Genode features a unique hybrid kernel/userland design that simplifies the kernel part, side-steps hard kernel-level problems, and reduces redundancies between kernel and roottask, ultimately resulting in a lower trusted computing base (TCB) complexity. The platform was developed in several steps, including designing and implementing the bootstrapping concept, kernel entry and exit code paths, support for interrupt handling and preemptive multi-threading, core-local context switching, inter-process communication, and user-level device driver mechanisms. This custom kernel platform enabled the execution of real-world application scenarios and provided full coverage of the Genode API.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>Hypervisor managing the non-secure world
+This section describes our experiences while creating a TrustZone-aware hypervisor that is able to schedule between one non-secure virtual-machine (VM), and multiple tasks running unprivileged in secure mode. Based on our custom base-hw kernel platform, it describes the consecutive steps that were taken to turn the kernel into a TrustZone-aware hypervisor, as well as to build a virtual-machine monitor (VMM) running as user-level component on top of that kernel.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: TrustZone-Aware Hypervisor for Managing the Non-Secure World</p>
+<p>Summary: A TrustZone-aware hypervisor was developed for managing one non-secure virtual machine (VM) and multiple tasks running unprivileged in secure mode. The hypervisor was built upon the custom base-hw kernel platform and involved several steps, including making the kernel TrustZone-aware and constructing a virtual machine monitor (VMM) as a user-level component on top of the kernel. The hypervisor was designed to seamlessly schedule between the non-secure VM and secure tasks, providing a robust and secure foundation for managing different security domains in a TrustZone-enabled system.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>World switch between non-secure world and secure world
+We started investigating TrustZone by bringing the so called monitor-mode in the Genode/ARM-kernel to life. The monitor mode is an execution mode add-on in ARM CPUs implementing the Security Extensions (SE is equivalent to TrustZone). It is an execution mode (like e.g., system, user, or supervisor mode), the CPU switches to when certain exceptions occur. For most of the exceptions, the CPU can be configured whether it raises an exception in monitor-mode, or in the corresponding exception mode of the non-secure or secure-world. A so-called Secure Configuration Register (SCR) enables the hypervisor to configure whether the CPU should trap when fast interrupts, or normal interrupts, or external data aborts occur, while the non-secure world is active.
+
+In addition to interrupt-triggered mode switches, the non-secure world is able to explicitly enter the monitor mode by the means of a software-generated exception via the smc instruction. So the first step was to initialize a corresponding exception vector that is used when a monitor-mode exception is raised.
+
+Thereby, our consideration was that all exceptions that enter the monitor mode should be triggered by the non-secure world only, but never by the secure world. Given that assumption, the we designed the exception vector in a way that it always stores the current CPU state as a non-secure world's state. The CPU state is saved regardless of the type of exception. In addition to the CPU state, the exception type is stored in the same area. On the switch to the monitor mode, the kernel reloads the formerly stored secure kernel-context from a known memory area. Given this approach, the software stack running in the secure world must not execute the smc instruction. This drastically simplifies the assembler world-switch routine. In application scenarios where a subset of components executed in the secure world are untrusted, it is principally possible to extend the world-switch routine to check for the world that raised the fault. In general, the monitor-mode exception vector works orthogonal to the kernel-/user-mode switch. In contrast to that, the world-switch has to save/restore more register banks. To switch from the secure to the non-secure world the symmetrical operations are also performed, only that this time, the world switch is not triggered by an exception but via a newly introduced system call with a pointer to the VM's CPU state. The kernel responds to this system call by pushing the provided state to the non-secure world.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: World Switch Between Non-Secure and Secure Worlds</p>
+<p>Summary: A world switch mechanism was implemented to facilitate transitions between the non-secure and secure worlds in a TrustZone-enabled system. The monitor mode was utilized, which is an execution mode add-on in ARM CPUs with Security Extensions (TrustZone). The system is designed so that all exceptions entering the monitor mode should be triggered only by the non-secure world, simplifying the assembler world-switch routine. The secure world can switch back to the non-secure world through a system call with a pointer to the VM's CPU state, pushing the provided state to the non-secure world.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>User-level Virtual Machine Monitor (VMM)
+To be able to use the newly introduced system call that switches to the non-secure-world, we introduced a new VM-session interface as service in Genode's core. This interface enables a client (VMM) to affect the whole CPU state of a VM, initiate a world switch to the non-secure world, and, after an exception-triggered return, to obtain the VM's state. Moreover, the new interface enables a client to obtain a portion of physical RAM as I/O memory, so that it can prepare it as the VM's physical RAM. Moving this physical RAM portion into the I/O memory allocator of core allows the VMM to get the appropriate RAM portion to load the VM's ELF image to its physical relocation address.
+
+
+The image above illustrates the relationship between the user-level VMM (TZ VMM) and Genode's core/kernel. TZ VMM initiates the switch to the normal world by invoking the run function of the VM session interface. The normal world is scheduled as a (low-priority) thread by the base-hw kernel.
+
+Given the world-switch routine in the kernel and the VM-session interface of core, all prerequisites were in place to build a first simple version of a VMM. This version solely acquires some portion of RAM, takes a ROM module (the VM's image to load), and loads the ELF binary to physical RAM. During ELF-loading, it identifies the correct entry point, and sets the program counter of the VM's CPU state accordingly. Finally, the VMM enters an endless loop where it executes the VM and, after each exceptional return, dumps the VM's CPU state to the debugging console.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: User-Level Virtual Machine Monitor (VMM)</p>
+<p>Summary: A new VM-session interface was introduced as a service in Genode's core to enable a client (VMM) to manage the CPU state of a VM, initiate a world switch to the non-secure world, and obtain the VM's state. This allows the creation of a simple VMM that acquires a portion of RAM, loads the VM's ELF binary to physical RAM, and sets the program counter of the VM's CPU state. The VMM enters an endless loop, executing the VM and dumping its CPU state to the debugging console after each exceptional return.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>Simple test kernel for the non-secure world
+To test the newly implemented world-switch routine, we created a simple test kernel was. It is built almost entirely out of assembler code, which performs the following steps:
+
+Setup exception vectors for data-aborts, pre-fetch aborts, interrupts, fast-interrupts, supervisor-calls,
+
+Initialize interrupt controller to receive UART0 interrupts,
+
+Initialize UART0 to be able to print simple messages, and detect interrupt reception (RX),
+
+Switch to user-mode and idle,
+
+Whenever an interrupt occurs print some short message.
+
+TrustZone Platform Controller (TZPC) and Address-Space Controller (TZASC)
+After successfully testing the VMM setup and the world-switch routine, it was time to investigate TrustZone mechanisms, which actually protect the secure world from the non-secure world. A set of different IP cores exists beside the CPU core, which helps to confine the non-secure software stack. With respect to the Versatile Express platform, these are the following:
+
+TrustZone Protection Controller (TZPC)
+
+TrustZone Address Space Controller (TZASC)
+
+The Cortex A9 MPCore internal Interrupt Controller
+
+The first and easiest part seemed to be the configuration of the physical memory areas that should be preserved for the secure world but invisible to the non-secure world, i.e., the RAM where the secure software stack is located in. The bus and memory hierarchy in modern embedded architectures, like in the Versatile Express Motherboard/Daughterboard conglomerate, is highly complex. It consists of different bus systems (ABP, AXI), memory controllers (SMC, DMC), and caches. Most of the controllers and devices in this jungle are not TrustZone aware themselves but are protected by the TZPC or TZASC. Given the sparse public information available in technical reference manuals, it was hard to identify, which components can be protected and how the TZPC/TZASC are related to them.
+
+Due to experimentation, we were able to deduct the following insights. The TZASC controller on the platform is used to secure physical address ranges that are addressable through the Static Memory Controller (SMC). In principal, it should be possible to secure another memory controller by a TZASC too, but on the platform, it is restricted to the SMC. These physical address regions correspond to the I/O resources of peripheral devices, some SRAM, and flash memory. Most of these components are placed on the motherboard. The DDR RAM on the other hand is not subjected to the SMC, but sits behind the Dynamic Memory Controller (DMC), which is not protected by any TZASC. With the help of the TZASC, it is possible to define multiple regions as secure or non-secure. However, these definitions do not apply to DDR RAM.
+
+The TZPC is used to protect on-chip peripherals (e.g., the TZPC and TZASC themselves) as well as bus accesses to external subsystems. Thereby, one can configure whether access to a corresponding on-chip device is allowed. For example, one bit in the TZPC is reserved to enable or disable access to the DMC from the non-secure world. The TZPC doesn't allow a more fine-grained confinement with respect to a single device, like for instance the DMC.
+
+Given those findings, the Versatile Express platform apparently does not allow the partitioning of DDR RAM into secure and non-secure address ranges. One can only decide to assign it to either of both worlds. SRAM and flash-memory on the other hand, which are under control of the TZASC, can be configured more fine-grained. Furthermore, when running an unmodified Linux software stack in the non-secure world, we need to assign the entire DDR RAM to the non-secure world. Fortunately, the platform hosts 32 MiB of SRAM, which we can preserve for the exclusive use by the secure world.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: Simple Test Kernel for Non-Secure World &amp; TrustZone Platform and Address-Space Controller</p>
+<p>Summary: A simple test kernel was created to test the VMM setup and the world-switch routine. TrustZone mechanisms were investigated to protect the secure world from the non-secure world. The Versatile Express platform features TrustZone Protection Controller (TZPC) and TrustZone Address Space Controller (TZASC). The TZASC controller is used to secure physical address ranges addressable through the Static Memory Controller (SMC), and the TZPC protects on-chip peripherals and bus accesses to external subsystems. The platform does not allow the partitioning of DDR RAM into secure and non-secure address ranges, but it does host 32 MiB of SRAM that can be preserved for exclusive use by the secure world.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>Interrupts
+In the previous section, we identified how to partition the physical resources of the reference platform into two worlds by assigning memory-mapped I/O (MMIO) resources of peripherals to either of both worlds. However, access to MMIO is only the half way towards the practical use of these peripherals. We also need a way to route the corresponding device interrupts to the respective worlds.
+
+Unfortunately, the assignment of device interrupts to either the secure or non-secure world cannot be configured directly. Instead, it is merely possible to distinct the handling of normal interrupts (IRQ) and fast interrupts (FIQ). The ARM architecture defines these two types, which differ in the following ways:
+
+Each type has a unique exception vector so that FIQs enter the kernel using a different code path than IRQs.
+
+On the occurrence of an IRQ, the CPU automatically saves a more comprehensive register state compared to an FIQ.
+
+The most distinctive characteristic is that an FIQ can preempt any exception handler except for the FIQ handler. So exceptions can nest.
+
+For a device interrupt, it is possible to define whether to take the IRQ or FIQ exception entry in the PIC configuration. This mechanism indirectly enables the partitioning of interrupts between both worlds by configuring the PIC to use FIQs for secure and IRQs for the non-secure world exclusively. Using the Secure Configuration Register, it is possible to revoke the use of FIQs from the non-secure world and force a trap into the monitor for each FIQ that occurs while the non-secure mode is active. To implement this idea, we modified our custom kernel to handle FIQs instead of IRQs, which is slightly more complicated because of the possible nesting of exceptions. We solved the problem of nested exceptions by checking for the originating CPU mode that was active when the FIQ occurred. If the CPU was already in kernel mode, we can conclude that the exception refers to a nested exception. In this case, we ignore the FIQ and fall back to resuming the previous exception.
+
+To summarize the above, FIQs are exclusively used by the device drivers of the secure world whereas IRQs are exclusively used by the non-secure world (as expected by the Linux kernel). Because for each device, we can define whether its interrupts are delivered as FIQs or IRQs, we are thereby able to assign individual device interrupts to either of both worlds.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: Interrupts in Secure and Non-Secure Worlds</p>
+<p>Summary: Device interrupts can be indirectly partitioned between the secure and non-secure worlds using the ARM architecture's two types of interrupts: normal interrupts (IRQ) and fast interrupts (FIQ). The custom kernel can handle FIQs for the secure world and IRQs for the non-secure world. By defining whether a device's interrupts are delivered as FIQs or IRQs, it is possible to assign individual device interrupts to either the secure or non-secure world. This setup allows secure world device drivers to use FIQs exclusively while IRQs are used by the non-secure world, as expected by the Linux kernel.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>Booting Linux in the non-secure world
+Having the principal separation between the secure and non-secure world in place, we can now replace our simple custom non-secure kernel with the Linux kernel. This work comprises the following steps:
+
+Loading the kernel. The kernel has to be complemented with additional boot-time information called ATAGs. The ATAGs data structure contains the location of the RAM, the address of the RAM disk as well as the kernel command line.
+
+In addition to the kernel, a RAM disk must be loaded into the memory of the non-secure world. This RAM disk contains the initial boot image.
+
+To test the loading procedure, we started Linux with all access rights to the peripherals granted and observed the successful boot-up of the kernel. At this point, we disabled the access to all peripherals and entered the iterative process of booting the kernel, looking where it hangs because of a missing permission, and then taking one of the following decisions: For devices that we deemed as uncritical for the secure world, we would grant direct device access. For devices that must be preserved for the secure world, we slightly changed the Linux kernel code to issue a hypercall instead of accessing the device resource directly. When the non-secure OS issues a hypercall using the smc instruction, the CPU enters the monitor mode and passes control to the hypervisor. The hypervisor reflects that hypercall to the user-level VMM, which is able to respond to the individual hypercalls. Those hypercalls are:
+
+SP810_ENABLE
+Enable the timer.
+
+CPU_ID:
+Request the CPU ID, which is the hard-coded value 0x0c000191 for the reference platform.
+
+SYS_COUNTER
+Returns the value of the Sys_24MHz system register.
+
+MISC_FLAGS
+Returns the value of the Sys_misc system register.
+
+SYS_CTRL
+Perform one of the system configuration control operations OSC1, DVI_SRC, and DVI_MODE.
+
+MCI_STATUS
+Returns the value of the Sys_mci system register.
+
+We would have preferred to employ a trap-and-execute emulation scheme for those register accesses. However, as described in the following section, this technique is not feasible with the mechanisms provided by TrustZone.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: Booting Linux in the Non-Secure World with TrustZone</p>
+<p>Summary: To boot Linux in the non-secure world using TrustZone, a Linux kernel and a RAM disk must be loaded into memory. The kernel is complemented with ATAGs data structure, which contains essential boot-time information. To ensure security, access to peripherals is granted or denied based on their criticality for the secure world. For devices that must be preserved for the secure world, the Linux kernel code is modified to issue hypercalls instead of directly accessing device resources. The hypervisor reflects these hypercalls to the user-level VMM, which responds to them accordingly.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>Device emulation
+We considered device emulation as a less intrusive alternative to the introduction of hypercalls. In contrast to the hypercall approach, device emulation does not require us to change the Linux kernel.
+
+The basic idea of emulating device access is to let the hypervisor pass control to the VMM as soon as the non-secure OS accesses an address outside the permitted physical address ranges. The VMM can then inspect the address in question and the program counter of the non-secure OS that raised the access violation. Given the program counter value, the VMM can fetch and decode the faulting instruction and emulate it in software. Because ARM is a RISC architecture, the instruction decoding is rather simple. The instruction in question can only be a load or a store instruction. No other instruction would raise an access fault. For read operations, the VMM would provide the result of the operation by changing the corresponding entry of the VM state structure.
+
+That said, we found that the trap-and-execute emulation model is not possible to implement with the TrustZone protection mechanisms in general. Dependent on the concrete platform, the CPU will not immediately enter the hypervisor when the fault occurs but attempts to perform the bus transaction. This transaction will trigger an external data abort. This abort is similar to a device interrupt. It principally raises an exception (so the violation can be detected) but not always immediately. Therefore, there is no way to uniquely reconstruct what happened in between the invalid access and the reception of the external abort exception in the hypervisor. Neither can the hypervisor recover the non-secure world to a useful state.
+
+
+The image above displays the flow of control when the normal-world OS performs an illegal device access. The Genode system starts in the secure world. The user-level TZ VMM component bootstraps the rich OS, and finally control to the normal world via the run function of the kernel, which, in turn, initiates a world switch to the normal world. If the rich OS accesses a device, which was not assigned to the normal world, an external data abort occurs, and control is passed back to the secure world. The virtual device model may try to trap-and-execute the faulting instruction.
+
+We found that the latency of reporting access violations can be reduced by adding memory barriers to the faulting code. However, as this comes down to changing the Linux kernel, this would defeat the initial incentive for using device emulation instead of introducing hypercalls.
+
+The general pattern of changing the original code to using a hypercall looks as follows (ctr refers to a critical device register):
+
+ +#ifdef RUNS_IN_SECURE_WORLD
+   if (ctr)
+     return readl(ctr);
+ +#else
+ + if (ctr) {
+ +   static u32 ret;
+ +   asm volatile("mov r1, #3       \n"
+ +          "dsb              \n"
+ +          "dmb              \n"
+ +          "smc              \n"
+ +          "mov %[value], r0 \n" : [value] "=r" (ret) :: "r0", "r1");
+ +   return ret;
+ + }
+ +#endif
+We replaced the original call to the access function readl(ctr) with the snippet above.
+
+A ready-to-use configuration for the Linux kernel accompanied with the needed modification to the kernel source code are available here:
+
+Adaptation of the Linux kernel
+ https://github.com/skalk/linux/commit/284073c4f6c0e6a77c02ae9d296da9c46f6f5104.patch
+We tried to keep the kernel patch as small as possible. The patch comprises the addition of only 73 lines of code (6 hypercalls) to the kernel. With these few modifications, we were able to boot Linux completely in the non-secure world.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: Device Emulation in TrustZone's Non-Secure World</p>
+<p>Summary: Device emulation in the non-secure world using TrustZone is considered as an alternative to introducing hypercalls. However, trap-and-execute emulation is not feasible due to the latency in reporting access violations. Instead, modifications to the Linux kernel are made by replacing calls to access functions with hypercalls, allowing Linux to boot completely in the non-secure world. A minimal kernel patch was developed to achieve this, only adding 73 lines of code and enabling the successful boot of Linux in the non-secure world.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>TrustZone demonstrated in color
+The goal of our ARM TrustZone experiments was to push the envelope of this technology beyond the typical scope of TPM-like functionality on a mobile tablet device. We aimed at executing a complete Genode-based operating system in the secure world while running a largely unmodified Android OS in the normal world. The secure OS does not merely sit in the background but comes with a graphical user interface that responds to user input via the touchscreen. At any time, the user is able to switch between both worlds using a button.
+
+We identified the Freescale i.MX53 SABRE tablet as a suitable platform for this experiment. It is one of the few ARM development platforms that allows the developer to access the secure world of TrustZone and it has a tablet form factor. As we performed our initial TrustZone-related research on the ARM Versatile Express platform, we were furthermore interested in learning more about the differences of the TrustZone implementations of two different SoC vendors.
+
+The practical work consisted of the following steps:
+
+Adaptation of Genode to the i.MX53 platform,
+
+Enabling TrustZone on i.MX53,
+
+Implementing a TrustZone monitor that deals with the specifics of the i.MX53 with the goal of booting Linux in the normal world besides Genode,
+
+Display driver running as user-level device driver on Genode
+
+Touchscreen driver running as user-level device driver on Genode
+
+Interfacing Genode's display and user-input drivers with the Android software stack.
+
+Multiplexing the display between Android and Genode using hardware overlays.
+
+In the following, each of those topics is briefly covered.
+
+Genode on i.MX53 SABRE tablet
+We conducted our first TrustZone experiments on the ARM Versatile Express platform based on a Cortex-A9 CPU. With Freescale i.MX53, we took the challenge to transfer our results to an entirely different platform. We considered two variants of a i.MX53-based platform. The so-called Quick-Start Board (QSB) is a low-cost development board whereas the SABRE-tablet reference platform comes in the form factor of a tablet. The principle adaptation of Genode to the new platform required us to add support for the Cortex-A8 CPU to our kernel and add device drivers for the i.MX-specific interrupt controller, UART, GPIO, and EPIT timer. With these adaptations, simple Genode scenarios could be executed on the platform.
+
+TrustZone on i.MX53
+As the i.MX53 SoC is based on a Cortex-A8 CPU instead of a Cortex-A9 as used on the Versatile Express platform, we expected the need of minor changes to the TrustZone world-switching code.
+
+One particular i.MX-specific difference is the routing of interrupts. Because i.MX does use a custom interrupt controller, the assignment of interrupts to either the secure or the normal world works slightly differently than on the ARM Versatile Express platform. Furthermore, the i.MX53 comes with a custom TrustZone protection controller called Central Security Unit (CSU). Similar to the TrustZone protection controller used on the Versatile Express platform, the CSU allows the assignment of device groups to the secure or normal worlds using corresponding configuration bits. The CSU differentiates 64 device groups. Subsuming the individual devices to differentiable groups is up to the SoC vendor. A noteworthy advantage of the CSU compared to the ARM TZ protection controller within the ARM Cortex A9 reference board is the way of how access violations are handled. As stated in Device emulation, the ARM TZ protection controller responds to invalid accesses with an asynchronous external abort exception, similar to a device interrupt. Upon the execution of an offending instruction, the TZ protection controller detects the violation, yet the CPU would continue the execution of further instructions until the flagged violation eventually reaches the CPU, triggering an external abort exception. This scheme effectively rules out any attempt to emulate device accesses. In contrast, the i.MX CSU responds to access violations by synchronously yielding control to the exception handler. So when such an exception occurs, the offending instruction can be determined and emulated in software. However, even though device emulation using the CSU is principally possible, we haven't investigated this opportunity further.
+
+The second distinctive property of i.MX53 compared to the Versatile Express platform is the so-called Multi-Master Multi-Memory Interface (M4IF), which is part of the DDR memory controller. On the Versatile Express platform, we used 32 MiB SRAM for Genode and assigned the platforms DDR memory to the normal world. On i.MX53, this scheme would not work because there is no substantial amount of memory available besides the DDR RAM. This rules out a mere partitioning of memory using the CSU. However, the M4IF enables the masking of DDR RAM resources such that particular ranges can be preserved for the exclusive access by the secure world. We successfully used the M4IF to partition the DDR RAM between the secure world and the normal world.
+
+TrustZone monitor
+The user-level TrustZone monitor (we call it VMM because it acts very similar to a virtual machine monitor) for the i.MX53 had to be developed from scratch. Almost no code of the Versatile Express platform could be reused. To us, this experience is a valuable insight into the TrustZone technology. Even though the principle TrustZone mechanism for dividing control between both worlds is unified, it is up to the SoC vendor to implement their respective interpretation of security. I.e., the assignment of devices to the bits of a protection controller, the signalling mechanism for violations, the handling of the NS bit by the devices, or additional TZ-related bus components are not standardized. Hence, the mere claim that a product uses TrustZone does not automatically imply the presence of any meaningful security mechanisms. This is unfortunate if the use case of a product has not been envisioned by the SoC vendor. For example, in most application scenarios, TrustZone is used as a TPM-like component that is explicitly called by the normal world. It does not become active on its own. In our case, however, the secure world executes a complete OS including a preemptive scheduler. Therefore, access to clock and power management becomes critical in our scenario. Unfortunately, the clock and power management module does not support the protection of selected clocks and regulators from the normal world. The whole module can be either assigned to the normal world or the secure world. In the former case, the liveliness of the secure would would depend on the normal world. The latter case would require the implementation of extensive device-emulation code to use an unmodified OS kernel in the normal world.
+
+For our prototype, we partitioned the platform where easily feasible (e.g., for DDR memory, interrupts) but we did not attempt to implement device emulators. In the case of the clock and power management module, we decided to grant the normal world access to the devices, yet disabled code paths in the Linux kernel that would interfere with the liveliness of secure world. We feel that this approach is appropriate for a demonstrator. For building a real product, the decision would come down to an even-handed judgement.
+
+The hypercalls implemented by the i.MX53-specific VMM are related to the access of a few platform features that must not be handed to the normal world directly, in particular the virtual framebuffer and the virtual touchscreen.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: TrustZone Demonstrated on i.MX53 SABRE Tablet with Genode OS</p>
+<p>Summary: The ARM TrustZone technology was utilized to execute a complete Genode-based operating system in the secure world and an unmodified Android OS in the normal world on an i.MX53 SABRE tablet. The secure OS included a graphical user interface with touchscreen interaction, allowing the user to switch between both worlds. Adaptations were made to Genode for i.MX53, and a TrustZone monitor was implemented to deal with the platform's specific requirements. The display was multiplexed between Android and Genode using hardware overlays, successfully demonstrating the capabilities of TrustZone beyond typical TPM-like functionality.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>Additional device drivers
+In addition to the low-level drivers outlined above, the demonstration scenario required us to implement a number of peripheral device drivers, in particular a framebuffer driver for the LCD display, a touchscreen driver, and a driver for responding to the capacitive sensors of the SABRE tablet.
+
+The task of creating the drivers, in particular the framebuffer driver, turned out to be more complex than anticipated. Even though we had documentation for the Image Processing Unit (IPU) available, the device is enormously complex. The specification of the IPU is around 1000 pages. In order to focus on parts that are relevant for us, we turned to analysing register traces of the driver that ships with the vendor's kernel. Unfortunately, we found the driver code to be extremely shaky and prone to race conditions. For example, added instrumentation code that slightly slowed down the register accesses performed by the driver would result in a defective driver. We were eventually able to pin-point the problem to a few critical register-access patterns but this had been a long-winding endeavour.
+
+Compared to the framebuffer driver, enabling the touchscreen device was a smooth experience with no major surprises. With both framebuffer driver and the touchscreen driver in place, we could successfully run Genode's Nitpicker GUI server on the SABRE tablet. However, in the naive implementation, Nitpicker would need to copy pixels of its GUI clients to the physical frame buffer via software-blitting. Even though we have assembly-optimized blitting routines for ARM in place, we expected a significant performance overhead of running Android as a Nitpicker client compared to the native execution of Android without any indirection. For this reason, we investigated the use of hardware overlays.
+
+Similar to most embedded graphics devices, the i.MX53 Image Processing Unit (IPU) comes with the ability to compose the final image from a number of so-called hardware overlays. Each overlay is fed by a stream of pixels fetched via DMA. The physical pixel color is the result of a compositing function that is evaluated per pixel. This function could give preference to one particular overlay, with the effect that the respective overlay is always displayed on top of all others. Alternatively, color keying can be used to decide which overlay is visible at a given screen position. The IPU can even mix colors of different overlays (alpha blending). Because the IPU fetches the pixels directly from memory using DMA and the pixel compositing function is executed in hardware, the display multiplexing can effectively be offloaded from the ARM CPU.
+
+Since we wanted to run Android at almost-native performance in the normal world, we found that the use of hardware overlays was mandated. Unfortunately, the exploration of the hardware-overlaying feature of the i.MX53 IPU turned out to be highly complex so that we had to invest significant development time into enabling this feature on the Quick Start Board, just to find out that this feature behaves differently on the SABRE tablet. Because there seems to be almost no community of users of the SABRE tablet platform, we were not able to leverage any public community knowledge while working on this. We eventually discovered that the order of seemingly loosely related register accesses was the tipping point for the driver to reach a functional state.
+
+With our custom IPU driver with hardware-overlay support in place, the seemed to be paved to securely multiplex the display between (untrusted) Android running in the normal world and Genode's Nitpicker GUI server running in the secure world. Because the access to the IPU and GPU from either of both worlds can be individually configured in the i.MX53 CSU, we could assign the IPU exclusively to the secure world while handing out the GPU to the normal world. This way, Android can leverage hardware-accelerated graphics while the secure world retains control over the display.
+
+Unfortunately, however, the TrustZone implementation of the i.MX53 SoC has a limitation that renders the isolation between IPU and GPU ineffective. From the investigation by security researchers of SRLabs, we learned that even though the CSU could be configured to restrict the access from either of worlds to the devices individually, there is no way to individually restrict the access from each of the devices to the secure and normal worlds. Both devices IPU and GPU require direct memory access (DMA) to operate. The IPU uses DMA to fetch pixels from the frame buffer. The GPU uses DMA to access GPU buffer objects (containing textures, shaders, vertex arrays) and the target surface of rendering operations. On the i.MX53, it is not possible to configure DMA access of IPU to the memory of the secure world while restricting DMA operations of the GPU to the normal world's memory. In fact, both devices IPU and GPU share the same DMA channel ID. Consequently, we had to grant DMA access from both devices to the memory of both worlds. This way, the normal world is actually able to compromise the secure world using DMA via the GPU. Thanks to SRLabs for this valuable insight! To fix this security hole, the SoC would either need to separate the DMA policy of both devices or the secure would would need to virtualize the GPU.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: Implementing Additional Device Drivers and Addressing TrustZone Limitations on i.MX53 SABRE Tablet</p>
+<p>Summary: Additional device drivers were required for the ARM TrustZone demonstration on the i.MX53 SABRE tablet, including a framebuffer driver for the LCD display, a touchscreen driver, and a capacitive sensor driver. While developing the framebuffer driver proved to be more complex than anticipated, the touchscreen driver was implemented without major issues. Hardware overlays were employed to allow Android to run at near-native performance in the normal world, but TrustZone implementation limitations regarding the isolation between the Image Processing Unit (IPU) and GPU were discovered. To fix the security hole, the SoC would need to separate the DMA policy of both devices or the secure world would need to virtualize the GPU.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>Demonstration scenario
+
+Architectural overview of the TrustZone demo on i.MX53
+Figure 6 presents an overview of the key components of the demonstration scenario. Dashed lines symbolize information flow. Solid lines represent a relationship of control.
+
+At boot time, Genode's core sets up the CSU configuration and thereby defines the permissions of the normal world to access peripherals. The CSU is configured such that security-critical peripherals such as the IPU and the touch screen controller are preserved for the secure world only. Not all relevant devices are depicted (e.g., timers and GPIO controller are omitted in the picture). After platform initialization, core spawns the Genode process tree, which contains several user-level device drivers as well as the user-level TZ VMM. The VMM is responsible for managing the normal world. In particular, it loads the image of the normal-world OS and triggers the switch to the normal world using a service provided by core. Each time, the normal world passes control to the secure world or attempts to perform an invalid operation, core reflects the resulting world switch to the VMM. So the VMM can process hypercalls or invoke an emulation function accordingly and explicitly yields control back to the normal world.
+
+For the demonstration scenario, the VMM provides a virtual framebuffer and a virtual touchscreen device to the normal world. To keep the complexity of the VMM low, the interactions of the normal world with these virtual devices are implemented as hypercalls (rather than faithful emulations of the complex i.MX hardware devices). The CSU is configured such that the Android OS is able to access the Graphics Processing Unit (GPU) directly. However, the GPU targets all rendering operation to the virtual framebuffer rather than the physical framebuffer as used by the IPU. This way, the VMM can deliberately direct the GPU output to a dedicated buffer, which is composed into the physical screen using a hardware overlay. Because the framebuffer driver is the only software component in control of the IPU, the display remains under the sole control of the secure world, yet there exists a direct data path of pixels of the normal world to the display. Consequently, the graphics performance of Android in the demo scenario is on par with the performance of Android natively executed on the same platform.
+
+User input is always received by the secure world via the touchscreen driver and the Nitpicker GUI server. Hence, the routing policy of user-input events is under control of the secure world at all times. Only if the TZ VMM has the current input focus, nitpicker will route input events to the VMM, which, in turn, translates those events to input events for the virtual touchscreen used by Android.
+
+
+
+The demonstration scenario is available at the following branch of Genode.
+
+https://github.com/skalk/genode/tree/i.MX53_tablet_demo
+Genode as secure OS on a i.MX53 SABRE tablet.
+
+Detailed instructions about reproducing it are provided by the README file at the os/src/server/vmm/imx53/ directory.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: TrustZone Demonstration Scenario on i.MX53 SABRE Tablet</p>
+<p>Summary: The demonstration scenario for ARM TrustZone on i.MX53 SABRE tablet consists of key components like Genode's core, user-level device drivers, and a user-level TZ VMM, which manages the normal world. The VMM provides a virtual framebuffer and virtual touchscreen device to the normal world, with Android OS having direct access to the GPU. This setup maintains graphics performance and ensures the secure world retains control of the display and user input routing. The demonstration scenario can be accessed through the provided GitHub repository, with detailed instructions for reproducing it available in the README file.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>Common questions, answered
+In this Section, we attempt to answer common questions that we were repeatedly asked. Note that we are by no means experts in all areas covered. So if you detect errors, please report them back, preferably on our mailing list.
+
+What are the capabilities of TrustZone?
+TrustZone technology can be viewed from two angles, as virtualization solution and as mechanism to implement functionality similar to Trusted Platform Modules (TPM). When regarded as virtualization solution, TrustZone is severely lacking.
+
+The number of virtual machines is limited to two, one running in the secure world and one running in the non-secure world. There are no means for protecting multiple OSes sharing the non-secure world.
+
+There is no support to virtualize MMIO resources via the trap-and-execute model. As described in Section Device emulation, access violations of the non-secure OS can be detected but not emulated. Consequently, multiplexing a single device for both worlds is not possible in a transparent way.
+
+To guarantee that both worlds access distinct device resources only, certain device drivers of the non-secure OS must be modified. The use of TrustZone is not transparent. Even though those modifications are minor, this limitation effectively prevents the reuse of operating systems that are available as binaries only.
+
+There is no way to virtualize the physical memory as used by the non-secure OS. The guest-physical memory always corresponds to the host-physical memory.
+
+Despite those limitations, we identified a single advantage of TrustZone compared to other virtualization technologies (such as VT-x and recent ARM virtualization extensions), which is the direct assignment of device interrupts to the non-secure world without involving the VMM as indirection.
+
+We ultimately reached the conclusion that perceiving TrustZone as a virtualization mechanism is ill-guided. When looking at TrustZone as an alternative for TPMs, the motivation behind this technology become much more clear. In contrast to fixed-function TPMs, TrustZone is a vastly more versatile mechanism. The currently active world is represented by the so-called non-secure bit (NS bit) at the interconnect. The NS bit is routed to peripherals similar to an additional address line. This enables peripherals to respond to this condition by implementing restrictive policies for the NS mode. Thereby, security functions implemented in the secure world of TrustZone can utilize such peripherals. In contrast to TPMs, the security functions of the secure world of TrustZone are freely programmable using a powerful general-purpose CPU architecture. The port of the Genode OS Framework (as a poster child of a sophisticated component-based operating system) to the secure world is illustrative in this respect. In contrast, running Genode within a TPM would naturally be out of question.
+
+What are the limitations of TrustZone for compartmentalization?
+There are only two "worlds".
+
+Access by the non-secure side to the physical address space can be restricted but physical addresses are not virtualized.
+
+The granularity of access restricts depends on the SoC. For example, the Versatile Express platform provides no means to partition the DDR RAM into secure and non-secure areas. In contrast, the Freescale i.MX SoC provides this principal ability.
+
+The use of TrustZone is not entirely transparent to the non-secure side because non-accessible physical resources appear as holes in the physical address space. Furthermore, access to central devices (such as the system control registers) cannot be transparently emulated. The OS running on the non-secure world must be slightly modified.
+
+How to host two different compartments/zones (one trusted, one untrusted)?
+The general approach consists of the following steps:
+
+The system starts in secure mode and boots the hypervisor.
+
+The hypervisor sets up the non-secure world (i.e., by configuring the TZPC, TZASC, and PIC).
+
+The hypervisor loads the OS image to be executed in the non-secure world.
+
+The hypervisor enters the non-secure world at the entry point of the non-secure OS.
+
+The non-secure OS issues hypercalls for functions that are hidden from the non-secure world. Those hypercalls are handled by the hypervisor.
+
+In our particular experiments, the hypervisor is represented by an instance of the Genode OS, which separates the handling of hypercalls from the low-level mode switching using microkernel techniques.
+
+The individual steps of this process are covered in more detail in section Hypervisor managing the non-secure world.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: TrustZone Common Questions and Answers</p>
+<p>Summary: TrustZone technology is best viewed as an alternative to TPMs rather than as a virtualization solution. It offers versatility and programmability, but it has limitations for compartmentalization, such as only having two worlds, non-virtualized physical addresses, and granularity of access restrictions that depend on the SoC. To host two different compartments or zones (trusted and untrusted), a hypervisor is utilized to set up the non-secure world, load the OS image for the non-secure world, and handle hypercalls from the non-secure OS. In experiments, the Genode OS was used as the hypervisor for this purpose.</p>
+<hr>
+<p><strong>Question:</strong></p>
+<pre><code>Does it make sense to run commodity OSes like Android in the secure world?
+Following the rationale of Section What are the capabilities of TrustZone?, the use of TrustZone is meaningful only for implementing security functions. Thereby, the complexity of implementation is crucial. Traditionally, the code executed in the secure world has library-like functionality. Running a complete OS such as Genode in the secure world yields more flexibility on the cost of added complexity. Running a monolithic OS on the secure world would increase the complexity in multiple orders of magnitude.
+
+On platforms such as the Versatile Express platform, only small portions of memory can be preserved to the secure world when also running a non-secure OS. I.e., the particular platform hosts 32 MiB of SRAM. This limitation naturally rules out complex operating systems such as Android.
+
+How does TrustZone compares to ARM's virtualization extensions?
+The virtualization extensions introduced with Cortex-A15 are orthogonal to TrustZone. There are no significant changes between the TrustZone implementations of Cortex-A9 and Cortex-A15.
+
+The virtualization extensions devise the implementation of the virtual machine monitor as part of the non-secure world. Those extensions are unavailable in the secure world (which is aligned with the idea of implementing mere TPM-like functionality in the secure world).
+
+Are there any security improvements of the Cortex-A15 over the A9 architecture then?
+The virtualization extensions introduced with Cortex-A15 offer an additional instrument for partitioning of the system through the "Hyp" (hypervisor) mode on the non-secure side. With this mode and the additional virtualization features, low-complexity virtual machine monitors become feasible. However, with regard to the protection of the secure world, there is no improvement over Cortex-A9.
+
+That said, the security properties of TrustZone largely depend on the SoC rather than the revision of the ARM CPU core. Cortex-A15-based SoCs may offer more flexibility with regard to the secure world (such as more peripherals responding to the NS bit). However, we have not thoroughly examined those SoC-vendor-specific implementations at large.
+
+What are the capabilities of ARM's virtualization extensions?
+There is a new CPU privilege level ("Hyp" mode) below the existing CPU modes, which is only supported in non-secure mode.
+
+Virtualization holes present in previous generations of the ARM architecture have been fixed for the Hyp mode. Consequently all privileged instructions trap into Hyp mode when executed in the other modes. Thereby, the architecture has become fully virtualizable by the means of the trap-and-execute model.
+
+The trap-and-execute model principally allows for executing unmodified guest OSes on top of the VMM. However, this model has inherent performance penalties when the guest OS performs privileged operations at a high rate, for example, when clearing interrupts at the interrupt controller. To mitigate those effects, hardware support for effectively avoiding the frequent intervention of the hypervisor has been introduced.
+
+In particular, the handling of virtual interrupts can be accelerated by using a new virtual IRQ controller (vIRQ) device. The hypervisor can present the vIRQ to the guest OS at the guest-physical location of the normal interrupt controller. Hence, the guest will always interact with the vIRQ device. When the guest OS clears an interrupt, the hypervisor does not get involved. However, the injection of interrupts into the virtual machine is exclusively done by the hypervisor. There is no way to directly assign device interrupts to virtual machines because the scheduling of (multiple) virtual machines on one CPU is implemented in the hypervisor. Hence, each device interrupt designated for a virtual machine will take the hop through the hypervisor.
+
+The Cortex-A15 facilitates the emulation of memory-mapped device registers by providing useful information to the virtual machine monitor. In addition to the program counter and fault address, the VMM receives the decoded instruction and the type of access. This alleviates the need of the VMM to access guest memory (to fetch the instruction) and simplifies the instruction decoding.
+
+To support multiple virtual machines, a guest-physical to host-physical address translation has been introduced, which is a mechanism similar to extended page tables (EPT) of VT-x. Thereby, guest-physical memory becomes fully virtualizable. This feature comes along with a new page-table format, which is optional for guest-virtual to guest-physical mappings and mandatory for guest-physical to host-physical mappings. Besides the support for guest-physical to host-physical mappings, the new format has the benefit of supporting more than 4 GiB of RAM in total (per VM, the amount of usable RAM is still restricted by 32-bit addressing). Thanks to tagged TLBs, there exists a fast path for the translation from guest-virtual to host-physical mappings.
+
+There is no virtualization of DMA accesses issued by bus peripherals (i.e., display controller uses host-physical addresses). If the guest OS contains a device driver, the guest has to use host-physical addresses to interact with the device. For example, addresses of DMA buffers supplied to a device cannot be specified as guest-physical addresses. Therefore, in the general case, DMA-using devices cannot be passed directly to a guest OS. Access to such devices must be intercepted by the hypervisor to translate those addresses.
+
+There is no DMA protection. Additional per-device MMUs would be required. The presence of such per-device MMUs depends on the SoC.
+
+IRQs designated to a device driver running in a guest OS are always handled by the hypervisor, which responds to the IRQ by injecting a virtual interrupt to the vIRQ device. Hence, each interrupt carries the overhead of switching the context between the Guest OS and the hypervisor. However, the relevance of this overhead in practice is uncertain.
+
+For more information on ARM virtualization extensions and the procedure of creating a Cortex-A15 based virtual machine monitor, let us refer you to the excellent document "Implementing Hardware-supported Virtualization in OKL4 on ARM" by Prashant Varanasi.
+
+How does TrustZone help to securely store secrets?
+Hiding peripherals and memory from the non-secure world is a key feature of TrustZone. TrustZone does not define, which peripherals and memory are subjected to this mechanism. This is in the hands of the SoC vendors. For example, SoCs of Freescale i.MX family come with RAM and ROM resources that are entirely located on chip. Hence, bus transactions concerning these resources are not visible at the wiring of the chip. By declaring those resources to be exclusively accessible by the secure world, the information stored and processed in these resources remain private to the secure software stack.
+
+That said, each SoC has different characteristics with regard to assigning or partitioning storage resources for the access of either world. Hence, there is no general answer to this question.
+
+How does TrustZone facilitate secure booting?
+As a precondition for the use of TrustZone for secure booting, the code running in the secure world must be bootstrapped in a secure way, which is SoC-specific. For example, the i.MX family provides a high-assurance boot (HAB) feature that could be used to securely bootstrap the secure world. Alternatively, the secure software could be fixed in a chip-internal flash or ROM at production time. For example, the popular range of low-cost ARM development boards such as Pandaboard come with a fixed ROM boot code that implements several hypercalls and switches to non-secure mode right before starting the u-boot boot loader. Because the internal ROM code cannot be bypassed, there is no way for any system booted on such devices to access device resources that are preserved to the secure world.
+
+Given that the secure world is booted in a secure fashion, the loader of the non-secure OS is in the position to validate the integrity of the boot image of the non-secure OS via cryptographic measures. In the case of Genode running in the secure world, such functionality could be implemented within the user-level VMM component.
+
+If the SoC lacks a way to fix the boot code for the secure world, secure booting cannot be implemented even if the platform is equipped with TrustZone technology.
+
+When using Genode as secure OS, the SoC should provide sufficient memory to be preserved for the secure world. Early platforms such as the Samsung S3C6410 that come with only a few KiB of secure RAM and ROM are ruled out.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: TrustZone and Commodity OSes, ARM's Virtualization Extensions, and Secure Booting</p>
+<p>Summary: Running commodity OSes like Android in the secure world of TrustZone is not recommended due to increased complexity and limitations on platforms like the Versatile Express platform. ARM's virtualization extensions, introduced with Cortex-A15, are orthogonal to TrustZone and provide additional capabilities for partitioning systems through the Hyp mode. TrustZone can help securely store secrets by hiding peripherals and memory from the non-secure world and can facilitate secure booting if the SoC supports securely bootstrapping the secure world. The implementation of secure booting and secure storage depends on the SoC used.</p>
+<hr>
+<p><strong>Question:</strong> What are two lines of experimentation? Please summarize them in short.</p>
+<p><strong>Answer:</strong></p>
+<p>Two lines of experimentation refer to two distinct approaches or methods used to investigate a problem, hypothesis, or research question. In scientific research, these two lines can help validate results, uncover new insights, or compare different strategies. Here's a brief summary of each line:</p>
+<ol>
+<li>
+<p>Line 1: This line of experimentation focuses on a particular method, technique, or approach to addressing the research question. It can involve specific experimental designs, data collection methods, or analysis techniques to investigate the hypothesis or problem.</p>
+</li>
+<li>
+<p>Line 2: This second line of experimentation employs an alternative method or approach to explore the same research question. By utilizing a different technique, researchers can compare the outcomes of both lines of experimentation and validate their findings or reveal new aspects of the research question that were not apparent in the first line of experimentation.</p>
+</li>
+</ol>
+<hr>
+</article></body></html>

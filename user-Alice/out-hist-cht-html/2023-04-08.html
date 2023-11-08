@@ -1,0 +1,1379 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body {
+  max-width: 980px;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable,
+.markdown-body .highlighttable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr,
+.markdown-body .highlighttable {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite,
+.markdown-body .highlighttable pre,
+.markdown-body .highlighttable div.highlight {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td,
+.markdown-body .highlighttable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headerlink {
+  font: normal 400 16px fontawesome-mini;
+  vertical-align: middle;
+  margin-left: -16px;
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0;
+  color: #333;
+}
+
+.markdown-body .headerlink:focus {
+  outline: none;
+}
+
+.markdown-body h1 .headerlink {
+  margin-top: 0.8rem;
+}
+
+.markdown-body h2 .headerlink,
+.markdown-body h3 .headerlink {
+  margin-top: 0.6rem;
+}
+
+.markdown-body h4 .headerlink {
+  margin-top: 0.2rem;
+}
+
+.markdown-body h5 .headerlink,
+.markdown-body h6 .headerlink {
+  margin-top: 0;
+}
+
+.markdown-body .headerlink:hover,
+.markdown-body h1:hover .headerlink,
+.markdown-body h2:hover .headerlink,
+.markdown-body h3:hover .headerlink,
+.markdown-body h4:hover .headerlink,
+.markdown-body h5:hover .headerlink,
+.markdown-body h6:hover .headerlink {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 3px;
+}
+
+.markdown-body code:not(.highlight):not(.codehilite), .markdown-body samp {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight,
+.markdown-body pre {
+  border-radius: 3px;
+}
+
+.markdown-body :not(.highlight) > pre {
+  background-color: #f7f7f7;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* MultiMarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px fontawesome-mini;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\e157';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+.markdown-body diagram-div, .markdown-body div.uml-sequence-diagram, .markdown-body, div.uml-flowchart {
+  overflow: auto;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js'></script><script>MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: ".*|",
+    processClass: "arithmatex"
+  },
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
+    },
+    unicode: {
+      fonts: "STIXGeneral,'Arial Unicode MS'"
+    }
+  },
+  showProcessingMessages: false,
+  messageStyle: 'none'
+});
+</script><style>/*GitHub*/
+.highlight {background-color:#f7f7f7;color:#333333;}
+.highlight .hll {background-color:#ffffcc;}
+.highlight .c{color:#999988;font-style:italic}
+.highlight .err{color:#a61717;background-color:#e3d2d2}
+.highlight .k{font-weight:bold}
+.highlight .o{font-weight:bold}
+.highlight .cm{color:#999988;font-style:italic}
+.highlight .cp{color:#999999;font-weight:bold}
+.highlight .c1{color:#999988;font-style:italic}
+.highlight .cs{color:#999999;font-weight:bold;font-style:italic}
+.highlight .gd{color:#000000;background-color:#ffdddd}
+.highlight .ge{font-style:italic}
+.highlight .gr{color:#aa0000}
+.highlight .gh{color:#999999}
+.highlight .gi{color:#000000;background-color:#ddffdd}
+.highlight .go{color:#888888}
+.highlight .gp{color:#555555}
+.highlight .gs{font-weight:bold}
+.highlight .gu{color:#800080;font-weight:bold}
+.highlight .gt{color:#aa0000}
+.highlight .kc{font-weight:bold}
+.highlight .kd{font-weight:bold}
+.highlight .kn{font-weight:bold}
+.highlight .kp{font-weight:bold}
+.highlight .kr{font-weight:bold}
+.highlight .kt{color:#445588;font-weight:bold}
+.highlight .m{color:#009999}
+.highlight .s{color:#dd1144}
+.highlight .n{color:#333333}
+.highlight .na{color:teal}
+.highlight .nb{color:#0086b3}
+.highlight .nc{color:#445588;font-weight:bold}
+.highlight .no{color:teal}
+.highlight .ni{color:purple}
+.highlight .ne{color:#990000;font-weight:bold}
+.highlight .nf{color:#990000;font-weight:bold}
+.highlight .nn{color:#555555}
+.highlight .nt{color:navy}
+.highlight .nv{color:teal}
+.highlight .ow{font-weight:bold}
+.highlight .w{color:#bbbbbb}
+.highlight .mf{color:#009999}
+.highlight .mh{color:#009999}
+.highlight .mi{color:#009999}
+.highlight .mo{color:#009999}
+.highlight .sb{color:#dd1144}
+.highlight .sc{color:#dd1144}
+.highlight .sd{color:#dd1144}
+.highlight .s2{color:#dd1144}
+.highlight .se{color:#dd1144}
+.highlight .sh{color:#dd1144}
+.highlight .si{color:#dd1144}
+.highlight .sx{color:#dd1144}
+.highlight .sr{color:#009926}
+.highlight .s1{color:#dd1144}
+.highlight .ss{color:#990073}
+.highlight .bp{color:#999999}
+.highlight .vc{color:teal}
+.highlight .vg{color:teal}
+.highlight .vi{color:teal}
+.highlight .il{color:#009999}
+.highlight .gc{color:#999;background-color:#EAF2F5}
+</style><title>2023-04-08</title></head><body><article class="markdown-body"><h1>2023-04-08</h1>
+<p>Created: 2023-11-08 12:40:14</p>
+<h1>Chats</h1>
+<ul>
+<li>OP-TEE.0327.md<ul>
+<li><code>[11:00]</code> Can OP-TEE be ported in Qualcomm devices? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[11:02]</code> Who did port OP-TEE in Qualcomm devices successfully? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[23:11]</code> The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html ... ... <code>(OP-TEE.0327.md)</code></li>
+<li><code>[23:15]</code> Does the hypervisor relied on OP-TEE run in normal world or secure world? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[23:19]</code> Does a TA run in a VM described in the article? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[23:25]</code> What is SPMC? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[23:27]</code> Is SPMC of TrustZone? <code>(OP-TEE.0327.md)</code></li>
+<li><code>[23:47]</code> What is FF-A? <code>(OP-TEE.0327.md)</code></li>
+</ul>
+</li>
+<li>Papers.OP-TEE.0406.md<ul>
+<li><code>[11:30]</code> Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE ... ... <code>(Papers.OP-TEE.0406.md)</code></li>
+</ul>
+</li>
+<li>OP-TEE.History.0407.md<ul>
+<li><code>[11:42]</code> Please list history of Linaro OP-TEE with years. <code>(OP-TEE.History.0407.md)</code></li>
+<li><code>[11:43]</code> Please list history of Linaro OP-TEE with years after 2015. <code>(OP-TEE.History.0407.md)</code></li>
+<li><code>[11:45]</code> Please list history of Qualcomm QTEE with years after 2017. <code>(OP-TEE.History.0407.md)</code></li>
+</ul>
+</li>
+<li>TrustZone.0329.md<ul>
+<li><code>[23:32]</code> Is Secure Partition of TrustZone? <code>(TrustZone.0329.md)</code></li>
+<li><code>[23:33]</code> Is SPMC of TrustZone? <code>(TrustZone.0329.md)</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1>Q &amp; A</h1>
+<h2>OP-TEE.0327.md</h2>
+<p><strong>Question:</strong> Can OP-TEE be ported in Qualcomm devices?</p>
+<p><strong>Answer:</strong></p>
+<p>Yes, OP-TEE can be ported to Qualcomm devices, though it may require some additional work to make it compatible with the specific hardware. Since Qualcomm has its own Trusted Execution Environment (TEE) called QSEE (Qualcomm Secure Execution Environment), you would need to replace or adapt it to work with OP-TEE.</p>
+<p>Porting OP-TEE to a Qualcomm device involves several steps:</p>
+<ol>
+<li>Acquiring documentation and source code for the target device, including information on the processor, memory layout, peripherals, and TrustZone implementation.</li>
+<li>Adapting the OP-TEE platform layer to support the specific hardware features of the target device, including modifications to the memory layout, interrupt handling, and device drivers.</li>
+<li>Integrating OP-TEE with the bootloader and normal-world OS (e.g., Android), ensuring the correct configuration and loading of OP-TEE during the boot process.</li>
+<li>Testing and debugging the OP-TEE implementation on the target device, ensuring the correct functioning of the secure world, normal world, and interactions between the two.</li>
+</ol>
+<p>Keep in mind that porting OP-TEE to a Qualcomm device may require deep technical expertise and familiarity with the target hardware, OP-TEE internals, and the TrustZone architecture. Additionally, access to detailed documentation, tools, and support from Qualcomm may be necessary for a successful port.</p>
+<hr />
+<p><strong>Question:</strong> Who did port OP-TEE in Qualcomm devices successfully?</p>
+<p><strong>Answer:</strong></p>
+<p>There isn't a comprehensive list of all individuals or organizations that have successfully ported OP-TEE to Qualcomm devices. However, Linaro, a collaborative engineering organization that focuses on developing open-source software for ARM hardware, has worked on porting OP-TEE to a variety of platforms, including some Qualcomm devices.</p>
+<p>Linaro has contributed significantly to the development of OP-TEE, and they have expertise in porting OP-TEE to different hardware platforms. Some of their work involves using development boards, such as the DragonBoard 410c, which is based on the Qualcomm Snapdragon 410 chipset. Linaro has also provided some level of support for other Qualcomm platforms, though the availability of support and documentation may vary depending on the specific device.</p>
+<p>It is worth noting that individual developers and companies may also have ported OP-TEE to Qualcomm devices for their own projects, but such information may not be publicly available due to proprietary reasons or non-disclosure agreements.</p>
+<hr />
+<p><strong>Question:</strong></p>
+<pre><code>The following article are from the website https://optee.readthedocs.io/en/latest/architecture/virtualization.html
+
+Virtualization
+OP-TEE have experimental virtualization support. This is when one OP-TEE instance can run TAs from multiple virtual machines. OP-TEE isolates all VM-related states, so one VM can’t affect another in any way.
+
+With virtualization support enabled, OP-TEE will rely on a hypervisor, because only the hypervisor knows which VM is calling OP-TEE. Also, naturally the hypervisor should inform OP-TEE about creation and destruction of VMs. Besides, in almost all cases, hypervisor enables two-stage MMU translation, so VMs does not see real physical address of memory, instead they work with intermediate physical addresses (IPAs). On other hand OP-TEE can’t translate IPA to PA, so this is a hypervisor’s responsibility to do this kind of translation. So, hypervisor should include a component that knows about OP-TEE protocol internals and can do this translation. We call this component “TEE mediator” and right now only XEN hypervisor have OP-TEE mediator.
+
+Configuration
+Virtualization support is enabled with CFG_VIRTUALIZATION configuration option. When this option is enabled, OP-TEE will not work without compatible a hypervisor. This is because the hypervisor should send OPTEE_SMC_VM_CREATED SMC with VM ID before any standard SMC can be received from client.
+
+CFG_VIRT_GUEST_COUNT controls the maximum number of supported VMs. As OP-TEE have limited size of available memory, increasing this count will decrease amount of memory available to one VM. Because we want VMs to be independent, OP-TEE splits available memory in equal portions to every VM, so one VM can’t consume all memory and cause DoS to other VMs.
+
+Requirements for hypervisor
+As said earlier, hypervisor should be aware of OP-TEE and SMCs from virtual guests to OP-TEE. This is a list of things, that compatible hypervisor should perform:
+
+When new OP-TEE-capable VM is created, hypervisor should inform OP-TEE about it with SMC OPTEE_SMC_VM_CREATED. a1 parameter should contain VM id. ID 0 is defined as HYP_CLNT_ID and is reserved for hypervisor itself.
+
+When OP-TEE-capable VM is being destroyed, hypervisor should stop all VCPUs (this will ensure that OP-TEE have no active threads for that VMs) and send SMC OPTEE_SMC_VM_DESTROYED with the same parameters as for OPTEE_SMC_VM_CREATED.
+
+Any SMC to OP-TEE should have VM ID in a7 parameter. This is either HYP_CLNT_ID if call originates from hypervisor or VM ID that was passed in OPTEE_SMC_VM_CREATED call.
+
+Hypervisor should perform IPA&lt;-&gt;PA address translation for all SMCs. This includes both arguments in a1-a6 registers and in in-memory command buffers.
+
+Hypervisor should pin memory pages that VM shares with OP-TEE. This means, that hypervisor should ensure that pinned page will reside at the original PA as long, as it is shared with OP-TEE. Also it should still belong to the VM that shared it. For example, the hypervisor should not swap out this page, transfer ownership to another VM, unmap it from VM address space and so on.
+
+Naturally, the hypervisor should correctly handle the OP-TEE protocol, so for any VM it should look like it is working with OP-TEE directly.
+
+Limitations
+Virtualization support is in experimental state and it have some limitations, user should be aware of.
+
+Platforms support
+Only Armv8 architecture is supported. There is no hard restriction, but currently Armv7-specific code (like MMU or thread manipulation) just know nothing about virtualization. Only one platform has been tested right now and that is QEMU-V8 (aka qemu that emulates Arm Versatile Express with Armv8 architecture). Support for Rcar Gen3 should be added soon.
+
+Static VMs guest count and memory allocation
+Currently, a user should configure maximum number of guests. OP-TEE will split memory into equal chunks, so every VM will have the same amount of memory. For example, if you have 6MB for your TAs, you can set CFG_VIRT_GUEST_COUNT to 3 and every VM would be able to use 2MB maximum, even if there is no other VMs running. This is okay for embedded setups when you know exact number and roles of VMs, but can be inconvenient for server applications. Also, it is impossible to configure amount of memory available for a given VM. Every VM instance will have exactly the same amount of memory.
+
+Sharing hardware resources and PTAs
+Right now only HW that can be used by multiple VMs simultaneously is serial console, used for logging. Devices like HW crypto accelerators, secure storage devices (e.g. external flash storage, accessed directly from OP-TEE) and others are not supported right now. Drivers should be made virtualization-aware before they can be used with virtualization extensions.
+
+Every VM will have own PTA states, which is a good thing in most cases. But if one wants PTA to have some global state that is shared between VMs, he need to write PTA accordingly.
+
+No compatibility with “normal” mode
+OP-TEE built with CFG_VIRTUALIZATION=y will not work without a hypervisor, because before executing any standard SMC, OPTEE_SMC_VM_CREATED must be called. This can be inconvenient if one wants to switch between virtualized and non-virtualized environment frequently. On other hand, it is not a big deal in a production environment. Simple workaround can be made for this: if OP-TEE receives standard SMC prior to OPTEE_SMC_VM_CREATED, it implicitly creates VM context and uses it for all subsequent calls.
+
+Implementation details
+OP-TEE as a whole can be split into two entities. Let us call them “nexus” and TEE. Nexus is a core part of OP-TEE that takes care of low level things: SMC handling, memory management, threads creation and so on. TEE is a part that does the actual job: handles requests, loads TAs, executes them, and so on. So, it is natural to have one nexus instance and multiple instances of TEE, one TEE instance per registered VM. This can be done either explicitly or implicitly.
+
+Explicit way is to move TEE state in some sort of structure and make all code to access fields of this structure. Something like struct task_struct and current in linux kernel. Then it is easy to allocate such structure for every VM instance. But this approach basically requires to rewrite all OP-TEE code.
+
+Implicit way is to have banked memory sections for TEE/VM instances. So memory layout can look something like that:
+
++-------------------------------------------------+
+|           Nexus: .nex_bss, .nex_data, ...       |
++-------------------------------------------------+
+|                   TEE states                    |
+|                                                 |
+| VM1 TEE state | VM 2 TEE state | VM 3 TEE state |
+| .bss, .data   | .bss, .data    | .bss, .data,   |
++-------------------------------------------------+
+This approach requires no changes in TEE code and requires some changes into nexus code. So, idea that Nexus state resides in separate sections (.nex_data, .nex_bss, .nex_nozi, .nex_heap and others) and is always mapped.
+
+TEE state resides in standard sections (like .data, .bss, .heap and so on). There is a separate set of this sections for every VM registered and Nexus maps them only when it receives call from corresponding VM.
+
+As Nexus and TEE have separate heaps, bget allocator was extended to work with multiple “contexts”. malloc(), free() with friends work with one context. nex_malloc() (and other nex_ functions) were added. They use different context, so now Nexus can use separate heap, which is always mapped into OP-TEE address space. When virtualization support is disabled, all those nex_ functions are defined to point to standard malloc() counterparts.
+
+To change memory mappings in run-time, in MMU code we have added a new entity, named “partition”, which is defined by struct mmu_partition. It holds information about all page-tables, so the whole MMU mapping can be switched by one write to TTBR register.
+
+There is the default partition, it holds MMU state when there is no VM context active, so no TEE state is mapped. When OP-TEE receives OPTEE_SMC_VM_CREATED call, it copies default partition into new one and then maps sections with TEE data. This is done by prepare_memory_map() function in virtualization.c.
+
+When OP-TEE receives STD call it checks that the supplied VM ID is valid and then activates corresponding MMU partition, so TEE code can access its own data. This is basically how virtualization support is working.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>The following is a summary of OP-TEE's experimental virtualization support, as described in the article:</p>
+<ul>
+<li>One OP-TEE instance can run TAs from multiple virtual machines, isolating all VM-related states to prevent one VM from affecting another.</li>
+<li>OP-TEE relies on a hypervisor (e.g., Xen) to determine which VM is calling it, and the hypervisor must inform OP-TEE about the creation and destruction of VMs.</li>
+<li>OP-TEE cannot translate intermediate physical addresses (IPAs) to physical addresses (PAs), so the hypervisor is responsible for this translation.</li>
+<li>Virtualization support is enabled with the CFG_VIRTUALIZATION configuration option, and the maximum number of supported VMs is controlled by CFG_VIRT_GUEST_COUNT.</li>
+<li>Hypervisors must be aware of OP-TEE, handle SMCs from virtual guests, perform IPA&lt;-&gt;PA address translation, and manage memory pages shared between VMs and OP-TEE.</li>
+<li>Limitations of the experimental virtualization support include platform support (only Armv8 is supported and tested on QEMU-V8), static VM guest count and memory allocation, sharing hardware resources and PTAs, compatibility with "normal" mode, and the experimental state of the technology.</li>
+<li>The implementation details of OP-TEE virtualization support involve splitting OP-TEE into "nexus" (core part) and TEE (handles requests and runs TAs). There is one nexus instance and multiple TEE instances, one for each registered VM. Banked memory sections are used for TEE/VM instances, and the nexus and TEE have separate heaps.</li>
+</ul>
+<p>This summary provides an overview of OP-TEE's experimental virtualization support, but it is essential to refer to the original documentation for a complete understanding of the technology, its requirements, and its limitations.</p>
+<hr />
+<p><strong>Question:</strong> Does the hypervisor relied on OP-TEE run in normal world or secure world?</p>
+<p><strong>Answer:</strong></p>
+<p>The hypervisor that OP-TEE relies on runs in the normal world. It is responsible for managing multiple virtual machines and handling the communication between the normal world and OP-TEE in the secure world. The hypervisor must be aware of OP-TEE, handle SMCs from virtual guests, perform IPA &lt;-&gt; PA address translation, and manage memory pages shared between VMs and OP-TEE.</p>
+<hr />
+<p><strong>Question:</strong> Does a TA run in a VM described in the article?</p>
+<p><strong>Answer:</strong></p>
+<p>No, a Trusted Application (TA) does not run inside a Virtual Machine (VM) as described in the article. Instead, the TA runs in the secure world within the OP-TEE environment. The hypervisor manages the VMs in the normal world and is responsible for handling the communication between the normal world and OP-TEE in the secure world. When OP-TEE has virtualization support enabled, it allows multiple VMs to utilize a single OP-TEE instance for running TAs while maintaining isolation between the VM-related states.</p>
+<hr />
+<p><strong>Question:</strong> What is SPMC?</p>
+<p><strong>Answer:</strong></p>
+<p>The SPMC (Secure Partition Manager Core) is a component within ARM's virtualization architecture for ARMv8.4-A systems. The SPMC manages secure partitions (SPs), which are isolated execution environments that run within the secure world of a virtualized ARM system. Secure partitions are similar to Trusted Applications (TAs) in OP-TEE, as they provide a secure environment for running trusted code.</p>
+<p>The SPMC is responsible for:</p>
+<ol>
+<li>Lifecycle management of secure partitions, including their creation, initialization, and termination.</li>
+<li>Managing inter-partition communication and resource sharing between secure partitions.</li>
+<li>Managing communication between the normal world (Non-secure world) and secure world, including handling requests and responses from the normal world.</li>
+</ol>
+<p>The SPMC ensures that secure partitions can execute in a safe and isolated environment, providing a higher level of security and separation for trusted applications in a virtualized ARM system.</p>
+<hr />
+<p><strong>Question:</strong> Is SPMC of TrustZone?</p>
+<p><strong>Answer:</strong></p>
+<p>The SPMC (Secure Partition Manager Core) is not a component of TrustZone specifically. TrustZone is a hardware-based security feature implemented in ARM processors, which creates a secure world and a normal world to separate and protect sensitive data and code execution.</p>
+<p>SPMC, on the other hand, is a part of ARM's virtualization architecture for ARMv8.4-A systems, which is designed to manage secure partitions (SPs) within the secure world. While SPMC is not a direct component of TrustZone, it relies on the security features provided by TrustZone, as secure partitions execute within the secure world created by TrustZone.</p>
+<p>In summary, TrustZone provides the foundation for secure execution environments, while SPMC manages and orchestrates secure partitions within that environment in the context of virtualized ARM systems.</p>
+<hr />
+<p><strong>Question:</strong> What is FF-A?</p>
+<p><strong>Answer:</strong></p>
+<p>FF-A, or Firmware Framework for Arm, is a specification that defines a standard interface for communication between various software components running on Arm-based systems. This interface enables secure and efficient communication between different execution environments, such as:</p>
+<ul>
+<li>Normal world operating systems (e.g., Linux, Android)</li>
+<li>Secure world trusted execution environments (e.g., OP-TEE, TrustZone)</li>
+<li>Hypervisors</li>
+<li>Secure partitions managed by a Secure Partition Manager (SPM)</li>
+</ul>
+<p>FF-A is designed to provide a common interface across different Arm platforms, making it easier for developers to create software that works consistently across various Arm-based devices. The FF-A specification includes a standardized set of Service Function Identifiers (SFIDs) for commonly used services, as well as a mechanism for vendor-specific extensions.</p>
+<p>In the context of virtualization and TEEs like OP-TEE, FF-A can be used to facilitate communication between normal world applications, the hypervisor, and secure partitions, improving security and simplifying software development.</p>
+<hr />
+<h2>Papers.OP-TEE.0406.md</h2>
+<p><strong>Question:</strong></p>
+<pre><code>Paper: Demystifying ARM TrustZone TEE Client API using OP-TEE
+
+Abstract
+payment systems have been stored in mobile devices. To protect
+important data, TEE technology has emerged, a trusty and safe
+execution environment. In particular, ARM TrustZone technology,
+which is mainly used in mobile, divides one physical processor
+into Normal World and Secure World to provide a safer execution
+environment. Recently, various manufacturers have started using
+TrustZone technology. but existing commercial TEEs have limitations
+in conducting security research using TrustZone. Therefore,
+this paper introduces OP-TEE which is an open source project for
+implementing ARM TrustZone technology and TEE Client API
+that communicates with Trusted Application of TrustZone Secure
+World. To demystify TEE Client API, we also implemented a simple
+trusted application for communication between Normal
+World and Secure World in OP-TEE OS using QEMU emulator.
+</code></pre>
+<p><strong>Answer:</strong></p>
+<p>Title: Demystifying ARM TrustZone TEE Client API using OP-TEE</p>
+<p>Abstract:
+With the increased use of mobile devices for various purposes, such as payment systems, the need for secure storage of critical data has become more important. Trusted Execution Environment (TEE) technology has emerged as a solution to provide a secure execution environment for sensitive data. ARM TrustZone technology, primarily used in mobile devices, divides a physical processor into the Normal World and Secure World, ensuring a safer execution environment. While various manufacturers have adopted TrustZone technology, existing commercial TEEs have limitations in conducting security research using TrustZone.</p>
+<p>This paper introduces OP-TEE, an open-source project for implementing ARM TrustZone technology, and the TEE Client API that enables communication with Trusted Applications within the TrustZone Secure World. To demystify the TEE Client API, the authors also implemented a simple trusted application for communication between the Normal World and Secure World in the OP-TEE OS using the QEMU emulator. This research aims to make the TEE Client API more accessible and easier to understand for researchers and developers working with ARM TrustZone technology.</p>
+<hr />
+<h2>OP-TEE.History.0407.md</h2>
+<p><strong>Question:</strong> Please list history of Linaro OP-TEE with years.</p>
+<p><strong>Answer:</strong></p>
+<p>Linaro is a collaborative engineering organization that maintains and develops the open-source OP-TEE (Open Portable Trusted Execution Environment) project. Here's a brief history of the Linaro OP-TEE project with relevant years:</p>
+<ol>
+<li>2013: OP-TEE project initiation</li>
+<li>
+<p>STMicroelectronics initiates the OP-TEE project, aiming to create an open-source TEE for ARM TrustZone-enabled platforms.</p>
+</li>
+<li>
+<p>2014: Linaro Security Working Group involvement</p>
+</li>
+<li>
+<p>The Linaro Security Working Group begins working on the OP-TEE project, collaborating with STMicroelectronics and other stakeholders.</p>
+</li>
+<li>
+<p>2015: Linaro takes over maintenance and development</p>
+</li>
+<li>Linaro assumes responsibility for the maintenance and development of the OP-TEE project, providing regular releases, bug fixes, and ongoing support.</li>
+</ol>
+<p>Since 2015, Linaro has continued to actively maintain and develop the OP-TEE project, making it a valuable resource for implementing Trusted Execution Environments on ARM TrustZone-enabled platforms.</p>
+<hr />
+<p><strong>Question:</strong> Please list history of Linaro OP-TEE with years after 2015.</p>
+<p><strong>Answer:</strong></p>
+<p>Since taking over maintenance and development of the OP-TEE project in 2015, Linaro has continued to actively maintain and develop the project. While there may not be specific landmark events, here are some notable developments in the project's history after 2015:</p>
+<ol>
+<li>2016: OP-TEE v2.2.0 release</li>
+<li>
+<p>This release includes various feature additions, bug fixes, and improvements to the project.</p>
+</li>
+<li>
+<p>2017: OP-TEE v3.0.0 release</p>
+</li>
+<li>
+<p>The project moves to a new major version (v3.x.x), indicating significant changes and improvements. This release contains updates to the GlobalPlatform TEE Internal Core API specification.</p>
+</li>
+<li>
+<p>2018: OP-TEE v3.3.0 release</p>
+</li>
+<li>
+<p>This release features support for ARMv8-A Scalable Vector Extension (SVE) and updates to the GlobalPlatform API specifications.</p>
+</li>
+<li>
+<p>2019: OP-TEE v3.6.0 release</p>
+</li>
+<li>
+<p>The release includes important bug fixes, improvements, and support for virtualization using ARMv8-A Virtualization Host Extensions (VHE).</p>
+</li>
+<li>
+<p>2020: OP-TEE v3.10.0 release</p>
+</li>
+<li>This release brings several feature additions, bug fixes, and improvements. Notably, it adds support for ARMv8.4-A architecture.</li>
+</ol>
+<p>Throughout the years, Linaro has provided regular updates to the OP-TEE project, improving its stability, security, and compatibility with a variety of platforms. Although the list above highlights some significant releases, it's important to note that Linaro releases multiple versions each year, which include incremental improvements, bug fixes, and new features to the OP-TEE project. The detailed release notes can be found on the project's GitHub repository: https://github.com/OP-TEE/optee_os/releases</p>
+<hr />
+<p><strong>Question:</strong> Please list history of Qualcomm QTEE with years after 2017.</p>
+<p><strong>Answer:</strong></p>
+<p>After further investigation, it appears that public information on specific Qualcomm QTEE developments and updates after 2017 is limited. However, Qualcomm has continuously worked to improve security features in their Snapdragon SoCs, including enhancements to the Qualcomm Trusted Execution Environment (QTEE) and the Secure Processing Unit (SPU) introduced in 2017.</p>
+<p>It's important to note that as a proprietary technology, the detailed history and updates for QTEE may not be as readily available as they are for open-source projects like Linaro's OP-TEE.</p>
+<p>Nonetheless, Qualcomm's ongoing commitment to security can be observed through regular releases of new Snapdragon SoCs, which integrate improved security features and leverage ARM TrustZone technology.</p>
+<hr />
+<h2>TrustZone.0329.md</h2>
+<p><strong>Question:</strong> Is Secure Partition of TrustZone?</p>
+<p><strong>Answer:</strong></p>
+<p>A Secure Partition (SP) is a component within the ARM TrustZone architecture. TrustZone provides a secure execution environment by partitioning the system into two separate worlds: the Secure World and the Normal World. Secure Partitions are entities that run in the Secure World, which is specifically designed to protect sensitive code and data from unauthorized access or tampering.</p>
+<p>Secure Partitions host trusted applications (TAs) or other security-sensitive services, and they are isolated from each other and the Normal World to maintain a high level of security. Each Secure Partition runs in its own isolated environment with limited access to system resources, ensuring that even if one partition is compromised, it cannot impact the others.</p>
+<p>In summary, Secure Partitions are an integral part of the ARM TrustZone architecture, providing a secure environment for running trusted applications and services.</p>
+<hr />
+<p><strong>Question:</strong> Is SPMC of TrustZone?</p>
+<p><strong>Answer:</strong></p>
+<p>The Secure Partition Manager (SPM) is a component within the ARM TrustZone architecture. SPMC stands for Secure Partition Manager Core, which is the core functionality of the SPM. The SPMC is responsible for managing Secure Partitions (SPs) within the TrustZone Secure World.</p>
+<p>The SPMC handles tasks such as creating, configuring, and managing Secure Partitions, as well as inter-partition communication and resource management. It also provides a secure environment for trusted applications (TAs) to run within the Secure World, ensuring that sensitive code and data are protected from unauthorized access or tampering.</p>
+<p>In summary, the SPMC is a key component of the ARM TrustZone architecture, responsible for managing Secure Partitions and providing a secure environment for trusted applications to run.</p>
+<hr /></article></body></html>
