@@ -8,7 +8,7 @@
 # NOTICE.
 #       Author: visualge@gmail.com (CountChu)
 #       Created on 2023/4/5
-#       Updated on 2023/4/29
+#       Updated on 2023/7/22
 #
 
 import argparse
@@ -68,7 +68,6 @@ def build_args():
     return args  
 
 def markdown_to_html(fn_md, name, extensions, fn_html): 
-    print('Generating: %s' % (fn_html))
 
     f = open(fn_md, encoding='utf-8')
     md = f.read()
@@ -162,6 +161,8 @@ def main():
 
         'markdown.extensions.fenced_code',
         'markdown.extensions.codehilite',
+
+        'pymdownx.magiclink',
     ]    
 
     #
@@ -180,8 +181,26 @@ def main():
             print('Skip %s' % fn)
             continue 
 
+        print('Handling %s' % name)    
+
+        do_gen = False
         fn_out = os.path.join(args.output, "%s.html" % (name))
-        markdown_to_html(fn, name, extensions, fn_out) 
+        if os.path.exists(fn_out):
+            print('    The file %s exists.' % (os.path.basename(fn_out)))
+
+            #
+            # Compare the modified time between *.md and *.html.
+            #
+
+            if os.path.getmtime(fn) > os.path.getmtime(fn_out):
+                print('    It is old!')
+                do_gen = True
+        else:
+            do_gen = True
+
+        if do_gen:
+            print('    Generating: %s' % (fn_out))
+            markdown_to_html(fn, name, extensions, fn_out) 
 
 if __name__ == '__main__':
     main()
