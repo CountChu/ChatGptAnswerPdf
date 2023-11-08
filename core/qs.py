@@ -15,6 +15,7 @@ import sys
 import yaml
 import os
 import pdb
+from core import util
 
 br = pdb.set_trace
 
@@ -23,7 +24,7 @@ br = pdb.set_trace
 #
 
 def build_question(default_chat, default_date, sec_chat, qst):
-    question = {'hide': False, 'error': False}
+    question = {'hide': False, 'error': False, 'del': False}
 
     if default_chat != None:
         question['from'] = default_chat
@@ -55,7 +56,7 @@ def build_question(default_chat, default_date, sec_chat, qst):
         question['from'] = qst['from']
 
     if 'd' in qst:
-        question['date'] = qst['d']        
+        question['date'] = util.get_date(qst['d']) # Convert 2003/5/6 to 2003/05/06      
 
     if 'hide' in qst:
         question['hide'] = True
@@ -65,6 +66,9 @@ def build_question(default_chat, default_date, sec_chat, qst):
 
     if 'title' in qst:
         question['q_title'] = qst['title']
+
+    if 'my' in qst:
+        question['my'] = qst['my']
 
     return question
 
@@ -89,7 +93,7 @@ def build_question(default_chat, default_date, sec_chat, qst):
 #    
 
 def parse(fn):
-    f = open(fn)
+    f = open(fn, encoding='utf-8')
     y = yaml.load(f, Loader=yaml.loader.SafeLoader)
     f.close()
 
@@ -116,6 +120,11 @@ def parse(fn):
             sec_chat = sec['from']
         
         question_ls = []
+        if 'questions' not in sec:
+            print('Error. The "questions:" is mised in the yaml file')
+            print(fn)
+            sys.exit(1)
+
         for qst in sec['questions']:
             question = build_question(default_chat, default_date, sec_chat, qst)
             question['qs'] = qs_name
@@ -134,8 +143,16 @@ def check_sections(section_ls):
     for section in section_ls:
         for question in section['question_ls']:
             assert not ('q1' in question and 'q1-prefix' in question)
-            assert 'from' in question, question
+            
+            '''
+            if 'from' not in question:
+                print('Error!. The "from" is missed in the question:')
+                print(question['q1'])
+                sys.exit(1)
+            
             assert question['from'] != None
+            '''
+
             assert 'qs' in question
             assert 'sec_title' in question
 

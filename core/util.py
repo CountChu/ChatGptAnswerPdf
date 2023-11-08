@@ -3,6 +3,7 @@ import sys
 import datetime
 import hashlib
 import json
+import datetime
 import pdb
 
 br = pdb.set_trace
@@ -59,12 +60,22 @@ def collect_input_files(file, dn):
 
     return bn_fn_ls
 
+#
+# Convert 2003/5/6 to 2003/05/06
+#
+
+def get_date(d):
+    date = datetime.datetime.strptime(d, '%Y/%m/%d')
+    out = datetime.datetime.strftime(date, '%Y-%m-%d')
+    return out
+
+
 def get_date_time(ts):
     date = datetime.datetime.fromtimestamp(ts)
     dt_str = date.strftime("%Y-%m-%d %H:%M:%S")
     return dt_str
 
-def get_files(dn):
+def get_files(dn, ext):
     if not os.path.exists(dn):
         print('Error! The directory does not exist.')
         print(dn)
@@ -72,7 +83,12 @@ def get_files(dn):
 
     bn_ls = []
     for bn in os.listdir(dn):
-        bn_ls.append(bn)
+        if os.path.splitext(bn)[1] == ext:
+            bn_ls.append(bn)
+        else:
+            print('Warning! Can not handle the file.')
+            print(bn)
+            print('')
 
     bn_ls.sort()
 
@@ -176,6 +192,9 @@ def remove_empty_lines_from_head_and_tail(lines):
     if lines == []:
         return
 
+    if lines == ['']:
+        return
+
     while True:
         if lines[0].strip() == '':
             lines.pop(0)
@@ -199,7 +218,7 @@ def remove_empty_lines_from_head_and_tail(lines):
 #   2.  Cryptographic APIs:
 #
 
-def refine_md_1(lines):
+def _refine_md_1(lines):
     new_lines = []
     for i in range(len(lines)):
         line = lines[i]
@@ -213,14 +232,15 @@ def refine_md_1(lines):
 
     return new_lines
 
-def build_guid(fn, seq):
+def _build_guid(fn, seq):
     text = '%s-%d' % (fn, seq)
     sha256_hash = hashlib.sha256()
     sha256_hash.update(text.encode('utf-8'))
     hash_hex = sha256_hash.hexdigest()
     return hash_hex
 
-def build_qa(q, a, fn, seq):
+def _build_qa(q, a, fn, seq):
+    #print('fn = %s' % fn)
     #print('q = %s' % q)
     #print('a = %s' % a)
 
@@ -229,6 +249,9 @@ def build_qa(q, a, fn, seq):
     guid = None
     create_time = None 
     while True:
+        if q == []:
+            br()
+
         if q[0].startswith('guid:'):
             _, guid = q[0].split(':', 1)
             guid = guid.strip()
@@ -243,23 +266,24 @@ def build_qa(q, a, fn, seq):
             break
 
     if guid == None:
-        guid = build_guid(fn, seq)
+        guid = _build_guid(fn, seq)
 
     assert len(q) >= 1, q
-    one_q = q[0]
+    q_one_line = q[0]
 
     is_short = len(q) > 1
 
     remove_empty_lines_from_head_and_tail(a)
-    a = refine_md_1(a)
+    a = _refine_md_1(a)
 
-    qa = {'guid': guid, 'q': one_q, 'is_short': is_short, 'create_time': create_time, 'a': a}
+    qa = {'guid': guid, 'q_one_line': q_one_line, 'q': q, 'is_short': is_short, 'create_time': create_time, 'a': a}
     return qa
 
 #
 # Parse the chat file to build qa_ls
 # qa_ls = [qa]
-# qa = {'q', 'guid', 'create_time', 'a'}
+# qa = {guid, q_one_line, q, is_short, create_time, a}
+# fn: Chat Markdown file. E.g., OP-TEE.SP.0327.md
 #
 
 def parse_chat(fn):
@@ -268,7 +292,7 @@ def parse_chat(fn):
     qa_ls = []
     seq = 0
     for q, a in org_qa_ls:
-        qa = build_qa(q, a, fn, seq)
+        qa = _build_qa(q, a, fn, seq)
         seq += 1
         qa_ls.append(qa)
 
@@ -285,53 +309,96 @@ def find_qa(qa_ls, question, chat):
                 return out
 
         if out == None:
-            print('Error. The answer of the question is not found.')
-            print('chat = %s' % chat)
+            print('Warning! The answer of the question is not found.')
+            print(f'chat = {chat}')
             print('question =')
             print(json.dumps(question, indent=4))
 
-            sys.exit(1)
+            return None 
 
     else:
         for qa in qa_ls:
             if 'q2-prefix' in question:
-                if qa['q'].startswith(question['q2-prefix']):
+                if qa['q_one_line'].startswith(question['q2-prefix']):
                     out = qa
                     break
 
             if 'q2' in question:
-                if qa['q'] == question['q2']:
+                if qa['q_one_line'] == question['q2']:
                     out = qa
                     break
 
             if 'q1-prefix' in question:
-                if qa['q'].startswith(question['q1-prefix']):
+                if qa['q_one_line'].startswith(question['q1-prefix']):
                     out = qa
                     break
 
             if 'q1' in question:
-                if qa['q'] == question['q1']:
+                if qa['q_one_line'] == question['q1']:
                     out = qa
                     break                    
 
         if out == None:
-            print('Error. The answer of the question is not found.')
-            print('chat = %s' % chat)
+            print('Warning! The answer of the question is not found.')
+            print(f'chat = {chat}')
+            print('question =')
+            print(json.dumps(question, indent=4))
+
+            return None
+
+    return out    
+
+def find_answer(chats, fn_qa_ls_d, seq, question):
+    if not 'from' in question.keys():
+        error = False
+        
+        if not 'my' in question.keys():
+            print('Error! If "from" does not exist, "my" must be required.')
+            error = True 
+
+        if not 'date' in question.keys():
+            print('Error! If "from" does not exist, "date" must be required.')
+            error = True 
+
+        if error:
+            print(f'chat = {chats}')
             print('question =')
             print(json.dumps(question, indent=4))
 
             sys.exit(1)
 
-    return out    
+        question['a'] = [question['my']]
+        if 'guid' not in question.keys():
+            question['guid'] = _build_guid(question['qs'], seq)
 
-def find_answer(chats, fn_qa_ls_d, question):
+        return
+
     fn = os.path.join(chats, question['from'])
+
     qa_ls = fn_qa_ls_d[fn]
     qa = find_qa(qa_ls, question, question['from'])
 
-    question['guid'] = qa['guid']    
-    question['a'] = qa['a']
+    if qa == None:
+        if not 'my' in question.keys():
+            print('Error! The answer of the question is not found.')
+            print(f'fn = {fn}')
+            print('question =')
+            print(json.dumps(question, indent=4))     
+            br() 
+            
+            sys.exit(1)      
 
+        question['a'] = [question['my']]
+        if 'guid' not in question.keys():
+            question['guid'] = _build_guid(question['qs'], seq)
+
+        return 
+
+    question['guid'] = qa['guid']    
+
+    question['a'] = qa['a']
+    if 'my' in question.keys():
+        question['a'] = [question['my']]
 
     if qa['create_time'] != None:
         question['q_date'] = qa['create_time'][:10]
