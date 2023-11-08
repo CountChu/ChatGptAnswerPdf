@@ -117,7 +117,7 @@ def main():
         qs.dump_sections(section_ls)
 
     #
-    # Build fn_qa_ls_d
+    # Collect fn_qa_ls_d
     # fn_qa_ls_d[fn] = qa_ls
     #
 
@@ -125,6 +125,9 @@ def main():
 
     for section in section_ls:
         for question in section['question_ls']:
+            if not 'from' in question:
+                continue
+
             fn = os.path.join(args.chats, question['from'])
             
             if not os.path.exists(fn):
@@ -140,16 +143,27 @@ def main():
     # Find answers.
     #
 
+    seq = 0
     for section in section_ls:
         for question in section['question_ls']:
-            util.find_answer(args.chats, fn_qa_ls_d, question)
+            util.find_answer(args.chats, fn_qa_ls_d, seq, question)
+            seq += 1
 
     #
-    # Write new_chat_ls
+    # Build MD content for sections.
+    #
+
+    lines = report.build_md_content(section_ls, [], fn_answer, dis_date=True, dis_q_date=False, dis_q_time=False)
+
+    #
+    # Write lines in fn_answer
     #
 
     print('Write: %s' % fn_answer)
-    report.write_sections(section_ls, [], fn_answer, dis_date=True, dis_q_date=False, dis_q_time=False)
+    f = open(fn_answer, 'w', encoding='utf-8')
+    for line in lines:
+        f.write(line)
+    f.close()  
 
 if __name__ == '__main__':
     main()

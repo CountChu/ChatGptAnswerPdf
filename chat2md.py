@@ -3,8 +3,8 @@
 #       chat2md.py - Chat To Markdown Python App.
 #
 # FUNCTIONAL DESCRIPTION.
-#       The app converts conversations.json into Markdown files compatible 
-#       to the plugin [ChatGPT to Markdown]
+#       The app converts conversations.json into Markdown files which are compatible 
+#       to the Chrome plugin, [ChatGPT to Markdown]
 #       (https://chatopenai.pro/chatgpt-to-markdown/).
 #
 # NOTICE.
@@ -57,9 +57,6 @@ def build_args():
 
     return args  
 
-def refine_md_1(part):
-    return part.strip()
-
 def refine_md(part):
     out = ''
     lines = part.split('\n')
@@ -71,10 +68,25 @@ def refine_md(part):
 
     return out.strip()
 
-def handle_chat(output, chat): 
+def handle_chat(output, output_json, chat): 
     title = chat['title']
-    #if title != 'OP-TEE.CryptoEngine.0423':
+    #if title != 'Work.0723':
     #    return
+
+    #
+    # Write chat in a JSON file.
+    #
+
+    text = json.dumps(chat, indent=4)
+    fn = os.path.join(output_json, "%s.json" % title)
+    print('Write %s' % fn)
+    f = open(fn, 'w', encoding='utf-8')
+    f.write(text)
+    f.close()
+
+    #
+    # Write chat in a MD file.
+    #
 
     fn = os.path.join(output, "%s.md" % title)
     print('Write %s' % fn)
@@ -115,13 +127,24 @@ def handle_chat(output, chat):
             #assert s == 'user'
             #s = 'assistant'
 
+        elif role == 'tool':
+            f.write('**ChatGPT:**\n\n')
+
         else: 
             assert False, role
 
         content = message['content']
+
+        if 'parts' not in content:
+            continue
+            
         parts = content['parts']
 
+        if parts[0].strip() == '':
+            parts[0] = 'N/A\n'
+
         for part in parts:
+
             #if role == 'user':
             #    line = part.replace('\n', ' ')
             #    line = line.strip()
@@ -150,6 +173,9 @@ def main():
     util.check_dir_exist(args.input)
     util.check_dir_exist_make(args.output)
 
+    output_json = args.output + '-json'
+    util.check_dir_exist_make(output_json)
+
     #
     # Read conversations.json
     #
@@ -170,7 +196,7 @@ def main():
 
     chats = json.loads(content)
     for chat in chats:
-        handle_chat(args.output, chat)
+        handle_chat(args.output, output_json, chat)
 
 
 if __name__ == '__main__':

@@ -4,12 +4,12 @@
 #
 # FUNCTIONAL DESCRIPTION.
 #       The app generates answers of ChatGPT and saves them in HTML and PDF files 
-#       by running answer.py, tohtml.py, and topdf.py. 
+#       by running answer.py, subl_markdownPreview_save.py, and topdf.py. 
 #
 # NOTICE.
 #       Author: visualge@gmail.com (CountChu)
 #       Created on 2023/4/5
-#       Updated on 2023/4/29
+#       Updated on 2023/11/8
 #
 
 import argparse
@@ -82,7 +82,7 @@ def handle_list(args, ctx):
     print('')
     print('Question Sets in the directory "%s":' % ctx['questions'])
 
-    bn_fn_ls = util.get_files(ctx['questions'])
+    bn_fn_ls = util.get_files(ctx['questions'], '.yaml')
 
     for bn, fn in bn_fn_ls:
         print('    %s' % bn)
@@ -104,7 +104,7 @@ def build_pdf(ctx, bn):
     name, _ = util.get_name(bn)
 
     answer_fn = os.path.join(ctx['home'], 'answer.py')
-    tohtml_fn = os.path.join(ctx['home'], 'tohtml.py')
+    tohtml_fn = os.path.join(ctx['home'], 'subl_markdownPreview_save.py')
     topdf_fn = os.path.join(ctx['home'], 'topdf.py')
 
     cmd_ls = []
@@ -113,7 +113,7 @@ def build_pdf(ctx, bn):
     cmd = cmd % (answer_fn, ctx['questions'], bn, ctx['chats'], ctx['out'])
     cmd_ls.append(cmd)
 
-    cmd = 'python %s -f "%s.md" -i %s -o %s -s'    
+    cmd = 'python %s --force -f "%s.md" -i %s -o %s'    
     cmd = cmd % (tohtml_fn, name, ctx['out'], ctx['html'])
     cmd_ls.append(cmd)
 
@@ -132,7 +132,7 @@ def handle_build(args, ctx):
         bn_ls.append(args.file)
 
     else:
-        bn_fn_ls = util.get_files(ctx['questions'])
+        bn_fn_ls = util.get_files(ctx['questions'], '.yaml')
         for bn, _ in bn_fn_ls:
             bn_ls.append(bn)
 
@@ -153,7 +153,7 @@ def handle_update(args, ctx):
     # Get files in the questions directory.
     #
 
-    bn_fn_ls = util.get_files(ctx['questions'])
+    bn_fn_ls = util.get_files(ctx['questions'], '.yaml')
 
     #
     # Check for each files to see if it is necessary to build PDF.

@@ -34,7 +34,7 @@ class TestQsModule(unittest.TestCase):
         
         question = section['question_ls'][9]
         self.assertEqual(question['q_title'], 'What is OP-TEE Dispatcher?')
-        self.assertEqual(question['date'], '2023/4/13')
+        self.assertEqual(question['date'], '2023-04-13')
 
 
     def test_parse_2(self):
@@ -58,6 +58,20 @@ class TestQsModule(unittest.TestCase):
         self.assertEqual(question_ls[0]['from'], 'TEE.0328.md')
         self.assertEqual(question_ls[1]['from'], 'OP-TEE.0327.md')
         self.assertEqual(question_ls[2]['from'], 'OP-TEE.0327.md')
+
+    def test_parse_3(self):
+        qs_fn = os.path.join('user-Alice', 'questions', '230505.Papers.OP-TEE.yaml')
+
+        section_ls = qs.parse(qs_fn)
+        qs.check_sections(section_ls)     
+
+        self.assertEqual(len(section_ls), 3)
+
+        section = section_ls[2]
+        question_ls = section['question_ls']       
+
+        q_2 = question_ls[2]
+        self.assertEqual('my' in q_2.keys(), True)        
 
 if __name__ == '__main__':
     unittest.main()

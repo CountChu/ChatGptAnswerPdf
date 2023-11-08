@@ -17,6 +17,8 @@ import sys
 import os
 import re
 import datetime
+import yaml
+import json
 from core import util, qs, report
 
 
@@ -81,7 +83,7 @@ def get_questions(questions_dn, chats_dn):
     #
 
     question_ls = []
-    bn_fn_ls = util.get_files(questions_dn)
+    bn_fn_ls = util.get_files(questions_dn, '.yaml')
     for bn, fn in bn_fn_ls:
         print(fn)
 
@@ -115,6 +117,9 @@ def get_questions(questions_dn, chats_dn):
 
     fn_qa_ls_d = {}
     for question in question_ls:
+        if not 'from' in question.keys():
+            continue 
+
         fn = os.path.join(chats_dn, question['from'])
 
         if not os.path.exists(fn):
@@ -130,15 +135,53 @@ def get_questions(questions_dn, chats_dn):
     # Find aswer for each question in question_ls
     #
 
+    seq = 0
     for question in question_ls:
-        util.find_answer(chats_dn, fn_qa_ls_d, question)
+        util.find_answer(chats_dn, fn_qa_ls_d, seq, question)
+        assert 'guid' in question.keys()
+
+        if 'q_date' not in question:
+            if not 'date' in question:
+                br()
+                
+            question['q_date'] = question['date']
+
+        if 'q_time' not in question:
+            question['q_time'] = '%05d' % seq
+            seq += 1
 
     return question_ls
 
-def transform_to_question(qa, title):
-    question = {'hide': False, 'error': False}
-    question['q1'] = qa['q']
-    question['q2'] = qa['q']
+def question_exists(qa, chat):
+    for question in chat['questions']:
+        if 'q' in question:
+            if qa['q_one_line'] == question['q']:
+                #assert question['visited'] == False
+                question['visited'] = True
+                
+                return True
+
+        elif 'q-prefix' in question:
+            if qa['q_one_line'].startswith(question['q-prefix']):
+                #assert question['visited'] == False
+                question['visited'] = True
+
+                return True
+
+        elif 'q-infix' in question:
+            if question['q-infix'] in qa['q_one_line']:
+                #assert question['visited'] == False
+                question['visited'] = True
+
+                return True
+
+    return False
+
+def transform_to_question(qa, title, chat_with_delete_questions):    
+    question = {'hide': False, 'error': False, 'del': False}
+    question['q1'] = qa['q_one_line']
+    question['q2'] = qa['q_one_line']
+    question['q_full'] = qa['q']
     question['is_short'] = qa['is_short']
     question['from'] = title
     question['q_date'] = qa['create_time'][:10]
@@ -147,27 +190,53 @@ def transform_to_question(qa, title):
     question['a'] = qa['a']
     question['guid'] = qa['guid']
 
+    if chat_with_delete_questions != None:
+        if question_exists(qa, chat_with_delete_questions):
+            question['del'] = True
+
     return question
 
-def build_chats(chats_dn):
+def find_chat(name, chats):
+    if chats == None:
+        return None
+
+    out = None
+    count = 0
+    for chat in chats:
+        if chat['name'] == name:
+            out = chat
+            count += 1
+
+    assert count <= 1, name
+
+    return out
+
+
+def build_chats(chats_dn, deleteTask):
 
     #
     # For each chat file, get qa_ls and transform it into questions
     #
 
     out = []
-    bn_fn_ls = util.get_files(chats_dn)
+    bn_fn_ls = util.get_files(chats_dn, '.md')
     for bn, fn in bn_fn_ls:
+        #if bn != 'GPDR.0519.md':
+        #    continue
+
+        chat_with_delete_questions = find_chat(bn, deleteTask)
+
         qa_ls = util.parse_chat(fn)
+
         for qa in qa_ls:
             #title, _ = util.get_name(bn)
             title = bn
-            question = transform_to_question(qa, title)
+            question = transform_to_question(qa, title, chat_with_delete_questions)
             out.append(question)
 
     return out
 
-def get_solo_chats(question_ls, chats_dn):
+def get_solo_chats(question_ls, chats_dn, deleteTask):
     print('Number of questions  : %d' % len(question_ls))
 
     out = []
@@ -175,6 +244,11 @@ def get_solo_chats(question_ls, chats_dn):
     dup_count = 0
     guid_set = set()                     # The guid may be duplicated.
     for question in question_ls:
+        if not 'guid' in question.keys():
+            print('Error! The guid is not found in question.')
+            print(json.dumps(question, indent=4))
+            sys.exit(1)
+
         guid = question['guid']
         if guid in guid_set:
             print('Duplicated question: %s' % question['q1'])
@@ -183,7 +257,7 @@ def get_solo_chats(question_ls, chats_dn):
         guid_set.add(guid)
     print('Number of duplicated : %d' % dup_count)
 
-    chat_ls = build_chats(chats_dn)
+    chat_ls = build_chats(chats_dn, deleteTask)
     print('Number of chats      : %d' % len(chat_ls))
 
     for chat in chat_ls:
@@ -192,7 +266,7 @@ def get_solo_chats(question_ls, chats_dn):
 
     print('Number of solo chats : %d' % len(out))
 
-    assert len(question_ls) - dup_count + len(out) == len(chat_ls)
+    #assert len(question_ls) - dup_count + len(out) == len(chat_ls)
 
     return out 
 
@@ -200,6 +274,7 @@ def build_group_by_date(question_ls):
     out = {}
     for question in question_ls:
         date = question['q_date']
+
         if date not in out:
             out[date] = [] 
 
@@ -245,6 +320,23 @@ def get_section_ls_order_by_time(question_ls):
     section_ls = build_sections_by_title(question_ls)    
     return section_ls
 
+def split_lines(lines):
+    ls = []
+    for line in lines: 
+        for _line in line.strip().split('\n'):
+            _line = _line.strip()
+            if _line == '':
+                continue 
+
+            ls.append(_line)
+
+    return ls
+
+def same_content(line_ls1, line_ls2):
+    ls1 = split_lines(line_ls1)
+    ls2 = split_lines(line_ls2)
+    return ls1, ls2 
+
 def main():
 
     #
@@ -252,6 +344,24 @@ def main():
     #
 
     args = build_args()
+
+    #
+    # Load config.yaml
+    #
+
+    fn = 'config.yaml'
+    f = open(fn, 'r', encoding='utf-8')
+    cfg = yaml.load(f, Loader=yaml.CLoader)
+    f.close()
+
+    #
+    # Set visited.
+    #
+
+    if cfg['deleteTask'] != None:
+        for chat in cfg['deleteTask']:
+            for question in chat['questions']:
+                question['visited'] = False
 
     #
     # If use -q, check if the questions directory exists.
@@ -301,19 +411,42 @@ def main():
 
     question_ls = []
     chat_ls = []
+    do_delete = False
 
     if args.questions:
         question_ls = get_questions(args.questions, args.chats)
 
         if args.merge:
-            chat_ls = get_solo_chats(question_ls, args.chats)
+            chat_ls = get_solo_chats(question_ls, args.chats, cfg['deleteTask'])
+            do_delete = True
 
     #
     # Else, build question_ls form chats.
     #
 
     else:
-        chat_ls = build_chats(args.chats)
+        chat_ls = build_chats(args.chats, cfg['deleteTask'])
+        do_delete = True
+
+    #
+    # Check if all deleted chat are visited.
+    #
+
+    if do_delete:
+        c0 = 0                              # no visisted
+        c1 = 0                              # visisted
+        if cfg['deleteTask'] != None:
+            for chat in cfg['deleteTask']:
+                for question in chat['questions']:
+                    if not question['visited']:
+                        c0 += 1
+
+                        print('#409: Error.')
+                        print(question)
+                        sys.exit(1)
+
+                    else:
+                        c1 += 1
 
     #
     # Build date_question_ls_d[date] = question_ls
@@ -335,7 +468,9 @@ def main():
     #
 
     for date in sorted(date_set):
-        print(date)
+        print('Handling %s' % date)
+        #if date == '2023-08-31':
+        #    br()
 
         q_section_ls = []
         if date in date_question_ls_d:
@@ -345,16 +480,57 @@ def main():
         if date in date_chat_ls_d:
             c_section_ls = get_section_ls_order_by_time(date_chat_ls_d[date])
 
-
         fn_history = os.path.join(args.output, '%s.md' % date)
 
         fn_history_txt = None 
         if args.output_text:
              fn_history_txt = os.path.join(args.output_text, '%s.txt' % date)
 
-        report.write_sections(q_section_ls, c_section_ls, fn_history, dis_date = False, dis_q_date=False, dis_q_time=True)
-        if args.output_text:
-            report.write_sections_in_text(q_section_ls, c_section_ls, fn_history_txt, dis_date = False, dis_q_date=False, dis_q_time=True)
+        #
+        # build MD content for sections.
+        #
+
+        lines = report.build_md_content(q_section_ls, c_section_ls, fn_history, dis_date = False, dis_q_date=False, dis_q_time=True)
+        
+
+        do_write = False
+
+        #
+        # If the file exists, check if both are different, update them.
+        #
+
+        if os.path.exists(fn_history):
+            print('    The file exists. Check if both are different.')
+            f = open(fn_history, encoding='utf-8')
+            old_lines = f.readlines()
+            f.close()
+
+            ls1, ls2 = same_content(lines[2:], old_lines[2:])
+
+            if ls1 != ls2:
+                print('    The are different!')
+                input('    Press any key to continue...')
+                do_write = True
+
+            else:
+                print('    No need to update it.')
+
+        else: 
+            do_write = True
+
+        #
+        # Write lines in the file.
+        #
+
+        if do_write:
+            print('    Writing content in %s.' % os.path.basename(fn_history))
+            f = open(fn_history, 'w', encoding='utf-8')
+            for line in lines:
+                f.write(line)
+            f.close()        
+
+            if args.output_text:
+                report.write_sections_in_text(q_section_ls, c_section_ls, fn_history_txt, dis_date = False, dis_q_date=False, dis_q_time=True)
 
 
 if __name__ == '__main__':
