@@ -84,17 +84,23 @@ def build_args():
 
     return args  
 
-def contain_code(fn_md):
-    f = open(fn_md)
-    out = False 
-
-    for line in f:
+def contain_code(lines):
+    out = False
+    for line in lines:
         if line.find('```') != -1:
             out = True 
             break
-    f.close()
 
     return out  
+
+def contain_table(lines):
+    out = False
+    for line in lines:
+        if line[:2] == '|-':
+            out = True 
+            break 
+
+    return out
 
 def markdown_to_html(args, fn_md, name, fn_html): 
 
@@ -127,14 +133,33 @@ def markdown_to_html(args, fn_md, name, fn_html):
     # Run the MarkdownPreview command to save the MD in HTML.
     #
 
-    if contain_code(fn_md):             # The github parser is friendly for code block 
+    f = open(fn_md)
+    lines = f.readlines()
+    f.close()
+
+    has_code = contain_code(lines)
+    has_table = contain_table(lines)
+
+    parser = None
+    if has_table:
+        parser = 'github'
+    else:
+        if has_code:
+            parser = 'github'
+        else:
+            parser = 'markdown'
+
+    if parser == 'github':              # The github parser is friendly for code block 
                                         # [BUGBUG] github parser does not support color text.
         print('    parser: github')
         subprocess.run([subl, "--command", 'markdown_preview {"target":"save", "parser":"github"}'])
 
-    else:                               # The markdown is friendly for LaTex
+    elif parser == 'markdown':                               # The markdown is friendly for LaTex
         print('    parser: markdown')
         subprocess.run([subl, "--command", 'markdown_preview {"target":"save", "parser":"markdown"}'])
+
+    else:
+        assert False
 
     #
     # Move the HTML file.
