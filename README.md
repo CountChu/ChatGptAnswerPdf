@@ -1,7 +1,10 @@
 # ChatGptAnswerPdf
+
+**Highlight: By using the app, you can delete conversations but ChatGPT can't.**
+
 The project manages ChatGPT conversations and converts them from Markdown files into HTML and PDF files. You can: 
-1) organize ChatGPT conversations by your question set files.
-2) delete unused conversations which are specified in config.yaml.
+1) Organize ChatGPT conversations by your question set files.
+2) Delete an unused conversation by a question or by a sequence. The deleted conversations are specified in config.yaml.
 3) Daily report conversations. 
 
 # Applications
