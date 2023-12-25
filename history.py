@@ -9,7 +9,7 @@
 # NOTICE.
 #       Author: visualge@gmail.com (CountChu)
 #       Created on 2023/4/17
-#       Updated on 2023/4/29
+#       Updated on 2023/12/25
 #
 
 import argparse
@@ -152,33 +152,32 @@ def get_questions(questions_dn, chats_dn):
 
     return question_ls
 
-def question_exists(qa, chat):
+def find_question(qa, chat):
     for question in chat['questions']:
         if 'q' in question:
             if qa['q_one_line'] == question['q']:
-                #assert question['visited'] == False
-                question['visited'] = True
-                
-                return True
+                return question
 
         elif 'q-prefix' in question:
             if qa['q_one_line'].startswith(question['q-prefix']):
-                #assert question['visited'] == False
-                question['visited'] = True
-
-                return True
+                return question
 
         elif 'q-infix' in question:
             if question['q-infix'] in qa['q_one_line']:
-                #assert question['visited'] == False
-                question['visited'] = True
+                return question
 
-                return True
+        elif 'seq' in question:
+            if question['seq'] == qa['seq']:
+                return question
 
-    return False
+        else:
+            assert False
+
+    return None
 
 def transform_to_question(qa, title, chat_with_delete_questions):    
     question = {'hide': False, 'error': False, 'del': False}
+    question['seq'] = qa['seq']
     question['q1'] = qa['q_one_line']
     question['q2'] = qa['q_one_line']
     question['q_full'] = qa['q']
@@ -191,7 +190,9 @@ def transform_to_question(qa, title, chat_with_delete_questions):
     question['guid'] = qa['guid']
 
     if chat_with_delete_questions != None:
-        if question_exists(qa, chat_with_delete_questions):
+        del_question = find_question(qa, chat_with_delete_questions)
+        if del_question != None:
+            del_question['visited'] = True
             question['del'] = True
 
     return question
@@ -443,6 +444,7 @@ def main():
 
                         print('#409: Error.')
                         print(question)
+                        print(chat)
                         sys.exit(1)
 
                     else:

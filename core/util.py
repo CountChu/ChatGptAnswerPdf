@@ -276,13 +276,13 @@ def _build_qa(q, a, fn, seq):
     remove_empty_lines_from_head_and_tail(a)
     a = _refine_md_1(a)
 
-    qa = {'guid': guid, 'q_one_line': q_one_line, 'q': q, 'is_short': is_short, 'create_time': create_time, 'a': a}
+    qa = {'seq': seq, 'guid': guid, 'q_one_line': q_one_line, 'q': q, 'is_short': is_short, 'create_time': create_time, 'a': a}
     return qa
 
 #
 # Parse the chat file to build qa_ls
 # qa_ls = [qa]
-# qa = {guid, q_one_line, q, is_short, create_time, a}
+# qa = {seq, guid, q_one_line, q, is_short, create_time, a}
 # fn: Chat Markdown file. E.g., OP-TEE.SP.0327.md
 #
 
@@ -290,7 +290,7 @@ def parse_chat(fn):
 
     org_qa_ls = read_qa_ls(fn)
     qa_ls = []
-    seq = 0
+    seq = 1
     for q, a in org_qa_ls:
         qa = _build_qa(q, a, fn, seq)
         seq += 1

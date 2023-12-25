@@ -45,7 +45,10 @@ def get_q(question, dis_date, dis_q_date, dis_q_time, full=False):
     if 'my' in question.keys():
         q_one_line = '%s `(my answer)`' % (q_one_line)
     else:
-        q_one_line = '%s `(%s)`' % (q_one_line, question['from'])
+        if 'seq' in question:
+            q_one_line = '%s `(%d @ %s)`' % (q_one_line, question['seq'], question['from'])
+        else:
+            q_one_line = '%s `(%s)`' % (q_one_line, question['from'])
 
 
     if question['del']:
