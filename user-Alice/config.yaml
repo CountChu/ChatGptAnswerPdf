@@ -2,7 +2,7 @@ deleteTask: # chats
 
   - name: 2018.Tee101.0508.md
     questions:
-      - q-prefix: part_1
+      - seq: 2 # part_1
       - q-prefix: part_2
       - q-prefix: part_3            
       - q: What is the title of the document?
