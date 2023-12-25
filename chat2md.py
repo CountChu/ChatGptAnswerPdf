@@ -140,8 +140,12 @@ def handle_chat(output, output_json, chat):
             
         parts = content['parts']
 
-        if parts[0].strip() == '':
+        if type(parts[0]) == dict:
             parts[0] = 'N/A\n'
+
+        else:
+            if parts[0].strip() == '':
+                parts[0] = 'N/A\n'
 
         for part in parts:
 
